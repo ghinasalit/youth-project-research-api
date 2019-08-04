@@ -48,7 +48,8 @@ Class User
             $f_name = Helper::make_safe($data['first_name']);
             $l_name = Helper::make_safe($data['last_name']);
             $email = Helper::make_safe($data['email']);
-            $response = Queries::register($username, $password, $f_name, $l_name, $email);
+            $avatar = Helper::make_safe($data['avatar']);
+            $response = Queries::register($username, $password, $f_name, $l_name, $email, $avatar);
             if (is_numeric($response)) {
                 $error_msg = array_search($response, \Model\Enums::$code);
                 $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());

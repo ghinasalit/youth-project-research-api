@@ -43,9 +43,9 @@ import {MemberDetailsComponent} from './civil/member-details/member-details.comp
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 import {AppXgalleryComponent} from '../elements/app-xgallery/app-xgallery.component';
-import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
+import {ToastrModule} from 'ngx-toastr';
 import {MatIconModule} from '@angular/material/icon';
-
+import {ImageCropperModule} from 'ngx-image-cropper';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -107,6 +107,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         MatIconModule,
         MatSelectModule,
         MatInputModule,
+        ImageCropperModule,
         BsDatepickerModule.forRoot(),
         LeafletModule.forRoot(),
         TranslateModule.forRoot({

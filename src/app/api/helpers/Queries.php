@@ -1,4 +1,5 @@
 <?php
+
 //session_start();
 class Queries
 {
@@ -10,13 +11,12 @@ class Queries
             'session_id' => md5(microtime()));
 
 
-
         $db->where('email', $email);
         $db->where('password', $password);
         $db->update('members', $data);
         $user = $db->where('email', $email)
             ->where('password', $password)
-            ->getOne("members",  ' member_id , username ' );
+            ->getOne("members", ' member_id , username ');
         if ($db->count) {
 
             $_SESSION[___APP]['session_key'] = $data['session_id'];
@@ -28,7 +28,7 @@ class Queries
     }
 
 
-    static public function updateProfile($member_id, $location, $university, $phone, $domain, $description , $avatar)
+    static public function updateProfile($member_id, $location, $university, $phone, $domain, $description, $avatar)
     {
 
         global $db;
@@ -52,7 +52,7 @@ class Queries
         }
     }
 
-    static public function add_paper($member_id ,$title, $description , $status, $tag, $discipline, $permission , $language , $paper)
+    static public function add_paper($member_id, $title, $description, $status, $tag, $discipline, $permission, $language, $paper)
     {
 
         global $db;
@@ -68,7 +68,7 @@ class Queries
             'file' => $paper,
         );
 
-       $paper_id = $db->insert('papers', $data);
+        $paper_id = $db->insert('papers', $data);
         $user = $db->where('paper_id', $paper_id)->getOne('papers', 'title, description , status, tags, discipline, permission , language , file');
 
         if ($db->count) {
@@ -78,7 +78,7 @@ class Queries
         }
     }
 
-    static public function publish_unpublish_paper($paper_id , $status)
+    static public function publish_unpublish_paper($paper_id, $status)
     {
 
         global $db;
@@ -97,7 +97,7 @@ class Queries
         }
     }
 
-    static public function active_unactive_member($user_id , $status)
+    static public function active_unactive_member($user_id, $status)
     {
 
         global $db;
@@ -116,12 +116,22 @@ class Queries
         }
     }
 
-    static public function register($username, $password, $f_name, $l_name, $email)
+    static public function register($username, $password, $f_name, $l_name, $email, $avatar)
     {
         global $db;
+        $avatar_random_name = uniqid();
+        $pos = strpos($avatar, ';');
+        $ext = explode(':image/', substr($avatar, 0, $pos))[1];
+        if (!empty($avatar)) {
+            $avatar_path = $avatar_random_name . '.' . $ext;
+        } else {
+            $avatar_path = '';
+        }
+
         $data = Array(
             'first_name' => $f_name,
             'last_name' => $l_name,
+            'avatar' => $avatar_path,
             'username' => $username,
             'session_id' => md5(microtime()),
             'email' => $email,
@@ -129,8 +139,10 @@ class Queries
             'active' => '1',
         );
 
+
         $userCheck = $db->where("username", $username)->get("members");
         if (!$userCheck) {
+            Helper::saveToFile($avatar, $avatar_random_name, $ext);
             $db->insert('members', $data);
             $user = $db->where('username', $username)->getOne('members', 'username');
             if ($db->count) {
@@ -167,7 +179,7 @@ class Queries
         global $db;
 
         $member = $db->where('username', $username)
-            ->getOne("members",  'member_id , first_name , last_name , email , username  , phone , location , university_id , domain , description ');
+            ->getOne("members", 'member_id , first_name , last_name , email , username  , phone , location , university_id , domain , description ');
 
         if ($member) {
             $count_papers = Queries::get_count_papers_for_member($member['member_id']);
@@ -330,11 +342,11 @@ class Queries
         }
         $q .= ")";
 
-        if(!empty($keyword)) {
+        if (!empty($keyword)) {
 
             $q .= "AND(1=2";
             foreach ($keywords as $key => $item) {
-                    $q .= " OR " . $key . " LIKE " . "'%" . $item . "%' ";
+                $q .= " OR " . $key . " LIKE " . "'%" . $item . "%' ";
             }
             $q .= ")";
 
@@ -413,7 +425,7 @@ class Queries
                     GROUP BY papers.member_id  HAVING country.name_en  LIKE '%" . $country . "%'  ORDER BY views desc )  AS t1";
 
         $papers = $db->withTotalCount()->rawQuery($query);
-        if($papers[0]['views'] == null){
+        if ($papers[0]['views'] == null) {
             return [];
         }
         if ($papers) {
@@ -463,7 +475,6 @@ class Queries
             return false;
         }
     }
-
 
 
     static public function check_version_header($version)

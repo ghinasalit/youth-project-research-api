@@ -15,7 +15,7 @@ $result = array();
 $json = file_get_contents('php://input');
 $data = json_decode(Helper::objectToArray($json), true);
 
-if(isset($_POST['session_id'])){
+if (isset($_POST['session_id'])) {
 
     $data['session_id'] = $_POST['session_id'];
 }
@@ -31,7 +31,7 @@ if ($request_headers['code'] == 1) {
     }
 
     if ($function) {
-        if (!in_array($function, array('login', 'register', 'check_version' , 'add_feedback'))) {
+        if (!in_array($function, array('login', 'register', 'check_version', 'add_feedback'))) {
             if ($session_key) {
                 $valid = Queries::check_session_alive($session_key);
                 if (!$valid) {
@@ -94,17 +94,17 @@ if ($request_headers['code'] == 1) {
                         $result = User::add_feedback($data);
                         break;
                     }
-                    case 'search_paper':
+                case 'search_paper':
                     {
                         $result = User::search_paper($data);
                         break;
                     }
-                    case 'search_member':
+                case 'search_member':
                     {
                         $result = User::search_member($data);
                         break;
                     }
-                    case 'get_one_recognizes_researched':
+                case 'get_one_recognizes_researched':
                     {
                         $result = User::get_one_recognizes_researched($data);
                         break;
@@ -115,7 +115,7 @@ if ($request_headers['code'] == 1) {
                         break;
                     }
 
-                    case 'publish_unpublish_paper':
+                case 'publish_unpublish_paper':
                     {
                         $result = User::publish_unpublish_paper($data);
                         break;

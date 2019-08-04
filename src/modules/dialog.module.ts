@@ -15,6 +15,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {TranslateModule} from '@ngx-translate/core';
 import {ProfileInfoComponent} from '../app/dialogs/profile-info/profile-info.component';
 import {PaperComponent} from '../app/dialogs/paper/paper.component';
+import {ImageCropperModule} from 'ngx-image-cropper';
 
 @NgModule({
     declarations: [ProfileInfoComponent, PaperComponent],
@@ -32,7 +33,8 @@ import {PaperComponent} from '../app/dialogs/paper/paper.component';
         MatDialogModule,
         MatSelectModule,
         FormsModule,
-        ReactiveFormsModule,
+        ImageCropperModule,
+        ReactiveFormsModule
     ],
     entryComponents: [
 
@@ -46,6 +48,7 @@ import {PaperComponent} from '../app/dialogs/paper/paper.component';
         MatIconModule,
         MatCardModule,
         FormsModule,
+        ImageCropperModule,
         BrowserAnimationsModule],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -26,8 +26,6 @@
 }
 
 
-
-
 .example-form {
     /*min-width: 150px;*/
     /*max-width: 500px;*/
@@ -82,6 +80,7 @@
 }
 
 .avatar {
+    overflow: hidden;
     margin-bottom: 10px;
 }
 
@@ -106,12 +105,24 @@
 
 .image-upload {
     position: absolute;
-    top: 220px;
-    right: 125px;
+    z-index: 10;
     width: 35px;
     height: 35px;
     padding: 5px;
     background-color: #FFF;
+}
+
+.checked {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    padding: 5px;
+    background: #fff;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-upload img {
@@ -120,6 +131,10 @@
 }
 
 .avatar {
+    position: relative;
+}
+
+.avatar-cropper {
     position: relative;
 }
 
@@ -174,4 +189,13 @@
     left: -22px;
     top: 7px;
 
+}
+
+.image-upload input[type="file"] {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
 }

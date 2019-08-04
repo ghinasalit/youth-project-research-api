@@ -1,9 +1,10 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MatDialogRef, MAT_DIALOG_DATA, DialogRole} from '@angular/material';
+import {Component, OnInit} from '@angular/core';
+import {MatDialogRef} from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../../app.service';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
+import {User} from '../../../classes/user';
 
 
 @Component({
@@ -14,10 +15,14 @@ import {Router} from '@angular/router';
 
 
 export class ProfileInfoComponent implements OnInit {
-    public user: any;
+    public user = new User();
     profileForm: FormGroup;
     result: any;
     university = new FormControl('', [Validators.required]);
+
+    imageChangedEvent: any = '';
+    croppedImage: any = 'assets/img/avatar_default.PNG';
+
     public animals = [
         {name: 'Dog', sound: 'Woof!'},
         {name: 'Cat', sound: 'Meow!'},
@@ -28,7 +33,7 @@ export class ProfileInfoComponent implements OnInit {
     constructor(private fb: FormBuilder,
                 public _appService: AppService,
                 private toaster: ToastrService,
-                private router: Router ,
+                private router: Router,
                 public dialogRef: MatDialogRef<ProfileInfoComponent>) {
         this.profileForm = fb.group({
 
@@ -42,15 +47,30 @@ export class ProfileInfoComponent implements OnInit {
         });
     }
 
+    fileChangeEvent(event: any): void {
+        this.imageChangedEvent = event;
+    }
+
+    imageCropped(image: string) {
+        this.croppedImage = image;
+    }
+
+    imageLoaded() {
+        // console.log('loaded');
+    }
+
+    loadImageFailed() {
+        // console.log('failed');
+    }
 
     register() {
-
         this.user.university = this.profileForm.controls.university.value;
         this.user.job = this.profileForm.controls.job.value;
         this.user.location = this.profileForm.controls.location.value;
         this.user.phone = this.profileForm.controls.phone.value;
         this.user.Linkedin = this.profileForm.controls.Linkedin.value;
         this.user.description = this.profileForm.controls.description.value;
+        this.user.avatar = this.croppedImage.base64;
         this._appService.api.registerService(this.user)
             .subscribe(response => {
 

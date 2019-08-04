@@ -8,7 +8,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-
   },
   "private": true,
   "dependencies": {
@@ -42,6 +41,7 @@
     "ng-simple-slideshow": "^1.2.8",
     "ngx-bootstrap": "^3.2.0",
     "ngx-swiper-wrapper": "^7.2.1",
+    "ngx-toastr": "^10.0.4",
     "ngx-translate-multi-http-loader": "^3.0.0",
     "popper.js": "^1.14.7",
     "rxjs": "6.0.0",

@@ -27,6 +27,16 @@ class Helper
         return $data;
     }
 
+    static  public function saveToFile($data, $name, $ext)
+    {
+        $img = $data;
+        $img = str_replace('data:image/png;base64,', '', $img);
+        $img = str_replace(' ', '+', $img);
+        $data = base64_decode($img);
+        $file = 'uploaded/' . $name . '.' . $ext;
+        $success = file_put_contents($file, $data);
+    }
+
     static public function objectToArray($object)
     {
         if (is_object($object)) {
