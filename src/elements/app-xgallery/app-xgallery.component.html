@@ -1,0 +1,14 @@
+<div class="xgallery">
+    <div class="items">
+        <ng-container *ngFor="let img of imageUrls; let i = index">
+            <img  *ngIf="i == index" [src]="img.FullUrl" [@fadeInOut]>
+        </ng-container>
+
+    </div>
+    <div class="controls">
+        <img [src]="index == 0 ? 'assets/images/left-disable.png' : 'assets/images/left-active.png'"
+             (click)="index != 0 && prev()"> <img
+            [src]="index == lastIndex ? 'assets/images/right-disable.png' : 'assets/images/right-active.png'"
+            (click)="index != lastIndex && next()">
+    </div>
+</div>

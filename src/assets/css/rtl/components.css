@@ -1,0 +1,1329 @@
+h1 {
+    color: rgb(85, 57, 130);
+    text-align: center;
+    font-size: 3em;
+    font-weight: 600;
+    color: #1b2850;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+    color: #1b2850;
+}
+
+
+/*navBar*/
+.nav-collapsed {
+    height: 100%;
+    color: #fff;
+    display: flex;
+    width: 100%;
+    background-color: #1b2850;
+    position: absolute;
+    z-index: 500;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar i {
+    font-size: 51px;
+    color: #fff;
+    border: 30px;
+    text-align: center;
+    border-radius: unset;
+    line-height: inherit;
+    margin-top: -3px;
+    width: 115px;
+    height: 105px;
+
+}
+
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+#nav-toggle span:before {
+    top: -10px;
+}
+
+#nav-toggle span:after {
+    bottom: -10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    transition: all 500ms ease-in-out;
+}
+
+#nav-toggle.active span {
+    background-color: transparent;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+}
+
+#nav-toggle.active span:before {
+    transform: rotate(-45deg);
+    background: #1b2850;
+}
+
+#nav-toggle.active span:after {
+    transform: rotate(45deg);
+    background: #1b2850;
+}
+
+/* end navbar*/
+
+
+.header {
+    overflow: hidden;
+    height: 205px;
+    box-shadow: -10px 5px 5px #cac6c6;
+}
+
+.submit button {
+    width: 125px;
+    height: 50px;
+    background-color: #75cddd;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    align-items: right !important;
+}
+
+.button-action button {
+    width: 175px;
+    height: 70px;
+    background-color: #75cddd;
+    border: none;
+    margin-top: 35px;
+    color: #fff;
+    font-size: 25px;
+}
+
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 180px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #1b2850;
+    margin-bottom: 20px;
+}
+
+.become-researcher .button-action button {
+    width: 355px !important;
+}
+
+.login-register {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    font-weight: normal;
+    color: #1b2850;
+    cursor: pointer;
+    margin: auto;
+    margin: 20px;
+}
+
+.left-section button {
+    height: 65px;
+    width: 72px;
+    background-color: #1b2850;
+}
+
+.paper p {
+    font-size: 39px;
+    font-weight: bold;;
+}
+
+.left-section i {
+    color: #fff;
+    font-size: 25px;
+}
+
+
+.nav-collapsed a {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbar {
+    height: 100%;
+    width: 90px;
+    background-color: #1b2850;
+    margin: 0 !important;
+    border-radius: 0;
+}
+
+#nav-toggle {
+    cursor: pointer;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-login {
+    display: flex;
+    height: 90px;
+    direction: ltr
+}
+
+.logo-left {
+    float: right;
+    padding: 36px 95px;
+}
+
+.logo-right {
+    float: left;
+    padding: 31px 95px;
+}
+
+.logo-right img {
+    width: 122px;
+}
+
+
+.logo-left img {
+    width: 130px;
+}
+
+.right-section {
+    color: black;
+    width: 50%;
+    height: 100%;
+}
+
+.left-section {
+    width: 50%;
+    height: 100%;
+    background-size: contain;
+    background-image: url("../../../assets/img/library.jpg");
+    padding: 219px 75px;
+}
+
+.social-paper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px 0;
+}
+
+.cards-icon {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.card-icon-research, .card-icon-submit {
+    position: relative;
+    padding: 50px 65px;
+}
+
+.card-icon-research img {
+    position: absolute;
+    left: 73px;
+    bottom: 140px;
+    width: 140px;
+}
+
+
+.card-icon-submit img {
+    position: absolute;
+    left: 57px;
+    bottom: 140px;
+    width: 140px;
+}
+
+
+.social-paper .title {
+    margin-top: 69px;
+}
+
+.box {
+    width: 190px;
+    height: 190px;
+    background-color: #75cddd;
+}
+
+.research-title {
+    padding: 20px;
+    display: flex;
+    height: 225px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.full-section .side {
+    width: 50%;
+}
+
+/*.research-input {*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*}*/
+
+.drop-list {
+    display: inline-block;
+    float: right;
+    margin-left: 0px;
+    padding-right: 25px;
+    font-size: 20px;
+    position: relative;
+}
+
+.paper {
+    position: relative;
+    bottom: -50px;
+    color: #1b2850;
+}
+
+.become-researcher {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+}
+
+.contact h1 {
+    font-size: 4em;
+    font-weight: 600;
+    margin: 20px 0 77px;
+    text-align: right;
+    color: #1b2850;
+}
+
+.heat-map .map {
+    display: flex;
+    color: #1b2850;
+    flex-direction: column;
+    padding: 0px 200px;
+}
+
+
+.blue-line {
+    border: 13px solid #75cddd;
+    background-color: #75cddd;
+    width: 165px;
+    position: absolute;
+    bottom: -15px;
+}
+
+.research-section {
+    /*margin-bottom: 75px;*/
+    /*margin-top: 30px;*/
+}
+
+
+/*home*/
+
+.edit-profile {
+    width: 110px;
+    height: 75px;
+    position: absolute;
+    left: 36%;
+    top: 30px;
+    color: #1B2850;
+    text-align: center;
+}
+
+
+.info-user {
+    padding: 0 140px;
+}
+
+
+.desc-user {
+    margin: 35px 0;
+    font-size: 17px;
+}
+
+
+.social {
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 150px;
+    position: fixed;
+    z-index: 1;
+}
+
+
+.title div {
+    border: 13px solid #75cddd;
+    background-color: #75cddd;
+    width: 205px;
+}
+
+
+/*.top-home-login .social i {*/
+/*    font-size: 25px;*/
+/*    color: #1b2850;*/
+/*    margin-bottom: 16px;*/
+/*}*/
+
+
+.top-home-login {
+    height: 670px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    background-color: #f1f2f2;
+}
+
+
+.social i {
+    font-size: 25px;
+    color: #1b2850;
+    margin-bottom: 16px;
+
+
+}
+
+top-home-login .title {
+    margin-right: 20px;
+    margin-top: 120px;
+    font-weight: bold;
+    color: #1b2850;
+}
+
+
+.about-content .text-left p {
+    font-size: 65px
+}
+
+
+.full-section .center-sticker {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background: #1b2850;
+    top: 45%;
+    right: 47%;
+    bottom: 50%;
+    left: 50%;
+    z-index: 100;
+}
+
+
+.card-item .title {
+    padding: 35px 128px;
+    text-align: right;
+}
+
+
+.card-item p {
+    font-size: 25px;
+}
+
+app-home .card-item p {
+    font-size: 22px;
+}
+
+.cards {
+    display: flex;
+    color: #1b2850;
+    justify-content: space-between;
+    padding: 75px 20px;
+}
+
+
+.card-item img {
+    width: 45%;
+}
+
+.become-researcher {
+    height: 835px;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: bold;
+    color: #1b2850;
+}
+
+
+.full-section .sec-content {
+    text-align: right;
+    width: 85%;
+    margin-right: 80px;
+    margin-top: 70px;
+}
+
+
+.about-content .content {
+    margin-top: 55px;
+}
+
+
+.content p {
+    margin: 0 0 0 100px;
+    font-size: 25px;
+}
+
+
+.partners .top-sticker {
+    height: 155px;
+    width: 50px;
+    position: absolute;
+    background: #75cddd;
+    right: 49%;
+    top: 40%;
+    z-index: 100;
+}
+
+
+.heat-map {
+    height: 835px;
+}
+
+.partners .center-sticker {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background: #1b2850;
+    top: 95%;
+    right: 75%;
+    bottom: 50%;
+    left: 50%;
+    z-index: 100;
+}
+
+
+.contact .top-sticker {
+    height: 155px;
+    width: 50px;
+    position: absolute;
+    background: #FDD97A;
+    right: 90%;
+    z-index: 100;
+}
+
+
+::ng-deep .frequent-asked-questions {
+    margin-top: 35px 0px;
+}
+
+
+.contact .sec-content {
+    text-align: right;
+    width: 85%;
+    margin-right: 100px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.full-name .title {
+    font-size: 45px;
+    font-weight: bold;
+    color: #1b2850;
+    margin-top: 120px;
+    margin-right: 18px;
+}
+
+
+.profile-container .full-name .title {
+    font-size: 45px;
+    font-weight: bold;
+    color: #1b2850;
+    margin-top: 0;
+    margin-right: 18px;
+}
+
+.views-paper {
+    margin-left: 10px;
+    width: 155px;
+}
+
+
+
+.edit-profile i {
+    font-size: 30px;
+    color: #1b2850;
+}
+
+.top-home-login .info-user img {
+    width: 215px;
+    height: 190px;
+    object-fit: cover;
+}
+
+
+.info-item i {
+    margin-left: 15px;
+    color: #1B2850;
+    font-size: 20px;
+}
+
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+/*.social {*/
+/*    display: inline-block;*/
+/*    margin-right: 25px;*/
+/*    margin-top: 150px;*/
+/*}*/
+
+
+.read-more p {
+    font-size: 25px;
+}
+
+.main-slider {
+    margin-top: 55px;
+}
+
+
+.member-name {
+    margin-right: 45px;
+    margin-top: 40px;
+}
+
+
+.our-members .read-more {
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 40px;
+    color: #1b2850;
+    padding-right: 35px;
+}
+
+
+.with-slider .slider-control {
+    padding: 0 20px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+
+.social-contact i {
+    color: #75cddd;
+    font-size: 25px;
+}
+
+
+.contact .title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #1b2850;
+}
+
+
+.contact .title div {
+    border: 13px solid #75cddd;
+    background-color: #75cddd;
+    width: 115px;
+}
+
+
+.profile-photo {
+    width: 50%;
+}
+
+
+.social-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+
+.our-members .text-left {
+    padding-right: 35px;
+}
+
+
+.with-slider .main-slider {
+    display: flex;
+    align-items: center;
+    direction: initial;
+}
+
+
+.with-slider .left-slide i, .with-slider .right-slide i {
+    font-size: 35px;
+    color: #75cddd;
+    cursor: pointer;
+}
+
+
+/*header*/
+/*.header {*/
+/*    overflow: hidden;*/
+/*    height: 140px;*/
+/*    box-shadow: 10px 5px 5px #cac6c6;*/
+/*}*/
+
+
+/*login*/
+
+/*.full-section .sec-content {*/
+/*    text-align: left;*/
+/*    width: 80%;*/
+/*    margin-left: 100px;*/
+/*    margin-top: 100px;*/
+/*}*/
+
+.login {
+    height: 835px;
+}
+
+
+/*register*/
+.item-full-name {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.register {
+    height: 835px;
+}
+
+.profile-container .info-user img {
+    position: absolute;
+    width: 45px;
+    left: 186px;
+    top: 168px;
+}
+
+
+.nav-block {
+    display: inline-grid;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 15% 0 0;
+}
+
+.info-user {
+    padding: 0 140px;
+}
+
+.paper p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.profile-container .center-sticker {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 45%;
+    right: 47%;
+    bottom: 50%;
+    left: 50%;
+    z-index: 100;
+    background: #FDD97A;
+}
+
+
+.profile-container .left-sticker {
+    height: 155px;
+    width: 50px;
+    position: absolute;
+    right: 5%;
+    z-index: 100;
+    background: #75CDDD;
+}
+
+
+.profile-container .desc-user {
+    margin: 35px 0;
+    font-size: 17px;
+}
+
+
+.profile-container {
+    height: 835px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    background-color: #f1f2f2;
+}
+
+
+.profile-container .profile-photo {
+    width: 50%;
+}
+
+.profile-container .social-user {
+    margin-top: 35px;
+}
+
+
+.profile-container .edit-profile {
+    width: 110px;
+    height: 75px;
+    position: absolute;
+    left: 150px;
+    top: 66px;
+    color: #1B2850;
+    text-align: center;
+}
+
+
+.profile-container .box {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    background-color: #75cddd;
+}
+
+
+.research-section {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+    border-bottom: 1px solid #ececec;
+
+}
+
+
+.cards-items .c-item {
+    border: 1px solid #1b2850;
+    width: 32.5%;
+    margin: 10px 0;
+    padding: 10px 35px;
+    flex-wrap: wrap;
+}
+
+
+.research-search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+}
+
+
+.papers-tap {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.paper {
+    position: absolute;
+    top: 230px;
+    left: 150px;
+    color: #1b2850;
+}
+
+
+.button-action {
+    text-align: center
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.info-icon {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+
+.profile-container i {
+    margin-left: 15px;
+    color: #1B2850;
+    font-size: 20px;
+}
+
+
+.views-paper, .download-paper {
+    display: flex;
+}
+
+
+.check-filename i {
+    font-size: 40px;
+    margin-left: 20px;
+    color: #75cddd;
+}
+
+.upload-file {
+    height: 835px;
+}
+
+.check-filename p {
+    margin-top: 5px;
+    font-size: 20px;
+
+}
+
+
+.file_name {
+    margin: 60px 0;
+    height: 55px;
+    display: flex;
+    background: #fff;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+.login-register div {
+    margin-left: 15px;
+}
+
+.clear i {
+    font-size: 35px;
+}
+
+
+.paper-file img {
+
+    width: 130px;
+}
+
+
+.permission-radio-button {
+    margin: 25px 0;
+}
+
+
+
+
+.paper-file {
+    margin-bottom: 55px;
+}
+
+
+app-permission-pepar .form-input {
+    margin-top: 80px;
+}
+
+
+app-about .full-section .top-sticker {
+
+    background: #FDD97A;
+}
+
+.researshers {
+    padding: 10px;
+}
+
+
+.researshers .content {
+    margin-top: 40px;
+}
+
+
+app-about .card-item .title {
+    padding: 35px 45px;
+    text-align: right;
+}
+
+
+app-about .cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 265px;
+}
+
+
+.full-section {
+    position: relative;
+    background: #f1f2f2;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 835px;
+
+}
+
+
+app-about .card-item img {
+
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+
+app-about .cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 110px;
+
+}
+
+
+app-about .card-item.title p {
+    font-size: 25px;
+}
+
+
+app-members .card {
+    flex: 0 1 32%;
+}
+
+
+.members-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.about-content .content {
+    margin-top: 55px;
+}
+
+
+.card-item .title div {
+    border: 13px solid #1b2850;
+    background-color: #1b2850;
+    width: 115px;
+}
+
+.social div {
+    display: block;
+}
+
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: 25%;
+}
+
+
+.sort-icon {
+    width: 48px;
+    height: 36px;
+    border: 1px solid;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 35px;
+}
+
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    width: 5%;
+    color: #1B2850;
+
+}
+
+
+.filter-icon {
+    width: 48px;
+    height: 36px;
+    border: 1px solid;
+    border-radius: 8px;
+    text-align: center;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.characters {
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    font-size: 25px;
+    color: #75cddd;
+}
+
+
+.characters-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+
+.members-section {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+    border-bottom: 1px solid #ececec;
+
+}
+
+
+.research-input {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+
+app-papers .top-home {
+    height: 670px;;
+    color: #fff;
+    justify-content: flex-end;
+    background-image: url("../../../assets/img/library.jpg");
+    width: 100%;
+    background-color: #f1f2f2;
+    background-size: cover;
+}
+
+
+app-papers .statistics {
+    display: flex;
+    flex-direction: column;
+    font-size: 45px;
+    margin: auto;
+    padding: 260px 0;
+    color: #fff;
+}
+
+
+.views-paper {
+    margin-left: 10px;
+    width: 132px;
+}
+
+
+.research-search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+}
+
+
+.research-section {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+    border-bottom: 1px solid #ececec;
+}
+
+
+.upload-paper-form {
+    width: 85%;
+}
+
+
+.paper-section {
+    margin-bottom: 75px;
+    margin-top: 30px;
+    overflow: hidden;
+    direction: ltr;
+    display: flex;
+}
+
+
+.edit-profile i {
+    font-size: 30px;
+    color: #1b2850;
+}
+
+
+.card-item .title div {
+    background-color: #1B2850;
+    border: 13px solid #1B2850;
+}
+
+
+.accordion:after {
+    content: "\f053";
+    color: #75cddd;
+    font-weight: bold;
+    float: inherit;
+    margin-right: 15px;
+    font-size: 22px;
+}
+
+
+.accordion {
+    display: flex;
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 20px 35px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    transition: 0.4s;
+    text-align: right;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+
+
+.card img{
+    width: 100%;
+    object-fit: cover;
+    height: 560px;
+
+}
+
+
+
+.card .title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #1B2850;
+    margin-bottom: 25px;
+    width: 90%;
+}
+
+
+.card .title div {
+    border: 13px solid #1B2850;
+    background-color: #1B2850;
+    width: 115px;
+}
+
+
+app-home .card-item .title {
+    padding: 35px 106px;
+    text-align: right;
+}
+
+
+
+.submit {
+    text-align: center;
+    height: 70px;
+    margin: 20px 0 10px 0;
+    display: flex;
+
+}
+
+
+.submit button {
+    width: 100%;
+    height: 100%;
+    background-color: #75cddd;
+    border: none;
+    color: #fff;
+    font-size: 35px;
+}
+
+.go-login p {
+    font-size: 20px;
+}
+
+
+app-upload-paper .submit {
+
+    margin: 0;
+
+}
+
+
+.custom-file-upload {
+    width: 100%;
+    height: 100%;
+    background-color: #75cddd;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    padding: 8px 0;
+    font-weight: normal;
+
+}
+
+
+
+.drag-box p {
+    padding: 60px;
+    font-size: 21px;
+    color: #707070;
+}
+
+
+
+.permissions{
+    width: 40%;
+}
+
+
+
+.paper-permissions{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+
+
+.file-paper .title p{
+    font-size: 20px;
+}
+
+
+::ng-deep .mat-radio-label-content{
+
+    /*font-size: 12px !important;*/
+}
+
+
+
+.contact .form-input {
+    padding-left: 65px;
+}
+
+
+.paper-card-info i {
+    margin-left: 5px;
+    margin-top: 7px;
+    color: #75cddd;
+}
+
+
+.view-download i{
+    width: 10px;
+    color: #75cddd;
+    margin-left: 7px;
+    margin-top: 7px;
+}
+
+
+
+.edit-paper i {
+    float: left;
+    color: #1B2850;
+}
+
+.cards-items .bookmark {
+    text-align: left;
+    position: relative;
+    top: -22px;
+    font-size: 35px;
+    color: #75CDDD;
+
+}
+
+
+.first-name {
+    margin-left: 70px;
+}

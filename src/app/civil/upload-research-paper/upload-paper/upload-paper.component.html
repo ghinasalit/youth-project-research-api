@@ -1,0 +1,37 @@
+<div class="sec-content">
+    <div class="title">
+        <p>{{'_UploadResearchPaper' | translate}}</p>
+        <div></div>
+    </div>
+    <div class="form-input">
+        <form class="upload-paper-form" [formGroup]="uploadPaper">
+            <div class="choose-file">
+                <div class="drag-box">
+                    <p>{{'_DragDropFile' | translate}}</p>
+                </div>
+                <div class="submit">
+                    <label for="file-upload" class="custom-file-upload">
+                        {{'_ChooseFile' | translate}}
+                    </label>
+                    <input id="file-upload" type="file" accept="application/pdf" formControlName="File"
+                           (change)="getFile()" #File>
+                </div>
+            </div>
+            <div class="file_name" *ngIf="UploadFile">
+                <div class="check-filename">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <p>{{appService.fileName}}</p>
+                </div>
+                <div class="clear" (click)="clearFile()">
+                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="submit" *ngIf="UploadFile" routerLink="details">
+                <button>{{'_Continue' | translate}}</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+

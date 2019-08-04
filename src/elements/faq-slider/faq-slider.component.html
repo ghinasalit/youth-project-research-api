@@ -1,0 +1,186 @@
+<div class="frequent-asked-questions" *ngIf="faqData">
+    <div class="faq-content" *ngFor="let faq of faqData; let i = index; let firstElement = first">
+        <button class="accordion fa" [ngClass]="firstElement ? 'active closed' : ''" (click)="openToggle($event)">
+            <a class="font-black mr-2" *ngIf="pageCount">Q:{{(i+1)+(activePage * size)}}</a><a class="font-black">{{faq.Question}}</a>
+        </button>
+        <div class="panel" [style.max-height]="firstElement? '270px' : ''">
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{faq.Answer}}
+            </p>
+        </div>
+    </div>
+
+    <div class="pagination mt-5 justify-content-center align-items-center" *ngIf="pageCount > 0 ">
+        <button class="btn btn-primary tiny" [disabled]="pageCount <= 6 || startPage == 0" (click)="previousPage()">{{'_Back' | translate }}
+        </button>
+        <a  class="page" *ngFor="let page of pageCountArray | slice: startPage: endPage ; let i = index" style="cursor: pointer"
+           (click)=" activePage !== i && pageChanged(i)" [ngClass]=" activePage === i ? 'active-page' : ''" >{{page}}</a>
+
+        <button class="btn btn-primary tiny" [disabled]="pageCount <= 6 || endPage == pageCount" (click)="nextPage()">{{'_Next' | translate }}
+        </button>
+    </div>
+</div>
+
+
+<div class="frequent-asked-questions" *ngIf="ServiceDataLeft">
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_ServiceName' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataLeft.Title}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_MainService' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataLeft.Content}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_TypeOfService' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+               <span  *ngIf="_appService.currentLanguage === 'en'">{{ServiceDataLeft.Type.en_Name}}</span>
+               <span  *ngIf="_appService.currentLanguage === 'ar'">{{ServiceDataLeft.Type.ar_Name}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_ServiceClassification' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataLeft.CategoriesList}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_ServiceDescription' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataLeft.Description}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_ServiceLimitation' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataLeft.Requirements}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_ServiceLinkage' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataLeft.Linkage}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="frequent-asked-questions" *ngIf="ServiceDataRight">
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_ProceduresOfSubmittingTheApplications' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataRight.ExecutionSteps}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_TheTimeRangeOfTheService' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataRight.EstimatedDeliveryTime}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_TypeOfCustomer' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left"  *ngIf="_appService.currentLanguage === 'en'">
+               <span *ngFor="let item of ServiceDataRight.eServiceBeneficiarys ; let lastElement = last">{{item.en_Name}} <span *ngIf="!lastElement">,</span></span>
+            </p>
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left"  *ngIf="_appService.currentLanguage === 'ar'">
+               <span *ngFor="let item of ServiceDataRight.eServiceBeneficiarys ; let lastElement = last">{{item.ar_Name}} <span *ngIf="!lastElement">,</span></span>
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_MethodsOfPayment' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left"  *ngIf="_appService.currentLanguage === 'en'">
+                <span *ngFor="let item of ServiceDataRight.eServicePaymentMethods ; let lastElement = last">{{item.en_Name}} <span *ngIf="!lastElement">,</span></span>
+            </p>
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left"  *ngIf="_appService.currentLanguage === 'ar'">
+                <span *ngFor="let item of ServiceDataRight.eServicePaymentMethods ; let lastElement = last">{{item.ar_Name}} <span *ngIf="!lastElement">,</span></span>
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_UrgentFees' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataRight.UrgentFees}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_CallCenter' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataRight.Remarks}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_MobileSMS' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left">
+                {{ServiceDataRight.MobileSMS}}
+            </p>
+        </div>
+    </div>
+    <div class="faq-content">
+        <button class="accordion fa" (click)="openToggle($event)">
+            <a class="font-black">{{'_Website' | translate}}</a>
+        </button>
+        <div class="panel" >
+            <p class="font-regular border-top px-0 pt-3 p-adjust text-left" style="cursor: pointer;" [routerLink]="ServiceDataRight.URL" routerLinkActive="active">
+                {{ServiceDataRight.URL}}
+            </p>
+        </div>
+    </div>
+</div>

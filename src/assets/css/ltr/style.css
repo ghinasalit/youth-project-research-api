@@ -1,0 +1,10 @@
+.d-flex {
+    align-items: center;
+    display: flex;
+}
+
+.blue-line {
+    border: 13px solid #75cddd;
+    background-color: #75cddd;
+    width: 115px;
+}

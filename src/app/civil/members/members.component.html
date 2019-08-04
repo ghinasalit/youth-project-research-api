@@ -1,0 +1,176 @@
+<div class="nav-collapsed" *ngIf="collapsed">
+    <a routerLink="/home">{{'_HomePage' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
+    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
+    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+</div>
+
+<div class="full-section" data-aos="fade-up" data-aos-duration="1000">
+    <div class="side">
+        <div class="sec-img">
+            <img src="assets/img/member1.jpg">
+        </div>
+    </div>
+    <div class="side">
+        <div class="navbar-login logged">
+            <div class="navbar"
+                 [style.z-index]="collapsed ? '550' : ''"
+                 [style.background-color]="collapsed ? '#fff' : ''">
+                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+                </a>
+            </div>
+            <div class="login-register" *ngIf="!_appService.session">
+                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
+                <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
+            </div>
+            <div class="login-register"  *ngIf="_appService.session">
+                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="login">{{'_Logout'| translate}}</div>
+            </div>
+        </div>
+
+        <div class="sec-content">
+            <div class="about-content">
+                <div class="title">
+                    <p>{{'_MeetOurMembers'|translate}}</p>
+                    <div></div>
+                </div>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam atque consequuntur
+                        ducimus
+                        et
+                        fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
+                        laborum
+                        officia
+                        voluptatibus
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam atque consequuntur
+                        ducimus
+                        et
+                        fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
+                        laborum
+                        officia
+                        voluptatibus.</p>
+                </div>
+
+            </div>
+            <div class="social">
+                <div><i class="fa fa-facebook"></i></div>
+                <div><i class="fa fa-instagram"></i></div>
+                <div><i class="fa fa-twitter"></i></div>
+                <div><i class="fa fa-youtube"></i></div>
+            </div>
+
+            <div class="blue-sep"></div>
+        </div>
+    </div>
+</div>
+
+<div class="members-section">
+    <div class="characters-filters">
+        <div class="characters">
+            <p>A</p>
+            <p>B</p>
+            <p>C</p>
+            <p>D</p>
+            <p>E</p>
+            <p>F</p>
+            <p>G</p>
+            <p>H</p>
+            <p>I</p>
+            <p>J</p>
+            <p>K</p>
+            <p>L</p>
+            <p>M</p>
+            <p>N</p>
+            <p>O</p>
+            <p>P</p>
+            <p>Q</p>
+            <p>R</p>
+            <p>S</p>
+            <p>T</p>
+            <p>U</p>
+            <p>V</p>
+            <p>W</p>
+            <p>X</p>
+            <p>Y</p>
+            <p>z</p>
+        </div>
+        <div class="filters">
+            <div class="sort-icon"><i class="fa fa-sort-desc" aria-hidden="true"></i></div>
+            <div class="filter-icon"><i class="fa fa-filter" aria-hidden="true"></i></div>
+        </div>
+    </div>
+    <div class="col-lg-12 research-input">
+        <div class="row">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="fa fa-search"
+                                                                                 aria-hidden="true"></i></button>
+                        </span>
+            </div>
+        </div>
+    </div>
+    <div class="members-cards">
+        <div class="card">
+            <img src="assets/img/member1.jpg" alt="">
+            <div class="title">
+                <p>Ghina sallit</p>
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/img/member1.jpg" alt="">
+            <div class="title">
+                <p>Ghina sallit</p>
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/img/member1.jpg" alt="">
+            <div class="title">
+                <p>Ghina sallit</p>
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/img/member1.jpg" alt="">
+            <div class="title">
+                <p>Ghina sallit</p>
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/img/member1.jpg" alt="">
+            <div class="title">
+                <p>Ghina sallit</p>
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/img/member1.jpg" alt="">
+            <div class="title">
+                <p>Ghina sallit</p>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-action">
+        <button>{{'_ViewMore' | translate}}</button>
+    </div>
+
+</div>

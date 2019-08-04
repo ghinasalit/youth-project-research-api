@@ -1,0 +1,86 @@
+<div class="profile-info">
+    <form class="full-section profile-form example-form" [formGroup]="profileForm">
+        <div class="info-left-section example-form">
+            <div class="avatar">
+                <img src="assets/img/avatar_default.PNG" alt="">
+                <div class="image-upload">
+                    <label for="file-input">
+                        <img src="assets/img/camera.PNG"/>
+                    </label>
+                    <input id="file-input" type="file"/>
+                </div>
+            </div>
+
+            <div class="title">
+                <p>Ghina Sallit!</p>
+                <div></div>
+            </div>
+            <div>
+
+
+                    <mat-form-field>
+                        <mat-label>Favorite animal</mat-label>
+                        <mat-select formControlName="university" required>
+                            <mat-option>--</mat-option>
+                            <mat-option *ngFor="let animal of animals" [value]="animal">
+                                {{animal.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="university.hasError('required')">Please choose ypur university</mat-error>
+                        <mat-hint>{{university.value?.sound}}</mat-hint>
+                        <i class="fa fa-university" aria-hidden="true"></i>
+                    </mat-form-field>
+                    <div class="field-item">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="job" value="" formControlName="job">
+                        </mat-form-field>
+                        <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                    </div>
+
+                <div class="field-item">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="phone" value="" formControlName="phone">
+                    </mat-form-field>
+                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                </div>
+
+                <div class="field-item">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="location" value="" formControlName="location">
+                    </mat-form-field>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </div>
+
+                <div class="field-item">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Linkedin" value="" formControlName="Linkedin">
+                    </mat-form-field>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="info-right-section">
+            <div class="close-desc">
+                <div class="title">
+                    <p>Description</p>
+                    <div></div>
+                </div>
+                <div class="close-dialog" (click)="dialogRef.close()">
+                    <i class="fa fa-times"></i>
+                </div>
+
+            </div>
+            <div>
+                <textarea class="textbox-lines" rows="6" formControlName="description"></textarea>
+            </div>
+            <div class="submit" (click)="register()">
+                <button [disabled]="!profileForm.valid">Save Your Profile info</button>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+

@@ -1,0 +1,11 @@
+
+.sec-img {
+    height: 100%;
+}
+
+
+.upload-file img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,104 @@
+<div class="nav-collapsed" *ngIf="collapsed">
+    <a routerLink="/home">{{'_HomePage' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
+    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
+    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+</div>
+
+<div class="full-section register" data-aos-duration="1000">
+    <div class="side avatar">
+        <div class="sec-img">
+            <img src="assets/img/research.jpg" alt="">
+        </div>
+        <div class="image-upload">
+            <label for="file-input">
+                <img src="assets/img/camera.PNG"/>
+            </label>
+            <input id="file-input" type="file"/>
+        </div>
+    </div>
+    <div class="side">
+        <div class="navbar-login logged">
+            <div class="navbar"
+                 [style.z-index]="collapsed ? '550' : ''"
+                 [style.background-color]="collapsed ? '#fff' : ''">
+                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+                </a>
+            </div>
+            <div class="login-register" *ngIf="_appService.session">
+                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="login">{{'_Logout'| translate}}</div>
+            </div>
+        </div>
+        <div class="sec-content">
+            <div class="title">
+                <p>{{'_UpdateProfile' | translate}}</p>
+                <div></div>
+            </div>
+            <div class="form-input">
+                <form class="example-form" [formGroup]="profileForm">
+                    <div class="item-full-name">
+                        <mat-form-field class="example-full-width first-name">
+                            <input matInput [placeholder]="'_FName' | translate" formControlName="f_name">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width last-name">
+                            <input matInput [placeholder]="'_LName' | translate" formControlName="l_name">
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field>
+                        <mat-label>{{'_FavouriteAnimal' | translate}}</mat-label>
+                        <mat-select [formControl]="university">
+                            <mat-option>--</mat-option>
+                            <mat-option *ngFor="let animal of animals" [value]="animal">
+                                {{animal.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="field-item">
+                        <mat-form-field class="example-full-width">
+                            <input matInput [placeholder]="'_Job' | translate" value="">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="field-item">
+                        <mat-form-field class="example-full-width">
+                            <input matInput [placeholder]="'_Phone' | translate" value="">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="field-item">
+                        <mat-form-field class="example-full-width">
+                            <input matInput [placeholder]="'_Location' | translate" value="">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="field-item">
+                        <mat-form-field class="example-full-width">
+                            <input matInput [placeholder]="'_LinkedIn' | translate" value="">
+                        </mat-form-field>
+
+                    </div>
+                    <mat-form-field>
+                        <textarea matInput [placeholder]="'_Description' | translate"></textarea>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput [placeholder]="'_EnterPassword' | translate"
+                               [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                        </button>
+                    </mat-form-field>
+                    <div class="submit">
+                        <button>{{'_Save' | translate}}</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

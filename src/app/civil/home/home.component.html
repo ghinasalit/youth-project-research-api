@@ -1,0 +1,481 @@
+<div class="nav-collapsed" *ngIf="collapsed">
+    <a routerLink="/home">{{'_HomePage' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
+    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
+    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+</div>
+
+<div class="top-home" *ngIf="!_appService.session">
+    <div class="navbar-login">
+        <div class="navbar"
+             [style.z-index]="collapsed ? '550' : ''"
+             [style.background-color]="collapsed ? '#fff' : ''">
+            <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+                <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+            </a>
+        </div>
+        <div class="login-register">
+            <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+            <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
+            <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="full-section top-home-login" *ngIf="_appService.session">
+    <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000">
+        <img src="assets/img/member1.jpg" alt="">
+    </div>
+    <div class="right-section">
+        <div class="navbar-login logged">
+            <div class="navbar"
+                 [style.z-index]="collapsed ? '550' : ''"
+                 [style.background-color]="collapsed ? '#fff' : ''">
+                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+                </a>
+            </div>
+            <div class="login-register"  *ngIf="_appService.session">
+                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="login" (click)="logout()">{{'_Logout'| translate}}</div>
+            </div>
+        </div>
+        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <p>{{'_EditProfile' | translate}}</p>
+        </div>
+        <div class="social-info">
+            <div class="info-user">
+
+                <div class="user-name">
+                    <div><img src="assets/img/member1.jpg" alt=""></div>
+                    <div class="full-name">
+                        <div class="title">
+                            <h2>Ghina sallit</h2>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="desc-user">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer
+                        adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat
+                        volutpat. Ut wisi enim ad minim veniam, quis
+                        nostrud exerci tation ullamcorper suscipit lobortis
+                        nisl ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                <div class="info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa fa-university"></i>
+                            <div class="info-data">American University</div>
+                        </div>
+                        <div class="info-icon">
+                            <i class="fa fa-map-marker"></i>
+                            <div class="info-data">United Arab Emirates</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa fa-suitcase"></i>
+                            <div class="info-data">Informatics Engineer</div>
+                        </div>
+                        <div class="info-icon">
+                            <i class="fa fa-eye"></i>
+                            <div class="info-data">2.22Views</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa fa-file-text-o"></i>
+                            <div class="info-data">12 Research papers</div>
+                        </div>
+                        <div class="info-icon">
+                            <i class="fa fa-trophy"></i>
+                            <div class="info-data">1 Recognized Research</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="social">
+                <div><i class="fa fa-facebook"></i></div>
+                <div><i class="fa fa-instagram"></i></div>
+                <div><i class="fa fa-twitter"></i></div>
+                <div><i class="fa fa-youtube"></i></div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="paper-section d-flex" data-aos="fade-down" data-aos-duration="100">
+    <div class="social" *ngIf="!_appService.session">
+        <div><i class="fa fa-facebook"></i></div>
+        <div><i class="fa fa-instagram"></i></div>
+        <div><i class="fa fa-twitter"></i></div>
+        <div><i class="fa fa-youtube"></i></div>
+    </div>
+
+    <div class="social-paper" data-aos="fade-left" data-aos-duration="1000">
+        <div class="cards-icon">
+            <div class="card-icon-research">
+                <div class="box">
+                </div>
+                <img src="assets/img/paper.png" alt="">
+
+                <div class="title" routerLink="/papers" style="cursor: pointer">
+                    <h2 >{{'_ResearchAPaper' | translate}}</h2>
+                    <div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-icon-submit">
+                <div class="box">
+                </div>
+                <img src="assets/img/paper.png" alt="">
+
+                <div class="title"  style="cursor: pointer" routerLink="/upload-paper">
+                    <h2>{{'_SubmitAPaper' | translate}}</h2>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="full-section" data-aos="fade-up" data-aos-duration="1000">
+    <div class="left-sticker"></div>
+    <div class="center-sticker"></div>
+    <div class="side">
+        <div class="sec-img">
+            <img src="assets/img/member1.jpg">
+        </div>
+    </div>
+    <div class="side">
+        <div class="sec-content">
+            <div class="about-content">
+                <h1 class="text-left">
+                    <p>{{'_About' | translate}}</p>
+                    <p>{{'_ArabYouth' | translate}}</p>
+                    <p> {{'_ResearchLibrary' | translate}}</p>
+                </h1>
+
+                <div class="content">
+                    <p>{{'_AboutDescription' | translate}}</p>
+                </div>
+                <div>
+                    <div class="title read-more">
+                        <p style="cursor: pointer" routerLink="/about">{{'_ReadMore' | translate}}</p>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="become-researcher" data-aos="fade-up" data-aos-duration="1000">
+    <div class="title">
+        <p>{{'_How_Become_Researcher' | translate}}</p>
+        <div></div>
+    </div>
+    <div class="cards">
+        <div class="card-item">
+            <img src="assets/img/broad-knowledge.PNG" alt="">
+            <div class="title">
+                <p>{{'_KnowledgePr' | translate}}</p>
+                <div></div>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="assets/img/job-opportunities.PNG" alt="">
+            <div class="title">
+                <p>{{'_JobOpp' | translate}}</p>
+                <div></div>
+            </div>
+        </div>
+        <div class="card-item sharing">
+            <img src="assets/img/sharing-knowledge.PNG" alt="">
+            <div class="title">
+                <p>{{'_SharingKno' | translate}}</p>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="button-action" routerLink="/register">
+        <button>{{'_RegisterMember' | translate}}</button>
+    </div>
+
+
+</div>
+
+<div class="full-section our-members" data-aos="fade-up" data-aos-duration="1000">
+
+    <div class="full-section with-slider">
+        <div class="top-sticker"></div>
+        <div class="center-sticker"></div>
+        <div class="side">
+            <div class="sec-img">
+                <ng-container *ngFor="let photo of dataList; let i = index">
+                    <img [@fadeInOut] *ngIf="itemIndex == i" [src]="dataList[i]['photo']">
+                </ng-container>
+            </div>
+        </div>
+        <div class="side">
+            <div class="sec-content">
+                <div class="about-content">
+                    <h1 class="text-left">
+                        <p>{{'_OurResearchMembers1' | translate}}</p>
+                        <p>{{'_OurResearchMembers2' | translate}}</p>
+                    </h1>
+                    <div class="main-slider">
+                        <div class="left-slide" (click)="prev()">
+                            <i class="fa fa-chevron-left"></i>
+                        </div>
+                        <div class="slider-control">
+                            <ng-container *ngFor="let text of dataList; let i = index">
+                                <p [@fadeInOut] *ngIf="itemIndex == i">{{dataList[i]['text']}}</p>
+                            </ng-container>
+                        </div>
+                        <div class="right-slide" (click)="next()">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="member-name">
+                        <h3>- Ghina Sallit</h3>
+                    </div>
+                    <div>
+                        <div class="title read-more">
+                            <p style="cursor: pointer" routerLink="/members">{{'_LearnMore' | translate}}</p>
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="heat-map" data-aos="fade-up" data-aos-duration="1000">
+    <div class="title">
+        <p>{{'_HeatMap' | translate}}</p>
+        <div></div>
+    </div>
+
+    <div class="map">
+        <div
+                style="height: 100vh;"
+                leaflet [leafletOptions]="options"
+                (leafletMouseUp)="popupShow($event)"
+                (leafletMapReady)="onMapReady($event)">
+        </div>
+
+<!--        <div class="one_recognized">-->
+<!--            <div class="avatar-name">-->
+<!--                <div class="avatar"><img src="assets/img/member1.jpg" alt=""></div>-->
+<!--                <div class="name">-->
+<!--                    <div class="title">-->
+<!--                        <p>Ghina Sallit</p>-->
+<!--                        <div></div>-->
+<!--                    </div>-->
+<!--                    <div class="recently-joint">-->
+<!--                        <i class="fa fa-facebook"></i>-->
+<!--                        <p>Recently joint member</p>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <a href=""> Go to Profile</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="info-icon">-->
+<!--                <i class="fa fa-university"></i>-->
+<!--                <div class="info-data">American University</div>-->
+<!--            </div>-->
+<!--            <div class="info-icon">-->
+<!--                <i class="fa fa-suitcase"></i>-->
+<!--                <div class="info-data">Informatics Engineer</div>-->
+<!--            </div>-->
+<!--            <div class="info-icon">-->
+<!--                <i class="fa fa-eye"></i>-->
+<!--                <div class="info-data">2.22Views</div>-->
+<!--            </div>-->
+<!--            <div class="info-icon">-->
+<!--                <i class="fa fa-file-text-o"></i>-->
+<!--                <div class="info-data">12 Research papers</div>-->
+<!--            </div>-->
+<!--            <div class="info-icon">-->
+<!--                <i class="fa fa-trophy"></i>-->
+<!--                <div class="info-data">1 Recognized Research</div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+        <div class="statistics">
+            <div class="statis-item">
+                <div class="statistics-count">80+</div>
+                <div class="statistics-action">DOWNLOADS</div>
+            </div>
+            <div class="statis-item">
+                <div class="statistics-count">230+</div>
+                <div lass="statistics-action">RESEARCHER</div>
+            </div>
+            <div class="statis-item">
+                <div class="statistics-count">300+</div>
+                <div lass="statistics-action">RESEARCH</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="full-section partners" data-aos="fade-up" data-aos-duration="1000">
+
+    <div class="full-section with-slider">
+        <div class="top-sticker"></div>
+        <div class="center-sticker"></div>
+        <div class="side">
+            <div class="logo-partner">
+                <img src="assets/img/partners.PNG">
+            </div>
+
+
+        </div>
+        <div class="side">
+            <div class="sec-content">
+                <div class="about-content">
+                    <h1 class="text-left">
+                        <p>{{'_OurPartners' | translate}}</p>
+                    </h1>
+
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam atque
+                            consequuntur
+                            ducimus
+                            et
+                            fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
+                            laborum
+                            officia
+                            voluptatibusLorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam
+                            atque consequuntur
+                            ducimus
+                            et
+                            fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
+                            laborum
+                            officia
+                            voluptatibusLorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam
+                            atque consequuntur
+                            ducimus
+                            et
+                            fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
+                            laborum
+                            officia .</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="side" class="mobile">
+
+            <div class="logo-partner-mobile" style="background: #fff">
+                <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="left">
+                    <img src="assets/img/p1.PNG" width="100%">
+                    <img src="assets/img/p1.PNG" width="100%">
+                    <img src="assets/img/p1.PNG" width="100%">
+                    <img src="assets/img/p1.PNG" width="100%">
+                    <img src="assets/img/p1.PNG" width="100%">
+                    <img src="assets/img/p1.PNG" width="100%">
+                </marquee>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="frequent-asked-questions">
+    <div class="title">
+        <p>{{'_FAQs' | translate}}</p>
+        <div></div>
+    </div>
+
+    <div class="faq">
+        <app-faq-slider [faqData]="faqDetails"></app-faq-slider>
+    </div>
+</div>
+<div class="full-section contact" data-aos="fade-up" data-aos-duration="1000">
+    <div class="side">
+        <div class="sec-content">
+            <h1 class="text-left">{{'_ContactUs' | translate}}</h1>
+            <div class="contact-info">
+                <h3>Email: info@arabyouthcenter.com</h3>
+                <h3>Address: Dubai, X Building 9th floo</h3>
+                <h3>Contact Number: 04 123 4567</h3>
+            </div>
+            <div class="social-contact">
+                <div><i class="fa fa-facebook"></i></div>
+                <div><i class="fa fa-instagram"></i></div>
+                <div><i class="fa fa-twitter"></i></div>
+                <div><i class="fa fa-youtube"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="side">
+        <div class="top-sticker"></div>
+        <div class="sec-content">
+            <div class="title">
+                <p>{{'_Enquiry' | translate}}</p>
+                <div></div>
+            </div>
+            <div class=" form-input">
+                <form class="example-form" [formGroup]="feedbackForm"  [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
+                    <div class="item">
+                        <mat-form-field class="example-full-width">
+                            <input matInput [placeholder]="'_Name' | translate" formControlName="name" required>
+                            <mat-error *ngIf="name.errors.required">{{'_Required' | translate}}</mat-error>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="item">
+                    <mat-form-field>
+                        <input matInput [placeholder]="'_Email' | translate" formControlName="email" required>
+                        <mat-error *ngIf="email.errors.required">{{'_Required' | translate}}</mat-error>
+                        <mat-error *ngIf="email.errors.email">{{'_EmailNotValid' | translate}}</mat-error>
+                    </mat-form-field>
+                    </div>
+                    <div class="item">
+                        <mat-form-field class="example-full-width">
+                            <input type="number" matInput [placeholder]="'_PhoneNumber' | translate" formControlName="phone" required>
+                            <mat-error *ngIf="phone.errors.required">{{'_Required' | translate}}</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <mat-form-field hintLabel="Max 500 characters">
+                        <textarea matInput  #input  [placeholder]="'_Message' | translate" maxlength="500" formControlName="message"  required></textarea>
+                        <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
+                        <mat-error *ngIf="message.errors.required">{{'_Required' | translate}}</mat-error>
+                    </mat-form-field>
+                    <div class="submit"   (click)="submitFeedback()">
+                        <button [disabled]="!feedbackForm.valid">{{'_Submit' | translate}}</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

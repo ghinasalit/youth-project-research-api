@@ -1,0 +1,80 @@
+<div class="nav-collapsed" *ngIf="collapsed">
+  <a routerLink="/home">{{'_HomePage' | translate}}</a>
+  <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+  <a routerLink="/about">{{'_AboutUs' | translate}}</a>
+  <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+  <a routerLink="/members">{{'_Our_Members' | translate}}</a>
+  <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+  <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+</div>
+<div class="full-section register" data-aos-duration="1000">
+  <div class="side">
+    <div class="sec-img">
+      <img src="assets/img/research.jpg" alt="">
+    </div>
+  </div>
+  <div class="side">
+    <div class="navbar-login logged">
+      <div class="navbar"
+           [style.z-index]="collapsed ? '550' : ''"
+           [style.background-color]="collapsed ? '#fff' : ''">
+        <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+          <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+        </a>
+      </div>
+    </div>
+    <div class="sec-content">
+      <div class="title">
+        <p>Lets Share Knowledge!</p>
+        <div></div>
+      </div>
+      <div class="form-input">
+        <form class="example-form" [formGroup]="registerForm">
+          <div class="item-full-name">
+            <mat-form-field class="example-full-width first-name">
+              <input matInput placeholder="First Name" formControlName="f_name" required>
+              <mat-error *ngIf="f_name.errors.required">{{'_Required' | translate}}</mat-error>
+
+            </mat-form-field>
+            <mat-form-field class="example-full-width last-name">
+              <input matInput placeholder="Last Name" formControlName="l_name" required>
+              <mat-error *ngIf="l_name.errors.required">{{'_Required' | translate}}</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <input matInput [placeholder]="'_Email' | translate" formControlName="email" required>
+              <mat-error  *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="User Name" formControlName="username" required>
+                <mat-error *ngIf="username.errors.required">{{'_Required' | translate}}</mat-error>
+
+              </mat-form-field>
+            </div>
+          <div class="item">
+            <mat-form-field>
+              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"  formControlName="password" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="password.errors.required">{{'_Required' | translate}}</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="submit">
+            <button  [disabled]="!registerForm.valid"  (click)="openDialog()">{{'_Register' | translate}}</button>
+<!--            <input type="file" class="form-control" class="dropify" formControlName="File" #File>-->
+<!--            <button type="submit" class="btn btn-default" (click)="upload(File.value)" >Submit</button>-->
+
+          </div>
+          <div class="go-login"><P>Already have an account?</P><a routerLink="/login">{{'_Login' | translate}}</a></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

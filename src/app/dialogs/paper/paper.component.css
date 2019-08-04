@@ -1,0 +1,107 @@
+h3 , h6 , p{
+    color: #1B2850
+
+}
+
+.close-desc {
+    display: flex;
+    justify-content: space-between;
+}
+.close-dialog {
+    width: 45px;
+    height: 45px;
+    background: #1B2850;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
+
+
+.bookmark {
+    right: 150px;
+    text-align: right;
+    position: relative;
+    top: -33px;
+    font-size: 35px;
+    color: #75CDDD;
+}
+
+.cards-items h3 {
+    margin-top: -35px;
+}
+
+.paper-card-info{
+
+    display: flex;
+}
+
+.by {
+    margin-right: 3px;
+    color: #75cddd;
+}
+
+.paper-card-info i{
+    margin-right: 5px;
+    margin-top: 7px;
+    color: #75cddd;
+}
+
+.cards-items .title div{
+    border: 6px solid #1B2850;
+}
+
+
+.title-search {
+    display: flex;
+    justify-content: space-between;
+}
+
+ .title div{
+    border: 6px solid #1B2850;
+     width: 205px;
+}
+
+
+
+.view-download{
+    display: flex;
+    margin-top: 33px;
+}
+
+
+.views-paper , .download-paper{
+    display: flex;
+}
+
+.view-download i{
+    width: 10px;
+    color: #75cddd;
+    margin-right: 7px;
+    margin-top: 7px;
+}
+
+.view-download h6{
+    cursor: pointer;
+}
+
+.views-paper{
+    margin-right: 10px;
+    width: 115px;
+}
+
+.read-more{
+    width: 100%;
+}
+
+.read-more p{
+    font-weight: bold ;
+}
+
+.read-more .title{
+    float: right;
+}
+
+.read-more .title div{
+    border: 6px solid #75cddd;
+}
+

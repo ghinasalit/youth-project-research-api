@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/css/font-awesome.css';
+@import 'assets/css/font-styles.css';
+@import 'assets/css/deeppurple-amber.css';
+@import 'assets/css/datepicker.css';
+@import 'assets/css/animation.css';
+@import 'assets/css/aos.css';
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #1b2850;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #1b2850;
+}

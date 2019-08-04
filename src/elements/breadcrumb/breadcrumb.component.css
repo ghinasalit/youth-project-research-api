@@ -1,0 +1,26 @@
+.breadcrumb-flow {
+    border-bottom: 1px solid #cac7c7;
+    margin: 5px 75px;
+    padding: 20px 0;
+}
+
+.print-share {
+    float: right;
+}
+
+.flow {
+    text-align: left;
+}
+
+.fa {
+    margin: 0 10px
+}
+
+.lastItem {
+    color: #f8d84c;
+}
+
+.print-share i {
+    cursor: pointer;
+    font-size: 20px;
+}

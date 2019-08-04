@@ -1,0 +1,6156 @@
+@media (min-width: 1661px) {
+    /*home*/
+    .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 38%;
+        top: 30px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    app-home .top-home-login .info-user img {
+        width: 215px;
+        height: 190px;
+        object-fit: cover;
+    }
+
+
+
+
+    .full-section .left-sticker {
+        height: 45px;
+        width: 155px;
+        position: absolute;
+        background: #75CDDD;
+        left: 0%;
+        top: 110px;
+        z-index: 100;
+    }
+
+
+    .full-section .top-sticker {
+        height: 155px;
+        width: 45px;
+        position: absolute;
+        background: #FDD97A;
+        left: 5%;
+        z-index: 100;
+    }
+
+
+    .partners .top-sticker {
+        height: 155px;
+        width: 45px;
+        position: absolute;
+        background: #75cddd;
+        left: 49%;
+        top: 40%;
+        z-index: 100;
+    }
+
+
+    .contact .top-sticker {
+        height: 155px;
+        width: 55px;
+        position: absolute;
+        background: #FDD97A;
+        left: 90%;
+        z-index: 100;
+    }
+
+
+    /*profile*/
+    /*upload paper*/
+    .upload-file {
+        height: 835px;
+    }
+
+
+    app-members .full-section .sec-content, app-about .full-section .sec-content {
+        text-align: left;
+        display: flex;
+        width: 85%;
+        margin-left: 80px;
+        margin-top: 70px;
+    }
+
+    app-members .social {
+        display: inline-block;
+        margin-right: 0;
+        margin-top: 150px;
+    }
+
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+
+
+    /*home*/
+    .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 36%;
+        top: 30px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .desc-user {
+        font-size: 17px;
+        margin: 35px 10px 35px 0;
+    }
+
+    app-home .card-item .title {
+        padding: 35px 75px;
+        text-align: left;
+    }
+
+    .full-section .left-sticker {
+        height: 45px;
+        width: 155px;
+        position: absolute;
+        background: #75CDDD;
+        left: 0%;
+        top: 110px;
+        z-index: 100;
+    }
+
+
+    .full-section .top-sticker {
+        height: 155px;
+        width: 45px;
+        position: absolute;
+        background: #FDD97A;
+        left: 5%;
+        z-index: 100;
+    }
+
+
+    .partners .top-sticker {
+        height: 155px;
+        width: 45px;
+        position: absolute;
+        background: #75cddd;
+        left: 49%;
+        top: 40%;
+        z-index: 100;
+    }
+
+    .contact .top-sticker {
+        height: 155px;
+        width: 55px;
+        position: absolute;
+        background: #FDD97A;
+        left: 90%;
+        z-index: 100;
+    }
+
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 65px 20px;
+    }
+
+
+    .card-item .title {
+        padding: 35px 65px;
+        text-align: left;
+    }
+
+    .info-user {
+        padding: 0 50px;
+    }
+
+    .social i {
+        font-size: 20px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+
+    app-home .top-home-login .info-user img {
+        width: 215px;
+        height: 190px;
+        object-fit: cover;
+    }
+
+    /*upload paper*/
+    .upload-file {
+        height: 835px;
+    }
+
+
+
+    .title {
+        font-size: 40px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    /*about*/
+    .content p {
+        margin: 0 12px 0 0;
+        font-size: 18px;
+    }
+
+    .about-content .text-left p {
+        font-size: 45px;
+    }
+
+    .content {
+        margin-top: 40px;
+    }
+
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 105px 140px;
+    }
+
+    /*members*/
+    .profile-container .info-user img {
+        position: absolute;
+        width: 45px;
+        right: 120px;
+        top: 168px;
+    }
+
+
+    .profile-container .paper {
+        position: absolute;
+        top: 230px;
+        right: 65px;
+        color: #1b2850;
+    }
+
+
+    .profile-container .info-user {
+        padding: 0 75px;
+    }
+
+    /*papers*/
+    .views-paper {
+        margin-right: 10px;
+        width: 145px;
+    }
+
+
+    app-members .full-section .sec-content, app-about .full-section .sec-content {
+        text-align: left;
+        display: flex;
+        width: 85%;
+        margin-left: 80px;
+        margin-top: 70px;
+    }
+
+    app-members .social {
+        display: inline-block;
+        margin-right: 0;
+        margin-top: 150px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+
+
+    /*home*/
+    .full-section {
+        position: relative;
+        background: #F1F2F2;
+        height: 690px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    app-home .card-item p {
+        font-size: 18px;
+    }
+
+    app-home .card-item .title {
+        padding: 35px 38px;
+        text-align: left;
+    }
+
+
+    .with-slider .slider-control {
+        padding: 0 20px;
+        text-align: justify;
+        font-size: 22px;
+    }
+
+  h3{
+      font-size: 20px;
+  }
+
+      .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 36%;
+        top: 30px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .right-section, .left-section {
+        width: 50%;
+    }
+
+    .login-register {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: normal;
+        color: #1b2850;
+        cursor: pointer;
+    }
+
+    .navbar {
+        height: 100%;
+        width: 75px;
+        background-color: #1b2850;
+        margin: 0 !important;
+        border-radius: 0;
+    }
+
+    .navbar-login {
+        display: flex;
+        height: 65px;
+        direction: rtl;
+    }
+
+
+    #nav-toggle {
+        cursor: pointer;
+        padding: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .title div {
+        border: 10px solid #75cddd;
+        background-color: #75cddd;
+        width: 155px;
+    }
+
+    .desc-user {
+        margin: 35px 45px 30px 0;
+        font-size: 15px;
+    }
+
+
+    .info-user {
+        padding: 0 20px;
+    }
+
+
+    .cards-icon {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 95px;
+    }
+
+    .box {
+        width: 140px;
+        height: 140px;
+        background-color: #75cddd;
+    }
+
+    .social-paper img {
+        position: absolute;
+        right: 35px;
+        bottom: 140px;
+        width: 105px;
+    }
+
+    .paper {
+        bottom: -16px;
+        margin-bottom: 10px;
+        color: #1b2850;
+        margin-top: 25px;
+    }
+
+
+    .paper p {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+
+    .blue-line {
+        border: 10px solid #75cddd;
+        background-color: #75cddd;
+        width: 128px;
+        position: absolute;
+        bottom: 15px;
+    }
+
+
+    .card-icon-submit img {
+        position: absolute;
+        right: 34px;
+        bottom: 140px;
+        width: 105px;
+    }
+
+    .social i {
+        font-size: 20px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+    .top-home-login .title {
+        margin-left: 20px;
+        margin-top: 132px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .about-content .text-left p {
+        font-size: 35px;
+    }
+
+    .full-section .center-sticker {
+        height: 75px;
+        width: 76px;
+        position: absolute;
+        background: #1b2850;
+        top: 45%;
+        left: 46%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+    }
+
+    .card-item .title {
+        padding: 35px 0px;
+        text-align: left;
+    }
+
+    .card-item p {
+        font-size: 15px;
+    }
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 50px 20px;
+    }
+
+    .card-item img {
+        width: 50%;
+    }
+
+
+    .card-item .title {
+        padding: 35px 57px;
+        text-align: left;
+    }
+
+    .button-action button {
+        width: 175px;
+        height: 70px;
+        background-color: #75cddd;
+        border: none;
+        margin-top: 0;
+        color: #fff;
+        font-size: 25px;
+    }
+
+    .full-section .sec-content {
+        text-align: left;
+        width: 85%;
+        margin-left: 45px;
+        margin-top: 60px;
+    }
+
+    .about-content .content {
+        margin-top: 20px;
+    }
+
+    .content p {
+        margin: 0 12px 0 0;
+        font-size: 22px;
+    }
+
+
+    .partners .top-sticker {
+        height: 155px;
+        width: 50px;
+        position: absolute;
+        background: #75cddd;
+        left: 48%;
+        top: 40%;
+        z-index: 100;
+    }
+
+
+    .heat-map {
+        height: 735px;
+    }
+
+    /*.full-section .center-sticker {*/
+    /*    height: 75px;*/
+    /*    width: 75px;*/
+    /*    position: absolute;*/
+    /*    background: #1b2850;*/
+    /*    top: 45%;*/
+    /*    left: 46%;*/
+    /*    bottom: 50%;*/
+    /*    right: 50%;*/
+    /*    z-index: 100;*/
+    /*}*/
+    .full-section .top-sticker {
+        height: 155px;
+        width: 45px;
+        position: absolute;
+        background: #FDD97A;
+        left: 5%;
+        z-index: 100;
+    }
+
+
+    .partners .center-sticker {
+        height: 75px;
+        width: 75px;
+        position: absolute;
+        background: #1b2850;
+        top: 95%;
+        left: 75%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+    }
+
+    .partners .top-sticker {
+        height: 155px;
+        width: 45px;
+        position: absolute;
+        background: #75cddd;
+        left: 48%;
+        top: 40%;
+        z-index: 100;
+    }
+
+
+    ::ng-deep .frequent-asked-questions {
+        margin: 30px 0 !important;
+    }
+
+
+    .contact .top-sticker {
+        height: 155px;
+        width: 45px;
+        position: absolute;
+        background: #FDD97A;
+        left: 90%;
+        z-index: 100;
+    }
+
+    .become-researcher {
+        height: 645px;
+    }
+
+
+    .contact .sec-content {
+        text-align: left;
+        width: 85%;
+        margin-left: 65px;
+        margin-top: 100px;
+        margin-bottom: 70px;
+    }
+
+
+    /*header*/
+    .header {
+        overflow: hidden;
+        height: 140px;
+        box-shadow: 10px 5px 5px #cac6c6;
+    }
+
+    .logo-left {
+        float: left;
+        padding: 25px 95px;
+    }
+
+    .logo-right {
+        float: right;
+        padding: 20px 95px;
+    }
+
+    .logo-left img {
+        width: 85px;
+    }
+
+    .logo-right img {
+        width: 80px;
+    }
+
+    .logo-left {
+        float: left;
+        padding: 25px 95px;
+    }
+
+    .logo-right {
+        float: right;
+        padding: 20px 95px;
+    }
+
+    .full-name .title {
+        font-size: 45px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 120px;
+        margin-left: 18px;
+    }
+
+    /*register*/
+    .register {
+        height: 835px;
+
+    }
+
+
+    /*profile*/
+    .nav-block {
+        display: inline-grid;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0 0 0 0%;
+    }
+
+    .profile-container .info-user {
+        padding: 0 55px;
+    }
+
+    .research-title {
+        padding: 20px;
+        display: flex;
+        height: 135px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .profile-container .full-name .title {
+        font-size: 35px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 70px;
+        margin-left: 18px;
+    }
+
+    .profile-container .box {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin: 0;
+        margin-right: 52px;
+        background-color: #75cddd;
+    }
+
+    .profile-container .info-user img {
+        position: absolute;
+        width: 45px;
+        right: 95px;
+        top: 144px;
+    }
+
+    .social {
+        display: inline-block;
+        margin-right: 0px;
+        margin-top: 150px;
+    }
+
+    .profile-container .edit-profile {
+        width: 110px;
+        height: 79px;
+        position: absolute;
+        right: 322px;
+        top: 66px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .profile-container .edit-profile i {
+        font-size: 35px;
+        color: #1b2850;
+    }
+
+    .profile-container .paper {
+        position: absolute;
+        top: 190px;
+        right: 65px;
+        color: #1b2850;
+    }
+
+    .profile-container .center-sticker {
+        height: 75px;
+        width: 75px;
+        position: absolute;
+        top: 45%;
+        left: 47%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+        background: #FDD97A;
+    }
+
+    .social {
+        display: inline-block;
+        margin-right: 20px;
+        margin-top: 0;
+    }
+
+    .social i {
+        font-size: 15px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+
+    /*upload paper*/
+    .upload-file {
+        height: 835px;
+    }
+
+
+    .file_name {
+        margin: 60px 0;
+        height: 55px;
+        display: flex;
+        background: #fff;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+
+    .check-filename p {
+        margin-top: 5px;
+        font-size: 17px;
+    }
+
+    .check-filename i {
+        font-size: 30px;
+        margin-right: 5px;
+        color: #75cddd;
+    }
+
+    .paper-file img {
+        width: 115px;
+    }
+
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 110px;
+
+    }
+
+
+    app-about .card-item img {
+        width: 60%;
+        margin-bottom: 30px;
+    }
+
+    app-about .card-item.title p {
+        font-size: 25px;
+    }
+
+    app-about .become-researcher {
+        height: 520px;
+    }
+
+
+    /*members*/
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+        width: 35%;
+    }
+
+    .sort-icon {
+        width: 115px;
+        height: 45px;
+        border: 1px solid;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 45px;
+    }
+
+    .filters {
+        display: flex;
+        justify-content: space-between;
+        width: 10%;
+        color: #1B2850;
+    }
+
+    .filter-icon {
+        width: 115px;
+        height: 45px;
+        border: 1px solid;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 33px;
+
+    }
+
+
+    /*papers*/
+    .views-paper {
+        margin-right: 10px;
+        width: 240px;
+    }
+
+
+    app-members .full-section .sec-content, app-about .full-section .sec-content {
+        text-align: left;
+        display: flex;
+        width: 85%;
+        margin-left: 80px;
+        margin-top: 70px;
+    }
+
+    app-members .social {
+        display: inline-block;
+        margin-right: 0;
+        margin-top: 150px;
+    }
+
+    app-upload-paper .upload-paper-form {
+        width: 100%;
+    }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .profile-container i {
+        margin-right: 5px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+    .edit-profile i {
+        font-size: 22px;
+        color: #1b2850;
+    }
+
+    .edit-profile i {
+        font-size: 12px;
+    }
+
+    .top-home-login .info-user img {
+        width: 145px;
+        height: 145px;
+        object-fit: cover;
+    }
+
+    .title div {
+        border: 8px solid #75cddd;
+        background-color: #75cddd;
+        width: 120px;
+    }
+
+
+    .desc-user {
+        margin: 35px 45px 30px 0;
+        font-size: 13px;
+    }
+
+    .top-home-login i {
+        margin-right: 15px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+    .info-data {
+        font-size: 13px
+    }
+
+    .full-section {
+        position: relative;
+        background: #F1F2F2;
+        height: 590px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+
+    .info-user {
+        padding: 0 15px;
+    }
+
+
+    .info-item {
+        display: flex;
+        justify-content: space-between;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .top-home-login i {
+        margin-right: 15px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+
+    .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 36%;
+        top: 30px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .right-section, .left-section {
+        width: 50%;
+    }
+
+    .login-register {
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        font-weight: normal;
+        color: #1b2850;
+        cursor: pointer;
+        margin: 20px 5px;
+    }
+
+
+    .login-register div {
+        margin-right: 10px;
+    }
+
+    .h2 {
+        font-size: 20px;
+    }
+
+    .navbar {
+        height: 100%;
+        width: 75px;
+        background-color: #1b2850;
+        margin: 0 !important;
+        border-radius: 0;
+    }
+
+    .navbar-login {
+        display: flex;
+        height: 65px;
+        /*align-items: center;*/
+        direction: rtl;
+    }
+
+
+    #nav-toggle {
+        cursor: pointer;
+        padding: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .top-home-login .social {
+        display: inline-block;
+        margin-right: 0px;
+        margin-top: 150px;
+        position: fixed;
+        z-index: 1;
+    }
+
+
+    .top-home-login .social i {
+        font-size: 15px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+
+    .cards-icon {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 95px;
+    }
+
+    .box {
+        width: 110px;
+        height: 110px;
+        background-color: #75cddd;
+    }
+
+    .social-paper img {
+        position: absolute;
+        right: 37px;
+        bottom: 135px;
+        width: 95px;
+    }
+
+    /*.paper {*/
+    /*    bottom: -16px;*/
+    /*    margin-bottom: 10px;*/
+    /*    color: #1b2850;*/
+    /*    margin-top: 25px;*/
+    /*}*/
+    .paper p {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+
+    .card-icon-submit img {
+        position: absolute;
+        right: 37px;
+        bottom: 135px;
+        width: 95px;
+    }
+
+    .social i {
+        font-size: 15px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+    .social {
+        margin-right: 15px;
+        position: absolute;
+        right: 0;
+    }
+
+    .top-home-login .title {
+        margin-left: 20px;
+        margin-top: 132px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+
+    .full-section .center-sticker {
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        background: #1b2850;
+        top: 45%;
+        left: 46%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+    }
+
+    .card-item .title {
+        padding: 35px 0px;
+        text-align: left;
+    }
+
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 28px 20px;
+    }
+
+    .card-item img {
+        width: 50%;
+    }
+
+
+    .card-item .title {
+        padding: 35px 25px;
+        text-align: left;
+    }
+
+
+    .full-section .sec-content {
+        text-align: left;
+        width: 85%;
+        margin-left: 40px;
+        margin-top: 60px;
+    }
+
+    .about-content .content {
+        margin-top: 20px;
+    }
+
+
+    .heat-map {
+        height: 735px;
+    }
+
+    ::ng-deep .frequent-asked-questions {
+        margin: 30px 0 !important;
+    }
+
+
+    .contact .sec-content {
+        text-align: left;
+        width: 85%;
+        margin-top: 100px;
+        margin-bottom: 70px;
+    }
+
+
+    .full-name .title {
+        font-size: 45px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 98px;
+        margin-left: 18px;
+    }
+
+    .about-content .text-left p {
+        font-size: 30px;
+    }
+
+    .content p {
+        margin: 0 12px 0 0;
+        font-size: 15px;
+    }
+
+    .read-more p {
+        font-size: 18px;
+    }
+
+    .full-section .left-sticker {
+        height: 30px;
+        width: 100px;
+        position: absolute;
+        background: #75CDDD;
+        left: 0%;
+        top: 110px;
+        z-index: 100;
+    }
+
+    .title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .card-item p {
+        font-size: 14px;
+    }
+
+    .button-action button {
+        width: 175px;
+        height: 55px;
+        background-color: #75cddd;
+        border: none;
+        margin-top: 0px;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .become-researcher .button-action button {
+        width: 305px !important;
+    }
+
+
+    .become-researcher {
+        height: 590px;
+    }
+
+    .main-slider {
+        margin-top: 25px;
+    }
+
+    .member-name {
+        margin-left: 45px;
+        margin-top: 20px;
+    }
+
+    .our-members .read-more {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 25px;
+        color: #1b2850;
+        padding-left: 35px;
+    }
+
+    .statistics {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 90px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        color: #1b2850;
+        margin-bottom: 20px;
+    }
+
+    .full-section .top-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        background: #FDD97A;
+        left: 5%;
+        z-index: 100;
+    }
+
+    .partners .top-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        background: #75cddd;
+        left: 48%;
+        top: 40%;
+        z-index: 100;
+    }
+
+    .partners .center-sticker {
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        background: #1b2850;
+        top: 95%;
+        left: 75%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+    }
+
+    .with-slider .slider-control {
+        padding: 0 20px;
+        text-align: justify;
+        font-size: 16px;
+    }
+
+    .contact .top-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        background: #FDD97A;
+        left: 90%;
+        z-index: 100;
+    }
+
+    .contact h1 {
+        font-size: 3em;
+        font-weight: 600;
+        margin: 20px 0 0px;
+        text-align: left;
+        color: #1b2850;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .social-contact i {
+        color: #75cddd;
+        font-size: 20px;
+    }
+
+    .contact .title {
+        font-size: 25px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .contact .title div {
+        border: 8px solid #75cddd;
+        background-color: #75cddd;
+        width: 115px;
+    }
+
+    .submit button {
+        width: 115px;
+        height: 45px;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 22px;
+        align-items: right !important;
+    }
+
+
+    .social i {
+        font-size: 14px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+    .paper-section {
+
+        margin: 0
+    }
+
+    /*header*/
+    .header {
+        overflow: hidden;
+        height: 140px;
+        box-shadow: 10px 5px 5px #cac6c6;
+    }
+
+
+    .logo-left img {
+        width: 85px;
+    }
+
+    .logo-right img {
+        width: 80px;
+    }
+
+    .logo-left {
+        float: left;
+        padding: 25px 95px;
+    }
+
+    .logo-right {
+        float: right;
+        padding: 20px 95px;
+    }
+
+    /*login*/
+    .login {
+        height: 835px;
+    }
+
+    /*register*/
+    .register {
+        height: 835px;
+
+    }
+
+    .item-full-name {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /*profile*/
+    .nav-block {
+        display: inline-grid;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0 0 0 0%;
+    }
+
+    .profile-container i {
+        margin-right: 15px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+
+    .profile-container .info-user {
+        padding: 0 25px;
+    }
+
+    .research-title {
+        padding: 20px;
+        display: flex;
+        height: 135px;
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    .profile-container .full-name .title {
+        font-size: 25px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 25px;
+        margin-left: 0;
+    }
+
+    .profile-container .box {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        margin-right: 52px;
+        background-color: #75cddd;
+    }
+
+    .profile-container .info-user img {
+        position: absolute;
+        width: 30px;
+        right: 67px;
+        top: 138px;
+    }
+
+    .social {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 0;
+    }
+
+    .profile-container .edit-profile {
+        width: 110px;
+        height: 79px;
+        position: absolute;
+        right: 268px;
+        top: 66px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .profile-container .edit-profile i {
+        font-size: 35px;
+        color: #1b2850;
+    }
+
+    .profile-container .paper {
+        position: absolute;
+        top: 175px;
+        right: 65px;
+        color: #1b2850;
+    }
+
+
+    .profile-container .center-sticker {
+        height: 55px;
+        width: 43px;
+        position: absolute;
+        top: 45%;
+        left: 47%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+        background: #FDD97A;
+    }
+
+
+    .button-action {
+        text-align: center;
+        margin: 25px;
+    }
+
+
+    /*upload paper*/
+    .upload-file {
+        height: 835px;
+    }
+
+
+    .check-filename i {
+        font-size: 28px;
+        margin-right: 20px;
+        color: #75cddd;
+    }
+
+
+    .check-filename p {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .check-filename i {
+        font-size: 25px;
+        margin-right: 20px;
+        color: #75cddd;
+        width: 12px;
+    }
+
+
+    .upload-paper-form {
+        width: 95%;
+    }
+
+    .permission-radio-button {
+        margin: 10px 0;
+    }
+
+    .paper-file img {
+        width: 105px;
+    }
+
+
+
+
+    .drop-list {
+        display: inline-block;
+        float: left;
+        margin-right: 0px;
+        padding-left: 25px;
+        font-size: 16px;
+        position: relative;
+    }
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 45px;
+
+    }
+
+
+    app-about .card-item img {
+        width: 60%;
+        margin-bottom: 30px;
+    }
+
+    app-about .card-item.title p {
+        font-size: 25px;
+    }
+
+    app-about .become-researcher {
+        height: 520px;
+    }
+
+
+    app-about .card-item .title {
+        padding: 5px 0;
+        text-align: left;
+    }
+
+    .researshers .text-left p {
+        font-size: 30px;
+    }
+
+    /*members*/
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+        width: 45%;
+    }
+
+
+    .filters {
+        display: flex;
+        justify-content: space-between;
+        width: 13%;
+        color: #1B2850;
+    }
+
+
+    .filter-icon {
+        width: 95px;
+        height: 36px;
+        border: 1px solid;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 24px;
+
+    }
+
+    .card img {
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        height: 300px;
+    }
+
+    .card .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #1B2850;
+        margin-bottom: 25px;
+        width: 90%;
+    }
+
+    .card .title div {
+        border: 8px solid #1B2850;
+        background-color: #1B2850;
+        width: 115px;
+    }
+
+    .characters {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        font-size: 18px;
+        color: #75cddd;
+    }
+
+
+    .sort-icon {
+        width: 95px;
+        height: 36px;
+        border: 1px solid;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 36px;
+    }
+
+
+    app-members .card {
+        flex: 0 1 32%;
+    }
+
+
+    .profile-container {
+        height: 590px;
+    }
+
+    .profile-container .desc-user {
+        margin: 35px 12px 35px 0;
+        font-size: 13px;
+    }
+
+    h6 {
+        font-size: 10px;
+    }
+
+    .cards-items .c-item {
+        border: 1px solid #1b2850;
+        width: 32.5%;
+        margin: 10px 0;
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+
+    .profile-container .box {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        margin-right: 52px;
+        background-color: #75cddd;
+    }
+
+
+    .profile-container .paper {
+        position: absolute;
+        top: 182px;
+        right: 55px;
+        color: #1b2850;
+    }
+
+
+    /*papers*/
+    .views-paper {
+        margin-right: 10px;
+        width: 240px;
+    }
+
+    app-papers .top-home {
+        height: 385px;
+        color: #fff;
+        justify-content: flex-end;
+        background-image: url(../../img/library.jpg);
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+    }
+
+    app-papers .statistics {
+        padding: 107px 90px;
+        font-size: 25px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .upload-paper-form {
+        width: 100%;
+    }
+
+    .lang p {
+        width: 60%;
+    }
+
+    .nav-collapsed a {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 20px 0;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    app-home .card-item .title {
+        padding: 35px 30px;
+        text-align: left;
+    }
+
+
+    app-home .card-item p {
+        font-size: 20px;
+    }
+
+    app-members .full-section .sec-content, app-about .full-section .sec-content {
+        text-align: left;
+        display: flex;
+        width: 85%;
+        margin-left: 40px;
+        margin-top: 70px;
+    }
+
+    app-members .social {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 150px;
+    }
+
+
+    /*app-register*/
+
+
+    app-register .full-section .sec-content , app-login .full-section .sec-content , app-edit-paper  .full-section .sec-content , app-member-details  .full-section .sec-content ,  app-upload-paper  .full-section .sec-content{
+        text-align: left;
+        width: 85%;
+        margin: 70px 24px;
+    }
+
+
+    .submit button{
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+    }
+
+
+    .submit {
+        text-align: center;
+        height: 50px;
+        margin: 20px 0 10px 0;
+        display: flex;
+    }
+
+    .custom-file-upload {
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px 0;
+        font-weight: normal;
+
+    }
+
+    .go-login p {
+        font-size: 14px;
+    }
+
+
+    .clear i {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+
+
+    h2 {
+        font-size: 13px;
+    }
+
+
+    app-home .card-item .title {
+        padding: 26px 27px;
+        text-align: left;
+    }
+
+    .navbar-login {
+        display: flex;
+        height: 55px;
+        direction: rtl;
+    }
+
+    #nav-toggle {
+        cursor: pointer;
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar {
+        height: 100%;
+        width: 55px;
+        background-color: #1b2850;
+        margin: 0 !important;
+        border-radius: 0;
+    }
+
+
+    .login-register {
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        font-weight: normal;
+        color: #fff;
+        cursor: pointer;
+        padding: 20px 10px;
+    }
+
+    .navbar-login div {
+        margin: 0 5px;
+    }
+
+
+    .profile-photo {
+        width: 100%;
+        height: 35%;
+        position: relative;
+    }
+
+    .logged {
+        display: flex;
+        height: 55px;
+        align-items: center;
+        direction: rtl;
+        position: absolute;
+        right: 0px;
+        top: 0;
+    }
+
+
+    .info-user {
+        padding: 0 20px;
+    }
+
+    app-home .top-home-login .info-user img {
+        width: 145px;
+        height: 135px;
+        object-fit: cover;
+    }
+
+    app-home .user-info div {
+        display: flex
+    }
+
+
+    .social-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    app-home .top-home-login .social i {
+        font-size: 14px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+    .top-home-login .social i {
+        font-size: 18px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+    .top-home-login .social {
+        display: inline-block;
+        margin-right: 5px;
+        margin-top: 70px;
+    }
+
+    .top-home-login i {
+        margin-right: 5px;
+        color: #1B2850;
+        font-size: 20px;
+    }
+
+
+    .full-name .title {
+        font-size: 45px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 108px;
+        margin-left: 18px;
+    }
+
+
+    .info-data {
+        font-size: 14px;
+    }
+
+
+    .top-home-login i {
+        margin-right: 5px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+    /*.info-item {*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
+    /*    height: 30px;*/
+    /*    margin-bottom: 10px;*/
+    /*}*/
+    app-home .info .info-item {
+        display: flex;
+        height: 0px;
+        margin-bottom: 46px;
+    }
+
+
+    .full-name h2 {
+        font-size: 20px;
+
+    }
+
+
+    .desc-user {
+        margin: 13px 22px 20px 0px;
+        font-size: 14px;
+    }
+
+
+    .right-section {
+        color: black;
+        width: 100%;
+        height: 100%;
+    }
+
+    .paper-section {
+        margin-bottom: 23px;
+        margin-top: 0;
+    }
+
+    .cards-icon {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+
+    .box {
+        width: 80px;
+        height: 80px;
+        background-color: #75cddd;
+    }
+
+
+    .paper {
+        position: absolute;
+        right: 58px;
+        bottom: 80px;
+        width: 80px;
+    }
+
+    .social-paper img {
+        position: absolute;
+        right: 59px;
+        bottom: 80px;
+        width: 50px;
+    }
+
+    app-home .info-data {
+        font-size: 13px;
+    }
+
+    .card-item .title div {
+        background-color: #1B2850;
+        border: 7px solid #1B2850;
+        width: 85px;
+    }
+
+
+    .paper p {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .card-icon-submit img {
+        position: absolute;
+        right: 58px;
+        bottom: 80px;
+        width: 50px;
+    }
+
+
+    .paper-section {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .card-icon-research, .card-icon-submit {
+        position: relative;
+        padding: 29px 20px;
+    }
+
+
+    .full-section {
+        position: relative;
+        background: #F1F2F2;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .full-section .side {
+        width: 100%;
+        height: 50%;
+    }
+
+    .full-section .sec-content {
+        text-align: left;
+        width: auto;
+        margin: 25px 20px;
+    }
+
+
+    .our-members .text-left {
+        padding-left: 45px;
+    }
+
+    .social {
+        margin-right: 8px;
+        position: absolute;
+        right: 0;
+    }
+
+    .with-slider .main-slider {
+        display: flex;
+        align-items: center;
+        padding: 0 25px;
+    }
+
+
+    .with-slider .left-slide i, .with-slider .right-slide i {
+        font-size: 20px;
+        color: #75cddd;
+        cursor: pointer;
+
+    }
+
+
+    .social i {
+        font-size: 14px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .blue-line {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 100px;
+        position: absolute;
+        bottom: -15px;
+    }
+
+    .read-more {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 20px;
+    }
+
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .read-more {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 20px;
+    }
+
+
+    .become-researcher {
+        display: flex;
+        flex-direction: column;
+        padding: 35px 20px;
+    }
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 30px 0px;
+    }
+
+    .card-item .title {
+        padding: 35px 0px;
+        text-align: left;
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .card-item .title div {
+        background-color: #1B2850;
+        border: 7px solid #1B2850;
+    }
+
+    .become-researcher .button-action button {
+        width: 250px !important;
+    }
+
+    .button-action button {
+        width: 175px;
+        height: 45px;
+        background-color: #75cddd;
+        border: none;
+        margin-top: 0px;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .become-researcher {
+        height: 415px;
+    }
+
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .read-more[_ngcontent-c5] {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 20px;
+    }
+
+    .full-section .left-sticker {
+        height: 25px;
+        width: 90px;
+        position: absolute;
+        background: #75CDDD;
+        left: 0%;
+        top: 30px;
+        z-index: 100;
+    }
+
+    .become-researcher {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 30px 0px;
+    }
+
+
+    .card-item p {
+        font-size: 12px;
+    }
+
+    .card-item .title {
+        padding: 35px 0px;
+        text-align: left;
+    }
+
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .social-paper .title {
+        margin-top: 30px;
+    }
+
+    .paper-section .title {
+        padding: 0 32px
+
+    }
+
+    .card-item.title div {
+        background-color: #1B2850;
+        border: 7px solid #1B2850;
+    }
+
+    .become-researcher .button-action button {
+        width: 250px !important;
+    }
+
+    .button-action button {
+        width: 175px;
+        height: 45px;
+        background-color: #75cddd;
+        border: none;
+        margin-top: 0px;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .become-researcher {
+        height: 415px;
+    }
+
+    h4, .h4 {
+        font-size: 13px;
+    }
+
+    .main-slider {
+        margin-top: 0px;
+    }
+
+    /*.full-section {*/
+    /*    position: relative;*/
+    /*    background: #F1F2F2;*/
+    /*    height: 685px;*/
+    /*    display: flex;*/
+    /*    flex-direction: column;*/
+    /*    width: 100%;*/
+    /*}*/
+    .heat-map[_ngcontent-c5] {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+
+    .statistics {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 30px;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        color: #1b2850;
+        margin-bottom: 20px;
+    }
+
+    .heat-map {
+        height: 685px;
+    }
+
+    .about-content .content {
+        margin-top: 0px;
+        padding: 0 30px 0 0;
+    }
+
+    .content p {
+        margin: 15px 0;
+        font-size: 14px
+    }
+
+    .full-section .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 97%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    .full-section .top-sticker {
+        height: 100px;
+        width: 25px;
+        position: absolute;
+        background: #FDD97A;
+        left: 5%;
+        z-index: 100;
+    }
+
+    .partners .top-sticker {
+        height: 25px;
+        width: 90px;
+        position: absolute;
+        background: #75cddd;
+        left: 37%;
+        top: 53%;
+        z-index: 100;
+    }
+
+    .frequent-asked-questions {
+        margin: 20px 0
+    }
+
+    .frequent-asked-questions .title {
+        padding: 0 20px;
+    }
+
+    .accordion {
+        background-color: #fff;
+        color: #444;
+        cursor: pointer;
+        padding: 20px 20px;
+        width: 100%;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        transition: 0.4s;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    .accordion:after {
+        content: "\f054";
+        color: #75cddd;
+        font-weight: bold;
+        float: inherit;
+        margin-left: 15px;
+        font-size: 15px;
+    }
+
+    .contact h1 {
+        font-size: 2.5em;
+        font-weight: 600;
+        margin: 20px 0 20px;
+        text-align: left;
+        color: #1b2850;
+    }
+
+    .panel {
+        padding: 0 20px;
+        background-color: #EEF1F1;
+        max-height: 0;
+        overflow: hidden;
+        border: none;
+        transition: max-height 0.2s ease-out;
+    }
+
+
+    h3 {
+        font-size: 15px;
+    }
+
+    .contact .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .with-slider .slider-control {
+        padding: 0 20px;
+        text-align: justify;
+        font-size: 14px;
+    }
+
+    .contact .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+
+    .submit button {
+        width: 90px;
+        height: 40px;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        align-items: right !important;
+    }
+
+
+    .member-name {
+        margin-left: 45px;
+        margin-top: 18px;
+    }
+
+
+    .contact .top-sticker {
+        height: 100px;
+        width: 25px;
+        position: absolute;
+        background: #FDD97A;
+        left: 80%;
+        top: 0px;
+        z-index: 100;
+    }
+
+
+    .contact .form-input {
+        padding-right: 0;
+    }
+
+
+    .social-contact i {
+        color: #75cddd;
+        font-size: 18px;
+    }
+
+
+    /*header*/
+    .logo-left img {
+        width: 55px;
+    }
+
+    .logo-right img {
+        width: 55px
+    }
+
+    .header {
+        overflow: hidden;
+        height: 90px;
+        box-shadow: 10px 5px 5px #cac6c6;
+    }
+
+    .logo-right {
+        float: right;
+        padding: 11px 15px;
+    }
+
+    .logo-left {
+        float: left;
+        padding: 20px 15px;
+    }
+
+    .sharing .title {
+        padding: 50px 0;
+    }
+
+    /*login*/
+    .login {
+        height: auto;
+    }
+
+
+    /*register*/
+    .register {
+        height: auto;
+    }
+
+    .item-full-name {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /*profile*/
+    .nav-block {
+        display: inline-grid;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0%;
+    }
+
+
+    .profile-container .info-user {
+        padding: 0 25px;
+    }
+
+    .profile-container .info-user img {
+
+        position: absolute;
+        width: 35px;
+        right: 66px;
+        top: 527px;
+
+    }
+
+    .research-title {
+        padding: 20px;
+        display: flex;
+        height: 135px;
+        width: 51%;
+        justify-content: space-between;
+    }
+
+    .profile-container .full-name .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 80px;
+        margin-left: 18px;
+    }
+
+    .profile-container .box {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin: 0 53px;
+        background-color: #75cddd;
+    }
+
+
+    .social {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 0;
+    }
+
+    .profile-container .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 297px;
+        top: 478px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .profile-container .edit-profile i {
+        font-size: 25px;
+        color: #1b2850;
+    }
+
+    .profile-container .paper {
+        position: absolute;
+        top: 575px;
+        right: 54px;
+        color: #1b2850;
+    }
+
+    .profile-container .center-sticker {
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        top: 44%;
+        left: 47%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+        background:#FDD97A;
+    }
+
+    .paper p {
+        font-weight: bold;
+        font-size: 12px;;
+    }
+
+    .edit-profile i {
+        font-size: 22px;
+        color: #1b2850;
+    }
+
+    .profile-container .left-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        left: 5%;
+        z-index: 100;
+        background: #75CDDD;
+    }
+
+    .profile-container .full-name .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 0;
+        margin-left: 18px;
+    }
+
+    .profile-container .full-name {
+        margin-top: 15px;
+    }
+
+    .profile-container .profile-photo {
+        height: 455px;
+        width: 100%;
+    }
+
+    .profile-container .desc-user {
+        margin: 23px 23px 23px 0;
+        font-size: 14px;
+    }
+
+    .social-user {
+        margin-top: 18px;
+    }
+
+
+    .research-section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid #ececec;
+    }
+
+
+    .profile-container {
+        height: auto;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        background-color: #f1f2f2;
+    }
+
+    .full-name .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 0;
+        margin-left: 18px;
+    }
+
+    .full-name {
+        margin-top: 15px;
+    }
+
+    app-home .full-name {
+        margin-top: 65px;
+    }
+
+    .profile-photo {
+        width: 100%;
+    }
+
+
+    .desc-user {
+        margin: 23px 0;
+        font-size: 14px;
+    }
+
+    .social-user {
+        margin-top: 18px;
+    }
+
+    .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 20px;
+        top: 655px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .box {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin: 0 53px;
+        background-color: #75cddd;
+    }
+
+
+    .desc-use {
+        margin: 23px 23px 23px 0;
+        font-size: 17px;
+    }
+
+
+    .research-section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .cards-items {
+        display: flex;
+        flex-direction: column;
+        color: #1B2850;
+    }
+
+
+    .cards-items .c-item {
+        border: 1px solid #1b2850;
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px 35px;
+        flex-wrap: wrap;
+    }
+
+    .title-search {
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: column;
+    }
+
+    .research-title {
+        padding: 0;
+        display: flex;
+        height: 55px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    .research-search {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+        padding: 0;
+    }
+
+    .nav-block {
+        display: inline-grid;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+
+    .drop-list {
+        display: inline-block;
+        float: left;
+        margin-right: 0px;
+        padding-left: 0;
+        font-size: 18px;
+        position: relative;
+    }
+
+    .papers-tap {
+        margin-top: 55px;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .paper {
+        position: absolute;
+        top: 385px;
+        right: 53px;
+        color: #1b2850;
+    }
+
+
+    .info-icon {
+        font-size: 23px;
+        width: 100%;
+        display: flex;
+        margin-bottom: 10px;
+
+    }
+
+    .profile-container i {
+        margin-right: 15px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+    .info-item .social-user {
+        display: flex;
+        justify-content: space-between !important;
+    }
+
+    .views-paper {
+        margin-right: 10px;
+        width: 172px;
+    }
+
+    /*upload paper*/
+    .upload-file {
+        height: auto;
+    }
+
+    .check-filename p {
+        margin-top: 5px;
+        font-size: 13px;
+    }
+
+
+
+    .paper-file img {
+        width: 70px;
+    }
+
+    .permissions{
+        width: 60%;
+    }
+
+    .paper-permissions{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0px;
+    }
+
+
+    .file-paper .title p {
+        font-size: 12px;
+    }
+
+    ::ng-deep .mat-radio-label-content{
+
+        font-size: 12px !important;
+
+    }
+
+    app-permission-pepar .form-input {
+        margin-top: 25px;
+    }
+
+    .permission-radio-button {
+        margin: 10px 0;
+    }
+
+
+    .paper-file {
+
+        margin: 40px 0 20px;
+    }
+
+
+
+    /*about*/
+    app-about .full-section .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 74%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    app-about .research-all-around .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 68%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    .researshers .text-left p {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 45px;
+
+    }
+
+
+    app-about .card-item img {
+        width: 60%;
+        margin-bottom: 30px;
+    }
+
+    app-about .card-item.title p {
+        font-size: 25px;
+    }
+
+    app-about .become-researcher {
+        height: auto;
+    }
+
+
+    app-about .card-item .title {
+        padding: 5px 0;
+        text-align: left;
+    }
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0px;
+    }
+
+    app-about .card-item p {
+        font-size: 20px;
+    }
+
+
+    app-about .card-item .title div {
+        border: 8px solid #1b2850;
+        background-color: #1b2850;
+        width: 88px;
+    }
+
+    app-about .researshers .content {
+        margin-top: 0px;
+    }
+
+
+    /*members*/
+    .members-cards {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 0;
+
+    }
+
+    app-members .full-section .sec-content, app-about .full-section .sec-content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    app-about h1 {
+        margin-top: 0;
+    }
+
+    .characters-filters {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .characters {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 15px;
+        color: #75cddd;
+    }
+
+
+    .card img {
+        width: 100%;
+        object-fit: cover;
+        height: 440px;
+    }
+
+    .card .title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #1B2850;
+        margin-bottom: 25px;
+        width: 90%;
+    }
+
+
+    .card .title div {
+        border: 7px solid #1B2850;
+        background-color: #1B2850;
+        width: 115px;
+    }
+
+
+    .members-section {
+        display: flex;
+        flex-direction: column;
+        padding: 45px 25px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+        width: 80%;
+    }
+
+    .filters {
+        display: flex;
+        justify-content: space-between;
+        width: 20%;
+        color: #1B2850;
+        position: absolute;
+        left: 73%;
+        margin-top: 55px;
+    }
+
+    .filter-icon {
+        width: 48px;
+        height: 35px;
+        border: 1px solid;
+        border-radius: 8px;
+        text-align: center;
+        margin-left: 15px;
+        font-size: 25px;
+    }
+
+
+    /*papers*/
+    .views-paper {
+        margin-right: 10px;
+        width: 240px;
+    }
+
+    app-papers .top-home {
+        height: 385px;
+        color: #fff;
+        justify-content: flex-end;
+        background-image: url(../../img/library.jpg);
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+        position: relative;
+    }
+
+    app-papers .statistics {
+        padding: 147px 10px;
+        font-size: 17px;
+        font-weight: bold;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    app-members .research-input {
+
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+        right: 76px;
+        top: 46%;
+        width: auto;
+
+
+    }
+
+
+    .upload-paper-form {
+        width: 100%;
+    }
+
+    .nav-collapsed a {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 20px 0;
+        color: #fff;
+        cursor: pointer;
+    }
+
+
+    .accordion {
+        background-color: #fff;
+        color: #444;
+        cursor: pointer;
+        padding: 20px 35px;
+        width: 100%;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        transition: 0.4s;
+        text-align: left;
+        font-size: 22px;
+        font-weight: 800;
+    }
+
+
+    .accordion:after {
+        content: "\f054";
+        color: #75cddd;
+        font-weight: bold;
+        float: inherit;
+        margin-left: 15px;
+        font-size: 18px;
+    }
+
+    app-home .card-item p {
+        font-size: 10px;
+    }
+
+    /*app-register*/
+
+
+
+
+    app-register .full-section .sec-content , app-login .full-section .sec-content , app-edit-paper .full-section .sec-content {
+        text-align: left;
+        width: 85%;
+        margin: 70px 24px;
+    }
+
+
+    .submit button{
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+    }
+
+
+    .custom-file-upload {
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px;
+        font-weight: normal;
+
+    }
+
+    .submit {
+        text-align: center;
+        height: 50px;
+        margin: 20px 0 10px 0;
+        display: flex;
+    }
+
+    .go-login p {
+        font-size: 15px;
+    }
+
+    .check-filename i {
+        font-size: 28px;
+        margin-right: 20px;
+        color: #75cddd;
+    }
+
+
+    .clear i {
+        font-size: 28px;
+    }
+
+    .drag-box p {
+        padding: 60px;
+        font-size: 18px;
+        color: #707070;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+
+
+    h2 {
+        font-size: 13px;
+    }
+
+    .navbar-login {
+        display: flex;
+        height: 55px;
+        align-items: center;
+        direction: rtl;
+    }
+
+    #nav-toggle {
+        cursor: pointer;
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar {
+        height: 100%;
+        width: 55px;
+        background-color: #1b2850;
+        margin: 0 !important;
+        border-radius: 0;
+    }
+
+
+    .login-register {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: normal;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .navbar-login div {
+        margin: 0 5px;
+    }
+
+
+    .profile-photo {
+        width: 100%;
+        height: 35%;
+        position: relative;
+    }
+
+    .logged {
+        display: flex;
+        height: 55px;
+        align-items: center;
+        direction: rtl;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+
+    .info-user {
+        padding: 0 20px;
+    }
+
+    .top-home-login .info-user img {
+        width: 130px;
+        height: 140px;
+        object-fit: cover;
+    }
+
+    .social-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .top-home-login .social i {
+        font-size: 14px;
+        color: #1b2850;
+        margin-bottom: 13px;
+    }
+
+    .top-home-login .social {
+        display: inline-block;
+        margin-right: 5px;
+        margin-top: 70px;
+    }
+
+    .top-home-login i {
+        margin-right: 5px;
+        color: #1B2850;
+        font-size: 20px;
+    }
+
+
+    .info-data {
+        font-size: 12px;
+    }
+
+    .edit-profile {
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        right: 10%;
+        top: 260px;
+        color: #1B2850;
+        text-align: center;
+        font-size: 12px;
+    }
+
+
+    .top-home-login i {
+        margin-right: 5px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+    .info-item {
+        display: flex;
+        justify-content: space-between;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+
+    .full-name h2 {
+        font-size: 20px;
+
+    }
+
+
+    .desc-user {
+        margin: 13px 22px 20px 0px;
+        font-size: 14px;
+    }
+
+
+    .right-section {
+        color: black;
+        width: 100%;
+        height: 100%;
+    }
+
+    .paper-section {
+        margin-bottom: 23px;
+        margin-top: 0;
+    }
+
+    .cards-icon {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+
+    .box {
+        width: 65px;
+        height: 65px;
+        background-color: #75cddd;
+    }
+
+
+    .paper {
+        bottom: -14px;
+        margin-bottom: -18px;
+        color: #1b2850;
+        margin-top: 25px;
+    }
+
+    .social-paper img {
+        position: absolute;
+        right: 59px;
+        bottom: 84px;
+        width: 39px;
+    }
+
+    app-home .card-item p {
+        font-size: 10px;
+    }
+
+
+    app-home .card-item .title {
+        padding: 35px 15px;
+        text-align: left;
+    }
+
+
+    .card-icon-submit img {
+        position: absolute;
+        right: 59px;
+        bottom: 84px;
+        width: 39px;
+    }
+
+    .social-paper .title {
+        margin-top: 29px;
+        padding: 0 18px;
+    }
+
+    .paper-section {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .card-icon-research, .card-icon-submit {
+        position: relative;
+        padding: 29px 18px;
+    }
+
+
+    .full-section {
+        position: relative;
+        background: #F1F2F2;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .full-section .side {
+        width: 100%;
+        height: 50%;
+    }
+
+    .full-section .sec-content {
+        text-align: left;
+        width: auto;
+        margin: 25px 20px;
+        /*display: flex*/
+    }
+
+
+    .our-members .text-left {
+        padding-left: 45px;
+    }
+
+    .social {
+        margin-right: 8px;
+        position: absolute;
+        right: 0;
+    }
+
+    .with-slider .main-slider {
+        display: flex;
+        align-items: center;
+        padding: 0 25px;
+    }
+
+
+    .with-slider .left-slide i, .with-slider .right-slide i {
+        font-size: 20px;
+        color: #75cddd;
+        cursor: pointer;
+
+    }
+
+
+    .social i {
+        font-size: 14px;
+        color: #1b2850;
+        margin-bottom: 13px;
+    }
+
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .blue-line {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 85px;
+        position: absolute;
+        bottom: -15px;
+    }
+
+    .read-more {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 20px;
+    }
+
+    .full-section .left-sticker {
+        height: 25px;
+        width: 90px;
+        position: absolute;
+        background: #75CDDD;
+        left: 0%;
+        top: 30px;
+        z-index: 100;
+    }
+
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .read-more {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 20px;
+    }
+
+
+    .become-researcher {
+        display: flex;
+        flex-direction: column;
+        padding: 35px 20px;
+    }
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 30px 0px;
+    }
+
+    .card-item .title {
+        padding: 35px 0px;
+        text-align: left;
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .card-item.title div {
+        background-color: #1B2850;
+        border: 7px solid #1B2850;
+    }
+
+    .become-researcher .button-action button {
+        width: 250px !important;
+    }
+
+    .button-action button {
+        width: 175px;
+        height: 45px;
+        background-color: #75cddd;
+        border: none;
+        margin-top: 0px;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .become-researcher {
+        height: 415px;
+    }
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .read-more {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        /* justify-content: space-between; */
+        justify-content: flex-start;
+    }
+
+    .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 20px;
+    }
+
+
+    .become-researcher {
+        display: flex;
+        flex-direction: column;
+        padding: 33px 20px;
+    }
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 30px 0px;
+    }
+
+
+    .card-item p {
+        font-size: 12px;
+    }
+
+    .card-item .title {
+        padding: 35px 0px;
+        text-align: left;
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .card-item .title div {
+        width: 80px;
+        background-color: #1B2850;
+        border: 7px solid #1B2850;
+    }
+
+    .become-researcher .button-action button {
+        width: 250px !important;
+    }
+
+    .button-action button {
+        width: 175px;
+        height: 45px;
+        background-color: #75cddd;
+        border: none;
+        margin-top: 0px;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .become-researcher {
+        height: 415px;
+    }
+
+    h4 {
+        font-size: 13px;
+    }
+
+    .main-slider {
+        margin-top: 0;
+    }
+
+
+    .heat-map {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+
+    .statistics {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 30px;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        color: #1b2850;
+        margin-bottom: 20px;
+    }
+
+    .heat-map {
+        height: 685px;
+    }
+
+    .about-content .content {
+        margin-top: 0px;
+        padding: 0 30px 0 0;
+    }
+
+    .content p {
+        margin: 15px 0;
+        font-size: 14px
+    }
+
+    .full-section .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 97%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    app-about .full-section .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 74%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    app-about .research-all-around .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 68%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+
+    .full-section .top-sticker {
+        height: 100px;
+        width: 25px;
+        position: absolute;
+        background: #FDD97A;
+        left: 5%;
+        z-index: 100;
+    }
+
+    .partners .top-sticker {
+        height: 25px;
+        width: 90px;
+        position: absolute;
+        background: #75cddd;
+        left: 37%;
+        top: 58%;
+        z-index: 100;
+    }
+
+
+
+    .frequent-asked-questions {
+        margin: 20px 0
+    }
+
+    .frequent-asked-questions .title {
+        padding: 0 20px;
+    }
+
+    .accordion {
+        background-color: #fff;
+        color: #444;
+        cursor: pointer;
+        padding: 20px 20px;
+        width: 100%;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        transition: 0.4s;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    .accordion:after {
+        content: "\f054";
+        color: #75cddd;
+        font-weight: bold;
+        float: inherit;
+        margin-left: 15px;
+        font-size: 15px;
+    }
+
+    .contact h1 {
+        font-size: 2.5em;
+        font-weight: 600;
+        margin: 20px 0 20px;
+        text-align: left;
+        color: #1b2850;
+    }
+
+    .panel {
+        padding: 0 20px;
+        background-color: #EEF1F1;
+        max-height: 0;
+        overflow: hidden;
+        border: none;
+        transition: max-height 0.2s ease-out;
+    }
+
+
+    h3 {
+        font-size: 15px;
+    }
+
+    .contact .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .with-slider .slider-control {
+        padding: 0 20px;
+        text-align: justify;
+        font-size: 14px;
+    }
+
+    .contact .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+
+    .submit button {
+        width: 90px;
+        height: 40px;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        align-items: right !important;
+    }
+
+
+    .member-name {
+        margin-left: 45px;
+        margin-top: 18px;
+    }
+
+
+    .contact .top-sticker {
+        height: 100px;
+        width: 25px;
+        position: absolute;
+        background: #FDD97A;
+        left: 80%;
+        top: 0px;
+        z-index: 100;
+    }
+
+
+    .contact .form-input {
+        padding-right: 0;
+    }
+
+
+    .social-contact i {
+        color: #75cddd;
+        font-size: 17px;
+    }
+
+
+    /*header*/
+    .logo-left img {
+        width: 55px;
+    }
+
+    .logo-right img {
+        width: 55px
+    }
+
+    .header {
+        overflow: hidden;
+        height: 90px;
+        box-shadow: 10px 5px 5px #cac6c6;
+    }
+
+    .logo-right {
+        float: right;
+        padding: 11px 15px;
+    }
+
+    .logo-left {
+        float: left;
+        padding: 20px 15px;
+    }
+
+    .sharing .title {
+        padding: 50px 0;
+    }
+
+
+    /*login*/
+    .login {
+        height: auto;
+    }
+
+    /*register*/
+    .register {
+        height: auto;
+    }
+
+    .item-full-name {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /*profile*/
+    .nav-block {
+        display: inline-grid;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0%;
+    }
+
+
+    .profile-container .info-user {
+        padding: 0 25px;
+    }
+
+    .profile-container .info-user img {
+
+        position: absolute;
+        width: 35px;
+        right: 66px;
+        top: 527px;
+
+    }
+
+    .research-title {
+        padding: 20px;
+        display: flex;
+        height: 135px;
+        width: 51%;
+        justify-content: space-between;
+    }
+
+    .profile-container .full-name .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 80px;
+        margin-left: 18px;
+    }
+
+    .profile-container .box {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin: 0 53px;
+        background-color: #75cddd;
+    }
+
+
+    .social {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 0px;
+    }
+
+    .social-paper .title {
+        margin-top: 29px;
+        padding: 0 18px;
+    }
+
+    .profile-container .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 250px;
+        top: 478px;
+        color: #1B2850;
+        text-align: center;
+        font-size: 24px;
+    }
+
+
+    .profile-container .paper {
+        position: absolute;
+        top: 548px;
+        right: 54px;
+        color: #1b2850;
+    }
+
+    .profile-container .center-sticker {
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        top: 45%;
+        left: 47%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+        background:#FDD97A;
+    }
+
+    .paper p {
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+
+    .profile-container .left-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        left: 5%;
+        z-index: 100;
+        background: #75CDDD;
+    }
+
+    .profile-container .full-name .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .profile-container .full-name {
+        margin-top: 15px;
+    }
+
+    .profile-container .profile-photo {
+        height: 455px;
+        width: 100%;
+    }
+
+    .profile-container .desc-user {
+        margin: 23px 23px 23px 0;
+        font-size: 13px;
+    }
+
+    .social-user {
+        margin-top: 18px;
+    }
+
+    .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 297px;
+        top: 305px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .research-section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid #ececec;
+    }
+
+
+    .profile-container {
+        height: auto;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        background-color: #f1f2f2;
+    }
+
+
+    app-home .full-name .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 78px;
+        margin-left: 18px;
+    }
+
+    .full-name {
+        margin-top: 15px;
+    }
+
+    .profile-photo {
+        width: 100%;
+    }
+
+
+    .desc-user {
+        margin: 23px 30px 23px 0;
+        font-size: 13px;
+    }
+
+    .social-user {
+        margin-top: 18px;
+    }
+
+    .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 20px;
+        top: 277px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    app-home .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 20px;
+        top: 590px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+
+    .box {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin: 0 53px;
+        background-color: #75cddd;
+    }
+
+
+    .desc-use {
+        margin: 23px 23px 23px 0;
+        font-size: 17px;
+    }
+
+
+    .research-section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .cards-items {
+        display: flex;
+        flex-direction: column;
+        color: #1B2850;
+    }
+
+
+    .cards-items .c-item {
+        border: 1px solid #1b2850;
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px 35px;
+        flex-wrap: wrap;
+    }
+
+    .title-search {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .research-title {
+        padding: 0;
+        display: flex;
+        margin-bottom: 12px;
+        height: 55px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    .research-search {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+        padding: 0;
+    }
+
+    .nav-block {
+        display: inline-grid;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+
+    .drop-list {
+        display: inline-block;
+        float: left;
+        margin-right: 0px;
+        padding-left: 0;
+        font-size: 18px;
+        position: relative;
+    }
+
+    .papers-tap {
+        margin-top: 55px;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .paper {
+        position: absolute;
+        top: 385px;
+        right: 53px;
+        color: #1b2850;
+    }
+
+    .info-item {
+        display: flex;
+        /*flex-direction: column;*/
+        height: 30px;
+        margin-bottom: 16px;
+    }
+
+
+    .info-icon {
+        font-size: 23px;
+        width: 100%;
+        display: flex;
+        margin-bottom: 10px;
+
+    }
+
+    .profile-container i {
+        margin-right: 15px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+    .info-item .social-user {
+        display: flex;
+        justify-content: space-between !important;
+    }
+
+    .views-paper {
+        margin-right: 10px;
+        width: 205px;
+    }
+
+    /*upload paper*/
+    .paper-file img {
+        width: 70px;
+    }
+
+    .permissions{
+        width: 60%;
+    }
+
+    .paper-permissions{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0px;
+    }
+
+
+    .file-paper .title p {
+        font-size: 12px;
+    }
+
+    ::ng-deep .mat-radio-label-content{
+
+        font-size: 12px !important;
+
+    }
+
+    app-permission-pepar .form-input {
+        margin-top: 25px;
+    }
+
+    .permission-radio-button {
+        margin: 10px 0;
+    }
+
+
+    .paper-file {
+
+        margin: 40px 0 20px;
+    }
+
+    /*.upload-file {*/
+    /*    height: auto;*/
+    /*}*/
+
+    .check-filename p {
+        margin-top: 5px;
+        font-size: 13px;
+    }
+
+    .check-filename i {
+        font-size: 30px;
+        margin-right: 10px;
+        color: #75cddd;
+    }
+
+    .file_name {
+        margin: 60px 0;
+        height: 55px;
+        display: flex;
+        background: #fff;
+        padding: 10px 10px;
+        justify-content: space-between;
+    }
+
+
+
+    /*about*/
+    app-about .full-section .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 71%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+
+    app-about .research-all .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 62%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+
+    .researshers .text-left p {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 45px;
+
+    }
+
+
+    app-about .card-item img {
+        width: 60%;
+        margin-bottom: 30px;
+    }
+
+    app-about .card-item.title p {
+        font-size: 25px;
+    }
+
+    app-about .become-researcher {
+        height: auto;
+    }
+
+
+    app-about .card-item .title {
+        padding: 5px 0;
+        text-align: left;
+    }
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0px;
+    }
+
+    app-about .card-item p {
+        font-size: 20px;
+    }
+
+
+    app-about .card-item .title div {
+        border: 8px solid #1b2850;
+        background-color: #1b2850;
+        width: 88px;
+    }
+
+    /*members*/
+    .members-cards {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 40px;
+
+    }
+
+    app-members .full-section .sec-content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+
+    .members-section {
+        display: flex;
+        flex-direction: column;
+        padding: 45px 25px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+        width: 80%;
+    }
+
+    .filters {
+        display: flex;
+        justify-content: space-between;
+        width: 20%;
+        position: relative;
+        color: #1B2850;
+        left: 73%;
+        margin-top: 55px;
+    }
+
+    .filter-icon {
+        width: 48px;
+        height: 35px;
+        border: 1px solid;
+        border-radius: 8px;
+        text-align: center;
+        margin-left: 15px;
+        font-size: 25px;
+    }
+
+
+    /*members*/
+    .members-cards {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 0px;
+
+    }
+
+    .card img {
+        width: 100%;
+        object-fit: cover;
+        height: 360px;
+    }
+
+    .card .title div {
+        border: 8px solid #1B2850;
+        background-color: #1B2850;
+        width: 115px;
+    }
+
+    .card .title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #1B2850;
+        margin-bottom: 25px;
+        width: 90%;
+    }
+
+
+    .characters-filters {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .characters {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 16px;
+        color: #75cddd;
+    }
+
+    .members-section {
+        display: flex;
+        flex-direction: column;
+        padding: 45px 25px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+        width: 80%;
+    }
+
+
+    .filter-icon {
+        width: 58px;
+        height: 35px;
+        border: 1px solid;
+        border-radius: 6px;
+        text-align: center;
+        margin-left: 5px;
+        font-size: 25px;
+    }
+
+
+    /*papers*/
+    .views-paper {
+        margin-right: 10px;
+        width: 240px;
+    }
+
+    app-papers .top-home {
+        height: 385px;
+        color: #fff;
+        justify-content: flex-end;
+        background-image: url(../../img/library.jpg);
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+        position: relative;
+    }
+
+    app-papers .statistics {
+        padding: 147px 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    app-about .researshers .content {
+        margin-top: 0px;
+    }
+
+    app-about h1 {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .research-input {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+
+    }
+
+    app-members .research-input {
+
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+        right: 98px;
+        top: 46%;
+        width: auto;
+    }
+
+    .upload-paper-form {
+        width: 100%;
+    }
+
+    .lang p {
+        width: 75%;
+    }
+
+    .nav-collapsed a {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 20px 0;
+        color: #fff;
+        cursor: pointer;
+    }
+
+
+    /*app-register*/
+
+
+
+    app-register .full-section .sec-content , app-login .full-section .sec-content , app-edit-paper  .full-section .sec-content , app-member-details  .full-section .sec-content ,  app-upload-paper .full-section  .sec-content{
+        text-align: left;
+        width: 85%;
+        margin: 70px 24px;
+    }
+
+
+    .submit button{
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+    }
+
+
+    .submit {
+        text-align: center;
+        height: 50px;
+        margin: 20px 0 10px 0;
+        display: flex;
+    }
+
+
+    .custom-file-upload {
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px 0;
+        font-weight: normal;
+
+    }
+
+    .go-login p {
+        font-size: 14px;
+    }
+    .check-filename i {
+        font-size: 28px;
+        margin-right: 20px;
+        color: #75cddd;
+    }
+
+
+    .clear i {
+        font-size: 28px;
+    }
+
+    .drag-box p {
+        padding: 60px;
+        font-size: 18px;
+        color: #707070;
+    }
+}
+
+@media (max-width: 374px) {
+    .navbar-login {
+        display: flex;
+        height: 55px;
+        align-items: center;
+        direction: rtl;
+    }
+
+    #nav-toggle {
+        cursor: pointer;
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar {
+        height: 100%;
+        width: 55px;
+        background-color: #1b2850;
+        margin: 0 !important;
+        border-radius: 0;
+    }
+
+
+    .login-register {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .navbar-login div {
+        margin: 0 5px;
+    }
+
+
+    .profile-photo {
+        width: 100%;
+        height: 35%;
+        position: relative;
+    }
+
+    .logged {
+        display: flex;
+        height: 55px;
+        align-items: center;
+        direction: rtl;
+        position: absolute;
+        right: 0px;
+        top: 0;
+    }
+
+
+    .info-user {
+        padding: 0 20px;
+    }
+
+    .top-home-login .info-user img {
+        width: 130px;
+        height: 140px;
+        object-fit: cover;
+    }
+
+    .social-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .top-home-login .social i {
+        font-size: 12px;
+        color: #1b2850;
+        margin-bottom: 13px;
+    }
+
+
+    .top-home-login .social {
+        display: inline-block;
+        margin-right: 5px;
+        margin-top: 70px;
+    }
+
+    .top-home-login i {
+        margin-right: 5px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+
+    .full-name .title {
+        font-size: 45px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 108px;
+        margin-left: 18px;
+    }
+
+
+    .info-data {
+        font-size: 11px;
+    }
+
+    .edit-profile {
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        right: 10%;
+        top: 260px;
+        color: #1B2850;
+        text-align: center;
+        font-size: 12px;
+    }
+
+
+    .top-home-login i {
+        margin-right: 5px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+    .info-item {
+        display: flex;
+        justify-content: space-between;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    app-home.info-item {
+        display: flex;
+        justify-content: space-between;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .full-name h2 {
+        font-size: 20px;
+    }
+
+
+    .desc-user {
+        margin: 13px 22px 20px 0px;
+        font-size: 14px;
+    }
+
+    .right-section {
+        color: black;
+        width: 100%;
+        height: 100%;
+    }
+
+    .paper-section {
+        margin-bottom: 23px;
+        margin-top: 0;
+    }
+
+    .cards-icon {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+
+    .box {
+        width: 65px;
+        height: 65px;
+        background-color: #75cddd;
+    }
+
+
+    .paper {
+        bottom: -14px;
+        margin-bottom: -18px;
+        color: #1b2850;
+        margin-top: 25px;
+    }
+
+    .social-paper img {
+        position: absolute;
+        right: 61px;
+        bottom: 76px;
+        width: 35px;
+    }
+
+
+    .paper p {
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .card-icon-submit img {
+        right: 61px;
+        bottom: 76px;
+        width: 35px;
+    }
+
+
+    .paper-section {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .card-icon-research, .card-icon-submit {
+        position: relative;
+        padding: 29px 18px;
+    }
+
+
+    .our-members .text-left {
+        padding-left: 45px;
+    }
+
+    .social {
+        margin-right: 8px;
+        position: absolute;
+        right: 0;
+    }
+
+    .with-slider .main-slider {
+        display: flex;
+        align-items: center;
+        padding: 0 0px;
+    }
+
+
+    .with-slider .left-slide i, .with-slider .right-slide i {
+        font-size: 20px;
+        color: #75cddd;
+        cursor: pointer;
+
+    }
+
+
+    .social i {
+        font-size: 18px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .blue-line {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 85px;
+        position: absolute;
+        bottom: -15px;
+    }
+
+    .read-more {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 20px;
+    }
+
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .read-more {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 20px;
+    }
+
+
+    .become-researcher {
+        display: flex;
+        flex-direction: column;
+        padding: 35px 20px;
+    }
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 30px 0px;
+    }
+
+    .card-item .title {
+        padding: 35px 0px;
+        text-align: left;
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .card-item[_ngcontent-c5] .title[_ngcontent-c5] div[_ngcontent-c5] {
+        background-color: #1B2850;
+        border: 7px solid #1B2850;
+    }
+
+    .become-researcher .button-action button {
+        width: 250px !important;
+    }
+
+    .button-action button {
+        width: 175px;
+        height: 45px;
+        background-color: #75cddd;
+        border: none;
+        margin-top: 0px;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .become-researcher {
+        height: 415px;
+    }
+
+
+    .full-section .side {
+        width: 100%;
+        height: 50%;
+    }
+
+
+    .about-content .text-left p {
+        font-size: 20px;
+    }
+
+    .read-more[_ngcontent-c5] {
+        font-size: 45px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #1b2850;
+    }
+
+    .read-more p {
+        font-size: 12px;
+    }
+
+    .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .text-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: flex;
+        /* justify-content: space-between; */
+        justify-content: flex-start;
+    }
+
+    .about-content .text-left p {
+        margin-right: 5px;
+        font-size: 15px;
+        }
+
+    app-about .about-content .text-left p {
+        margin-right: 7px;
+        font-size: 18px;
+    }
+
+    .full-section .left-sticker {
+        height: 25px;
+        width: 90px;
+        position: absolute;
+        background: #75CDDD;
+        left: 0%;
+        top: 30px;
+        z-index: 100;
+    }
+
+    .become-researcher {
+        display: flex;
+        flex-direction: column;
+        padding: 33px 20px;
+    }
+
+    .cards {
+        display: flex;
+        color: #1b2850;
+        justify-content: space-between;
+        padding: 30px 0px;
+    }
+
+
+    .card-item p {
+        font-size: 12px;
+    }
+
+    .card-item .title {
+        padding: 35px 0px;
+        text-align: left;
+    }
+
+    .title {
+        font-size: 15px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .card-item .title div {
+        width: 80px;
+        background-color: #1B2850;
+        border: 7px solid #1B2850;
+    }
+
+    .become-researcher .button-action button {
+        width: 250px !important;
+    }
+
+    .button-action button {
+        width: 175px;
+        height: 45px;
+        background-color: #75cddd;
+        border: none;
+        margin-top: 0px;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .become-researcher {
+        height: 415px;
+    }
+
+    h4, .h4 {
+        font-size: 13px;
+    }
+
+    .main-slider {
+        margin-top: 0px;
+    }
+
+
+    .heat-map[_ngcontent-c5] {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+
+    .statistics {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 30px;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        color: #1b2850;
+        margin-bottom: 20px;
+    }
+
+    .heat-map {
+        height: 685px;
+    }
+
+    .about-content .content {
+        margin-top: 0px;
+        padding: 0;
+    }
+
+    .content p {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .full-section .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 97%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    .full-section .top-sticker {
+        height: 100px;
+        width: 25px;
+        position: absolute;
+        background: #FDD97A;
+        left: 5%;
+        z-index: 100;
+    }
+
+    .partners .top-sticker {
+        height: 25px;
+        width: 90px;
+        position: absolute;
+        background: #75cddd;
+        left: 36%;
+        top: 60%;
+        z-index: 100;
+    }
+
+    .frequent-asked-questions {
+        margin: 20px 0
+    }
+
+    .frequent-asked-questions .title {
+        padding: 0 20px;
+    }
+
+    .accordion {
+        background-color: #fff;
+        color: #444;
+        cursor: pointer;
+        padding: 20px 20px;
+        width: 100%;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        transition: 0.4s;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    .accordion:after {
+        content: "\f054";
+        color: #75cddd;
+        font-weight: bold;
+        float: inherit;
+        margin-left: 15px;
+        font-size: 15px;
+    }
+
+    .contact h1 {
+        font-size: 2.5em;
+        font-weight: 600;
+        margin: 20px 0 20px;
+        text-align: left;
+        color: #1b2850;
+    }
+
+    .panel {
+        padding: 0 20px;
+        background-color: #EEF1F1;
+        max-height: 0;
+        overflow: hidden;
+        border: none;
+        transition: max-height 0.2s ease-out;
+    }
+
+
+    h3 {
+        font-size: 15px;
+    }
+
+    .contact .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .with-slider .slider-control {
+        padding: 0 20px;
+        text-align: justify;
+        font-size: 14px;
+    }
+
+    .contact .title div {
+        border: 7px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+
+    .submit button {
+        width: 90px;
+        height: 40px;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        align-items: right !important;
+    }
+
+
+    .member-name {
+        margin-left: 45px;
+        margin-top: 18px;
+    }
+
+
+    .contact .top-sticker {
+        height: 100px;
+        width: 25px;
+        position: absolute;
+        background: #FDD97A;
+        left: 80%;
+        top: 0px;
+        z-index: 100;
+    }
+
+
+    .contact .form-input {
+        padding-right: 0;
+    }
+
+
+    .social-contact i {
+        color: #75cddd;
+        font-size: 17px;
+    }
+
+
+    /*header*/
+    .logo-left img {
+        width: 55px;
+    }
+
+    .logo-right img {
+        width: 55px
+    }
+
+    .header {
+        overflow: hidden;
+        height: 90px;
+        box-shadow: 10px 5px 5px #cac6c6;
+    }
+
+    .logo-right {
+        float: right;
+        padding: 11px 15px;
+    }
+
+    .logo-left {
+        float: left;
+        padding: 20px 15px;
+    }
+
+    .sharing .title {
+        padding: 50px 0;
+    }
+
+
+    /*login*/
+    .login {
+        height: auto;
+    }
+
+    /*register*/
+    .register {
+        height: auto;
+    }
+
+    .item-full-name {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /*profile*/
+    .nav-block {
+        display: inline-grid;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0%;
+    }
+
+    .profile-container {
+        height: 835px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        background-color: #f1f2f2;
+    }
+
+    .profile-container .info-user {
+        padding: 0 25px;
+    }
+
+    .profile-container .info-user img {
+
+        position: absolute;
+        width: 35px;
+        right: 66px;
+        top: 527px;
+
+    }
+
+    .research-title {
+        padding: 20px;
+        display: flex;
+        height: 135px;
+        width: 51%;
+        justify-content: space-between;
+    }
+
+    .profile-container .full-name .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 80px;
+        margin-left: 18px;
+    }
+
+    .profile-container .box {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin: 0 53px;
+        background-color: #75cddd;
+    }
+
+
+    .social {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 70px;
+    }
+
+    .social i {
+        font-size: 15px;
+        color: #1b2850;
+        margin-bottom: 16px;
+    }
+
+    .profile-container .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 206px;
+        top: 478px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .profile-container .edit-profile i {
+        font-size: 25px;
+        color: #1b2850;
+    }
+
+    .profile-container .paper {
+        position: absolute;
+        top: 548px;
+        right: 54px;
+        color: #1b2850;
+    }
+
+    .profile-container .center-sticker {
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        top: 44%;
+        left: 47%;
+        bottom: 50%;
+        right: 50%;
+        z-index: 100;
+        background:#FDD97A;
+    }
+
+    .paper p {
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+
+    .profile-container .left-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        left: 5%;
+        z-index: 100;
+        background: #75CDDD;
+    }
+
+    .profile-container .full-name .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 15px;
+        margin-left: 0;
+    }
+
+    .profile-container .full-name {
+        margin-top: 15px;
+    }
+
+    .profile-container .profile-photo {
+        height: 455px;
+        width: 100%;
+    }
+
+    .profile-container .desc-user {
+        margin: 23px 23px 23px 0;
+        font-size: 12px;
+    }
+
+    .social-user {
+        margin-top: 18px;
+    }
+
+    .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 297px;
+        top: 305px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .research-section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid #ececec;
+    }
+
+
+    .profile-container {
+        height: auto;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        background-color: #f1f2f2;
+    }
+
+    .full-name .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #1b2850;
+        margin-top: 0;
+        margin-left: 18px;
+    }
+
+    .full-name {
+        margin-top: 15px;
+    }
+
+    .profile-photo {
+        width: 100%;
+    }
+
+
+    .desc-user {
+        margin: 23px 0;
+        font-size: 12px;
+    }
+
+    .social-paper .title {
+        margin-top: 0px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .social-user {
+        margin-top: 18px;
+    }
+
+    .edit-profile {
+        width: 110px;
+        height: 75px;
+        position: absolute;
+        right: 297px;
+        top: 305px;
+        color: #1B2850;
+        text-align: center;
+    }
+
+    .box {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin: 0 53px;
+        background-color: #75cddd;
+    }
+
+    .info-user img {
+
+        position: absolute;
+        width: 35px;
+        right: 60px;
+        top: 360px;
+
+    }
+
+    .desc-use {
+        margin: 23px 23px 23px 0;
+        font-size: 17px;
+    }
+
+
+    .research-section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .cards-items {
+        display: flex;
+        flex-direction: column;
+        color: #1B2850;
+    }
+
+    app-home .card-item .title {
+        padding: 35px 15px;
+        text-align: left;
+    }
+
+    app-home .card-item p {
+        font-size: 10px;
+    }
+
+    .cards-items .c-item {
+        border: 1px solid #1b2850;
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px 12px;
+        flex-wrap: wrap;
+    }
+
+    .title-search {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .research-title {
+        padding: 0;
+        display: flex;
+        margin-bottom: 12px;
+        height: 55px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    .research-search {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+        padding: 0;
+    }
+
+    .nav-block {
+        display: inline-grid;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+
+    /*.drop-list {*/
+    /*    display: inline-block;*/
+    /*    float: left;*/
+    /*    margin-right: 0px;*/
+    /*    padding-left: 0;*/
+    /*    font-size: 18px;*/
+    /*    position: relative;*/
+    /*}*/
+    .drop-list {
+        display: inline-block;
+        float: left;
+        margin-right: 0px;
+        padding-left: 0;
+        font-size: 17px;
+        position: relative;
+    }
+
+    .papers-tap {
+        margin-top: 55px;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .paper {
+        position: absolute;
+        top: 385px;
+        right: 53px;
+        color: #1b2850;
+    }
+
+    .info-item {
+        display: flex;
+        height: 30px;
+        margin-bottom: 15px;
+    }
+
+    .info-icon {
+        font-size: 23px;
+        width: 100%;
+        display: flex;
+        margin-bottom: 10px;
+
+    }
+
+    .profile-container i {
+        margin-right: 15px;
+        color: #1B2850;
+        font-size: 15px;
+    }
+
+    .info-item .social-user {
+        display: flex;
+
+        justify-content: space-between !important;
+    }
+
+    .full-section {
+        position: relative;
+        background: #f1f2f2;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .full-section .sec-content {
+        text-align: left;
+        width: 85%;
+        margin: 20px;
+    }
+
+    .views-paper {
+        margin-right: 10px;
+        width: 320px;
+    }
+
+
+    /*upload paper*/
+    .upload-file {
+        height: auto;
+    }
+
+    .check-filename p {
+        margin-top: 5px;
+        font-size: 11px;
+    }
+
+    .file_name {
+        margin: 60px 0;
+        height: 55px;
+        display: flex;
+        background: #fff;
+        padding: 10px 5px;
+        justify-content: space-between;
+    }
+
+    .check-filename i {
+        font-size: 22px;
+        margin-right: 0px;
+        color: #75cddd;
+    }
+
+    .clear i {
+        font-size: 25px;
+    }
+
+
+    .paper-file img {
+        width: 70px;
+    }
+
+    .permissions{
+        width: 60%;
+    }
+
+    .paper-permissions{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0px;
+    }
+
+
+    .file-paper .title p {
+        font-size: 12px;
+    }
+
+    ::ng-deep .mat-radio-label-content{
+
+        font-size: 12px !important;
+
+    }
+
+    app-permission-pepar .form-input {
+        margin-top: 25px;
+    }
+
+    .permission-radio-button {
+        margin: 10px 0;
+    }
+
+
+    .paper-file {
+
+        margin: 40px 0 20px;
+    }
+
+    app-permission-pepar .form-input {
+        margin-top: 15px;
+    }
+
+
+    /*about*/
+    app-about .full-section .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 63%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    app-about .research-all-around .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 54%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+
+
+    .about-content .content {
+        margin-top: 10px;
+    }
+
+    app-home .card-item .title {
+        padding: 35px 8px;
+        text-align: left;
+    }
+
+
+ app-about   .about-content .content {
+        margin-top: 25px;
+    }
+
+
+ app-about .researshers .content {
+     margin-top: 0;
+ }
+
+    .researshers .text-left p {
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 45px;
+
+    }
+
+
+    app-about .card-item img {
+        width: 60%;
+        margin-bottom: 30px;
+    }
+
+    app-about .card-item.title p {
+        font-size: 25px;
+    }
+
+    app-about .become-researcher {
+        height: auto;
+    }
+
+
+    app-about .card-item .title {
+        padding: 5px 0;
+        text-align: left;
+    }
+
+    app-about .cards {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0px;
+    }
+
+    app-about .card-item p {
+        font-size: 20px;
+    }
+
+
+    app-about .card-item .title div {
+        border: 13px solid #1b2850;
+        background-color: #1b2850;
+        width: 70px;
+    }
+
+
+    /*members*/
+    .members-cards {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 0;
+
+    }
+
+    app-members .full-section .sec-content, app-about .full-section .sec-content {
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        margin: 20px 18px;
+    }
+
+    .characters-filters {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .characters {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 13px;
+        color: #75cddd;
+    }
+
+    .members-section {
+        display: flex;
+        flex-direction: column;
+        padding: 45px 25px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .card img {
+        width: 100%;
+        object-fit: cover;
+        height: 360px;
+    }
+
+    .card .title div {
+        border: 8px solid #1B2850;
+        background-color: #1B2850;
+        width: 115px;
+    }
+
+    .card .title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #1B2850;
+        margin-bottom: 25px;
+        width: 90%;
+    }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+        width: 80%;
+    }
+
+    .filters {
+        display: flex;
+        justify-content: space-between;
+        width: 20%;
+        color: #1B2850;
+        position: absolute;
+        left: 73%;
+        margin-top: 55px;
+    }
+
+    .filter-icon {
+        width: 60px;
+        height: 38px;
+        border: 1px solid;
+        border-radius: 5px;
+        text-align: center;
+        margin-left: 5px;
+        font-size: 25px;
+    }
+
+
+    .sort-icon {
+        width: 60px;
+        height: 38px;
+        border: 1px solid;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 35px;
+    }
+
+
+    /*papers*/
+    .views-paper {
+        margin-right: 10px;
+        width: 240px;
+    }
+
+    app-papers .top-home {
+        height: 385px;
+        color: #fff;
+        justify-content: flex-end;
+        background-image: url(../../img/library.jpg);
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+        position: relative;
+    }
+
+    app-papers .statistics {
+        padding: 147px 10px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    app-members .research-input {
+
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+        right: 98px;
+        top: 46%;
+        width: auto;
+
+
+    }
+
+    .research-search {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+        padding: 20px 0;
+    }
+
+    .research-section {
+        display: flex;
+        flex-direction: column;
+        padding: 45px 25px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    .views-paper {
+        margin-right: 10px;
+        width: 368px;
+    }
+
+
+    .upload-paper-form {
+        width: 100%;
+    }
+
+    .lang p {
+        width: 95%;
+    }
+
+
+    .nav-collapsed a {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 20px 0;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .research-input {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 16px;
+    }
+
+
+
+    /*app-register*/
+
+
+   app-register .full-section .sec-content , app-login .full-section .sec-content , app-edit-paper  .full-section .sec-content , app-member-details  .full-section .sec-content , .upload-file .sec-content {
+        text-align: left;
+        width: 85%;
+        margin: 70px 24px;
+    }
+
+
+    .submit button{
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .custom-file-upload {
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px 0;
+        font-weight: normal;
+
+    }
+
+
+    .submit {
+        text-align: center;
+        height: 50px;
+        margin: 20px 0 10px 0;
+        display: flex;
+    }
+
+    .go-login p {
+        font-size: 14px;
+    }
+
+    .check-filename i {
+        font-size: 28px;
+        margin-right: 5px;
+        color: #75cddd;
+    }
+
+
+    .clear i {
+        font-size: 28px;
+    }
+
+    .drag-box p {
+        padding: 60px;
+        font-size: 15px;
+        color: #707070;
+    }
+
+}
+
+
+
+

@@ -1,0 +1,34 @@
+<div class="nav-collapsed" *ngIf="collapsed">
+    <a routerLink="/home">{{'_HomePage' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
+    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
+    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+</div>
+<div class="full-section upload-file" data-aos-duration="1000">
+    <div class="side">
+        <div class="sec-img">
+            <img src="assets/img/research.jpg" alt="">
+        </div>
+    </div>
+    <div class="side">
+        <div class="navbar-login logged">
+            <div class="navbar"
+                 [style.z-index]="collapsed ? '550' : ''"
+                 [style.background-color]="collapsed ? '#fff' : ''">
+                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+                </a>
+            </div>
+            <div class="login-register"  *ngIf="_appService.session">
+                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="login">{{'_Logout'| translate}}</div>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+
+    </div>
+</div>

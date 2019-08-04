@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "sf-compact-display-regular";
+    src: url("../fonts/SF-Compact-Display-Regular.otf") format("opentype"),
+    url("../fonts/SF-Compact-Display-Regular.otf") format("woff");
+}
+
+@font-face {
+    font-family: "sf-compact-display-medium";
+    src: url("../fonts/SF-Compact-Display-Meduim.otf") format("opentype"),
+    url("../fonts/SF-Compact-Display-Meduim.otf") format("woff");
+}
+
+@font-face {
+    font-family: "sf-compact-display-bold";
+    src: url("../fonts/SF-Compact-Display-Bold.otf") format("opentype"),
+    url("../fonts/SF-Compact-Display-Bold.otf") format("woff");
+}
+
+@font-face {
+    font-family: "sf-compact-display-heavy";
+    src: url("../fonts/SF-Compact-Display-Heavy.otf") format("opentype"),
+    url("../fonts/SF-Compact-Display-Heavy.otf") format("woff");
+}
+
+@font-face {
+    font-family: "dubai-bold";
+    src: url("../fonts/Dubai-Bold.ttf") format("opentype"),
+    url("../fonts/Dubai-Bold.ttf") format("woff");
+}
+
+@font-face {
+    font-family: "dubai-regular";
+    src: url("../fonts/Dubai-Regular.ttf") format("opentype"),
+    url("../fonts/Dubai-Regular.ttf") format("woff");
+}
+@font-face {
+    font-family: "ultra-light";
+    src: url("../fonts/GE_SS_Text_UltraLight.otf") format("opentype"),
+    url("../fonts/GE_SS_Text_UltraLight.otf") format("woff");
+}
+
+@font-face {
+    font-family: "cairo-black";
+    src: url("../fonts/Cairo-Black.ttf") format("opentype"),
+    url("../fonts/Cairo-Black.ttf") format("woff");
+}
+
+@font-face {
+    font-family: "cairo-bold";
+    src: url("../fonts/Cairo-Bold.ttf") format("opentype"),
+    url("../fonts/Cairo-Bold.ttf") format("woff");
+}
+
+
+@font-face {
+    font-family: "cairo-light";
+    src: url("../fonts/Cairo-Light.ttf") format("opentype"),
+    url("../fonts/Cairo-Light.ttf") format("woff");
+}
+
+
+@font-face {
+    font-family: "cairo-regular";
+    src: url("../fonts/Cairo-Regular.ttf") format("opentype"),
+    url("../fonts/Cairo-Regular.ttf") format("woff");
+}
+
+
+@font-face {
+    font-family: "cairo-extra-light";
+    src: url("../fonts/Cairo-ExtraLight.ttf") format("opentype"),
+    url("../fonts/Cairo-ExtraLight.ttf") format("woff");
+}
+
+@font-face {
+    font-family: "cairo-semi-boold";
+    src: url("../fonts/Cairo-SemiBold.ttf") format("opentype"),
+    url("../fonts/Cairo-SemiBold.ttf") format("woff");
+}

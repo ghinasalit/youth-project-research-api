@@ -1,0 +1,39 @@
+<div class="sec-content">
+    <div class="title">
+        <span>
+        <p> {{'_UploadCompleted' | translate}}</p> <i class="fa fa-check" aria-hidden="true"></i>
+    </span>
+        <div></div>
+    </div>
+    <div class=" form-input">
+        <form class="permission-paper" [formGroup]="permissionForm">
+            <div class="paper-permissions">
+                <div class="file-paper">
+                    <div class="paper-file"><img src="assets/img/paper.png" alt=""></div>
+                    <div class="title">
+                        <p>{{appService.fileName}} file file file file fi;e file.mm</p>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="permissions">
+                    <mat-radio-group
+                            class="permission-radio-group">
+                        <mat-radio-button class="permission-radio-button"  value="1">
+                            Given access to all the platform members to view.
+                        </mat-radio-button>
+                        <mat-radio-button class="permission-radio-button"  value="2">
+                            Given access to all the platform members to view.
+                        </mat-radio-button>
+                        <mat-radio-button class="permission-radio-button"  value="3">
+                            Given access to all the platform members to view.
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div class="submit" >
+                <button>{{'_Submit' | translate}}</button>
+            </div>
+        </form>
+    </div>
+
+</div>

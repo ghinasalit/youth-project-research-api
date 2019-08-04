@@ -1,0 +1,120 @@
+<div class="nav-collapsed" *ngIf="collapsed">
+    <a routerLink="/home">{{'_HomePage' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
+    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
+    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+</div>
+
+<div class="full-section" data-aos="fade-up" data-aos-duration="1000">
+    <div class="top-sticker"></div>
+    <div class="center-sticker"></div>
+    <div class="side">
+        <div class="sec-img">
+            <img src="assets/img/member1.jpg">
+        </div>
+    </div>
+    <div class="side">
+        <div class="navbar-login logged">
+            <div class="navbar"
+                 [style.z-index]="collapsed ? '550' : ''"
+                 [style.background-color]="collapsed ? '#fff' : ''">
+                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+                </a>
+            </div>
+            <div class="login-register" *ngIf="!_appService.session">
+                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
+                <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
+            </div>
+            <div class="login-register"  *ngIf="_appService.session">
+                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="login">{{'_Logout'| translate}}</div>
+            </div>
+        </div>
+
+        <div class="sec-content">
+            <div class="about-content">
+                <h1 class="text-left">
+                    <p>{{'_About'| translate}}</p>
+                    <p>{{'_ArabYouth'| translate}}</p>
+                    <p> {{'_ResearchLibrary'| translate}}</p></h1>
+                <div class="content">
+                    <p>{{'_AboutDescription'| translate}}</p>
+                </div>
+
+            </div>
+            <div class="social">
+                <div><i class="fa fa-facebook"></i></div>
+                <div><i class="fa fa-instagram"></i></div>
+                <div><i class="fa fa-twitter"></i></div>
+                <div><i class="fa fa-youtube"></i></div>
+            </div>
+
+            <div class="blue-sep"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="become-researcher" data-aos="fade-up" data-aos-duration="1000">
+    <div class="title">
+        <p> {{'_About_Arab_Youth_Research'| translate}}</p>
+        <div></div>
+    </div>
+    <div class="cards">
+        <div class="card-item">
+            <img src="assets/img/broad-knowledge.PNG" alt="">
+            <div class="title">
+                <p>{{'_Search'| translate}}</p>
+                <div></div>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="assets/img/job-opportunities.PNG" alt="">
+            <div class="title">
+                <p>{{'_Research'| translate}}</p>
+                <div></div>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="assets/img/sharing-knowledge.PNG" alt="">
+            <div class="title">
+                <p>{{'_View'| translate}}</p>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="full-section research-all-around" data-aos="fade-up" data-aos-duration="1000">
+    <div class="top-sticker"></div>
+    <div class="center-sticker"></div>
+    <div class="side">
+        <div class="sec-img">
+            <img src="assets/img/member1.jpg">
+        </div>
+    </div>
+    <div class="side">
+        <div class="sec-content">
+            <div class="researshers">
+                <h1 class="text-left">
+                    <p>{{'_Researchers'| translate}}</p>
+                    <p>{{'_All_Around'| translate}}</p>
+                    <p> {{'_TheWorld'| translate}}</p></h1>
+                <div class="content">
+                    <p>{{'_ResearchersDescription'| translate}}
+                        </p>
+                </div>
+
+            </div>
+
+            <div class="blue-sep"></div>
+        </div>
+    </div>
+</div>

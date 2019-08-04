@@ -1,0 +1,816 @@
+
+.top-home {
+    height: 350px;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    background-image: url("../../../assets/img/library.jpg");
+    width: 100%;
+    background-color: #f1f2f2;
+    background-size: cover;
+}
+
+.top-home .login-register {
+    color: #fff;
+}
+
+/*.nav-collapsed {*/
+/*    height: 100%;*/
+/*    color: #fff;*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    background-color: #1b2850;*/
+/*    position: absolute;*/
+/*    z-index: 500;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+
+/*.navbar i {*/
+/*    font-size: 51px;*/
+/*    color: #fff;*/
+/*    border: 30px;*/
+/*    text-align: center;*/
+/*    border-radius: unset;*/
+/*    line-height: inherit;*/
+/*    margin-top: -3px;*/
+/*    width: 115px;*/
+/*    height: 105px;*/
+
+/*}*/
+
+
+.text span {
+    color: #fdd97a;
+
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pb-2 {
+    padding-bottom: 15px;
+}
+
+.pt-2 {
+    padding-top: 15px;
+}
+
+.search p {
+    font-size: 16px;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.text {
+    margin-top: 140px
+}
+
+.text p {
+    font-size: 25px;
+    margin-top: 75px;
+    text-align: center;
+}
+
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+
+.drop-list a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.right-section {
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+
+
+
+.social div {
+    display: block;
+}
+
+
+
+input {
+    height: 65px;
+    border-radius: 0;
+}
+
+
+/*#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {*/
+/*    cursor: pointer;*/
+/*    border-radius: 1px;*/
+/*    height: 5px;*/
+/*    width: 35px;*/
+/*    background: white;*/
+/*    position: absolute;*/
+/*    display: block;*/
+/*    content: '';*/
+/*}*/
+
+/*#nav-toggle span:before {*/
+/*    top: -10px;*/
+/*}*/
+
+/*#nav-toggle span:after {*/
+/*    bottom: -10px;*/
+/*}*/
+
+/*#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {*/
+/*    transition: all 500ms ease-in-out;*/
+/*}*/
+
+/*#nav-toggle.active span {*/
+/*    background-color: transparent;*/
+/*}*/
+
+/*#nav-toggle.active span:before, #nav-toggle.active span:after {*/
+/*    top: 0;*/
+/*}*/
+
+/*#nav-toggle.active span:before {*/
+/*    transform: rotate(45deg);*/
+/*    background: #1b2850;*/
+/*}*/
+
+/*#nav-toggle.active span:after {*/
+/*    transform: rotate(-45deg);*/
+/*    background: #1b2850;*/
+/*}*/
+
+.title-search {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.research-search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+}
+
+
+
+.research-papers {
+    padding: 0 80px;
+}
+
+
+/*Set background*/
+body {
+    background-color: white;
+}
+
+/*Use a flex container to hold the Brand & navbar*/
+.header-container {
+    display: inline-table;
+    width: 100%;
+    padding: 20px;
+}
+
+.brand {
+    display: table-row;
+    text-align: left;
+    vertical-align: middle;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.25em;
+    font-weight: 650;
+    background-color: transparent;
+    color: darkslateblue;
+    float: left;
+}
+
+.nav-block {
+    display: inline-grid;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 0 0 15%;
+}
+
+.split {
+    display: inline-flex;
+    text-align: center;
+    vertical-align: middle;
+    float: right;
+    padding: 0 10px 0 10px;
+}
+
+.table-cell {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+a.brand {
+    text-decoration: none;
+}
+
+/* brand link styling*/
+
+/*Strip the ul of padding and list styling*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    position: absolute;
+    margin: 0 0 0 2%;
+}
+
+/*Create a horizontal list with spacing*/
+li {
+    display: inline-block;
+    float: left;
+    margin-right: 0px;
+    padding-left: 25px;
+}
+
+/*Style for menu links*/
+li a {
+    display: block;
+    min-width: 100px;
+    height: 25px; /*40px*/
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5em; /*30px*/
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7em;
+    font-weight: 700;
+    color: darkslateblue; /*#fff;forestgreen*/
+    background: transparent; /*#2f3036*/
+    text-decoration: none;
+}
+
+/*Hover state for top level links*/
+li:hover a {
+    background: #f7f7f7; /*#19c589*/
+    color: slateblue;
+}
+
+/*Style for dropdown links*/
+li:hover ul a {
+    background: #F7F7F7; /*#f3f3f3*/
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+    text-align: justify;
+    z-index: 4;
+}
+
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    background: #42426F; /* #19c589 darkblue*/
+    color: #ffffff;
+}
+
+/*Hide dropdown links until they are needed*/
+li ul {
+    display: none;
+}
+
+/*Make dropdown links vertical*/
+li ul li {
+    display: block;
+    float: none;
+}
+
+/*Prevent text wrapping*/
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+
+/*Display the dropdown on hover*/
+ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+
+/*Increase the size of hamburger menu icon*/
+.grow {
+    font-size: 20px;
+    margin: auto;
+}
+
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: #42426F; /*#19c589 darkblue*/
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+    border-radius: 6px;
+}
+
+
+/*Hide checkbox*/
+input[type=checkbox] {
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu {
+    display: block;
+}
+
+/*Responsive Styles*/
+@media screen and (max-width: 760px) {
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
+    }
+
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+
+}
+
+/* Content */
+
+#content {
+    width: 100vw;
+    /*height: 100vh;*/
+    background: rgba(85, 57, 130, 0.35);
+    margin-top: 30px;
+    margin-left: -10px;
+    margin-bottom: -10px;
+}
+
+#content .block {
+
+}
+
+.col-md-10 {
+    text-align: center;
+    padding: 30px;
+}
+
+
+.menu span {
+    color: #fdd97a;
+}
+
+
+.cards-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards-items .bookmark {
+    text-align: right;
+    position: relative;
+    top: -35px;
+    font-size: 35px;
+}
+
+.cards-items h3 {
+    margin-top: -35px;
+}
+
+
+.research-search input {
+    height: 35px;
+}
+
+.research-input button {
+    margin-left: 0 !important;
+    background-color: #1b2850;
+    color: #fff;
+}
+
+.research-search .row {
+    height: 9px;
+    width: 85%;
+}
+
+
+.research-search .navigator {
+    margin-bottom: 30px !important;
+}
+
+.button-action {
+    text-align: center
+}
+
+/*profile info*/
+
+
+
+
+
+.profile-photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.info-icon {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+
+
+
+.user-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-home-login .box {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    background-color: #75cddd;
+}
+
+
+
+
+.top-home-login .social div {
+    display: block;
+}
+
+app-home .info-data {
+    font-size: 13px;
+}
+
+
+
+
+.user-name {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.
+
+.top-home-login .login-register {
+    color: #1b2850;
+}
+
+
+/*about arab section*/
+
+
+
+
+.contact {
+    height: auto;
+}
+
+
+.full-section .sec-img {
+    height: 100%;
+}
+
+
+.full-section .sec-img img {
+    width: 100%;
+    padding: 0;
+    object-fit: cover;
+    height: 100%;
+}
+
+
+.img {
+    object-fit: cover;
+}
+
+
+.read-more {
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 64px;
+    color: #1b2850;
+}
+
+
+/*become researcher*/
+
+
+
+
+.card-item {
+    width: 33%;
+    text-align: center;
+}
+
+
+
+
+
+
+/*heat map*/
+
+
+.heat-map {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+}
+
+
+.map img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* contact us*/
+.map-container-4 {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 100% !important;
+    width: 100%;
+}
+
+.map-container-4 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/*pattners*/
+.logo-partner {
+    height: 100%;
+}
+
+.logo-partner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*members*/
+
+
+
+
+
+.form-input .item {
+    width: 100%;
+}
+
+.form-input .mat-form-field {
+    width: 100%;
+}
+
+.form-input .item input {
+    height: 30px;
+}
+
+::ng-deep .form-input .mat-form-field-underline {
+    background-color: #75cddd !important;
+    height: 3px !important;
+}
+
+::ng-deep .form-input .mat-form-field-invalid .mat-form-field-underline {
+    background-color: #f44336 !important;
+}
+
+::ng-deep .form-input .mat-form-field-ripple {
+    background-color: #75cddd !important;
+}
+
+.contact {
+    margin: 20px 0 !important;
+}
+
+
+
+.contact .full-section {
+    position: relative;
+    background: #f1f2f2;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.contact-info p {
+    font-size: 18px;
+}
+
+
+.submit {
+    text-align: right;
+}
+
+
+.example-form {
+    width: 100%;
+}
+
+.frequent-asked-questions .title {
+    padding: 0 40px;
+}
+
+
+
+.social-contact {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 190px;
+}
+
+
+
+
+.leaflet-container {
+     background: #fff;
+    outline: 0;
+}
+
+.heat-map .map {
+    display: flex;
+    color: #1b2850;
+    flex-direction: column;
+     padding: 0px;
+}
+
+.leaflet-heatmap-layer {
+    opacity: 0.9;
+}
+
+
+
+/*popup heatmap*/
+
+
+.one_recognized{
+    border: 1px solid #efe9e9;
+    width: 335px;
+    height: auto;
+    padding: 20px;
+    box-shadow: 10px 5px 5px #cac6c6;
+}
+
+.avatar-name{
+    display: flex;
+    margin-bottom: 18px
+}
+
+.avatar-name img{
+
+    width: 99px;
+    height: 105px;
+    margin-right: 18px;
+}
+
+.name p{
+    font-size: 20px;}
+
+.name .title div{
+    width: 100px;
+    border: 5px solid #75cddd;
+}
+
+.recently-joint {
+    display: flex;
+    margin-top: 11px;
+    font-size: 15px;
+}
+
+.recently-joint p{
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.recently-joint i{
+    margin-right:  10px;
+}
+
+.one_recognized .info-icon {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+}
+
+.one_recognized .info-icon i{
+    margin-right:10px;
+}
+
+
+
+.map{
+    height: 90%;
+    margin-top: 10px;
+}
+
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+    touch-action: none;
+    width: 100%;
+    height: 90%;
+}
+
+.logo-partner-mobile , .mobile {
+    display: none;
+}
+
+.logo-partner {
+    display: block;
+}
+
+.marquee img {
+    margin: 0 35px;
+}
+
+@media (max-width: 425px) {
+    .logo-partner-mobile , .mobile {
+        display: block;
+        margin-top: 0px;
+    }
+
+    .logo-partner {
+        display: none;
+    }
+
+}
+
+
+
+::ng-deep .mat-form-field-underline {
+    background-color: #75cddd !important;
+}
+
+
+::ng-deep .mat-form-field-ripple {
+    background-color: #75cddd !important;
+}
+
+::ng-deep .mat-primary .mat-pseudo-checkbox-checked, .mat-primary .mat-pseudo-checkbox-indeterminate {
+    background: #75cddd !important;
+}
+
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #75cddd;
+}

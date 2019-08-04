@@ -1,0 +1,74 @@
+
+/*.title p{*/
+/*    position: relative;*/
+/*}*/
+
+
+
+
+.title i{
+    margin-left: 15px;
+    color: #75cddd;;
+}
+
+.title span{
+    display: flex;
+}
+
+.file-paper {
+    width: 50%;
+}
+
+
+
+::ng-deep .mat-radio-label-content{
+
+    /*font-size: 12px !important;*/
+
+}
+
+
+.permission-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+
+::ng-deep  .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #75cddd;
+}
+
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #75cddd;
+}
+
+
+::ng-deep  .mat-radio-outer-circle {
+    box-sizing: border-box;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: -32px;
+    transition: border-color ease 280ms;
+    width: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+::ng-deep .mat-radio-inner-circle {
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: -32px;
+    transition: transform ease 280ms,background-color ease 280ms;
+    width: 20px;
+    transform: scale(.001);
+}
+
+::ng-deep .mat-radio-label {
+    white-space: inherit !important;
+}

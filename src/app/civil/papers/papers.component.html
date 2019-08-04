@@ -1,0 +1,236 @@
+<div class="nav-collapsed" *ngIf="collapsed">
+    <a routerLink="/home">{{'_HomePage' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
+    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
+    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+</div>
+
+<div class="top-home">
+    <div class="navbar-login logged">
+        <div class="navbar"
+             [style.z-index]="collapsed ? '550' : ''"
+             [style.background-color]="collapsed ? '#fff' : ''">
+            <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+                <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+            </a>
+        </div>
+        <div class="login-register" *ngIf="!_appService.session">
+            <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+            <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
+            <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
+        </div>
+        <div class="login-register"  *ngIf="_appService.session">
+            <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+            <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="login">{{'_Logout'| translate}}</div>
+        </div>
+    </div>
+
+    <div class="statistics">
+        <div>
+            <p>Home To </p><span>800,000 </span>
+            <p>research papers from </p> <span>455,44 </span>
+        </div>
+        <div>
+            <p>researchers across </p>
+            <span>77.7</span>
+            <p>discipline</p>
+        </div>
+    </div>
+</div>
+<div class="research-section" data-aos="fade-down" data-aos-duration="100">
+    <div class="title-search">
+        <div class="research-title">
+            <div class="title">
+                <p>{{'_ResearchPaper' | translate}}</p>
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="research-search">
+            <!--<div class="rsearch">-->
+            <div class="navigator">
+                <div class="nav-block">
+                    <!-- navbar only -->
+                    <!-- invoke the collapsed menu button for smallviewports -->
+                    <label for="show-menu" class="show-menu"><span class="grow">&nbsp;&nbsp;<i class="fas fa-bars">&nbsp;&darr;&nbsp;</i></span></label>
+
+                    <input type="checkbox" id="show-menu" role="button">
+                    <div id="menu">
+                        <div class="drop-list" dropdown>
+                            <!-- Use unicode &#x25BC; for dropdown tringle--->
+                            <a dropdownToggle>{{'_Discipline' | translate}} <span>&#x25BE;</span></a>
+                            <div *dropdownMenu role="menu" class="dropdown-menu text-center">
+                                <div class="pt-2 pb-2"><a href="/mission">{{'_Mission' | translate}}</a></div>
+                                <div class="pt-2 pb-2"><a href="/purpose">{{'_Purpose' | translate}}</a></div>
+                                <div class="pt-2 pb-2"><a href="/leadership">{{'_Leadership' | translate}}</a></div>
+                            </div>
+                        </div>
+                        <div class="drop-list"><a>{{'_Country' | translate}}</a></div>
+                        <div class="drop-list" dropdown>
+                            <a dropdownToggle>{{'_Language' | translate}} <span>&#x25BE;</span> </a>
+                            <div *dropdownMenu role="menu" class="dropdown-menu text-center">
+                                <div class="pt-2 pb-2"><a href="/showcase">{{'_Showcase' | translate}}</a></div>
+                                <div class="pt-2 pb-2"><a href="/scholarship">{{'_Scholarship' | translate}}</a></div>
+                                <div class="pt-2 pb-2"><a href="/testimonials">{{'_Testimonials' | translate}}</a></div>
+                            </div>
+                        </div>
+                        <div class="drop-list"><a>{{'_Year' | translate}}</a></div>
+                    </div>
+                </div><!--nav-block-->
+            </div>
+            <div class="col-lg-12 research-input">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="{{'_Search' | translate}}...">
+                        <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="fa fa-search"
+                                                                                 aria-hidden="true"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!--</div>-->
+
+        </div>
+    </div>
+    <div class="cards-items">
+        <div class="c-item" data-aos="fade-up" data-aos-duration="500" (click)="viewPaper()">
+            <div class="bookmark">
+                <i class="fa fa-bookmark-o"></i>
+            </div>
+            <div class="title">
+                <h3>Environmental health: How our
+                    food choices is affecting the earth.
+                </h3>
+                <div></div>
+            </div>
+            <div class="paper-card-info">
+                <h6 class="by">{{'_By' | translate}}</h6>
+                <h6 style="font-weight: bold ; color: #75cddd;">Ghina Sallit</h6>
+            </div>
+            <div class="paper-card-info">
+                <i class="fa fa-tag" aria-hidden="true"></i> <h6>Envirpment . Earth</h6>
+            </div>
+            <div class="paper-card-info">
+                <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>25.April.2019</h6>
+            </div>
+            <div class="paper-description">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna
+                </p>
+            </div>
+            <div class="view-download">
+
+                <div class="views-paper">
+                    <i class="fa fa-eye" aria-hidden="true"></i> <h6>2125 {{'_Views' | translate}}</h6>
+                </div>
+                <div class="download-paper">
+                    <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
+                </div>
+                <div class="edit-paper">
+                    <i class="fa fa fa-pencil-square-o"></i>
+                </div>
+            </div>
+        </div>
+        <div class="c-item" data-aos="fade-up" data-aos-duration="1000" (click)="viewPaper()">
+            <div class="bookmark">
+                <i class="fa fa-bookmark-o"></i>
+            </div>
+            <div class="title">
+                <h3>Environmental health: How our
+                    food choices is affecting the earth.
+                </h3>
+                <div></div>
+            </div>
+            <div class="paper-card-info">
+                <h6 class="by">{{'_By' | translate}}</h6>
+                <h6 style="font-weight: bold ; color: #75cddd;">Ghina Sallit</h6>
+            </div>
+            <div class="paper-card-info">
+                <i class="fa fa-tag" aria-hidden="true"></i> <h6>Envirpment . Earth</h6>
+            </div>
+            <div class="paper-card-info">
+                <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>25.April.2019</h6>
+            </div>
+            <div class="paper-description">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna
+                </p>
+            </div>
+            <div class="view-download">
+
+                <div class="views-paper">
+                    <i class="fa fa-eye" aria-hidden="true"></i> <h6>2125 {{'_Views' | translate}}</h6>
+                </div>
+                <div class="download-paper">
+                    <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
+                </div>
+                <div class="edit-paper">
+                    <i class="fa fa fa-pencil-square-o"></i>
+                </div>
+            </div>
+        </div>
+        <div class="c-item" data-aos="fade-up" data-aos-duration="1500" (click)="viewPaper()">
+            <div class="bookmark">
+                <i class="fa fa-bookmark-o"></i>
+            </div>
+            <div class="title">
+                <h3>Environmental health: How our
+                    food choices is affecting the earth.
+                </h3>
+                <div></div>
+            </div>
+            <div class="paper-card-info">
+                <h6 class="by">{{'_By' | translate}}</h6>
+                <h6 style="font-weight: bold ; color: #75cddd;">Ghina Sallit</h6>
+            </div>
+            <div class="paper-card-info">
+                <i class="fa fa-tag" aria-hidden="true"></i> <h6>Envirpment . Earth</h6>
+            </div>
+            <div class="paper-card-info">
+                <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>25.April.2019</h6>
+            </div>
+            <div class="paper-description">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna
+                    Lorem ipsum dolor sit amet, consectetuer
+                    adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna
+                </p>
+            </div>
+            <div class="view-download">
+
+                <div class="views-paper">
+                    <i class="fa fa-eye" aria-hidden="true"></i> <h6>2125 {{'_Views' | translate}}</h6>
+                </div>
+                <div class="download-paper">
+                    <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
+                </div>
+                <div class="edit-paper">
+                    <i class="fa fa fa-pencil-square-o"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-action">
+        <button>{{'_ViewMore' | translate}}</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="breadcrumb-flow">
+    <div class="print-share">
+        <i aria-hidden="true" class="fa fa-print" (click)="printThis();"></i>
+        <i aria-hidden="true" class="fa fa-share-alt"></i>
+    </div>
+    <div class="flow">
+        <ng-container *ngFor="let bread of Breadcrumb; let firstItem = first; let lastItem = last">
+            <ng-container *ngIf="firstItem">
+                <i class="fa fa-home" aria-hidden="true" style="color: #f8d84c;"></i>
+                <span class="firstItem" style="font-weight: 800">{{bread}}</span>
+            </ng-container>
+           <ng-container *ngIf="!lastItem && !firstItem">
+               <i [ngClass]="_appService.currentLanguage === 'en' ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'"></i>
+               <span>{{bread}}</span>
+           </ng-container>
+           <ng-container *ngIf="lastItem">
+               <i [ngClass]="_appService.currentLanguage === 'en' ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'"></i>
+               <span class="lastItem">{{bread}}</span>
+           </ng-container>
+        </ng-container>
+    </div>
+</div>
