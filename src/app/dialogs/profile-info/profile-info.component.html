@@ -6,7 +6,6 @@
                     <img *ngIf="!imageChangedEvent"
                          [src]="croppedImage.base64 ? croppedImage.base64 : 'assets/img/avatar_default.PNG'" alt=""
                          [style.width]="croppedImage.base64 ? '100%' : ''">
-
                     <div *ngIf="imageChangedEvent">
                         <image-cropper [imageChangedEvent]="imageChangedEvent"
                                        [maintainAspectRatio]="false"
