@@ -24,9 +24,11 @@
                 </a>
             </div>
 
-            <div class="login-register"  *ngIf="_appService.roll">
-                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="login-register" *ngIf="_appService.roll">
+                <div class="lang" (click)="_appService.switchLanguage('en')"
+                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')"
+                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login">{{'_Logout'| translate}}</div>
             </div>
         </div>
@@ -47,14 +49,15 @@
 
                     <mat-form-field hintLabel="Max 500 characters">
                         <textarea matInput #input placeholder="Description" maxlength="500"
-                                  formControlName="description"  required></textarea>
+                                  formControlName="description" required></textarea>
                         <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
                         <mat-error *ngIf="description.errors.required">{{'_Required' | translate}}</mat-error>
                     </mat-form-field>
 
 
-                    <mat-form-field>
-                        <mat-select placeholder="Tags"  formControlName="tags"  multiple required>
+                    <mat-form-field *ngIf="selected">
+                        <mat-select placeholder="Tags" formControlName="tags" multiple required
+                                    [compareWith]="compareFN">
                             <mat-select-trigger>
                                 {{toppings.value ? toppings.value[0] : ''}}
                                 <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
@@ -70,26 +73,28 @@
                     <mat-form-field>
                         <mat-label>Discipline</mat-label>
 
-                        <mat-select formControlName="discipline"  required>
+                        <mat-select formControlName="discipline" required>
                             <mat-option>--</mat-option>
-                            <mat-option *ngFor="let discipline of disciplines"  [value]="discipline.discipline_id">
+                            <mat-option *ngFor="let discipline of disciplines" [value]="discipline.discipline_id">
                                 <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>
                                 <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>
                             </mat-option>
                         </mat-select>
                         <mat-error *ngIf="discipline.hasError('required')">Please choose your Discipline</mat-error>
                     </mat-form-field>
-                        <div class="lang">
+                    <div class="lang">
 
                         <p>Research Paper Language *</p>
                         <mat-radio-group aria-label="Select an option" formControlName="lang" required>
-                            <mat-radio-button value="1" [checked]="details?.language == 1">{{'_English' | translate}}</mat-radio-button>
-                            <mat-radio-button value="2" [checked]="details?.language == 2">{{'_Arabic' | translate}}</mat-radio-button>
+                            <mat-radio-button value="1"
+                                              [checked]="details?.language == 1">{{'_English' | translate}}</mat-radio-button>
+                            <mat-radio-button value="2"
+                                              [checked]="details?.language == 2">{{'_Arabic' | translate}}</mat-radio-button>
                         </mat-radio-group>
                     </div>
 
                     <div class="submit">
-                        <button (click)="editPaper()" >{{'_Save' | translate}}</button>
+                        <button (click)="editPaper()">{{'_Save' | translate}}</button>
 
                     </div>
                 </form>

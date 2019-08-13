@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../../app.service';
 import {Paper} from '../../../classes/paper';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
@@ -18,12 +18,18 @@ export class EditPaperComponent implements OnInit {
     result: any;
     details: any;
     allTags: any = [];
+    selected: string[] = [];
     myControl = new FormControl();
     toppings = new FormControl();
     disciplines: any = [];
     // myControl = new FormControl();
     options: string[] = ['One', 'Two', 'Three'];
     filteredOptions: Observable<string[]>;
+    title = new FormControl('', [Validators.required]);
+    discipline = new FormControl('', [Validators.required]);
+    description = new FormControl('', [Validators.required]);
+    tags = new FormControl('', [Validators.required]);
+    lang = new FormControl('', [Validators.required]);
 
     constructor(private fb: FormBuilder,
                 public _appService: AppService,
@@ -39,18 +45,12 @@ export class EditPaperComponent implements OnInit {
         });
     }
 
-    title = new FormControl('', [Validators.required]);
-    discipline = new FormControl('', [Validators.required]);
-    description = new FormControl('', [Validators.required]);
-    tags = new FormControl('', [Validators.required]);
-    lang = new FormControl('', [Validators.required]);
-
     editPaper() {
 
         this.paper.title = this.paperForm.controls.title.value;
         this.paper.discipline = this.paperForm.controls.discipline.value;
         this.paper.description = this.paperForm.controls.description.value;
-        this.paper.tags =  this.paperForm.controls.tags.value;
+        this.paper.tags = this.paperForm.controls.tags.value;
         this.paper.lang = this.paperForm.controls.lang.value;
         this._appService.api.editPaperService(this.paper)
             .subscribe(response => {
@@ -66,12 +66,19 @@ export class EditPaperComponent implements OnInit {
             });
     }
 
+    compareFN() {
+        return this.selected;
+    }
+
 
     getPaper() {
         this._appService.api.getPaperService(this.paper)
             .subscribe(response => {
 
                 this.result = response;
+                this.result.data.tags.forEach(tag => {
+                    this.selected.push(tag.tag_id);
+                });
 
                 if (this.result.code === 1) {
                     this.details = this.result.data;
@@ -134,14 +141,6 @@ export class EditPaperComponent implements OnInit {
 
     }
 
-
-    private _filter(value: string): string[] {
-        const filterValue = value.toLowerCase();
-
-        return this.disciplines.filter(option => option.toLowerCase().includes(filterValue));
-    }
-
-
     ngOnInit() {
         this.getDisciplines();
 
@@ -156,6 +155,12 @@ export class EditPaperComponent implements OnInit {
                 startWith(''),
                 map(value => this._filter(value))
             );
+    }
+
+    private _filter(value: string): string[] {
+        const filterValue = value.toLowerCase();
+
+        return this.disciplines.filter(option => option.toLowerCase().includes(filterValue));
     }
 
 }
