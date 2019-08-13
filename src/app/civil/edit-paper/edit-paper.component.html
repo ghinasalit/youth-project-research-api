@@ -55,9 +55,8 @@
                     </mat-form-field>
 
 
-                    <mat-form-field *ngIf="selected">
-                        <mat-select placeholder="Tags" formControlName="tags" multiple required
-                                    [compareWith]="compareFN">
+                    <mat-form-field *ngIf="selected != []">
+                        <mat-select placeholder="Tags" formControlName="tags" multiple required>
                             <mat-select-trigger>
                                 {{toppings.value ? toppings.value[0] : ''}}
                                 <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">

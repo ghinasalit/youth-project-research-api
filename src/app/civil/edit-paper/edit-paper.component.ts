@@ -66,10 +66,6 @@ export class EditPaperComponent implements OnInit {
             });
     }
 
-    compareFN() {
-        return this.selected;
-    }
-
 
     getPaper() {
         this._appService.api.getPaperService(this.paper)
@@ -79,6 +75,7 @@ export class EditPaperComponent implements OnInit {
                 this.result.data.tags.forEach(tag => {
                     this.selected.push(tag.tag_id);
                 });
+                this.paperForm.get('tags').setValue(this.selected);
 
                 if (this.result.code === 1) {
                     this.details = this.result.data;
