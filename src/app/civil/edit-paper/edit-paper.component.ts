@@ -45,15 +45,13 @@ export class EditPaperComponent implements OnInit {
     tags = new FormControl('', [Validators.required]);
     lang = new FormControl('', [Validators.required]);
 
-    savePaper() {
+    editPaper() {
 
-        console.log(this.toppings);
         this.paper.title = this.paperForm.controls.title.value;
         this.paper.discipline = this.paperForm.controls.discipline.value;
         this.paper.description = this.paperForm.controls.description.value;
-        this.paper.tags = this.paperForm.controls.tags.value;
+        this.paper.tags =  this.paperForm.controls.tags.value;
         this.paper.lang = this.paperForm.controls.lang.value;
-        console.log(this.paper);
         this._appService.api.editPaperService(this.paper)
             .subscribe(response => {
 
@@ -77,6 +75,9 @@ export class EditPaperComponent implements OnInit {
 
                 if (this.result.code === 1) {
                     this.details = this.result.data;
+                    this.paperForm.get('title').setValue(this.details.title);
+                    this.paperForm.get('discipline').setValue(this.details.discipline_id);
+                    this.paperForm.get('description').setValue(this.details.description);
                     this.getTags();
 
 
@@ -93,20 +94,21 @@ export class EditPaperComponent implements OnInit {
                 let result;
                 result = response;
                 if (result.code === 1) {
-                    result.data.forEach(item => {
-                        this.details.tags.forEach(tag => {
-                            if (item.tag_id === tag.tag_id) {
-                                item['check'] = true;
-                                console.log(item);
-                                this.allTags.push(item);
-                            } else {
-                                item['check'] = false;
-                                this.allTags.push(item);
-                                console.log(this.allTags);
-
-                            }
-                        });
-                    });
+                    this.allTags = result.data;
+                    // result.data.forEach(item => {
+                    //     this.details.tags.forEach(tag => {
+                    //         if (item.tag_id === tag.tag_id) {
+                    //             item['check'] = true;
+                    //             console.log(item);
+                    //             this.allTags.push(item);
+                    //         } else {
+                    //             item['check'] = false;
+                    //             this.allTags.push(item);
+                    //             console.log(this.allTags);
+                    //
+                    //         }
+                    //     });
+                    // });
 
 
                 } else {
@@ -138,6 +140,7 @@ export class EditPaperComponent implements OnInit {
 
         return this.disciplines.filter(option => option.toLowerCase().includes(filterValue));
     }
+
 
     ngOnInit() {
         this.getDisciplines();

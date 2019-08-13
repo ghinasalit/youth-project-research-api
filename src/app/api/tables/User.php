@@ -89,7 +89,7 @@ Class User
             $phone = Helper::make_safe($data['phone']);
             $Linkedin = Helper::make_safe($data['Linkedin']);
             $description = Helper::make_safe($data['description']);
-            $response = Queries::updateProfile($member_id , $password, $f_name, $l_name, $avatar, $university, $job, $location, $phone, $Linkedin, $description);
+            $response = Queries::updateProfile($member_id, $password, $f_name, $l_name, $avatar, $university, $job, $location, $phone, $Linkedin, $description);
             if (is_numeric($response)) {
                 $error_msg = array_search($response, \Model\Enums::$code);
                 $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
@@ -177,6 +177,29 @@ Class User
             $error_msg = array_search($paper, \Model\Enums::$code);
             $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
         }
+
+        return $result;
+    }
+
+    static public function edit_paper($data)
+    {
+        $title = Helper::make_safe($data['title']);
+        $paper_id = Helper::make_safe($data['paper_id']);
+        $tags = Helper::make_safe($data['tags']);
+        $discipline = Helper::make_safe($data['discipline']);
+        $description = Helper::make_safe($data['description']);
+        $language = Helper::make_safe($data['lang']);
+
+
+            $response = Queries::edit_paper($paper_id, $title, $description , $tags, $discipline , $language );
+            if (is_numeric($response)) {
+                $error_msg = array_search($response, \Model\Enums::$code);
+                $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+            } else {
+                $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+            }
+
+
 
         return $result;
     }
@@ -404,7 +427,7 @@ Class User
 
     }
 
- static public function add_download($data)
+    static public function add_download($data)
     {
         $paper_id = Helper::make_safe($data['paper_id']);
         $user_id = Helper::make_safe($data['member_id']);
@@ -509,14 +532,14 @@ Class User
 
         $response = Queries::get_paper($paper_id);
 
-            if (is_numeric($response)) {
-                $error_msg = array_search($response, \Model\Enums::$code);
-                $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
-            } else {
-                $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
-            }
-            return $result;
+        if (is_numeric($response)) {
+            $error_msg = array_search($response, \Model\Enums::$code);
+            $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+        } else {
+            $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
         }
+        return $result;
+    }
 
 
     static public function get_published_papers($data)

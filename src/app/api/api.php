@@ -79,6 +79,11 @@ if ($request_headers['code'] == 1) {
                         $result = User::get_member_by_username($data);
                         break;
                     }
+                 case 'edit_paper':
+                    {
+                        $result = User::edit_paper($data);
+                        break;
+                    }
                  case 'get_member_logged_in':
                     {
                         $result = User::get_member_logged_in($data);

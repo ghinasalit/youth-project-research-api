@@ -28,7 +28,6 @@ class Queries
     }
 
 
-
     static public function add_paper($member_id, $title, $description, $status, $tags, $discipline, $permission, $language, $paper)
     {
 
@@ -36,7 +35,6 @@ class Queries
         $data = Array(
             'title' => $title,
             'status' => $status,
-//            'tags' => $tag,
             'discipline' => $discipline,
             'permission' => $permission,
             'description' => $description,
@@ -59,6 +57,48 @@ class Queries
 
         if ($db->count) {
             return $user;
+        } else {
+            return -25;
+        }
+    }
+
+
+    static public function edit_paper($paper_id, $title, $description, $tags, $discipline, $language)
+    {
+
+        global $db;
+        $data = Array(
+            'title' => $title,
+            'discipline_id' => $discipline,
+            'description' => $description,
+            'language' => $language,
+        );
+
+        $db->where('paper_id', $paper_id);
+        $db->update('papers', $data);
+
+        $tags = explode(',', $tags[0]);
+        foreach ($tags as $value) {
+            $db->where('paper_id', $paper_id)
+                ->delete('paper_tags');
+
+        }
+
+        foreach ($tags as $value) {
+            $data = Array(
+                'tag_id' => $value,
+                'paper_id' => $paper_id,
+            );
+
+            $db->insert('paper_tags', $data);
+
+        }
+
+
+        $paper = $db->where('paper_id', $paper_id)->getOne('papers', 'title, description , discipline_id, permission , language');
+
+        if ($db->count) {
+            return $paper;
         } else {
             return -25;
         }
@@ -155,7 +195,7 @@ class Queries
         }
     }
 
-    static public function updateProfile($member_id , $password, $f_name, $l_name, $avatar, $university, $job, $location, $phone, $Linkedin, $description)
+    static public function updateProfile($member_id, $password, $f_name, $l_name, $avatar, $university, $job, $location, $phone, $Linkedin, $description)
     {
 
         global $db;
@@ -181,13 +221,13 @@ class Queries
             $avatar_path = '';
         }
 
-       if(!empty($password)){
-           $data['password'] = md5($password);
-       }
+        if (!empty($password)) {
+            $data['password'] = md5($password);
+        }
 
-        if(!empty($avatar)){
+        if (!empty($avatar)) {
             $data['avatar'] = $avatar_path;
-       }
+        }
 
         $db->where('member_id', $member_id);
         $db->update('members', $data);
@@ -199,7 +239,6 @@ class Queries
             return -25;
         }
     }
-
 
 
     static public function isUserExist($username)
@@ -361,19 +400,19 @@ class Queries
     static public function get_paper($paper_id)
     {
         global $db;
-        $query = "SELECT papers.paper_id , papers.description , papers.title , papers.language , disciplines.discipline_ar , disciplines.discipline_en   FROM papers JOIN disciplines  ON papers.discipline_id = disciplines.discipline_id  WHERE papers.paper_id = '".$paper_id."'";
+        $query = "SELECT papers.paper_id , papers.description , papers.title , papers.language , disciplines.discipline_ar , disciplines.discipline_id , disciplines.discipline_en   FROM papers JOIN disciplines  ON papers.discipline_id = disciplines.discipline_id  WHERE papers.paper_id = '" . $paper_id . "'";
         $paper = $db->withTotalCount()->rawQuery($query);
-        $query = "SELECT tags.tag_id , tags.tag_en , tags.tag_ar FROM paper_tags JOIN tags  ON paper_tags.tag_id = tags.tag_id  WHERE paper_tags.paper_id = '".$paper_id."'";
-            $tags = $db->withTotalCount()->rawQuery($query);
-            $paper[0]['tags'] = $tags;
+        $query = "SELECT tags.tag_id , tags.tag_en , tags.tag_ar FROM paper_tags JOIN tags  ON paper_tags.tag_id = tags.tag_id  WHERE paper_tags.paper_id = '" . $paper_id . "'";
+        $tags = $db->withTotalCount()->rawQuery($query);
+        $paper[0]['tags'] = $tags;
         if (!empty($paper)) {
 
-                return $paper[0];
-            } else {
-                return -99;
+            return $paper[0];
+        } else {
+            return -99;
 
 
-            }
+        }
 
 
     }
