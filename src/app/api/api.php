@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('config.php');
+$postdata = file_get_contents("php://input");
+
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Request-Method: POST");
@@ -14,8 +16,7 @@ $result = array();
 
 $json = file_get_contents('php://input');
 $data = json_decode(Helper::objectToArray($json), true);
-
-if (isset($_POST['session_id'])) {
+if(isset($_POST['session_id'])){
 
     $data['session_id'] = $_POST['session_id'];
 }
@@ -24,14 +25,19 @@ $function = isset($_GET['function']) ? Helper::make_safe($_GET['function']) : nu
 $valid = true;
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 if ($request_headers['code'] == 1) {
-    if (!empty($_SESSION[___APP])) {
+    if (!empty($_SESSION[___APP]['session_key'])) {
         $session_key = $_SESSION[___APP]['session_key'] ? $_SESSION[___APP]['session_key'] : NULL;
+        $session_roll = $_SESSION[___APP]['roll'] = 1;
     } else {
         $session_key = NULL;
+        $session_roll = $_SESSION[___APP]['roll'] = 0;
     }
 
     if ($function) {
-        if (!in_array($function, array('login', 'register', 'check_version', 'add_feedback'))) {
+        if (!in_array($function, array('login', 'register', 'check_version' , 'add_feedback' , 'get_roll' ,
+            'search_paper' ,'is_user_exist', 'get_universities' , 'get_members' , 'get_published_papers' ,
+            'get_countries' , 'get_disciplines' , 'statistics' , 'get_years' , 'get_member' , 'get_papers_by_member' ,
+            'search_paper_by_member' , 'search_member'))) {
             if ($session_key) {
                 $valid = Queries::check_session_alive($session_key);
                 if (!$valid) {
@@ -63,7 +69,7 @@ if ($request_headers['code'] == 1) {
                         $result = User::register($data);
                         break;
                     }
-                case 'update_Profile':
+                case 'update_profile':
                     {
                         $result = User::update_Profile($data);
                         break;
@@ -73,14 +79,44 @@ if ($request_headers['code'] == 1) {
                         $result = User::get_member_by_username($data);
                         break;
                     }
+                 case 'get_member_logged_in':
+                    {
+                        $result = User::get_member_logged_in($data);
+                        break;
+                    }
+                case 'statistics':
+                    {
+                        $result = User::get_statistics();
+                        break;
+                    }
                 case 'get_members':
                     {
                         $result = User::get_active_members($data);
                         break;
                     }
+                 case 'save_paper':
+                    {
+                        $result = User::save_paper($data);
+                        break;
+                    }
+                 case 'unsave_paper':
+                    {
+                        $result = User::unsave_paper($data);
+                        break;
+                    }
                 case 'get_papers':
                     {
                         $result = User::get_papers($data);
+                        break;
+                    }
+                 case 'get_paper':
+                    {
+                        $result = User::get_paper($data);
+                        break;
+                    }
+                case 'get_published_papers':
+                    {
+                        $result = User::get_published_papers($data);
                         break;
                     }
 
@@ -89,22 +125,33 @@ if ($request_headers['code'] == 1) {
                         $result = User::add_view($data);
                         break;
                     }
+                case 'add_download':
+                {
+                    $result = User::add_download($data);
+                    break;
+                }
+
                 case 'add_feedback':
                     {
                         $result = User::add_feedback($data);
                         break;
                     }
-                case 'search_paper':
+                    case 'search_paper':
                     {
                         $result = User::search_paper($data);
                         break;
                     }
-                case 'search_member':
+                    case 'search_paper_by_member':
+                    {
+                        $result = User::search_paper_by_member($data);
+                        break;
+                    }
+                    case 'search_member':
                     {
                         $result = User::search_member($data);
                         break;
                     }
-                case 'get_one_recognizes_researched':
+                    case 'get_one_recognizes_researched':
                     {
                         $result = User::get_one_recognizes_researched($data);
                         break;
@@ -115,9 +162,59 @@ if ($request_headers['code'] == 1) {
                         break;
                     }
 
+                case 'get_countries':
+                    {
+                        $result = User::get_countries();
+                        break;
+                    }
+                   case 'get_years':
+                    {
+                        $result = User::get_years();
+                        break;
+                    }
+
+                case 'get_tags':
+                    {
+                        $result = User::get_tags();
+                        break;
+                    }
+
+                case 'get_disciplines':
+                    {
+                        $result = User::get_disciplines();
+                        break;
+                    }
+                 case 'is_user_exist':
+                    {
+                        $result = User::isUserExist($data);
+                        break;
+                    }
+
+                case 'get_universities':
+                    {
+                        $result = User::get_universities();
+                        break;
+                    }
+
+
                 case 'publish_unpublish_paper':
                     {
                         $result = User::publish_unpublish_paper($data);
+                        break;
+                    }
+                case 'get_papers_by_member':
+                    {
+                        $result = User::get_papers_by_member($data);
+                        break;
+                    }
+                 case 'get_bookmarks':
+                    {
+                        $result = User::get_bookmarks($data);
+                        break;
+                    }
+                case 'get_roll':
+                    {
+                        $result = $session_roll ;
                         break;
                     }
                 default:

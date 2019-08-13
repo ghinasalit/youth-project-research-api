@@ -38,15 +38,16 @@
 
 
                 <mat-form-field>
-                    <mat-label>Favorite animal</mat-label>
-                    <mat-select formControlName="university" required>
+                    <mat-label>your university</mat-label>
+
+                    <mat-select formControlName="university"  required>
                         <mat-option>--</mat-option>
-                        <mat-option *ngFor="let animal of animals" [value]="animal">
-                            {{animal.name}}
+                        <mat-option *ngFor="let university of universities"  [value]="university.university_id">
+                            <span *ngIf="_appService.currentLanguage === 'en'">{{university.name_en}}</span>
+                            <span *ngIf="_appService.currentLanguage === 'ar'">{{university.name_en}}</span>
                         </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="university.hasError('required')">Please choose ypur university</mat-error>
-                    <mat-hint>{{university.value?.sound}}</mat-hint>
+                    <mat-error *ngIf="university.hasError('required')">Please choose your university</mat-error>
                     <i class="fa fa-university" aria-hidden="true"></i>
                 </mat-form-field>
                 <div class="field-item">

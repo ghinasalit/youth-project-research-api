@@ -15,6 +15,8 @@ import {PermissionPeparComponent} from './civil/upload-research-paper/permission
 import {PapersComponent} from './civil/papers/papers.component';
 import {EditPaperComponent} from './civil/edit-paper/edit-paper.component';
 import {MemberDetailsComponent} from './civil/member-details/member-details.component';
+import {AuthGuard} from './guards/auth.guard';
+import {LoginGuard} from './guards/login.guard';
 
 const routes: Routes = [
     {
@@ -28,19 +30,23 @@ const routes: Routes = [
 
             {
                 path: 'register',
-                component: RegisterComponent
+                component: RegisterComponent,
+                canActivate: [LoginGuard]
             },
             {
-                path: 'profile',
-                component: ProfileComponent
+                path: 'profile/:id',
+                component: ProfileComponent,
             },
             {
                 path: 'profile-info',
-                component: MemberDetailsComponent
+                component: MemberDetailsComponent,
+                canActivate: [AuthGuard]
             },
             {
                 path: 'upload-paper',
                 component: UploadResearchPaperComponent,
+                canActivate: [AuthGuard],
+
                 children: [
                     {
                         path: '',
@@ -58,7 +64,8 @@ const routes: Routes = [
             },
             {
                 path: 'login',
-                component: LoginComponent
+                component: LoginComponent,
+                canActivate: [LoginGuard]
             },
             {
                 path: 'about',
@@ -73,8 +80,9 @@ const routes: Routes = [
                 component: PapersComponent
             },
             {
-                path: 'edit-paper',
-                component: EditPaperComponent
+                path: 'edit-paper/:id',
+                component: EditPaperComponent,
+                canActivate: [AuthGuard]
             },
             {
                 path: '',

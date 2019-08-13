@@ -84,16 +84,6 @@
 
 }
 
-/*.social div {*/
-/*    display: block;*/
-/*}*/
-
-
-/*.social i {*/
-/*    font-size: 25px;*/
-/*    color: #1b2850;*/
-/*    margin-bottom: 16px;*/
-/*}*/
 
 input {
     height: 65px;
@@ -101,12 +91,14 @@ input {
 }
 
 
-.cards-items {
+
+.cards-items{
     display: flex;
-    /*flex-wrap: wrap;*/
+    flex-wrap: wrap;
     justify-content: space-between;
     color: #1B2850;
 }
+
 
 
 .cards-items h3 {
@@ -382,4 +374,12 @@ input[type=checkbox]:checked ~ #menu {
 .line-saved{
     display: none;
 }
+
+
+.view-more p{
+    text-align: center;
+    color: #75cddd;
+    cursor: pointer;
+}
+
 

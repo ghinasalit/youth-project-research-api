@@ -125,7 +125,7 @@ h3 , h6 {
 /*card paper*/
 .cards-items {
     display: flex;
-    /*flex-wrap: wrap;*/
+    flex-wrap: wrap;
     justify-content: space-between;
     color: #1B2850;
 
@@ -160,6 +160,8 @@ h3 , h6 {
 
 .text-center {
     text-align: center;
+    height: 182px;
+    overflow: scroll;
 }
 
 .pb-2 {
@@ -176,6 +178,11 @@ h3 , h6 {
     font-weight: bold;
 }
 
+.view-more p{
+    text-align: center;
+    color: #75cddd;
+    cursor: pointer;
+}
 
 
 .text {

@@ -5,6 +5,7 @@ import {AppService} from '../../app.service';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {User} from '../../../classes/user';
+import {variable} from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -18,17 +19,13 @@ export class ProfileInfoComponent implements OnInit {
     public user = new User();
     profileForm: FormGroup;
     result: any;
+    universities: any;
+    fileName: string;
     university = new FormControl('', [Validators.required]);
-
     imageChangedEvent: any = '';
     croppedImage: any = 'assets/img/avatar_default.PNG';
 
-    public animals = [
-        {name: 'Dog', sound: 'Woof!'},
-        {name: 'Cat', sound: 'Meow!'},
-        {name: 'Cow', sound: 'Moo!'},
-        {name: 'Fox', sound: 'Wa-pa-pa-pa-pa-pa-pow!'},
-    ];
+
 
     constructor(private fb: FormBuilder,
                 public _appService: AppService,
@@ -49,6 +46,7 @@ export class ProfileInfoComponent implements OnInit {
 
     fileChangeEvent(event: any): void {
         this.imageChangedEvent = event;
+
     }
 
     imageCropped(image: string) {
@@ -70,15 +68,18 @@ export class ProfileInfoComponent implements OnInit {
         this.user.phone = this.profileForm.controls.phone.value;
         this.user.Linkedin = this.profileForm.controls.Linkedin.value;
         this.user.description = this.profileForm.controls.description.value;
-        this.user.avatar = this.croppedImage.base64;
+        this.user.avatar = this.croppedImage.base64 ? this.croppedImage.base64 : '';
+        console.log(this.user);
         this._appService.api.registerService(this.user)
             .subscribe(response => {
 
                 this.result = response;
 
                 if (this.result.code === 1) {
+                    this._appService.getRoll();
+                    localStorage.setItem('username', this.result.data.username);
+
                     this.dialogRef.close();
-                    localStorage.setItem('logged', '1');
                     this.router.navigate(['/']);
                 } else {
 
@@ -90,7 +91,26 @@ export class ProfileInfoComponent implements OnInit {
 
     }
 
+
+    getUniversities() {
+        this._appService.api.getUniversitiesService()
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+                    this.universities = result.data;
+                } else {
+
+                }
+
+            });
+
+    }
+
     ngOnInit() {
+
+        this.getUniversities();
+
 
 
     }

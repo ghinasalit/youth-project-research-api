@@ -24,7 +24,7 @@
                 </a>
             </div>
 
-            <div class="login-register"  *ngIf="_appService.session">
+            <div class="login-register"  *ngIf="_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login">{{'_Logout'| translate}}</div>
@@ -40,45 +40,59 @@
                     <div class="example-container">
                         <mat-form-field>
                             <input matInput placeholder="Title" formControlName="title"
-                                   value="text text text text text  " required>
+                                   value="{{details?.title}}" required>
                             <mat-error *ngIf="title.errors.required">{{'_Required' | translate}}</mat-error>
                         </mat-form-field>
                     </div>
 
                     <mat-form-field hintLabel="Max 500 characters">
                         <textarea matInput #input placeholder="Description" maxlength="500"
-                                  formControlName="description" value="text text text text text " required></textarea>
+                                  formControlName="description" value="{{details?.description}}" required></textarea>
                         <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
                         <mat-error *ngIf="description.errors.required">{{'_Required' | translate}}</mat-error>
                     </mat-form-field>
-
                     <mat-form-field>
-                        <mat-select placeholder="Tags" formControlName="tags" multiple>
+                        <mat-select placeholder="Tags" formControlName="tags"   multiple required>
                             <mat-select-trigger>
-                                {{toppings.value ? toppings.value[0] : ''}}
-                                <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
-        (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                                {{tags.value ? tags.value[0] : ''}}
+                                <span *ngIf="tags.value?.length > 1" class="example-additional-selection">
+        (+{{tags.value.length - 1}} {{tags.value?.length === 2 ? 'other' : 'others'}})
       </span>
                             </mat-select-trigger>
-                            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-                        </mat-select>
+                            <mat-option *ngFor="let tag of allTags" [value]="tag.tag_id">
+                                <span *ngIf="_appService.currentLanguage == 'en'">{{tag.tag_en}}</span>
+                                <span *ngIf="_appService.currentLanguage == 'ar'">{{tag.tag_ar}}</span>
+                            </mat-option>                        </mat-select>
                     </mat-form-field>
-                    <div class="example-container">
-                        <mat-form-field>
-                            <input matInput placeholder="Discipline" formControlName="discipline" required>
-                            <mat-error *ngIf="discipline.errors.required">{{'_Required' | translate}}</mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div class="lang">
+                    <mat-form-field class="example-full-width">
+                        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of disciplines " [value]="option.discipline_id">
+                                <span *ngIf="_appService.currentLanguage === 'en'">{{option.discipline_en}}</span>
+                                <span *ngIf="_appService.currentLanguage === 'ar'">{{option.discipline_ar}}</span>
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+<!--                    <mat-form-field class="example-full-width" required>-->
+<!--                        <input type="text" placeholder="Discipline" aria-label="Number" matInput [formControl]="discipline" [matAutocomplete]="auto">-->
+<!--                        <mat-autocomplete #auto="matAutocomplete">-->
+<!--                            <mat-option *ngFor="let discipline of disciplines | async" [value]="discipline.discipline_id">-->
+<!--                                <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>-->
+<!--                                <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>-->
+<!--                            </mat-option>-->
+<!--                        </mat-autocomplete>-->
+<!--                    </mat-form-field>-->
+                        <div class="lang">
+
                         <p>Research Paper Language *</p>
                         <mat-radio-group aria-label="Select an option" formControlName="lang" required>
-                            <mat-radio-button value="1" checked>{{'_English' | translate}}</mat-radio-button>
-                            <mat-radio-button value="2">{{'_Arabic' | translate}}</mat-radio-button>
+                            <mat-radio-button value="1" [checked]="details?.language == 1">{{'_English' | translate}}</mat-radio-button>
+                            <mat-radio-button value="2" [checked]="details?.language == 2">{{'_Arabic' | translate}}</mat-radio-button>
                         </mat-radio-group>
                     </div>
 
                     <div class="submit">
-                        <button (click)="savePaper()" [disabled]="!paperForm.valid">{{'_Continue' | translate}}</button>
+                        <button (click)="savePaper()" >{{'_Save' | translate}}</button>
 
                     </div>
                 </form>

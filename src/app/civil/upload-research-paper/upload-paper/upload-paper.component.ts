@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../../../app.service';
+import {Route, Router} from '@angular/router';
 
 @Component({
     selector: 'app-upload-paper',
@@ -15,6 +16,7 @@ export class UploadPaperComponent implements OnInit {
     fileName: string;
 
     constructor(private fb: FormBuilder ,
+                private router: Router,
                 public appService: AppService) {
 
         this.uploadPaper = fb.group({
@@ -23,12 +25,12 @@ export class UploadPaperComponent implements OnInit {
     }
 
     getFile() {
-        console.log(this.InputFile);
         const file = this.InputFile.nativeElement;
         if (file.files && file.files[0]) {
             this.UploadFile = file.files[0];
             if (this.UploadFile['type'] === 'application/pdf') {
                 this.appService.fileName = this.UploadFile['name'];
+                this.appService.paper.append('file' , this.UploadFile );
 
             } else {
                 this.clearFile();

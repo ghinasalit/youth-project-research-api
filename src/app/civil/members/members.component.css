@@ -13,6 +13,18 @@
     justify-content: center;
 }
 
+.characters p {
+    cursor: pointer;
+}
+
+.characters p:hover{
+    color: #75cddd;
+}
+
+.characters p:active{
+    color: #75cddd;
+}
+
 .navbar i {
     font-size: 51px;
     color: #fff;

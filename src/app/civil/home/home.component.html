@@ -1,14 +1,14 @@
 <div class="nav-collapsed" *ngIf="collapsed">
-    <a routerLink="/home">{{'_HomePage' | translate}}</a>
+    <a href="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a href="#become-researcher"> {{'_How_Become_Researcher' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
-    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+    <a  href="#heatmap">{{'_HeatMap' | translate}}</a>
+    <a  href="#contactus">{{'_ContactUs' | translate}}</a>
 </div>
 
-<div class="top-home" *ngIf="!_appService.session">
+<div class="top-home" *ngIf="!_appService.roll">
     <div class="navbar-login">
         <div class="navbar"
              [style.z-index]="collapsed ? '550' : ''"
@@ -27,10 +27,10 @@
 </div>
 
 
-<div class="full-section top-home-login" *ngIf="_appService.session">
+<div class="full-section top-home-login" *ngIf="_appService.roll">
     <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000">
-        <img src="assets/img/member1.jpg" alt="">
-    </div>
+        <img [src]="'src/app/api/uploaded/' + memberDetails.avatar" alt="" *ngIf="memberDetails.avatar != ''">
+        <img [src]="'assets/img/member1.jpg' " alt="" *ngIf="memberDetails.avatar == ''">    </div>
     <div class="right-section">
         <div class="navbar-login logged">
             <div class="navbar"
@@ -40,7 +40,7 @@
                     <span [style.color]="collapsed ? '#1b2850' : ''"></span>
                 </a>
             </div>
-            <div class="login-register"  *ngIf="_appService.session">
+            <div class="login-register"  *ngIf="_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login" (click)="logout()">{{'_Logout'| translate}}</div>
@@ -54,10 +54,13 @@
             <div class="info-user">
 
                 <div class="user-name">
-                    <div><img src="assets/img/member1.jpg" alt=""></div>
+                    <div>
+                        <img [src]="'src/app/api/uploaded/' + memberDetails.avatar" alt="" *ngIf="memberDetails.avatar != ''">
+                        <img [src]="'assets/img/member1.jpg' " alt="" *ngIf="memberDetails.avatar == ''">
+                    </div>
                     <div class="full-name">
                         <div class="title">
-                            <h2>Ghina sallit</h2>
+                            <h2>{{memberDetails.first_name}} {{memberDetails.last_name}}</h2>
                             <div>
                             </div>
                         </div>
@@ -65,41 +68,37 @@
                 </div>
                 <div class="desc-user">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat
-                        volutpat. Ut wisi enim ad minim veniam, quis
-                        nostrud exerci tation ullamcorper suscipit lobortis
-                        nisl ut aliquip ex ea commodo consequat.
+                       {{memberDetails.description}}
                     </p>
                 </div>
                 <div class="info">
-                    <div class="info-item">
-                        <div class="info-icon">
+                    <div class="info-item"  >
+                        <div class="info-icon" *ngIf="memberDetails.university_name_ar">
                             <i class="fa fa-university"></i>
-                            <div class="info-data">American University</div>
+                            <div class="info-data" *ngIf=" this._appService.currentLanguage == 'ar'"> {{memberDetails.university_name_ar}}</div>
+                            <div class="info-data" *ngIf=" this._appService.currentLanguage == 'en'"> {{memberDetails.university_name_en}}</div>
                         </div>
-                        <div class="info-icon">
+                        <div class="info-icon" *ngIf="memberDetails.location">
                             <i class="fa fa-map-marker"></i>
-                            <div class="info-data">United Arab Emirates</div>
+                            <div class="info-data">{{memberDetails.location}}</div>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-icon">
+                    <div class="info-item" >
+                        <div class="info-icon" *ngIf="memberDetails.domain">
                             <i class="fa fa-suitcase"></i>
-                            <div class="info-data">Informatics Engineer</div>
+                            <div class="info-data"><I></I>{{memberDetails.domain}}</div>
                         </div>
                         <div class="info-icon">
                             <i class="fa fa-eye"></i>
-                            <div class="info-data">2.22Views</div>
+                            <div class="info-data">{{memberDetails.views}} Views</div>
                         </div>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" >
                         <div class="info-icon">
                             <i class="fa fa-file-text-o"></i>
-                            <div class="info-data">12 Research papers</div>
+                            <div class="info-data">{{memberDetails.count_papers}} Research papers</div>
                         </div>
-                        <div class="info-icon">
+                        <div class="info-icon" *ngIf="isOneRecognized">
                             <i class="fa fa-trophy"></i>
                             <div class="info-data">1 Recognized Research</div>
                         </div>
@@ -122,7 +121,7 @@
 
 
 <div class="paper-section d-flex" data-aos="fade-down" data-aos-duration="100">
-    <div class="social" *ngIf="!_appService.session">
+    <div class="social" *ngIf="!_appService.roll">
         <div><i class="fa fa-facebook"></i></div>
         <div><i class="fa fa-instagram"></i></div>
         <div><i class="fa fa-twitter"></i></div>
@@ -148,7 +147,7 @@
                 </div>
                 <img src="assets/img/paper.png" alt="">
 
-                <div class="title"  style="cursor: pointer" routerLink="/upload-paper">
+                <div class="title"  style="cursor: pointer" (click)="_appService.submitPaper()">
                     <h2>{{'_SubmitAPaper' | translate}}</h2>
                     <div>
                     </div>
@@ -190,7 +189,7 @@
         </div>
     </div>
 </div>
-<div class="become-researcher" data-aos="fade-up" data-aos-duration="1000">
+<div class="become-researcher" id="become-researcher" data-aos="fade-up" data-aos-duration="1000">
     <div class="title">
         <p>{{'_How_Become_Researcher' | translate}}</p>
         <div></div>
@@ -232,8 +231,8 @@
         <div class="center-sticker"></div>
         <div class="side">
             <div class="sec-img">
-                <ng-container *ngFor="let photo of dataList; let i = index">
-                    <img [@fadeInOut] *ngIf="itemIndex == i" [src]="dataList[i]['photo']">
+                <ng-container *ngFor="let member of members; let i = index">
+                    <img [@fadeInOut] *ngIf="itemIndex == i" [src]="'src/api/uploaded/' + members[i]['avatar']">
                 </ng-container>
             </div>
         </div>
@@ -249,22 +248,24 @@
                             <i class="fa fa-chevron-left"></i>
                         </div>
                         <div class="slider-control">
-                            <ng-container *ngFor="let text of dataList; let i = index">
-                                <p [@fadeInOut] *ngIf="itemIndex == i">{{dataList[i]['text']}}</p>
+                            <ng-container *ngFor="let text of members; let i = index">
+                                <p [@fadeInOut] *ngIf="itemIndex == i">{{members[i]['description']}}</p>
                             </ng-container>
                         </div>
                         <div class="right-slide" (click)="next()">
                             <i class="fa fa-chevron-right"></i>
                         </div>
                     </div>
-                    <div class="member-name">
-                        <h3>- Ghina Sallit</h3>
+                    <div class="member-name"  *ngFor="let text of members; let i = index">
+                        <h3 *ngIf="itemIndex == i">- {{members[i]['first_name']}} {{members[i]['last_name']}}</h3>
                     </div>
                     <div>
-                        <div class="title read-more">
-                            <p style="cursor: pointer" routerLink="/members">{{'_LearnMore' | translate}}</p>
+                        <ng-container *ngFor="let text of members; let i = index">
+                        <div class="title read-more" *ngIf="itemIndex == i">
+                            <p style="cursor: pointer" [routerLink]="['/profile' ,members[i].username ]">{{'_LearnMore' | translate}}</p>
                             <div></div>
                         </div>
+                        </ng-container>
                     </div>
 
                 </div>
@@ -273,7 +274,7 @@
     </div>
 </div>
 
-<div class="heat-map" data-aos="fade-up" data-aos-duration="1000">
+<div class="heat-map" id="heatmap" data-aos="fade-up" data-aos-duration="1000">
     <div class="title">
         <p>{{'_HeatMap' | translate}}</p>
         <div></div>
@@ -417,7 +418,7 @@
         <app-faq-slider [faqData]="faqDetails"></app-faq-slider>
     </div>
 </div>
-<div class="full-section contact" data-aos="fade-up" data-aos-duration="1000">
+<div class="full-section contact" data-aos="fade-up" data-aos-duration="1000" id="contactus">
     <div class="side">
         <div class="sec-content">
             <h1 class="text-left">{{'_ContactUs' | translate}}</h1>

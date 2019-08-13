@@ -13,6 +13,7 @@ import {Feedback} from '../../../classes/feedback';
 import {ToastrService} from 'ngx-toastr';
 import {User} from '../../../classes/user';
 import {Router} from '@angular/router';
+import {Shared} from '../../../classes/shared';
 
 
 @Component({
@@ -25,10 +26,14 @@ export class HomeComponent implements OnInit {
     collapsed = false;
     feedbackForm: FormGroup;
     result: any;
+    members: any;
+    isOneRecognized = false;
     user = new User();
+    memberDetails = new User();
+
     feedback = new Feedback();
     layrs = [];
-
+    data = new Shared();
     itemIndex = 0;
     dataList = [
         {
@@ -57,22 +62,16 @@ export class HomeComponent implements OnInit {
         }
     ];
     private registerForm: any;
-    // options = {
-    //     layers: [
-    //         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //             maxZoom: 18,
-    //             attribution: ''
-    //         })
-    //     ],
-    //     zoom: 12,
-    //     center: L.latLng(-37.87, 175.475)
-    // };
+
 
     constructor(private translateService: TranslateService,
                 public _appService: AppService,
                 private router: Router,
                 private fb: FormBuilder,
                 private toaster: ToastrService) {
+
+        this.data.page = 1;
+        this.data.size = 100;
         this.feedbackForm = fb.group({
             'name': [null, Validators.required],
             'email': [null, Validators.required],
@@ -114,19 +113,57 @@ export class HomeComponent implements OnInit {
     }
 
 
-    getMember() {
+    getMemberLoggedin() {
+        this._appService.api.getMemberLoggedinService()
+            .subscribe(response => {
 
-        this.user.username = localStorage.getItem('username');
-        this._appService.api.getMemberService(this.user)
+                this.result = response;
+                if (this.result.code === 1) {
+                    this.memberDetails = this.result.data;
+                    this.getOneRecognized(this.memberDetails.country, this.memberDetails.member_id);
+                } else {
+                    this._appService.clearLocalStorage();
+                }
+
+            });
+
+    }
+
+    getOneRecognized(country, member_id) {
+
+        this.user.country = country;
+        this._appService.api.getOneRecognizedService(this.user)
+            .subscribe(response => {
+                let result: any;
+                result = response;
+                if (result.code === 1) {
+
+                    if (member_id === result.data.member_id && result.data.views != 0) {
+                        this.isOneRecognized = true;
+                    }
+
+                } else {
+
+                }
+
+            });
+
+
+    }
+
+
+    getMembers() {
+        this._appService.api.getMembersService(this.data)
             .subscribe(response => {
 
                 this.result = response;
 
                 if (this.result.code === 1) {
 
+                    this.members = this.result.data;
+
+
                 } else {
-                    console.log(this.result.msg);
-                    this.toaster.error('Hello world!', 'Failed');
 
                 }
 
@@ -136,7 +173,7 @@ export class HomeComponent implements OnInit {
 
 
     next() {
-        if (this.itemIndex == (this.dataList.length - 1)) {
+        if (this.itemIndex == (this.members.length - 1)) {
             this.itemIndex = 0;
         } else {
             this.itemIndex += 1;
@@ -145,7 +182,7 @@ export class HomeComponent implements OnInit {
 
     prev() {
         if (this.itemIndex == 0) {
-            this.itemIndex = (this.dataList.length - 1);
+            this.itemIndex = (this.members.length - 1);
         } else {
             this.itemIndex -= 1;
         }
@@ -232,16 +269,15 @@ export class HomeComponent implements OnInit {
     }
 
 
-    logout(){
+    logout() {
         this._appService.api.logoutService(this.user)
             .subscribe(response => {
 
                 this.result = response;
 
                 if (this.result === '1') {
-                    this._appService.session = '' ;
-                    localStorage.setItem('logged', '')
-                    localStorage.setItem('username', '')
+
+                    this._appService.clearLocalStorage();
                     this.router.navigate(['/home']);
 
                 } else {
@@ -255,13 +291,16 @@ export class HomeComponent implements OnInit {
 
 
     ngOnInit() {
+        window.scrollTo(0, 0);
+        this.getMembers();
+        console.log(this._appService.roll);
+        this._appService.roleNotifier.subscribe(data => {
+            if (data === 1) {
+                this.getMemberLoggedin();
+            }
+        });
 
-        if (localStorage.getItem('logged')) {
 
-            this._appService.session = '1';
-            this.getMember();
-
-        }
         $(window).scroll(function () {
             var scrollTop = $(window).scrollTop();
             if (scrollTop > 800) {

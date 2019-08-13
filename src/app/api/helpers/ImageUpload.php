@@ -3,7 +3,7 @@
 class FileUpload
 {
 
-    public static function upload_image()
+    public static function upload_image($data)
     {
 
         $errors = [];
@@ -13,13 +13,15 @@ class FileUpload
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
             }
-            $originalName = $_FILES['file']['name'];
-            $fileSize = $_FILES['file']['size'];
+//            $originalName = $_FILES['file']['name'];
+            $originalName = $data['fileName'];
+//            $fileSize = $_FILES['file']['size'];
+            $fileSize = $data['file']['size'];
 
 
             $ext = strtolower( '.' . pathinfo($originalName, PATHINFO_EXTENSION));
 
-var_dump($ext);
+
             $t = time();
             $generatedName = md5($t . $originalName) . $ext;
             $filePath = $path . $generatedName;
@@ -68,7 +70,7 @@ var_dump($ext);
 
             $ext = strtolower( '.' . pathinfo($originalName, PATHINFO_EXTENSION));
 
-            var_dump($ext);
+
             $t = time();
             $generatedName = md5($t . $originalName) . $ext;
             $filePath = $path . $generatedName;

@@ -2,10 +2,11 @@
 
 namespace Model;
 define("___APP", "Backend");
+ini_set('session.gc_maxlifetime', 28800);
+
 
 class Config
 {
-
     public static $auth_key = '12345';
     public static $os_version;
     public static $platform;

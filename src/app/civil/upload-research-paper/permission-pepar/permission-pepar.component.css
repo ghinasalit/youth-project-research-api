@@ -19,7 +19,23 @@
     width: 50%;
 }
 
+.file-permissions{
+    display: flex;
+    justify-content: space-between;
+}
 
+.conditions a{
+    padding: 0 5px;
+    color: #75cddd;
+}
+
+.conditions{
+    margin-top: 50px;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #75cddd !important;
+}
 
 ::ng-deep .mat-radio-label-content{
 

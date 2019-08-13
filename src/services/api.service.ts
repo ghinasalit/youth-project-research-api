@@ -8,7 +8,7 @@ import {User} from '../classes/user';
     providedIn: 'root'
 })
 export class ApiService {
-    private apiURL: string;
+    public apiURL: string;
 
     constructor(private http: HttpClient) {
         this.getAbsoluteDomainUrl();
@@ -38,13 +38,31 @@ export class ApiService {
             .set('Os-Version', '1')
             .set('Mobile-Brand', '1')
             .set('App-Version', '1');
-        console.log(headers);
         return this.http.post(
             this.apiURL + func
             , JSON.stringify(data), {
                 headers: headers
             }).pipe(map(res => res));
     }
+
+
+    getDataPage(func): Observable<Object> {
+        let headers = new HttpHeaders();
+        const lang = localStorage.getItem('language') === 'en' ? 1 : 2;
+        headers = headers.set('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8')
+            .set('Accept-Language', 'ar')
+            .set('Authorization', '12345')
+            .set('Platform', '1')
+            .set('Os-Version', '1')
+            .set('Mobile-Brand', '1')
+            .set('App-Version', '1');
+        return this.http.get(
+            this.apiURL + func
+            , {
+                headers: headers
+            }).pipe(map(res => res));
+    }
+
 
 
     uploadImagePage(func , data: FormData): Observable<any> {
@@ -59,7 +77,7 @@ export class ApiService {
             .set('App-Version', '1');
 
         return this.http.post(
-            this.apiURL + '?function=' + func
+            this.apiURL  + func
             , data, {
                 headers: headers
             }).pipe(map(res => res));

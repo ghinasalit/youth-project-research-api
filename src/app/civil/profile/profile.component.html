@@ -12,7 +12,7 @@
     <div class="left-sticker"></div>
     <div class="center-sticker"></div>
     <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000">
-        <img src="assets/img/member1.jpg" alt="">
+        <img [src]="'src/app/api/uploaded/' + member.avatar" alt="">
     </div>
     <div class="right-section">
         <div class="navbar-login logged">
@@ -23,19 +23,19 @@
                     <span [style.color]="collapsed ? '#1b2850' : ''"></span>
                 </a>
             </div>
-            <div class="login-register" *ngIf="!_appService.session">
+            <div class="login-register" *ngIf="!_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
                 <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
             </div>
-            <div class="login-register"  *ngIf="_appService.session">
+            <div class="login-register"  *ngIf="_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login">{{'_Logout'| translate}}</div>
             </div>
         </div>
-        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer">
+        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer"  *ngIf=" _appService.roll" >
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
             <p>{{'_EditProfile' | translate}}</p>
         </div>
@@ -44,12 +44,12 @@
                 <div class="user-name">
                     <div class="full-name">
                         <div class="title">
-                            <p>Ghina sallit</p>
+                            <p>{{member.first_name}} {{member.last_name}}</p>
                             <div>
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div (click)="_appService.submitPaper()" style="cursor: pointer;"  *ngIf="_appService.roll">
                         <div class="box">
                         </div>
                         <img src="assets/img/paper.png" alt="">
@@ -58,51 +58,47 @@
                 </div>
                 <div class="desc-user">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat
-                        volutpat. Ut wisi enim ad minim veniam, quis
-                        nostrud exerci tation ullamcorper suscipit lobortis
-                        nisl ut aliquip ex ea commodo consequat.
+                       {{member.description}}
                     </p>
                 </div>
                 <div class="info">
                     <div class="info-item">
-                        <div class="info-icon">
+                        <div class="info-icon" *ngIf="member.university_name_en">
                             <i class="fa fa-university"></i>
-                            <div class="info-data">American University</div>
+                            <div class="info-data" *ngIf="_appService.currentLanguage == 'en'">{{member.university_name_en}}</div>
+                            <div class="info-data" *ngIf="_appService.currentLanguage == 'ar'">{{member.university_name_ar}}</div>
                         </div>
-                        <div class="info-icon">
+                        <div class="info-icon" *ngIf="member.country">
                             <i class="fa fa-map-marker"></i>
-                            <div class="info-data">United Arab Emirates</div>
-                        </div>
+                            <div class="info-data" *ngIf="_appService.currentLanguage == 'en'">{{member.country}}</div>
+                            <div class="info-data" *ngIf="_appService.currentLanguage == 'ar'">{{member.country}}</div>                        </div>
                     </div>
                     <div class="info-item">
-                        <div class="info-icon">
+                        <div class="info-icon" *ngIf="member.domain">
                             <i class="fa fa-suitcase"></i>
-                            <div class="info-data">Informatics Engineer</div>
+                            <div class="info-data">{{member.domain}}</div>
                         </div>
                         <div class="info-icon">
                             <i class="fa fa-eye"></i>
-                            <div class="info-data">2.22Views</div>
+                            <div class="info-data">{{member.views}}Views</div>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fa fa-file-text-o"></i>
-                            <div class="info-data">12 Research papers</div>
+                            <div class="info-data">{{member.count_papers}} Research papers</div>
                         </div>
-                        <div class="info-icon">
+                        <div class="info-icon" *ngIf="isOneRecognized">
                             <i class="fa fa-trophy"></i>
                             <div class="info-data">1 Recognized Research</div>
                         </div>
                     </div>
-                    <div class="info-item social-user">
-                        <div class="info-icon">
+                    <div class="info-item social-user" *ngIf="username != _appService.username || _appService.username == ''">
+                        <div class="info-icon" style="cursor: pointer">
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                            <div class="info-data"><p>Email Ghina</p></div>
+                            <div class="info-data"><p>Email {{member.first_name}}</p></div>
                         </div>
-                        <div class="info-icon">
+                        <div class="info-icon"  style="cursor: pointer">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                             <div class="info-data"><p>Linkedin Account</p></div>
                         </div>
@@ -146,34 +142,61 @@
                     <input type="checkbox" id="show-menu" role="button">
                     <div id="menu">
                         <div class="drop-list" dropdown>
-                            <!-- Use unicode &#x25BC; for dropdown tringle--->
                             <a dropdownToggle>{{'_Discipline' | translate}} <span>&#x25BE;</span></a>
-                            <div *dropdownMenu role="menu" class="dropdown-menu text-center">
-                                <div class="pt-2 pb-2"><a href="/mission">{{'_Mission' | translate}}</a></div>
-                                <div class="pt-2 pb-2"><a href="/purpose">{{'_Purpose' | translate}}</a></div>
-                                <div class="pt-2 pb-2"><a href="/leadership">{{'_Leadership' | translate}}</a></div>
+                            <div *dropdownMenu role="menu" class="dropdown-menu text-center discipline">
+                                <div class="pt-2 pb-2"
+                                     (click)="paper.discipline = '' ;  filter()">
+                                    <a>{{'_All' | translate}}</a></div>
+                                <div class="pt-2 pb-2" *ngFor="let discipline of Disciplines"
+                                     (click)="paper.discipline = discipline.discipline_id ;  filter()">
+                                    <a>{{discipline.discipline_en}}</a></div>
+
                             </div>
                         </div>
-                        <div class="drop-list"><a>{{'_Country' | translate}}</a></div>
+                        <div class="drop-list" dropdown>
+                            <a dropdownToggle>{{'_Country' | translate}}<span>&#x25BE;</span></a>
+                            <div *dropdownMenu role="menu" class="dropdown-menu text-center">
+                                <div class="pt-2 pb-2" (click)="paper.country  = '' ; filter()">
+                                    <a>{{'_All' | translate}}</a></div>
+                                <div class="pt-2 pb-2" *ngFor="let county of Counties">
+                                    <a *ngIf="_appService.currentLanguage == 'en'"
+                                       (click)="paper.country = county.name_en ;  filter()">{{county.name_en}}</a>
+                                    <a *ngIf="_appService.currentLanguage == 'ar'"
+                                       (click)=" paper.country = county.name_ar ; filter()">{{county.name_ar}}</a>
+                                </div>
+                            </div>
+
+                        </div>
                         <div class="drop-list" dropdown>
                             <a dropdownToggle>{{'_Language' | translate}} <span>&#x25BE;</span> </a>
+
                             <div *dropdownMenu role="menu" class="dropdown-menu text-center">
-                                <div class="pt-2 pb-2"><a href="/showcase">{{'_Showcase' | translate}}</a></div>
-                                <div class="pt-2 pb-2"><a href="/scholarship">{{'_Scholarship' | translate}}</a></div>
-                                <div class="pt-2 pb-2"><a href="/testimonials">{{'_Testimonials' | translate}}</a></div>
+                                <div class="pt-2 pb-2" (click)="paper.lang = '' ; filter()">
+                                    <a>{{'_All' | translate}}</a></div>
+                                <div class="pt-2 pb-2" (click)="paper.lang = '1' ; filter()">
+                                    <a>{{'_English' | translate}}</a></div>
+                                <div class="pt-2 pb-2" (click)="paper.lang = '2' ;  filter()">
+                                    <a>{{'_Arabic' | translate}}</a></div>
                             </div>
                         </div>
-                        <div class="drop-list"><a>{{'_Year' | translate}}</a></div>
+                        <div class="drop-list" dropdown>
+                            <a dropdownToggle>{{'_Year' | translate}}<span>&#x25BE;</span></a>
+                            <div *dropdownMenu role="menu" class="dropdown-menu text-center">
+                                <div class="pt-2 pb-2" (click)="paper.year = '' ; filter()"><a>{{'_All' | translate}}</a></div>
+
+                                <div class="pt-2 pb-2" *ngFor="let year of years" (click)="paper.year = year.year ; filter()"><a>{{year.year}}</a></div>
+                            </div>
+                        </div>
                     </div>
                 </div><!--nav-block-->
             </div>
             <div class="col-lg-12 research-input">
                 <div class="row">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="{{'_Search' | translate}}...">
+                    <div class="input-group" [formGroup]="searchForm" >
+                        <input type="text" class="form-control" formControlName="search" (keyup.enter)="filter()" placeholder="{{'_Search' | translate}}...">
                         <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><i class="fa fa-search"
-                                                                                 aria-hidden="true"></i></button>
+                                <button class="btn btn-default" type="button" (click)="filter()"><i class="fa fa-search"
+                                                                                                    aria-hidden="true"></i></button>
                         </span>
                     </div>
                 </div>
@@ -183,8 +206,8 @@
 
         </div>
     </div>
-    <div class="papers-tap">
-        <div class="tap" (click)="showMyPapers()">
+    <div class="papers-tap" *ngIf="_appService.roll">
+        <div class="tap" (click)="showUserPapers()">
             <div>
                 <img src="assets/img/paper.png" alt="">
                 <p>{{'_MyResearchPapers' | translate}}</p>
@@ -192,7 +215,7 @@
             <div class="line" [style.border]="isMyPaper ? '5px solid #FDD97A' : '0px solid #FDD97A'">
             </div>
         </div>
-        <div class="tap" (click)="shoBookmarks()">
+        <div class="tap" (click)="showBookmarks()">
             <div>
                 <i class="fa fa-bookmark" aria-hidden="true"></i>
                 <p>Saved Bookmarks</p>
@@ -202,132 +225,56 @@
         </div>
     </div>
     <div class="cards-items">
-        <div class="c-item" data-aos="fade-up" data-aos-duration="500">
-            <div class="bookmark">
-                <i class="fa fa-bookmark-o"></i>
+        <div class="c-item" *ngFor="let paper of papers" [id]="paper.paper_id">
+            <div class="bookmark" >
+                <i class="fa fa-bookmark-o" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 " ></i>
+                <i class="fa fa-bookmark" aria-hidden="true" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1"></i>
             </div>
             <div class="title">
-                <h3>Environmental health: How our
-                    food choices is affecting the earth.
+                <h3>{{paper.title}}
                 </h3>
                 <div></div>
             </div>
-            <div class="paper-card-info">
-                <h6 class="by">By</h6>
-                <h6 style="font-weight: bold ; color: #75cddd;">Ghina Sallit</h6>
+            <div class="paper-card-info" style="cursor: pointer" [routerLink]="['/profile' , paper.username]">
+                <h6 class="by">{{'_By' | translate}}</h6>
+                <h6 style="font-weight: bold ; color: #75cddd;">{{paper.first_name}} {{paper.last_name}} </h6>
             </div>
             <div class="paper-card-info">
-                <i class="fa fa-tag" aria-hidden="true"></i> <h6>Envirpment . Earth</h6>
+                <i class="fa fa-tag" aria-hidden="true"></i>
+                <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
             </div>
             <div class="paper-card-info">
-                <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>25.April.2019</h6>
+                <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
             </div>
-            <div>
-                Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna
-                Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna
+            <div class="paper-description">
+                <p>
+                    {{ (paper?.description.length>200)? (paper?.description | slice:0:200)+'...':(paper?.description) }}
+                </p>
+            </div>
+            <div class="view-more" (click)="viewPaper(paper)">
+                <p>View More</p>
             </div>
             <div class="view-download">
 
                 <div class="views-paper">
-                    <i class="fa fa-eye" aria-hidden="true"></i> <h6>2125 Views</h6>
+                    <i class="fa fa-eye" aria-hidden="true"></i> <h6>{{paper.views}} {{'_Views' | translate}}</h6>
                 </div>
-                <div class="download-paper">
-                    <i class="fa fa-download" aria-hidden="true"></i>  <h6>Download</h6>
+                <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
+                    <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
                 </div>
-                <div class="edit-paper">
+                <div class="edit-paper" style="cursor: pointer" [routerLink]="['/edit-paper' , paper.paper_id]" *ngIf="paper.username == username">
                     <i class="fa fa fa-pencil-square-o"></i>
                 </div>
             </div>
         </div>
-        <div class="c-item" data-aos="fade-up" data-aos-duration="1000">
-            <div class="bookmark">
-                <i class="fa fa-bookmark-o"></i>
-            </div>
-            <div class="title">
-                <h3>Environmental health: How our
-                    food choices is affecting the earth.
-                </h3>
-                <div></div>
-            </div>
-            <div class="paper-card-info">
-                <h6 class="by">By</h6>
-                <h6 style="font-weight: bold ; color: #75cddd;">Ghina Sallit</h6>
-            </div>
-            <div class="paper-card-info">
-                <i class="fa fa-tag" aria-hidden="true"></i> <h6>Envirpment . Earth</h6>
-            </div>
-            <div class="paper-card-info">
-                <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>25.April.2019</h6>
-            </div>
-            <div>
-                Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna
-                Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna
-            </div>
-            <div class="view-download">
 
-                <div class="views-paper">
-                    <i class="fa fa-eye" aria-hidden="true"></i> <h6>2125 Views</h6>
-                </div>
-                <div class="download-paper">
-                    <i class="fa fa-download" aria-hidden="true"></i>  <h6>Download</h6>
-                </div>
-                <div class="edit-paper">
-                    <i class="fa fa fa-pencil-square-o"></i>
-                </div>
-            </div>
-        </div>
-        <div class="c-item" data-aos="fade-up" data-aos-duration="15000">
-            <div class="bookmark">
-                <i class="fa fa-bookmark-o"></i>
-            </div>
-            <div class="title">
-                <h3>Environmental health: How our
-                    food choices is affecting the earth.
-                </h3>
-                <div></div>
-            </div>
-            <div class="paper-card-info">
-                <h6 class="by">By</h6>
-                <h6 style="font-weight: bold ; color: #75cddd;">Ghina Sallit</h6>
-            </div>
-            <div class="paper-card-info">
-                <i class="fa fa-tag" aria-hidden="true"></i> <h6>Envirpment . Earth</h6>
-            </div>
-            <div class="paper-card-info">
-                <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>25.April.2019</h6>
-            </div>
-            <div>
-                Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna
-                Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna
-            </div>
-            <div class="view-download">
-
-                <div class="views-paper">
-                    <i class="fa fa-eye" aria-hidden="true"></i> <h6>2125 Views</h6>
-                </div>
-                <div class="download-paper">
-                    <i class="fa fa-download" aria-hidden="true"></i>  <h6>Download</h6>
-                </div>
-                <div class="edit-paper">
-                    <i class="fa fa fa-pencil-square-o"></i>
-                </div>
-            </div>
-        </div>
 
     </div>
-    <div class="button-action">
+
+    <div class="button-action" (click)="getPapersByMember()" *ngIf="result?.data.length == 6 && paper.keyword == '' && paper.year == '' && paper.discipline == '' && paper.country == '' && paper.lang == ''">
+        <button>{{'_ViewMore' | translate}}</button>
+    </div>
+    <div class="button-action" (click)="searchPaperByMember()" *ngIf="result?.data.length == 6 && (paper.keyword != '' ||  paper.year != '' || paper.discipline != '' || paper.country != '' || paper.lang!= '')">
         <button>{{'_ViewMore' | translate}}</button>
     </div>
 </div>

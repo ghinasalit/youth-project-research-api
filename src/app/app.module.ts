@@ -8,7 +8,14 @@ import {SlideshowModule} from 'ng-simple-slideshow';
 import {RouterModule} from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {
+    MatAutocompleteModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SafePipe} from '../pipes/safeURLs.pipe';
 import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wrapper';
@@ -46,6 +53,8 @@ import {AppXgalleryComponent} from '../elements/app-xgallery/app-xgallery.compon
 import {ToastrModule} from 'ngx-toastr';
 import {MatIconModule} from '@angular/material/icon';
 import {ImageCropperModule} from 'ngx-image-cropper';
+import {TruncatPipe} from '../pipes/truncat.pipe';
+
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -67,6 +76,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         AppXgalleryComponent,
         AppSlideshowComponent,
         SafePipe,
+        TruncatPipe,
         CivilComponent,
         HeaderComponent,
         FooterComponent,
@@ -89,6 +99,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         EditPaperComponent,
         MemberDetailsComponent,
 
+
+
     ],
     imports: [
         DialogModule,
@@ -105,9 +117,11 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         MatFormFieldModule,
         MatRadioModule,
         MatIconModule,
+        MatCheckboxModule,
         MatSelectModule,
         MatInputModule,
         ImageCropperModule,
+        MatAutocompleteModule,
         BsDatepickerModule.forRoot(),
         LeafletModule.forRoot(),
         TranslateModule.forRoot({
@@ -134,6 +148,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         provide: SWIPER_CONFIG,
         useValue: DEFAULT_SWIPER_CONFIG
     }],
+    exports: [
+
+    ],
 
 
     bootstrap: [AppComponent]

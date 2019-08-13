@@ -25,7 +25,10 @@
     </div>
     <div class="sec-content">
       <div class="title">
-        <p>Lets Share Knowledge!</p>
+        <p *ngIf="_appService.registerPageTitle === 0">Lets Share Knowledge!</p>
+        <p *ngIf="_appService.registerPageTitle === 1">Register to Save a Bookmark.</p>
+        <p *ngIf="_appService.registerPageTitle === 2">Login or Register to submit a paper.</p>
+        <p *ngIf="_appService.registerPageTitle === 3">Login or Register to View/Download the Research Paper.</p>
         <div></div>
       </div>
       <div class="form-input">
@@ -46,6 +49,7 @@
             <mat-form-field class="example-full-width">
               <input matInput [placeholder]="'_Email' | translate" formControlName="email" required>
               <mat-error  *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+
             </mat-form-field>
           </div>
             <div class="item">
@@ -67,8 +71,7 @@
           </div>
           <div class="submit">
             <button  [disabled]="!registerForm.valid"  (click)="openDialog()">{{'_Register' | translate}}</button>
-<!--            <input type="file" class="form-control" class="dropify" formControlName="File" #File>-->
-<!--            <button type="submit" class="btn btn-default" (click)="upload(File.value)" >Submit</button>-->
+
 
           </div>
           <div class="go-login"><P>Already have an account?</P><a routerLink="/login">{{'_Login' | translate}}</a></div>

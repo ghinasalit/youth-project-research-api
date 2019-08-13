@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
           this.result = response;
 
           if (this.result.code === 1) {
-            localStorage.setItem('logged', '1');
+            this._appService.getRoll();
             localStorage.setItem('username', this.result.data.username);
             this.router.navigate(['/home']);
 

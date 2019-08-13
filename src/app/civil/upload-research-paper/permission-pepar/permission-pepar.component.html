@@ -7,31 +7,34 @@
     </div>
     <div class=" form-input">
         <form class="permission-paper" [formGroup]="permissionForm">
+
             <div class="paper-permissions">
-                <div class="file-paper">
-                    <div class="paper-file"><img src="assets/img/paper.png" alt=""></div>
-                    <div class="title">
-                        <p>{{appService.fileName}} file file file file fi;e file.mm</p>
-                        <div></div>
+                <div class="file-permissions">
+                    <div class="file-paper">
+                        <div class="paper-file"><img src="assets/img/paper.png" alt=""></div>
+                        <div class="title">
+                            <p>{{appService.fileName}}</p>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="permissions">
+                        <mat-radio-group class="permission-radio-group" formControlName="permission" required>
+                            <mat-radio-button class="permission-radio-button" value="1">
+                                Given access to all the platform members to view & download.
+                            </mat-radio-button>
+                            <mat-radio-button class="permission-radio-button" value="2">
+                                A Platform member must request permission from author to be able to view/download.
+                            </mat-radio-button>
+
+                        </mat-radio-group>
                     </div>
                 </div>
-                <div class="permissions">
-                    <mat-radio-group
-                            class="permission-radio-group">
-                        <mat-radio-button class="permission-radio-button"  value="1">
-                            Given access to all the platform members to view.
-                        </mat-radio-button>
-                        <mat-radio-button class="permission-radio-button"  value="2">
-                            Given access to all the platform members to view.
-                        </mat-radio-button>
-                        <mat-radio-button class="permission-radio-button"  value="3">
-                            Given access to all the platform members to view.
-                        </mat-radio-button>
-                    </mat-radio-group>
+                <div class="conditions">
+                    <mat-checkbox  formControlName="conditions" value="1" required>I accept the<a mat-button (click)="openDialog()">Terms and Conditions</a></mat-checkbox>
                 </div>
             </div>
-            <div class="submit" >
-                <button>{{'_Submit' | translate}}</button>
+            <div class="submit" (click)="sendPaper()">
+                <button [disabled]="!permissionForm.valid" >{{'_Submit' | translate}}</button>
             </div>
         </form>
     </div>
