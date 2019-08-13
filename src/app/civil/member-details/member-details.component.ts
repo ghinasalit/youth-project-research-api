@@ -20,7 +20,7 @@ export class MemberDetailsComponent implements OnInit {
     profileForm: FormGroup;
     user = new User();
     imageChangedEvent: any = '';
-    croppedImage: any ;
+    croppedImage: any = 'assets/img/avatar_default.PNG';
     university = new FormControl('', [Validators.required]);
     f_name = new FormControl('', [Validators.required]);
     l_name = new FormControl('', [Validators.required]);
@@ -50,7 +50,6 @@ export class MemberDetailsComponent implements OnInit {
 
     fileChangeEvent(event: any): void {
         this.imageChangedEvent = event;
-
     }
 
     imageCropped(image: string) {

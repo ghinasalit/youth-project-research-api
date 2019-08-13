@@ -29,7 +29,6 @@
 /*}*/
 
 
-
 /*.register .title div {*/
 /*    border: 13px solid #75cddd;*/
 /*    background-color: #75cddd;*/
@@ -51,7 +50,6 @@
     justify-content: space-between;
     width: 100%;
 }
-
 
 
 .first-name {
@@ -89,3 +87,11 @@
     position: relative;
 }
 
+.image-upload input[type="file"] {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+}
