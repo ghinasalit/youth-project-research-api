@@ -52,7 +52,7 @@
                         <mat-error *ngIf="description.errors.required">{{'_Required' | translate}}</mat-error>
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-select placeholder="Tags" formControlName="tags"   multiple required>
+                        <mat-select placeholder="Tags" [formControl]="toppings"   multiple required>
                             <mat-select-trigger>
                                 {{tags.value ? tags.value[0] : ''}}
                                 <span *ngIf="tags.value?.length > 1" class="example-additional-selection">
@@ -62,26 +62,21 @@
                             <mat-option *ngFor="let tag of allTags" [value]="tag.tag_id">
                                 <span *ngIf="_appService.currentLanguage == 'en'">{{tag.tag_en}}</span>
                                 <span *ngIf="_appService.currentLanguage == 'ar'">{{tag.tag_ar}}</span>
-                            </mat-option>                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width">
-                        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-                        <mat-autocomplete #auto="matAutocomplete">
-                            <mat-option *ngFor="let option of disciplines " [value]="option.discipline_id">
-                                <span *ngIf="_appService.currentLanguage === 'en'">{{option.discipline_en}}</span>
-                                <span *ngIf="_appService.currentLanguage === 'ar'">{{option.discipline_ar}}</span>
                             </mat-option>
-                        </mat-autocomplete>
+                        </mat-select>
                     </mat-form-field>
-<!--                    <mat-form-field class="example-full-width" required>-->
-<!--                        <input type="text" placeholder="Discipline" aria-label="Number" matInput [formControl]="discipline" [matAutocomplete]="auto">-->
-<!--                        <mat-autocomplete #auto="matAutocomplete">-->
-<!--                            <mat-option *ngFor="let discipline of disciplines | async" [value]="discipline.discipline_id">-->
-<!--                                <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>-->
-<!--                                <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>-->
-<!--                            </mat-option>-->
-<!--                        </mat-autocomplete>-->
-<!--                    </mat-form-field>-->
+                    <mat-form-field>
+                        <mat-label>Discipline</mat-label>
+
+                        <mat-select formControlName="discipline"  required>
+                            <mat-option>--</mat-option>
+                            <mat-option *ngFor="let discipline of disciplines"  [value]="discipline.discipline_id">
+                                <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>
+                                <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="discipline.hasError('required')">Please choose your Discipline</mat-error>
+                    </mat-form-field>
                         <div class="lang">
 
                         <p>Research Paper Language *</p>
