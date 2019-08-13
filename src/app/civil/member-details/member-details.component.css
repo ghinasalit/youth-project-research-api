@@ -95,3 +95,20 @@
     z-index: 2;
     opacity: 0;
 }
+
+.avatar-cropper div:first-child {
+    height: 100%;
+}
+
+.checked {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    padding: 5px;
+    background: #fff;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
