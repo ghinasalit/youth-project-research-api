@@ -52,6 +52,7 @@ export class EditPaperComponent implements OnInit {
         this.paper.description = this.paperForm.controls.description.value;
         this.paper.tags = this.paperForm.controls.tags.value;
         this.paper.lang = this.paperForm.controls.lang.value;
+
         this._appService.api.editPaperService(this.paper)
             .subscribe(response => {
 
@@ -82,6 +83,7 @@ export class EditPaperComponent implements OnInit {
                     this.paperForm.get('title').setValue(this.details.title);
                     this.paperForm.get('discipline').setValue(this.details.discipline_id);
                     this.paperForm.get('description').setValue(this.details.description);
+                    this.paperForm.get('lang').setValue(this.details.language);
                     this.getTags();
 
 

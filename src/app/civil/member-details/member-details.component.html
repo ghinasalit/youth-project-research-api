@@ -117,8 +117,8 @@
                         </button>
 
                     </mat-form-field>
-                    <div class="submit" (click)="saveProfile()">
-                        <button >{{'_Save' | translate}}</button>
+                    <div class="submit" (click)="editProfile()">
+                        <button [disabled]="!profileForm.valid" >{{'_Save' | translate}}</button>
                     </div>
                 </form>
             </div>

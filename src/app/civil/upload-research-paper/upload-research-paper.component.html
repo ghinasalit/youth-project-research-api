@@ -10,7 +10,7 @@
 <div class="full-section upload-file" data-aos-duration="1000">
     <div class="side">
         <div class="sec-img">
-            <img src="assets/img/research.jpg" alt="">
+            <img src="assets/img/library.jpg" alt="">
         </div>
     </div>
     <div class="side">
@@ -22,7 +22,7 @@
                     <span [style.color]="collapsed ? '#1b2850' : ''"></span>
                 </a>
             </div>
-            <div class="login-register"  *ngIf="_appService.session">
+            <div class="login-register"  *ngIf="_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login">{{'_Logout'| translate}}</div>

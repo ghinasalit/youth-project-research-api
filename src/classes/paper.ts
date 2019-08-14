@@ -3,7 +3,7 @@ export class Paper {
     description = '';
     discipline = '';
     paper_id: number;
-    tags: string ;
+    tags = [] ;
     lang = '';
     country = '';
     keyword = '';

@@ -89,7 +89,7 @@ export class MemberDetailsComponent implements OnInit {
 
     }
 
-    saveProfile() {
+    editProfile() {
         this.user.university = this.profileForm.controls.university.value;
         this.user.first_name = this.profileForm.controls.f_name.value;
         this.user.last_name = this.profileForm.controls.l_name.value;

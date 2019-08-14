@@ -115,8 +115,7 @@
 
 
 textarea.mat-input-element {
-    resize: vertical;
-    overflow: scroll;
+    resize: none;
 }
 
 

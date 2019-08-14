@@ -10,7 +10,7 @@ import {AppService} from '../app.service';
 export class AuthGuard implements CanActivate {
   constructor(private _appService: AppService, private activatedRouter: Router) {
   }
-  canActivate() {
+  canActivate(){
     if (!this._appService.authenticatedUser()) {
       this.activatedRouter.navigate(['/home']);
     } else {

@@ -29,8 +29,7 @@
 
 <div class="full-section top-home-login" *ngIf="_appService.roll">
     <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000">
-        <img [src]="'src/app/api/uploaded/' + memberDetails.avatar" alt="" *ngIf="memberDetails.avatar != ''">
-        <img [src]="'assets/img/member1.jpg' " alt="" *ngIf="memberDetails.avatar == ''">    </div>
+        <img src="assets/img/library.jpg " alt="">    </div>
     <div class="right-section">
         <div class="navbar-login logged">
             <div class="navbar"
@@ -73,7 +72,7 @@
                 </div>
                 <div class="info">
                     <div class="info-item"  >
-                        <div class="info-icon" *ngIf="memberDetails.university_name_ar">
+                        <div class="info-icon" *ngIf="memberDetails?.university_name_ar">
                             <i class="fa fa-university"></i>
                             <div class="info-data" *ngIf=" this._appService.currentLanguage == 'ar'"> {{memberDetails.university_name_ar}}</div>
                             <div class="info-data" *ngIf=" this._appService.currentLanguage == 'en'"> {{memberDetails.university_name_en}}</div>
@@ -283,9 +282,11 @@
     <div class="map">
         <div
                 style="height: 100vh;"
-                leaflet [leafletOptions]="options"
+                leaflet
+                [leafletOptions]="options"
                 (leafletMouseUp)="popupShow($event)"
-                (leafletMapReady)="onMapReady($event)">
+                (leafletMapReady)="onMapReady($event)"
+                >
         </div>
 
 <!--        <div class="one_recognized">-->

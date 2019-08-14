@@ -4,7 +4,7 @@
     color: #fff;
     display: flex;
     justify-content: flex-end;
-    background-image: url("../../../assets/img/library.jpg");
+    /*background-image: url("../../../assets/img/library.jpg");*/
     width: 100%;
     background-color: #f1f2f2;
     background-size: cover;
@@ -704,57 +704,57 @@ app-home .info-data {
 /*popup heatmap*/
 
 
-.one_recognized{
-    border: 1px solid #efe9e9;
-    width: 335px;
-    height: auto;
-    padding: 20px;
-    box-shadow: 10px 5px 5px #cac6c6;
-}
+/*.one_recognized{*/
+/*    border: 1px solid #efe9e9;*/
+/*    width: 335px;*/
+/*    height: auto;*/
+/*    padding: 20px;*/
+/*    box-shadow: 10px 5px 5px #cac6c6;*/
+/*}*/
 
-.avatar-name{
+::ng-deep .avatar-name{
     display: flex;
     margin-bottom: 18px
 }
 
-.avatar-name img{
+::ng-deep .avatar-name img{
 
     width: 99px;
     height: 105px;
     margin-right: 18px;
 }
 
-.name p{
+::ng-deep .name p{
     font-size: 20px;}
 
-.name .title div{
+::ng-deep .name .title div{
     width: 100px;
     border: 5px solid #75cddd;
 }
 
-.recently-joint {
+::ng-deep .recently-joint {
     display: flex;
     margin-top: 11px;
     font-size: 15px;
 }
 
-.recently-joint p{
+::ng-deep .recently-joint p{
     font-size: 15px;
     margin-right: 10px;
 }
 
-.recently-joint i{
+::ng-deep .recently-joint i{
     margin-right:  10px;
 }
 
-.one_recognized .info-icon {
+::ng-deep .one_recognized .info-icon {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     margin-bottom: 8px;
 }
 
-.one_recognized .info-icon i{
+::ng-deep .one_recognized .info-icon i{
     margin-right:10px;
 }
 
@@ -813,4 +813,31 @@ app-home .info-data {
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
     color: #75cddd;
+}
+
+
+::ng-deep .leaflet-popup{
+    opacity: 1;
+    transform: translate3d(619px, 308px, 0px);
+    bottom: -7px;
+    left: -98px;
+    width: 335px;
+    height: auto;
+}
+
+
+::ng-deep .leaflet-popup-content{
+
+    width: 100%;
+    height: 100%;
+    margin: 13px;
+    line-height: 0;
+
+}
+
+::ng-deep .one_recognized {
+width: 100%;
+    height: 100%;
+    padding: 20px 0;
+
 }

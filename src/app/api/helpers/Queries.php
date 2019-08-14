@@ -77,7 +77,6 @@ class Queries
         $db->where('paper_id', $paper_id);
         $db->update('papers', $data);
 
-        $tags = explode(',', $tags[0]);
         foreach ($tags as $value) {
             $db->where('paper_id', $paper_id)
                 ->delete('paper_tags');
@@ -217,6 +216,8 @@ class Queries
 
             $ext = explode(':image/', substr($avatar, 0, $pos))[1];
             $avatar_path = $avatar_random_name . '.' . $ext;
+            $data['avatar'] = $avatar_path;
+            Helper::saveToFile($avatar, $avatar_random_name, $ext);
         } else {
             $avatar_path = '';
         }
@@ -225,9 +226,6 @@ class Queries
             $data['password'] = md5($password);
         }
 
-        if (!empty($avatar)) {
-            $data['avatar'] = $avatar_path;
-        }
 
         $db->where('member_id', $member_id);
         $db->update('members', $data);

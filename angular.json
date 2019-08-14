@@ -32,7 +32,7 @@
               "src/assets/js/jquery-ui.min.js",
               "src/assets/js/popper.min.js",
               "./node_modules/aos/dist/aos.js",
-              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/bootstrap.min.js"
 
             ]
           },

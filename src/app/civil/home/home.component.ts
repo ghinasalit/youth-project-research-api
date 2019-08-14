@@ -2,18 +2,19 @@ import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {AppService} from '../../app.service';
 import {fadeInOut} from '../../../animations/fadeInOut';
-import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import * as L from 'leaflet';
+import {icon, marker} from 'leaflet';
 import * as $ from 'jquery';
 import {addressPoints} from '../../../assets/realworld.10000.ts';
-// import 'leaflet.heat/dist/leaflet-heat.js';
-import {icon, latLng, marker, polyline, tileLayer} from 'leaflet';
-import {ErrorStateMatcher} from '@angular/material';
+import 'leaflet.heat/dist/leaflet-heat.js';
 import {Feedback} from '../../../classes/feedback';
 import {ToastrService} from 'ngx-toastr';
 import {User} from '../../../classes/user';
 import {Router} from '@angular/router';
 import {Shared} from '../../../classes/shared';
+import {loggedIn} from '@angular/fire/auth-guard';
+import {LoginGuard} from '../../guards/login.guard';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
     members: any;
     isOneRecognized = false;
     user = new User();
-    memberDetails = new User();
+    memberDetails: any = [];
 
     feedback = new Feedback();
     layrs = [];
@@ -219,52 +220,111 @@ export class HomeComponent implements OnInit {
 
     };
 
-    onMapReady(map) {
-        // let newAddressPoints = addressPoints.map(function (p) {
-        //     console.log(p[0]);
-        //     console.log(p[1]);
-        //     return [p[0], p[1]];
-        // });
-        // console.log(newAddressPoints);
-        // const heat = L.heatLayer([
-        //     [
-        //         -37.8839, // lat, lng, intensity
-        //         175.3745188667,
-        //         "571"
-        //     ],
-        //
-        // ], {
-        //     minOpacity: 0.0,
-        //     maxZoom: 8,
-        //     blur: 0,
-        //     radius: 15,
-        //     gradient: {0.1: '#FDD97A', 0.3: '#FDD97A', 0.4: '#75CDDD', 0.6: '#FDD97A', 1: '#FDD97A'}
-        // }).addTo(map);
-        //
-        //
-        //
-        // const heat = L.heatLayer([
-        //
-        //     [
-        //         25.1820753,
-        //         55.2590815,
-        //         "486"
-        //     ],
-        // ], {
-        //     minOpacity: 0.0,
-        //     maxZoom: 8,
-        //     blur: 0,
-        //     radius: 15,
-        //     gradient: {0.1: '#FDD97A', 0.3: '#FDD97A', 0.4: '#75CDDD', 0.6: '#FDD97A', 1: '#FDD97A'}
-        // }).addTo(map);
-        //
 
+    onMapReady(map) {
+        let newAddressPoints = addressPoints.map(function (p) {
+
+            return [p[0], p[1]];
+        });
+        // console.log(newAddressPoints);
+        let heat = L.heatLayer([
+            [
+                -37.8839, // lat, lng, intensity
+                175.3745188667,
+                "571"
+            ],
+
+        ], {
+            minOpacity: 0.0,
+            maxZoom: 8,
+            blur: 0,
+            radius: 15,
+            someCustomProperty: 'Syria' ,
+            gradient: {0.1: '#FDD97A', 0.3: '#FDD97A', 0.4: '#75CDDD', 0.6: '#FDD97A', 1: '#FDD97A'},
+
+        }).addTo(map);
+        var popup = L.popup();
+
+        let marker = L.marker([ -37.8839, 175.3745188667]).addTo(map).on("click", e => {
+            this.getOneRecognized('syria' , 10);
+            popup
+                .setLatLng(e.latlng)
+                .setContent('        <div class="one_recognized">\n' +
+                    '            <div class="avatar-name">\n' +
+                    '                <div class="avatar"><img src="assets/img/member1.jpg" alt=""></div>\n' +
+                    '                <div class="name">\n' +
+                    '                    <div class="title">\n' +
+                    '                        <p>Ghina Sallit</p>\n' +
+                    '                        <div></div>\n' +
+                    '                    </div>\n' +
+                    '                    <div class="recently-joint">\n' +
+                    '                        <i class="fa fa-facebook"></i>\n' +
+                    '                        <p>Recently joint member</p>\n' +
+                    '                    </div>\n' +
+                    '                    <div>\n' +
+                    '                        <a href=""> Go to Profile</a>\n' +
+                    '                    </div>\n' +
+                    '                </div>\n' +
+                    '            </div>\n' +
+                    '            <div class="info-icon">\n' +
+                    '                <i class="fa fa-university"></i>\n' +
+                    '                <div class="info-data">American University</div>\n' +
+                    '            </div>\n' +
+                    '            <div class="info-icon">\n' +
+                    '                <i class="fa fa-suitcase"></i>\n' +
+                    '                <div class="info-data">Informatics Engineer</div>\n' +
+                    '            </div>\n' +
+                    '            <div class="info-icon">\n' +
+                    '                <i class="fa fa-eye"></i>\n' +
+                    '                <div class="info-data">2.22Views</div>\n' +
+                    '            </div>\n' +
+                    '            <div class="info-icon">\n' +
+                    '                <i class="fa fa-file-text-o"></i>\n' +
+                    '                <div class="info-data">12 Research papers</div>\n' +
+                    '            </div>\n' +
+                    '            <div class="info-icon">\n' +
+                    '                <i class="fa fa-trophy"></i>\n' +
+                    '                <div class="info-data">1 Recognized Research</div>\n' +
+                    '            </div>\n' +
+                    '        </div>')
+                .openOn(map);
+        });
+
+
+
+
+
+
+        L.heatLayer([
+
+            [
+                25.1820753,
+                55.2590815,
+                "486"
+            ],
+        ], {
+            minOpacity: 0.0,
+            maxZoom: 8,
+            blur: 0,
+            radius: 15,
+            onEachFeature: onEachFeature,
+            gradient: {0.1: '#FDD97A', 0.3: '#FDD97A', 0.4: '#75CDDD', 0.6: '#FDD97A', 1: '#FDD97A'}
+        }).addTo(map)
+
+        function onEachFeature(feature, layer) {
+            layer.on({
+                click: zoomToFeature
+            });
+        }
+
+        function zoomToFeature(e) {
+            // map.fitBounds(e.target.getBounds());
+            console.log('test');
+        }
 
     }
 
     popupShow(map) {
-        // console.log(map);
-        // $('.one_recognized').css('display' , 'display' )
 
     }
 
@@ -289,8 +349,9 @@ export class HomeComponent implements OnInit {
             });
     }
 
-
     ngOnInit() {
+
+
         window.scrollTo(0, 0);
         this.getMembers();
         console.log(this._appService.roll);

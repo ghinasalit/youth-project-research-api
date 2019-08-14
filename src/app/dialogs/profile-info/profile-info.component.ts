@@ -69,7 +69,6 @@ export class ProfileInfoComponent implements OnInit {
         this.user.Linkedin = this.profileForm.controls.Linkedin.value;
         this.user.description = this.profileForm.controls.description.value;
         this.user.avatar = this.croppedImage.base64 ? this.croppedImage.base64 : '';
-        console.log(this.user);
         this._appService.api.registerService(this.user)
             .subscribe(response => {
 

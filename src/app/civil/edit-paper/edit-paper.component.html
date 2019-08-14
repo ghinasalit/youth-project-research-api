@@ -11,7 +11,7 @@
 <div class="full-section upload-file" data-aos-duration="1000">
     <div class="side">
         <div class="sec-img">
-            <img src="assets/img/research.jpg" alt="">
+            <img src="assets/img/library.jpg" alt="">
         </div>
     </div>
     <div class="side">
@@ -55,7 +55,7 @@
                     </mat-form-field>
 
 
-                    <mat-form-field *ngIf="selected != []">
+                    <mat-form-field >
                         <mat-select placeholder="Tags" formControlName="tags" multiple required>
                             <mat-select-trigger>
                                 {{toppings.value ? toppings.value[0] : ''}}
@@ -72,16 +72,16 @@
                     <mat-form-field>
                         <mat-label>Discipline</mat-label>
 
-                        <mat-select formControlName="discipline" required>
+                        <mat-select formControlName="discipline"  required>
                             <mat-option>--</mat-option>
-                            <mat-option *ngFor="let discipline of disciplines" [value]="discipline.discipline_id">
+                            <mat-option *ngFor="let discipline of disciplines"  [value]="discipline.discipline_id">
                                 <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>
                                 <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>
                             </mat-option>
                         </mat-select>
                         <mat-error *ngIf="discipline.hasError('required')">Please choose your Discipline</mat-error>
                     </mat-form-field>
-                    <div class="lang">
+                        <div class="lang">
 
                         <p>Research Paper Language *</p>
                         <mat-radio-group aria-label="Select an option" formControlName="lang" required>
@@ -92,8 +92,8 @@
                         </mat-radio-group>
                     </div>
 
-                    <div class="submit">
-                        <button (click)="editPaper()">{{'_Save' | translate}}</button>
+                    <div class="submit" (click)="editPaper()">
+                        <button [disabled]="!paperForm.valid"  >{{'_Save' | translate}}</button>
 
                     </div>
                 </form>
