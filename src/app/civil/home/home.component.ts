@@ -13,8 +13,6 @@ import {ToastrService} from 'ngx-toastr';
 import {User} from '../../../classes/user';
 import {Router} from '@angular/router';
 import {Shared} from '../../../classes/shared';
-import {loggedIn} from '@angular/fire/auth-guard';
-import {LoginGuard} from '../../guards/login.guard';
 
 
 @Component({
@@ -62,8 +60,38 @@ export class HomeComponent implements OnInit {
             Answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad asperiores atque cumque dignissimos Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad asperiores atque cumque dignissimos '
         }
     ];
-    private registerForm: any;
+    name = new FormControl('', [Validators.required]);
+    email = new FormControl('', [Validators.required, Validators.email]);
+    phone = new FormControl('', [Validators.required]);
+    message = new FormControl('', [Validators.required]);
+    // Marker for the top of Mt. Ranier
+    summit = marker([46.8523, -121.7603], {
+        icon: icon({
+            iconSize: [25, 41],
+            iconAnchor: [13, 41],
+            iconUrl: 'leaflet/marker-icon.png',
+            shadowUrl: 'leaflet/marker-shadow.png'
+        })
+    });
+    options = {
+        layers: [
 
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                minZoom: 2,
+                // fillColor: 'yellow',
+                attribution: ''
+            })
+        ],
+        zoom: 2,
+        center: L.latLng(-37.87, 175.475),
+        background: '#000',
+        fillColor: 'yellow',
+        color: 'black',
+
+
+    };
+    private registerForm: any;
 
     constructor(private translateService: TranslateService,
                 public _appService: AppService,
@@ -80,13 +108,6 @@ export class HomeComponent implements OnInit {
             'message': [null, Validators.required],
         });
     }
-
-
-    name = new FormControl('', [Validators.required]);
-    email = new FormControl('', [Validators.required, Validators.email]);
-    phone = new FormControl('', [Validators.required]);
-    message = new FormControl('', [Validators.required]);
-
 
     submitFeedback() {
 
@@ -112,7 +133,6 @@ export class HomeComponent implements OnInit {
             });
 
     }
-
 
     getMemberLoggedin() {
         this._appService.api.getMemberLoggedinService()
@@ -152,7 +172,6 @@ export class HomeComponent implements OnInit {
 
     }
 
-
     getMembers() {
         this._appService.api.getMembersService(this.data)
             .subscribe(response => {
@@ -172,7 +191,6 @@ export class HomeComponent implements OnInit {
 
     }
 
-
     next() {
         if (this.itemIndex == (this.members.length - 1)) {
             this.itemIndex = 0;
@@ -180,6 +198,8 @@ export class HomeComponent implements OnInit {
             this.itemIndex += 1;
         }
     }
+
+    // Marker for the parking lot at the base of Mt. Ranier trails
 
     prev() {
         if (this.itemIndex == 0) {
@@ -189,49 +209,22 @@ export class HomeComponent implements OnInit {
         }
     }
 
-    // Marker for the top of Mt. Ranier
-    summit = marker([46.8523, -121.7603], {
-        icon: icon({
-            iconSize: [25, 41],
-            iconAnchor: [13, 41],
-            iconUrl: 'leaflet/marker-icon.png',
-            shadowUrl: 'leaflet/marker-shadow.png'
-        })
-    });
-
-    // Marker for the parking lot at the base of Mt. Ranier trails
-
-    options = {
-        layers: [
-
-            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 18,
-                minZoom: 2,
-                // fillColor: 'yellow',
-                attribution: ''
-            })
-        ],
-        zoom: 2,
-        center: L.latLng(-37.87, 175.475),
-        background: '#000',
-        fillColor: 'yellow',
-        color: 'black',
-
-
-    };
-
-
     onMapReady(map) {
         let newAddressPoints = addressPoints.map(function (p) {
 
             return [p[0], p[1]];
         });
         // console.log(newAddressPoints);
-        let heat = L.heatLayer([
+        let heat = (<any>L).heatLayer([
             [
                 -37.8839, // lat, lng, intensity
                 175.3745188667,
-                "571"
+                '571'
+            ],
+            [
+                25.1820753,
+                55.2590815,
+                '486'
             ],
 
         ], {
@@ -239,14 +232,14 @@ export class HomeComponent implements OnInit {
             maxZoom: 8,
             blur: 0,
             radius: 15,
-            someCustomProperty: 'Syria' ,
+            someCustomProperty: 'Syria',
             gradient: {0.1: '#FDD97A', 0.3: '#FDD97A', 0.4: '#75CDDD', 0.6: '#FDD97A', 1: '#FDD97A'},
 
         }).addTo(map);
         var popup = L.popup();
 
-        let marker = L.marker([ -37.8839, 175.3745188667]).addTo(map).on("click", e => {
-            this.getOneRecognized('syria' , 10);
+        let marker = L.marker([-37.8839, 175.3745188667]).addTo(map).on('click', <LeafletMouseEvent>(e) => {
+            this.getOneRecognized('syria', 10);
             popup
                 .setLatLng(e.latlng)
                 .setContent('        <div class="one_recognized">\n' +
@@ -266,6 +259,7 @@ export class HomeComponent implements OnInit {
                     '                    </div>\n' +
                     '                </div>\n' +
                     '            </div>\n' +
+                    '         <div class="pop-up-body">\n' +
                     '            <div class="info-icon">\n' +
                     '                <i class="fa fa-university"></i>\n' +
                     '                <div class="info-data">American University</div>\n' +
@@ -282,34 +276,37 @@ export class HomeComponent implements OnInit {
                     '                <i class="fa fa-file-text-o"></i>\n' +
                     '                <div class="info-data">12 Research papers</div>\n' +
                     '            </div>\n' +
-                    '            <div class="info-icon">\n' +
+                    '            <div class="info-icon last-icon">\n' +
+                    '              <div class="trophy">\n' +
                     '                <i class="fa fa-trophy"></i>\n' +
                     '                <div class="info-data">1 Recognized Research</div>\n' +
+                    '              </div>\n' +
+                    '              <div class="message">\n' +
+                    '                <i class="fa fa-envelope-o"></i>\n' +
+                    '                <div class="info-data">Email Sara</div>\n' +
+                    '              </div>\n' +
                     '            </div>\n' +
+                    '         </div>\n' +
                     '        </div>')
                 .openOn(map);
         });
 
 
-
-
-
-
-        L.heatLayer([
-
-            [
-                25.1820753,
-                55.2590815,
-                "486"
-            ],
-        ], {
-            minOpacity: 0.0,
-            maxZoom: 8,
-            blur: 0,
-            radius: 15,
-            onEachFeature: onEachFeature,
-            gradient: {0.1: '#FDD97A', 0.3: '#FDD97A', 0.4: '#75CDDD', 0.6: '#FDD97A', 1: '#FDD97A'}
-        }).addTo(map)
+        // (<any>L).heatLayer([
+        //
+        //     [
+        //         25.1820753,
+        //         55.2590815,
+        //         '486'
+        //     ],
+        // ], {
+        //     minOpacity: 0.0,
+        //     maxZoom: 8,
+        //     blur: 0,
+        //     radius: 15,
+        //     onEachFeature: onEachFeature,
+        //     gradient: {0.1: '#FDD97A', 0.3: '#FDD97A', 0.4: '#75CDDD', 0.6: '#FDD97A', 1: '#FDD97A'}
+        // }).addTo(map);
 
         function onEachFeature(feature, layer) {
             layer.on({

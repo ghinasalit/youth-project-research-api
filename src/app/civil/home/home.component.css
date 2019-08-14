@@ -114,12 +114,9 @@
 }
 
 
-
-
 .social div {
     display: block;
 }
-
 
 
 input {
@@ -175,8 +172,6 @@ input {
 }
 
 
-
-
 .research-search {
     display: flex;
     flex-direction: column;
@@ -184,7 +179,6 @@ input {
     text-align: right;
     padding: 20px;
 }
-
 
 
 .research-papers {
@@ -439,18 +433,11 @@ input[type=checkbox]:checked ~ #menu {
 /*profile info*/
 
 
-
-
-
 .profile-photo img {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
-
-
-
-
 
 
 .info {
@@ -459,16 +446,12 @@ input[type=checkbox]:checked ~ #menu {
 }
 
 
-
-
 .info-icon {
     width: 50%;
     display: flex;
     justify-content: flex-start;
 
 }
-
-
 
 
 .user-name {
@@ -485,8 +468,6 @@ input[type=checkbox]:checked ~ #menu {
 }
 
 
-
-
 .top-home-login .social div {
     display: block;
 }
@@ -496,23 +477,18 @@ app-home .info-data {
 }
 
 
-
-
 .user-name {
     display: flex;
     justify-content: flex-start;
 }
 
 .
-
 .top-home-login .login-register {
     color: #1b2850;
 }
 
 
 /*about arab section*/
-
-
 
 
 .contact {
@@ -549,16 +525,10 @@ app-home .info-data {
 /*become researcher*/
 
 
-
-
 .card-item {
     width: 33%;
     text-align: center;
 }
-
-
-
-
 
 
 /*heat map*/
@@ -605,11 +575,7 @@ app-home .info-data {
 }
 
 
-
 /*members*/
-
-
-
 
 
 .form-input .item {
@@ -642,7 +608,6 @@ app-home .info-data {
 }
 
 
-
 .contact .full-section {
     position: relative;
     background: #f1f2f2;
@@ -672,7 +637,6 @@ app-home .info-data {
 }
 
 
-
 .social-contact {
     display: flex;
     margin-top: 30px;
@@ -681,10 +645,8 @@ app-home .info-data {
 }
 
 
-
-
 .leaflet-container {
-     background: #fff;
+    background: #fff;
     outline: 0;
 }
 
@@ -692,13 +654,12 @@ app-home .info-data {
     display: flex;
     color: #1b2850;
     flex-direction: column;
-     padding: 0px;
+    padding: 0px;
 }
 
 .leaflet-heatmap-layer {
     opacity: 0.9;
 }
-
 
 
 /*popup heatmap*/
@@ -712,55 +673,56 @@ app-home .info-data {
 /*    box-shadow: 10px 5px 5px #cac6c6;*/
 /*}*/
 
-::ng-deep .avatar-name{
+::ng-deep .avatar-name {
     display: flex;
     margin-bottom: 18px
 }
 
-::ng-deep .avatar-name img{
-
+::ng-deep .avatar-name img {
+    object-fit: cover;
     width: 99px;
     height: 105px;
     margin-right: 18px;
 }
 
-::ng-deep .name p{
-    font-size: 20px;}
+::ng-deep .name p {
+    font-size: 20px;
+}
 
-::ng-deep .name .title div{
+::ng-deep .name .title div {
     width: 100px;
-    border: 5px solid #75cddd;
+    border: 7px solid #75cddd;
 }
 
 ::ng-deep .recently-joint {
     display: flex;
-    margin-top: 11px;
+    margin-top: 0;
     font-size: 15px;
+    align-items: center;
 }
 
-::ng-deep .recently-joint p{
-    font-size: 15px;
+::ng-deep .recently-joint p {
     margin-right: 10px;
+    font-size: 13px;
 }
 
-::ng-deep .recently-joint i{
-    margin-right:  10px;
+::ng-deep .recently-joint i {
+    margin-right: 10px;
 }
 
 ::ng-deep .one_recognized .info-icon {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 8px;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-::ng-deep .one_recognized .info-icon i{
-    margin-right:10px;
+::ng-deep .one_recognized .info-icon i {
+    margin-right: 10px;
 }
 
-
-
-.map{
+.map {
     height: 90%;
     margin-top: 10px;
 }
@@ -771,7 +733,7 @@ app-home .info-data {
     height: 90%;
 }
 
-.logo-partner-mobile , .mobile {
+.logo-partner-mobile, .mobile {
     display: none;
 }
 
@@ -784,7 +746,7 @@ app-home .info-data {
 }
 
 @media (max-width: 425px) {
-    .logo-partner-mobile , .mobile {
+    .logo-partner-mobile, .mobile {
         display: block;
         margin-top: 0px;
     }
@@ -794,7 +756,6 @@ app-home .info-data {
     }
 
 }
-
 
 
 ::ng-deep .mat-form-field-underline {
@@ -816,7 +777,7 @@ app-home .info-data {
 }
 
 
-::ng-deep .leaflet-popup{
+::ng-deep .leaflet-popup {
     opacity: 1;
     transform: translate3d(619px, 308px, 0px);
     bottom: -7px;
@@ -826,18 +787,60 @@ app-home .info-data {
 }
 
 
-::ng-deep .leaflet-popup-content{
-
+::ng-deep .leaflet-popup-content {
     width: 100%;
     height: 100%;
     margin: 13px;
     line-height: 0;
-
 }
 
 ::ng-deep .one_recognized {
-width: 100%;
+    width: 100%;
     height: 100%;
-    padding: 20px 0;
+}
 
+::ng-deep .leaflet-popup-close-button {
+    display: none;
+}
+
+::ng-deep .leaflet-popup-content-wrapper {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+::ng-deep .leaflet-popup-content p {
+    margin: 0;
+}
+
+::ng-deep .one_recognized .name .title p {
+    margin-bottom: 18px
+}
+
+::ng-deep .one_recognized .name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+::ng-deep .one_recognized .name a {
+    font-family: inherit;
+}
+
+::ng-deep .last-icon {
+    justify-content: flex-start !important;
+}
+
+::ng-deep .trophy, ::ng-deep .message {
+    display: flex;
+    align-items: center;
+}
+
+::ng-deep .trophy {
+    margin-right: 35px;
+}
+
+::ng-deep .message {
+    cursor: pointer;
+    color: #75cddd;
 }

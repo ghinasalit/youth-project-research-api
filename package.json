@@ -40,7 +40,7 @@
     "leaflet": "^1.5.1",
     "leaflet.heat": "^0.2.0",
     "ng-simple-slideshow": "^1.2.8",
-    "ngx-bootstrap": "^3.2.0",
+    "ngx-bootstrap": "^5.1.1",
     "ngx-image-cropper": "^1.4.1",
     "ngx-swiper-wrapper": "^7.2.1",
     "ngx-toastr": "^10.0.4",
