@@ -5,6 +5,8 @@
     <a href="#become-researcher"> {{'_How_Become_Researcher' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a  href="#heatmap">{{'_HeatMap' | translate}}</a>
+    <a  href="#partners">{{'_OurPartners' | translate}}</a>
+    <a  href="#faq">{{'_FAQ' | translate}}</a>
     <a  href="#contactus">{{'_ContactUs' | translate}}</a>
 </div>
 
@@ -17,12 +19,17 @@
                 <span [style.color]="collapsed ? '#1b2850' : ''"></span>
             </a>
         </div>
+
         <div class="login-register">
             <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
             <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
             <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
             <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
         </div>
+    </div>
+    <div class="top-description">
+        <p>Knowledge is power.</p>
+        <p>Sharing knowledge is empowering.</p>
     </div>
 </div>
 
@@ -129,7 +136,7 @@
 
     <div class="social-paper" data-aos="fade-left" data-aos-duration="1000">
         <div class="cards-icon">
-            <div class="card-icon-research">
+            <div class="card-icon-research" style="cursor: pointer">
                 <div class="box">
                 </div>
                 <img src="assets/img/paper.png" alt="">
@@ -141,7 +148,7 @@
                 </div>
             </div>
 
-            <div class="card-icon-submit">
+            <div class="card-icon-submit" style="cursor: pointer">
                 <div class="box">
                 </div>
                 <img src="assets/img/paper.png" alt="">
@@ -289,45 +296,6 @@
                 >
         </div>
 
-<!--        <div class="one_recognized">-->
-<!--            <div class="avatar-name">-->
-<!--                <div class="avatar"><img src="assets/img/member1.jpg" alt=""></div>-->
-<!--                <div class="name">-->
-<!--                    <div class="title">-->
-<!--                        <p>Ghina Sallit</p>-->
-<!--                        <div></div>-->
-<!--                    </div>-->
-<!--                    <div class="recently-joint">-->
-<!--                        <i class="fa fa-facebook"></i>-->
-<!--                        <p>Recently joint member</p>-->
-<!--                    </div>-->
-<!--                    <div>-->
-<!--                        <a href=""> Go to Profile</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="info-icon">-->
-<!--                <i class="fa fa-university"></i>-->
-<!--                <div class="info-data">American University</div>-->
-<!--            </div>-->
-<!--            <div class="info-icon">-->
-<!--                <i class="fa fa-suitcase"></i>-->
-<!--                <div class="info-data">Informatics Engineer</div>-->
-<!--            </div>-->
-<!--            <div class="info-icon">-->
-<!--                <i class="fa fa-eye"></i>-->
-<!--                <div class="info-data">2.22Views</div>-->
-<!--            </div>-->
-<!--            <div class="info-icon">-->
-<!--                <i class="fa fa-file-text-o"></i>-->
-<!--                <div class="info-data">12 Research papers</div>-->
-<!--            </div>-->
-<!--            <div class="info-icon">-->
-<!--                <i class="fa fa-trophy"></i>-->
-<!--                <div class="info-data">1 Recognized Research</div>-->
-<!--            </div>-->
-<!--        </div>-->
-
 
         <div class="statistics">
             <div class="statis-item">
@@ -345,7 +313,7 @@
         </div>
     </div>
 </div>
-<div class="full-section partners" data-aos="fade-up" data-aos-duration="1000">
+<div class="full-section partners" id="partners" data-aos="fade-up" data-aos-duration="1000">
 
     <div class="full-section with-slider">
         <div class="top-sticker"></div>
@@ -409,7 +377,7 @@
     </div>
 </div>
 
-<div class="frequent-asked-questions">
+<div class="frequent-asked-questions" id="faq">
     <div class="title">
         <p>{{'_FAQs' | translate}}</p>
         <div></div>

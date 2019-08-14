@@ -1,0 +1,55 @@
+
+.textbox-lines {
+    width: 500px;
+    max-width: 100%;
+    font-size: 19px;
+    border: none;
+    background-attachment: local;
+     background-image: linear-gradient(to right, #fff, #fff 5px, transparent 5px), linear-gradient(to left, #fff, #fff 5px, transparent 5px), repeating-linear-gradient(#fff, #fff 36px, #75CDDD 36px, #75CDDD 37px);
+    line-height: 38px;
+    padding: 6.3333333333px 10px;
+    resize: none;
+}
+
+
+
+.title div{
+    border: 6px solid #1B2850;
+    width: 205px;
+}
+
+.close-dialog {
+    width: 45px;
+    height: 45px;
+    background: #1B2850;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
+
+.close-desc {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.request button{
+    width: 27%;
+    height: 100%;
+    background-color: #75cddd;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+}
+
+.request{
+    text-align: right;
+    height: 50px;
+}
+
+
+.request-message{
+
+    margin: 25px 0;
+
+}

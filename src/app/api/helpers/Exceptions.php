@@ -150,5 +150,9 @@ class Exceptions
     {
         return Helper::$lang['check_internet'];
     }
+    public static function sended_request_before()
+    {
+        return Helper::$lang['sent_request_before'];
+    }
 
 }

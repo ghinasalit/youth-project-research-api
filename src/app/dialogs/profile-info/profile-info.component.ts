@@ -49,7 +49,7 @@ export class ProfileInfoComponent implements OnInit {
 
     }
 
-    imageCropped(image: string) {
+    imageCropped(image) {
         this.croppedImage = image;
     }
 

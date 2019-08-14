@@ -33,6 +33,8 @@ $lang = array(
     'file_not_image' => 'This file extension is not allowed. Please upload a JPEG or PNG file',
     'large_size' => 'This file is more than 2MB. Sorry, it has to be less than or equal to 2MB',
     'uploaded_failed' => 'An error occurred somewhere. Try again',
+    'sent_request_before' => 'You have already sent a Request ',
+
 
 
 

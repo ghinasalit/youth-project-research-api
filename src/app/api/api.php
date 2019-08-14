@@ -212,6 +212,16 @@ if ($request_headers['code'] == 1) {
                         $result = User::get_papers_by_member($data);
                         break;
                     }
+                case 'send_request_paper':
+                    {
+                        $result = User::send_request_paper($data);
+                        break;
+                    }
+                 case 'accept_request_paper':
+                    {
+                        $result = User::accept_request_paper($data);
+                        break;
+                    }
                  case 'get_bookmarks':
                     {
                         $result = User::get_bookmarks($data);

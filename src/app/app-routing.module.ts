@@ -17,6 +17,7 @@ import {EditPaperComponent} from './civil/edit-paper/edit-paper.component';
 import {MemberDetailsComponent} from './civil/member-details/member-details.component';
 import {AuthGuard} from './guards/auth.guard';
 import {LoginGuard} from './guards/login.guard';
+import {AcceptRequestComponent} from './civil/accept-request/accept-request.component';
 
 const routes: Routes = [
     {
@@ -78,6 +79,10 @@ const routes: Routes = [
             {
                 path: 'papers',
                 component: PapersComponent
+            },
+            {
+                path: 'accept-request/:id',
+                component: AcceptRequestComponent
             },
             {
                 path: 'edit-paper/:id',

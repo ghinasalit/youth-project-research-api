@@ -191,14 +191,13 @@ Class User
         $language = Helper::make_safe($data['lang']);
 
 
-            $response = Queries::edit_paper($paper_id, $title, $description , $tags, $discipline , $language );
-            if (is_numeric($response)) {
-                $error_msg = array_search($response, \Model\Enums::$code);
-                $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
-            } else {
-                $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
-            }
-
+        $response = Queries::edit_paper($paper_id, $title, $description, $tags, $discipline, $language);
+        if (is_numeric($response)) {
+            $error_msg = array_search($response, \Model\Enums::$code);
+            $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+        } else {
+            $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+        }
 
 
         return $result;
@@ -600,6 +599,38 @@ Class User
         $page = Helper::make_safe($data['page']);
         $size = Helper::make_safe($data['size']);
         $response = Queries::get_papers_by_member($username, $page, $size);
+        if (is_numeric($response)) {
+            $error_msg = array_search($response, \Model\Enums::$code);
+            $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+        } else {
+            $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+        }
+
+        return $result;
+    }
+
+    static public function send_request_paper($data)
+    {
+
+        $paper_id = Helper::make_safe($data['paper_id']);
+        $message = Helper::make_safe($data['message']);
+        $member_id = Helper::make_safe($data['member_id']);
+        $response = Queries::send_request_paper($paper_id, $message, $member_id);
+        if (is_numeric($response)) {
+            $error_msg = array_search($response, \Model\Enums::$code);
+            $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+        } else {
+            $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+        }
+
+        return $result;
+    }
+
+    static public function accept_request_paper($data)
+    {
+
+        $activation_id = Helper::make_safe($data['activation_id']);
+        $response = Queries::accept_request_paper($activation_id);
         if (is_numeric($response)) {
             $error_msg = array_search($response, \Model\Enums::$code);
             $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());

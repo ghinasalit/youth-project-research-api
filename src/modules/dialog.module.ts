@@ -18,10 +18,11 @@ import {PaperComponent} from '../app/dialogs/paper/paper.component';
 import {ImageCropperModule} from 'ngx-image-cropper';
 import {until} from 'selenium-webdriver';
 import {ConditionsComponent} from '../app/dialogs/conditions/conditions.component';
+import {RequestComponent} from '../app/dialogs/request/request.component';
 
 
 @NgModule({
-    declarations: [ProfileInfoComponent, PaperComponent ,  ConditionsComponent],
+    declarations: [ProfileInfoComponent, PaperComponent ,  ConditionsComponent , RequestComponent],
     imports: [
         MatFormFieldModule,
         MatInputModule,
@@ -43,7 +44,8 @@ import {ConditionsComponent} from '../app/dialogs/conditions/conditions.componen
 
         PaperComponent,
         ProfileInfoComponent,
-        ConditionsComponent
+        ConditionsComponent,
+        RequestComponent
     ],
     exports: [
         MatButtonModule,

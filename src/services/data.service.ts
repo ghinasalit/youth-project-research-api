@@ -62,6 +62,14 @@ export class DataService {
         return this.api.submitPage('save_paper', data);
     }
 
+    sedRequsetService(data: any): Observable<Object> {
+        return this.api.submitPage('send_request_paper', data);
+    }
+
+    acceptRequsetService(data: any): Observable<Object> {
+        return this.api.submitPage('accept_request_paper', data);
+    }
+
     addViewService(data: any): Observable<Object> {
         return this.api.submitPage('add_view', data);
     }

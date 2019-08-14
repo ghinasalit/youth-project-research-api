@@ -11,4 +11,6 @@ export class Paper {
     page: number;
     size: number;
     username: string;
+    message = '';
+    activation_id = '';
 }

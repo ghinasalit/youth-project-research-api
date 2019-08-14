@@ -5,6 +5,8 @@
     <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a  href="#partners">{{'_OurPartners' | translate}}</a>
+    <a  href="#faq">{{'_FAQ' | translate}}</a>
     <a routerLink="/home">{{'_ContactUs' | translate}}</a>
 </div>
 
@@ -38,7 +40,7 @@
                 <div></div>
             </div>
             <div class="form-input">
-                <form class="upload-paper-form" [formGroup]="paperForm">
+                <form class="upload-paper-form" [formGroup]="paperForm"  [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
                     <div class="example-container">
                         <mat-form-field>
                             <input matInput placeholder="Title" formControlName="title"

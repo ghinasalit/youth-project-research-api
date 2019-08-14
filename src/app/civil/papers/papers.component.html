@@ -1,10 +1,12 @@
 <div class="nav-collapsed" *ngIf="collapsed">
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a href="/papers">{{'_ResearchPaper' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a href="/home"> {{'_How_Become_Researcher' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a  href="#partners">{{'_OurPartners' | translate}}</a>
+    <a  href="#faq">{{'_FAQ' | translate}}</a>
     <a routerLink="/home">{{'_ContactUs' | translate}}</a>
 </div>
 
@@ -73,7 +75,11 @@
                                     <a>{{'_All' | translate}}</a></div>
                                 <div class="pt-2 pb-2" *ngFor="let discipline of Disciplines"
                                      (click)="paper.discipline = discipline.discipline_id ;  filter()">
-                                    <a>{{discipline.discipline_en}}</a></div>
+                                    <a *ngIf="_appService.currentLanguage == 'ar'">{{discipline.discipline_ar}}</a>
+                                    <a *ngIf="_appService.currentLanguage == 'en'">{{discipline.discipline_en}}</a>
+
+
+                                </div>
 
                             </div>
                         </div>
@@ -158,14 +164,14 @@
                 </p>
             </div>
             <div class="view-more" (click)="viewPaper(paper)">
-                <p>View More</p>
+                <p>{{'_ViewMore' | translate}}</p>
             </div>
             <div class="view-download">
 
                 <div class="views-paper">
                     <i class="fa fa-eye" aria-hidden="true"></i> <h6>{{paper.views}} {{'_Views' | translate}}</h6>
                 </div>
-                <div class="download-paper" style="cursor: pointer" (click)="download(paper, paper , paper)">
+                <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
                     <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
                 </div>
                 <div class="edit-paper" style="cursor: pointer" [routerLink]="['/edit-paper' , paper.paper_id]" *ngIf="paper.username == username">

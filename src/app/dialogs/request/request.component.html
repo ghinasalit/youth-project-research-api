@@ -1,0 +1,25 @@
+<div [formGroup]="requestForm">
+
+  <div class="close-desc">
+    <div class="title">
+      <h3>Request Access to full paper
+      </h3>
+      <div></div>
+    </div>
+    <div class="close-dialog" (click)="dialogRef.close()">
+      <i class="fa fa-times"></i>
+    </div>
+
+  </div>
+  <div class="request-message">
+    <h3>How do you plan to use this Research?</h3>
+    <div>
+      <textarea class="textbox-lines" rows="6" formControlName="description"></textarea>
+    </div>
+  </div>
+  <div class="request" (click)="sendRequest()">
+    <button [disabled]="!requestForm.valid">Request</button>
+  </div>
+
+
+</div>

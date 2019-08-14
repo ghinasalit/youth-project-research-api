@@ -1320,3 +1320,9 @@ app-upload-paper .submit {
 }
 
 
+
+.top-description{
+    font-size: 55px;
+    margin: auto;
+    font-weight: bold;
+}

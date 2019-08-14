@@ -4,7 +4,7 @@
         <div></div>
     </div>
     <div class="form-input">
-        <form class="upload-paper-form" [formGroup]="paperForm">
+        <form class="upload-paper-form" [formGroup]="paperForm"  [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
             <div class="example-container">
                 <mat-form-field>
                     <input matInput placeholder="Title" formControlName="title"  required>

@@ -5,6 +5,8 @@
   <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
   <a routerLink="/members">{{'_Our_Members' | translate}}</a>
   <a routerLink="/home">{{'_HeatMap' | translate}}</a>
+  <a  href="#partners">{{'_OurPartners' | translate}}</a>
+  <a  href="#faq">{{'_FAQ' | translate}}</a>
   <a routerLink="/home">{{'_ContactUs' | translate}}</a>
 </div>
 <div class="full-section register" data-aos-duration="1000">
@@ -32,7 +34,7 @@
         <div></div>
       </div>
       <div class="form-input">
-        <form class="example-form" [formGroup]="registerForm">
+        <form class="example-form" [formGroup]="registerForm"  [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
           <div class="item-full-name">
             <mat-form-field class="example-full-width first-name">
               <input matInput placeholder="First Name" formControlName="f_name" required>

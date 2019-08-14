@@ -40,6 +40,7 @@ class Enums
         "invalid_request" => -97,
         "not_found_api" => -98,
         "general_error" => -99,
+        "sended_request_before" => -100,
 
 
     );

@@ -46,6 +46,7 @@ $lang = array(
     'email' => 'البريد الالكتروني',
     'last_name' => 'الاسم الاخير',
     'first_name' => 'الاسم الاول',
+    'sent_request_before' => 'لقد قمت بارسال طلب مسبقا',
 
 );
 

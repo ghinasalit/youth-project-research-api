@@ -54,6 +54,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {MatIconModule} from '@angular/material/icon';
 import {ImageCropperModule} from 'ngx-image-cropper';
 import {TruncatPipe} from '../pipes/truncat.pipe';
+import { AcceptRequestComponent } from './civil/accept-request/accept-request.component';
 
 
 
@@ -98,6 +99,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         PapersComponent,
         EditPaperComponent,
         MemberDetailsComponent,
+        AcceptRequestComponent,
 
 
 

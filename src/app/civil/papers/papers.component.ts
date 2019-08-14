@@ -8,6 +8,7 @@ import {Paper} from '../../../classes/paper';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
+import {RequestComponent} from '../../dialogs/request/request.component';
 
 @Component({
     selector: 'app-papers',
@@ -47,7 +48,7 @@ export class PapersComponent implements OnInit {
 
     viewPaper(paper) {
         if (this._appService.roll) {
-            if (paper.permission === 1) {
+            if (paper.permission === 1 || paper.username === this.username ) {
                 const dialogRef = this.dialog.open(PaperComponent, {});
                 dialogRef.componentInstance.paper = paper;
                 if(this.username != paper.username) {
@@ -61,8 +62,9 @@ export class PapersComponent implements OnInit {
                         });
                 }
 
-            } else {
-
+            } else if(paper.permission === 0){
+                const dialogRef = this.dialog.open(RequestComponent, {});
+                dialogRef.componentInstance.paper_id = paper.paper_id;
             }
         } else {
             this._appService.registerPageTitle = 3;
@@ -237,7 +239,7 @@ export class PapersComponent implements OnInit {
     download(paper) {
         if (this._appService.roll) {
 
-            if (paper.permission === 1) {
+            if (paper.permission === 1 || paper.username === this.username ) {
                 this._appService.api.downloadNoteReceipt(paper.filename).subscribe(res => {
                     console.log(res);
                     var newBlob = new Blob([res], {type: 'application/pdf'});
@@ -275,8 +277,9 @@ export class PapersComponent implements OnInit {
                             }
                         });
                 }
-            } else {
-
+            } else if(paper.permission === 0){
+                    const dialogRef = this.dialog.open(RequestComponent, {});
+                    dialogRef.componentInstance.paper_id = paper.paper_id;
             }
         } else {
             this._appService.registerPageTitle = 3;

@@ -861,10 +861,125 @@ class Queries
         $data = Array('avatar' => $avatar);
         $users = $db->where('member_id', $member_id)->update('members', $data);
 
+
         if ($db->count) {
             return $users;
         } else {
             return -46;
+        }
+
+    }
+
+
+
+    static public function send_email($paper_id , $message  ,  $member_id_from , $member_email_to)
+    {
+        global $db;
+        $member_from = $db->where('member_id', $member_id_from)
+            ->getOne("members", null, 'username' , 'email' );
+
+        $query = "SELECT members.email from members JOIN papers ON members.member_id = papers.member_id WHERE papers.paper_id = '" . $paper_id."'";
+        $member_to = $db->withTotalCount()->rawQuery($query);
+
+        if ($member_from && $member_to) {
+
+
+            $to = $member_email_to;
+            $subject = "Arab Youth Research/Request";
+
+            $message = "
+<html>
+<head>
+<title>HTML email</title>
+</head>
+<body>
+<p>This email contains HTML Tags!</p>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td>John</td>
+<td>Doe</td>
+</tr>
+</table>
+</body>
+</html>
+";
+
+// Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+            $headers .= 'From:' . $member_from["email"] . "\r\n";
+
+            mail($to, $subject, $message, $headers);
+        }
+    }
+
+
+
+     static public function accept_request_paper($activation_id)
+     {
+
+         global $db;
+         $data = Array(
+
+             'status' => 1,
+         );
+
+         $db->where('activation_code', $activation_id);
+         $db->update('requests', $data);
+
+     }
+
+
+
+
+    static public function send_request_paper($paper_id, $message, $member_id)
+    {
+
+
+
+        global $db;
+
+        $request = $db->where('paper_id', $paper_id)
+                      ->where('member_from', $member_id)
+            ->getOne('requests');
+
+        if(empty($request)) {
+
+            $query = "SELECT members.email , members.member_id from members JOIN papers ON members.member_id = papers.member_id WHERE papers.paper_id = '" . $paper_id."'";
+            $member_to = $db->withTotalCount()->rawQuery($query);
+            var_dump($member_to[0]["member_id"]);
+
+            $data = Array(
+                'paper_id' => $paper_id,
+                'message' => $message,
+                'member_from' => $member_id,
+                'member_to' => $member_to[0]["member_id"],
+                'activation_code' =>  md5(microtime()),
+                'status' => 0,
+
+            );
+            $request_id = $db->insert('requests', $data);
+
+            $request = $db->where('request_id', $request_id)
+                ->getOne('requests');
+
+            if ($db->count) {
+                Queries::send_email($paper_id , $message , $member_id  ,$member_to[0]["email"] );
+
+                return $request;
+
+            } else {
+                return -25;
+            }
+        }else{
+
+            return -100;
         }
 
     }
