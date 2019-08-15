@@ -292,6 +292,7 @@
                 leaflet
                 [leafletOptions]="options"
                 (leafletMouseUp)="popupShow($event)"
+                [leafletLayers]="markers"
                 (leafletMapReady)="onMapReady($event)"
                 >
         </div>
@@ -299,15 +300,15 @@
 
         <div class="statistics">
             <div class="statis-item">
-                <div class="statistics-count">80+</div>
+                <div class="statistics-count">{{statistics?.downloads}}</div>
                 <div class="statistics-action">DOWNLOADS</div>
             </div>
             <div class="statis-item">
-                <div class="statistics-count">230+</div>
+                <div class="statistics-count">{{statistics?.researchers}}</div>
                 <div lass="statistics-action">RESEARCHER</div>
             </div>
             <div class="statis-item">
-                <div class="statistics-count">300+</div>
+                <div class="statistics-count">{{statistics?.research}}</div>
                 <div lass="statistics-action">RESEARCH</div>
             </div>
         </div>

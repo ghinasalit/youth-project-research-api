@@ -1327,3 +1327,10 @@ app-upload-paper .submit {
 .first-name {
     margin-left: 70px;
 }
+
+
+.top-description{
+    font-size: 55px;
+    margin: auto;
+    font-weight: bold;
+}

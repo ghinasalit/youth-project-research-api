@@ -1,6 +1,6 @@
 {
   "/src/app/api/": {
-    "target": "http://localhost/youth-project-research-api/",
+    "target": "http://localhost/youth-project-research/",
     "secure": false,
     "changeOrigin": true
   }

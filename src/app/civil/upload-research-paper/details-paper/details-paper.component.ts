@@ -17,7 +17,7 @@ export class DetailsPaperComponent implements OnInit {
 
     constructor(private fb: FormBuilder,
                 private router: Router,
-                private _appService: AppService,
+                public _appService: AppService,
                 private appService: AppService) {
 
 

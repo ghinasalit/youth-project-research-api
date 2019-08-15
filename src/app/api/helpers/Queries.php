@@ -350,10 +350,13 @@ class Queries
         $research = $db->withTotalCount()->rawQuery($query);
         $query = "SELECT count(discipline_id) as discipline from disciplines";
         $discipline = $db->withTotalCount()->rawQuery($query);
+        $query = "SELECT sum(downloads) as downloads from papers";
+        $downloads = $db->withTotalCount()->rawQuery($query);
 
         $statistics['researchers'] = $researchers[0]['researchers'];
         $statistics['research'] = $research[0]['research'];
         $statistics['discipline'] = $discipline[0]['discipline'];
+        $statistics['downloads'] = $downloads[0]['downloads'];
         if (!empty($statistics)) {
             if ($db->count) {
                 return $statistics;
@@ -833,8 +836,8 @@ class Queries
     static public function get_one_recognizes_researched($country)
     {
         global $db;
-        $query = " SELECT MAX(views) as views, country,  member_id FROM 
-(SELECT SUM(views)as views  ,country.country_id as country_id , country.name_en as country , papers.member_id as member_id FROM papers 
+        $query = " SELECT MAX(views) as views, country,  member_id  ,  first_name , last_name , avatar , username , job , university_ar , university_en  FROM 
+(SELECT SUM(views)as views  ,country.country_id as country_id , country.name_en as country , papers.member_id as member_id , members.first_name as first_name , members.last_name as last_name , members.avatar as avatar , members.username as username , members.domain as job , university.name_ar as university_ar, university.name_en as university_en FROM papers 
                     INNER JOIN members 
                    ON papers.member_id =  members.member_id 
                     INNER JOIN university
@@ -843,14 +846,18 @@ class Queries
                     ON country.country_id =  university.country_id
                     GROUP BY papers.member_id  HAVING country.name_en  LIKE '%" . $country . "%'  ORDER BY views desc )  AS t1";
 
-        $papers = $db->withTotalCount()->rawQuery($query);
-        if ($papers[0]['views'] == null) {
+        $user = $db->withTotalCount()->rawQuery($query);
+        $count_papers = Queries::get_count_papers_for_member($user[0]['member_id']);
+        $user[0]['count_papers'] = $count_papers[0]['views'];
+
+
+        if ($user[0]['views'] == null) {
             return [];
         }
-        if ($papers) {
-            return $papers[0];
+        if ($user) {
+            return $user[0];
         } else {
-            return -99; // member don't active
+            return ''; // member don't active
         }
     }
 
@@ -882,40 +889,45 @@ class Queries
         $member_to = $db->withTotalCount()->rawQuery($query);
 
         if ($member_from && $member_to) {
-
-
-            $to = $member_email_to;
-            $subject = "Arab Youth Research/Request";
-
-            $message = "
-<html>
-<head>
-<title>HTML email</title>
-</head>
-<body>
-<p>This email contains HTML Tags!</p>
-<table>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-</tr>
-<tr>
-<td>John</td>
-<td>Doe</td>
-</tr>
-</table>
-</body>
-</html>
-";
-
-// Always set content-type when sending HTML email
+            ini_set("SMTP","aspmx.l.google.com");
             $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
+            $headers .= "From: g.salit@webntech.ae" . "\r\n";
+            mail("ghinasallit@gmail.com","test subject","test body",$headers);
 
-// More headers
-            $headers .= 'From:' . $member_from["email"] . "\r\n";
-
-            mail($to, $subject, $message, $headers);
+//
+//            $to = $member_email_to;
+//            $subject = "Arab Youth Research/Request";
+//
+//            $message = "
+//<html>
+//<head>
+//<title>HTML email</title>
+//</head>
+//<body>
+//<p>This email contains HTML Tags!</p>
+//<table>
+//<tr>
+//<th>Firstname</th>
+//<th>Lastname</th>
+//</tr>
+//<tr>
+//<td>John</td>
+//<td>Doe</td>
+//</tr>
+//</table>
+//</body>
+//</html>
+//";
+//
+//// Always set content-type when sending HTML email
+//            $headers = "MIME-Version: 1.0" . "\r\n";
+//            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+//
+//// More headers
+//            $headers .= 'From:' . $member_from["email"] . "\r\n";
+//
+//            mail($to, $subject, $message, $headers);
         }
     }
 

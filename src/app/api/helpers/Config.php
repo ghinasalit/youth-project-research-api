@@ -26,10 +26,10 @@ class Config
     );
 
     public static $live_db = array(
-        'db_server' => 'localhost',
-        'db_user' => 'id8992428_geoscience',
-        'db_pass' => '',
-        'db_name' => 'id8992428_geo'
+        'db_server' => 'http://asgc.webntech.ae/',
+        'db_user' => 'ghina',
+        'db_pass' => 'Qwaszx1234',
+        'db_name' => 'arab_youth'
     );
 
     public static $image_config = array(
@@ -47,7 +47,7 @@ class Config
 $DB = $FCM = $FILES_ROOT = "";
 
 if (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "localhost")) {
-    $DB = Config::$local_db;
+    $DB = Config::$live_db;
     $FCM = Config::$auth_fcm;
     $FILES_ROOT = Config::$local_files;
 }

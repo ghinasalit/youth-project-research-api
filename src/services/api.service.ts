@@ -22,7 +22,7 @@ export class ApiService {
                 && 'location' in window
                 && 'protocol' in window.location
                 && 'host' in window.location) {
-                this.apiURL = window.location.protocol + '//' + window.location.host;
+                this.apiURL = window.location.protocol + '//' + window.location.host + '/api/user/' ;
             }
         }
         return null;

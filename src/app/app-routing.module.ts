@@ -82,7 +82,8 @@ const routes: Routes = [
             },
             {
                 path: 'accept-request/:id',
-                component: AcceptRequestComponent
+                component: AcceptRequestComponent,
+                canActivate:  [AuthGuard]
             },
             {
                 path: 'edit-paper/:id',
