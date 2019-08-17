@@ -14,7 +14,12 @@
   <div class="request-message">
     <h3>How do you plan to use this Research?</h3>
     <div>
-      <textarea class="textbox-lines" rows="6" formControlName="description"></textarea>
+      <textarea class="textbox-lines" rows="6" formControlName="description" maxlength="200" #input></textarea>
+      <div class="notes">
+        <h6><span>*</span> Please Enter 200 characters maximum</h6>
+        <h6>{{input.value?.length || 0}}/200</h6>
+      </div>
+
     </div>
   </div>
   <div class="request" (click)="sendRequest()">

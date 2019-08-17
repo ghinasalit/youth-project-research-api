@@ -1,13 +1,13 @@
 <div class="nav-collapsed" *ngIf="collapsed">
     <a href="/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a href="#become-researcher"> {{'_How_Become_Researcher' | translate}}</a>
+    <a (click)="scroll('becomeResearcher')" > {{'_How_Become_Researcher' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
-    <a  href="#heatmap">{{'_HeatMap' | translate}}</a>
-    <a  href="#partners">{{'_OurPartners' | translate}}</a>
-    <a  href="#faq">{{'_FAQ' | translate}}</a>
-    <a  href="#contactus">{{'_ContactUs' | translate}}</a>
+    <a (click)="scroll('heatmap')">{{'_HeatMap' | translate}}</a>
+    <a (click)="scroll('partners')" >{{'_OurPartners' | translate}}</a>
+    <a (click)="scroll('faq')" >{{'_FAQs' | translate}}</a>
+    <a (click)="scroll('contactus')">{{'_ContactUs' | translate}}</a>
 </div>
 
 <div class="top-home" *ngIf="!_appService.roll">
@@ -49,7 +49,7 @@
             <div class="login-register"  *ngIf="_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
-                <div class="login" (click)="logout()">{{'_Logout'| translate}}</div>
+                <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
         <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer">
@@ -61,7 +61,7 @@
 
                 <div class="user-name">
                     <div>
-                        <img [src]="'src/app/api/uploaded/' + memberDetails.avatar" alt="" *ngIf="memberDetails.avatar != ''">
+                        <img [src]="  _appService.api.api.imgURL + memberDetails.avatar" alt="" *ngIf="memberDetails.avatar != ''">
                         <img [src]="'assets/img/member1.jpg' " alt="" *ngIf="memberDetails.avatar == ''">
                     </div>
                     <div class="full-name">
@@ -92,10 +92,9 @@
                     <div class="info-item" >
                         <div class="info-icon" *ngIf="memberDetails.domain">
                             <i class="fa fa-suitcase"></i>
-                            <div class="info-data"><I></I>{{memberDetails.domain}}</div>
+                            <div class="info-data">{{memberDetails.domain}}</div>
                         </div>
                         <div class="info-icon">
-                            <i class="fa fa-eye"></i>
                             <div class="info-data">{{memberDetails.views}} Views</div>
                         </div>
                     </div>
@@ -136,10 +135,10 @@
 
     <div class="social-paper" data-aos="fade-left" data-aos-duration="1000">
         <div class="cards-icon">
-            <div class="card-icon-research" style="cursor: pointer">
+            <div class="card-icon-research" style="cursor: pointer" routerLink="/papers">
                 <div class="box">
                 </div>
-                <img src="assets/img/paper.png" alt="">
+                <img src="assets/img/submit_paper.png" alt="">
 
                 <div class="title" routerLink="/papers" style="cursor: pointer">
                     <h2 >{{'_ResearchAPaper' | translate}}</h2>
@@ -148,10 +147,10 @@
                 </div>
             </div>
 
-            <div class="card-icon-submit" style="cursor: pointer">
+            <div class="card-icon-submit" style="cursor: pointer" routerLink="/upload-paper">
                 <div class="box">
                 </div>
-                <img src="assets/img/paper.png" alt="">
+                <img src="assets/img/Reseach_paper.png" alt="">
 
                 <div class="title"  style="cursor: pointer" (click)="_appService.submitPaper()">
                     <h2>{{'_SubmitAPaper' | translate}}</h2>
@@ -169,7 +168,7 @@
     <div class="center-sticker"></div>
     <div class="side">
         <div class="sec-img">
-            <img src="assets/img/member1.jpg">
+            <img src="assets/img/about.png">
         </div>
     </div>
     <div class="side">
@@ -195,7 +194,7 @@
         </div>
     </div>
 </div>
-<div class="become-researcher" id="become-researcher" data-aos="fade-up" data-aos-duration="1000">
+<div class="become-researcher" id="becomeResearcher" data-aos="fade-up" data-aos-duration="1000">
     <div class="title">
         <p>{{'_How_Become_Researcher' | translate}}</p>
         <div></div>

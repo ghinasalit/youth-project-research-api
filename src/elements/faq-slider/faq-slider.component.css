@@ -11,17 +11,9 @@
     content: "\f078";
 }
 
-.panel {
-    padding: 0 35px;
-    background-color: #EEF1F1;
-    max-height: 0;
-    overflow: hidden;
-    border: none;
-    transition: max-height 0.2s ease-out;
-}
 
 .panel p {
-    margin: 10px 0;
+    padding: 10px;
 }
 
 .closed {

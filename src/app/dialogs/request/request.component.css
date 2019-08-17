@@ -53,3 +53,12 @@
     margin: 25px 0;
 
 }
+
+.notes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.notes span{
+    color: red
+}

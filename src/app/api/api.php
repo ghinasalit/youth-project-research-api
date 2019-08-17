@@ -34,7 +34,7 @@ if ($request_headers['code'] == 1) {
     }
 
     if ($function) {
-        if (!in_array($function, array('login', 'register', 'check_version' , 'add_feedback' , 'get_roll' ,
+        if (!in_array($function, array('login', 'register', 'check_version' , 'add_feedback' , 'get_roll' , 'get_one_recognizes_researched' ,
             'search_paper' ,'is_user_exist', 'get_universities' , 'get_members' , 'get_published_papers' ,
             'get_countries' , 'get_disciplines' , 'statistics' , 'get_years' , 'get_member' , 'get_papers_by_member' ,
             'search_paper_by_member' , 'search_member'))) {

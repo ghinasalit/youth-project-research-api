@@ -23,7 +23,6 @@ export class UploadResearchPaperComponent implements OnInit {
   }
 
   getFile() {
-    console.log(this.InputFile);
     const file = this.InputFile.nativeElement;
     if (file.files && file.files[0]) {
       this.UploadFile = file.files[0];

@@ -334,7 +334,7 @@ input[type=checkbox]:checked ~ #menu {
 
 
 
-.social-user p{
+.social-user p ,.social-user a{
     color: #75cddd;
     font-size: 12px;
 }

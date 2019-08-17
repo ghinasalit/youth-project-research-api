@@ -4,7 +4,7 @@
     color: #fff;
     display: flex;
     flex-direction: column;
-    background-image: url("../../../assets/img/library.jpg");
+    background-image: url("../../../assets/img/home.jpg");
     width: 100%;
     background-color: #f1f2f2;
     background-size: cover;
@@ -104,47 +104,6 @@ input {
     border-radius: 0;
 }
 
-
-/*#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {*/
-/*    cursor: pointer;*/
-/*    border-radius: 1px;*/
-/*    height: 5px;*/
-/*    width: 35px;*/
-/*    background: white;*/
-/*    position: absolute;*/
-/*    display: block;*/
-/*    content: '';*/
-/*}*/
-
-/*#nav-toggle span:before {*/
-/*    top: -10px;*/
-/*}*/
-
-/*#nav-toggle span:after {*/
-/*    bottom: -10px;*/
-/*}*/
-
-/*#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {*/
-/*    transition: all 500ms ease-in-out;*/
-/*}*/
-
-/*#nav-toggle.active span {*/
-/*    background-color: transparent;*/
-/*}*/
-
-/*#nav-toggle.active span:before, #nav-toggle.active span:after {*/
-/*    top: 0;*/
-/*}*/
-
-/*#nav-toggle.active span:before {*/
-/*    transform: rotate(45deg);*/
-/*    background: #1b2850;*/
-/*}*/
-
-/*#nav-toggle.active span:after {*/
-/*    transform: rotate(-45deg);*/
-/*    background: #1b2850;*/
-/*}*/
 
 .title-search {
     display: flex;
@@ -514,11 +473,7 @@ app-home .info-data {
 /*heat map*/
 
 
-.heat-map {
-    display: flex;
-    flex-direction: column;
-    padding: 45px 40px;
-}
+
 
 
 .map img {
@@ -583,9 +538,7 @@ app-home .info-data {
     background-color: #75cddd !important;
 }
 
-.contact {
-    margin: 20px 0 !important;
-}
+
 
 
 .contact .full-section {
@@ -612,9 +565,6 @@ app-home .info-data {
     width: 100%;
 }
 
-.frequent-asked-questions .title {
-    padding: 0 40px;
-}
 
 
 .social-contact {

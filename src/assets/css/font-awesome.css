@@ -374,6 +374,7 @@
     content: "\f023";
 }
 
+
 .fa-flag:before {
     content: "\f024";
 }
@@ -741,6 +742,11 @@
 .fa-facebook-square:before {
     content: "\f082";
 }
+
+.fa-copyright:before {
+    content: "\f1f9";
+}
+
 
 .fa-camera-retro:before {
     content: "\f083";

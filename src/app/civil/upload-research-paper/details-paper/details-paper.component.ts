@@ -38,7 +38,6 @@ export class DetailsPaperComponent implements OnInit {
     lang = new FormControl('', [Validators.required]);
 
     savePaper() {
-        console.log(this.paperForm.controls.tags.value);
         this.appService.paper.append('title', this.paperForm.controls.title.value);
         this.appService.paper.append('discipline', this.paperForm.controls.discipline.value);
         this.appService.paper.append('description', this.paperForm.controls.description.value);

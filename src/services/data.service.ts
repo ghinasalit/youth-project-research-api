@@ -29,8 +29,8 @@ export class DataService {
         return this.api.submitPage('login', data);
     }
 
-    logoutService(data: User): Observable<Object> {
-        return this.api.submitPage('logout', data);
+    logoutService(): Observable<Object> {
+        return this.api.getDataPage('logout');
     }
 
     getMemberService(data: Shared): Observable<Object> {
@@ -129,7 +129,6 @@ export class DataService {
     }
 
     sendPaperService(data: FormData): Observable<Object> {
-        console.log(data.get['title']);
         return this.api.uploadImagePage('add_paper', data);
     }
 

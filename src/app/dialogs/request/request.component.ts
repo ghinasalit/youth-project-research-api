@@ -43,6 +43,7 @@ export class RequestComponent implements OnInit {
                     this.dialogRef.close();
                 } else {
                     this.toaster.error(result.msg, 'Failed');
+                    this.dialogRef.close();
 
 
                 }

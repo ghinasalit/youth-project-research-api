@@ -4,23 +4,30 @@ import {BehaviorSubject} from 'rxjs';
 import * as AOS from 'aos';
 import {DataService} from '../services/data.service';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AppService {
     public fileName = '';
+    public section: any;
     public roll: any;
     public username = '';
     public registerPageTitle = 0; // 0 for default ; 1 for save bookmark ; 2 for submit paper ; 3 for view paper
     public paper = new FormData();
     public language = new BehaviorSubject<string>(null);
     public roleNotifier = new BehaviorSubject<any>(null);
+    public countiesNotifier = new BehaviorSubject<any>(null);
+    public disciplinesNotifier = new BehaviorSubject<any>(null);
+    public yearsNotifier = new BehaviorSubject<any>(null);
     currentLanguage: string;
     public isEmail: any = /^[\w\-\.]{2,}\@[a-zA-Z-0-9]{2,}\.[\w\-]{2,4}$/;
 
 
-    constructor(private translate: TranslateService, public api: DataService, private router: Router) {
+    constructor(private translate: TranslateService,
+                public api: DataService, private router: Router ,
+                private toaster: ToastrService) {
         /** Language Configurations **/
         if (!localStorage.getItem('language')) {
             localStorage.setItem('language', 'en');
@@ -53,6 +60,52 @@ export class AppService {
     clearLocalStorage() {
         this.roll = 0;
         localStorage.setItem('username', '');
+
+    }
+
+
+    getCounties() {
+        this.api.getCountriesService()
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+                    this.countiesNotifier.next(result.data);
+                } else {
+
+                }
+
+            });
+
+    }
+
+    getDisciplines() {
+        this.api.getDisciplinesService()
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+                    this.disciplinesNotifier.next(result.data);
+                } else {
+
+                }
+
+            });
+
+    }
+
+    get_years() {
+        this.api.getYearsService()
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+                    this.yearsNotifier.next(result.data);
+                } else {
+
+                }
+
+            });
 
     }
 
@@ -92,5 +145,24 @@ export class AppService {
             this.router.navigate(['/register']);
 
         }
+    }
+
+    logout() {
+        this.api.logoutService()
+            .subscribe(response => {
+                let result
+                result = response;
+
+                if (result === '1') {
+
+                    this.clearLocalStorage();
+                    this.router.navigate(['/home']);
+
+                } else {
+                    this.toaster.error(result.msg, 'Failed');
+
+                }
+
+            });
     }
 }

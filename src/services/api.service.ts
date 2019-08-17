@@ -9,6 +9,7 @@ import {User} from '../classes/user';
 })
 export class ApiService {
     public apiURL: string;
+    public imgURL: string;
 
     constructor(private http: HttpClient) {
         this.getAbsoluteDomainUrl();
@@ -17,12 +18,14 @@ export class ApiService {
     public getAbsoluteDomainUrl(): string {
         if (isDevMode()) {
             this.apiURL = '/src/app/api/user/';
+            this.imgURL = 'src/app/api/uploaded/';
         } else {
             if (window
                 && 'location' in window
                 && 'protocol' in window.location
                 && 'host' in window.location) {
                 this.apiURL = window.location.protocol + '//' + window.location.host + '/api/user/' ;
+                this.imgURL = '/api/uploaded/';
             }
         }
         return null;

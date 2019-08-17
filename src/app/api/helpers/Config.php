@@ -47,7 +47,7 @@ class Config
 $DB = $FCM = $FILES_ROOT = "";
 
 if (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "localhost")) {
-    $DB = Config::$live_db;
+    $DB = Config::$local_db;
     $FCM = Config::$auth_fcm;
     $FILES_ROOT = Config::$local_files;
 }

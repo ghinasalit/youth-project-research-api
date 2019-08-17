@@ -1,16 +1,16 @@
 <div class="nav-collapsed" *ngIf="collapsed">
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
     <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
     <a href="/members">{{'_Our_Members' | translate}}</a>
-    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a  href="#partners">{{'_OurPartners' | translate}}</a>
-    <a  href="#faq">{{'_FAQ' | translate}}</a>
-    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+    <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
+    <a  (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
+    <a (click)="_appService.section = 'contactus'" routerLink="/home">{{'_ContactUs' | translate}}</a>
 </div>
 
-<div class="full-section" data-aos="fade-up" data-aos-duration="1000">
+<div class="full-section" >
     <div class="side">
         <div class="sec-img">
             <img src="assets/img/member1.jpg">
@@ -34,7 +34,7 @@
             <div class="login-register"  *ngIf="_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
-                <div class="login">{{'_Logout'| translate}}</div>
+                <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
 
@@ -68,8 +68,6 @@
                 <div><i class="fa fa-twitter"></i></div>
                 <div><i class="fa fa-youtube"></i></div>
             </div>
-
-            <div class="blue-sep"></div>
         </div>
     </div>
 </div>
@@ -78,38 +76,37 @@
     <div class="characters-filters">
         <div class="characters">
             <p (click)="member.letter = 'a' ; filter()">A</p>
-            <p>B</p>
-            <p>C</p>
-            <p>D</p>
-            <p>E</p>
-            <p>F</p>
-            <p>G</p>
-            <p>H</p>
-            <p>I</p>
-            <p>J</p>
-            <p>K</p>
-            <p>L</p>
-            <p>M</p>
-            <p>N</p>
-            <p>O</p>
-            <p>P</p>
-            <p>Q</p>
-            <p>R</p>
+            <p (click)="member.letter = 'b' ; filter()">B</p>
+            <p (click)="member.letter = 'c' ; filter()">C</p>
+            <p (click)="member.letter = 'd' ; filter()">D</p>
+            <p (click)="member.letter = 'e' ; filter()">E</p>
+            <p (click)="member.letter = 'f' ; filter()">F</p>
+            <p (click)="member.letter = 'g' ; filter()">G</p>
+            <p (click)="member.letter = 'h' ; filter()">H</p>
+            <p (click)="member.letter = 'i' ; filter()">I</p>
+            <p (click)="member.letter = 'j' ; filter()">J</p>
+            <p (click)="member.letter = 'k' ; filter()">K</p>
+            <p (click)="member.letter = 'l' ; filter()">L</p>
+            <p (click)="member.letter = 'm' ; filter()">M</p>
+            <p (click)="member.letter = 'n' ; filter()">N</p>
+            <p (click)="member.letter = 'o' ; filter()">O</p>
+            <p (click)="member.letter = 'p' ; filter()">P</p>
+            <p (click)="member.letter = 'q' ; filter()">Q</p>
+            <p (click)="member.letter = 'r' ; filter()">R</p>
             <p (click)="member.letter = 's' ; filter()">S</p>
-            <p>T</p>
-            <p>U</p>
-            <p>V</p>
-            <p>W</p>
-            <p>X</p>
-            <p>Y</p>
-            <p>z</p>
+            <p (click)="member.letter = 't' ; filter()">T</p>
+            <p (click)="member.letter = 'u' ; filter()">U</p>
+            <p (click)="member.letter = 'v' ; filter()">V</p>
+            <p (click)="member.letter = 'w' ; filter()">W</p>
+            <p (click)="member.letter = 'x' ; filter()">X</p>
+            <p (click)="member.letter = 'y' ; filter()">Y</p>
+            <p (click)="member.letter = 'z' ; filter()">Z</p>
         </div>
         <div class="filters">
             <div class="sort-icon">
                 <i class="fa fa-sort-desc" aria-hidden="true" *ngIf="data.sort == 'asc'" (click)="sortMembers('desc')" ></i>
                 <i class="fa fa-sort-asc" aria-hidden="true" *ngIf="data.sort == 'desc'" (click)="sortMembers('asc')"></i>
             </div>
-            <div class="filter-icon"><i class="fa fa-filter" aria-hidden="true"></i></div>
         </div>
     </div>
     <div class="col-lg-12 research-input">
@@ -125,7 +122,7 @@
     </div>
     <div class="members-cards">
         <div class="card" *ngFor="let member of members">
-            <img [src]="'src/app/api/uploaded/' + member.avatar" alt="">
+            <img [src]="_appService.api.api.imgURL  + member.avatar" alt="">
             <div class="title" [routerLink]="['/profile' , member.username]" style="cursor: pointer">
                 <p>{{member.first_name}} {{member.last_name}}</p>
                 <div>

@@ -158,50 +158,7 @@ export class ProfileComponent implements OnInit {
 
     }
 
-    getCounties() {
-        this._appService.api.getCountriesService()
-            .subscribe(response => {
-                let result;
-                result = response;
-                if (result.code === 1) {
-                    this.Counties = result.data;
-                } else {
 
-                }
-
-            });
-
-    }
-
-    get_years() {
-        this._appService.api.getYearsService()
-            .subscribe(response => {
-                let result;
-                result = response;
-                if (result.code === 1) {
-                    this.years = result.data;
-                } else {
-
-                }
-
-            });
-
-    }
-
-    getDisciplines() {
-        this._appService.api.getDisciplinesService()
-            .subscribe(response => {
-                let result;
-                result = response;
-                if (result.code === 1) {
-                    this.Disciplines = result.data;
-                } else {
-
-                }
-
-            });
-
-    }
 
     filter() {
         this.paper.page = 0;
@@ -309,8 +266,7 @@ export class ProfileComponent implements OnInit {
         if (this._appService.roll) {
 
             if (paper.permission === 1) {
-                this._appService.api.downloadNoteReceipt(paper.filename).subscribe(res => {
-                    console.log(res);
+                this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
                     var newBlob = new Blob([res], {type: 'application/pdf'});
 
                     if (window.navigator && window.navigator.msSaveOrOpenBlob) {
@@ -361,9 +317,16 @@ export class ProfileComponent implements OnInit {
             this.get_member_by_username();
             this.getPapersByMember();
         });
-        this.getCounties();
-        this.getDisciplines();
-        this.get_years();
+        this._appService.countiesNotifier.subscribe(data => {
+            this.Counties = data;
+        });
+        this._appService.disciplinesNotifier.subscribe(data => {
+            this.Disciplines = data;
+            console.log(data);
+        });
+        this._appService.yearsNotifier.subscribe(data => {
+            this.years = data;
+        });
         this.username = localStorage.getItem('username');
 
 

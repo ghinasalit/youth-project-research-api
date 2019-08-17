@@ -127,7 +127,6 @@ export class PapersComponent implements OnInit {
             .subscribe(response => {
 
                 this.result = response;
-                console.log(this.result.data.length);
                 if (this.result.code === 1) {
                     this.result.data.forEach(item => {
                         this.papers.push(item);
@@ -135,51 +134,6 @@ export class PapersComponent implements OnInit {
 
                     this.data.page = this.data.page + 1;
 
-                } else {
-
-                }
-
-            });
-
-    }
-
-    getCounties() {
-        this._appService.api.getCountriesService()
-            .subscribe(response => {
-                let result;
-                result = response;
-                if (result.code === 1) {
-                    this.Counties = result.data;
-                } else {
-
-                }
-
-            });
-
-    }
-
-    get_years() {
-        this._appService.api.getYearsService()
-            .subscribe(response => {
-                let result;
-                result = response;
-                if (result.code === 1) {
-                    this.years = result.data;
-                } else {
-
-                }
-
-            });
-
-    }
-
-    getDisciplines() {
-        this._appService.api.getDisciplinesService()
-            .subscribe(response => {
-                let result;
-                result = response;
-                if (result.code === 1) {
-                    this.Disciplines = result.data;
                 } else {
 
                 }
@@ -240,8 +194,7 @@ export class PapersComponent implements OnInit {
         if (this._appService.roll) {
 
             if (paper.permission === 1 || paper.username === this.username ) {
-                this._appService.api.downloadNoteReceipt(paper.filename).subscribe(res => {
-                    console.log(res);
+                this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
                     var newBlob = new Blob([res], {type: 'application/pdf'});
 
                     if (window.navigator && window.navigator.msSaveOrOpenBlob) {
@@ -290,11 +243,17 @@ export class PapersComponent implements OnInit {
 
     ngOnInit() {
         this.username = localStorage.getItem('username');
+        this._appService.countiesNotifier.subscribe(data => {
+            this.Counties = data;
+        });
+        this._appService.disciplinesNotifier.subscribe(data => {
+            this.Disciplines = data;
+        });
+        this._appService.yearsNotifier.subscribe(data => {
+            this.years = data;
+        });
         this.getPapers();
-        this.getCounties();
-        this.getDisciplines();
         this.getStatistics();
-        this.get_years();
     }
 
 }

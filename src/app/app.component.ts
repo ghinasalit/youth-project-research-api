@@ -24,7 +24,11 @@ export class AppComponent implements OnInit {
 
 
     ngOnInit() {
+
         this._appService.getRoll();
+        this._appService.getCounties();
+        this._appService.get_years();
+        this._appService.getDisciplines();
         this._appService.language.subscribe(language => {
             this._appService.currentLanguage = language === 'en' ? 'en' : 'ar';
             switch (language) {

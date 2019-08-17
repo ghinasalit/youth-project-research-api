@@ -889,45 +889,42 @@ class Queries
         $member_to = $db->withTotalCount()->rawQuery($query);
 
         if ($member_from && $member_to) {
-            ini_set("SMTP","aspmx.l.google.com");
-            $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
-            $headers .= "From: g.salit@webntech.ae" . "\r\n";
-            mail("ghinasallit@gmail.com","test subject","test body",$headers);
 
-//
-//            $to = $member_email_to;
-//            $subject = "Arab Youth Research/Request";
-//
-//            $message = "
-//<html>
-//<head>
-//<title>HTML email</title>
-//</head>
-//<body>
-//<p>This email contains HTML Tags!</p>
-//<table>
-//<tr>
-//<th>Firstname</th>
-//<th>Lastname</th>
-//</tr>
-//<tr>
-//<td>John</td>
-//<td>Doe</td>
-//</tr>
-//</table>
-//</body>
-//</html>
-//";
-//
-//// Always set content-type when sending HTML email
-//            $headers = "MIME-Version: 1.0" . "\r\n";
-//            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-//
-//// More headers
-//            $headers .= 'From:' . $member_from["email"] . "\r\n";
-//
-//            mail($to, $subject, $message, $headers);
+
+
+            $to = $member_email_to;
+//            $to = 'ghinasallit@gmail.com';
+            $subject = "Arab Youth Research/Request";
+
+            $message = "
+<html>
+<head>
+<title>HTML email</title>
+</head>
+<body>
+<p>This email contains HTML Tags!</p>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td>John</td>
+<td>Doe</td>
+</tr>
+</table>
+</body>
+</html>
+";
+
+// Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+            $headers .= 'From:' . $member_from["email"] . "\r\n";
+
+            mail($to, $subject, $message, $headers);
         }
     }
 
@@ -965,7 +962,6 @@ class Queries
 
             $query = "SELECT members.email , members.member_id from members JOIN papers ON members.member_id = papers.member_id WHERE papers.paper_id = '" . $paper_id."'";
             $member_to = $db->withTotalCount()->rawQuery($query);
-            var_dump($member_to[0]["member_id"]);
 
             $data = Array(
                 'paper_id' => $paper_id,

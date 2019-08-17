@@ -81,7 +81,6 @@ export class MembersComponent implements OnInit {
             .subscribe(response => {
 
                 this.result = response;
-                console.log(this.result.data.length);
                 if (this.result.code === 1) {
                     this.result.data.forEach(item => {
                         this.members.push(item);

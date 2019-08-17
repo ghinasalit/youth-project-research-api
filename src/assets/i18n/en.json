@@ -18,7 +18,7 @@
   "_ResearchLibrary": "Research Library",
   "_ArabYouth": "Arab Youth",
   "_AboutDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam atque consequuntur\n                        ducimus\n                        et\n                        fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum laborum\n                        officia\n                        voluptatibus.",
-  "_About_Arab_Youth_Research": "About Arab Youth Research",
+  "_About_Arab_Youth_Research": "About The Arab Youth Research",
   "_Search": "Search",
   "_By": "By",
   "_Research": "Research",
@@ -39,6 +39,8 @@
   "_ViewMore": "View More",
   "_Continue": "Continue",
   "_Copyright": "All rights reserved Arab Youth Research",
+  "_AllRightsReversed": "All rights reserved",
+  "_ArabYouthResearch": "Arab Youth Research",
   "_SubmitAPaper": "Submit A Paper",
   "_ResearchAPaper": "Research A Paper",
   "_KnowledgePr": "Broad knowledge prospects",
@@ -84,5 +86,7 @@
   "_UploadCompleted": "Upload Completed",
   "_UploadResearchPaper": "Upload Research Papers",
   "_DragDropFile": "Drag and Drop file (.pdf)",
-  "_ChooseFile": "Choose File"
+  "_TheWorld": "The World"
+
+
 }

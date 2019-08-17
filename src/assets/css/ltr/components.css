@@ -153,11 +153,10 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 25px;
 }
 
-
 .nav-collapsed a {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 700;
-    margin: 20px 0;
+    margin: 14px 0;
     color: #fff;
     cursor: pointer;
 }
@@ -186,7 +185,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .logo-left {
     float: left;
-    padding: 36px 95px;
+    padding: 31px 95px;
 }
 
 .logo-right {
@@ -200,7 +199,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .logo-left img {
-    width: 130px;
+    width: 122px;
 }
 
 .right-section {
@@ -233,21 +232,22 @@ h1, h2, h3, h4, h5, h6, p {
 .card-icon-research, .card-icon-submit {
     position: relative;
     padding: 50px 65px;
+    direction: initial;
 }
 
 .card-icon-research img {
     position: absolute;
-    right: 24px;
+    right: 54px;
     bottom: 140px;
-    width: 140px;
+    width: 130px;
 }
 
 
 .card-icon-submit img {
     position: absolute;
-    right: 24px;
-    bottom: 140px;
-    width: 140px;
+    right: 10px;
+    bottom: 144px;
+    width: 150px;
 }
 
 
@@ -256,8 +256,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .box {
-    width: 190px;
-    height: 190px;
+    width: 205px;
+    height: 205px;
     background-color: #75cddd;
 }
 
@@ -343,7 +343,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .info-user {
-    padding: 0 140px;
+    /*padding: 0 140px;*/
 }
 
 
@@ -354,10 +354,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .social {
+    text-align: center;
     display: inline-block;
-    margin-right: 25px;
+    margin-right: 10px;
     margin-top: 150px;
-    position: fixed;
+    /* position: fixed; */
     z-index: 1;
     right: 0;
 }
@@ -461,7 +462,6 @@ app-home .card-item p {
 
 .full-section .sec-content {
     text-align: left;
-    width: 85%;
     margin-left: 80px;
     margin-top: 70px;
 }
@@ -543,7 +543,7 @@ app-home .card-item p {
     font-weight: bold;
     color: #1b2850;
     margin-top: 0;
-    margin-left: 18px;
+    margin-left: 0px;
 }
 
 .views-paper {
@@ -709,7 +709,8 @@ app-home .card-item p {
 }
 
 .info-user {
-    padding: 0 140px;
+    /*padding: 0 140px;*/
+    margin-left: 75px;
 }
 
 .paper p {
@@ -1011,18 +1012,19 @@ app-members .card {
 
 
 .sort-icon {
-    width: 48px;
+    width: 35px;
     height: 36px;
     border: 1px solid;
     border-radius: 8px;
     text-align: center;
     font-size: 35px;
+    position: relative;
 }
 
 
 .filters {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 5%;
     color: #1B2850;
 
@@ -1325,4 +1327,43 @@ app-upload-paper .submit {
     font-size: 55px;
     margin: auto;
     font-weight: bold;
+}
+
+.footer {
+    font-size: 18px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-sort-asc {
+    position: absolute;
+    right: 7px;
+    top: -5px;
+}
+
+.heat-map {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+}
+
+
+.frequent-asked-questions .title {
+    padding: 0 40px;
+}
+
+
+
+.panel {
+    margin: 0 35px;
+    background-color: #EEF1F1;
+    max-height: 0;
+    overflow: hidden;
+    border: none;
+    transition: max-height 0.2s ease-out;
+}
+
+.contact {
+    margin: 20px 0 !important;
 }

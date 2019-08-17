@@ -16,7 +16,6 @@ public paper: any;
   download(filename: string , title: string ) {
 
       this._appService.api.downloadNoteReceipt(filename).subscribe(res => {
-        console.log(res);
         var newBlob = new Blob([res], {type: "application/pdf"});
 
         if (window.navigator && window.navigator.msSaveOrOpenBlob) {

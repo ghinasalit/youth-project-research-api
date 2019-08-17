@@ -93,7 +93,8 @@
 
             </div>
             <div>
-                <textarea class="textbox-lines" rows="6" formControlName="description"></textarea>
+                <textarea class="textbox-lines" rows="6" #input formControlName="description"  maxlength="500"></textarea>
+                <h6>{{input.value?.length || 0}}/500</h6>
             </div>
             <div class="submit" (click)="register()">
                 <button [disabled]="!profileForm.valid">Save Your Profile info</button>

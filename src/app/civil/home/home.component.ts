@@ -11,7 +11,7 @@ import {ToastrService} from 'ngx-toastr';
 import {User} from '../../../classes/user';
 import {Router} from '@angular/router';
 import {Shared} from '../../../classes/shared';
-import { Layer} from 'leaflet';
+import {Layer} from 'leaflet';
 
 
 @Component({
@@ -104,11 +104,10 @@ export class HomeComponent implements OnInit {
 
                 if (this.result.code === 1) {
                     this.feedbackForm.reset();
-                    this.toaster.success(this.result.msg, 'Success');
+                    this.toaster.success('Thank you for contacting us. One of our representatives will be in contact with you shortly regarding your inquiry', 'Success');
 
                 } else {
-                    console.log(this.result.msg);
-                    this.toaster.error('Hello world!', 'Failed');
+                    this.toaster.error('Sorry , Something went wrong , Please try again', 'Failed');
 
                 }
 
@@ -192,26 +191,6 @@ export class HomeComponent implements OnInit {
     }
 
 
-    // getCounties() {
-    //     this._appService.api.getCountriesService()
-    //         .subscribe(response => {
-    //             let result;
-    //             result = response;
-    //             if (result.code === 1) {
-    //                 this.Counties = result.data;
-    //                 this.Counties.forEach(item => {
-    //                     this.addressPoints.push([-37.8839, 175.3745188667, '571']);
-    //
-    //                 });
-    //
-    //                 console.log(JSON.stringify(this.addressPoints));
-    //             } else {
-    //
-    //             }
-    //
-    //         });
-    //
-    // }
 
 
     onMapReady(map) {
@@ -235,7 +214,6 @@ export class HomeComponent implements OnInit {
 
                                     if (details !== '' && details.views > 0) {
                                         var popup = L.popup();
-                                        console.log(details);
                                         this.addressPoints.push([item.lat, item.lng, item.grade]);
                                         let marker = L.marker([item.lat, item.lng]).addTo(map).on('click', <LeafletMouseEvent>(e) => {
 
@@ -292,7 +270,6 @@ export class HomeComponent implements OnInit {
 
 
                                         this.markers.push(marker);
-                                        console.log(this.markers);
                                         // if (this.addressPoints.length === this.Counties.length) {
                                         let heat = (<any>L).heatLayer(
                                             this.addressPoints
@@ -352,24 +329,16 @@ export class HomeComponent implements OnInit {
     }
 
 
-    logout() {
-        this._appService.api.logoutService(this.user)
-            .subscribe(response => {
 
-                this.result = response;
 
-                if (this.result === '1') {
 
-                    this._appService.clearLocalStorage();
-                    this.router.navigate(['/home']);
-
-                } else {
-                    console.log(this.result.msg);
-                    this.toaster.error(this.result.msg, 'Failed');
-
-                }
-
-            });
+    scroll(element: any) {
+        const el: HTMLElement | null = document.getElementById(element);
+        if (el) {
+            setTimeout(() =>
+                el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+            this._appService.section = '' ;
+        }
     }
 
     ngOnInit() {
@@ -377,12 +346,15 @@ export class HomeComponent implements OnInit {
         this.getStatistics();
         window.scrollTo(0, 0);
         this.getMembers();
-        console.log(this._appService.roll);
         this._appService.roleNotifier.subscribe(data => {
             if (data === 1) {
                 this.getMemberLoggedin();
             }
         });
+
+        if (this._appService.section) {
+            this.scroll(this._appService.section);
+        }
 
 
         $(window).scroll(function () {

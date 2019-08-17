@@ -1,13 +1,13 @@
 <div class="nav-collapsed" *ngIf="collapsed">
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPaper' | translate}}</a>
+    <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
     <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
-    <a routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a  href="#partners">{{'_OurPartners' | translate}}</a>
-    <a  href="#faq">{{'_FAQ' | translate}}</a>
-    <a routerLink="/home">{{'_ContactUs' | translate}}</a>
+    <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
+    <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
+    <a  (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
+    <a (click)="_appService.section = 'contactus'" routerLink="/home">{{'_ContactUs' | translate}}</a>
 </div>
 <div class="full-section login" data-aos-duration="1000">
     <div class="side">
@@ -41,13 +41,24 @@
                         </mat-form-field>
                     </div>
                     <div class="item">
-                        <mat-form-field class="example-full-width">
-                            <input matInput [placeholder]="'_Password' | translate" formControlName="password" required>
+                        <mat-form-field>
+                            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"  formControlName="password" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
                             <mat-error *ngIf="password.errors.required">{{'_Required' | translate}}</mat-error>
 
                         </mat-form-field>
-                        <div class="forget-password"><a>{{'_ForgetPassword' | translate}}</a></div>
                     </div>
+
+<!--                    <div class="item">-->
+<!--                        <mat-form-field class="example-full-width">-->
+<!--                            <input matInput [placeholder]="'_Password' | translate" formControlName="password" required>-->
+<!--                            <mat-error *ngIf="password.errors.required">{{'_Required' | translate}}</mat-error>-->
+
+<!--                        </mat-form-field>-->
+<!--                        <div class="forget-password"><a>{{'_ForgetPassword' | translate}}</a></div>-->
+<!--                    </div>-->
                     <div class="submit" (click)="login()">
                         <button [disabled]="!loginForm.valid">{{'_Login' | translate}}</button>
                     </div>

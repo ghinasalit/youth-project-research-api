@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   collapsed = false;
-  hide = false;
+  hide = true;
   loginForm: FormGroup;
   result: any;
   user = new User();
@@ -59,7 +59,6 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/home']);
 
           } else {
-            console.log(this.result.msg);
             this.toaster.error(this.result.msg, 'Failed');
 
           }

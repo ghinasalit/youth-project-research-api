@@ -71,14 +71,14 @@
     app-members .full-section .sec-content, app-about .full-section .sec-content {
         text-align: left;
         display: flex;
-        width: 85%;
+        /*width: 85%;*/
         margin-left: 80px;
         margin-top: 70px;
     }
 
     app-members .social {
         display: inline-block;
-        margin-right: 0;
+        margin-right: 10px;
         margin-top: 150px;
     }
 
@@ -162,14 +162,22 @@
         text-align: left;
     }
 
-    .info-user {
-        padding: 0 50px;
-    }
+   app-profile .info-user {
+       width: 71%;
+   }
 
     .social i {
         font-size: 20px;
         color: #1b2850;
         margin-bottom: 16px;
+    }
+
+    .nav-collapsed a {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 10px 0;
+        color: #fff;
+        cursor: pointer;
     }
 
 
@@ -230,10 +238,6 @@
     }
 
 
-    .profile-container .info-user {
-        padding: 0 75px;
-    }
-
     /*papers*/
     .views-paper {
         margin-right: 10px;
@@ -244,16 +248,21 @@
     app-members .full-section .sec-content, app-about .full-section .sec-content {
         text-align: left;
         display: flex;
-        width: 85%;
         margin-left: 80px;
         margin-top: 70px;
     }
 
     app-members .social {
         display: inline-block;
-        margin-right: 0;
+        margin-right: 10px;
         margin-top: 150px;
     }
+
+    app-members  .about-content{
+
+        padding-right: 10px;
+    }
+
 }
 
 @media (min-width: 1025px) and (max-width: 1400px) {
@@ -303,14 +312,8 @@
         width: 50%;
     }
 
-    .login-register {
-        display: flex;
-        justify-content: space-between;
-        font-size: 20px;
-        font-weight: normal;
-        color: #1b2850;
-        cursor: pointer;
-    }
+
+
 
     .navbar {
         height: 100%;
@@ -318,6 +321,21 @@
         background-color: #1b2850;
         margin: 0 !important;
         border-radius: 0;
+    }
+
+
+    .content p {
+        margin: 15px 20px;
+        font-size: 14px;
+    }
+
+    app-papers .statistics {
+        padding: 147px 10px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
     }
 
     .navbar-login {
@@ -358,7 +376,9 @@
 
 
     .info-user {
-        padding: 0 20px;
+        /*padding: 0 20px;*/
+        margin-left: 45px;
+        width: 80%;
     }
 
 
@@ -376,10 +396,26 @@
 
     .social-paper img {
         position: absolute;
-        right: 35px;
-        bottom: 140px;
-        width: 105px;
+        right: 90px;
+        bottom: 143px;
+        width: 91px;
     }
+
+    .top-description {
+        font-size: 40px;
+        margin: auto;
+        font-weight: bold;
+    }
+
+    .drop-list {
+        display: inline-block;
+        float: left;
+        margin-right: 0px;
+        padding-left: 20px;
+        font-size: 20px;
+        position: relative;
+    }
+
 
     .paper {
         bottom: -16px;
@@ -395,6 +431,11 @@
     }
 
 
+  app-profile  .paper p {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
     .blue-line {
         border: 10px solid #75cddd;
         background-color: #75cddd;
@@ -406,9 +447,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 34px;
-        bottom: 140px;
-        width: 105px;
+        right: 50px;
+        bottom: 144px;
+        width: 110px;
     }
 
     .social i {
@@ -428,13 +469,22 @@
         font-size: 35px;
     }
 
+    .login-register {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: normal;
+        color: #1b2850;
+        cursor: pointer;
+    }
+
     .full-section .center-sticker {
-        height: 75px;
-        width: 76px;
+        height: 60px;
+        width: 60px;
         position: absolute;
         background: #1b2850;
         top: 45%;
-        left: 46%;
+        left: 47%;
         bottom: 50%;
         right: 50%;
         z-index: 100;
@@ -478,7 +528,6 @@
 
     .full-section .sec-content {
         text-align: left;
-        width: 85%;
         margin-left: 45px;
         margin-top: 60px;
     }
@@ -488,8 +537,8 @@
     }
 
     .content p {
-        margin: 0 12px 0 0;
-        font-size: 22px;
+        margin: 0 38px 0 0;
+        font-size: 16px;
     }
 
 
@@ -520,18 +569,19 @@
     /*    z-index: 100;*/
     /*}*/
     .full-section .top-sticker {
-        height: 155px;
-        width: 45px;
+        height: 120px;
+        width: 35px;
         position: absolute;
         background: #FDD97A;
         left: 5%;
+        top: 0px;
         z-index: 100;
     }
 
 
     .partners .center-sticker {
-        height: 75px;
-        width: 75px;
+        height: 60px;
+        width: 60px;
         position: absolute;
         background: #1b2850;
         top: 95%;
@@ -542,8 +592,8 @@
     }
 
     .partners .top-sticker {
-        height: 155px;
-        width: 45px;
+        height: 120px;
+        width: 35px;
         position: absolute;
         background: #75cddd;
         left: 48%;
@@ -558,8 +608,8 @@
 
 
     .contact .top-sticker {
-        height: 155px;
-        width: 45px;
+        height: 120px;
+        width: 35px;
         position: absolute;
         background: #FDD97A;
         left: 90%;
@@ -638,9 +688,7 @@
         margin: 0 0 0 0%;
     }
 
-    .profile-container .info-user {
-        padding: 0 55px;
-    }
+
 
     .research-title {
         padding: 20px;
@@ -651,7 +699,7 @@
     }
 
     .profile-container .full-name .title {
-        font-size: 35px;
+        font-size: 22px;
         font-weight: bold;
         color: #1b2850;
         margin-top: 70px;
@@ -686,12 +734,13 @@
         position: absolute;
         right: 322px;
         top: 66px;
+        font-size: 12px;
         color: #1B2850;
         text-align: center;
     }
 
     .profile-container .edit-profile i {
-        font-size: 35px;
+        font-size: 25px;
         color: #1b2850;
     }
 
@@ -703,8 +752,8 @@
     }
 
     .profile-container .center-sticker {
-        height: 75px;
-        width: 75px;
+        height: 60px;
+        width: 60px;
         position: absolute;
         top: 45%;
         left: 47%;
@@ -716,8 +765,26 @@
 
     .social {
         display: inline-block;
-        margin-right: 20px;
+        margin-right: 10px;
         margin-top: 0;
+    }
+
+    .profile-container .left-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        left: 5%;
+        z-index: 100;
+        background: #75CDDD;
+    }
+
+    .profile-container .left-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        left: 5%;
+        z-index: 100;
+        background: #75CDDD;
     }
 
     .social i {
@@ -789,18 +856,50 @@
     }
 
     .sort-icon {
-        width: 115px;
-        height: 45px;
+        width: 88px;
+        height: 26px;
         border: 1px solid;
-        border-radius: 8px;
+        border-radius: 4px;
         text-align: center;
-        font-size: 45px;
+        font-size: 30px;
+    }
+
+    .sort-icon .fa-sort-desc {
+        position: absolute;
+        top: 3px;
+        right: 4px;
+
+    }
+
+
+    .sort-icon .fa-sort-asc{
+        position: absolute;
+        top: -10px;
+        right: 3px;
+    }
+
+
+    .card .title {
+        font-size: 25px;
+        font-weight: bold;
+        color: #1B2850;
+        margin-bottom: 25px;
+        margin-top: 15px;
+        width: 90%;
+    }
+
+    .nav-collapsed a {
+        font-size: 17px;
+        font-weight: 700;
+        margin: 20px 0;
+        color: #fff;
+        cursor: pointer;
     }
 
     .filters {
         display: flex;
         justify-content: space-between;
-        width: 10%;
+        width: 3%;
         color: #1B2850;
     }
 
@@ -814,6 +913,14 @@
 
     }
 
+    .characters {
+        display: flex;
+        justify-content: space-between;
+        width: 55%;
+        font-size: 18px;
+        color: #75cddd;
+    }
+
 
     /*papers*/
     .views-paper {
@@ -825,14 +932,13 @@
     app-members .full-section .sec-content, app-about .full-section .sec-content {
         text-align: left;
         display: flex;
-        width: 85%;
-        margin-left: 80px;
-        margin-top: 70px;
+        margin-left: 48px;
+        margin-top: 50px;
     }
 
     app-members .social {
         display: inline-block;
-        margin-right: 0;
+        margin-right: 10px;
         margin-top: 150px;
     }
 
@@ -887,9 +993,7 @@
         font-size: 15px;
     }
 
-    .info-data {
-        font-size: 13px
-    }
+
 
     .full-section {
         position: relative;
@@ -900,12 +1004,20 @@
         width: 100%;
     }
 
-
-    .info-user {
-        padding: 0 15px;
+    .top-description {
+        font-size: 35px;
+        margin: auto;
+        font-weight: bold;
     }
 
 
+    .info-user {
+        margin-left: 40px;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    /**/
     .info-item {
         display: flex;
         justify-content: space-between;
@@ -917,6 +1029,16 @@
         margin-right: 15px;
         color: #1B2850;
         font-size: 15px;
+    }
+
+    .sort-icon {
+        width: 35px;
+        height: 31px;
+        border: 1px solid;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 35px;
+        position: relative;
     }
 
 
@@ -982,7 +1104,7 @@
         display: inline-block;
         margin-right: 0px;
         margin-top: 150px;
-        position: fixed;
+        /*position: fixed;*/
         z-index: 1;
     }
 
@@ -1008,17 +1130,12 @@
 
     .social-paper img {
         position: absolute;
-        right: 37px;
-        bottom: 135px;
-        width: 95px;
+        right: 88px;
+        bottom: 141px;
+        width: 72px; position;
     }
 
-    /*.paper {*/
-    /*    bottom: -16px;*/
-    /*    margin-bottom: 10px;*/
-    /*    color: #1b2850;*/
-    /*    margin-top: 25px;*/
-    /*}*/
+
     .paper p {
         font-size: 12px;
         font-weight: bold;
@@ -1027,9 +1144,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 37px;
-        bottom: 135px;
-        width: 95px;
+        right: 56px;
+        bottom: 142px;
+        width: 85px;
     }
 
     .social i {
@@ -1050,6 +1167,7 @@
         font-weight: bold;
         color: #1b2850;
     }
+
 
 
     .full-section .center-sticker {
@@ -1360,9 +1478,6 @@
     }
 
 
-    .profile-container .info-user {
-        padding: 0 25px;
-    }
 
     .research-title {
         padding: 20px;
@@ -1392,13 +1507,20 @@
     .profile-container .info-user img {
         position: absolute;
         width: 30px;
-        right: 67px;
+        right: 43px;
         top: 138px;
     }
 
     .social {
         display: inline-block;
-        margin-right: 10px;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+
+   app-profile .social {
+        display: inline-block;
+        margin-right: 0px;
         margin-top: 0;
     }
 
@@ -1410,10 +1532,11 @@
         top: 66px;
         color: #1B2850;
         text-align: center;
+        font-size: 10px;
     }
 
     .profile-container .edit-profile i {
-        font-size: 35px;
+        font-size: 24px;
         color: #1b2850;
     }
 
@@ -1426,8 +1549,8 @@
 
 
     .profile-container .center-sticker {
-        height: 55px;
-        width: 43px;
+        height: 50px;
+        width: 50px;
         position: absolute;
         top: 45%;
         left: 47%;
@@ -1437,6 +1560,15 @@
         background: #FDD97A;
     }
 
+
+    .profile-container .left-sticker {
+        height: 100px;
+        width: 35px;
+        position: absolute;
+        left: 5%;
+        z-index: 100;
+        background: #75CDDD;
+    }
 
     .button-action {
         text-align: center;
@@ -1536,10 +1668,15 @@
     .filters {
         display: flex;
         justify-content: space-between;
-        width: 13%;
+        width: 4%;
         color: #1B2850;
     }
 
+    .fa-sort-asc {
+        position: absolute;
+        right: 5px;
+        top: -8px;
+    }
 
     .filter-icon {
         width: 95px;
@@ -1575,19 +1712,19 @@
     .characters {
         display: flex;
         justify-content: space-between;
-        width: 80%;
+        width: 70%;
         font-size: 18px;
         color: #75cddd;
     }
 
 
     .sort-icon {
-        width: 95px;
-        height: 36px;
+        width: 69px;
+        height: 27px;
         border: 1px solid;
-        border-radius: 8px;
+        border-radius: 5px;
         text-align: center;
-        font-size: 36px;
+        font-size: 30px;
     }
 
 
@@ -1667,9 +1804,9 @@
     }
 
     .nav-collapsed a {
-        font-size: 28px;
+        font-size: 20px;
         font-weight: 700;
-        margin: 20px 0;
+        margin: 16px 0;
         color: #fff;
         cursor: pointer;
     }
@@ -1816,9 +1953,9 @@
     }
 
 
-    .info-user {
-        padding: 0 20px;
-    }
+    /*.info-user {*/
+    /*    margin-left: 20px*/
+    /*}*/
 
     app-home .top-home-login .info-user img {
         width: 145px;
@@ -1939,12 +2076,6 @@
         width: 80px;
     }
 
-    .social-paper img {
-        position: absolute;
-        right: 59px;
-        bottom: 80px;
-        width: 50px;
-    }
 
     app-home .info-data {
         font-size: 13px;
@@ -1964,9 +2095,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 58px;
-        bottom: 80px;
-        width: 50px;
+        right: 67px;
+        bottom: 81px;
+        width: 55px;
     }
 
 
@@ -1998,9 +2129,19 @@
     .full-section .sec-content {
         text-align: left;
         width: auto;
-        margin: 25px 20px;
+        margin: 25px 0px;
     }
 
+    .about-content {
+        width: 100%;
+        margin: 0 20px;
+    }
+
+    .fa-sort-asc {
+        position: absolute;
+        right: 4px;
+        top: -7px;
+    }
 
     .our-members .text-left {
         padding-left: 45px;
@@ -2290,7 +2431,7 @@
     /*    flex-direction: column;*/
     /*    width: 100%;*/
     /*}*/
-    .heat-map[_ngcontent-c5] {
+    .heat-map {
         display: flex;
         flex-direction: column;
         padding: 25px 20px;
@@ -2326,14 +2467,14 @@
         width: 45px;
         position: absolute;
         background: #1b2850;
-        top: 97%;
+        top: 91%;
         left: 45%;
         bottom: 50%;
         z-index: 100;
     }
 
     .full-section .top-sticker {
-        height: 100px;
+        height: 70px;
         width: 25px;
         position: absolute;
         background: #FDD97A;
@@ -2347,7 +2488,7 @@
         position: absolute;
         background: #75cddd;
         left: 37%;
-        top: 53%;
+        top: 51%;
         z-index: 100;
     }
 
@@ -2518,16 +2659,14 @@
     }
 
 
-    .profile-container .info-user {
-        padding: 0 25px;
-    }
+
 
     .profile-container .info-user img {
 
         position: absolute;
         width: 35px;
-        right: 66px;
-        top: 527px;
+        right: 82px;
+        top: 498px;
 
     }
 
@@ -2584,9 +2723,16 @@
         color: #1b2850;
     }
 
+    .social-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+
     .profile-container .center-sticker {
-        height: 60px;
-        width: 60px;
+        height: 45px;
+        width: 45px;
         position: absolute;
         top: 44%;
         left: 47%;
@@ -2607,8 +2753,8 @@
     }
 
     .profile-container .left-sticker {
-        height: 100px;
-        width: 35px;
+        height: 70px;
+        width: 25px;
         position: absolute;
         left: 5%;
         z-index: 100;
@@ -2620,7 +2766,7 @@
         font-weight: bold;
         color: #1b2850;
         margin-top: 0;
-        margin-left: 18px;
+        margin-left: 0;
     }
 
     .profile-container .full-name {
@@ -2695,7 +2841,7 @@
         height: 75px;
         position: absolute;
         right: 20px;
-        top: 655px;
+        top: 272px;
         color: #1B2850;
         text-align: center;
     }
@@ -2704,7 +2850,7 @@
         position: relative;
         width: 60px;
         height: 60px;
-        margin: 0 53px;
+        margin: 0 32px;
         background-color: #75cddd;
     }
 
@@ -2861,6 +3007,16 @@
         margin: 10px 0;
     }
 
+    app-about .full-section .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: 49%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
 
     .paper-file {
 
@@ -2875,7 +3031,7 @@
         width: 45px;
         position: absolute;
         background: #1b2850;
-        top: 74%;
+        top: 95%;
         left: 45%;
         bottom: 50%;
         z-index: 100;
@@ -2886,7 +3042,7 @@
         width: 45px;
         position: absolute;
         background: #1b2850;
-        top: 68%;
+        top: 49%;
         left: 45%;
         bottom: 50%;
         z-index: 100;
@@ -2957,7 +3113,6 @@
 
     app-members .full-section .sec-content, app-about .full-section .sec-content {
         display: flex;
-        flex-direction: column;
         margin-bottom: 0;
     }
 
@@ -3018,10 +3173,10 @@
     .filters {
         display: flex;
         justify-content: space-between;
-        width: 20%;
+        width: 7%;
         color: #1B2850;
         position: absolute;
-        left: 73%;
+        left: 80%;
         margin-top: 55px;
     }
 
@@ -3055,7 +3210,7 @@
 
     app-papers .statistics {
         padding: 147px 10px;
-        font-size: 17px;
+        font-size: 22px;
         font-weight: bold;
         color: #fff;
         display: flex;
@@ -3081,9 +3236,9 @@
     }
 
     .nav-collapsed a {
-        font-size: 22px;
+        font-size: 17px;
         font-weight: 700;
-        margin: 20px 0;
+        margin: 17px 0;
         color: #fff;
         cursor: pointer;
     }
@@ -3093,15 +3248,32 @@
         background-color: #fff;
         color: #444;
         cursor: pointer;
-        padding: 20px 35px;
+        padding: 20px;
         width: 100%;
         border: none;
         border-radius: 15px;
         outline: none;
         transition: 0.4s;
         text-align: left;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 800;
+    }
+
+    .frequent-asked-questions .title {
+        padding: 0 20px;
+    }
+
+    .panel {
+        margin: 0 20px;
+        background-color: #EEF1F1;
+        max-height: 0;
+        overflow: hidden;
+        border: none;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .contact {
+        padding: 20px !important;
     }
 
 
@@ -3178,6 +3350,18 @@
         padding: 60px;
         font-size: 18px;
         color: #707070;
+    }
+
+    .info-user {
+         padding: 0;
+        margin-left: 20px;
+    }
+
+    .card-icon-research img {
+        position: absolute;
+        right: 79px;
+        bottom: 81px;
+        width: 46px;
     }
 }
 
@@ -6074,9 +6258,9 @@
 
 
     .nav-collapsed a {
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 700;
-        margin: 20px 0;
+        margin: 15px 0;
         color: #fff;
         cursor: pointer;
     }
