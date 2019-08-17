@@ -199,3 +199,147 @@
     z-index: 2;
     opacity: 0;
 }
+
+@media (min-width: 556px) and (max-width: 850px) {
+    .close-dialog {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .profile-form {
+        flex-direction: column;
+    }
+
+    .info-right-section, .info-left-section {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .avatar-cropper {
+        margin: auto;
+    }
+
+    .info-left-section .title {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
+
+    ::ng-deep .cdk-overlay-pane {
+        height: 85vh;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 555px) {
+    .close-dialog {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 21px;
+    }
+
+    .profile-form {
+        flex-direction: column;
+    }
+
+    .info-right-section, .info-left-section {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .avatar-cropper {
+        margin: auto;
+    }
+
+    .info-left-section .title {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
+
+    ::ng-deep .cdk-overlay-pane {
+        height: 85vh;
+    }
+
+    .avatar-cropper {
+        width: 170px !important;
+        height: 170px;
+    }
+
+    .avatar-cropper img {
+        width: 100%;
+    }
+
+    .submit button {
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .close-dialog {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 21px;
+    }
+
+    .title p {
+        font-size: 15px;
+    }
+
+    .profile-form {
+        flex-direction: column;
+    }
+
+    .info-right-section, .info-left-section {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .avatar-cropper {
+        margin: auto;
+    }
+
+    .info-left-section .title {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
+
+    ::ng-deep .cdk-overlay-pane {
+        height: 85vh;
+    }
+
+    .avatar-cropper {
+        width: 120px !important;
+        height: 120px;
+    }
+
+    .avatar-cropper img {
+        width: 100%;
+    }
+
+    .submit button {
+        font-size: 12px !important;
+    }
+}

@@ -552,7 +552,6 @@ app-home .card-item p {
 }
 
 
-
 .edit-profile i {
     font-size: 30px;
     color: #1b2850;
@@ -905,8 +904,6 @@ app-home .card-item p {
 }
 
 
-
-
 .paper-file {
     margin-bottom: 55px;
 }
@@ -1168,9 +1165,7 @@ app-papers .statistics {
 }
 
 
-
-
-.card img{
+.card img {
     width: 100%;
     object-fit: cover;
     height: 560px;
@@ -1178,8 +1173,7 @@ app-papers .statistics {
 }
 
 
-
-.card .title{
+.card .title {
     font-size: 30px;
     font-weight: bold;
     color: #1B2850;
@@ -1199,7 +1193,6 @@ app-home .card-item .title {
     padding: 35px 106px;
     text-align: left;
 }
-
 
 
 .submit {
@@ -1245,7 +1238,6 @@ app-upload-paper .submit {
 }
 
 
-
 .drag-box p {
     padding: 60px;
     font-size: 21px;
@@ -1253,32 +1245,27 @@ app-upload-paper .submit {
 }
 
 
-
-.permissions{
+.permissions {
     width: 40%;
 }
 
 
-
-.paper-permissions{
+.paper-permissions {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
 }
 
 
-
-
-.file-paper .title p{
+.file-paper .title p {
     font-size: 20px;
 }
 
 
-::ng-deep .mat-radio-label-content{
+::ng-deep .mat-radio-label-content {
 
     /*font-size: 12px !important;*/
 }
-
 
 
 .contact .form-input {
@@ -1293,7 +1280,7 @@ app-upload-paper .submit {
 }
 
 
-.view-download i{
+.view-download i {
     width: 10px;
     color: #75cddd;
     margin-right: 7px;
@@ -1316,14 +1303,12 @@ app-upload-paper .submit {
 }
 
 
-
 .first-name {
     margin-right: 70px;
 }
 
 
-
-.top-description{
+.top-description {
     font-size: 55px;
     margin: auto;
     font-weight: bold;
@@ -1354,7 +1339,6 @@ app-upload-paper .submit {
 }
 
 
-
 .panel {
     margin: 0 35px;
     background-color: #EEF1F1;
@@ -1366,4 +1350,8 @@ app-upload-paper .submit {
 
 .contact {
     margin: 20px 0 !important;
+}
+
+.close-dialog {
+    cursor: pointer;
 }

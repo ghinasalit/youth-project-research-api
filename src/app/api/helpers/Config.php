@@ -50,6 +50,10 @@ if (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "localhost")) {
     $DB = Config::$local_db;
     $FCM = Config::$auth_fcm;
     $FILES_ROOT = Config::$local_files;
+} else if (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "http://asgc.webntech.ae/")) {
+    $DB = Config::$live_db;
+    $FCM = Config::$auth_fcm;
+    $FILES_ROOT = Config::$server_files;
 }
 
 $db = new \MysqliDb($DB['db_server'], $DB['db_user'], $DB['db_pass'], $DB['db_name']);

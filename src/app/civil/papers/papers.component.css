@@ -1,9 +1,9 @@
-h3 , h6 {
-     color: #1B2850
+h3, h6 {
+    color: #1B2850
 
- }
+}
 
-.paper-description p{
+.paper-description p {
     color: #1B2850
 }
 
@@ -87,23 +87,21 @@ h3 , h6 {
 }
 
 
-
-.statistics div{
+.statistics div {
     display: flex;
     justify-content: center;
     direction: ltr;
 }
 
-.statistics p{
+.statistics p {
     color: #fff;
 }
 
-.statistics span{
+.statistics span {
     margin: 0 10px;
     color: #FDD97A;
     font-weight: bold;
 }
-
 
 
 /*paper card*/
@@ -116,9 +114,8 @@ h3 , h6 {
 }
 
 
-
 /*drop down*/
-.research-search a{
+.research-search a {
     color: #1B2850;
 }
 
@@ -135,7 +132,7 @@ h3 , h6 {
     margin-top: -35px;
 }
 
-.paper-card-info{
+.paper-card-info {
 
     display: flex;
 }
@@ -146,7 +143,7 @@ h3 , h6 {
 }
 
 
-.cards-items .title div{
+.cards-items .title div {
     border: 6px solid #1B2850;
 }
 
@@ -178,7 +175,7 @@ h3 , h6 {
     font-weight: bold;
 }
 
-.view-more p{
+.view-more p {
     text-align: center;
     color: #75cddd;
     cursor: pointer;
@@ -201,7 +198,7 @@ h3 , h6 {
     height: 35px;
 }
 
-.drop-list span{
+.drop-list span {
     color: #FDD97A;
 }
 
@@ -224,7 +221,6 @@ h3 , h6 {
 .button-action {
     text-align: center
 }
-
 
 
 /*Style 'show menu' label button and hide it by default*/
@@ -315,7 +311,6 @@ input[type=checkbox]:checked ~ #menu {
 }
 
 
-
 .social {
     display: inline-block;
     margin-right: 25px;
@@ -333,22 +328,37 @@ input[type=checkbox]:checked ~ #menu {
     padding: 0 80px;
 }
 
-.view-download{
+.view-download {
     display: flex;
     margin-top: 33px;
 }
 
 
-
-
-.view-download h6{
+.view-download h6 {
     cursor: pointer;
 }
 
 
-
-.edit-paper{
+.edit-paper {
     width: 100%;
     font-size: 25px;
 }
 
+.items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .item-body {
+        -ms-word-break: break-all;
+        word-break: break-all;
+        max-height: 225px;
+        height: 225px;
+    }
+}
+
+.paper-description {
+    word-break: break-all;
+}

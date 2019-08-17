@@ -5,8 +5,8 @@
     <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
-    <a  (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
+    <a (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
+    <a (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
     <a (click)="_appService.section = 'contactus'" routerLink="/home">{{'_ContactUs' | translate}}</a>
 </div>
 
@@ -27,9 +27,11 @@
             <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
             <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
         </div>
-        <div class="login-register"  *ngIf="_appService.roll">
-            <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-            <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+        <div class="login-register" *ngIf="_appService.roll">
+            <div class="lang" (click)="_appService.switchLanguage('en')"
+                 *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+            <div class="lang" (click)="_appService.switchLanguage('ar')"
+                 *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
             <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
         </div>
     </div>
@@ -110,25 +112,28 @@
                         <div class="drop-list" dropdown>
                             <a dropdownToggle>{{'_Year' | translate}}<span>&#x25BE;</span></a>
                             <div *dropdownMenu role="menu" class="dropdown-menu text-center">
-                                <div class="pt-2 pb-2" (click)="paper.year = '' ; filter()"><a>{{'_All' | translate}}</a></div>
+                                <div class="pt-2 pb-2" (click)="paper.year = '' ; filter()">
+                                    <a>{{'_All' | translate}}</a></div>
 
-                                <div class="pt-2 pb-2" *ngFor="let year of years" (click)="paper.year = year.year ; filter()"><a>{{year.year}}</a></div>
+                                <div class="pt-2 pb-2" *ngFor="let year of years"
+                                     (click)="paper.year = year.year ; filter()"><a>{{year.year}}</a></div>
                             </div>
                         </div>
                     </div>
                 </div><!--nav-block-->
             </div>
             <div class="col-lg-12 research-input">
-            <div class="row">
-                <div class="input-group" [formGroup]="searchForm" >
-                    <input type="text" class="form-control" formControlName="search" (keyup.enter)="filter()" placeholder="{{'_Search' | translate}}...">
-                    <span class="input-group-btn">
+                <div class="row">
+                    <div class="input-group" [formGroup]="searchForm">
+                        <input type="text" class="form-control" formControlName="search" (keyup.enter)="filter()"
+                               placeholder="{{'_Search' | translate}}...">
+                        <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" (click)="filter()"><i class="fa fa-search"
                                                                                                     aria-hidden="true"></i></button>
                         </span>
+                    </div>
                 </div>
             </div>
-        </div>
 
             <!--</div>-->
 
@@ -136,54 +141,67 @@
     </div>
     <div class="cards-items">
         <div class="c-item" *ngFor="let paper of papers" [id]="paper.paper_id">
-            <div class="bookmark" >
-                <i class="fa fa-bookmark-o" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 " ></i>
-                <i class="fa fa-bookmark" aria-hidden="true" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1"></i>
+            <div class="bookmark">
+                <i class="fa fa-bookmark-o" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 "></i>
+                <i class="fa fa-bookmark" aria-hidden="true" (click)="unsavePaper(paper.paper_id)"
+                   *ngIf="paper.saved == 1"></i>
             </div>
-            <div class="title">
-                <h3>{{paper.title}}
-                </h3>
-                <div></div>
-            </div>
-            <div class="paper-card-info" style="cursor: pointer" [routerLink]="['/profile' , paper.username]">
-                <h6 class="by">{{'_By' | translate}}</h6>
-                <h6 style="font-weight: bold ; color: #75cddd;">{{paper.first_name}} {{paper.last_name}} </h6>
-            </div>
-            <div class="paper-card-info">
-                <i class="fa fa-tag" aria-hidden="true"></i>
-                <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
-            </div>
-            <div class="paper-card-info">
-                <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
-            </div>
-            <div class="paper-description">
-                <p>
-                    {{ (paper?.description.length>200)? (paper?.description | slice:0:200)+'...':(paper?.description) }}
-                </p>
-            </div>
-            <div class="view-more" (click)="viewPaper(paper)">
-                <p>{{'_ViewMore' | translate}}</p>
-            </div>
-            <div class="view-download">
+            <div class="items-container">
+                <div class="item-header">
+                    <div class="title">
+                        <h3>{{paper.title}}
+                        </h3>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <div class="paper-card-info" style="cursor: pointer" [routerLink]="['/profile' , paper.username]">
+                        <h6 class="by">{{'_By' | translate}}</h6>
+                        <h6 style="font-weight: bold ; color: #75cddd;">{{paper.first_name}} {{paper.last_name}} </h6>
+                    </div>
+                    <div class="paper-card-info">
+                        <i class="fa fa-tag" aria-hidden="true"></i>
+                        <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
+                    </div>
+                    <div class="paper-card-info">
+                        <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
+                    </div>
+                    <div class="paper-description">
+                        <p>
+                            {{ (paper?.description.length > 200) ? (paper?.description | slice:0:200) + '...' : (paper?.description) }}
+                        </p>
+                    </div>
+                    <div class="view-more" (click)="viewPaper(paper)">
+                        <p>{{'_ViewMore' | translate}}</p>
+                    </div>
+                </div>
+                <div class="item-footer">
+                    <div class="view-download">
 
-                <div class="views-paper">
-                    <i class="fa fa-eye" aria-hidden="true"></i> <h6>{{paper.views}} {{'_Views' | translate}}</h6>
-                </div>
-                <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
-                    <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
-                </div>
-                <div class="edit-paper" style="cursor: pointer" [routerLink]="['/edit-paper' , paper.paper_id]" *ngIf="paper.username == username">
-                    <i class="fa fa fa-pencil-square-o"></i>
+                        <div class="views-paper">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <h6>{{paper.views}} {{'_Views' | translate}}</h6>
+                        </div>
+                        <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
+                            <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
+                        </div>
+                        <div class="edit-paper" style="cursor: pointer" [routerLink]="['/edit-paper' , paper.paper_id]"
+                             *ngIf="paper.username == username">
+                            <i class="fa fa fa-pencil-square-o"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
 
     </div>
-    <div class="button-action" (click)="getPapers()" *ngIf="result?.data.length == 6 && paper.keyword == '' && paper.year == '' && paper.discipline == '' && paper.country == '' && paper.lang == ''">
+    <div class="button-action" (click)="getPapers()"
+         *ngIf="result?.data.length == 6 && paper.keyword == '' && paper.year == '' && paper.discipline == '' && paper.country == '' && paper.lang == ''">
         <button>{{'_ViewMore' | translate}}</button>
     </div>
-    <div class="button-action" (click)="searchPapers()" *ngIf="result?.data.length == 6 && (paper.keyword != '' ||  paper.year != '' || paper.discipline != '' || paper.country != '' || paper.lang!= '')">
+    <div class="button-action" (click)="searchPapers()"
+         *ngIf="result?.data.length == 6 && (paper.keyword != '' ||  paper.year != '' || paper.discipline != '' || paper.country != '' || paper.lang!= '')">
         <button>{{'_ViewMore' | translate}}</button>
     </div>
 </div>

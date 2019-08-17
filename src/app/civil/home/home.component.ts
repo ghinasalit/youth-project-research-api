@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {AppService} from '../../app.service';
 import {fadeInOut} from '../../../animations/fadeInOut';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import * as L from 'leaflet';
+import {Layer} from 'leaflet';
 import * as $ from 'jquery';
 import 'leaflet.heat/dist/leaflet-heat.js';
 import {Feedback} from '../../../classes/feedback';
@@ -11,7 +12,7 @@ import {ToastrService} from 'ngx-toastr';
 import {User} from '../../../classes/user';
 import {Router} from '@angular/router';
 import {Shared} from '../../../classes/shared';
-import {Layer} from 'leaflet';
+import * as AOS from 'aos';
 
 
 @Component({
@@ -20,7 +21,7 @@ import {Layer} from 'leaflet';
     styleUrls: ['./home.component.css'],
     animations: [fadeInOut]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
     collapsed = false;
     feedbackForm: FormGroup;
     result: any;
@@ -74,6 +75,7 @@ export class HomeComponent implements OnInit {
 
     };
     private registerForm: any;
+    private socialFixed = false;
 
     constructor(private translateService: TranslateService,
                 public _appService: AppService,
@@ -180,8 +182,6 @@ export class HomeComponent implements OnInit {
         }
     }
 
-    // Marker for the parking lot at the base of Mt. Ranier trails
-
     prev() {
         if (this.itemIndex == 0) {
             this.itemIndex = (this.members.length - 1);
@@ -190,8 +190,7 @@ export class HomeComponent implements OnInit {
         }
     }
 
-
-
+    // Marker for the parking lot at the base of Mt. Ranier trails
 
     onMapReady(map) {
 
@@ -328,17 +327,17 @@ export class HomeComponent implements OnInit {
 
     }
 
-
-
-
-
     scroll(element: any) {
         const el: HTMLElement | null = document.getElementById(element);
         if (el) {
             setTimeout(() =>
                 el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
-            this._appService.section = '' ;
+            this._appService.section = '';
         }
+    }
+
+    ngAfterViewInit(): void {
+        AOS.refresh();
     }
 
     ngOnInit() {
@@ -356,17 +355,20 @@ export class HomeComponent implements OnInit {
             this.scroll(this._appService.section);
         }
 
-
-        $(window).scroll(function () {
-            var scrollTop = $(window).scrollTop();
-            if (scrollTop > 800) {
-                $('.social').css('position', 'fixed').css('top', '0');
-            } else {
-                $('.social').css('position', 'initial').css('top', '0');
-            }
-        });
-
     }
+
+    @HostListener('window:scroll', [])
+    onWindowScroll() {
+        const scrollTop = $(window).scrollTop();
+        if (scrollTop > 700) {
+            this.socialFixed = true;
+            $('.social').css('position', 'fixed').css('top', '50%').css('z-index', '1000');
+        } else {
+            this.socialFixed = false;
+            $('.social').css('position', 'initial').css('top', '0');
+        }
+    }
+
 }
 
 
