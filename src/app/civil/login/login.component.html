@@ -35,14 +35,14 @@
 
                     <div class="item">
                         <mat-form-field class="example-full-width">
-                            <input matInput [placeholder]="'_Email' | translate" formControlName="email" required>
+                            <input matInput [placeholder]="'_EmailAddress' | translate" formControlName="email" required>
                             <mat-error  *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
 
                         </mat-form-field>
                     </div>
                     <div class="item">
                         <mat-form-field>
-                            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"  formControlName="password" required>
+                            <input matInput placeholder="{{'_EnterPassword' | translate}}" [type]="hide ? 'password' : 'text'"  formControlName="password" required>
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>

@@ -38,7 +38,7 @@
 
 
                 <mat-form-field>
-                    <mat-label>your university</mat-label>
+                    <mat-label>{{'_YourUniversity' | translate}}</mat-label>
 
                     <mat-select formControlName="university"  required>
                         <mat-option>--</mat-option>
@@ -47,33 +47,33 @@
                             <span *ngIf="_appService.currentLanguage === 'ar'">{{university.name_en}}</span>
                         </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="university.hasError('required')">Please choose your university</mat-error>
+                    <mat-error *ngIf="university.hasError('required')">{{'_Required' | translate}}</mat-error>
                     <i class="fa fa-university" aria-hidden="true"></i>
                 </mat-form-field>
                 <div class="field-item">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="job" value="" formControlName="job">
+                        <input matInput placeholder="{{'_Job' | translate}}" value="" formControlName="job">
                     </mat-form-field>
                     <i class="fa fa-address-book-o" aria-hidden="true"></i>
                 </div>
 
                 <div class="field-item">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="phone" value="" formControlName="phone">
+                        <input matInput placeholder="{{'_Phone' | translate}}" value="" formControlName="phone">
                     </mat-form-field>
                     <i class="fa fa-mobile" aria-hidden="true"></i>
                 </div>
 
                 <div class="field-item">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="location" value="" formControlName="location">
+                        <input matInput placeholder="{{'_Location' | translate}}" value="" formControlName="location">
                     </mat-form-field>
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                 </div>
 
                 <div class="field-item">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Linkedin" value="" formControlName="Linkedin">
+                        <input matInput placeholder="{{'_LinkedIn' | translate}}" value="" formControlName="Linkedin">
                     </mat-form-field>
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                 </div>
@@ -84,7 +84,7 @@
         <div class="info-right-section">
             <div class="close-desc">
                 <div class="title">
-                    <p>Description</p>
+                    <p>{{'_Description' | translate}}</p>
                     <div></div>
                 </div>
                 <div class="close-dialog" (click)="dialogRef.close()">
@@ -97,7 +97,7 @@
                 <h6>{{input.value?.length || 0}}/500</h6>
             </div>
             <div class="submit" (click)="register()">
-                <button [disabled]="!profileForm.valid">Save Your Profile info</button>
+                <button [disabled]="!profileForm.valid">{{'_SaveProfileInfo' | translate}}</button>
             </div>
 
         </div>

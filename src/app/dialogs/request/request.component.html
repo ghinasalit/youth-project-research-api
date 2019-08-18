@@ -1,30 +1,29 @@
 <div [formGroup]="requestForm">
 
-  <div class="close-desc">
-    <div class="title">
-      <h3>Request Access to full paper
-      </h3>
-      <div></div>
-    </div>
-    <div class="close-dialog" (click)="dialogRef.close()">
-      <i class="fa fa-times"></i>
-    </div>
-
-  </div>
-  <div class="request-message">
-    <h3>How do you plan to use this Research?</h3>
-    <div>
-      <textarea class="textbox-lines" rows="6" formControlName="description" maxlength="200" #input></textarea>
-      <div class="notes">
-        <h6><span>*</span> Please Enter 200 characters maximum</h6>
-        <h6>{{input.value?.length || 0}}/200</h6>
-      </div>
+    <div class="close-desc">
+        <div class="title">
+            <h3>{{'_RequestFullPaper' | translate}}</h3>
+            <div></div>
+        </div>
+        <div class="close-dialog" (click)="dialogRef.close()">
+            <i class="fa fa-times"></i>
+        </div>
 
     </div>
-  </div>
-  <div class="request" (click)="sendRequest()">
-    <button [disabled]="!requestForm.valid">Request</button>
-  </div>
+    <div class="request-message">
+        <h3>{{'_PlanToUseResearch' | translate}}</h3>
+        <div>
+            <textarea class="textbox-lines" rows="6" formControlName="description" maxlength="200" #input></textarea>
+            <div class="notes">
+                <h6><span>*</span> {{'_MaximumChar' | translate}}</h6>
+                <h6>{{input.value?.length || 0}}/200</h6>
+            </div>
+
+        </div>
+    </div>
+    <div class="request" (click)="sendRequest()">
+        <button [disabled]="!requestForm.valid">{{'_Request' | translate}}</button>
+    </div>
 
 
 </div>

@@ -82,27 +82,27 @@
                         </div>
                         <div class="info-icon">
                             <i class="fa fa-eye"></i>
-                            <div class="info-data">{{member.views}}Views</div>
+                            <div class="info-data">{{member.views}} {{'_Views' | translate}}</div>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">
                             <i class="fa fa-file-text-o"></i>
-                            <div class="info-data">{{member.count_papers}} Research papers</div>
+                            <div class="info-data">{{member.count_papers}} {{'_ResearchPaper' | translate}}</div>
                         </div>
                         <div class="info-icon" *ngIf="isOneRecognized">
                             <i class="fa fa-trophy"></i>
-                            <div class="info-data">1 Recognized Research</div>
+                            <div class="info-data">1 {{'_RecognizedResearch' | translate}}</div>
                         </div>
                     </div>
                     <div class="info-item social-user" *ngIf="username != member.username || username == ''">
                         <div class="info-icon" style="cursor: pointer">
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                            <div class="info-data"><p><a [href]="'mailto:' + member.email">Email {{member.first_name}}</a></p></div>
+                            <div class="info-data"><p><a [href]="'mailto:' + member.email">{{'_Email' | translate}} {{member.first_name}}</a></p></div>
                         </div>
                         <div class="info-icon"  style="cursor: pointer">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                            <div class="info-data"><p>Linkedin Account</p></div>
+                            <div class="info-data"><p>{{'_LinkedInAccount' | translate}}</p></div>
                         </div>
                     </div>
 

@@ -45,20 +45,7 @@
                     <div></div>
                 </div>
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam atque consequuntur
-                        ducimus
-                        et
-                        fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
-                        laborum
-                        officia
-                        voluptatibus
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam atque consequuntur
-                        ducimus
-                        et
-                        fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
-                        laborum
-                        officia
-                        voluptatibus.</p>
+                    <p>{{'_ResearchersDescription' | translate}}</p>
                 </div>
 
             </div>
@@ -112,7 +99,7 @@
     <div class="col-lg-12 research-input">
         <div class="row">
             <form class="input-group" [formGroup]="searchForm" >
-                <input type="text" class="form-control" placeholder="Search..." formControlName="search" (keyup.enter)="filter()">
+                <input type="text" class="form-control" placeholder="{{'_Search' | translate}}..." formControlName="search" (keyup.enter)="filter()">
                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" (click)="filter()"><i class="fa fa-search"
                                                                                  aria-hidden="true" ></i></button>

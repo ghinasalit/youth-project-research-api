@@ -2,15 +2,16 @@
     <a href="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a (click)="scroll('becomeResearcher')" > {{'_How_Become_Researcher' | translate}}</a>
+    <a (click)="scroll('becomeResearcher')"> {{'_How_Become_Researcher' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="scroll('heatmap')">{{'_HeatMap' | translate}}</a>
-    <a (click)="scroll('partners')" >{{'_OurPartners' | translate}}</a>
-    <a (click)="scroll('faq')" >{{'_FAQs' | translate}}</a>
+    <a (click)="scroll('partners')">{{'_OurPartners' | translate}}</a>
+    <a (click)="scroll('faq')">{{'_FAQs' | translate}}</a>
     <a (click)="scroll('contactus')">{{'_ContactUs' | translate}}</a>
 </div>
 
-<div class="social" *ngIf="!_appService.roll && socialFixed" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="500">
+<div class="social" *ngIf="!_appService.roll && socialFixed" data-aos="fade-down" data-aos-duration="1000"
+     data-aos-easing="500">
     <div><i class="fa fa-facebook"></i></div>
     <div><i class="fa fa-instagram"></i></div>
     <div><i class="fa fa-twitter"></i></div>
@@ -28,21 +29,23 @@
         </div>
 
         <div class="login-register">
-            <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-            <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="lang" (click)="_appService.switchLanguage('en')"
+                 *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+            <div class="lang" (click)="_appService.switchLanguage('ar')"
+                 *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
             <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
             <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
         </div>
     </div>
     <div class="top-description">
-        <p>Knowledge is power.</p>
-        <p>Sharing knowledge is empowering.</p>
+        <p>{{'_KnowledgePower' | translate}}.</p>
+        <p>{{'_SharingKnowledgePower' | translate}}.</p>
     </div>
 </div>
 
 <div class="full-section top-home-login" *ngIf="_appService.roll">
     <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000">
-        <img src="assets/img/library.jpg " alt="">    </div>
+        <img src="assets/img/library.jpg " alt=""></div>
     <div class="right-section">
         <div class="navbar-login logged">
             <div class="navbar"
@@ -52,9 +55,11 @@
                     <span [style.color]="collapsed ? '#1b2850' : ''"></span>
                 </a>
             </div>
-            <div class="login-register"  *ngIf="_appService.roll">
-                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="login-register" *ngIf="_appService.roll">
+                <div class="lang" (click)="_appService.switchLanguage('en')"
+                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')"
+                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
@@ -67,7 +72,8 @@
 
                 <div class="user-name">
                     <div>
-                        <img [src]="  _appService.api.api.imgURL + memberDetails.avatar" alt="" *ngIf="memberDetails.avatar != ''">
+                        <img [src]="  _appService.api.api.imgURL + memberDetails.avatar" alt=""
+                             *ngIf="memberDetails.avatar != ''">
                         <img [src]="'assets/img/member1.jpg' " alt="" *ngIf="memberDetails.avatar == ''">
                     </div>
                     <div class="full-name">
@@ -80,38 +86,40 @@
                 </div>
                 <div class="desc-user">
                     <p>
-                       {{memberDetails.description}}
+                        {{memberDetails.description}}
                     </p>
                 </div>
                 <div class="info">
-                    <div class="info-item"  >
+                    <div class="info-item">
                         <div class="info-icon" *ngIf="memberDetails?.university_name_ar">
                             <i class="fa fa-university"></i>
-                            <div class="info-data" *ngIf=" this._appService.currentLanguage == 'ar'"> {{memberDetails.university_name_ar}}</div>
-                            <div class="info-data" *ngIf=" this._appService.currentLanguage == 'en'"> {{memberDetails.university_name_en}}</div>
+                            <div class="info-data"
+                                 *ngIf=" this._appService.currentLanguage == 'ar'"> {{memberDetails.university_name_ar}}</div>
+                            <div class="info-data"
+                                 *ngIf=" this._appService.currentLanguage == 'en'"> {{memberDetails.university_name_en}}</div>
                         </div>
                         <div class="info-icon" *ngIf="memberDetails.location">
                             <i class="fa fa-map-marker"></i>
                             <div class="info-data">{{memberDetails.location}}</div>
                         </div>
                     </div>
-                    <div class="info-item" >
+                    <div class="info-item">
                         <div class="info-icon" *ngIf="memberDetails.domain">
                             <i class="fa fa-suitcase"></i>
                             <div class="info-data">{{memberDetails.domain}}</div>
                         </div>
                         <div class="info-icon">
-                            <div class="info-data">{{memberDetails.views}} Views</div>
+                            <div class="info-data">{{memberDetails.views}} {{'_Views' | translate}}</div>
                         </div>
                     </div>
-                    <div class="info-item" >
+                    <div class="info-item">
                         <div class="info-icon">
                             <i class="fa fa-file-text-o"></i>
-                            <div class="info-data">{{memberDetails.count_papers}} Research papers</div>
+                            <div class="info-data">{{memberDetails.count_papers}} {{'_ResearchPaper' | translate}}</div>
                         </div>
                         <div class="info-icon" *ngIf="isOneRecognized">
                             <i class="fa fa-trophy"></i>
-                            <div class="info-data">1 Recognized Research</div>
+                            <div class="info-data">1 {{'_RecognizedResearch' | translate}}</div>
                         </div>
                     </div>
 
@@ -146,7 +154,7 @@
                 <img src="assets/img/submit_paper.png" alt="">
 
                 <div class="title" routerLink="/papers" style="cursor: pointer">
-                    <h2 >{{'_ResearchAPaper' | translate}}</h2>
+                    <h2>{{'_ResearchAPaper' | translate}}</h2>
                     <div>
                     </div>
                 </div>
@@ -157,7 +165,7 @@
                 </div>
                 <img src="assets/img/reseach_paper.png" alt="">
 
-                <div class="title"  style="cursor: pointer" (click)="_appService.submitPaper()">
+                <div class="title" style="cursor: pointer" (click)="_appService.submitPaper()">
                     <h2>{{'_SubmitAPaper' | translate}}</h2>
                     <div>
                     </div>
@@ -265,15 +273,16 @@
                             <i class="fa fa-chevron-right"></i>
                         </div>
                     </div>
-                    <div class="member-name"  *ngFor="let text of members; let i = index">
+                    <div class="member-name" *ngFor="let text of members; let i = index">
                         <h3 *ngIf="itemIndex == i">- {{members[i]['first_name']}} {{members[i]['last_name']}}</h3>
                     </div>
                     <div>
                         <ng-container *ngFor="let text of members; let i = index">
-                        <div class="title read-more" *ngIf="itemIndex == i">
-                            <p style="cursor: pointer" [routerLink]="['/profile' ,members[i].username ]">{{'_LearnMore' | translate}}</p>
-                            <div></div>
-                        </div>
+                            <div class="title read-more" *ngIf="itemIndex == i">
+                                <p style="cursor: pointer"
+                                   [routerLink]="['/profile' ,members[i].username ]">{{'_LearnMore' | translate}}</p>
+                                <div></div>
+                            </div>
                         </ng-container>
                     </div>
 
@@ -297,22 +306,22 @@
                 (leafletMouseUp)="popupShow($event)"
                 [leafletLayers]="markers"
                 (leafletMapReady)="onMapReady($event)"
-                >
+        >
         </div>
 
 
         <div class="statistics">
             <div class="statis-item">
                 <div class="statistics-count">{{statistics?.downloads}}</div>
-                <div class="statistics-action">DOWNLOADS</div>
+                <div class="statistics-action text-uppercase">{{'_Downloads' | translate}}</div>
             </div>
             <div class="statis-item">
                 <div class="statistics-count">{{statistics?.researchers}}</div>
-                <div lass="statistics-action">RESEARCHER</div>
+                <div class="statistics-action text-uppercase">{{'_Researcher' | translate}}</div>
             </div>
             <div class="statis-item">
                 <div class="statistics-count">{{statistics?.research}}</div>
-                <div lass="statistics-action">RESEARCH</div>
+                <div class="statistics-action text-uppercase">{{'_Research' | translate}}</div>
             </div>
         </div>
     </div>
@@ -337,35 +346,14 @@
                     </h1>
 
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam atque
-                            consequuntur
-                            ducimus
-                            et
-                            fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
-                            laborum
-                            officia
-                            voluptatibusLorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam
-                            atque consequuntur
-                            ducimus
-                            et
-                            fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
-                            laborum
-                            officia
-                            voluptatibusLorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aperiam
-                            atque consequuntur
-                            ducimus
-                            et
-                            fuga fugiat non odit quos, ratione repellendus, sapiente temporibus totam veritatis! Ipsum
-                            laborum
-                            officia .</p>
+                        <p>{{'_ResearchersDescription' | translate}}</p>
                     </div>
 
                 </div>
             </div>
         </div>
 
-        <div class="side" class="mobile">
-
+        <div class="side mobile">
             <div class="logo-partner-mobile" style="background: #fff">
                 <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="left">
                     <img src="assets/img/p1.PNG" width="100%">
@@ -376,7 +364,6 @@
                     <img src="assets/img/p1.PNG" width="100%">
                 </marquee>
             </div>
-
         </div>
     </div>
 </div>
@@ -396,9 +383,9 @@
         <div class="sec-content">
             <h1 class="text-left">{{'_ContactUs' | translate}}</h1>
             <div class="contact-info">
-                <h3>Email: info@arabyouthcenter.com</h3>
-                <h3>Address: Dubai, X Building 9th floo</h3>
-                <h3>Contact Number: 04 123 4567</h3>
+                <h3>{{'_ContactUsInfo._Email' | translate}}</h3>
+                <h3>{{'_ContactUsInfo._Address' | translate}}</h3>
+                <h3>{{'_ContactUsInfo._Number' | translate}}</h3>
             </div>
             <div class="social-contact">
                 <div><i class="fa fa-facebook"></i></div>
@@ -416,7 +403,8 @@
                 <div></div>
             </div>
             <div class=" form-input">
-                <form class="example-form" [formGroup]="feedbackForm"  [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
+                <form class="example-form" [formGroup]="feedbackForm"
+                      [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
                     <div class="item">
                         <mat-form-field class="example-full-width">
                             <input matInput [placeholder]="'_Name' | translate" formControlName="name" required>
@@ -425,25 +413,27 @@
                         </mat-form-field>
                     </div>
                     <div class="item">
-                    <mat-form-field>
-                        <input matInput [placeholder]="'_Email' | translate" formControlName="email" required>
-                        <mat-error *ngIf="email.errors.required">{{'_Required' | translate}}</mat-error>
-                        <mat-error *ngIf="email.errors.email">{{'_EmailNotValid' | translate}}</mat-error>
-                    </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [placeholder]="'_EmailAddress' | translate" formControlName="email" required>
+                            <mat-error *ngIf="email.errors.required">{{'_Required' | translate}}</mat-error>
+                            <mat-error *ngIf="email.errors.email">{{'_EmailNotValid' | translate}}</mat-error>
+                        </mat-form-field>
                     </div>
                     <div class="item">
                         <mat-form-field class="example-full-width">
-                            <input type="number" matInput [placeholder]="'_PhoneNumber' | translate" formControlName="phone" required>
+                            <input type="number" matInput [placeholder]="'_PhoneNumber' | translate"
+                                   formControlName="phone" required>
                             <mat-error *ngIf="phone.errors.required">{{'_Required' | translate}}</mat-error>
                         </mat-form-field>
                     </div>
 
                     <mat-form-field hintLabel="Max 500 characters">
-                        <textarea matInput  #input  [placeholder]="'_Message' | translate" maxlength="500" formControlName="message"  required></textarea>
+                        <textarea matInput #input [placeholder]="'_Message' | translate" maxlength="500"
+                                  formControlName="message" required></textarea>
                         <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
                         <mat-error *ngIf="message.errors.required">{{'_Required' | translate}}</mat-error>
                     </mat-form-field>
-                    <div class="submit"   (click)="submitFeedback()">
+                    <div class="submit" (click)="submitFeedback()">
                         <button [disabled]="!feedbackForm.valid">{{'_Submit' | translate}}</button>
                     </div>
                 </form>

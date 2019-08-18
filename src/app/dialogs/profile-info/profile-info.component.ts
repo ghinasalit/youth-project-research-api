@@ -5,7 +5,6 @@ import {AppService} from '../../app.service';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {User} from '../../../classes/user';
-import {variable} from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -24,7 +23,6 @@ export class ProfileInfoComponent implements OnInit {
     university = new FormControl('', [Validators.required]);
     imageChangedEvent: any = '';
     croppedImage: any = 'assets/img/avatar_default.PNG';
-
 
 
     constructor(private fb: FormBuilder,
@@ -109,7 +107,6 @@ export class ProfileInfoComponent implements OnInit {
     ngOnInit() {
 
         this.getUniversities();
-
 
 
     }
