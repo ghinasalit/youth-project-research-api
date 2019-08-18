@@ -24,14 +24,14 @@ export class ApiService {
                 && 'location' in window
                 && 'protocol' in window.location
                 && 'host' in window.location) {
-                this.apiURL = window.location.protocol + '//' + window.location.host + '/api/user/' ;
+                this.apiURL = window.location.protocol + '//' + window.location.host + '/api/user/';
                 this.imgURL = '/api/uploaded/';
             }
         }
         return null;
     }
 
-    submitPage(func , data): Observable<Object> {
+    submitPage(func, data): Observable<Object> {
         let headers = new HttpHeaders();
         const lang = localStorage.getItem('language') === 'en' ? 1 : 2;
         headers = headers.set('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8')
@@ -51,9 +51,9 @@ export class ApiService {
 
     getDataPage(func): Observable<Object> {
         let headers = new HttpHeaders();
-        const lang = localStorage.getItem('language') === 'en' ? 1 : 2;
+        const lang = localStorage.getItem('language') ;
         headers = headers.set('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8')
-            .set('Accept-Language', 'ar')
+            .set('Accept-Language', lang)
             .set('Authorization', '12345')
             .set('Platform', '1')
             .set('Os-Version', '1')
@@ -67,11 +67,10 @@ export class ApiService {
     }
 
 
-
-    uploadImagePage(func , data: FormData): Observable<any> {
+    uploadImagePage(func, data: FormData): Observable<any> {
         let headers = new HttpHeaders();
-        const lang = localStorage.getItem('language') === 'en' ? 1 : 2;
-        headers = headers.set('Accept-Language', 'ar')
+        const lang = localStorage.getItem('language') ;
+        headers = headers.set('Accept-Language', lang)
             .set('Accept', 'application/json')
             .set('Authorization', '12345')
             .set('Platform', '1')
@@ -80,7 +79,7 @@ export class ApiService {
             .set('App-Version', '1');
 
         return this.http.post(
-            this.apiURL  + func
+            this.apiURL + func
             , data, {
                 headers: headers
             }).pipe(map(res => res));

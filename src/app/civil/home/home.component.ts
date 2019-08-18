@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     };
     private registerForm: any;
-    private socialFixed = false;
+    public socialFixed = false;
 
     constructor(private translateService: TranslateService,
                 public _appService: AppService,
