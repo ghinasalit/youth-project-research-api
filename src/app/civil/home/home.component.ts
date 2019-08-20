@@ -76,8 +76,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
     };
-    private registerForm: any;
     public socialFixed = false;
+    private registerForm: any;
     private trans = {
         FeedbackMSG: null,
         Success: null,
@@ -111,8 +111,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     }
 
-    submitFeedback() {
-
+    submitFeedback(formDirective) {
         this.feedback.name = this.feedbackForm.controls.name.value;
         this.feedback.email = this.feedbackForm.controls.email.value;
         this.feedback.message = this.feedbackForm.controls.message.value;
@@ -123,17 +122,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.result = response;
 
                 if (this.result.code === 1) {
+                    formDirective.resetForm();
                     this.feedbackForm.reset();
-                    this.toaster.success(this.trans.FeedbackMSG , '' );
+                    this.toaster.success(this.trans.FeedbackMSG, '');
                     this.input.nativeElement.value = '';
 
                 } else {
-                    this.toaster.error(this.trans.FailedMSG , '');
+                    this.toaster.error(this.trans.FailedMSG, '');
 
                 }
 
             });
-
     }
 
     getMemberLoggedin() {
@@ -232,14 +231,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
                                     if (details !== '' && details.views > 0) {
                                         var popup = L.popup();
+                                        let avatar = (details.avatar) ? (this._appService.api.api.imgURL + details.avatar) : 'assets/img/default';
                                         this.addressPoints.push([item.lat, item.lng, item.grade]);
                                         let marker = L.marker([item.lat, item.lng]).addTo(map).on('click', <LeafletMouseEvent>(e) => {
-
                                             popup
                                                 .setLatLng(e.latlng)
                                                 .setContent('        <div class="one_recognized">\n' +
                                                     '            <div class="avatar-name">\n' +
-                                                    '                <div class="avatar"><img src="' + this._appService.api.api.imgURL + details.avatar + '" alt=""></div>\n' +
+                                                    '                   <div class="avatar">' +
+                                                    '                       <img src=" ' + avatar + '" >' +
+                                                    '                   </div>\n' +
                                                     '                <div class="name">\n' +
                                                     '                    <div class="title">\n' +
                                                     '                        <p>' + details.first_name + ' ' + details.last_name + '</p>\n' +
