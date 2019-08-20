@@ -3,7 +3,7 @@ import {MatDialogRef} from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../../app.service';
 import {ToastrService} from 'ngx-toastr';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router, RouterLinkActive} from '@angular/router';
 import {User} from '../../../classes/user';
 
 
@@ -75,9 +75,8 @@ export class ProfileInfoComponent implements OnInit {
                 if (this.result.code === 1) {
                     this._appService.getRoll();
                     localStorage.setItem('username', this.result.data.username);
-
+                    this.router.navigate(['/home']);
                     this.dialogRef.close();
-                    this.router.navigate(['/']);
                 } else {
 
                     this.toaster.error(this.result.msg, 'Failed');

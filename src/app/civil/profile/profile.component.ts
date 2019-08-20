@@ -312,6 +312,9 @@ export class ProfileComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        window.scrollTo( 0, 0);
+
         this.route.params.subscribe(params => {
             this.data.username = params['id'];
             this.get_member_by_username();

@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6, p {
 .header {
     overflow: hidden;
     height: 205px;
-    box-shadow: 10px 5px 5px #cac6c6;
+    /*box-shadow: 10px 5px 5px #cac6c6;*/
 }
 
 .submit button {
@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .nav-collapsed a {
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 700;
     margin: 14px 0;
     color: #fff;
@@ -237,16 +237,16 @@ h1, h2, h3, h4, h5, h6, p {
 
 .card-icon-research img {
     position: absolute;
-    right: 54px;
-    bottom: 140px;
-    width: 130px;
+    right: 12px;
+    bottom: 136px;
+    width: 170px;
 }
 
 
 .card-icon-submit img {
     position: absolute;
-    right: 10px;
-    bottom: 144px;
+    right: 26px;
+    bottom: 134px;
     width: 150px;
 }
 
@@ -710,6 +710,7 @@ app-home .card-item p {
 .info-user {
     /*padding: 0 140px;*/
     margin-left: 75px;
+    width: 70%;
 }
 
 .paper p {
@@ -1354,4 +1355,193 @@ app-upload-paper .submit {
 
 .close-dialog {
     cursor: pointer;
+}
+
+
+
+.card-item-objective{
+    padding: 12px 15px;
+    border: 1px solid #d4d1d1;
+    flex: 0 1 19%;
+    width: 20%;
+}
+
+.card-item-objective .icon  {
+    text-align: center;
+    height: 185px
+}
+
+
+.card-item-objective img{
+    width: 60%;
+}
+
+
+.card-item-objective .title{
+    margin: 20px 0;
+    font-size: 22px;
+}
+
+.card-item-objective .desc{
+    text-align: left
+}
+.card-item-objective .desc p{
+    font-size: 18px;
+}
+
+.card-item-objective .headline {
+    border: none;
+    background-color: white;
+}
+
+.card-item-objective .title .line {
+    border: 8px solid #75cddd;
+    background-color: #75cddd;
+    width: 135px;
+}
+
+.become-researcher .cards{
+    padding: 25px 0;
+
+}
+
+
+
+.join-section {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+    height: 720px;
+}
+
+
+.join-content{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
+
+.join-content .join-left-section {
+
+    width: 50%;
+    text-align: center;
+
+
+}
+
+.join-content .right-section {
+
+    width: 50%;
+    padding: 0 95px;
+
+}
+
+
+.join-content img{
+    width: 22%;
+}
+
+
+
+.join-section .right-section .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1b2850;
+    margin-top: 50px;
+}
+
+.join-section .right-section .title div {
+    border: 8px solid #75cddd;
+    background-color: #75cddd;
+    width: 115px;
+}
+
+
+.join-section .right-section p{
+
+    font-size: 18px;
+}
+
+
+
+.research-all-around .with-slider .left-slide i, .with-slider .right-slide i {
+    font-size: 35px;
+    color: #75cddd;
+    cursor: pointer;
+}
+
+
+.research-all-around .about-content{
+    width: 85%;
+}
+
+
+.research-all-around .main-slider {
+    margin-top: 175px;
+}
+
+.research-all-around .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1b2850;
+}
+
+.research-all-around .text-left{
+    margin-bottom: 100px;
+}
+
+.research-all-around .main-slider {
+    margin-top: 30px;
+}
+
+app-about .research-all-around  .center-sticker {
+
+    position: absolute;
+    background: #1b2850;
+    top: -4%;
+    left: 47%;
+    bottom: 50%;
+    right: 50%;
+    z-index: 100;
+}
+
+
+.statistics div {
+    display: flex;
+    justify-content: center;
+    direction: ltr;
+}
+
+.by {
+    margin-right: 3px;
+    color: #75cddd;
+}
+
+
+
+.heat-map .statistics div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+app-member-details .first-name {
+    margin-right: 70px;
+}
+
+
+
+.read-more .title {
+    float: right;
+}
+
+.research-search .row {
+    height: 9px;
+    width: 85%;
+}
+
+.top-home-login .login-register {
+    color: #1b2850;
 }

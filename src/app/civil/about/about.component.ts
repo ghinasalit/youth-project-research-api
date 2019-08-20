@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {AppService} from '../../app.service';
+import {fadeInOut} from '../../../animations/fadeInOut';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
     selector: 'app-about',
@@ -9,9 +12,100 @@ import {AppService} from '../../app.service';
 })
 export class AboutComponent implements OnInit {
     collapsed = false;
+    itemIndex = 0;
     myForm: FormGroup;
+    dataList: any = [];
 
-    constructor(public _appService: AppService) {
+    private trans = {
+        IncreaseKnowledge: null,
+        Recognition: null,
+        CareerAdvancement: null,
+        ResearchersNetwork: null,
+        IncreaseKnowledgeDesc: null,
+        RecognitionDesc: null,
+        CareerAdvancementDesc: null,
+        ResearchersNetworkDesc: null,
+
+    };
+
+    constructor(public _appService: AppService ,
+                private translate: TranslateService,
+    ) {
+
+
+        translate.get(['_IncreaseKnowledge' , '_Recognition' , '_CareerAdvancement' , '_ResearchersNetwork' , '_IncreaseKnowledgeDesc' , '_ResearchersNetworkDesc', '_CareerAdvancementDesc' , '_RecognitionDesc']).subscribe(res => {
+
+            this.dataList = [
+                {
+                    photo: 'assets/img/login.jpg',
+                    text: res._IncreaseKnowledgeDesc ,
+                    title:  res._IncreaseKnowledge
+                },
+                {
+                    photo: 'assets/img/recognation.jpg',
+                    text: res._RecognitionDesc,
+                    title: res._Recognition
+                },
+                {
+                    photo: 'assets/img/career.jpg',
+                    text: res._CareerAdvancementDesc,
+                    title: res._CareerAdvancement
+                },
+                {
+                    photo: 'assets/img/Researcher_network.jpg',
+                    text :  res._ResearchersNetworkDesc,
+                    title: res._ResearchersNetwork
+                }
+            ];
+        });
+
+
+
+        translate.onLangChange.subscribe(lang => {
+            this.dataList = [
+                {
+                    photo: 'assets/img/login.jpg',
+                    text: lang.translations._IncreaseKnowledgeDesc ,
+                    title:  lang.translations._IncreaseKnowledge
+                },
+                {
+                    photo: 'assets/img/recognation.jpg',
+                    text: lang.translations._RecognitionDesc,
+                    title: lang.translations._Recognition
+                },
+                {
+                    photo: 'assets/img/career.jpg',
+                    text: lang.translations._CareerAdvancementDesc,
+                    title: lang.translations._CareerAdvancement
+                },
+                {
+                    photo: 'assets/img/Researcher_network.jpg',
+                    text :  lang.translations._ResearchersNetworkDesc,
+                    title: lang.translations._ResearchersNetwork
+                }
+
+
+
+            ];
+        });
+    }
+
+
+
+    next() {
+        if (this.itemIndex == (this.dataList.length - 1)) {
+            this.itemIndex = 0;
+        } else {
+            this.itemIndex += 1;
+        }
+    }
+
+    prev() {
+        if (this.itemIndex == 0) {
+            this.itemIndex = (this.dataList.length - 1);
+        } else {
+            this.itemIndex -= 1;
+        }
     }
 
     ngOnInit() {

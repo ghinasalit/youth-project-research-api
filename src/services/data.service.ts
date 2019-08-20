@@ -58,6 +58,10 @@ export class DataService {
         return this.api.submitPage('get_published_papers', data);
     }
 
+    isHaveAccessService(data: any): Observable<Object> {
+        return this.api.submitPage('is_have_access', data);
+    }
+
     savePaperService(data: any): Observable<Object> {
         return this.api.submitPage('save_paper', data);
     }
@@ -151,7 +155,7 @@ export class DataService {
 
 
     downloadNoteReceipt(filename: string): Observable<Blob> {
-        return this._http.get('/src/app/api/uploaded/' + filename, {responseType: 'blob'});
+        return this._http.get(this.api.imgURL + filename, {responseType: 'blob'});
     }
 
 

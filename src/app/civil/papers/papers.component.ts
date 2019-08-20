@@ -46,25 +46,52 @@ export class PapersComponent implements OnInit {
 
     }
 
+
+    isHaveAccess(paper , action) {
+        this._appService.api.isHaveAccessService(paper)
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+
+                    if(action  === 'view'){
+                        const dialogRef = this.dialog.open(PaperComponent, {});
+                        dialogRef.componentInstance.paper = paper;
+                        this.addView(paper);
+                    }else{
+                        this.downloadPaper(paper);
+                        this.addDownloadPaper(paper);
+                    }
+                } else {
+                    const dialogRef = this.dialog.open(RequestComponent, {});
+                    dialogRef.componentInstance.paper_id = paper.paper_id;
+                }
+            });
+    }
+
+    addView(paper) {
+        this._appService.api.addViewService(paper)
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+
+                }
+            });
+    }
+
     viewPaper(paper) {
         if (this._appService.roll) {
-            if (paper.permission === 1 || paper.username === this.username ) {
+            if (paper.permission === 1 || paper.username === this.username) {
                 const dialogRef = this.dialog.open(PaperComponent, {});
                 dialogRef.componentInstance.paper = paper;
-                if(this.username != paper.username) {
-                    this._appService.api.addViewService(paper)
-                        .subscribe(response => {
-                            let result;
-                            result = response;
-                            if (result.code === 1) {
-
-                            }
-                        });
+                if (this.username != paper.username) {
+                    this.addView(paper);
                 }
 
-            } else if(paper.permission === 0){
-                const dialogRef = this.dialog.open(RequestComponent, {});
-                dialogRef.componentInstance.paper_id = paper.paper_id;
+            } else if (paper.permission === 0) {
+
+                this.isHaveAccess(paper , 'view');
             }
         } else {
             this._appService.registerPageTitle = 3;
@@ -190,49 +217,57 @@ export class PapersComponent implements OnInit {
 
     }
 
+
+    downloadPaper(paper) {
+        this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
+            var newBlob = new Blob([res], {type: 'application/pdf'});
+
+            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                window.navigator.msSaveOrOpenBlob(newBlob);
+                return;
+            }
+            // For other browsers:
+            // Create a link pointing to the ObjectURL containing the blob.
+            const data = window.URL.createObjectURL(newBlob);
+
+            var link = document.createElement('a');
+            link.href = data;
+            link.download = paper.title + '.pdf';
+            // this is necessary as link.click() does not work on the latest firefox
+            link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
+
+            setTimeout(function () {
+                // For Firefox it is necessary to delay revoking the ObjectURL
+                window.URL.revokeObjectURL(data);
+            }, 100);
+
+        }, error => {
+            console.log(error);
+        });
+    }
+
+    addDownloadPaper(paper) {
+        this._appService.api.addDownloadService(paper)
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+
+                }
+            });
+    }
+
     download(paper) {
         if (this._appService.roll) {
 
-            if (paper.permission === 1 || paper.username === this.username ) {
-                this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
-                    var newBlob = new Blob([res], {type: 'application/pdf'});
+            if (paper.permission === 1 || paper.username === this.username) {
 
-                    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-                        window.navigator.msSaveOrOpenBlob(newBlob);
-                        return;
-                    }
-                    // For other browsers:
-                    // Create a link pointing to the ObjectURL containing the blob.
-                    const data = window.URL.createObjectURL(newBlob);
-
-                    var link = document.createElement('a');
-                    link.href = data;
-                    link.download = paper.title + '.pdf';
-                    // this is necessary as link.click() does not work on the latest firefox
-                    link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
-
-                    setTimeout(function () {
-                        // For Firefox it is necessary to delay revoking the ObjectURL
-                        window.URL.revokeObjectURL(data);
-                    }, 100);
-
-                }, error => {
-                    console.log(error);
-                });
-
-                if(this.username != paper.username) {
-                    this._appService.api.addDownloadService(paper)
-                        .subscribe(response => {
-                            let result;
-                            result = response;
-                            if (result.code === 1) {
-
-                            }
-                        });
+                this.downloadPaper(paper);
+                if (this.username != paper.username) {
+                    this.addDownloadPaper(paper);
                 }
-            } else if(paper.permission === 0){
-                    const dialogRef = this.dialog.open(RequestComponent, {});
-                    dialogRef.componentInstance.paper_id = paper.paper_id;
+            } else if (paper.permission === 0) {
+               this.isHaveAccess(paper , 'download');
             }
         } else {
             this._appService.registerPageTitle = 3;

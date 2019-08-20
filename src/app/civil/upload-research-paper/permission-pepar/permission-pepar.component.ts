@@ -41,7 +41,11 @@ export class PermissionPeparComponent implements OnInit {
 
                 if (this.result.code === 1) {
                     this.toaster.success('The request have sent successfully ', 'success');
-                    // this.router.navigate(['/home']);
+
+                    setTimeout(() => {
+                        this.router.navigate(['/profile' , localStorage.getItem('username') ]);
+                    }, 2000);
+
 
                 } else {
                     this.toaster.error(this.result.msg, 'Failed');
@@ -58,6 +62,8 @@ export class PermissionPeparComponent implements OnInit {
     }
 
     ngOnInit() {
+
+
         if(this.appService.fileName == ''){
             this.router.navigate(['/upload-paper']);
 

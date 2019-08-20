@@ -87,11 +87,6 @@ h3, h6 {
 }
 
 
-.statistics div {
-    display: flex;
-    justify-content: center;
-    direction: ltr;
-}
 
 .statistics p {
     color: #fff;
@@ -135,11 +130,6 @@ h3, h6 {
 .paper-card-info {
 
     display: flex;
-}
-
-.by {
-    margin-right: 3px;
-    color: #75cddd;
 }
 
 
@@ -208,10 +198,6 @@ h3, h6 {
     color: #fff;
 }
 
-.research-search .row {
-    height: 9px;
-    width: 85%;
-}
 
 
 .research-search .navigator {

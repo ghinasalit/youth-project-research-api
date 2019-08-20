@@ -2,11 +2,11 @@
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a href="/about">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
-    <a  (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
+    <a (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
+    <a (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
     <a (click)="_appService.section = 'contactus'" routerLink="/home">{{'_ContactUs' | translate}}</a>
 </div>
 
@@ -28,14 +28,18 @@
                 </a>
             </div>
             <div class="login-register" *ngIf="!_appService.roll">
-                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('en')"
+                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')"
+                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
                 <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
             </div>
-            <div class="login-register"  *ngIf="_appService.roll">
-                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="login-register" *ngIf="_appService.roll">
+                <div class="lang" (click)="_appService.switchLanguage('en')"
+                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')"
+                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
@@ -43,13 +47,13 @@
         <div class="sec-content">
             <div class="about-content">
                 <h1 class="text-left">
-                    <p>{{'_About'| translate}}</p>
-                    <p>{{'_ArabYouth'| translate}}</p>
-                    <p> {{'_ResearchLibrary'| translate}}</p></h1>
-                <div class="content">
-                    <p>{{'_AboutDescription'| translate}}</p>
-                </div>
+                    <p>{{'_Significance'| translate}}</p>
+                    <p>{{'_AYRP'| translate}}</p>
+                </h1>
+                    <div class="content">
+                        <p>{{'_AboutDescription'| translate}}</p>
 
+                    </div>
             </div>
             <div class="social">
                 <div><i class="fa fa-facebook"></i></div>
@@ -58,65 +62,79 @@
                 <div><i class="fa fa-youtube"></i></div>
             </div>
 
-            <div class="blue-sep"></div>
         </div>
     </div>
 </div>
 
 
-<div class="become-researcher" data-aos="fade-up" data-aos-duration="1000">
+<div class="join-section" data-aos="fade-up" data-aos-duration="1000">
     <div class="title">
-        <p> {{'_About_Arab_Youth_Research'| translate}}</p>
+        <p> {{'_Why_Join_AYRB'| translate}}</p>
         <div></div>
     </div>
-    <div class="cards">
-        <div class="card-item">
-            <img src="assets/img/search.png" alt="">
-            <div class="title">
-                <p>{{'_Search'| translate}}</p>
-                <div></div>
-            </div>
+    <div class="join-content">
+        <div class="join-left-section">
+            <img src="assets/img/Why_join_AYR.png" alt="">
         </div>
-        <div class="card-item">
-            <img src="assets/img/research.png" alt="">
-            <div class="title">
-                <p>{{'_Research'| translate}}</p>
-                <div></div>
+        <div class="right-section">
+            <p>{{'_AbourJoinDesc' | translate }}</p>
+            <div class="title" style="cursor: pointer" routerLink="/login">
+                <p>{{'_JoinAYRB'| translate}}</p>
+                <div>
+                </div>
             </div>
-        </div>
-        <div class="card-item">
-            <img src="assets/img/view.png" alt="">
-            <div class="title">
-                <p>{{'_View'| translate}}</p>
-                <div></div>
-            </div>
+
+
         </div>
     </div>
+
+
 </div>
 
 <div class="full-section research-all-around" data-aos="fade-up" data-aos-duration="1000">
-    <div class="top-sticker"></div>
-    <div class="center-sticker"></div>
-    <div class="side">
-        <div class="sec-img">
-            <img src="assets/img/researchers.jpg">
-        </div>
-    </div>
-    <div class="side">
-        <div class="sec-content">
-            <div class="researshers">
-                <h1 class="text-left">
-                    <p>{{'_Researchers'| translate}}</p>
-                    <p>{{'_All_Around'| translate}}</p>
-                    <p> {{'_TheWorld'| translate}}</p></h1>
-                <div class="content">
-                    <p>{{'_ResearchersDescription'| translate}}
-                        </p>
-                </div>
-
+    <div class="full-section with-slider">
+        <div class="top-sticker"></div>
+        <div class="center-sticker"></div>
+        <div class="side">
+            <div class="sec-img">
+                <ng-container *ngFor="let member of dataList; let i = index">
+                    <img [@fadeInOut] *ngIf="itemIndex == i" [src]=" dataList[i]['photo']">
+                </ng-container>
             </div>
+        </div>
+        <div class="side">
+            <div class="sec-content">
+                <div class="about-content">
+                    <h1 class="text-left">
+                        <p>{{'_Why_publish_research' | translate}}</p>
+                        <p>{{'_findings_on_AYRP' | translate}}</p>
+                    </h1>
 
-            <div class="blue-sep"></div>
+                    <div class="member-name" *ngFor="let text of dataList; let i = index">
+                        <div [@fadeInOut] *ngIf="itemIndex == i" class="title">
+                            <p>{{dataList[i]['title']}}</p>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="main-slider">
+                        <div class="left-slide" (click)="prev()">
+                            <i class="fa fa-chevron-left" *ngIf="_appService.currentLanguage == 'en'"></i>
+                            <i class="fa fa-chevron-right" *ngIf="_appService.currentLanguage == 'ar'"></i>
+                        </div>
+                        <div class="slider-control">
+                            <ng-container *ngFor="let text of dataList; let i = index">
+                                <h4 *ngIf="itemIndex == i" [innerHTML]="dataList[i]['text'] "></h4>
+                            </ng-container>
+                        </div>
+                        <div class="right-slide" (click)="next()">
+                            <i class="fa fa-chevron-right" *ngIf="_appService.currentLanguage == 'en'"></i>
+                            <i class="fa fa-chevron-left" *ngIf="_appService.currentLanguage == 'ar'"></i>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

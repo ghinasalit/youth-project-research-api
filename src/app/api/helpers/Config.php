@@ -26,7 +26,7 @@ class Config
     );
 
     public static $live_db = array(
-        'db_server' => 'http://asgc.webntech.ae/',
+        'db_server' => 'localhost',
         'db_user' => 'ghina',
         'db_pass' => 'Qwaszx1234',
         'db_name' => 'arab_youth'
@@ -45,12 +45,11 @@ class Config
 }
 
 $DB = $FCM = $FILES_ROOT = "";
-
 if (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "localhost")) {
     $DB = Config::$local_db;
     $FCM = Config::$auth_fcm;
     $FILES_ROOT = Config::$local_files;
-} else if (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "http://asgc.webntech.ae/")) {
+} else if (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "arabyouthresearch.org")) {
     $DB = Config::$live_db;
     $FCM = Config::$auth_fcm;
     $FILES_ROOT = Config::$server_files;

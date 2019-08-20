@@ -630,7 +630,8 @@ Class User
     {
 
         $activation_id = Helper::make_safe($data['activation_id']);
-        $response = Queries::accept_request_paper($activation_id);
+        $member_owner = Helper::make_safe($data['member_id']);
+        $response = Queries::accept_request_paper($activation_id , $member_owner);
         if (is_numeric($response)) {
             $error_msg = array_search($response, \Model\Enums::$code);
             $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
@@ -648,6 +649,23 @@ Class User
         $page = Helper::make_safe($data['page']);
         $size = Helper::make_safe($data['size']);
         $response = Queries::get_bookmarks($username, $page, $size);
+        if (is_numeric($response)) {
+            $error_msg = array_search($response, \Model\Enums::$code);
+            $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+        } else {
+            $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+        }
+
+        return $result;
+    }
+
+
+    static public function is_have_access($data)
+    {
+
+        $member_id = Helper::make_safe($data['member_id']);
+        $paper_id = Helper::make_safe($data['paper_id']);
+        $response = Queries::is_have_access($member_id, $paper_id);
         if (is_numeric($response)) {
             $error_msg = array_search($response, \Model\Enums::$code);
             $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());

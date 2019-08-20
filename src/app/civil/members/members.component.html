@@ -2,7 +2,7 @@
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
     <a href="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
     <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
@@ -61,7 +61,7 @@
 
 <div class="members-section">
     <div class="characters-filters">
-        <div class="characters">
+        <div class="characters" *ngIf="_appService.currentLanguage == 'en'">
             <p (click)="member.letter = 'a' ; filter()">A</p>
             <p (click)="member.letter = 'b' ; filter()">B</p>
             <p (click)="member.letter = 'c' ; filter()">C</p>
@@ -89,6 +89,36 @@
             <p (click)="member.letter = 'y' ; filter()">Y</p>
             <p (click)="member.letter = 'z' ; filter()">Z</p>
         </div>
+        <div class="characters" *ngIf="_appService.currentLanguage == 'ar'">
+            <p (click)="member.letter = 'أ' ; filter()">أ</p>
+            <p (click)="member.letter = 'ب' ; filter()">ب</p>
+            <p (click)="member.letter = 'ت' ; filter()">ت</p>
+            <p (click)="member.letter = 'ث' ; filter()">ث</p>
+            <p (click)="member.letter = 'ج' ; filter()">ج</p>
+            <p (click)="member.letter = 'ح' ; filter()">ح</p>
+            <p (click)="member.letter = 'خ' ; filter()">خ</p>
+            <p (click)="member.letter = 'د' ; filter()">د</p>
+            <p (click)="member.letter = 'ذ' ; filter()">ذ</p>
+            <p (click)="member.letter = 'ر' ; filter()">ر</p>
+            <p (click)="member.letter = 'ز' ; filter()">ز</p>
+            <p (click)="member.letter = 'س' ; filter()">س</p>
+            <p (click)="member.letter = 'ش' ; filter()">ش</p>
+            <p (click)="member.letter = 'ص' ; filter()">ص</p>
+            <p (click)="member.letter = 'ض' ; filter()">ض</p>
+            <p (click)="member.letter = 'ط' ; filter()">ط</p>
+            <p (click)="member.letter = 'ظ' ; filter()">ظ</p>
+            <p (click)="member.letter = 'ع' ; filter()">ع</p>
+            <p (click)="member.letter = 'غ' ; filter()">غ</p>
+            <p (click)="member.letter = 'ف' ; filter()">ف</p>
+            <p (click)="member.letter = 'ق' ; filter()">ق</p>
+            <p (click)="member.letter = 'ك' ; filter()">ك</p>
+            <p (click)="member.letter = 'ل' ; filter()">ل</p>
+            <p (click)="member.letter = 'م' ; filter()">م</p>
+            <p (click)="member.letter = 'ن' ; filter()">ن</p>
+            <p (click)="member.letter = 'ه' ; filter()">ه</p>
+            <p (click)="member.letter = 'و' ; filter()">و</p>
+            <p (click)="member.letter = 'ي' ; filter()">ي</p>
+        </div>
         <div class="filters">
             <div class="sort-icon">
                 <i class="fa fa-sort-desc" aria-hidden="true" *ngIf="data.sort == 'asc'" (click)="sortMembers('desc')" ></i>
@@ -109,7 +139,7 @@
     </div>
     <div class="members-cards">
         <div class="card" *ngFor="let member of members">
-            <img [src]="_appService.api.api.imgURL  + member.avatar" alt="">
+            <img [src]="member.avatar?_appService.api.api.imgURL  + member.avatar : 'assets/img/avatar_default.PNG' " alt="" [routerLink]="['/profile' , member.username]">
             <div class="title" [routerLink]="['/profile' , member.username]" style="cursor: pointer">
                 <p>{{member.first_name}} {{member.last_name}}</p>
                 <div>

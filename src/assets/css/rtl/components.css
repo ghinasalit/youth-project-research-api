@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6, p {
 .header {
     overflow: hidden;
     height: 205px;
-    box-shadow: -10px 5px 5px #cac6c6;
+    /*box-shadow: -10px 5px 5px #cac6c6;*/
 }
 
 .submit button {
@@ -153,11 +153,10 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 25px;
 }
 
-
 .nav-collapsed a {
-    font-size: 40px;
+    font-size: 28px;
     font-weight: 700;
-    margin: 20px 0;
+    margin: 14px 0;
     color: #fff;
     cursor: pointer;
 }
@@ -185,12 +184,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .logo-left {
-    float: right;
-    padding: 36px 95px;
+    float: left;
+    padding: 31px 95px;
 }
 
 .logo-right {
-    float: left;
+    float: right;
     padding: 31px 95px;
 }
 
@@ -200,7 +199,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .logo-left img {
-    width: 130px;
+    width: 122px;
 }
 
 .right-section {
@@ -233,21 +232,24 @@ h1, h2, h3, h4, h5, h6, p {
 .card-icon-research, .card-icon-submit {
     position: relative;
     padding: 50px 65px;
+    direction: initial;
 }
+
 
 .card-icon-research img {
     position: absolute;
-    left: 73px;
-    bottom: 140px;
-    width: 140px;
+    left: 28px;
+    bottom: 135px;
+    width: 175px;
 }
+
 
 
 .card-icon-submit img {
     position: absolute;
-    left: 57px;
-    bottom: 140px;
-    width: 140px;
+    left: 27px;
+    bottom: 135px;
+    width: 150px;
 }
 
 
@@ -256,8 +258,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .box {
-    width: 190px;
-    height: 190px;
+    width: 205px;
+    height: 205px;
     background-color: #75cddd;
 }
 
@@ -296,7 +298,7 @@ h1, h2, h3, h4, h5, h6, p {
 .become-researcher {
     display: flex;
     flex-direction: column;
-    padding: 45px 40px;
+    padding: 22px 40px;
 }
 
 .contact h1 {
@@ -343,7 +345,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .info-user {
-    padding: 0 140px;
+    /*padding: 0 140px;*/
 }
 
 
@@ -354,11 +356,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .social {
+    text-align: center;
     display: inline-block;
-    margin-left: 25px;
+    margin-left: 10px;
     margin-top: 150px;
-    position: fixed;
+    /* position: fixed; */
     z-index: 1;
+    left: 0;
 }
 
 
@@ -439,7 +443,7 @@ app-home .card-item p {
     display: flex;
     color: #1b2850;
     justify-content: space-between;
-    padding: 75px 20px;
+    padding: 25px 20px;
 }
 
 
@@ -460,7 +464,6 @@ app-home .card-item p {
 
 .full-section .sec-content {
     text-align: right;
-    width: 85%;
     margin-right: 80px;
     margin-top: 70px;
 }
@@ -542,7 +545,7 @@ app-home .card-item p {
     font-weight: bold;
     color: #1b2850;
     margin-top: 0;
-    margin-right: 18px;
+    margin-right: 0px;
 }
 
 .views-paper {
@@ -577,12 +580,6 @@ app-home .card-item p {
     margin-bottom: 20px;
 }
 
-/*.social {*/
-/*    display: inline-block;*/
-/*    margin-right: 25px;*/
-/*    margin-top: 150px;*/
-/*}*/
-
 
 .read-more p {
     font-size: 25px;
@@ -611,7 +608,7 @@ app-home .card-item p {
 .with-slider .slider-control {
     padding: 0 20px;
     text-align: justify;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 
@@ -655,7 +652,6 @@ app-home .card-item p {
 .with-slider .main-slider {
     display: flex;
     align-items: center;
-    direction: initial;
 }
 
 
@@ -664,7 +660,6 @@ app-home .card-item p {
     color: #75cddd;
     cursor: pointer;
 }
-
 
 /*header*/
 /*.header {*/
@@ -715,7 +710,8 @@ app-home .card-item p {
 }
 
 .info-user {
-    padding: 0 140px;
+    margin-right: 75px;
+    width: 70%;
 }
 
 .paper p {
@@ -806,7 +802,6 @@ app-home .card-item p {
     width: 32.5%;
     margin: 10px 0;
     padding: 10px 35px;
-    flex-wrap: wrap;
 }
 
 
@@ -1016,18 +1011,19 @@ app-members .card {
 
 
 .sort-icon {
-    width: 48px;
+    width: 35px;
     height: 36px;
     border: 1px solid;
     border-radius: 8px;
     text-align: center;
     font-size: 35px;
+    position: relative;
 }
 
 
 .filters {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 5%;
     color: #1B2850;
 
@@ -1099,7 +1095,7 @@ app-papers .statistics {
 
 .views-paper {
     margin-left: 10px;
-    width: 132px;
+    width: 115px;
 }
 
 
@@ -1157,7 +1153,6 @@ app-papers .statistics {
 
 
 .accordion {
-    display: flex;
     background-color: #fff;
     color: #444;
     cursor: pointer;
@@ -1170,6 +1165,8 @@ app-papers .statistics {
     text-align: right;
     font-size: 22px;
     font-weight: 800;
+    display: flex;
+    flex-direction: inherit;
 }
 
 
@@ -1195,6 +1192,8 @@ app-papers .statistics {
     background-color: #1B2850;
     width: 115px;
 }
+
+
 
 
 app-home .card-item .title {
@@ -1292,7 +1291,7 @@ app-upload-paper .submit {
     width: 10px;
     color: #75cddd;
     margin-left: 7px;
-    margin-top: 7px;
+    margin-top: 12px;
 }
 
 
@@ -1322,6 +1321,233 @@ app-upload-paper .submit {
     font-weight: bold;
 }
 
+.footer {
+    font-size: 18px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-sort-asc {
+    position: absolute;
+    left: 7px;
+    top: -5px;
+}
+
+.heat-map {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+}
+
+
+.frequent-asked-questions .title {
+    padding: 0 40px;
+}
+
+
+.panel {
+    margin: 0 35px;
+    background-color: #EEF1F1;
+    max-height: 0;
+    overflow: hidden;
+    border: none;
+    transition: max-height 0.2s ease-out;
+}
+
+.contact {
+    margin: 20px 0 !important;
+}
+
 .close-dialog {
     cursor: pointer;
+}
+
+
+
+.card-item-objective{
+    padding: 12px 15px;
+    border: 1px solid #d4d1d1;
+    flex: 0 1 19%;
+    width: 20%;
+}
+
+.card-item-objective .icon  {
+    text-align: center;
+    height: 185px
+}
+
+
+.card-item-objective img{
+    width: 60%;
+}
+
+
+.card-item-objective .title{
+    margin: 20px 0;
+    font-size: 22px;
+}
+
+.card-item-objective .desc{
+    text-align: right
+}
+.card-item-objective .desc p{
+    font-size: 17px;
+}
+
+.card-item-objective .headline {
+    border: none;
+    background-color: white;
+}
+
+.card-item-objective .title .line {
+    border: 8px solid #75cddd;
+    background-color: #75cddd;
+    width: 135px;
+}
+
+.become-researcher .cards{
+    padding: 25px 0;
+
+}
+
+
+
+.join-section {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px;
+    height: 720px;
+}
+
+
+.join-content{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
+
+.join-content .join-left-section {
+
+    width: 50%;
+    text-align: center;
+
+
+}
+
+.join-content .right-section {
+
+    width: 50%;
+    padding: 0 95px;
+
+}
+
+
+.join-content img{
+    width: 22%;
+}
+
+
+
+.join-section .right-section .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1b2850;
+    margin-top: 50px;
+}
+
+.join-section .right-section .title div {
+    border: 8px solid #75cddd;
+    background-color: #75cddd;
+    width: 115px;
+}
+
+
+.join-section .right-section p{
+
+    font-size: 18px;
+}
+
+
+
+.research-all-around .with-slider .left-slide i, .with-slider .right-slide i {
+    font-size: 35px;
+    color: #75cddd;
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+
+.research-all-around .about-content{
+    width: 85%;
+}
+
+
+.research-all-around .main-slider {
+    margin-top: 175px;
+}
+
+.research-all-around .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1b2850;
+}
+
+.research-all-around .text-left{
+    margin-bottom: 100px;
+}
+
+.research-all-around .main-slider {
+    margin-top: 30px;
+}
+
+app-about .research-all-around  .center-sticker {
+
+    position: absolute;
+    background: #1b2850;
+    top: -4%;
+    right: 47%;
+    bottom: 50%;
+    left: 50%;
+    z-index: 100;
+}
+
+
+.statistics div {
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+}
+
+.by {
+    margin-left: 3px;
+    color: #75cddd;
+}
+
+
+.heat-map .statistics div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+app-login .full-section .sec-content , app-profile-info .full-section .sec-content{
+    width: 85%;
+}
+
+
+app-member-details .first-name {
+    margin-left: 70px;
+}
+
+
+.read-more .title {
+    float: left;
+}
+
+
+.top-home-login .login-register {
+    color: #1b2850;
 }

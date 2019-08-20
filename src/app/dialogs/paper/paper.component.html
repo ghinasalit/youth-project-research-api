@@ -1,7 +1,4 @@
 <div class="c-item">
-    <div class="bookmark">
-        <i class="fa fa-bookmark-o"></i>
-    </div>
 
     <div class="close-desc">
         <div class="title">
@@ -16,9 +13,9 @@
     </div>
 
 
-    <div class="paper-card-info"  >
+    <div class="paper-card-info"  style="cursor: pointer">
         <h6 class="by">{{'_By' | translate}}</h6>
-        <h6 style="font-weight: bold ; color: #75cddd;" >{{paper.first_name}} {{paper.last_name}}</h6>
+        <h6 style="font-weight: bold ; color: #75cddd;" > {{paper.first_name}} {{paper.last_name}}</h6>
     </div>
     <div class="paper-card-info">
         <i class="fa fa-tag" aria-hidden="true"></i> <h6>{{'_EnvEarth' | translate}}</h6>
@@ -36,7 +33,7 @@
         <div class="views-paper">
             <i class="fa fa-eye" aria-hidden="true"></i> <h6>{{paper.views}} {{'_Views' | translate}}</h6>
         </div>
-        <div class="download-paper" (click)="download(paper.file , paper.title)">
+        <div class="download-paper" (click)="download()">
             <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
         </div>
         <div class="read-more" (click)="viewPaper(paper.file)">

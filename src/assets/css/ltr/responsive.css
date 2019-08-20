@@ -244,6 +244,12 @@
         width: 145px;
     }
 
+    .card-icon-research img {
+        position: absolute;
+        right: 11px;
+        bottom: 136px;
+        width: 170px;
+    }
 
     app-members .full-section .sec-content, app-about .full-section .sec-content {
         text-align: left;
@@ -262,6 +268,23 @@
 
         padding-right: 10px;
     }
+
+    .card-item-objective .title{
+        margin: 20px 0;
+        font-size: 18px;
+    }
+
+    .card-item-objective .desc p {
+        font-size: 15px;
+    }
+
+
+    .card-item-objective.title {
+        margin-bottom: 20px;
+        margin-top: 0px;
+        font-size: 18px;
+    }
+
 
 }
 
@@ -331,7 +354,7 @@
 
     app-papers .statistics {
         padding: 147px 10px;
-        font-size: 22px;
+        font-size: 38px;
         font-weight: bold;
         color: #fff;
         display: flex;
@@ -396,9 +419,9 @@
 
     .social-paper img {
         position: absolute;
-        right: 90px;
-        bottom: 143px;
-        width: 91px;
+        right: 63px;
+        bottom: 141px;
+        width: 118px;
     }
 
     .top-description {
@@ -447,9 +470,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 50px;
-        bottom: 144px;
-        width: 110px;
+        right: 66px;
+        bottom: 138px;
+        width: 101px;
     }
 
     .social i {
@@ -944,6 +967,51 @@
     }
 
 
+    .card-item-objective .icon {
+        text-align: center;
+        height: 152px;;
+    }
+
+    .card-item-objective .title {
+        margin-bottom: 20px;
+        margin-top: 0px;
+        font-size: 15px;
+    }
+
+    .card-item-objective .desc p {
+        font-size: 13px;
+    }
+
+
+    .become-researcher {
+        height: 618px;
+    }
+
+    .card-item-objective .headline {
+        border: none;
+        background-color: white;
+    }
+
+    .card-item-objective .title .line {
+        border: 8px solid #75cddd;
+        background-color: #75cddd;
+        width: 92px;
+    }
+
+    .join-content .join-left-section {
+        width: 50%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .research-all-around .title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1127,9 +1195,9 @@
 
     .social-paper img {
         position: absolute;
-        right: 88px;
-        bottom: 141px;
-        width: 72px; position;
+        right: 63px;
+        bottom: 138px;
+        width: 100px;
     }
 
 
@@ -1141,8 +1209,8 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 56px;
-        bottom: 142px;
+        right: 66px;
+        bottom: 137px;
         width: 85px;
     }
 
@@ -1880,6 +1948,91 @@
     .clear i {
         font-size: 30px;
     }
+
+
+
+    .card-item-objective .title {
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .card-item-objective .desc p {
+        font-size: 10px;
+    }
+
+
+
+    .card-item-objective .icon {
+        text-align: center;
+        height: 70px;
+    }
+
+
+    .card-item-objective .icon {
+        text-align: center;
+        height: 100px;
+    }
+
+    .card-item-objective .title {
+        margin-bottom: 20px;
+        margin-top: 0px;
+        font-size: 13px;
+    }
+
+    .card-item-objective .desc p {
+        font-size: 10px;
+    }
+
+
+    .card-item-objective .headline {
+        border: none;
+        background-color: white;
+    }
+
+    .card-item-objective .title .line {
+        border: 8px solid #75cddd;
+        background-color: #75cddd;
+        width: 95px;
+    }
+
+    .card-item-objective {
+        padding: 35px 5px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 20%;
+    }
+
+    .join-content .right-section {
+        width: 50%;
+        padding: 0px 0px;
+    }
+
+
+    .join-section {
+        display: flex;
+        flex-direction: column;
+        padding: 45px 40px;
+        height: 530px;
+    }
+
+    .join-content .join-left-section {
+        width: 50%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .research-all-around .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .research-all-around .slider-control h4{
+        font-size: 15px;
+    }
+
+
+
 }
 
 @media (min-width: 425px) and (max-width: 767px) {
@@ -2092,9 +2245,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 67px;
-        bottom: 81px;
-        width: 55px;
+        right: 77px;
+        bottom: 83px;
+        width: 40px;
     }
 
 
@@ -2132,6 +2285,10 @@
     .about-content {
         width: 100%;
         margin: 0 20px;
+    }
+
+   app-about .about-content {
+        margin-bottom: 20px;
     }
 
     .top-description {
@@ -2314,7 +2471,7 @@
         font-size: 20px;
     }
 
-    .read-more[_ngcontent-c5] {
+    .read-more {
         font-size: 45px;
         font-weight: bold;
         margin-top: 15px;
@@ -2491,7 +2648,7 @@
         position: absolute;
         background: #75cddd;
         left: 37%;
-        top: 53%;
+        top: 37%;
         z-index: 100;
     }
 
@@ -2925,8 +3082,13 @@
         float: left;
         margin-right: 0px;
         padding-left: 0;
-        font-size: 18px;
+        font-size: 15px;
         position: relative;
+    }
+
+    .research-search .row {
+        height: 9px;
+        width: 73%;
     }
 
     .papers-tap {
@@ -3061,7 +3223,7 @@
         width: 45px;
         position: absolute;
         background: #1b2850;
-        top: 49%;
+        top: 68%;
         left: 45%;
         bottom: 50%;
         z-index: 100;
@@ -3118,6 +3280,11 @@
 
     app-about .researshers .content {
         margin-top: 0px;
+    }
+
+    app-about .text-left {
+        display: block;
+
     }
 
 
@@ -3380,8 +3547,8 @@
 
     .card-icon-research img {
         position: absolute;
-        right: 79px;
-        bottom: 81px;
+        right: 70px;
+        bottom: 84px;
         width: 46px;
     }
 
@@ -3401,6 +3568,130 @@
         display: flex;
         justify-content: center;
     }
+
+
+    .become-researcher .cards {
+        display: flex;
+        flex-direction: column;
+        color: #1b2850;
+        padding: 30px 0px;
+    }
+
+    .card-item-objective {
+        padding: 35px 15px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+    }
+
+    .become-researcher{
+        height: auto;
+
+    }
+
+
+    .card-item-objective img {
+        width: 40%;
+    }
+
+
+
+    .card-item-objective .headline {
+        border: none;
+        background-color: white;
+        display: flex;
+        width: 100%;
+    }
+
+    .headline p{
+        margin-right: 3px;
+    }
+
+    .card-item-objective .title {
+        margin: 20px 0;
+        font-size: 15px;
+    }
+
+
+    .card-item-objective .desc p {
+        font-size: 14px
+    }
+
+    .card-item-objective {
+        padding: 35px 15px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .card-item-objective .icon {
+        text-align: center;
+        height: 150px;
+    }
+
+    .join-content {
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .join-content .join-left-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .join-content .right-section {
+        width: 100%;
+        padding: 0 95px;
+    }
+
+    .join-content .right-section {
+        width: 100%;
+        padding: 0;
+    }
+
+   .research-all-around .text-left {
+       display: initial;
+
+    }
+
+
+    .research-all-around .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .research-all-around .text-left {
+        margin-bottom: 50px;
+    }
+
+    .research-all-around .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: -4%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    .research-all-around  .with-slider .main-slider {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+
+   app-home .top-home-login .login-register {
+        color: #fff;
+    }
+
+
+
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -3593,12 +3884,7 @@
     }
 
 
-    .card-icon-submit img {
-        position: absolute;
-        right: 57px;
-        bottom: 84px;
-        width: 39px;
-    }
+
 
     .social-paper .title {
         margin-top: 29px;
@@ -3633,8 +3919,8 @@
     .full-section .sec-content {
         text-align: left;
         width: auto;
-        margin: 25px 0;
-        display: flex;
+        margin: 25px 20px;
+        /*display: flex;*/
     }
 
 
@@ -3687,6 +3973,20 @@
 
     .about-content .text-left p {
         font-size: 20px;
+    }
+
+    .card-icon-submit img {
+        position: absolute;
+        right: 63px;
+        bottom: 82px;
+        width: 33px;
+    }
+
+    .card-icon-research img {
+        position: absolute;
+        right: 54px;
+        bottom: 84px;
+        width: 39px;
     }
 
     .blue-line {
@@ -3860,7 +4160,7 @@
 
     .about-content .text-left p {
         margin-right: 7px;
-        font-size: 20px;
+        font-size: 17px;
     }
 
 
@@ -3997,7 +4297,7 @@
         position: absolute;
         background: #75cddd;
         left: 37%;
-        top: 61%;
+        top: 44%;
         z-index: 100;
     }
 
@@ -4442,8 +4742,13 @@
         float: left;
         margin-right: 0px;
         padding-left: 0;
-        font-size: 18px;
+        font-size: 15px;
         position: relative;
+    }
+
+    .research-search .row {
+        height: 9px;
+        width: 85%;
     }
 
     .papers-tap {
@@ -4578,7 +4883,7 @@
         width: 45px;
         position: absolute;
         background: #1b2850;
-        top: 49%;
+        top: 36%;
         left: 45%;
         bottom: 50%;
         z-index: 100;
@@ -4601,7 +4906,7 @@
         width: 45px;
         position: absolute;
         background: #1b2850;
-        top: 40%;
+        top: 65%;;
         left: 45%;
         bottom: 50%;
         z-index: 100;
@@ -4931,6 +5236,152 @@
         display: flex;
         justify-content: center;
     }
+
+
+    .become-researcher .cards {
+        display: flex;
+        flex-direction: column;
+        color: #1b2850;
+        padding: 30px 0px;
+    }
+
+    .card-item-objective {
+        padding: 35px 15px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+    }
+
+    .become-researcher{
+        height: auto;
+
+    }
+
+
+    .card-item-objective img {
+        width: 40%;
+    }
+
+
+
+    .card-item-objective .headline {
+        border: none;
+        background-color: white;
+        display: flex;
+        width: 100%;
+    }
+
+    .headline p{
+        margin-right: 3px;
+    }
+
+
+    .card-item-objective .title {
+        margin: 20px 0;
+        font-size: 15px;
+    }
+
+
+    .card-item-objective .desc p {
+        font-size: 14px
+    }
+
+    .card-item-objective {
+        padding: 35px 15px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .card-item-objective .icon {
+        text-align: center;
+        height: 135px;
+    }
+
+    .join-content {
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .join-content .join-left-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .join-content .right-section {
+        width: 100%;
+        padding: 0 95px;
+    }
+
+    .join-content .right-section {
+        width: 100%;
+        padding: 0;
+    }
+
+    .research-all-around .text-left {
+        display: initial;
+
+    }
+
+
+    .research-all-around .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .research-all-around .text-left {
+        margin-bottom: 50px;
+    }
+
+    .research-all-around .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: -4%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    .research-all-around  .with-slider .main-slider {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    app-login .full-section .sec-content , app-register .full-section .sec-content{
+
+        display: inherit;
+
+    }
+
+    .footer {
+        font-size: 10px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    app-about .about-content {
+        margin-bottom: 20px;
+    }
+
+
+    app-about .text-left {
+        display: block;
+
+    }
+    app-home .top-home-login .login-register {
+        color: #fff;
+    }
+
+
+
 }
 
 @media (max-width: 374px)  {
@@ -5125,7 +5576,14 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 57px;
+        right: 55px;
+        bottom: 83px;
+        width: 33px;
+    }
+
+    .social-paper img {
+        position: absolute;
+        right: 55px;
         bottom: 84px;
         width: 39px;
     }
@@ -5142,7 +5600,7 @@
 
     .card-icon-research, .card-icon-submit {
         position: relative;
-        padding: 29px 18px;
+        padding: 29px 0px;
     }
 
 
@@ -5390,7 +5848,7 @@
 
     .about-content .text-left p {
         margin-right: 7px;
-        font-size: 20px;
+        font-size: 15px;
     }
 
 
@@ -5527,7 +5985,7 @@
         position: absolute;
         background: #75cddd;
         left: 37%;
-        top: 61%;
+        top: 50%;
         z-index: 100;
     }
 
@@ -6454,6 +6912,163 @@
         margin: auto;
         font-weight: bold;
     }
+
+
+    .become-researcher .cards {
+        display: flex;
+        flex-direction: column;
+        color: #1b2850;
+        padding: 30px 0px;
+    }
+
+    .card-item-objective {
+        padding: 35px 15px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+    }
+
+    .become-researcher{
+        height: auto;
+
+    }
+
+
+    .card-item-objective img {
+        width: 40%;
+    }
+
+
+
+    .card-item-objective .headline {
+        border: none;
+        background-color: white;
+        display: flex;
+        width: 100%;
+    }
+
+    .headline p{
+        margin-right: 3px;
+    }
+
+    .card-item-objective .title {
+        margin: 20px 0;
+        font-size: 15px;
+    }
+
+
+    .card-item-objective .desc p {
+        font-size: 14px
+    }
+
+    .card-item-objective {
+        padding: 35px 15px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .card-item-objective .icon {
+        text-align: center;
+        height: 110px;
+    }
+
+    .join-content {
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .join-content .join-left-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .join-content .right-section {
+        width: 100%;
+        padding: 0 95px;
+    }
+
+    .join-content .right-section {
+        width: 100%;
+        padding: 0;
+    }
+
+    .research-all-around .text-left {
+        display: initial;
+
+    }
+
+
+    .research-all-around .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1b2850;
+    }
+
+    .research-all-around .text-left {
+        margin-bottom: 50px;
+    }
+
+    .research-all-around .center-sticker {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        background: #1b2850;
+        top: -4%;
+        left: 45%;
+        bottom: 50%;
+        z-index: 100;
+    }
+
+    .research-all-around  .with-slider .main-slider {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    .card-icon-submit img {
+        position: absolute;
+        right: 45px;
+        bottom: 82px;
+        width: 33px;
+    }
+
+    .card-icon-research img {
+        position: absolute;
+        right: 37px;
+        bottom: 84px;
+        width: 39px;
+    }
+
+    app-login .full-section .sec-content , app-register .full-section .sec-content{
+
+        display: inherit;
+
+    }
+
+    .footer {
+        font-size: 10px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+    app-about .text-left {
+        display: block;
+
+    }
+
+    app-home .top-home-login .login-register {
+        color: #fff;
+    }
+
+
+
 }
 
 

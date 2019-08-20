@@ -52,7 +52,7 @@ export class MemberDetailsComponent implements OnInit {
         this.imageChangedEvent = event;
     }
 
-    imageCropped(image: string) {
+    imageCropped(image: any) {
         this.croppedImage = image;
     }
 
@@ -80,7 +80,7 @@ export class MemberDetailsComponent implements OnInit {
                     this.profileForm.get('location').setValue(this.memberDetails.location);
                     this.profileForm.get('linkedin').setValue(this.memberDetails.linkedin);
                     this.profileForm.get('description').setValue(this.memberDetails.description);
-                    this.croppedImage = 'src/app/api/uploaded/' + this.memberDetails.avatar ;
+                    this.croppedImage = this._appService.api.api.imgURL + this.memberDetails.avatar ;
                 } else {
                     this._appService.clearLocalStorage();
                 }
@@ -131,6 +131,7 @@ export class MemberDetailsComponent implements OnInit {
                 } else {
 
                 }
+                window.scrollTo( 0, 0);
 
             });
 
@@ -138,6 +139,8 @@ export class MemberDetailsComponent implements OnInit {
 
 
     ngOnInit() {
+        window.scrollTo( 0, 0);
+
 
 
         this.getMemberLoggedin();

@@ -2,7 +2,7 @@
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a href="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
     <a (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
@@ -156,8 +156,8 @@
                 </div>
                 <div class="item-body">
                     <div class="paper-card-info" style="cursor: pointer" [routerLink]="['/profile' , paper.username]">
-                        <h6 class="by">{{'_By' | translate}}</h6>
-                        <h6 style="font-weight: bold ; color: #75cddd;">{{paper.first_name}} {{paper.last_name}} </h6>
+                        <h6 class="by"> {{'_By' | translate}}  </h6>
+                        <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
                     </div>
                     <div class="paper-card-info">
                         <i class="fa fa-tag" aria-hidden="true"></i>

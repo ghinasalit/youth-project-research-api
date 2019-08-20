@@ -1,4 +1,5 @@
 <?php
+session_set_cookie_params(3600,"/");
 session_start();
 require_once('config.php');
 $postdata = file_get_contents("php://input");
@@ -215,6 +216,11 @@ if ($request_headers['code'] == 1) {
                 case 'send_request_paper':
                     {
                         $result = User::send_request_paper($data);
+                        break;
+                    }
+                 case 'is_have_access':
+                    {
+                        $result = User::is_have_access($data);
                         break;
                     }
                  case 'accept_request_paper':

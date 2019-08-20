@@ -22,10 +22,8 @@ export class AcceptRequestComponent implements OnInit {
                 let result;
                 result = response;
                 if (result.code === 1) {
-                    // this.toaster.success('Your request has been sent successfully', 'success');
-                    // this.dialogRef.close();
+
                 } else {
-                    // this.toaster.error(result.msg, 'Failed');
 
 
                 }

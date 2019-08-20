@@ -2,7 +2,7 @@
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
     <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
@@ -37,7 +37,7 @@
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
-        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer"  *ngIf=" _appService.roll" >
+        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer"  *ngIf=" _appService.roll && username === member.username" >
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
             <p>{{'_EditProfile' | translate}}</p>
         </div>
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-                    <div (click)="_appService.submitPaper()" style="cursor: pointer;"  *ngIf="_appService.roll">
+                    <div (click)="_appService.submitPaper()" style="cursor: pointer;"  *ngIf="_appService.roll && username === member.username">
                         <div class="box">
                         </div>
                         <img src="assets/img/paper.png" alt="">
@@ -208,7 +208,7 @@
 
         </div>
     </div>
-    <div class="papers-tap" *ngIf="_appService.roll">
+    <div class="papers-tap" *ngIf="_appService.roll && username === member.username">
         <div class="tap" (click)="showUserPapers()">
             <div>
                 <img src="assets/img/paper.png" alt="">

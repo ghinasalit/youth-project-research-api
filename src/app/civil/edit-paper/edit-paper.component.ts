@@ -141,6 +141,8 @@ export class EditPaperComponent implements OnInit {
     }
 
     ngOnInit() {
+        window.scrollTo( 0, 0);
+
         this.getDisciplines();
 
         this.route.params.subscribe(params => {

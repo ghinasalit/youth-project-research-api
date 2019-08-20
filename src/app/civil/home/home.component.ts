@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {AppService} from '../../app.service';
 import {fadeInOut} from '../../../animations/fadeInOut';
@@ -39,11 +39,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     addressPoints = [];
     Counties: any = [];
     statistics: any;
+    @ViewChild('input') input: ElementRef;
 
     name = new FormControl('', [Validators.required]);
     email = new FormControl('', [Validators.required, Validators.email]);
     phone = new FormControl('', [Validators.required]);
     message = new FormControl('', [Validators.required]);
+
 
     faqDetails = [
         {
@@ -76,11 +78,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     };
     private registerForm: any;
     public socialFixed = false;
+    private trans = {
+        FeedbackMSG: null,
+        Success: null,
+        Failed: null,
+        FailedMSG: null,
+    };
 
     constructor(private translateService: TranslateService,
                 public _appService: AppService,
                 private router: Router,
                 private fb: FormBuilder,
+                private translate: TranslateService,
                 private toaster: ToastrService) {
 
         this.data.page = 1;
@@ -91,6 +100,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
             'phone': [null, Validators.required],
             'message': [null, Validators.required],
         });
+
+        translate.get(['_FeedbackMSG', '_Success', '_Failed', '_FailedMSG']).subscribe(res => {
+
+            this.trans.Failed = res._Failed;
+            this.trans.FailedMSG = res._FailedMSG;
+            this.trans.FeedbackMSG = res._FeedbackMSG;
+            this.trans.Success = res._Success;
+        });
+
     }
 
     submitFeedback() {
@@ -106,10 +124,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
                 if (this.result.code === 1) {
                     this.feedbackForm.reset();
-                    this.toaster.success('Thank you for contacting us. One of our representatives will be in contact with you shortly regarding your inquiry', 'Success');
+                    this.toaster.success(this.trans.FeedbackMSG , '' );
+                    this.input.nativeElement.value = '';
 
                 } else {
-                    this.toaster.error('Sorry , Something went wrong , Please try again', 'Failed');
+                    this.toaster.error(this.trans.FailedMSG , '');
 
                 }
 
@@ -220,7 +239,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                                                 .setLatLng(e.latlng)
                                                 .setContent('        <div class="one_recognized">\n' +
                                                     '            <div class="avatar-name">\n' +
-                                                    '                <div class="avatar"><img src="assets/img/member1.jpg" alt=""></div>\n' +
+                                                    '                <div class="avatar"><img src="' + this._appService.api.api.imgURL + details.avatar + '" alt=""></div>\n' +
                                                     '                <div class="name">\n' +
                                                     '                    <div class="title">\n' +
                                                     '                        <p>' + details.first_name + ' ' + details.last_name + '</p>\n' +
@@ -231,7 +250,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                                                     '                        <p>Member of the month</p>\n' +
                                                     '                    </div>\n' +
                                                     '                    <div>\n' +
-                                                    '                        <a routerLink="[/profile ,' + details.username + ' ]"> Go to Profile</a>\n' +
+                                                    '                        <a href="/profile/' + details.username + '"> Go to Profile</a>\n' +
                                                     '                    </div>\n' +
                                                     '                </div>\n' +
                                                     '            </div>\n' +
@@ -259,7 +278,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                                                     '              </div>\n' +
                                                     '              <div class="message">\n' +
                                                     '                <i class="fa fa-envelope-o"></i>\n' +
-                                                    '                <div class="info-data">Email Sara</div>\n' +
+                                                    '                <div class="info-data"> <a href=mailto:' + details.email + '>Email ' + details.first_name + ' </a></div>\n' +
                                                     '              </div>\n' +
                                                     '            </div>\n' +
                                                     '         </div>\n' +

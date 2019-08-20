@@ -2,7 +2,7 @@
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/home"> {{'_How_Become_Researcher' | translate}}</a>
+    <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
     <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
@@ -16,7 +16,7 @@
         <div class="avatar-cropper sec-img" >
             <img *ngIf="!imageChangedEvent"
                  [src]="croppedImage.base64 ? croppedImage.base64 : croppedImage" alt=""
-                 [style.width]="croppedImage.base64 ? '100%' : ''">
+                 [style.width]="croppedImage.base64 ? '100%' : 'assets/img/avatar_default.PNG'">
             <div *ngIf="imageChangedEvent">
                 <image-cropper [imageChangedEvent]="imageChangedEvent"
                                [maintainAspectRatio]="false"

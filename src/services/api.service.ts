@@ -25,7 +25,7 @@ export class ApiService {
                 && 'protocol' in window.location
                 && 'host' in window.location) {
                 this.apiURL = window.location.protocol + '//' + window.location.host + '/api/user/';
-                this.imgURL = '/api/uploaded/';
+                this.imgURL = 'api/uploaded/';
             }
         }
         return null;
@@ -33,9 +33,9 @@ export class ApiService {
 
     submitPage(func, data): Observable<Object> {
         let headers = new HttpHeaders();
-        const lang = localStorage.getItem('language') === 'en' ? 1 : 2;
+        const lang = localStorage.getItem('language') ;
         headers = headers.set('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8')
-            .set('Accept-Language', 'ar')
+            .set('Accept-Language', lang)
             .set('Authorization', '12345')
             .set('Platform', '1')
             .set('Os-Version', '1')
@@ -67,8 +67,11 @@ export class ApiService {
     }
 
 
-    uploadImagePage(func, data: FormData): Observable<any> {
-        let headers = new HttpHeaders();
+        uploadImagePage(func, data: FormData): Observable<any> {
+
+            console.log(data);
+
+            let headers = new HttpHeaders();
         const lang = localStorage.getItem('language') ;
         headers = headers.set('Accept-Language', lang)
             .set('Accept', 'application/json')

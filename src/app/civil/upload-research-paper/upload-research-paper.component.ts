@@ -45,6 +45,8 @@ export class UploadResearchPaperComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo( 0, 0);
+
   }
 
 }

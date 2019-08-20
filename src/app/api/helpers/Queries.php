@@ -1,6 +1,5 @@
 <?php
 
-//session_start();
 class Queries
 {
     static public function login($email, $password)
@@ -30,12 +29,11 @@ class Queries
 
     static public function add_paper($member_id, $title, $description, $status, $tags, $discipline, $permission, $language, $paper)
     {
-
         global $db;
         $data = Array(
             'title' => $title,
             'status' => $status,
-            'discipline' => $discipline,
+            'discipline_id' => $discipline,
             'permission' => $permission,
             'description' => $description,
             'language' => $language,
@@ -53,12 +51,59 @@ class Queries
             );
             $db->insert('paper_tags', $data);
         }
-        $user = $db->where('paper_id', $paper_id)->getOne('papers', 'title, description , status, tags, discipline, permission , language , file');
+        $paper = $db->where('paper_id', $paper_id)->getOne('papers', 'paper_id', 'title, description , status, discipline_id, permission , language , file');
+
 
         if ($db->count) {
-            return $user;
+            Queries::send_email_publish_paper($paper['paper_id'] , $member_id);
+            return $paper;
         } else {
             return -25;
+        }
+    }
+
+    static public function send_email_publish_paper($paper_id , $member_id)
+    {
+        global $db;
+
+        $member_from = $db->where('member_id', $member_id)
+            ->getOne('members', 'email');
+        $member_to = $db->where('user_id', 1)
+            ->getOne('users', 'email');
+
+
+        if ($member_to['email'] && $member_from['email']) {
+
+            $to = $member_to['email'];
+//            $to = 'ghinasallit@gmail.com';
+            $subject = "Arab Youth Research/publish paper";
+
+            $body = "
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<p>Dear,</p>
+<p> We need your kind support to confirm publish my paper</p>
+<table>
+<tr>
+<a href=http://admin.arabyouthresearch.org/#/paper/" . $paper_id . ">Click here to preview paper </a>
+</tr>
+</table>
+</body>
+<table>
+</html>
+";
+
+// Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+            $headers .= 'From:' . $member_from['email'] . "\r\n";
+
+            mail($to, $subject, $body, $headers);
         }
     }
 
@@ -630,6 +675,21 @@ class Queries
         }
     }
 
+    static public function is_have_access($member_id, $paper_id)
+    {
+        global $db;
+
+        $requst = $db->where('member_from', $member_id)
+            ->where('paper_id', $paper_id)
+            ->getOne("requests", null, 'status');
+        if ($requst['status'] == 1) {
+            return $requst;
+        } else {
+            return -99; // member don't active
+        }
+    }
+
+
     static public function get_count_papers_for_member($member_id)
     {
         global $db;
@@ -666,10 +726,10 @@ class Queries
         global $db;
         $page *= $size;
 
-        $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
+        $q = "SELECT papers.date , papers.description , papers.file , members.username , members.member_id , papers.paper_id ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
                   FROM members JOIN papers JOIN  disciplines 
                   ON members.member_id = papers.member_id && 
-                   papers.discipline_id = disciplines.discipline_id
+                   papers.discipline_id = disciplines.discipline_id 
                   WHERE  papers.status = 1 ";
         $q_with_paging = $q . " LIMIT {$page} , {$size}";
         $papers = $db->withTotalCount()->rawQuery($q_with_paging);
@@ -878,39 +938,36 @@ class Queries
     }
 
 
-
-    static public function send_email($paper_id , $message  ,  $member_id_from , $member_email_to)
+    static public function send_email_request($code, $paper_id, $message, $member_id_from, $member_email_to, $file)
     {
         global $db;
         $member_from = $db->where('member_id', $member_id_from)
-            ->getOne("members", null, 'username' , 'email' );
+            ->getOne("members", null, 'username', 'email');
 
-        $query = "SELECT members.email from members JOIN papers ON members.member_id = papers.member_id WHERE papers.paper_id = '" . $paper_id."'";
+        $query = "SELECT members.email from members JOIN papers ON members.member_id = papers.member_id WHERE papers.paper_id = '" . $paper_id . "'";
         $member_to = $db->withTotalCount()->rawQuery($query);
 
         if ($member_from && $member_to) {
-
 
 
             $to = $member_email_to;
 //            $to = 'ghinasallit@gmail.com';
             $subject = "Arab Youth Research/Request";
 
-            $message = "
+            $body = "
 <html>
 <head>
-<title>HTML email</title>
+<title></title>
 </head>
 <body>
-<p>This email contains HTML Tags!</p>
+<p>Dear,</p>
+<p> Please can you give me access on your <a href=http://arabyouthresearch.org/api/uploaded/" . $file . ">paper</a> </p>
 <table>
 <tr>
-<th>Firstname</th>
-<th>Lastname</th>
+<p>$message</p>
 </tr>
 <tr>
-<td>John</td>
-<td>Doe</td>
+<a href=http://arabyouthresearch.org/#/accept-request/" . $code . ">Click here to confirm </a>
 </tr>
 </table>
 </body>
@@ -924,43 +981,88 @@ class Queries
 // More headers
             $headers .= 'From:' . $member_from["email"] . "\r\n";
 
-            mail($to, $subject, $message, $headers);
+            mail($to, $subject, $body, $headers);
         }
     }
 
 
+    static public function send_email_accept_access($activation_id, $member_owner)
+    {
+        global $db;
+        $query = "SELECT papers.file , members.email  from papers JOIN requests JOIN members ON papers.paper_id = requests.paper_id && requests.member_to = members.member_id WHERE requests.activation_code = '" . $activation_id . "'";
+        $data = $db->withTotalCount()->rawQuery($query);
+        $member_from = $db->where('member_id', $member_owner)
+            ->getOne('members', 'email');
 
-     static public function accept_request_paper($activation_id)
-     {
-
-         global $db;
-         $data = Array(
-
-             'status' => 1,
-         );
-
-         $db->where('activation_code', $activation_id);
-         $db->update('requests', $data);
-
-     }
+        $member_to = $data[0]['email'];
+        $file = $data[0]['file'];
 
 
+        if ($member_to && $member_from["email"]) {
+
+
+            $to = $member_to;
+//            $to = 'ghinasallit@gmail.com';
+            $subject = "Arab Youth Research/accept Request";
+
+            $body = "
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<p>Dear,</p>
+<p> You have access on <a href=http://arabyouthresearch.org/api/uploaded/" . $file . ">paper</a> now.</p>
+</body>
+</html>
+";
+
+// Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+            $headers .= 'From:' . $member_from["email"] . "\r\n";
+
+            mail($to, $subject, $body, $headers);
+        }
+    }
+
+
+    static public function accept_request_paper($activation_id, $member_owner)
+    {
+
+        global $db;
+        $data = Array(
+
+            'status' => 1,
+        );
+
+        $db->where('activation_code', $activation_id);
+        $db->update('requests', $data);
+        $status = $db->where('activation_code', $activation_id)
+            ->getOne('requests', 'status');
+        if ($status['status'] == 1) {
+            Queries::send_email_accept_access($activation_id, $member_owner);
+            return $status;
+        }
+
+
+    }
 
 
     static public function send_request_paper($paper_id, $message, $member_id)
     {
 
-
-
         global $db;
 
         $request = $db->where('paper_id', $paper_id)
-                      ->where('member_from', $member_id)
+            ->where('member_from', $member_id)
             ->getOne('requests');
 
-        if(empty($request)) {
+        if (empty($request)) {
 
-            $query = "SELECT members.email , members.member_id from members JOIN papers ON members.member_id = papers.member_id WHERE papers.paper_id = '" . $paper_id."'";
+            $query = "SELECT members.email , members.member_id , papers.file from members JOIN papers ON members.member_id = papers.member_id WHERE papers.paper_id = '" . $paper_id . "'";
             $member_to = $db->withTotalCount()->rawQuery($query);
 
             $data = Array(
@@ -968,24 +1070,23 @@ class Queries
                 'message' => $message,
                 'member_from' => $member_id,
                 'member_to' => $member_to[0]["member_id"],
-                'activation_code' =>  md5(microtime()),
+                'activation_code' => md5(microtime()),
                 'status' => 0,
 
             );
             $request_id = $db->insert('requests', $data);
 
             $request = $db->where('request_id', $request_id)
-                ->getOne('requests');
-
+                ->getOne('requests', "paper_id", "member_from", "member_to", "status", "message");
             if ($db->count) {
-                Queries::send_email($paper_id , $message , $member_id  ,$member_to[0]["email"] );
+                Queries::send_email_request($data['activation_code'], $paper_id, $message, $member_id, $member_to[0]["email"], $member_to[0]['file']);
 
                 return $request;
 
             } else {
                 return -25;
             }
-        }else{
+        } else {
 
             return -100;
         }

@@ -43,6 +43,7 @@ export class DetailsPaperComponent implements OnInit {
         this.appService.paper.append('description', this.paperForm.controls.description.value);
         this.appService.paper.append('lang', this.paperForm.controls.lang.value);
         this.appService.paper.append('tags[]', this.paperForm.controls.tags.value);
+        console.log(this.paperForm.controls.tags.value);
 
         this.router.navigate(['/upload-paper/upload-completed']);
 

@@ -1,17 +1,16 @@
 <div class="nav-collapsed" *ngIf="collapsed">
-    <a href="/home">{{'_HomePage' | translate}}</a>
+    <a href="/#/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a (click)="scroll('becomeResearcher')"> {{'_How_Become_Researcher' | translate}}</a>
+    <a (click)="scroll('becomeResearcher')" > {{'_Objectives' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="scroll('heatmap')">{{'_HeatMap' | translate}}</a>
-    <a (click)="scroll('partners')">{{'_OurPartners' | translate}}</a>
-    <a (click)="scroll('faq')">{{'_FAQs' | translate}}</a>
+    <a (click)="scroll('partners')" >{{'_OurPartners' | translate}}</a>
+    <a (click)="scroll('faq')" >{{'_FAQs' | translate}}</a>
     <a (click)="scroll('contactus')">{{'_ContactUs' | translate}}</a>
 </div>
 
-<div class="social" *ngIf="!_appService.roll && socialFixed" data-aos="fade-down" data-aos-duration="1000"
-     data-aos-easing="500">
+<div class="social" *ngIf="!_appService.roll && socialFixed" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="500">
     <div><i class="fa fa-facebook"></i></div>
     <div><i class="fa fa-instagram"></i></div>
     <div><i class="fa fa-twitter"></i></div>
@@ -29,10 +28,8 @@
         </div>
 
         <div class="login-register">
-            <div class="lang" (click)="_appService.switchLanguage('en')"
-                 *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-            <div class="lang" (click)="_appService.switchLanguage('ar')"
-                 *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+            <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
             <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
             <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
         </div>
@@ -45,7 +42,7 @@
 
 <div class="full-section top-home-login" *ngIf="_appService.roll">
     <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000">
-        <img src="assets/img/library.jpg " alt=""></div>
+        <img src="assets/img/library.jpg " alt="">    </div>
     <div class="right-section">
         <div class="navbar-login logged">
             <div class="navbar"
@@ -55,11 +52,9 @@
                     <span [style.color]="collapsed ? '#1b2850' : ''"></span>
                 </a>
             </div>
-            <div class="login-register" *ngIf="_appService.roll">
-                <div class="lang" (click)="_appService.switchLanguage('en')"
-                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-                <div class="lang" (click)="_appService.switchLanguage('ar')"
-                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="login-register"  *ngIf="_appService.roll">
+                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
@@ -72,12 +67,11 @@
 
                 <div class="user-name">
                     <div>
-                        <img [src]="  _appService.api.api.imgURL + memberDetails.avatar" alt=""
-                             *ngIf="memberDetails.avatar != ''">
+                        <img [src]="  _appService.api.api.imgURL + memberDetails.avatar" alt="" *ngIf="memberDetails.avatar != ''">
                         <img [src]="'assets/img/member1.jpg' " alt="" *ngIf="memberDetails.avatar == ''">
                     </div>
                     <div class="full-name">
-                        <div class="title">
+                        <div class="title" [routerLink]="['/profile' , memberDetails.username]" style="cursor: pointer">
                             <h2>{{memberDetails.first_name}} {{memberDetails.last_name}}</h2>
                             <div>
                             </div>
@@ -86,24 +80,22 @@
                 </div>
                 <div class="desc-user">
                     <p>
-                        {{memberDetails.description}}
+                       {{memberDetails.description}}
                     </p>
                 </div>
                 <div class="info">
-                    <div class="info-item">
+                    <div class="info-item"  >
                         <div class="info-icon" *ngIf="memberDetails?.university_name_ar">
                             <i class="fa fa-university"></i>
-                            <div class="info-data"
-                                 *ngIf=" this._appService.currentLanguage == 'ar'"> {{memberDetails.university_name_ar}}</div>
-                            <div class="info-data"
-                                 *ngIf=" this._appService.currentLanguage == 'en'"> {{memberDetails.university_name_en}}</div>
+                            <div class="info-data" *ngIf=" this._appService.currentLanguage == 'ar'"> {{memberDetails.university_name_ar}}</div>
+                            <div class="info-data" *ngIf=" this._appService.currentLanguage == 'en'"> {{memberDetails.university_name_en}}</div>
                         </div>
                         <div class="info-icon" *ngIf="memberDetails.location">
                             <i class="fa fa-map-marker"></i>
                             <div class="info-data">{{memberDetails.location}}</div>
                         </div>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" >
                         <div class="info-icon" *ngIf="memberDetails.domain">
                             <i class="fa fa-suitcase"></i>
                             <div class="info-data">{{memberDetails.domain}}</div>
@@ -112,7 +104,7 @@
                             <div class="info-data">{{memberDetails.views}} {{'_Views' | translate}}</div>
                         </div>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" >
                         <div class="info-icon">
                             <i class="fa fa-file-text-o"></i>
                             <div class="info-data">{{memberDetails.count_papers}} {{'_ResearchPaper' | translate}}</div>
@@ -148,10 +140,10 @@
 
     <div class="social-paper" data-aos="fade-left" data-aos-duration="1000">
         <div class="cards-icon">
-            <div class="card-icon-research" style="cursor: pointer" routerLink="/papers">
+            <div class="card-icon-research" style="cursor: pointer"  routerLink="/papers">
                 <div class="box">
                 </div>
-                <img src="assets/img/submit_paper.png" alt="">
+                <img src="assets/img/reseach_paper.png" alt="">
 
                 <div class="title" routerLink="/papers" style="cursor: pointer">
                     <h2>{{'_ResearchAPaper' | translate}}</h2>
@@ -160,12 +152,12 @@
                 </div>
             </div>
 
-            <div class="card-icon-submit" style="cursor: pointer" routerLink="/upload-paper">
+            <div class="card-icon-submit" style="cursor: pointer" (click)="_appService.submitPaper()">
                 <div class="box">
                 </div>
-                <img src="assets/img/reseach_paper.png" alt="">
+                <img src="assets/img/submit_paper.png" alt="">
 
-                <div class="title" style="cursor: pointer" (click)="_appService.submitPaper()">
+                <div class="title"  style="cursor: pointer" >
                     <h2>{{'_SubmitAPaper' | translate}}</h2>
                     <div>
                     </div>
@@ -188,8 +180,7 @@
             <div class="about-content">
                 <h1 class="text-left">
                     <p>{{'_About' | translate}}</p>
-                    <p>{{'_ArabYouth' | translate}}</p>
-                    <p> {{'_ResearchLibrary' | translate}}</p>
+                    <p> {{'_ArabYouth' | translate}}</p>
                 </h1>
 
                 <div class="content">
@@ -208,31 +199,103 @@
 </div>
 <div class="become-researcher" id="becomeResearcher" data-aos="fade-up" data-aos-duration="1000">
     <div class="title">
-        <p>{{'_How_Become_Researcher' | translate}}</p>
+        <p>{{'_Objectives' | translate}}</p>
         <div></div>
     </div>
     <div class="cards">
-        <div class="card-item">
-            <img src="assets/img/broad-knowledge.PNG" alt="">
+        <div class="card-item-objective">
+            <div class="icon">
+                <img src="assets/img/SupportArabYouthResearch.png" alt="">
+
+            </div>
             <div class="title">
-                <p>{{'_KnowledgePr' | translate}}</p>
-                <div></div>
+                <div class="headline">
+                    <p class="objective-f-text">{{'_Support_Arab' | translate}}</p>
+                    <p>{{'_Youth_Research' | translate}}</p>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="desc">
+                <p>
+                    {{'_SupportDesc' | translate}}
+                </p>
             </div>
         </div>
-        <div class="card-item">
-            <img src="assets/img/job-opportunities.PNG" alt="">
+        <div class="card-item-objective">
+            <div class="icon">
+                <img src="assets/img/Sharepublications.png" alt="">
+
+            </div>
             <div class="title">
-                <p>{{'_JobOpp' | translate}}</p>
-                <div></div>
+                <div class="headline">
+                    <p class="objective-f-text">{{'_Share' | translate}}</p>
+                    <p>{{'_publications' | translate}}</p>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="desc">
+                <p>
+                    {{'_ShareDesc' | translate}}
+                </p>
             </div>
         </div>
-        <div class="card-item sharing">
-            <img src="assets/img/sharing-knowledge.PNG" alt="">
+        <div class="card-item-objective">
+            <div class="icon">
+                <img src="assets/img/Help.png" alt="">
+
+            </div>
             <div class="title">
-                <p>{{'_SharingKno' | translate}}</p>
-                <div></div>
+                <div class="headline">
+                    <p class="objective-f-text">{{'_Help_research' | translate}}</p>
+                    <p>{{'_community' | translate}}</p>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="desc">
+                <p>
+                    {{'_Help_research_desc' | translate}}
+                </p>
             </div>
         </div>
+        <div class="card-item-objective">
+            <div class="icon">
+                <img src="assets/img/Create_research_culture.png" alt="">
+
+            </div>
+            <div class="title">
+                <div class="headline">
+                    <p class="objective-f-text">{{'_Create' | translate}}</p>
+                    <p>{{'_ResearchCulture' | translate}}</p>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="desc">
+                <p>
+                    {{'_ResearchCultureDesc' | translate}}
+                </p>
+            </div>
+        </div>
+        <div class="card-item-objective">
+            <div class="icon">
+                <img src="assets/img/Establish_digital_library.png" alt="">
+
+            </div>
+            <div class="title">
+                <div class="headline">
+                    <p class="objective-f-text">{{'_Establish' | translate}}</p>
+                    <p>{{'_DigitalLibrary' | translate}}</p>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="desc">
+                <p>
+                    {{'_EstablishCultureDesc' | translate}}
+                </p>
+            </div>
+        </div>
+
+
+
     </div>
     <div class="button-action" routerLink="/register">
         <button>{{'_RegisterMember' | translate}}</button>
@@ -249,7 +312,7 @@
         <div class="side">
             <div class="sec-img">
                 <ng-container *ngFor="let member of members; let i = index">
-                    <img [@fadeInOut] *ngIf="itemIndex == i" [src]="'src/api/uploaded/' + members[i]['avatar']">
+                    <img [@fadeInOut] *ngIf="itemIndex == i" [src]="_appService.api.api.imgURL + members[i]['avatar']">
                 </ng-container>
             </div>
         </div>
@@ -262,7 +325,8 @@
                     </h1>
                     <div class="main-slider">
                         <div class="left-slide" (click)="prev()">
-                            <i class="fa fa-chevron-left"></i>
+                            <i class="fa fa-chevron-left" *ngIf="_appService.currentLanguage == 'en'"></i>
+                            <i class="fa fa-chevron-right" *ngIf="_appService.currentLanguage == 'ar'"></i>
                         </div>
                         <div class="slider-control">
                             <ng-container *ngFor="let text of members; let i = index">
@@ -270,19 +334,19 @@
                             </ng-container>
                         </div>
                         <div class="right-slide" (click)="next()">
-                            <i class="fa fa-chevron-right"></i>
+                            <i class="fa fa-chevron-right" *ngIf="_appService.currentLanguage == 'en'"></i>
+                            <i class="fa fa-chevron-left" *ngIf="_appService.currentLanguage == 'ar'"></i>
                         </div>
                     </div>
-                    <div class="member-name" *ngFor="let text of members; let i = index">
+                    <div class="member-name"  *ngFor="let text of members; let i = index">
                         <h3 *ngIf="itemIndex == i">- {{members[i]['first_name']}} {{members[i]['last_name']}}</h3>
                     </div>
                     <div>
                         <ng-container *ngFor="let text of members; let i = index">
-                            <div class="title read-more" *ngIf="itemIndex == i">
-                                <p style="cursor: pointer"
-                                   [routerLink]="['/profile' ,members[i].username ]">{{'_LearnMore' | translate}}</p>
-                                <div></div>
-                            </div>
+                        <div class="title read-more" *ngIf="itemIndex == i">
+                            <p style="cursor: pointer" [routerLink]="['/profile' ,members[i].username ]">{{'_LearnMore' | translate}}</p>
+                            <div></div>
+                        </div>
                         </ng-container>
                     </div>
 
@@ -306,7 +370,7 @@
                 (leafletMouseUp)="popupShow($event)"
                 [leafletLayers]="markers"
                 (leafletMapReady)="onMapReady($event)"
-        >
+                >
         </div>
 
 
@@ -403,25 +467,25 @@
                 <div></div>
             </div>
             <div class=" form-input">
-                <form class="example-form" [formGroup]="feedbackForm"
+                <form class="example-form" [formGroup]="feedbackForm" #input
                       [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
                     <div class="item">
-                        <mat-form-field class="example-full-width">
-                            <input matInput [placeholder]="'_Name' | translate" formControlName="name" required>
+                        <mat-form-field class="example-full-width" >
+                            <input matInput [placeholder]="'_Name' | translate" formControlName="name" required #input>
                             <mat-error *ngIf="name.errors.required">{{'_Required' | translate}}</mat-error>
 
                         </mat-form-field>
                     </div>
                     <div class="item">
-                        <mat-form-field>
-                            <input matInput [placeholder]="'_EmailAddress' | translate" formControlName="email" required>
-                            <mat-error *ngIf="email.errors.required">{{'_Required' | translate}}</mat-error>
-                            <mat-error *ngIf="email.errors.email">{{'_EmailNotValid' | translate}}</mat-error>
-                        </mat-form-field>
+                    <mat-form-field>
+                        <input matInput [placeholder]="'_EmailAddress' | translate" formControlName="email" required #input>
+                        <mat-error *ngIf="email.errors.required">{{'_Required' | translate}}</mat-error>
+                        <mat-error *ngIf="email.errors.email">{{'_EmailNotValid' | translate}}</mat-error>
+                    </mat-form-field>
                     </div>
                     <div class="item">
                         <mat-form-field class="example-full-width">
-                            <input type="number" matInput [placeholder]="'_PhoneNumber' | translate"
+                            <input type="number" matInput [placeholder]="'_PhoneNumber' | translate" #input
                                    formControlName="phone" required>
                             <mat-error *ngIf="phone.errors.required">{{'_Required' | translate}}</mat-error>
                         </mat-form-field>
@@ -429,7 +493,7 @@
 
                     <mat-form-field hintLabel="Max 500 characters">
                         <textarea matInput #input [placeholder]="'_Message' | translate" maxlength="500"
-                                  formControlName="message" required></textarea>
+                                  formControlName="message" required #input></textarea>
                         <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
                         <mat-error *ngIf="message.errors.required">{{'_Required' | translate}}</mat-error>
                     </mat-form-field>

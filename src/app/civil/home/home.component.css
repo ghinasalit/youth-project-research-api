@@ -4,7 +4,7 @@
     color: #fff;
     display: flex;
     flex-direction: column;
-    background-image: url("../../../assets/img/home.jpg");
+    background-image: url("../../../assets/img/library.jpg");
     background-blend-mode: darken;
     width: 100%;
     background-color: #f1f2f2;
@@ -15,10 +15,7 @@
     color: #fff;
 }
 
-
-
-
-.top-description p{
+.top-description p {
 
     color: white;
 }
@@ -332,14 +329,9 @@ input[type=checkbox]:checked ~ #menu {
 .cards-items {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.cards-items .bookmark {
-    text-align: right;
-    position: relative;
-    top: -35px;
-    font-size: 35px;
-}
 
 .cards-items h3 {
     margin-top: -35px;
@@ -422,10 +414,8 @@ app-home .info-data {
     justify-content: flex-start;
 }
 
-.
-.top-home-login .login-register {
-    color: #1b2850;
-}
+
+
 
 
 /*about arab section*/
@@ -472,9 +462,6 @@ app-home .info-data {
 
 
 /*heat map*/
-
-
-
 
 
 .map img {
@@ -540,7 +527,6 @@ app-home .info-data {
 }
 
 
-
 .contact .full-section {
     position: relative;
     background: #f1f2f2;
@@ -562,9 +548,8 @@ app-home .info-data {
 
 
 .example-form {
-    width: 100%;
+    width: 90%;
 }
-
 
 
 .social-contact {
@@ -582,6 +567,7 @@ app-home .info-data {
 
 .heat-map .map {
     display: flex;
+    margin-top: 18px;
     color: #1b2850;
     flex-direction: column;
     padding: 0px;
@@ -637,7 +623,7 @@ app-home .info-data {
 }
 
 ::ng-deep .recently-joint i {
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 ::ng-deep .one_recognized .info-icon {
@@ -648,8 +634,8 @@ app-home .info-data {
     margin-bottom: 15px;
 }
 
-::ng-deep .one_recognized .info-icon i {
-    margin-right: 10px;
+::ng-deep .one_recognized .info-icon div {
+    margin: 0 10px;
 }
 
 .map {
@@ -749,12 +735,18 @@ app-home .info-data {
 
 ::ng-deep .one_recognized .name {
     display: flex;
+    text-align: initial;
     flex-direction: column;
     justify-content: space-around;
 }
 
 ::ng-deep .one_recognized .name a {
     font-family: inherit;
+    margin: 0 10px;
+}
+
+::ng-deep .one_recognized .title{
+    margin: 0 10px;
 }
 
 ::ng-deep .last-icon {
@@ -767,7 +759,8 @@ app-home .info-data {
 }
 
 ::ng-deep .trophy {
-    margin-right: 35px;
+    /*margin-right: 35px;*/
+    margin: 0 !important;
 }
 
 ::ng-deep .message {
@@ -776,7 +769,7 @@ app-home .info-data {
 }
 
 
-::ng-deep .leaflet-marker-pane img{
+::ng-deep .leaflet-marker-pane img {
     margin-left: -12px !important;
     margin-top: -30px !important;
     width: 20px !important;
@@ -786,4 +779,10 @@ app-home .info-data {
     outline: none;
 
 
+}
+
+
+
+.objective-f-text{
+    margin: 0 !important;
 }
