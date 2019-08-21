@@ -5,6 +5,8 @@ import {Paper} from '../../../classes/paper';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {TranslateService} from '@ngx-translate/core';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-edit-paper',
@@ -30,9 +32,16 @@ export class EditPaperComponent implements OnInit {
     description = new FormControl('', [Validators.required]);
     tags = new FormControl('', [Validators.required]);
     lang = new FormControl('', [Validators.required]);
-
+    private trans = {
+        UpdateMSG: null,
+        Success: null,
+        Failed: null,
+        FailedMSG: null,
+    };
     constructor(private fb: FormBuilder,
                 public _appService: AppService,
+                private toaster: ToastrService,
+                private translate: TranslateService,
                 private route: ActivatedRoute) {
 
         this.paperForm = fb.group({
@@ -41,6 +50,24 @@ export class EditPaperComponent implements OnInit {
             'description': [null, Validators.required],
             'tags': [null, Validators.required],
             'lang': [null, Validators.required],
+
+        });
+
+
+        translate.get(['_UpdateMSG', '_Success', '_Failed', '_FailedMSG']).subscribe(res => {
+
+            this.trans.Failed = res._Failed;
+            this.trans.FailedMSG = res._FailedMSG;
+            this.trans.UpdateMSG = res._UpdateMSG;
+            this.trans.Success = res._Success;
+        });
+
+        translate.onLangChange.subscribe(lang => {
+
+            this.trans.Failed = lang.translate._Failed;
+            this.trans.FailedMSG = lang.translate._FailedMSG;
+            this.trans.UpdateMSG = lang.translate._UpdateMSG;
+            this.trans.Success = lang.translate._Success;
 
         });
     }
@@ -59,8 +86,9 @@ export class EditPaperComponent implements OnInit {
                 this.result = response;
 
                 if (this.result.code === 1) {
-
+                    this.toaster.success(this.trans.UpdateMSG, '');
                 } else {
+                    this.toaster.error(this.trans.FailedMSG, '');
 
                 }
 

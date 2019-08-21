@@ -30,7 +30,6 @@ export class RegisterComponent implements OnInit {
             'l_name': [null, Validators.required],
             'f_name': [null, Validators.required],
             'email': [null, [Validators.required, Validators.pattern(this._appService.isEmail)]],
-            'username': [null, Validators.required],
             'password': [null, Validators.required],
         });
     }
@@ -39,7 +38,6 @@ export class RegisterComponent implements OnInit {
     email = new FormControl('', [Validators.required, Validators.email]);
     f_name = new FormControl('', [Validators.required]);
     password = new FormControl('', [Validators.required]);
-    username = new FormControl('', [Validators.required]);
 
 
     getErrorMessage() {
@@ -53,7 +51,6 @@ export class RegisterComponent implements OnInit {
         this.user.last_name = this.registerForm.controls.l_name.value;
         this.user.email = this.registerForm.controls.email.value;
         this.user.password = this.registerForm.controls.password.value;
-        this.user.username = this.registerForm.controls.username.value;
         this._appService.api.isUserExistService(this.user)
             .subscribe(response => {
                     this.result = response;
@@ -62,7 +59,7 @@ export class RegisterComponent implements OnInit {
                         dialogRef.componentInstance.user = this.user;
 
                     } else {
-                        this.toaster.error(this.result.msg , 'Fialed');
+                        this.toaster.error(this.result.msg , '');
                     }
                 });
     }

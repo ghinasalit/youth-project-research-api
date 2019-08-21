@@ -18,6 +18,8 @@ import {MemberDetailsComponent} from './civil/member-details/member-details.comp
 import {AuthGuard} from './guards/auth.guard';
 import {LoginGuard} from './guards/login.guard';
 import {AcceptRequestComponent} from './civil/accept-request/accept-request.component';
+import {ResetPasswordComponent} from './civil/reset-password/reset-password.component';
+import {ChangePasswordComponent} from './civil/change-password/change-password.component';
 
 const routes: Routes = [
     {
@@ -84,6 +86,14 @@ const routes: Routes = [
                 path: 'accept-request/:id',
                 component: AcceptRequestComponent,
                 canActivate:  [AuthGuard]
+            },
+            {
+                path: 'reset-password',
+                component: ResetPasswordComponent,
+            },
+            {
+                path: 'reset-password/:id',
+                component: ChangePasswordComponent,
             },
             {
                 path: 'edit-paper/:id',

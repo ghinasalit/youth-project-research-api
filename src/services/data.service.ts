@@ -103,8 +103,16 @@ export class DataService {
         return this.api.submitPage('edit_paper', data);
     }
 
+    savePasswordService(data: User): Observable<Object> {
+        return this.api.submitPage('reset_password', data);
+    }
+
     getPaperService(data: Paper): Observable<Object> {
         return this.api.submitPage('get_paper', data);
+    }
+
+    sendConfirmEmailService(data: User): Observable<Object> {
+        return this.api.submitPage('send_email_reset_password', data);
     }
 
     getOneRecognizedService(data: object): Observable<Object> {

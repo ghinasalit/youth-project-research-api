@@ -21,5 +21,6 @@ export class User {
     fileName: string;
     keyword = '';
     letter = '';
+    activation_code: string;
     sort = 'asc';
 }

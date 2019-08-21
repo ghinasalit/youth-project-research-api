@@ -3690,6 +3690,10 @@
         color: #fff;
     }
 
+    app-about .full-section .side{
+        height: 300px;
+    }
+
 
 
 }
@@ -5380,6 +5384,10 @@
         color: #fff;
     }
 
+    app-about .full-section .side{
+        height: 300px;
+    }
+
 
 
 }
@@ -7067,7 +7075,9 @@
         color: #fff;
     }
 
-
+    app-about .full-section .side{
+        height: 300px;
+    }
 
 }
 

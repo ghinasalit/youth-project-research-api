@@ -35,8 +35,6 @@ Class User
     {
         if (Helper::is_null($data['password'])) {
             $result = Helper::response(\Model\Enums::$code['empty_filed'], Exceptions::field_missing('password'));
-        } elseif (Helper::is_null($data['username'])) {
-            $result = Helper::response(\Model\Enums::$code['empty_filed'], Exceptions::field_missing('username'));
         } elseif (Helper::is_null($data['first_name'])) {
             $result = Helper::response(\Model\Enums::$code['empty_filed'], Exceptions::field_missing('first_name'));
         } elseif (Helper::is_null($data['last_name'])) {
@@ -44,7 +42,6 @@ Class User
         } elseif (Helper::is_null($data['email'])) {
             $result = Helper::response(\Model\Enums::$code['empty_filed'], Exceptions::field_missing('email'));
         } else {
-            $username = Helper::make_safe($data['username']);
             $password = Helper::make_safe($data['password']);
             $f_name = Helper::make_safe($data['first_name']);
             $l_name = Helper::make_safe($data['last_name']);
@@ -56,7 +53,7 @@ Class User
             $phone = Helper::make_safe($data['phone']);
             $Linkedin = Helper::make_safe($data['Linkedin']);
             $description = Helper::make_safe($data['description']);
-            $response = Queries::register($username, $password, $f_name, $l_name, $email, $avatar, $university, $job, $location, $phone, $Linkedin, $description);
+            $response = Queries::register($password, $f_name, $l_name, $email, $avatar, $university, $job, $location, $phone, $Linkedin, $description);
             if (is_numeric($response)) {
                 $error_msg = array_search($response, \Model\Enums::$code);
                 $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
@@ -192,6 +189,40 @@ Class User
 
 
         $response = Queries::edit_paper($paper_id, $title, $description, $tags, $discipline, $language);
+        if (is_numeric($response)) {
+            $error_msg = array_search($response, \Model\Enums::$code);
+            $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+        } else {
+            $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+        }
+
+
+        return $result;
+    }
+
+    static public function send_email_reset_password($data)
+    {
+        $email = Helper::make_safe($data['email']);
+
+        $response = Queries::send_email_reset_password($email);
+        if (is_numeric($response)) {
+            $error_msg = array_search($response, \Model\Enums::$code);
+            $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+        } else {
+            $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+        }
+
+
+        return $result;
+    }
+
+    static public function reset_password($data)
+    {
+        $activation_code = Helper::make_safe($data['activation_code']);
+        $password = Helper::make_safe($data['password']);
+
+
+        $response = Queries::reset_password($activation_code , $password);
         if (is_numeric($response)) {
             $error_msg = array_search($response, \Model\Enums::$code);
             $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
@@ -357,11 +388,11 @@ Class User
     }
 
 
-    static public function get_member_by_username($data)
+    static public function get_member_by_id($data)
     {
         $username = Helper::make_safe($data['username']);
 
-        $response = Queries::get_member_by_username($username);
+        $response = Queries::get_member_by_id($username);
         if (is_numeric($response)) {
             $error_msg = array_search($response, \Model\Enums::$code);
             $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
@@ -580,7 +611,7 @@ Class User
     static public function isUserExist($data)
     {
 
-        $username = Helper::make_safe($data['username']);
+        $username = Helper::make_safe($data['email']);
         $response = Queries::isUserExist($username);
         if (is_numeric($response)) {
             $error_msg = array_search($response, \Model\Enums::$code);
@@ -631,7 +662,7 @@ Class User
 
         $activation_id = Helper::make_safe($data['activation_id']);
         $member_owner = Helper::make_safe($data['member_id']);
-        $response = Queries::accept_request_paper($activation_id , $member_owner);
+        $response = Queries::accept_request_paper($activation_id, $member_owner);
         if (is_numeric($response)) {
             $error_msg = array_search($response, \Model\Enums::$code);
             $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());

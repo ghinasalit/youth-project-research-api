@@ -226,14 +226,19 @@
             </div>
         </div>
     </div>
-    <div class="cards-items">
+    <div class="cards-items" infinite-scroll
+         [infiniteScrollDistance]="scrollDistance"
+         [infiniteScrollUpDistance]="scrollUpDistance"
+         [infiniteScrollThrottle]="throttle"
+         (scrolled)="loadmore()">
+
         <div class="c-item" *ngFor="let paper of papers" [id]="paper.paper_id">
             <div class="bookmark" >
                 <i class="fa fa-bookmark-o" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 " ></i>
                 <i class="fa fa-bookmark" aria-hidden="true" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1"></i>
             </div>
-            <div class="title">
-                <h3>{{paper.title}}
+            <div class="title"  style="cursor: pointer;" (click)="viewPaper(paper)">
+                <h3>{{(paper?.title.length > 70) ? (paper?.title | slice:0:70) + '...' : (paper?.title) }}
                 </h3>
                 <div></div>
             </div>
@@ -273,10 +278,4 @@
 
     </div>
 
-    <div class="button-action" (click)="getPapersByMember()" *ngIf="result?.data.length == 6 && paper.keyword == '' && paper.year == '' && paper.discipline == '' && paper.country == '' && paper.lang == ''">
-        <button>{{'_ViewMore' | translate}}</button>
-    </div>
-    <div class="button-action" (click)="searchPaperByMember()" *ngIf="result?.data.length == 6 && (paper.keyword != '' ||  paper.year != '' || paper.discipline != '' || paper.country != '' || paper.lang!= '')">
-        <button>{{'_ViewMore' | translate}}</button>
-    </div>
 </div>

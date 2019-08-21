@@ -7,6 +7,7 @@ import {MatDialog} from '@angular/material';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {PaperComponent} from '../../dialogs/paper/paper.component';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-profile',
@@ -27,13 +28,23 @@ export class ProfileComponent implements OnInit {
     paper = new Paper();
     searchForm: FormGroup;
     statistics: any;
+    throttle = 300;
+    scrollDistance = 1;
+    scrollUpDistance = 2;
     isOneRecognized = false;
-
+    private trans = {
+        SavePaperMSG: null,
+        DeletePaperMSG: null,
+        Success: null,
+        Failed: null,
+        FailedMSG: null,
+    };
 
     constructor(public dialog: MatDialog,
                 public fb: FormBuilder,
                 private route: ActivatedRoute,
                 private toaster: ToastrService,
+                private translate: TranslateService,
                 private router: Router,
                 public _appService: AppService) {
 
@@ -44,13 +55,30 @@ export class ProfileComponent implements OnInit {
         this.paper.page = 0;
         this.searchForm = fb.group({
 
-
             'search': '',
+        });
+
+
+        translate.get(['_SavePaperMSG', '_SavePaperMSG', '_Success', '_Failed', '_FailedMSG']).subscribe(res => {
+
+            this.trans.Failed = res._Failed;
+            this.trans.FailedMSG = res._FailedMSG;
+            this.trans.SavePaperMSG = res._SavePaperMSG;
+            this.trans.DeletePaperMSG = res._DeletePaperMSG;
+            this.trans.Success = res._Success;
+        });
+
+        translate.onLangChange.subscribe(lang => {
+
+            this.trans.Failed = lang.translate._Failed;
+            this.trans.FailedMSG = lang.translate._FailedMSG;
+            this.trans.SavePaperMSG = lang.translate._SavePaperMSG;
+            this.trans.DeletePaperMSG = lang.translate._DeletePaperMSG;
+            this.trans.Success = lang.translate._Success;
 
         });
+
     }
-
-
 
 
     showBookmarks() {
@@ -159,7 +187,6 @@ export class ProfileComponent implements OnInit {
     }
 
 
-
     filter() {
         this.paper.page = 0;
         this.searchPaperByMember();
@@ -205,7 +232,7 @@ export class ProfileComponent implements OnInit {
                         }
                     });
 
-                    this.toaster.success('saved the research paper successfully', 'success');
+                    this.toaster.success(this.trans.SavePaperMSG, '');
                 } else {
                     this._appService.registerPageTitle = 1;
                     this.router.navigate(['/register']);
@@ -226,7 +253,7 @@ export class ProfileComponent implements OnInit {
                             item.saved = 0;
                         }
                     });
-                    this.toaster.success('delete saved the research paper successfully', 'success');
+                    this.toaster.success(this.trans.DeletePaperMSG, 'success');
 
                 } else {
                     this._appService.registerPageTitle = 1;
@@ -241,7 +268,7 @@ export class ProfileComponent implements OnInit {
             if (paper.permission === 1) {
                 const dialogRef = this.dialog.open(PaperComponent, {});
                 dialogRef.componentInstance.paper = paper;
-                if(this.username != paper.username) {
+                if (this.username != paper.username) {
                     this._appService.api.addViewService(paper)
                         .subscribe(response => {
                             let result;
@@ -292,7 +319,7 @@ export class ProfileComponent implements OnInit {
                     console.log(error);
                 });
 
-                if(this.username != paper.username) {
+                if (this.username != paper.username) {
                     this._appService.api.addDownloadService(paper)
                         .subscribe(response => {
                             let result;
@@ -311,9 +338,20 @@ export class ProfileComponent implements OnInit {
         }
     }
 
+    loadmore() {
+
+        if (this.result.data.length == 6 && this.paper.keyword == '' && this.paper.year == '' && this.paper.discipline == '' && this.paper.country == '' && this.paper.lang == '') {
+            this.getPapersByMember();
+        } else if (this.result.data.length == 6 && (this.paper.keyword != '' || this.paper.year != '' || this.paper.discipline != '' || this.paper.country != '' || this.paper.lang != '')) {
+
+            this.searchPaperByMember();
+        }
+
+    }
+
     ngOnInit() {
 
-        window.scrollTo( 0, 0);
+        window.scrollTo(0, 0);
 
         this.route.params.subscribe(params => {
             this.data.username = params['id'];
@@ -331,7 +369,6 @@ export class ProfileComponent implements OnInit {
             this.years = data;
         });
         this.username = localStorage.getItem('username');
-
 
 
     }

@@ -51,14 +51,8 @@
                         </mat-form-field>
                     </div>
 
-<!--                    <div class="item">-->
-<!--                        <mat-form-field class="example-full-width">-->
-<!--                            <input matInput [placeholder]="'_Password' | translate" formControlName="password" required>-->
-<!--                            <mat-error *ngIf="password.errors.required">{{'_Required' | translate}}</mat-error>-->
 
-<!--                        </mat-form-field>-->
-<!--                        <div class="forget-password"><a>{{'_ForgetPassword' | translate}}</a></div>-->
-<!--                    </div>-->
+                        <div class="forget-password" style="cursor: pointer" routerLink="/reset-password"><a>{{'_ForgetPassword' | translate}}</a></div>
                     <div class="submit" (click)="login()">
                         <button [disabled]="!loginForm.valid">{{'_Login' | translate}}</button>
                     </div>

@@ -54,13 +54,7 @@
 
             </mat-form-field>
           </div>
-            <div class="item">
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="{{'_Username' | translate}}" formControlName="username" required>
-                <mat-error *ngIf="username.errors.required">{{'_Required' | translate}}</mat-error>
 
-              </mat-form-field>
-            </div>
           <div class="item">
             <mat-form-field>
               <input matInput placeholder="{{'_EnterPassword' | translate}}" [type]="hide ? 'password' : 'text'"  formControlName="password" required>

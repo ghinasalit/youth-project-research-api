@@ -148,14 +148,19 @@
             </div>
             <div class="items-container">
                 <div class="item-header">
-                    <div class="title">
-                        <h3>{{paper.title}}
+                    <div class="title" style="cursor: pointer;" (click)="viewPaper(paper)">
+                        <h3>{{(paper?.title.length > 70) ? (paper?.title | slice:0:70) + '...' : (paper?.title) }}
+
                         </h3>
                         <div></div>
                     </div>
                 </div>
-                <div class="item-body">
-                    <div class="paper-card-info" style="cursor: pointer" [routerLink]="['/profile' , paper.username]">
+                <div class="item-body"  infinite-scroll
+                     [infiniteScrollDistance]="scrollDistance"
+                     [infiniteScrollUpDistance]="scrollUpDistance"
+                     [infiniteScrollThrottle]="throttle"
+                     (scrolled)="loadmore()">
+                    <div class="paper-card-info" style="cursor: pointer" [routerLink]="['/profile' , paper.member_id]">
                         <h6 class="by"> {{'_By' | translate}}  </h6>
                         <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
                     </div>
@@ -196,12 +201,5 @@
 
 
     </div>
-    <div class="button-action" (click)="getPapers()"
-         *ngIf="result?.data.length == 6 && paper.keyword == '' && paper.year == '' && paper.discipline == '' && paper.country == '' && paper.lang == ''">
-        <button>{{'_ViewMore' | translate}}</button>
-    </div>
-    <div class="button-action" (click)="searchPapers()"
-         *ngIf="result?.data.length == 6 && (paper.keyword != '' ||  paper.year != '' || paper.discipline != '' || paper.country != '' || paper.lang!= '')">
-        <button>{{'_ViewMore' | translate}}</button>
-    </div>
+
 </div>

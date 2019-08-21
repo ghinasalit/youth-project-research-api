@@ -77,12 +77,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     };
     public socialFixed = false;
-    private registerForm: any;
     private trans = {
         FeedbackMSG: null,
         Success: null,
         Failed: null,
         FailedMSG: null,
+        MemberMonth: null,
+        GoProfile: null,
+        Views: null,
+        Email: null,
+        ResearchPaper: null,
+        RecognizedResearch: null,
     };
 
     constructor(private translateService: TranslateService,
@@ -101,12 +106,33 @@ export class HomeComponent implements OnInit, AfterViewInit {
             'message': [null, Validators.required],
         });
 
-        translate.get(['_FeedbackMSG', '_Success', '_Failed', '_FailedMSG']).subscribe(res => {
+        translate.get(['_FeedbackMSG', '_Success', '_ResearchPaper' , '_Failed', '_Email' , '_FailedMSG', '_MemberMonth', '_GoProfile', '_Views', '_RecognizedResearch']).subscribe(res => {
 
             this.trans.Failed = res._Failed;
             this.trans.FailedMSG = res._FailedMSG;
             this.trans.FeedbackMSG = res._FeedbackMSG;
             this.trans.Success = res._Success;
+            this.trans.MemberMonth = res._MemberMonth;
+            this.trans.GoProfile = res._GoProfile;
+            this.trans.ResearchPaper = res._ResearchPaper;
+            this.trans.Views = res._Views;
+            this.trans.Email = res._Email;
+            this.trans.RecognizedResearch = res._RecognizedResearch;
+        });
+
+        translate.onLangChange.subscribe(lang => {
+
+            this.trans.Failed = lang.translate._Failed;
+            this.trans.FailedMSG = lang.translate._FailedMSG;
+            this.trans.FeedbackMSG = lang.translate._FeedbackMSG;
+            this.trans.Success = lang.translate._Success;
+            this.trans.MemberMonth = lang.translate._MemberMonth;
+            this.trans.ResearchPaper = lang.translate._ResearchPaper;
+            this.trans.GoProfile = lang.translate._GoProfile;
+            this.trans.Views = lang.translate._Views;
+            this.trans.Email = lang.translate._Email;
+            this.trans.RecognizedResearch = lang.translate._RecognizedResearch;
+
         });
 
     }
@@ -133,6 +159,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
 
             });
+
     }
 
     getMemberLoggedin() {
@@ -231,7 +258,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
                                     if (details !== '' && details.views > 0) {
                                         var popup = L.popup();
-                                        let avatar = (details.avatar) ? (this._appService.api.api.imgURL + details.avatar) : 'assets/img/default';
+                                        let avatar = (details.avatar) ? (this._appService.api.api.imgURL + details.avatar) : 'assets/img/avatar_default.PNG';
+                                        let job = (details.job) ? ' <div class="info-icon">\n' +
+                                            '                <i class="fa fa-suitcase"></i>\n' +
+                                            '                <div class="info-data">' + details.job + '</div>\n' +
+                                            '            </div>\n' : '';
                                         this.addressPoints.push([item.lat, item.lng, item.grade]);
                                         let marker = L.marker([item.lat, item.lng]).addTo(map).on('click', <LeafletMouseEvent>(e) => {
                                             popup
@@ -248,10 +279,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
                                                     '                    </div>\n' +
                                                     '                    <div class="recently-joint">\n' +
                                                     '                        <i class="fa fa-star"></i>\n' +
-                                                    '                        <p>Member of the month</p>\n' +
+                                                    '                        <p>' + this.trans.MemberMonth + '</p>\n' +
                                                     '                    </div>\n' +
                                                     '                    <div>\n' +
-                                                    '                        <a href="/profile/' + details.username + '"> Go to Profile</a>\n' +
+                                                    '                        <a href="/#/profile/' + details.member_id + '"> ' + this.trans.GoProfile + '</a>\n' +
                                                     '                    </div>\n' +
                                                     '                </div>\n' +
                                                     '            </div>\n' +
@@ -259,27 +290,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
                                                     '            <div class="info-icon">\n' +
                                                     '                <i class="fa fa-university"></i>\n' +
                                                     '                <div class="info-data">' + details.university_en + '</div>\n' +
-                                                    '            </div>\n' +
-                                                    '            <div class="info-icon">\n' +
-                                                    '                <i class="fa fa-suitcase"></i>\n' +
-                                                    '                <div class="info-data">' + details.job + '</div>\n' +
-                                                    '            </div>\n' +
+                                                    '            </div>\n' + job +
                                                     '            <div class="info-icon">\n' +
                                                     '                <i class="fa fa-eye"></i>\n' +
-                                                    '                <div class="info-data">' + details.views + ' Views</div>\n' +
+                                                    '                <div class="info-data">' + details.views + this.trans.Views + ' </div>\n' +
                                                     '            </div>\n' +
                                                     '            <div class="info-icon">\n' +
                                                     '                <i class="fa fa-file-text-o"></i>\n' +
-                                                    '                <div class="info-data">' + details.count_papers + ' Research papers</div>\n' +
+                                                    '                <div class="info-data">' + details.count_papers + this.trans.ResearchPaper + ' </div>\n' +
                                                     '            </div>\n' +
                                                     '            <div class="info-icon last-icon">\n' +
                                                     '              <div class="trophy">\n' +
                                                     '                <i class="fa fa-trophy"></i>\n' +
-                                                    '                <div class="info-data">1 Recognized Research</div>\n' +
+                                                    '                <div class="info-data">1 ' + this.trans.RecognizedResearch + '</div>\n' +
                                                     '              </div>\n' +
                                                     '              <div class="message">\n' +
                                                     '                <i class="fa fa-envelope-o"></i>\n' +
-                                                    '                <div class="info-data"> <a href=mailto:' + details.email + '>Email ' + details.first_name + ' </a></div>\n' +
+                                                    '                <div class="info-data"> <a href=mailto:' + details.email + '> ' + this.trans.Email + ' ' +  details.first_name + ' </a></div>\n' +
                                                     '              </div>\n' +
                                                     '            </div>\n' +
                                                     '         </div>\n' +

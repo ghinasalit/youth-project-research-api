@@ -974,11 +974,6 @@ app-about .card-item.title p {
 }
 
 
-app-members .card {
-    flex: 0 1 32%;
-}
-
-
 .members-cards {
     display: flex;
     justify-content: space-between;
@@ -1169,7 +1164,7 @@ app-papers .statistics {
 .card img {
     width: 100%;
     object-fit: cover;
-    height: 560px;
+    height: 100%;
 
 }
 
@@ -1544,4 +1539,29 @@ app-member-details .first-name {
 
 .top-home-login .login-register {
     color: #1b2850;
+}
+
+.search-results {
+    height: 20rem;
+    overflow: scroll;
+}
+
+app-members .card {
+    flex: 0 1 19%;
+    height: 500px;
+}
+
+.card .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1B2850;
+    margin-bottom: 25px;
+    width: 90%;
+    margin-top: 15px;
+}
+
+.card .title div {
+    border: 9px solid #1B2850;
+    background-color: #1B2850;
+    width: 115px;
 }

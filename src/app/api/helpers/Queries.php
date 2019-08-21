@@ -38,6 +38,7 @@ class Queries
             'description' => $description,
             'language' => $language,
             'member_id' => $member_id,
+            'date' => date("Y-m-d"),
             'file' => $paper,
         );
 
@@ -55,14 +56,14 @@ class Queries
 
 
         if ($db->count) {
-            Queries::send_email_publish_paper($paper['paper_id'] , $member_id);
+            Queries::send_email_publish_paper($paper['paper_id'], $member_id);
             return $paper;
         } else {
             return -25;
         }
     }
 
-    static public function send_email_publish_paper($paper_id , $member_id)
+    static public function send_email_publish_paper($paper_id, $member_id)
     {
         global $db;
 
@@ -105,6 +106,83 @@ class Queries
 
             mail($to, $subject, $body, $headers);
         }
+    }
+
+
+    static public function reset_password($activation_code , $password)
+    {
+
+
+      global $db;
+      $data = Array(
+          'password' => md5($password),
+          'activation_code' => '',
+      );
+
+        $user =  $db->where('activation_code', $activation_code)
+            -> getOne('members'  , 'email');
+      if($user){
+          $user =  $db->where('activation_code', $activation_code)
+              -> update('members', $data);
+
+
+          return $user;
+
+      }else{
+          return -99;
+      }
+
+    }
+
+    static public function send_email_reset_password($email)
+    {
+
+        global $db;
+        $data = Array(
+        'activation_code' => md5(microtime()),
+
+        );
+        $userCheck = $db->where("email", $email)->get("members");
+        if ($userCheck) {
+               $db->where('email', $email)
+                ->update('members', $data);
+
+
+//            $to = $email;
+            $to = 'ghinasallit@gmail.com';
+            $subject = "Reset password";
+
+            $body = "
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<p>Dear,</p>
+<table>
+<tr>
+<a href=http://admin.arabyouthresearch.org/#/reset-password/" . $data['activation_code'] . ">Click here to reset password </a>
+</tr>
+</table>
+</body>
+<table>
+</html>
+";
+
+// Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+            $headers .= 'From:info@arabyouthresearch.org' . "\r\n";
+
+            mail($to, $subject, $body, $headers);
+
+
+        } else {
+            return -26;
+        }
+
     }
 
 
@@ -186,7 +264,7 @@ class Queries
         }
     }
 
-    static public function register($username, $password, $f_name, $l_name, $email, $avatar, $university, $job, $location, $phone, $Linkedin, $description)
+    static public function register($password, $f_name, $l_name, $email, $avatar, $university, $job, $location, $phone, $Linkedin, $description)
     {
         global $db;
 
@@ -205,7 +283,6 @@ class Queries
             'first_name' => $f_name,
             'last_name' => $l_name,
             'avatar' => $avatar_path,
-            'username' => $username,
             'university_id' => $university,
             'domain' => $job,
             'location' => $location,
@@ -214,18 +291,19 @@ class Queries
             'description' => $description,
             'session_id' => md5(microtime()),
             'email' => $email,
+            'username' => $email,
             'password' => md5($password),
             'active' => '1',
 
         );
 
-        $userCheck = $db->where("username", $username)->get("members");
+        $userCheck = $db->where("email", $email)->get("members");
         if (!$userCheck) {
             if ($avatar) {
                 Helper::saveToFile($avatar, $avatar_random_name, $ext);
             }
             $d = $db->insert('members', $data);
-            $user = $db->where('username', $username)->getOne('members', 'username');
+            $user = $db->where('email', $email)->getOne('members', 'member_id ,email ,first_name  ,last_name');
             if ($db->count) {
 
                 $_SESSION[___APP]['session_key'] = $data['session_id'];
@@ -284,10 +362,10 @@ class Queries
     }
 
 
-    static public function isUserExist($username)
+    static public function isUserExist($email)
     {
         global $db;
-        $userCheck = $db->where("username", $username)->get("members");
+        $userCheck = $db->where("email", $email)->get("members");
         if (!$userCheck) {
             return [];
         } else {
@@ -317,13 +395,13 @@ class Queries
 
     }
 
-    static public function get_member_by_username($username)
+    static public function get_member_by_id($member_id)
     {
         global $db;
 
         $query = " SELECT members.member_id ,members.first_name , members.last_name , country.name_en as country , members.email , members.username  , members.phone , members.location , university.name_en ,university.name_en , members.domain , members.description , members.avatar , university.name_en as university_name_en, university.name_ar as university_name_ar From members JOIN university
                        ON members.university_id = university.university_id 
-                        join country ON  university.country_id = country.country_id   WHERE members.username = '" . $username . "'";
+                        join country ON  university.country_id = country.country_id   WHERE members.member_id = '" . $member_id . "'";
 
 
         $member = $db->withTotalCount()->rawQuery($query);

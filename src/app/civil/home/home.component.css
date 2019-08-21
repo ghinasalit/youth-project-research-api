@@ -617,6 +617,10 @@ app-home .info-data {
     align-items: center;
 }
 
+::ng-deep .recently-joint i{
+    color: #FDD97A;
+}
+
 ::ng-deep .recently-joint p {
     margin-right: 10px;
     font-size: 13px;

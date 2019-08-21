@@ -6,6 +6,7 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material';
 import {ConditionsComponent} from '../../../dialogs/conditions/conditions.component';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
 
@@ -16,17 +17,40 @@ import {ConditionsComponent} from '../../../dialogs/conditions/conditions.compon
 export class PermissionPeparComponent implements OnInit {
     permissionForm: FormGroup;
     result: any;
+    private trans = {
+        UploadPaperMSG: null,
+        Success: null,
+        Failed: null,
+        FailedMSG: null,
+    };
 
     constructor(private fb: FormBuilder,
                 private toaster: ToastrService,
                 private  router: Router,
                 public dialog: MatDialog,
+                private translate: TranslateService,
                 public  appService: AppService) {
 
         this.permissionForm = fb.group({
-
             'permission': [null, Validators.required],
             'conditions': [null, Validators.required]
+        });
+
+        translate.get(['_ChangePasswordMSG', '_ChangePasswordFailedMSG']).subscribe(res => {
+
+            this.trans.Failed = res._Failed;
+            this.trans.FailedMSG = res._FailedMSG;
+            this.trans.UploadPaperMSG = res._UploadPaperMSG;
+            this.trans.Success = res._Success;
+        });
+
+        translate.onLangChange.subscribe(lang => {
+
+            this.trans.Failed = lang.translate._Failed;
+            this.trans.FailedMSG = lang.translate._FailedMSG;
+            this.trans.UploadPaperMSG = lang.translate._UploadPaperMSG;
+            this.trans.Success = lang.translate._Success;
+
         });
     }
 
@@ -40,15 +64,15 @@ export class PermissionPeparComponent implements OnInit {
                 this.result = response;
 
                 if (this.result.code === 1) {
-                    this.toaster.success('The request have sent successfully ', 'success');
+                    this.toaster.success(this.trans.FailedMSG, '');
 
                     setTimeout(() => {
-                        this.router.navigate(['/profile' , localStorage.getItem('username') ]);
+                        this.router.navigate(['/home' ]);
                     }, 2000);
 
 
                 } else {
-                    this.toaster.error(this.result.msg, 'Failed');
+                    this.toaster.error(this.result.msg, '');
 
                 }
 

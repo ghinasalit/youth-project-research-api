@@ -36,8 +36,8 @@ if ($request_headers['code'] == 1) {
 
     if ($function) {
         if (!in_array($function, array('login', 'register', 'check_version' , 'add_feedback' , 'get_roll' , 'get_one_recognizes_researched' ,
-            'search_paper' ,'is_user_exist', 'get_universities' , 'get_members' , 'get_published_papers' ,
-            'get_countries' , 'get_disciplines' , 'statistics' , 'get_years' , 'get_member' , 'get_papers_by_member' ,
+            'search_paper' ,'is_user_exist', 'get_universities' , 'get_members' , 'get_published_papers' ,'send_email_reset_password',
+            'get_countries' , 'get_disciplines' , 'statistics' , 'get_years' , 'get_member' , 'get_papers_by_member' , 'reset_password' ,
             'search_paper_by_member' , 'search_member'))) {
             if ($session_key) {
                 $valid = Queries::check_session_alive($session_key);
@@ -77,12 +77,23 @@ if ($request_headers['code'] == 1) {
                     }
                 case 'get_member':
                     {
-                        $result = User::get_member_by_username($data);
+                        $result = User::get_member_by_id($data);
                         break;
                     }
                  case 'edit_paper':
                     {
                         $result = User::edit_paper($data);
+                        break;
+                    }
+                    case 'send_email_reset_password':
+                    {
+                        $result = User::send_email_reset_password($data);
+                        break;
+                    }
+
+                    case 'reset_password':
+                    {
+                        $result = User::reset_password($data);
                         break;
                     }
                  case 'get_member_logged_in':

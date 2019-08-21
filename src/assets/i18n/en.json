@@ -164,7 +164,21 @@
   "_FeedbackMSG": "Thank you for contacting us. One of our representatives will be in contact with you shortly regarding your inquiry.",
   "_Success": "Success",
   "_Failed": "Failed",
-  "_FailedMSG": "Sorry , Something went wrong , Please try again"
+  "_FailedMSG": "Sorry , Something went wrong , Please try again",
+  "_UpdateMSG": "Updated successfully",
+  "_SavePaperMSG": "The research paper has saved successfully",
+  "_UploadPaperMSG": "The request has sent successfully",
+  "_SendRequestMSG": "The request has sent successfully",
+  "_DeletePaperMSG": "The bookmark has deleted successfully",
+  "_MemberMonth": "Member of the month",
+  "_GoProfile": "Go to Profile",
+  "_EnterEmailAddress": "Enter the email address you signed up with and we’ll email you a reset link.",
+  "_PasswordReset": "Password reset",
+  "_SendLink": "Send me a link",
+  "_SetPassword": "Set your password",
+  "_ChangePasswordMSG": "The password has been Changed successfully",
+  "_ChangePasswordFailedMSG": "Failed to change password , please check the link that was sent to your email again.",
+  "_CheckYourEmail": "Please check your email"
 
 
 

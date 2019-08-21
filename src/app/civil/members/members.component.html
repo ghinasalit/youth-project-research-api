@@ -119,12 +119,12 @@
             <p (click)="member.letter = 'و' ; filter()">و</p>
             <p (click)="member.letter = 'ي' ; filter()">ي</p>
         </div>
-        <div class="filters">
-            <div class="sort-icon">
-                <i class="fa fa-sort-desc" aria-hidden="true" *ngIf="data.sort == 'asc'" (click)="sortMembers('desc')" ></i>
-                <i class="fa fa-sort-asc" aria-hidden="true" *ngIf="data.sort == 'desc'" (click)="sortMembers('asc')"></i>
-            </div>
-        </div>
+<!--        <div class="filters">-->
+<!--            <div class="sort-icon">-->
+<!--                <i class="fa fa-sort-desc" aria-hidden="true" *ngIf="data.sort == 'asc'" (click)="sortMembers('desc')" ></i>-->
+<!--                <i class="fa fa-sort-asc" aria-hidden="true" *ngIf="data.sort == 'desc'" (click)="sortMembers('asc')"></i>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
     <div class="col-lg-12 research-input">
         <div class="row">
@@ -137,23 +137,21 @@
             </form>
         </div>
     </div>
-    <div class="members-cards">
+    <div class="members-cards"   infinite-scroll
+         [infiniteScrollDistance]="scrollDistance"
+         [infiniteScrollUpDistance]="scrollUpDistance"
+         [infiniteScrollThrottle]="throttle"
+         (scrolled)="loadmore()">
+
         <div class="card" *ngFor="let member of members">
             <img [src]="member.avatar?_appService.api.api.imgURL  + member.avatar : 'assets/img/avatar_default.PNG' " alt="" [routerLink]="['/profile' , member.username]">
-            <div class="title" [routerLink]="['/profile' , member.username]" style="cursor: pointer">
+            <div class="title" [routerLink]="['/profile' , member.member_id]" style="cursor: pointer">
                 <p>{{member.first_name}} {{member.last_name}}</p>
                 <div>
                 </div>
             </div>
         </div>
 
-    </div>
 
-    <div class="button-action"  (click)="getMembers()" *ngIf="result?.data.length == 6 && member.letter == '' && member.keyword === ''">
-        <button>{{'_ViewMore' | translate}}</button>
     </div>
-    <div class="button-action" (click)="searchMemeber()" *ngIf="result?.data.length == 6  && ( member.letter != ''  || member.keyword != '')">
-        <button>{{'_ViewMore' | translate}}</button>
-    </div>
-
 </div>

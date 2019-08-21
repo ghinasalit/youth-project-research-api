@@ -16,14 +16,17 @@ export class MembersComponent implements OnInit {
     data = new Shared();
     member = new User();
     searchForm: FormGroup;
+    throttle = 300;
+    scrollDistance = 1;
+    scrollUpDistance = 2;
 
     constructor(public _appService: AppService,
                 public fb: FormBuilder) {
 
         this.data.page = 1;
-        this.data.size = 6;
+        this.data.size = 10;
         this.member.page = 0;
-        this.member.size = 6;
+        this.member.size = 10;
 
         this.searchForm = fb.group({
 
@@ -96,10 +99,20 @@ export class MembersComponent implements OnInit {
 
     }
 
+    loadmore() {
+
+        if (this.result.data.length === 6 && this.member.letter === '' && this.member.keyword === '') {
+            this.getMembers();
+        } else if (this.result.data.length === 6 && (this.member.letter != '' && this.member.keyword != '')) {
+
+            this.searchMemeber();
+        }
+
+    }
 
     ngOnInit() {
 
-        window.scrollTo( 0, 0);
+        window.scrollTo(0, 0);
 
         this.getMembers();
     }

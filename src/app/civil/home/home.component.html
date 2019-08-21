@@ -71,7 +71,7 @@
                         <img [src]="'assets/img/member1.jpg' " alt="" *ngIf="memberDetails.avatar == ''">
                     </div>
                     <div class="full-name">
-                        <div class="title" [routerLink]="['/profile' , memberDetails.username]" style="cursor: pointer">
+                        <div class="title" [routerLink]="['/profile' , memberDetails.member_id]" style="cursor: pointer">
                             <h2>{{memberDetails.first_name}} {{memberDetails.last_name}}</h2>
                             <div>
                             </div>
@@ -297,7 +297,7 @@
 
 
     </div>
-    <div class="button-action" routerLink="/register">
+    <div class="button-action" routerLink="/register" *ngIf="!_appService.roll">
         <button>{{'_RegisterMember' | translate}}</button>
     </div>
 
@@ -344,7 +344,7 @@
                     <div>
                         <ng-container *ngFor="let text of members; let i = index">
                         <div class="title read-more" *ngIf="itemIndex == i">
-                            <p style="cursor: pointer" [routerLink]="['/profile' ,members[i].username ]">{{'_LearnMore' | translate}}</p>
+                            <p style="cursor: pointer" [routerLink]="['/profile' ,members[i].member_id ]">{{'_LearnMore' | translate}}</p>
                             <div></div>
                         </div>
                         </ng-container>
@@ -467,25 +467,25 @@
                 <div></div>
             </div>
             <div class=" form-input">
-                <form class="example-form" [formGroup]="feedbackForm" #input #formDirective="ngForm"
+                <form class="example-form" [formGroup]="feedbackForm"  #formDirective="ngForm"
                       [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
                     <div class="item">
                         <mat-form-field class="example-full-width" >
-                            <input matInput [placeholder]="'_Name' | translate" formControlName="name" required #input>
+                            <input matInput [placeholder]="'_Name' | translate" formControlName="name" required >
                             <mat-error *ngIf="name.errors.required">{{'_Required' | translate}}</mat-error>
 
                         </mat-form-field>
                     </div>
                     <div class="item">
                     <mat-form-field>
-                        <input matInput [placeholder]="'_EmailAddress' | translate" formControlName="email" required #input>
+                        <input matInput [placeholder]="'_EmailAddress' | translate" formControlName="email" required >
                         <mat-error *ngIf="email.errors.required">{{'_Required' | translate}}</mat-error>
                         <mat-error *ngIf="email.errors.email">{{'_EmailNotValid' | translate}}</mat-error>
                     </mat-form-field>
                     </div>
                     <div class="item">
                         <mat-form-field class="example-full-width">
-                            <input type="number" matInput [placeholder]="'_PhoneNumber' | translate" #input
+                            <input type="number" matInput [placeholder]="'_PhoneNumber' | translate"
                                    formControlName="phone" required>
                             <mat-error *ngIf="phone.errors.required">{{'_Required' | translate}}</mat-error>
                         </mat-form-field>
@@ -493,7 +493,7 @@
 
                     <mat-form-field hintLabel="Max 500 characters">
                         <textarea matInput #input [placeholder]="'_Message' | translate" maxlength="500"
-                                  formControlName="message" required #input></textarea>
+                                  formControlName="message" required ></textarea>
                         <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
                         <mat-error *ngIf="message.errors.required">{{'_Required' | translate}}</mat-error>
                     </mat-form-field>

@@ -55,6 +55,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {ImageCropperModule} from 'ngx-image-cropper';
 import {TruncatPipe} from '../pipes/truncat.pipe';
 import { AcceptRequestComponent } from './civil/accept-request/accept-request.component';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { ResetPasswordComponent } from './civil/reset-password/reset-password.component';
+import { ChangePasswordComponent } from './civil/change-password/change-password.component';
 
 
 
@@ -100,6 +103,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         EditPaperComponent,
         MemberDetailsComponent,
         AcceptRequestComponent,
+        ResetPasswordComponent,
+        ChangePasswordComponent,
 
 
 
@@ -108,6 +113,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         DialogModule,
         BrowserModule,
         BrowserAnimationsModule,
+        InfiniteScrollModule,
         FormsModule,
         ReactiveFormsModule,
         AppRoutingModule,

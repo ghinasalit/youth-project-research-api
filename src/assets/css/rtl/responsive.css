@@ -2252,6 +2252,8 @@
         height: 50%;
     }
 
+
+
     .full-section .sec-content {
         text-align: right;
         width: auto;
@@ -3650,6 +3652,10 @@
 
     app-home  .top-home-login .login-register {
         color: #fff;
+    }
+
+    app-about .full-section .side{
+        height: 300px;
     }
 
 }
@@ -5316,6 +5322,9 @@
     app-home .top-home-login .login-register {
         color: #fff;
     }
+    app-about .full-section .side{
+        height: 300px;
+    }
 
 }
 
@@ -6980,7 +6989,9 @@
         color: #fff;
     }
 
-
+    app-about .full-section .side{
+        height: 300px;
+    }
 }
 
 
