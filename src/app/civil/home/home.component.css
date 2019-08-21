@@ -487,15 +487,6 @@ app-home .info-data {
     position: absolute;
 }
 
-/*pattners*/
-.logo-partner {
-    height: 100%;
-}
-
-.logo-partner img {
-    width: 100%;
-    height: 100%;
-}
 
 
 /*members*/
@@ -653,9 +644,6 @@ app-home .info-data {
     height: 90%;
 }
 
-.logo-partner-mobile, .mobile {
-    display: none;
-}
 
 .logo-partner {
     display: block;
@@ -665,17 +653,6 @@ app-home .info-data {
     margin: 0 35px;
 }
 
-@media (max-width: 425px) {
-    .logo-partner-mobile, .mobile {
-        display: block;
-        margin-top: 0px;
-    }
-
-    .logo-partner {
-        display: none;
-    }
-
-}
 
 
 ::ng-deep .mat-form-field-underline {
