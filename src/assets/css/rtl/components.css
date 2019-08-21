@@ -1556,7 +1556,7 @@ app-members .card {
     height: 500px;
 }
 
-.card .title {
+app-members .card .title {
     font-size: 20px;
     font-weight: bold;
     color: #1B2850;
@@ -1565,8 +1565,15 @@ app-members .card {
     margin-top: 15px;
 }
 
-.card .title div {
+app-members .card .title div {
     border: 9px solid #1B2850;
     background-color: #1B2850;
     width: 115px;
+}
+
+
+app-members .card img {
+    width: 100%;
+    object-fit: cover;
+    height: 65%;
 }
