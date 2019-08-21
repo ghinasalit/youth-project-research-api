@@ -1470,7 +1470,7 @@ app-upload-paper .submit {
 
 
 
-.research-all-around .with-slider .left-slide i, .with-slider .right-slide i {
+.research-all-around .with-slider .left-slide i, .research-all-around .with-slider .right-slide i {
     font-size: 35px;
     color: #75cddd;
     cursor: pointer;

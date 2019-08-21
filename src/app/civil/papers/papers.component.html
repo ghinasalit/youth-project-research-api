@@ -139,7 +139,11 @@
 
         </div>
     </div>
-    <div class="cards-items">
+    <div class="cards-items" *ngIf="papers"  infinite-scroll
+         [infiniteScrollDistance]="scrollDistance"
+         [infiniteScrollUpDistance]="scrollUpDistance"
+         [infiniteScrollThrottle]="throttle"
+         (scrolled)="loadmore()">
         <div class="c-item" *ngFor="let paper of papers" [id]="paper.paper_id">
             <div class="bookmark">
                 <i class="fa fa-bookmark-o" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 "></i>
@@ -155,11 +159,7 @@
                         <div></div>
                     </div>
                 </div>
-                <div class="item-body"  infinite-scroll
-                     [infiniteScrollDistance]="scrollDistance"
-                     [infiniteScrollUpDistance]="scrollUpDistance"
-                     [infiniteScrollThrottle]="throttle"
-                     (scrolled)="loadmore()">
+                <div>
                     <div class="paper-card-info" style="cursor: pointer" [routerLink]="['/profile' , paper.member_id]">
                         <h6 class="by"> {{'_By' | translate}}  </h6>
                         <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
@@ -198,8 +198,7 @@
                 </div>
             </div>
         </div>
-
-
+        <div class="c-item" *ngIf="papers.length % 3 == 2" [style.opacity]="0" [style.border]="'none'"></div>
     </div>
 
 </div>
