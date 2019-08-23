@@ -156,7 +156,7 @@
          [infiniteScrollThrottle]="throttle"
          (scrolled)="loadmore()">
         <div class="c-item" *ngFor="let paper of papers; let i = index" [id]="paper.paper_id"
-             data-aos="fade-up" [attr.data-aos-delay]="i * 100" data-aos-duration="1000">
+             data-aos="fade-up" [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000">
             <div class="bookmark">
                 <i class="fa fa-bookmark-o" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 "></i>
                 <i class="fa fa-bookmark" aria-hidden="true" (click)="unsavePaper(paper.paper_id)"

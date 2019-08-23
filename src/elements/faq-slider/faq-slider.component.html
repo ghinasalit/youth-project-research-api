@@ -1,6 +1,6 @@
 <div class="frequent-asked-questions" *ngIf="faqData" data-aos="fade-down" data-aos-duration="100">
     <div class="faq-content" *ngFor="let faq of faqData; let i = index; let firstElement = first"
-         data-aos="fade-up" [attr.data-aos-delay]="i * 100" data-aos-duration="1000">
+         data-aos="fade-up" [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000">
         <button class="accordion fa" [ngClass]="firstElement ? 'active closed' : ''" (click)="openToggle($event)">
             <a class="font-black mr-2" *ngIf="pageCount">Q:{{(i+1)+(activePage * size)}}</a><a class="font-black">{{faq.Question}}</a>
         </button>
