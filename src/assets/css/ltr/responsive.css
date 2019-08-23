@@ -17,8 +17,6 @@
     }
 
 
-
-
     .full-section .left-sticker {
         height: 45px;
         width: 155px;
@@ -82,7 +80,7 @@
         margin-top: 150px;
     }
 
-    .go-login a{
+    .go-login a {
         margin: 3px 0px;
     }
 
@@ -166,9 +164,9 @@
         text-align: left;
     }
 
-   app-profile .info-user {
-       width: 71%;
-   }
+    app-profile .info-user {
+        width: 71%;
+    }
 
     .social i {
         font-size: 20px;
@@ -195,7 +193,6 @@
     .upload-file {
         height: 835px;
     }
-
 
 
     .title {
@@ -268,12 +265,12 @@
         margin-top: 150px;
     }
 
-    app-members  .about-content{
+    app-members .about-content {
 
         padding-right: 10px;
     }
 
-    .card-item-objective .title{
+    .card-item-objective .title {
         margin: 20px 0;
         font-size: 18px;
     }
@@ -295,11 +292,12 @@
         width: 65%;
         padding: 0 140px;
     }
-    .go-login a{
+
+    .go-login a {
         margin: 3px 0px;
     }
 
-    .partners{
+    .partners {
         height: 420px;
     }
 }
@@ -333,11 +331,11 @@
         font-size: 22px;
     }
 
-  h3{
-      font-size: 20px;
-  }
+    h3 {
+        font-size: 20px;
+    }
 
-      .edit-profile {
+    .edit-profile {
         width: 110px;
         height: 75px;
         position: absolute;
@@ -350,8 +348,6 @@
     .right-section, .left-section {
         width: 50%;
     }
-
-
 
 
     .navbar {
@@ -470,7 +466,7 @@
     }
 
 
-  app-profile  .paper p {
+    app-profile .paper p {
         font-size: 12px;
         font-weight: bold;
     }
@@ -695,7 +691,6 @@
     }
 
 
-
     .logo-right {
         float: right;
         padding: 20px 95px;
@@ -723,7 +718,6 @@
         vertical-align: middle;
         margin: 0 0 0 0%;
     }
-
 
 
     .research-title {
@@ -908,7 +902,7 @@
     }
 
 
-    .sort-icon .fa-sort-asc{
+    .sort-icon .fa-sort-asc {
         position: absolute;
         top: -10px;
         right: 3px;
@@ -1026,7 +1020,7 @@
         color: #1b2850;
     }
 
-    .nav-links{
+    .nav-links {
         display: flex;
         justify-content: space-around;
         width: 65%;
@@ -1039,11 +1033,12 @@
         font-weight: bold !important;
         text-decoration: none;
     }
-    .go-login a{
+
+    .go-login a {
         margin: 3px 0px;
     }
 
-    .partners{
+    .partners {
         height: 335px;
     }
 }
@@ -1091,7 +1086,6 @@
         color: #1B2850;
         font-size: 15px;
     }
-
 
 
     .full-section {
@@ -1266,7 +1260,6 @@
         font-weight: bold;
         color: #1b2850;
     }
-
 
 
     .full-section .center-sticker {
@@ -1577,7 +1570,6 @@
     }
 
 
-
     .research-title {
         padding: 20px;
         display: flex;
@@ -1617,7 +1609,7 @@
     }
 
 
-   app-profile .social {
+    app-profile .social {
         display: inline-block;
         margin-right: 0px;
         margin-top: 0;
@@ -1712,8 +1704,6 @@
     .paper-file img {
         width: 105px;
     }
-
-
 
 
     .drop-list {
@@ -1936,16 +1926,14 @@
 
 
     /*app-register*/
-
-
-    app-register .full-section .sec-content , app-login .full-section .sec-content , app-edit-paper  .full-section .sec-content , app-member-details  .full-section .sec-content ,  app-upload-paper  .full-section .sec-content{
+    app-register .full-section .sec-content, app-login .full-section .sec-content, app-edit-paper .full-section .sec-content, app-member-details .full-section .sec-content, app-upload-paper .full-section .sec-content {
         text-align: left;
         width: 85%;
         margin: 70px 24px;
     }
 
 
-    .submit button{
+    .submit button {
         width: 100%;
         height: 100%;
         background-color: #75cddd;
@@ -1984,7 +1972,6 @@
     }
 
 
-
     .card-item-objective .title {
         margin: 20px 0;
         font-size: 12px;
@@ -1993,7 +1980,6 @@
     .card-item-objective .desc p {
         font-size: 10px;
     }
-
 
 
     .card-item-objective .icon {
@@ -2061,7 +2047,7 @@
         color: #1b2850;
     }
 
-    .research-all-around .slider-control h4{
+    .research-all-around .slider-control h4 {
         font-size: 15px;
     }
 
@@ -2096,10 +2082,9 @@
         padding: 0 0;
     }
 
-    .partners{
+    .partners {
         height: 235px;
     }
-
 
 
 }
@@ -2175,7 +2160,6 @@
     /*.info-user {*/
     /*    margin-left: 20px*/
     /*}*/
-
     app-home .top-home-login .info-user img {
         width: 145px;
         height: 135px;
@@ -2356,7 +2340,7 @@
         margin: 0 20px;
     }
 
-   app-about .about-content {
+    app-about .about-content {
         margin-bottom: 20px;
     }
 
@@ -2892,8 +2876,6 @@
     }
 
 
-
-
     .profile-container .info-user img {
         position: absolute;
         width: 35px;
@@ -3223,16 +3205,15 @@
     }
 
 
-
     .paper-file img {
         width: 70px;
     }
 
-    .permissions{
+    .permissions {
         width: 60%;
     }
 
-    .paper-permissions{
+    .paper-permissions {
         display: flex;
         flex-direction: column;
         margin-bottom: 0px;
@@ -3243,7 +3224,7 @@
         font-size: 12px;
     }
 
-    ::ng-deep .mat-radio-label-content{
+    ::ng-deep .mat-radio-label-content {
 
         font-size: 12px !important;
 
@@ -3272,7 +3253,6 @@
 
         margin: 40px 0 20px;
     }
-
 
 
     /*about*/
@@ -3546,11 +3526,7 @@
     }
 
     /*app-register*/
-
-
-
-
-    app-register .full-section .sec-content , app-login .full-section .sec-content , app-edit-paper .full-section .sec-content , app-profile-info .full-section .sec-content{
+    app-register .full-section .sec-content, app-login .full-section .sec-content, app-edit-paper .full-section .sec-content, app-profile-info .full-section .sec-content {
         text-align: left;
         width: auto;
         padding: 35px 20px;
@@ -3558,7 +3534,7 @@
     }
 
 
-    .submit button{
+    .submit button {
         width: 100%;
         height: 100%;
         background-color: #75cddd;
@@ -3609,7 +3585,7 @@
     }
 
     .info-user {
-         padding: 0;
+        padding: 0;
         margin-left: 20px;
         width: 100%;
     }
@@ -3653,7 +3629,7 @@
         width: 100%;
     }
 
-    .become-researcher{
+    .become-researcher {
         height: auto;
 
     }
@@ -3664,7 +3640,6 @@
     }
 
 
-
     .card-item-objective .headline {
         border: none;
         background-color: white;
@@ -3672,7 +3647,7 @@
         width: 100%;
     }
 
-    .headline p{
+    .headline p {
         margin-right: 3px;
     }
 
@@ -3721,8 +3696,8 @@
         padding: 0;
     }
 
-   .research-all-around .text-left {
-       display: initial;
+    .research-all-around .text-left {
+        display: initial;
 
     }
 
@@ -3748,21 +3723,20 @@
         z-index: 100;
     }
 
-    .research-all-around  .with-slider .main-slider {
+    .research-all-around .with-slider .main-slider {
         display: flex;
         align-items: center;
         padding: 0;
     }
 
 
-   app-home .top-home-login .login-register {
+    app-home .top-home-login .login-register {
         color: #fff;
     }
 
-    app-about .full-section .side{
+    app-about .full-section .side {
         height: 300px;
     }
-
 
 
 }
@@ -3957,8 +3931,6 @@
     }
 
 
-
-
     .social-paper .title {
         margin-top: 29px;
         padding: 0 18px;
@@ -3997,7 +3969,7 @@
     }
 
 
-    .contact .sec-content{
+    .contact .sec-content {
         text-align: left;
         width: auto;
         margin: 25px 0;
@@ -4007,7 +3979,7 @@
     }
 
 
-    .sec-content .about-content{
+    .sec-content .about-content {
         margin: 0 20px;
     }
 
@@ -4353,8 +4325,6 @@
     }
 
 
-
-
     .full-section .top-sticker {
         height: 80px;
         width: 25px;
@@ -4373,7 +4343,6 @@
         top: 44%;
         z-index: 100;
     }
-
 
 
     .frequent-asked-questions {
@@ -4621,7 +4590,7 @@
         bottom: 50%;
         right: 50%;
         z-index: 100;
-        background:#FDD97A;
+        background: #FDD97A;
     }
 
     .paper p {
@@ -4692,7 +4661,6 @@
         position: relative;
         background-color: #f1f2f2;
     }
-
 
 
     app-home .full-name .title {
@@ -4875,11 +4843,11 @@
         width: 70px;
     }
 
-    .permissions{
+    .permissions {
         width: 60%;
     }
 
-    .paper-permissions{
+    .paper-permissions {
         display: flex;
         flex-direction: column;
         margin-bottom: 0px;
@@ -4904,7 +4872,7 @@
         font-size: 12px;
     }
 
-    ::ng-deep .mat-radio-label-content{
+    ::ng-deep .mat-radio-label-content {
 
         font-size: 12px !important;
 
@@ -4927,7 +4895,6 @@
     /*.upload-file {*/
     /*    height: auto;*/
     /*}*/
-
     .check-filename p {
         margin-top: 5px;
         font-size: 13px;
@@ -4947,7 +4914,6 @@
         padding: 10px 10px;
         justify-content: space-between;
     }
-
 
 
     /*about*/
@@ -4984,7 +4950,6 @@
         bottom: 50%;
         z-index: 100;
     }
-
 
 
     .researshers .text-left p {
@@ -5237,17 +5202,14 @@
 
 
     /*app-register*/
-
-
-
-    app-register .full-section .sec-content , app-login .full-section .sec-content , app-edit-paper  .full-section .sec-content , app-member-details  .full-section .sec-content ,  app-upload-paper .full-section  .sec-content{
+    app-register .full-section .sec-content, app-login .full-section .sec-content, app-edit-paper .full-section .sec-content, app-member-details .full-section .sec-content, app-upload-paper .full-section .sec-content {
         text-align: left;
         width: 85%;
         margin: 70px 24px;
     }
 
 
-    .submit button{
+    .submit button {
         width: 100%;
         height: 100%;
         background-color: #75cddd;
@@ -5280,6 +5242,7 @@
     .go-login p {
         font-size: 14px;
     }
+
     .check-filename i {
         font-size: 28px;
         margin-right: 20px;
@@ -5325,7 +5288,7 @@
         width: 100%;
     }
 
-    .become-researcher{
+    .become-researcher {
         height: auto;
 
     }
@@ -5336,7 +5299,6 @@
     }
 
 
-
     .card-item-objective .headline {
         border: none;
         background-color: white;
@@ -5344,7 +5306,7 @@
         width: 100%;
     }
 
-    .headline p{
+    .headline p {
         margin-right: 3px;
     }
 
@@ -5421,13 +5383,13 @@
         z-index: 100;
     }
 
-    .research-all-around  .with-slider .main-slider {
+    .research-all-around .with-slider .main-slider {
         display: flex;
         align-items: center;
         padding: 0;
     }
 
-    app-login .full-section .sec-content , app-register .full-section .sec-content{
+    app-login .full-section .sec-content, app-register .full-section .sec-content {
 
         display: inherit;
 
@@ -5449,19 +5411,19 @@
         display: block;
 
     }
+
     app-home .top-home-login .login-register {
         color: #fff;
     }
 
-    app-about .full-section .side{
+    app-about .full-section .side {
         height: 300px;
     }
 
 
-
 }
 
-@media (max-width: 374px)  {
+@media (max-width: 374px) {
 
 
     h2 {
@@ -5703,7 +5665,7 @@
     }
 
 
-    .contact .sec-content{
+    .contact .sec-content {
         text-align: left;
         width: auto;
         margin: 25px 0;
@@ -5713,7 +5675,7 @@
     }
 
 
-    .sec-content .about-content{
+    .sec-content .about-content {
         margin: 0 20px;
     }
 
@@ -6045,8 +6007,6 @@
     }
 
 
-
-
     .full-section .top-sticker {
         height: 80px;
         width: 25px;
@@ -6065,7 +6025,6 @@
         top: 50%;
         z-index: 100;
     }
-
 
 
     .frequent-asked-questions {
@@ -6313,7 +6272,7 @@
         bottom: 50%;
         right: 50%;
         z-index: 100;
-        background:#FDD97A;
+        background: #FDD97A;
     }
 
     .paper p {
@@ -6384,7 +6343,6 @@
         position: relative;
         background-color: #f1f2f2;
     }
-
 
 
     app-home .full-name .title {
@@ -6562,11 +6520,11 @@
         width: 70px;
     }
 
-    .permissions{
+    .permissions {
         width: 60%;
     }
 
-    .paper-permissions{
+    .paper-permissions {
         display: flex;
         flex-direction: column;
         margin-bottom: 0px;
@@ -6591,7 +6549,7 @@
         font-size: 12px;
     }
 
-    ::ng-deep .mat-radio-label-content{
+    ::ng-deep .mat-radio-label-content {
 
         font-size: 12px !important;
 
@@ -6614,7 +6572,6 @@
     /*.upload-file {*/
     /*    height: auto;*/
     /*}*/
-
     .check-filename p {
         margin-top: 5px;
         font-size: 13px;
@@ -6634,7 +6591,6 @@
         padding: 10px 10px;
         justify-content: space-between;
     }
-
 
 
     /*about*/
@@ -6671,7 +6627,6 @@
         bottom: 50%;
         z-index: 100;
     }
-
 
 
     .researshers .text-left p {
@@ -6924,17 +6879,14 @@
 
 
     /*app-register*/
-
-
-
-    app-register .full-section .sec-content , app-login .full-section .sec-content , app-edit-paper  .full-section .sec-content , app-member-details  .full-section .sec-content ,  app-upload-paper .full-section  .sec-content{
+    app-register .full-section .sec-content, app-login .full-section .sec-content, app-edit-paper .full-section .sec-content, app-member-details .full-section .sec-content, app-upload-paper .full-section .sec-content {
         text-align: left;
         width: 85%;
         margin: 70px 24px;
     }
 
 
-    .submit button{
+    .submit button {
         width: 100%;
         height: 100%;
         background-color: #75cddd;
@@ -6967,6 +6919,7 @@
     .go-login p {
         font-size: 14px;
     }
+
     .check-filename i {
         font-size: 28px;
         margin-right: 20px;
@@ -7005,7 +6958,7 @@
         width: 100%;
     }
 
-    .become-researcher{
+    .become-researcher {
         height: auto;
 
     }
@@ -7016,7 +6969,6 @@
     }
 
 
-
     .card-item-objective .headline {
         border: none;
         background-color: white;
@@ -7024,7 +6976,7 @@
         width: 100%;
     }
 
-    .headline p{
+    .headline p {
         margin-right: 3px;
     }
 
@@ -7100,7 +7052,7 @@
         z-index: 100;
     }
 
-    .research-all-around  .with-slider .main-slider {
+    .research-all-around .with-slider .main-slider {
         display: flex;
         align-items: center;
         padding: 0;
@@ -7120,7 +7072,7 @@
         width: 39px;
     }
 
-    app-login .full-section .sec-content , app-register .full-section .sec-content{
+    app-login .full-section .sec-content, app-register .full-section .sec-content {
 
         display: inherit;
 
@@ -7134,7 +7086,6 @@
     }
 
 
-
     app-about .text-left {
         display: block;
 
@@ -7144,7 +7095,7 @@
         color: #fff;
     }
 
-    app-about .full-section .side{
+    app-about .full-section .side {
         height: 300px;
     }
 

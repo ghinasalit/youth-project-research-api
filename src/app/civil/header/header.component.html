@@ -1,6 +1,5 @@
-
 <nav class='nav header' id='nav-id'>
-    <div class="logo-left ">
+    <div class="logo-left">
         <img src="assets/img/logo-left.png" alt="">
     </div>
     <ul class="nav-links"  *ngIf="navActive"  >
@@ -21,6 +20,19 @@
         <img src="assets/img/logo-right.png" alt="">
     </div>
 </nav>
+
+<div class='header' id='nav-m-id'>
+    <div class="logo-left">
+        <img src="assets/img/logo-right.png" alt="">
+    </div>
+    <div class="navbar nav-mobile"
+         [style.z-index]="collapsed ? '550' : ''"
+         [style.background-color]="collapsed ? '#fff' : ''">
+        <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
+            <span [style.color]="collapsed ? '#1b2850' : ''"></span>
+        </a>
+    </div>
+</div>
 
 <div class="nav-collapsed" *ngIf="collapsed">
     <a href="/home">{{'_HomePage' | translate}}</a>

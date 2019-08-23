@@ -24,10 +24,12 @@ export class HeaderComponent implements OnInit {
 
                 if (foo >= 100) {
                     $('#nav-id').addClass('scrolled');
+                    $('#nav-m-id').addClass('scrolled');
                     $('.logo-left').addClass('scroll-img');
                     $('.logo-right').addClass('scroll-img');
                 } else if (foo < 100) {
                     $('#nav-id').removeClass('scrolled');
+                    $('#nav-m-id').removeClass('scrolled');
                     $('.logo-left').removeClass('scroll-img');
                     $('.logo-right').removeClass('scroll-img');
                 }

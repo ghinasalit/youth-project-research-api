@@ -269,6 +269,18 @@ ul li a:hover + .hidden, .hidden:hover {
     border-radius: 6px;
 }
 
+.button-action button {
+    background: #1b2850;
+}
+
+.button-action button:hover {
+    background: #75cddd;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    -ms-transition: all 0.7s;
+    -o-transition: all 0.7s;
+    transition: all 0.7s;
+}
 
 /*Hide checkbox*/
 input[type=checkbox] {
@@ -799,3 +811,5 @@ app-home .info-data {
 .become-researcher {
     overflow: hidden;
 }
+
+

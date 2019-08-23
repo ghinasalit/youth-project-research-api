@@ -39,8 +39,7 @@
 }
 
 
-
-#nav-id {
+#nav-id, #nav-m-id {
     width: 100%;
     padding: 20px;
     line-height: 60px;
@@ -48,12 +47,46 @@
     /* Safari */
     -moz-transition: height .5s, line-height .5s, font-size .5s, background-color .5s;
     /* Firefox */
-    z-index:1000;
+    z-index: 1000;
     transition: height .5s, line-height .5s, font-size .5s, background-color .5s;
     background: #fff;;
     color: #1b2850;
     position: fixed;
 }
 
+@media (max-width: 768px) {
+    #nav-id {
+        display: none;
+    }
+
+    #nav-m-id {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-mobile {
+        width: 60px;
+        height: 60px;
+        padding: 0px;
+    }
+
+    .nav-mobile #nav-toggle {
+        padding: 30px;
+    }
+
+    ::ng-deep .navbar-login .navbar {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    #nav-id {
+        display: flex;
+    }
+
+    #nav-m-id {
+        display: none;
+    }
+}
 
 
