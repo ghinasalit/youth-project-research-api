@@ -15,13 +15,15 @@
 
 <div class="full-section">
     <div class="top-sticker"></div>
-    <div class="center-sticker"></div>
-    <div class="side">
+    <div class="center-sticker" data-aos="fade-down" data-aos-duration="1000"></div>
+    <div class="side" data-aos-duration="1000"
+         [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'">
         <div class="sec-img">
             <img src="assets/img/about.png">
         </div>
     </div>
-    <div class="side">
+    <div class="side" data-aos-duration="1000"
+         [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'">
         <div class="navbar-login logged">
             <div class="navbar"
                  [style.z-index]="collapsed ? '550' : ''"
@@ -53,10 +55,10 @@
                     <p>{{'_Significance'| translate}}</p>
                     <p>{{'_AYRP'| translate}}</p>
                 </h1>
-                    <div class="content">
-                        <p>{{'_AboutDescription'| translate}}</p>
+                <div class="content">
+                    <p>{{'_AboutDescription'| translate}}</p>
 
-                    </div>
+                </div>
             </div>
             <div class="social">
                 <div><i class="fa fa-facebook"></i></div>
@@ -69,13 +71,13 @@
     </div>
 </div>
 
-<div class="become-researcher" id="becomeResearcher" data-aos="fade-up" data-aos-duration="1000">
-    <div class="title">
+<div class="become-researcher" id="becomeResearcher" data-aos="fade-down">
+    <div class="title" data-aos="fade-down" data-aos-duration="500">
         <p>{{'_Objectives' | translate}}</p>
         <div></div>
     </div>
     <div class="cards">
-        <div class="card-item-objective">
+        <div data-aos="zoom-in" data-aos-delay="0" class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/SupportArabYouthResearch.png" alt="">
 
@@ -93,7 +95,7 @@
                 </p>
             </div>
         </div>
-        <div class="card-item-objective">
+        <div data-aos="zoom-in" data-aos-delay="200" class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/Sharepublications.png" alt="">
 
@@ -111,7 +113,7 @@
                 </p>
             </div>
         </div>
-        <div class="card-item-objective">
+        <div data-aos="zoom-in" data-aos-delay="600" class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/Help.png" alt="">
 
@@ -129,7 +131,7 @@
                 </p>
             </div>
         </div>
-        <div class="card-item-objective">
+        <div data-aos="zoom-in" data-aos-delay="1000" class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/Create_research_culture.png" alt="">
 
@@ -147,7 +149,7 @@
                 </p>
             </div>
         </div>
-        <div class="card-item-objective">
+        <div data-aos="zoom-in" data-aos-delay="1400" class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/Establish_digital_library.png" alt="">
 
@@ -165,10 +167,8 @@
                 </p>
             </div>
         </div>
-
-
-
     </div>
+
     <div class="button-action" routerLink="/register" *ngIf="!_appService.roll">
         <button>{{'_RegisterMember' | translate}}</button>
     </div>

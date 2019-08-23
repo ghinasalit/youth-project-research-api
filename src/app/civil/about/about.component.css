@@ -42,9 +42,15 @@
     }
 }
 
+#faq {
+    padding: 5rem 0;
+}
+
+.become-researcher{
+    overflow: hidden;
+}
 
 
-
-.social{
+.social {
     position: fixed;
 }

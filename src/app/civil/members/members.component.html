@@ -8,12 +8,12 @@
     <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
     <a href="/members">{{'_Our_Members' | translate}}</a>
     <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
-    <a  (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
+    <a (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
+    <a (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
     <a (click)="_appService.section = 'contactus'" routerLink="/home">{{'_ContactUs' | translate}}</a>
 </div>
 
-<div class="full-section" >
+<div class="full-section">
     <div class="side">
         <div class="sec-img">
             <img src="assets/img/member1.jpg">
@@ -29,14 +29,18 @@
                 </a>
             </div>
             <div class="login-register" *ngIf="!_appService.roll">
-                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('en')"
+                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')"
+                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
                 <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
             </div>
-            <div class="login-register"  *ngIf="_appService.roll">
-                <div class="lang" (click)="_appService.switchLanguage('en')" *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-                <div class="lang" (click)="_appService.switchLanguage('ar')" *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            <div class="login-register" *ngIf="_appService.roll">
+                <div class="lang" (click)="_appService.switchLanguage('en')"
+                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')"
+                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
@@ -122,39 +126,42 @@
             <p (click)="member.letter = 'و' ; filter()">و</p>
             <p (click)="member.letter = 'ي' ; filter()">ي</p>
         </div>
-<!--        <div class="filters">-->
-<!--            <div class="sort-icon">-->
-<!--                <i class="fa fa-sort-desc" aria-hidden="true" *ngIf="data.sort == 'asc'" (click)="sortMembers('desc')" ></i>-->
-<!--                <i class="fa fa-sort-asc" aria-hidden="true" *ngIf="data.sort == 'desc'" (click)="sortMembers('asc')"></i>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="filters">-->
+        <!--            <div class="sort-icon">-->
+        <!--                <i class="fa fa-sort-desc" aria-hidden="true" *ngIf="data.sort == 'asc'" (click)="sortMembers('desc')" ></i>-->
+        <!--                <i class="fa fa-sort-asc" aria-hidden="true" *ngIf="data.sort == 'desc'" (click)="sortMembers('asc')"></i>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
     <div class="col-lg-12 research-input">
         <div class="row">
-            <form class="input-group" [formGroup]="searchForm" >
-                <input type="text" class="form-control" placeholder="{{'_Search' | translate}}..." formControlName="search" (keyup.enter)="filter()">
+            <form class="input-group" [formGroup]="searchForm">
+                <input type="text" class="form-control" placeholder="{{'_Search' | translate}}..."
+                       formControlName="search" (keyup.enter)="filter()">
                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" (click)="filter()"><i class="fa fa-search"
-                                                                                 aria-hidden="true" ></i></button>
+                                                                                                    aria-hidden="true"></i></button>
                         </span>
             </form>
         </div>
     </div>
-    <div class="members-cards"   infinite-scroll
+    <div class="members-cards" infinite-scroll
          [infiniteScrollDistance]="scrollDistance"
          [infiniteScrollUpDistance]="scrollUpDistance"
          [infiniteScrollThrottle]="throttle"
          (scrolled)="loadmore()">
 
-        <div class="card" *ngFor="let member of members">
-            <img [src]="member.avatar?_appService.api.api.imgURL  + member.avatar : 'assets/img/avatar_default.PNG' " alt="" [routerLink]="['/profile' , member.username]">
+        <div class="card" *ngFor="let member of members; let i = index" data-aos="fade-up"
+             [attr.data-aos-delay]="i * 100" data-aos-duration="1000">
+            <img [src]="member.avatar?_appService.api.api.imgURL  + member.avatar : 'assets/img/avatar_default.PNG' "
+                 alt="" [routerLink]="['/profile' , member.username]">
             <div class="title" [routerLink]="['/profile' , member.member_id]" style="cursor: pointer">
                 <p>{{member.first_name}} {{member.last_name}}</p>
                 <div>
                 </div>
             </div>
         </div>
-
+        <div class="card" *ngIf="members.length % 3 == 2" [style.opacity]="0" [style.border]="'none'"></div>
 
     </div>
 </div>

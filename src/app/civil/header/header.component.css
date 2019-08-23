@@ -48,6 +48,7 @@
     /* Safari */
     -moz-transition: height .5s, line-height .5s, font-size .5s, background-color .5s;
     /* Firefox */
+    z-index:1000;
     transition: height .5s, line-height .5s, font-size .5s, background-color .5s;
     background: #fff;;
     color: #1b2850;
