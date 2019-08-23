@@ -75,6 +75,9 @@
     width: 100%;
 }
 
+.full-section{
+    height: auto;
+}
 
 .form-input{
     margin-top: 20px;

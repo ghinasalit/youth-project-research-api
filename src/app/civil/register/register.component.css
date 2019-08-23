@@ -38,6 +38,7 @@
 
 .example-form {
     width: 90%;
+    margin-top: 20px;
 }
 
 
@@ -62,4 +63,12 @@
 
 ::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
     color: #75cddd;
+}
+
+
+::ng-deep .mat-form-field {
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 2.125 !important;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
 }

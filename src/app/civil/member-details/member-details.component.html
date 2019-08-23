@@ -1,3 +1,6 @@
+<nav class='header'>
+
+</nav>
 <div class="nav-collapsed" *ngIf="collapsed">
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
@@ -32,7 +35,6 @@
                 <label>
                     <img src="assets/img/camera.PNG"/>
                 </label>
-<!--                <input type="file" (change)="fileChangeEvent($event)"/>-->
             </div>
             <div *ngIf="imageChangedEvent" class="checked" [style.bottom]="croppedImage.base64 ? '0' : '8px'"
                  [style.left]="croppedImage.base64 ? '0' : '8px'">
@@ -55,7 +57,7 @@
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
-        <div class="sec-content">
+        <div class="sec-content update-profile">
             <div class="title">
                 <p>{{'_UpdateProfile' | translate}}</p>
                 <div></div>

@@ -29,6 +29,10 @@ export class DataService {
         return this.api.submitPage('login', data);
     }
 
+    activeMemberService(data: User): Observable<Object> {
+        return this.api.submitPage('active_member', data);
+    }
+
     logoutService(): Observable<Object> {
         return this.api.getDataPage('logout');
     }

@@ -1,3 +1,6 @@
+<nav class='header'>
+
+</nav>
 <div class="nav-collapsed" *ngIf="collapsed">
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
@@ -197,53 +200,37 @@
 
 <!--</div>-->
 
-<div class="full-section research-all-around" data-aos="fade-up" data-aos-duration="1000">
-    <div class="full-section with-slider">
-        <div class="top-sticker"></div>
-        <div class="center-sticker"></div>
-        <div class="side">
-            <div class="sec-img">
-                <ng-container *ngFor="let member of dataList; let i = index">
-                    <img [@fadeInOut] *ngIf="itemIndex == i" [src]=" dataList[i]['photo']">
-                </ng-container>
-            </div>
+
+<div class="full-section" data-aos="fade-up" data-aos-duration="1000">
+    <div class="left-sticker"></div>
+    <div class="center-sticker"></div>
+    <div class="side">
+        <div class="sec-img">
+            <img src="assets/img/about.png">
         </div>
-        <div class="side">
-            <div class="sec-content">
-                <div class="about-content">
-                    <h1 class="text-left">
-                        <p>{{'_Why_publish_research' | translate}}</p>
-                        <p>{{'_findings_on_AYRP' | translate}}</p>
-                    </h1>
+    </div>
+    <div class="side">
+        <div class="sec-content">
+            <div class="about-content">
+                <h1 class="text-left">
+                    <p>{{'_Why_Join_AYRB' | translate}}</p>
+                </h1>
 
-                    <div class="member-name" *ngFor="let text of dataList; let i = index">
-                        <div [@fadeInOut] *ngIf="itemIndex == i" class="title">
-                            <p>{{dataList[i]['title']}}</p>
-                            <div></div>
-                        </div>
+                <div class="content">
+                    <p>{{'_AbourJoinDesc' | translate}}</p>
+                </div>
+                <div>
+                    <div class="title read-more">
+                        <p style="cursor: pointer" routerLink="/about">{{'_JoinAYRB' | translate}}</p>
+                        <div></div>
                     </div>
-                    <div class="main-slider">
-                        <div class="left-slide" (click)="prev()">
-                            <i class="fa fa-chevron-left" *ngIf="_appService.currentLanguage == 'en'"></i>
-                            <i class="fa fa-chevron-right" *ngIf="_appService.currentLanguage == 'ar'"></i>
-                        </div>
-                        <div class="slider-control">
-                            <ng-container *ngFor="let text of dataList; let i = index">
-                                <h4 *ngIf="itemIndex == i" [innerHTML]="dataList[i]['text'] "></h4>
-                            </ng-container>
-                        </div>
-                        <div class="right-slide" (click)="next()">
-                            <i class="fa fa-chevron-right" *ngIf="_appService.currentLanguage == 'en'"></i>
-                            <i class="fa fa-chevron-left" *ngIf="_appService.currentLanguage == 'ar'"></i>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
+
         </div>
     </div>
 </div>
+
 
 <div class="frequent-asked-questions" id="faq">
     <div class="title">
@@ -256,44 +243,3 @@
     </div>
 </div>
 
-<div class="full-section partners" id="partners" data-aos="fade-up" data-aos-duration="1000">
-
-    <div class="full-section with-slider">
-        <div class="top-sticker"></div>
-        <div class="center-sticker"></div>
-        <div class="side">
-            <div class="logo-partner">
-                <img src="assets/img/partners.PNG">
-            </div>
-
-
-        </div>
-        <div class="side">
-            <div class="sec-content">
-                <div class="about-content">
-                    <h1 class="text-left">
-                        <p>{{'_OurPartners' | translate}}</p>
-                    </h1>
-
-                    <div class="content">
-                        <p>{{'_ResearchersDescription' | translate}}</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="side mobile">
-            <div class="logo-partner-mobile" style="background: #fff">
-                <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="left">
-                    <img src="assets/img/p1.PNG" width="100%">
-                    <img src="assets/img/p1.PNG" width="100%">
-                    <img src="assets/img/p1.PNG" width="100%">
-                    <img src="assets/img/p1.PNG" width="100%">
-                    <img src="assets/img/p1.PNG" width="100%">
-                    <img src="assets/img/p1.PNG" width="100%">
-                </marquee>
-            </div>
-        </div>
-    </div>
-</div>

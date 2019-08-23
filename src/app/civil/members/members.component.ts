@@ -113,7 +113,7 @@ export class MembersComponent implements OnInit {
     ngOnInit() {
 
         window.scrollTo(0, 0);
-
+        this._appService.active = 3;
         this.getMembers();
     }
 

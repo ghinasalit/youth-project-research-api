@@ -42,31 +42,9 @@
     }
 }
 
-.logo-partner-mobile, .mobile {
-    display: none;
+
+
+
+.social{
+    position: fixed;
 }
-
-
-@media (max-width: 425px) {
-    .logo-partner-mobile, .mobile {
-        display: block;
-        margin-top: 0px;
-    }
-
-    .logo-partner {
-        display: none;
-    }
-
-}
-
-
-/*pattners*/
-.logo-partner {
-    height: 100%;
-}
-
-.logo-partner img {
-    width: 100%;
-    height: 100%;
-}
-

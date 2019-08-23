@@ -318,6 +318,8 @@ export class PapersComponent implements OnInit {
     }
 
     ngOnInit() {
+        this._appService.active = 1;
+
         this.username = localStorage.getItem('username');
         this._appService.countiesNotifier.subscribe(data => {
             this.Counties = data;

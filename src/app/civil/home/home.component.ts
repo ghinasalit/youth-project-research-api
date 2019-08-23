@@ -45,10 +45,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     email = new FormControl('', [Validators.required, Validators.email]);
     phone = new FormControl('', [Validators.required]);
     message = new FormControl('', [Validators.required]);
-
-
-
-
     options = {
         layers: [
 
@@ -60,6 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             }),
         ],
         zoom: 2,
+        scrollWheelZoom: false,
         center: L.latLng(-37.87, 175.475),
         background: '#000',
         fillColor: 'yellow',
@@ -97,7 +94,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             'message': [null, Validators.required],
         });
 
-        translate.get(['_FeedbackMSG', '_Success', '_ResearchPaper' , '_Failed', '_Email' , '_FailedMSG', '_MemberMonth', '_GoProfile', '_Views', '_RecognizedResearch']).subscribe(res => {
+        translate.get(['_FeedbackMSG', '_Success', '_ResearchPaper', '_Failed', '_Email', '_FailedMSG', '_MemberMonth', '_GoProfile', '_Views', '_RecognizedResearch']).subscribe(res => {
 
             this.trans.Failed = res._Failed;
             this.trans.FailedMSG = res._FailedMSG;
@@ -297,7 +294,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                                                     '              </div>\n' +
                                                     '              <div class="message">\n' +
                                                     '                <i class="fa fa-envelope-o"></i>\n' +
-                                                    '                <div class="info-data"> <a href=mailto:' + details.email + '> ' + this.trans.Email + ' ' +  details.first_name + ' </a></div>\n' +
+                                                    '                <div class="info-data"> <a href=mailto:' + details.email + '> ' + this.trans.Email + ' ' + details.first_name + ' </a></div>\n' +
                                                     '              </div>\n' +
                                                     '            </div>\n' +
                                                     '         </div>\n' +
@@ -379,7 +376,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-
+ this._appService.active = 0;
         this.getStatistics();
         window.scrollTo(0, 0);
         this.getMembers();
@@ -398,10 +395,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
     @HostListener('window:scroll', [])
     onWindowScroll() {
         const scrollTop = $(window).scrollTop();
-        if (scrollTop > 700) {
+        if (scrollTop > 700 && !this._appService.roll) {
             this.socialFixed = true;
-            $('.social').css('position', 'fixed').css('top', '50%').css('z-index', '1000');
-        } else {
+            $('.social').css('position', 'fixed').css('top', '10px').css('z-index', '1000');
+        } else if (scrollTop <= 700 && !this._appService.roll) {
+            this.socialFixed = false;
+            $('.social').css('position', 'initial').css('top', '0');
+        } else if (scrollTop > 200 && this._appService.roll) {
+            this.socialFixed = true;
+            $('.social').css('position', 'fixed').css('top', '2px').css('z-index', '1000');
+        } else if (scrollTop <= 200 && this._appService.roll) {
             this.socialFixed = false;
             $('.social').css('position', 'initial').css('top', '0');
         }

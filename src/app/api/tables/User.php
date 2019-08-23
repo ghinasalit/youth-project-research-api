@@ -533,6 +533,23 @@ Class User
         }
     }
 
+ static public function active_member($data)
+    {
+
+        $activation_code = Helper::make_safe($data['activation_code']);
+
+            $response = Queries::active_member($activation_code);
+
+            if (is_numeric($response)) {
+                $error_msg = array_search($response, \Model\Enums::$code);
+                $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+            } else {
+                $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+            }
+            return $result;
+        }
+
+
 
     static public function get_papers($data)
     {

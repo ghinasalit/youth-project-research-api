@@ -1,3 +1,6 @@
+<nav class='header'>
+
+</nav>
 <div class="nav-collapsed" *ngIf="collapsed">
   <a routerLink="/home">{{'_HomePage' | translate}}</a>
   <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
@@ -24,7 +27,14 @@
           <span [style.color]="collapsed ? '#1b2850' : ''"></span>
         </a>
       </div>
+      <div class="login-register">
+        <div class="lang" (click)="_appService.switchLanguage('en')"
+             *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+        <div class="lang" (click)="_appService.switchLanguage('ar')"
+             *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+      </div>
     </div>
+
     <div class="sec-content">
       <div class="title">
         <p *ngIf="_appService.registerPageTitle === 0">{{'_ShareKnowledge' | translate}}</p>

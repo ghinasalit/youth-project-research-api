@@ -1,3 +1,6 @@
+<nav class='header'>
+
+</nav>
 <div class="nav-collapsed" *ngIf="collapsed">
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
@@ -24,6 +27,12 @@
                     <span [style.color]="collapsed ? '#1b2850' : ''"></span>
                 </a>
             </div>
+            <div class="login-register">
+                <div class="lang" (click)="_appService.switchLanguage('en')"
+                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+                <div class="lang" (click)="_appService.switchLanguage('ar')"
+                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+            </div>
         </div>
         <div class="sec-content">
             <div class="title">
@@ -44,7 +53,6 @@
                         <mat-form-field>
                             <input matInput placeholder="{{'_EnterPassword' | translate}}" [type]="hide ? 'password' : 'text'"  formControlName="password" required>
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
                             <mat-error *ngIf="password.errors.required">{{'_Required' | translate}}</mat-error>
 

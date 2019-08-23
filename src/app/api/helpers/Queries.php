@@ -10,16 +10,22 @@ class Queries
             'session_id' => md5(microtime()));
 
 
-        $db->where('email', $email);
-        $db->where('password', $password);
-        $db->update('members', $data);
+
         $user = $db->where('email', $email)
             ->where('password', $password)
-            ->getOne("members", ' member_id , username ');
+            ->getOne("members", ' member_id , username , active ');
         if ($db->count) {
+            if($user['active'] == 1){
+                $db->where('email', $email);
+                $db->where('password', $password);
+                $db->update('members', $data);
+                $_SESSION[___APP]['session_key'] = $data['session_id'];
+                return $user;
 
-            $_SESSION[___APP]['session_key'] = $data['session_id'];
-            return $user;
+            }else{
+
+                return -99; // not active yet
+            }
 
         } else {
             return -24;
@@ -109,28 +115,28 @@ class Queries
     }
 
 
-    static public function reset_password($activation_code , $password)
+    static public function reset_password($activation_code, $password)
     {
 
 
-      global $db;
-      $data = Array(
-          'password' => md5($password),
-          'activation_code' => '',
-      );
+        global $db;
+        $data = Array(
+            'password' => md5($password),
+            'activation_code' => '',
+        );
 
-        $user =  $db->where('activation_code', $activation_code)
-            -> getOne('members'  , 'email');
-      if($user){
-          $user =  $db->where('activation_code', $activation_code)
-              -> update('members', $data);
+        $user = $db->where('activation_code', $activation_code)
+            ->getOne('members', 'email');
+        if ($user) {
+            $user = $db->where('activation_code', $activation_code)
+                ->update('members', $data);
 
 
-          return $user;
+            return $user;
 
-      }else{
-          return -99;
-      }
+        } else {
+            return -99;
+        }
 
     }
 
@@ -139,12 +145,12 @@ class Queries
 
         global $db;
         $data = Array(
-        'activation_code' => md5(microtime()),
+            'activation_code' => md5(microtime()),
 
         );
         $userCheck = $db->where("email", $email)->get("members");
         if ($userCheck) {
-               $db->where('email', $email)
+            $db->where('email', $email)
                 ->update('members', $data);
 
 
@@ -245,24 +251,6 @@ class Queries
         }
     }
 
-    static public function active_unactive_member($user_id, $status)
-    {
-
-        global $db;
-        $data = Array(
-            'active' => $status,
-        );
-
-        $db->where('member_id', $user_id);
-        $db->update('members', $data);
-        $paper = $db->where('member_id', $user_id)
-            ->get("members", null, 'member_id , active');
-        if ($db->count) {
-            return $paper;
-        } else {
-            return -25;
-        }
-    }
 
     static public function register($password, $f_name, $l_name, $email, $avatar, $university, $job, $location, $phone, $Linkedin, $description)
     {
@@ -278,6 +266,8 @@ class Queries
         } else {
             $avatar_path = '';
         }
+        global $db;
+
 
         $data = Array(
             'first_name' => $f_name,
@@ -293,7 +283,8 @@ class Queries
             'email' => $email,
             'username' => $email,
             'password' => md5($password),
-            'active' => '1',
+            'active' => '0',
+            'activation_code' => md5($password),
 
         );
 
@@ -305,8 +296,8 @@ class Queries
             $d = $db->insert('members', $data);
             $user = $db->where('email', $email)->getOne('members', 'member_id ,email ,first_name  ,last_name');
             if ($db->count) {
-
-                $_SESSION[___APP]['session_key'] = $data['session_id'];
+                Queries::send_email_active_member($email, $data['activation_code']);
+//                $_SESSION[___APP]['session_key'] = $data['session_id'];
                 return $user;
 
             } else {
@@ -314,6 +305,64 @@ class Queries
             }
         } else {
             return -23;
+        }
+    }
+
+    static public function send_email_active_member($email , $activation_code)
+    {
+
+            $to = $email;
+            $to = 'ghinasallit@gmail.com';
+            $subject = "Active account";
+
+            $body = "
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<p>Dear,</p>
+<table>
+<tr>
+<a href=http://admin.arabyouthresearch.org/#/login/" . $activation_code . ">Click here to active your acoount </a>
+</tr>
+</table>
+</body>
+<table>
+</html>
+";
+
+// Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+            $headers .= 'From:info@arabyouthresearch.org' . "\r\n";
+
+            mail($to, $subject, $body, $headers);
+
+
+
+    }
+
+
+    static public function active_member($activation_code)
+    {
+
+        global $db;
+        $data = Array(
+            'active' => 1,
+            'activation_code' => '',
+        );
+
+        $db->where('activation_code', $activation_code);
+        $db->update('members', $data);
+        $user = $db->where('activation_code', $activation_code)
+            ->get("members", null, ' active');
+        if ($user) {
+            return $user;
+        } else {
+            return -25;
         }
     }
 

@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {AppService} from '../../app.service';
 import {fadeInOut} from '../../../animations/fadeInOut';
 import {TranslateService} from '@ngx-translate/core';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -37,18 +38,18 @@ export class AboutComponent implements OnInit {
 
     };
 
-    constructor(public _appService: AppService ,
+    constructor(public _appService: AppService,
                 private translate: TranslateService,
     ) {
 
 
-        translate.get(['_IncreaseKnowledge' , '_Recognition' , '_CareerAdvancement' , '_ResearchersNetwork' , '_IncreaseKnowledgeDesc' , '_ResearchersNetworkDesc', '_CareerAdvancementDesc' , '_RecognitionDesc']).subscribe(res => {
+        translate.get(['_IncreaseKnowledge', '_Recognition', '_CareerAdvancement', '_ResearchersNetwork', '_IncreaseKnowledgeDesc', '_ResearchersNetworkDesc', '_CareerAdvancementDesc', '_RecognitionDesc']).subscribe(res => {
 
             this.dataList = [
                 {
                     photo: 'assets/img/login.jpg',
-                    text: res._IncreaseKnowledgeDesc ,
-                    title:  res._IncreaseKnowledge
+                    text: res._IncreaseKnowledgeDesc,
+                    title: res._IncreaseKnowledge
                 },
                 {
                     photo: 'assets/img/recognation.jpg',
@@ -62,20 +63,19 @@ export class AboutComponent implements OnInit {
                 },
                 {
                     photo: 'assets/img/Researcher_network.jpg',
-                    text :  res._ResearchersNetworkDesc,
+                    text: res._ResearchersNetworkDesc,
                     title: res._ResearchersNetwork
                 }
             ];
         });
 
 
-
         translate.onLangChange.subscribe(lang => {
             this.dataList = [
                 {
                     photo: 'assets/img/login.jpg',
-                    text: lang.translations._IncreaseKnowledgeDesc ,
-                    title:  lang.translations._IncreaseKnowledge
+                    text: lang.translations._IncreaseKnowledgeDesc,
+                    title: lang.translations._IncreaseKnowledge
                 },
                 {
                     photo: 'assets/img/recognation.jpg',
@@ -89,16 +89,14 @@ export class AboutComponent implements OnInit {
                 },
                 {
                     photo: 'assets/img/Researcher_network.jpg',
-                    text :  lang.translations._ResearchersNetworkDesc,
+                    text: lang.translations._ResearchersNetworkDesc,
                     title: lang.translations._ResearchersNetwork
                 }
-
 
 
             ];
         });
     }
-
 
 
     next() {
@@ -118,8 +116,10 @@ export class AboutComponent implements OnInit {
     }
 
     ngOnInit() {
+        this._appService.active = 2;
+        window.scrollTo(0, 0);
 
-        window.scrollTo(0 , 0);
+
     }
 
 }

@@ -295,13 +295,6 @@ input[type=checkbox]:checked ~ #menu {
 }
 
 
-.social {
-    display: inline-block;
-    margin-right: 25px;
-    margin-top: 35px;
-}
-
-
 .title-search {
     display: flex;
     justify-content: space-between;
@@ -374,4 +367,13 @@ input[type=checkbox]:checked ~ #menu {
 
 .paper-description {
     word-break: break-all;
+}
+
+.social-statistics{
+    display: flex;
+    justify-content: space-between;
+}
+
+.social{
+    position: fixed;
 }

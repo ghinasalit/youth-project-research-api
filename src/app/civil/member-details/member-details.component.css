@@ -21,20 +21,9 @@
     height: 30px;
 }
 
-
-/*.register .title {*/
-/*    font-size: 30px;*/
-/*    font-weight: bold;*/
-/*    color: #1b2850;*/
-/*}*/
-
-
-/*.register .title div {*/
-/*    border: 13px solid #75cddd;*/
-/*    background-color: #75cddd;*/
-/*    width: 115px;*/
-/*}*/
-
+.update-profile{
+    margin-top: 0;
+}
 
 .register-info p {
     font-size: 18px;
@@ -114,4 +103,17 @@
 .login-register {
 color: #1b2850;
 
+}
+
+
+::ng-deep .mat-form-field {
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 2.125 !important;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+
+.full-section{
+    height: auto;
 }

@@ -13,7 +13,8 @@
     </div>
 
 
-    <div class="paper-card-info"  style="cursor: pointer">
+    <div class="paper-card-info"  style="cursor: pointer" [routerLink]="['/profile' , paper.member_id]"
+         (click)="dialogRef.close()">
         <h6 class="by">{{'_By' | translate}}</h6>
         <h6 style="font-weight: bold ; color: #75cddd;" routerLink="/home"> {{paper.first_name}} {{paper.last_name}}</h6>
     </div>

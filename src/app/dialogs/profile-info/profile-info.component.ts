@@ -5,6 +5,7 @@ import {AppService} from '../../app.service';
 import {ToastrService} from 'ngx-toastr';
 import {ActivatedRoute, Router, RouterLinkActive} from '@angular/router';
 import {User} from '../../../classes/user';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -23,12 +24,17 @@ export class ProfileInfoComponent implements OnInit {
     university = new FormControl('', [Validators.required]);
     imageChangedEvent: any = '';
     croppedImage: any = 'assets/img/avatar_default.PNG';
+    private trans = {
+        RegisterMSG: null,
 
+    };
 
     constructor(private fb: FormBuilder,
                 public _appService: AppService,
                 private toaster: ToastrService,
+                private toast: ToastrService,
                 private router: Router,
+                private translate: TranslateService,
                 public dialogRef: MatDialogRef<ProfileInfoComponent>) {
         this.profileForm = fb.group({
 
@@ -38,6 +44,17 @@ export class ProfileInfoComponent implements OnInit {
             'phone': '',
             'description': '',
             'Linkedin': '',
+
+        })
+
+        translate.get(['_RegisterMSG']).subscribe(res => {
+
+            this.trans.RegisterMSG = res._RegisterMSG;
+        });
+
+        translate.onLangChange.subscribe(lang => {
+
+            this.trans.RegisterMSG = lang.translate._RegisterMSG;
 
         });
     }
@@ -74,12 +91,15 @@ export class ProfileInfoComponent implements OnInit {
 
                 if (this.result.code === 1) {
                     this._appService.getRoll();
-                    localStorage.setItem('username', this.result.data.username);
-                    this.router.navigate(['/home']);
-                    this.dialogRef.close();
+                    this.toast.success('Thank you for registration , please check your email to active your account');
+                    setTimeout(() => {
+                        this.router.navigate(['/login']);
+                        this.dialogRef.close();
+
+                    });
                 } else {
 
-                    this.toaster.error(this.result.msg, 'Failed');
+                    this.toaster.error(this.result.msg, '');
 
                 }
 

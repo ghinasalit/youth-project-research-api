@@ -80,6 +80,9 @@
         margin-top: 150px;
     }
 
+    .go-login a{
+        margin: 3px 0px;
+    }
 }
 
 @media (min-width: 1401px) and (max-width: 1600px) {
@@ -276,6 +279,20 @@
         font-size: 18px;
     }
 
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 65%;
+        padding: 0 140px;
+    }
+
+    .go-login a{
+        margin: 3px 0px;
+    }
+
+    .partners{
+        height: 420px;
+    }
 
 }
 
@@ -998,7 +1015,28 @@
         color: #1b2850;
     }
 
+    .nav-links{
+        display: flex;
+        justify-content: space-around;
+        width: 65%;
+        padding: 0 0px;
+    }
 
+    .nav-links a {
+        color: #1b2850;
+        font-size: 16px;
+        font-weight: bold !important;
+        text-decoration: none;
+    }
+
+
+    .go-login a{
+        margin: 3px 0px;
+    }
+
+    .partners{
+        height: 335px;;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -2009,7 +2047,40 @@
         font-size: 15px;
     }
 
+    .logo-left {
+        float: left;
+        padding: 25px 40px;
+    }
 
+    .logo-right {
+        float: right;
+        padding: 25px 40px;
+    }
+
+    .nav-links a {
+        color: #1b2850;
+        font-size: 14px;
+        font-weight: bold !important;
+        text-decoration: none;
+    }
+
+    .nav-links li {
+        list-style: none;
+        cursor: pointer;
+        margin-right: 0px;
+        display: inline-block;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 65%;
+        padding: 0 0;
+    }
+
+    .partners{
+        height: 235px;
+    }
 }
 
 @media (min-width: 425px) and (max-width: 767px) {

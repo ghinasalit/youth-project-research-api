@@ -36,7 +36,7 @@ if ($request_headers['code'] == 1) {
 
     if ($function) {
         if (!in_array($function, array('login', 'register', 'check_version' , 'add_feedback' , 'get_roll' , 'get_one_recognizes_researched' ,
-            'search_paper' ,'is_user_exist', 'get_universities' , 'get_members' , 'get_published_papers' ,'send_email_reset_password',
+            'search_paper' ,'is_user_exist', 'get_universities' , 'get_members' , 'get_published_papers' ,'send_email_reset_password', 'active_member' ,
             'get_countries' , 'get_disciplines' , 'statistics' , 'get_years' , 'get_member' , 'get_papers_by_member' , 'reset_password' ,
             'search_paper_by_member' , 'search_member'))) {
             if ($session_key) {
@@ -109,6 +109,11 @@ if ($request_headers['code'] == 1) {
                 case 'get_members':
                     {
                         $result = User::get_active_members($data);
+                        break;
+                    }
+                 case 'active_member':
+                    {
+                        $result = User::active_member($data);
                         break;
                     }
                  case 'save_paper':

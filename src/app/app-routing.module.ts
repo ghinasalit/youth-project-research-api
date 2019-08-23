@@ -71,6 +71,11 @@ const routes: Routes = [
                 canActivate: [LoginGuard]
             },
             {
+                path: 'login/:id',
+                component: LoginComponent,
+                canActivate: [LoginGuard]
+            },
+            {
                 path: 'about',
                 component: AboutComponent
             },

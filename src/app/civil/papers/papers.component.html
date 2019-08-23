@@ -1,3 +1,6 @@
+<nav class='header'>
+
+</nav>
 <div class="nav-collapsed" *ngIf="collapsed">
     <a routerLink="/home">{{'_HomePage' | translate}}</a>
     <a href="/papers">{{'_ResearchPapers' | translate}}</a>
@@ -36,15 +39,23 @@
         </div>
     </div>
 
-    <div class="statistics">
-        <div>
-            <p>{{'_HomeTo' | translate}} </p><span>{{statistics?.research}} </span>
-            <p>{{'_ResearchPapersFrom' | translate}} </p> <span>{{statistics?.researchers}} </span>
+    <div class="social-statistics">
+        <div class="statistics">
+            <div>
+                <p>{{'_HomeTo' | translate}} </p><span>{{statistics?.research}} </span>
+                <p>{{'_ResearchPapersFrom' | translate}} </p> <span>{{statistics?.researchers}} </span>
+            </div>
+            <div>
+                <p>{{'_ResearchersAcross' | translate}} </p>
+                <span>{{statistics?.discipline}}</span>
+                <p>{{'_Disciplines' | translate}}</p>
+            </div>
         </div>
-        <div>
-            <p>{{'_ResearchersAcross' | translate}} </p>
-            <span>{{statistics?.discipline}}</span>
-            <p>{{'_Disciplines' | translate}}</p>
+        <div class="social">
+            <div><i class="fa fa-facebook"></i></div>
+            <div><i class="fa fa-instagram"></i></div>
+            <div><i class="fa fa-twitter"></i></div>
+            <div><i class="fa fa-youtube"></i></div>
         </div>
     </div>
 </div>
@@ -139,7 +150,7 @@
 
         </div>
     </div>
-    <div class="cards-items" *ngIf="papers"  infinite-scroll
+    <div class="cards-items" *ngIf="papers" infinite-scroll
          [infiniteScrollDistance]="scrollDistance"
          [infiniteScrollUpDistance]="scrollUpDistance"
          [infiniteScrollThrottle]="throttle"
@@ -160,45 +171,48 @@
                     </div>
                 </div>
                 <div>
-                    <div class="paper-card-info" style="cursor: pointer" [routerLink]="['/profile' , paper.member_id]">
-                        <h6 class="by"> {{'_By' | translate}}  </h6>
-                        <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
+                    <div class="item-body">
+                        <div class="paper-card-info" style="cursor: pointer"
+                             [routerLink]="['/profile' , paper.member_id]">
+                            <h6 class="by"> {{'_By' | translate}}  </h6>
+                            <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
+                        </div>
+                        <div class="paper-card-info">
+                            <i class="fa fa-tag" aria-hidden="true"></i>
+                            <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
+                        </div>
+                        <div class="paper-card-info">
+                            <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
+                        </div>
+                        <div class="paper-description">
+                            <p>
+                                {{ (paper?.description.length > 200) ? (paper?.description | slice:0:200) + '...' : (paper?.description) }}
+                            </p>
+                        </div>
+                        <div class="view-more" (click)="viewPaper(paper)">
+                            <p>{{'_ViewMore' | translate}}</p>
+                        </div>
                     </div>
-                    <div class="paper-card-info">
-                        <i class="fa fa-tag" aria-hidden="true"></i>
-                        <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
-                    </div>
-                    <div class="paper-card-info">
-                        <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
-                    </div>
-                    <div class="paper-description">
-                        <p>
-                            {{ (paper?.description.length > 200) ? (paper?.description | slice:0:200) + '...' : (paper?.description) }}
-                        </p>
-                    </div>
-                    <div class="view-more" (click)="viewPaper(paper)">
-                        <p>{{'_ViewMore' | translate}}</p>
-                    </div>
-                </div>
-                <div class="item-footer">
-                    <div class="view-download">
+                    <div class="item-footer">
+                        <div class="view-download">
 
-                        <div class="views-paper">
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <h6>{{paper.views}} {{'_Views' | translate}}</h6>
-                        </div>
-                        <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
-                            <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
-                        </div>
-                        <div class="edit-paper" style="cursor: pointer" [routerLink]="['/edit-paper' , paper.paper_id]"
-                             *ngIf="paper.username == username">
-                            <i class="fa fa fa-pencil-square-o"></i>
+                            <div class="views-paper">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <h6>{{paper.views}} {{'_Views' | translate}}</h6>
+                            </div>
+                            <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
+                                <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
+                            </div>
+                            <div class="edit-paper" style="cursor: pointer"
+                                 [routerLink]="['/edit-paper' , paper.paper_id]"
+                                 *ngIf="paper.username == username">
+                                <i class="fa fa fa-pencil-square-o"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="c-item" *ngIf="papers.length % 3 == 2" [style.opacity]="0" [style.border]="'none'"></div>
         </div>
-        <div class="c-item" *ngIf="papers.length % 3 == 2" [style.opacity]="0" [style.border]="'none'"></div>
-    </div>
 
-</div>
+    </div>

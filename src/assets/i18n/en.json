@@ -14,9 +14,9 @@
   "_RegisterMember": "Register and be a member",
   "_Login": "Login",
   "_Logout": "Logout",
-  "_About": "About the",
+  "_About": "About the Arab",
   "_ResearchLibrary": "Research Library",
-  "_ArabYouth": "Arab Youth Research Platform",
+  "_ArabYouth": " Youth Research Platform",
   "_AboutDescription": "Under the patronage of His Highness Sheikh Mansour bin Zayed Al Nahyan, Deputy Prime Minister and Minister of Presidential Affairs of the United Arab Emirates, the Arab Youth Center has launched the Arab Youth Research Platform to be a unique platform dedicated to publishing findings of research conducted by Arab youth. The platform aims to continuously add to the body of knowledge, encourage quality research by creating a research movement across the Arab world, and increase availability and accessibility of research findings conducted by Arab youth.",
   "_Search": "Search",
   "_By": "By",
@@ -159,7 +159,8 @@
   "_ResearchersNetwork": "Researchers Network",
   "_IncreaseKnowledgeDesc": "Be part of highlighting resolutions to existing issues, build theories and enrich the pool of literature in the Arab world",
   "_RecognitionDesc": "Let the world know of your research findings and get the recognition you deserve in your field.",
-  "_CareerAdvancementDesc": "Get in touch with large organizations that dedicate a large portion of their budget to research and development and universities priorities published research in your field. By publishing your research findings on this platform will make it easier for you to connect with industry experts who look for innovative youth research.",
+  "_CareerAdvancementDesc": "Get in touch with large organizations that dedicate a large portion of their budget to research and development and universities priorities published research in your field. ",
+  "_ReachOrganizationsDesc": "By publishing your research findings on this platform will make it easier for you to connect with industry experts who look for innovative youth research.",
   "_ResearchersNetworkDesc": "Know what other researchers in your field are working on, share your ideas with other members of common background and learn from them.",
   "_FeedbackMSG": "Thank you for contacting us. One of our representatives will be in contact with you shortly regarding your inquiry.",
   "_Success": "Success",
@@ -178,7 +179,10 @@
   "_SetPassword": "Set your password",
   "_ChangePasswordMSG": "The password has been Changed successfully",
   "_ChangePasswordFailedMSG": "Failed to change password , please check the link that was sent to your email again.",
-  "_CheckYourEmail": "Please check your email"
+  "_CheckYourEmail": "Please check your email",
+  "_AccountNotActive": "Your account not active",
+  "_RegisterMSG": "Registration has successful, please check your email to activate your account.",
+  "_Members": "Members"
 
 
 

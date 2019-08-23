@@ -19,12 +19,14 @@ import {ImageCropperModule} from 'ngx-image-cropper';
 import {until} from 'selenium-webdriver';
 import {ConditionsComponent} from '../app/dialogs/conditions/conditions.component';
 import {RequestComponent} from '../app/dialogs/request/request.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
     declarations: [ProfileInfoComponent, PaperComponent ,  ConditionsComponent , RequestComponent],
     imports: [
         MatFormFieldModule,
+        RouterModule,
         MatInputModule,
         TranslateModule,
         CommonModule,
