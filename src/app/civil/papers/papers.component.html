@@ -140,11 +140,15 @@
          [infiniteScrollUpDistance]="scrollUpDistance"
          [infiniteScrollThrottle]="throttle"
          (scrolled)="loadmore()">
-        <div class="c-item" *ngFor="let paper of papers; let i = index" [id]="paper.paper_id" data-aos-once="true"
+        <div class="c-item" *ngFor="let paper of papers; let i = index" [id]="paper.paper_id"
+             [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
              data-aos="fade-up" [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000">
-            <div class="bookmark"  style="cursor: pointer" >
-                <img src="assets/img/Save-Bookmark.png"  (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 " alt="Save paper">
-                <img src="assets/img/Saved-Bookmark.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1" alt="Unsave Paper">
+            <div class="bookmark" style="cursor: pointer"
+                 [style.float]="paper.language == 1 ?  'right' :  'left'">
+                <img src="assets/img/Save-Bookmark.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 "
+                     alt="Save paper">
+                <img src="assets/img/Saved-Bookmark.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1"
+                     alt="Unsave Paper">
             </div>
             <div class="items-container">
                 <div class="item-header">
@@ -152,25 +156,31 @@
                         <h3>{{(paper?.title.length > 70) ? (paper?.title | slice:0:70) + '...' : (paper?.title) }}
 
                         </h3>
-                        <div></div>
+                        <div *ngIf="paper.language == 1" [style.margin-right]="'auto'"></div>
+                        <div *ngIf="paper.language != 1" [style.margin-left]="'auto'"></div>
                     </div>
                 </div>
                 <div>
                     <div class="item-body">
                         <div class="paper-card-info" style="cursor: pointer"
+                             [style.justify-content]="paper.language == 1 ?  'flex-end' :  'flex-start'"
                              [routerLink]="['/profile' , paper.member_id]">
                             <h6 class="by"> {{'_By' | translate}}  </h6>
                             <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
                         </div>
-                        <div class="paper-card-info">
+                        <div class="paper-card-info"
+                             [style.justify-content]="paper.language == 1 ?  'flex-end' :  'flex-start'"
+                        >
                             <i class="fa fa-tag" aria-hidden="true"></i>
                             <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
                         </div>
-                        <div class="paper-card-info">
+                        <div class="paper-card-info"
+                             [style.justify-content]="paper.language == 1 ?  'flex-end' :  'flex-start'"
+                        >
                             <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
                         </div>
                         <div class="paper-description">
-                            <p>
+                            <p [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'">
                                 {{ (paper?.description.length > 200) ? (paper?.description | slice:0:200) + '...' : (paper?.description) }}
                             </p>
                         </div>
