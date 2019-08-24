@@ -409,13 +409,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
         const scrollTop = $(window).scrollTop();
         if (scrollTop > 700 && !this._appService.roll) {
             this.socialFixed = true;
-            $('.social').css('position', 'fixed').css('top', '10px').css('z-index', '1000');
+            $('.social').css('position', 'fixed').css('top', '200px').css('z-index', '1000');
         } else if (scrollTop <= 700 && !this._appService.roll) {
             this.socialFixed = false;
             $('.social').css('position', 'initial').css('top', '0');
         } else if (scrollTop > 200 && this._appService.roll) {
             this.socialFixed = true;
-            $('.social').css('position', 'fixed').css('top', '2px').css('z-index', '1000');
+            $('.social').css('position', 'fixed').css('top', '20px').css('z-index', '1000');
         } else if (scrollTop <= 200 && this._appService.roll) {
             this.socialFixed = false;
             $('.social').css('position', 'initial').css('top', '0');

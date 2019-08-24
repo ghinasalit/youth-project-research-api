@@ -56,9 +56,8 @@ export class MemberDetailsComponent implements OnInit {
         });
 
 
-        translate.get(['_UpdateMSG', '_Success', '_Failed', '_FailedMSG']).subscribe(res => {
+        translate.get(['_UpdateMSG', '_Success',  '_FailedMSG']).subscribe(res => {
 
-            this.trans.Failed = res._Failed;
             this.trans.FailedMSG = res._FailedMSG;
             this.trans.UpdateMSG = res._UpdateMSG;
             this.trans.Success = res._Success;
@@ -66,7 +65,6 @@ export class MemberDetailsComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.Failed = lang.translate._Failed;
             this.trans.FailedMSG = lang.translate._FailedMSG;
             this.trans.UpdateMSG = lang.translate._UpdateMSG;
             this.trans.Success = lang.translate._Success;

@@ -14,6 +14,7 @@ export class UploadResearchPaperComponent implements OnInit {
   @ViewChild('File') InputFile;
   UploadFile: File;
   fileName: string;
+  member_id: any;
 
   constructor(private fb: FormBuilder , public _appService: AppService) {
 
@@ -46,6 +47,7 @@ export class UploadResearchPaperComponent implements OnInit {
 
   ngOnInit() {
     window.scrollTo( 0, 0);
+    this.member_id = localStorage.getItem('id');
 
   }
 

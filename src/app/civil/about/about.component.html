@@ -1,17 +1,6 @@
 <nav class='header'>
 
 </nav>
-<div class="nav-collapsed" *ngIf="collapsed">
-    <a routerLink="/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
-    <a href="/about">{{'_AboutUs' | translate}}</a>
-    <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
-    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
-    <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
-    <a (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
-    <a (click)="_appService.section = 'contactus'" routerLink="/home">{{'_ContactUs' | translate}}</a>
-</div>
 
 <div class="full-section">
     <div class="top-sticker"></div>
@@ -25,13 +14,7 @@
     <div class="side" data-aos-duration="1000"
          [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'">
         <div class="navbar-login logged">
-            <div class="navbar"
-                 [style.z-index]="collapsed ? '550' : ''"
-                 [style.background-color]="collapsed ? '#fff' : ''">
-                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
-                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
-                </a>
-            </div>
+
             <div class="login-register" *ngIf="!_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')"
                      *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
@@ -45,6 +28,7 @@
                      *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')"
                      *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="login"  [routerLink]="['/profile' , member_id]">{{'_MyProfile'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
@@ -206,7 +190,7 @@
     <div class="center-sticker"></div>
     <div class="side">
         <div class="sec-img">
-            <img src="assets/img/about.png">
+            <img src="assets/img/join-ayr.jpg">
         </div>
     </div>
     <div class="side">
@@ -219,8 +203,8 @@
                 <div class="content">
                     <p>{{'_AbourJoinDesc' | translate}}</p>
                 </div>
-                <div>
-                    <div class="title read-more d-line" style="cursor: pointer" routerLink="/about">
+                <div *ngIf="!_appService.roll">
+                    <div class="title read-more d-line" style="cursor: pointer" routerLink="/register">
                         <p>{{'_JoinAYRB' | translate}}</p>
                         <div class="line"></div>
                     </div>
@@ -232,14 +216,14 @@
 </div>
 
 
-<div class="frequent-asked-questions" id="faq">
-    <div class="title">
-        <p>{{'_FAQs' | translate}}</p>
-        <div></div>
-    </div>
+<!--<div class="frequent-asked-questions" id="faq">-->
+<!--    <div class="title">-->
+<!--        <p>{{'_FAQs' | translate}}</p>-->
+<!--        <div></div>-->
+<!--    </div>-->
 
-    <div class="faq">
-        <app-faq-slider [faqData]="faqDetails"></app-faq-slider>
-    </div>
-</div>
+<!--    <div class="faq">-->
+<!--        <app-faq-slider [faqData]="faqDetails"></app-faq-slider>-->
+<!--    </div>-->
+<!--</div>-->
 

@@ -5,4 +5,5 @@ export class Shared {
     sort =  'asc';
     username: string;
     country: string;
+    member_id: any;
 }

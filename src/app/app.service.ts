@@ -12,6 +12,7 @@ import {ToastrService} from 'ngx-toastr';
 export class AppService {
     public fileName = '';
     public active = 0;
+    public goPapers = false;
     public section: any;
     public roll: any;
     public username = '';

@@ -18,6 +18,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class PapersComponent implements OnInit {
     collapsed = false;
+    member_id: any;
     data = new Shared();
     result: any;
     username: string;
@@ -127,6 +128,7 @@ export class PapersComponent implements OnInit {
             }
         } else {
             this._appService.registerPageTitle = 3;
+            this._appService.goPapers = true;
             this.router.navigate(['/register']);
         }
     }
@@ -181,7 +183,6 @@ export class PapersComponent implements OnInit {
         if (this.data.page === 0) {
             this.papers = [];
         }
-        this.data.username = this._appService.username;
         this._appService.api.getPapersService(this.data)
             .subscribe(response => {
 
@@ -301,6 +302,7 @@ export class PapersComponent implements OnInit {
                this.isHaveAccess(paper , 'download');
             }
         } else {
+            this._appService.goPapers = true;
             this._appService.registerPageTitle = 3;
             this.router.navigate(['/register']);
         }
@@ -320,7 +322,8 @@ export class PapersComponent implements OnInit {
     ngOnInit() {
         this._appService.active = 1;
 
-        this.username = localStorage.getItem('username');
+        this.member_id = localStorage.getItem('id');
+        this.username =   this.data.username = localStorage.getItem('username');
         this._appService.countiesNotifier.subscribe(data => {
             this.Counties = data;
         });

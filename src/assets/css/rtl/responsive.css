@@ -80,7 +80,7 @@
         margin-top: 150px;
     }
 
-    .go-login a {
+    .go-login a{
         margin: 3px 0px;
     }
 }
@@ -286,12 +286,20 @@
         padding: 0 140px;
     }
 
-    .go-login a {
+    .go-login a{
         margin: 3px 0px;
     }
 
-    .partners {
+    .partners{
         height: 420px;
+    }
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 356px;
     }
 
 }
@@ -326,7 +334,15 @@
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .contact h1 {
+        font-size: 35px;
+        font-weight: 600;
+        margin: 20px 0 40px;
+        text-align: right;
+        color: #1b2850;
     }
 
     .edit-profile {
@@ -418,22 +434,30 @@
     }
 
     .box {
-        width: 140px;
-        height: 140px;
+        width: 120px;
+        height: 120px;
         background-color: #75cddd;
     }
 
     .social-paper img {
         position: absolute;
-        left: 42px;
-        bottom: 144px;
-        width: 109px;
+        left: 130px;
+        bottom: 147px;
+        width: 98px;
+    }
+
+    .social-paper {
+        padding: 0 45px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 35px 0;
     }
 
     .top-description {
         font-size: 40px;
-        margin: auto;
         font-weight: bold;
+        margin: 70px 115px;
     }
 
     .drop-list {
@@ -476,9 +500,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        left: 41px;
-        bottom: 144px;
-        width: 95px;
+        left: 125px;
+        bottom: 148px;
+        width: 80px;
     }
 
 
@@ -488,11 +512,20 @@
         margin-bottom: 16px;
     }
 
+    .top-home {
+        height: 380px;
+    }
+
     .top-home-login .title {
         margin-right: 20px;
         margin-top: 132px;
         font-weight: bold;
         color: #1b2850;
+    }
+
+    .value-statistics {
+        margin-bottom: 30px;
+        position: relative;
     }
 
     .about-content .text-left p {
@@ -548,12 +581,32 @@
 
     .button-action button {
         width: 175px;
-        height: 70px;
+        height: 60px;
         background-color: #75cddd;
         border: none;
         margin-top: 0;
         color: #fff;
+        font-size: 20px;
+    }
+
+    .submit button {
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
         font-size: 25px;
+    }
+
+    .submit {
+        text-align: center;
+        height: 55px;
+        margin: 20px 0 10px 0;
+        display: flex;
+    }
+
+    .become-researcher .button-action button {
+        width: auto;
     }
 
     .full-section .sec-content {
@@ -995,6 +1048,7 @@
     .card-item-objective .headline {
         border: none;
         background-color: white;
+        margin-top: 10px;
     }
 
     .card-item-objective .title .line {
@@ -1030,14 +1084,58 @@
     }
 
 
-    .go-login a {
-        margin: 3px 10px;
+    .go-login a{
+        margin: 3px 0px;
     }
 
-    .partners {
-        height: 335px;;
+    .partners{
+        height: 315px;
+    }
+
+    .why-publish .icon {
+        text-align: center;
+        height: 200px;
+    }
+
+    .paper-section {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        overflow: hidden;
+        /*direction: rtl;*/
+    }
+
+    .value-statistics p {
+        font-size: 24px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -24px;
+        left: -10px;
+    }
+
+    .type-statistics {
+        margin: 23px 25px 0;
+        font-size: 18px;
+    }
+
+    .home-statistics {
+        width: 25%;
+        margin-top: 45px;
+    }
+
+    .value-statistics div {
+        width: 45px;
+        height: 45px;
+    }
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 318px;
     }
 }
+
 
 @media (min-width: 768px) and (max-width: 1024px) {
     h2 {
@@ -1212,16 +1310,16 @@
     }
 
     .box {
-        width: 110px;
-        height: 110px;
+        width: 90px;
+        height: 90px;
         background-color: #75cddd;
     }
 
     .social-paper img {
         position: absolute;
-        left: 48px;
-        bottom: 141px;
-        width: 83px;
+        left: 110px;
+        bottom: 143px;
+        width: 80px;
     }
 
 
@@ -1233,9 +1331,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        left: 47px;
-        bottom: 142px;
-        width: 70px;
+        left: 106px;
+        bottom: 144px;
+        width: 65px;
     }
 
     .social i {
@@ -1371,16 +1469,16 @@
         border: none;
         margin-top: 0px;
         color: #fff;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .become-researcher .button-action button {
-        width: 305px !important;
+        width: 265px  ;
     }
 
 
     .become-researcher {
-        height: 590px;
+        height: auto;;
     }
 
     .main-slider {
@@ -1458,7 +1556,7 @@
     }
 
     .contact h1 {
-        font-size: 3em;
+        font-size: 30px;
         font-weight: 600;
         margin: 20px 0 0px;
         text-align: right;
@@ -1466,7 +1564,7 @@
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .social-contact i {
@@ -1833,10 +1931,11 @@
 
     .cards-items .c-item {
         border: 1px solid #1b2850;
-        width: 32.5%;
+        width: 48.5%;
         margin: 10px 0;
         padding: 10px 15px;
         flex-wrap: wrap;
+
     }
 
     .profile-container .box {
@@ -1861,6 +1960,10 @@
     .views-paper {
         margin-left: 10px;
         width: 240px;
+    }
+
+    .top-home {
+        height: 390px;
     }
 
     app-papers .top-home {
@@ -1941,7 +2044,7 @@
 
     .submit {
         text-align: center;
-        height: 50px;
+        height: 45px;
         margin: 20px 0 10px 0;
         display: flex;
     }
@@ -1980,7 +2083,7 @@
 
     .card-item-objective .icon {
         text-align: center;
-        height: 70px;
+        height: 135px;
     }
 
 
@@ -1992,7 +2095,7 @@
     .card-item-objective .title {
         margin-bottom: 20px;
         margin-top: 0px;
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .card-item-objective .desc p {
@@ -2003,6 +2106,7 @@
     .card-item-objective .headline {
         border: none;
         background-color: white;
+        margin-top: 10px;
     }
 
     .card-item-objective .title .line {
@@ -2075,13 +2179,82 @@
         display: flex;
         justify-content: space-around;
         width: 65%;
-        padding: 0 0;
+        padding: 0 18px;
+
     }
 
     .partners {
         height: 235px;
     }
+
+    .why-publish {
+        padding: 0px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 20%;
+    }
+
+
+    .type-statistics {
+        margin: 23px 25px 0;
+        font-size: 18px;
+    }
+
+    .value-statistics p {
+        font-size: 22px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -24px;
+        right: -10px;
+    }
+
+    .home-statistics {
+        width: 30%;
+        margin-top: 45px;
+    }
+
+
+    .value-statistics div {
+        width: 40px;
+        height: 40px;
+    }
+
+    .why-publish .title {
+        padding: 0 10px;
+    }
+
+    .scrolled a {
+        font-size: 12px !important;
+    }
+
+
+    .scroll-img img {
+        width: 55px !important;
+    }
+
+    .scrolled {
+        height: 90px !important;
+        line-height: 20px !important;
+        font-size: 16px !important;
+        z-index: 1000;
+        box-shadow: 10px 5px 5px #cac6c6;
+    }
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 310px;
+    }
+
+    .paper-description p{
+        font-size: 16px;
+    }
+
 }
+
 
 @media (min-width: 425px) and (max-width: 767px) {
 
@@ -2340,7 +2513,7 @@
     }
 
     .top-description {
-        font-size: 25px;
+        font-size: 26px;
         margin: auto;
         font-weight: bold;
     }
@@ -3422,6 +3595,11 @@
         width: 240px;
     }
 
+    .top-home {
+        height: 390px;
+
+    }
+
     app-papers .top-home {
         height: 385px;
         color: #fff;
@@ -3728,7 +3906,84 @@
         height: 300px;
     }
 
+    .objective-f-text {
+        margin-left: 4px;
+    }
+
+    .why-publish {
+        padding: 0;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .why-publish .icon {
+        text-align: center;
+        height: 245px;
+    }
+
+    .why-publish img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .home-statistics {
+        width: 40%;
+        margin-top: 45px;
+    }
+
+    .type-statistics {
+        margin: 23px 25px 0;
+        font-size: 18px;
+    }
+
+    .value-statistics {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .value-statistics div {
+        width: 35px;
+        height: 35px;
+    }
+
+    .value-statistics p {
+        font-size: 22px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -24px;
+        left: -10px;
+    }
+
+    .social-section {
+        width: 5%;
+    }
+
+    .scrolled {
+        height: 90px !important;
+        line-height: 20px !important;
+        font-size: 16px !important;
+        z-index: 1000;
+        box-shadow: 10px 5px 5px #cac6c6;
+
+    }
+
+    .scroll-img img {
+        width: 55px !important;
+    }
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 308px;
+    }
+
 }
+
 
 @media (min-width: 375px) and (max-width: 424px) {
 
@@ -5255,7 +5510,7 @@
     }
 
     .top-description {
-        font-size: 20px;
+        font-size: 22px;
         margin: auto;
         font-weight: bold;
     }
@@ -5397,6 +5652,82 @@
         height: 300px;
     }
 
+    .why-publish img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .why-publish .icon {
+        text-align: center;
+        height: 245px;
+    }
+
+    .why-publish {
+        padding: 0;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .type-statistics {
+        margin: 12px 25px 0;
+        font-size: 15px;
+    }
+
+    .value-statistics {
+        margin-bottom: 27px;
+        position: relative;
+    }
+
+    .value-statistics p {
+        font-size: 17px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -20px;
+        left: -10px;
+    }
+
+    .value-statistics div {
+        width: 28px;
+        height: 28px;
+    }
+
+    .home-statistics {
+        width: 35%;
+        margin-top: 45px;
+    }
+
+    .top-home {
+        height: 390px;
+
+    }
+
+    .social-section {
+        width: 5%;
+    }
+
+    .scrolled {
+        height: 90px !important;
+        line-height: 20px !important;
+        font-size: 16px !important;
+        z-index: 1000;
+        box-shadow: 10px 5px 5px #cac6c6;
+
+    }
+
+    .scroll-img img {
+        width: 55px !important;
+    }
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 308px;
+    }
 }
 
 @media (max-width: 374px) {
@@ -7038,12 +7369,13 @@
     }
 
 
-    app-login .full-section .sec-content, app-register .full-section .sec-content, app-upload-paper .full-section .sec-content, app-profile-info .full-section .sec-content {
+    app-login .full-section .sec-content , app-register .full-section .sec-content  , app-upload-paper  .full-section .sec-content ,  app-profile-info  .full-section .sec-content {
+
 
 
     }
 
-    .full-section register {
+    .full-section register{
         display: block !important;
     }
 
@@ -7059,8 +7391,29 @@
         color: #fff;
     }
 
-    app-about .full-section .side {
+    app-about .full-section .side{
         height: 300px;
+    }
+
+    .scrolled {
+        height: 90px !important;
+        line-height: 20px !important;
+        font-size: 16px !important;
+        z-index: 1000;
+        box-shadow: 10px 5px 5px #cac6c6;
+
+    }
+
+    .scroll-img img {
+        width: 55px !important;
+    }
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 308px;
     }
 }
 

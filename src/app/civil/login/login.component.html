@@ -1,17 +1,7 @@
 <nav class='header'>
 
 </nav>
-<div class="nav-collapsed" *ngIf="collapsed">
-    <a routerLink="/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
-    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
-    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
-    <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a  (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
-    <a  (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
-    <a (click)="_appService.section = 'contactus'" routerLink="/home">{{'_ContactUs' | translate}}</a>
-</div>
+
 <div class="full-section login" data-aos-duration="1000">
     <div class="side">
         <div class="sec-img">
@@ -20,13 +10,7 @@
     </div>
     <div class="side">
         <div class="navbar-login logged">
-            <div class="navbar"
-                 [style.z-index]="collapsed ? '550' : ''"
-                 [style.background-color]="collapsed ? '#fff' : ''">
-                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
-                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
-                </a>
-            </div>
+
             <div class="login-register">
                 <div class="lang" (click)="_appService.switchLanguage('en')"
                      *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
@@ -52,8 +36,6 @@
                     <div class="item">
                         <mat-form-field>
                             <input matInput placeholder="{{'_EnterPassword' | translate}}" [type]="hide ? 'password' : 'text'"  formControlName="password" required>
-                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            </button>
                             <mat-error *ngIf="password.errors.required">{{'_Required' | translate}}</mat-error>
 
                         </mat-form-field>

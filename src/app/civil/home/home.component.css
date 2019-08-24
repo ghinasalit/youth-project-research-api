@@ -1,15 +1,5 @@
 
-.top-home {
-    height: 500px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../../assets/img/home.jpg");
-    background-blend-mode: darken;
-    width: 100%;
-    background-color: #f1f2f2;
-    background-size: cover;
-}
+
 
 .top-home .login-register {
     color: #fff;
@@ -770,9 +760,8 @@ app-home .info-data {
 }
 
 
-.objective-f-text {
-    margin: 0 !important;
-}
+
+
 
 .contact {
 
@@ -813,3 +802,20 @@ app-home .info-data {
 }
 
 
+.headline{
+    width: 100%;
+
+}
+
+.partners .full-section {
+    height: 100%;
+}
+
+.top-home{
+    background-image: url("../../../assets/img/home.jpg");
+}
+
+
+.become-researcher{
+    height: auto;
+}

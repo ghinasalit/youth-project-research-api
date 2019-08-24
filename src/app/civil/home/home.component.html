@@ -2,17 +2,7 @@
 
 </nav>
 
-<div class="nav-collapsed" *ngIf="collapsed">
-    <a href="/#/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
-    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a (click)="scroll(becomeResearcher)"> {{'_Objectives' | translate}}</a>
-    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
-    <a (click)="scroll(heatmap)">{{'_HeatMap' | translate}}</a>
-    <a (click)="scroll(partners)">{{'_OurPartners' | translate}}</a>
-    <a (click)="scroll(faq)">{{'_FAQs' | translate}}</a>
-    <a (click)="scroll(contactus)">{{'_ContactUs' | translate}}</a>
-</div>
+
 
 <!--Social Fixed-->
 <div class="social" *ngIf="!_appService.roll && socialFixed" data-aos="fade-up" data-aos-duration="1000"
@@ -26,14 +16,6 @@
 <!--Login Controls-->
 <div class="top-home" *ngIf="!_appService.roll">
     <div class="navbar-login">
-        <div class="navbar"
-             [style.z-index]="collapsed ? '550' : ''"
-             [style.background-color]="collapsed ? '#fff' : ''">
-            <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
-                <span [style.color]="collapsed ? '#1b2850' : ''"></span>
-            </a>
-        </div>
-
         <div class="login-register">
             <div class="lang" (click)="_appService.switchLanguage('en')"
                  *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
@@ -45,36 +27,37 @@
     </div>
     <div class="top-home-content">
         <div class="top-description">
-            <p>{{'_KnowledgePower' | translate}}.</p>
-            <p>{{'_SharingKnowledgePower' | translate}}.</p>
+            <p>{{'_KnowledgePower' | translate}}</p>
+            <p>{{'_SharingKnowledgePower' | translate}}</p>
+            <p>{{'_IsEmpowering' | translate}}</p>
         </div>
-        <div class="home-statistics">
-            <div [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-duration="500" data-aos-delay="0" class="row-statistics">
+<!--        <div class="home-statistics">-->
+<!--            <div [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-duration="500" data-aos-delay="0" class="row-statistics">-->
 
-                <div class="value-statistics" style="background: #75cddd">
-                    <div></div>
-                    <p>{{statistics?.downloads}}</p>
-                </div>
-                <div class="type-statistics"><p>{{'_Downloads' | translate | uppercase}}</p></div>
+<!--                <div class="value-statistics" style="background: #75cddd">-->
+<!--                    <div></div>-->
+<!--                    <p>{{statistics?.downloads}}</p>-->
+<!--                </div>-->
+<!--                <div class="type-statistics"><p>{{'_Downloads' | translate | uppercase}}</p></div>-->
 
-            </div>
-            <div [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-duration="500" data-aos-delay="500" class="row-statistics">
-                <div class="value-statistics" style="background: #1b2850">
-                    <div></div>
-                    <p>{{statistics?.research}}</p>
-                </div>
-                <div class="type-statistics"><p>{{'_Research' | translate | uppercase}}</p></div>
+<!--            </div>-->
+<!--            <div [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-duration="500" data-aos-delay="500" class="row-statistics">-->
+<!--                <div class="value-statistics" style="background: #1b2850">-->
+<!--                    <div></div>-->
+<!--                    <p>{{statistics?.research}}</p>-->
+<!--                </div>-->
+<!--                <div class="type-statistics"><p>{{'_Research' | translate | uppercase}}</p></div>-->
 
-            </div>
-            <div [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-duration="500" data-aos-delay="1000" class="row-statistics">
-                <div class="value-statistics" style="background: #FDD97A">
-                    <div></div>
-                    <p>{{statistics?.researchers}}</p>
-                </div>
-                <div class="type-statistics"><p>{{'_Members' | translate | uppercase}}</p></div>
+<!--            </div>-->
+<!--            <div [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-duration="500" data-aos-delay="1000" class="row-statistics">-->
+<!--                <div class="value-statistics" style="background: #FDD97A">-->
+<!--                    <div></div>-->
+<!--                    <p>{{statistics?.researchers}}</p>-->
+<!--                </div>-->
+<!--                <div class="type-statistics"><p>{{'_Members' | translate | uppercase}}</p></div>-->
 
-            </div>
-        </div>
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
 
@@ -83,25 +66,20 @@
         <img src="assets/img/library.jpg " alt=""></div>
     <div class="right-section">
         <div class="navbar-login logged">
-            <div class="navbar"
-                 [style.z-index]="collapsed ? '550' : ''"
-                 [style.background-color]="collapsed ? '#fff' : ''">
-                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
-                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
-                </a>
-            </div>
+
             <div class="login-register" *ngIf="_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')"
                      *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')"
                      *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="login"  [routerLink]="['/profile' , memberDetails.member_id]">{{'_MyProfile'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
-        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <p>{{'_EditProfile' | translate}}</p>
-        </div>
+<!--        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer">-->
+<!--            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>-->
+<!--            <p>{{'_EditProfile' | translate}}</p>-->
+<!--        </div>-->
         <div class="social-info">
             <div class="info-user">
 
@@ -145,6 +123,7 @@
                             <div class="info-data">{{memberDetails.domain}}</div>
                         </div>
                         <div class="info-icon">
+                            <i class="fa fa-eye"></i>
                             <div class="info-data">{{memberDetails.views}} {{'_Views' | translate}}</div>
                         </div>
                     </div>
@@ -256,8 +235,8 @@
             </div>
             <div class="title">
                 <div class="headline">
-                    <p class="objective-f-text">{{'_IncreaseKnowledge' | translate}}</p>
-                    <!--                    <p>{{'_Youth_Research' | translate}}</p>-->
+                    <p class="objective-f-text">{{'_Increase' | translate}}</p>
+                    <p>{{'_Knowledge' | translate}}</p>
                 </div>
                 <div class="line"></div>
             </div>
@@ -275,7 +254,7 @@
             <div class="title">
                 <div class="headline">
                     <p class="objective-f-text">{{'_Recognition' | translate}}</p>
-                    <!--                    <p>{{'_publications' | translate}}</p>-->
+                    <p>{{'_AndValue' | translate}}</p>
                 </div>
                 <div class="line"></div>
             </div>
@@ -293,7 +272,7 @@
             <div class="title">
                 <div class="headline">
                     <p class="objective-f-text">{{'_ResearchersNetwork' | translate}}</p>
-                    <!--                    <p>{{'_ResearchCulture' | translate}}</p>-->
+                                        <p>{{'_Network' | translate}}</p>
                 </div>
                 <div class="line"></div>
             </div>
@@ -305,19 +284,19 @@
         </div>
         <div data-aos="fade-up" data-aos-delay="1000" class="card-item-objective why-publish">
             <div class="icon">
-                <img src="assets/img/career.jpg" alt="">
+                <img src="assets/img/reach-organization.jpg" alt="">
 
             </div>
             <div class="title">
                 <div class="headline">
-                    <p class="objective-f-text">{{'_CareerAdvancement' | translate}}</p>
-                    <p>{{'_community' | translate}}</p>
+                    <p class="objective-f-text">{{'_Reach' | translate}}</p>
+                    <p>{{'_Organizations' | translate}}</p>
                 </div>
                 <div class="line"></div>
             </div>
             <div class="desc">
                 <p>
-                    {{'_ReachOrganizationsDesc' | translate}}
+                    {{'_CareerAdvancementDesc' | translate}}
                 </p>
             </div>
         </div>
@@ -328,14 +307,14 @@
             </div>
             <div class="title">
                 <div class="headline">
-                    <p class="objective-f-text">{{'_CareerAdvancement' | translate}}</p>
-                    <!--                    <p>{{'_community' | translate}}</p>-->
+                    <p class="objective-f-text">{{'_Career' | translate}}</p>
+                    <p>{{'_Advancement' | translate}}</p>
                 </div>
                 <div class="line"></div>
             </div>
             <div class="desc">
                 <p>
-                    {{'_CareerAdvancementDesc' | translate}}
+                    {{'_ReachOrganizationsDesc' | translate}}
                 </p>
             </div>
         </div>

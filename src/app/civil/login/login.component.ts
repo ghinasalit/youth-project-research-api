@@ -75,7 +75,15 @@ export class LoginComponent implements OnInit {
                 if (this.result.code === 1) {
                     this._appService.getRoll();
                     localStorage.setItem('username', this.result.data.username);
-                    this.router.navigate(['/home']);
+                    localStorage.setItem('id', this.result.data.member_id);
+                    if (this._appService.goPapers === true) {
+                        this.router.navigate(['/papers']);
+                        this._appService.goPapers = false;
+
+                    } else {
+                        this.router.navigate(['/home']);
+
+                    }
 
                 } else if (this.result.code === -99) {
                     this.toaster.error('Your account not active', '');

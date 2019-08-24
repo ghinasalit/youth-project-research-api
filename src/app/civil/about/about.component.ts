@@ -16,6 +16,7 @@ export class AboutComponent implements OnInit {
     itemIndex = 0;
     myForm: FormGroup;
     dataList: any = [];
+    member_id: any;
     faqDetails = [
         {
             Question: 'This is Test',
@@ -118,6 +119,8 @@ export class AboutComponent implements OnInit {
     ngOnInit() {
         this._appService.active = 2;
         window.scrollTo(0, 0);
+        this.member_id = localStorage.getItem('id');
+
 
 
     }

@@ -80,7 +80,7 @@
         margin-top: 150px;
     }
 
-    .go-login a {
+    .go-login a{
         margin: 3px 0px;
     }
 
@@ -164,9 +164,9 @@
         text-align: left;
     }
 
-    app-profile .info-user {
-        width: 71%;
-    }
+   app-profile .info-user {
+       width: 71%;
+   }
 
     .social i {
         font-size: 20px;
@@ -247,9 +247,9 @@
 
     .card-icon-research img {
         position: absolute;
-        right: 11px;
-        bottom: 136px;
-        width: 170px;
+        right: 48px;
+        bottom: 145px;
+        width: 144px;
     }
 
     app-members .full-section .sec-content, app-about .full-section .sec-content {
@@ -265,12 +265,12 @@
         margin-top: 150px;
     }
 
-    app-members .about-content {
+    app-members  .about-content{
 
         padding-right: 10px;
     }
 
-    .card-item-objective .title {
+    .card-item-objective .title{
         margin: 20px 0;
         font-size: 18px;
     }
@@ -297,10 +297,19 @@
         margin: 3px 0px;
     }
 
-    .partners {
+    .partners{
         height: 420px;
     }
+
+    .items-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 356px;
+    }
 }
+
 
 @media (min-width: 1025px) and (max-width: 1400px) {
 
@@ -331,11 +340,11 @@
         font-size: 22px;
     }
 
-    h3 {
-        font-size: 20px;
+    h3{
+        font-size: 18px;
     }
 
-    .edit-profile {
+      .edit-profile {
         width: 110px;
         height: 75px;
         position: absolute;
@@ -347,6 +356,14 @@
 
     .right-section, .left-section {
         width: 50%;
+    }
+
+    .contact h1 {
+        font-size: 35px;
+        font-weight: 600;
+        margin: 20px 0 40px;
+        text-align: left;
+        color: #1b2850;
     }
 
 
@@ -416,30 +433,29 @@
         width: 80%;
     }
 
-
     .cards-icon {
         display: flex;
         justify-content: space-between;
-        padding: 0 95px;
+        padding: 0 280px;
     }
 
     .box {
-        width: 140px;
-        height: 140px;
+        width: 120px;
+        height: 120px;
         background-color: #75cddd;
     }
 
     .social-paper img {
         position: absolute;
-        right: 63px;
-        bottom: 141px;
-        width: 118px;
+        right: 89px;
+        bottom: 147px;
+        width: 98px;
     }
 
     .top-description {
         font-size: 40px;
-        margin: auto;
         font-weight: bold;
+        margin: 70px 115px;
     }
 
     .drop-list {
@@ -466,7 +482,7 @@
     }
 
 
-    app-profile .paper p {
+    app-profile  .paper p {
         font-size: 12px;
         font-weight: bold;
     }
@@ -482,9 +498,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 66px;
-        bottom: 138px;
-        width: 101px;
+        right: 90px;
+        bottom: 148px;
+        width: 80px;
     }
 
     .social i {
@@ -553,12 +569,12 @@
 
     .button-action button {
         width: 175px;
-        height: 70px;
+        height: 60px;
         background-color: #75cddd;
         border: none;
         margin-top: 0;
         color: #fff;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .full-section .sec-content {
@@ -902,7 +918,7 @@
     }
 
 
-    .sort-icon .fa-sort-asc {
+    .sort-icon .fa-sort-asc{
         position: absolute;
         top: -10px;
         right: 3px;
@@ -997,9 +1013,10 @@
         height: 618px;
     }
 
-    .card-item-objective .headline {
+    .why-publish .headline {
         border: none;
         background-color: white;
+        margin-top: 10px;
     }
 
     .card-item-objective .title .line {
@@ -1020,7 +1037,7 @@
         color: #1b2850;
     }
 
-    .nav-links {
+    .nav-links{
         display: flex;
         justify-content: space-around;
         width: 65%;
@@ -1041,7 +1058,95 @@
     .partners {
         height: 335px;
     }
+
+    .partners {
+        height: 315px;
+    }
+
+    .value-statistics {
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+
+    .home-statistics {
+        width: 25%;
+        margin-top: 45px;
+    }
+
+    .value-statistics div {
+        width: 45px;
+        height: 45px;
+    }
+
+    .type-statistics {
+        margin: 23px 25px 0;
+        font-size: 18px;
+    }
+
+    .value-statistics p {
+        font-size: 24px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -24px;
+        right: -10px;
+    }
+
+    .top-home {
+        height: 380px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        background-image: url(home.jpg);
+        background-blend-mode: darken;
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+    }
+
+
+    .paper-section {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        overflow: hidden;
+        direction: rtl;
+
+    }
+
+
+    .submit button {
+        width: 100%;
+        height: 100%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 25px;
+    }
+
+    .become-researcher {
+        height: auto;
+    }
+
+    .become-researcher .button-action button {
+        width: 295px !important;
+    }
+
+    .why-publish .icon {
+        text-align: center;
+        height: 200px;
+    }
+
+    .items-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 318px;
+    }
+
 }
+
 
 @media (min-width: 768px) and (max-width: 1024px) {
     h2 {
@@ -1216,16 +1321,16 @@
     }
 
     .box {
-        width: 110px;
-        height: 110px;
+        width: 90px;
+        height: 90px;
         background-color: #75cddd;
     }
 
     .social-paper img {
         position: absolute;
-        right: 63px;
-        bottom: 138px;
-        width: 100px;
+        right: 91px;
+        bottom: 143px;
+        width: 80px;
     }
 
 
@@ -1237,9 +1342,9 @@
 
     .card-icon-submit img {
         position: absolute;
-        right: 66px;
-        bottom: 137px;
-        width: 85px;
+        right: 92px;
+        bottom: 144px;
+        width: 65px;
     }
 
     .social i {
@@ -1375,17 +1480,15 @@
         border: none;
         margin-top: 0px;
         color: #fff;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .become-researcher .button-action button {
-        width: 305px !important;
+        width: 265px  !important;
     }
 
 
-    .become-researcher {
-        height: 590px;
-    }
+
 
     .main-slider {
         margin-top: 25px;
@@ -1462,7 +1565,7 @@
     }
 
     .contact h1 {
-        font-size: 3em;
+        font-size: 30px;
         font-weight: 600;
         margin: 20px 0 0px;
         text-align: left;
@@ -1470,7 +1573,7 @@
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .social-contact i {
@@ -1732,8 +1835,9 @@
         font-size: 25px;
     }
 
-    app-about .become-researcher {
-        height: 520px;
+
+    .become-researcher {
+        height: auto;
     }
 
 
@@ -1837,7 +1941,7 @@
 
     .cards-items .c-item {
         border: 1px solid #1b2850;
-        width: 32.5%;
+        width: 48.5%;
         margin: 10px 0;
         padding: 10px 15px;
         flex-wrap: wrap;
@@ -1867,10 +1971,48 @@
         width: 240px;
     }
 
-    app-papers .top-home {
+    .type-statistics {
+        margin: 23px 25px 0;
+        font-size: 18px;
+    }
+
+    .home-statistics {
+        width: 30%;
+        margin-top: 45px;
+    }
+
+    .value-statistics p {
+        font-size: 22px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -24px;
+        right: -10px;
+    }
+
+    .value-statistics div {
+        width: 40px;
+        height: 40px;
+    }
+
+    .top-home {
+        height: 390px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../../../assets/img/home.jpg);
+        background-blend-mode: darken;
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+    }
+
+
+
+     .top-papers {
         height: 385px;
         color: #fff;
-        justify-content: flex-end;
+        /*justify-content: flex-end;*/
         background-image: url(../../img/library.jpg);
         width: 100%;
         background-color: #f1f2f2;
@@ -1945,7 +2087,7 @@
 
     .submit {
         text-align: center;
-        height: 50px;
+        height: 45px;
         margin: 20px 0 10px 0;
         display: flex;
     }
@@ -1972,6 +2114,7 @@
     }
 
 
+
     .card-item-objective .title {
         margin: 20px 0;
         font-size: 12px;
@@ -1984,13 +2127,13 @@
 
     .card-item-objective .icon {
         text-align: center;
-        height: 70px;
+        height: 135px;
     }
 
 
     .card-item-objective .icon {
         text-align: center;
-        height: 100px;
+        height: 135px;
     }
 
     .card-item-objective .title {
@@ -2007,6 +2150,7 @@
     .card-item-objective .headline {
         border: none;
         background-color: white;
+        margin-top: 10px;
     }
 
     .card-item-objective .title .line {
@@ -2079,13 +2223,49 @@
         display: flex;
         justify-content: space-around;
         width: 65%;
-        padding: 0 0;
+        padding: 0 18px;
+
+    }
+
+    .scrolled a {
+        font-size: 12px !important;
+    }
+
+    .scroll-img img {
+        width: 55px !important;
+    }
+
+    .scrolled {
+        height: 90px !important;
+        line-height: 20px !important;
+        font-size: 16px !important;
+        z-index: 1000;
+        box-shadow: 10px 5px 5px #cac6c6;
     }
 
     .partners {
         height: 235px;
     }
 
+    .why-publish {
+        padding: 0px;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 20%;
+    }
+
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 310px;
+    }
+
+    .paper-description p{
+        font-size: 16px;
+    }
 
 }
 
@@ -2876,6 +3056,8 @@
     }
 
 
+
+
     .profile-container .info-user img {
         position: absolute;
         width: 35px;
@@ -3209,11 +3391,11 @@
         width: 70px;
     }
 
-    .permissions {
+    .permissions{
         width: 60%;
     }
 
-    .paper-permissions {
+    .paper-permissions{
         display: flex;
         flex-direction: column;
         margin-bottom: 0px;
@@ -3432,7 +3614,7 @@
         width: 240px;
     }
 
-    app-papers .top-home {
+    app-papers .top-papers {
         height: 385px;
         color: #fff;
         justify-content: flex-end;
@@ -3738,6 +3920,100 @@
         height: 300px;
     }
 
+
+    .value-statistics div {
+        width: 35px;
+        height: 35px;
+    }
+
+    .value-statistics p {
+        font-size: 22px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -24px;
+        right: -10px;
+    }
+
+    .type-statistics {
+        margin: 23px 25px 0;
+        font-size: 18px;
+    }
+
+    .value-statistics {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .home-statistics {
+        width: 40%;
+        margin-top: 45px;
+    }
+
+
+    .top-home {
+        height: 390px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../../../assets/img/home.jpg);
+        background-blend-mode: darken;
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+    }
+
+    .top-description {
+        font-size: 26px;
+        margin: auto;
+        font-weight: bold;
+    }
+
+    .objective-f-text {
+        /* margin: 4px !important; */
+        margin-right: 4px;
+    }
+
+
+    .why-publish {
+        padding: 0;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .why-publish .icon {
+        text-align: center;
+        height: 245px;
+    }
+
+    .why-publish img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .scrolled {
+        height: 90px !important;
+        line-height: 20px !important;
+        font-size: 16px !important;
+        z-index: 1000;
+        box-shadow: 10px 5px 5px #cac6c6;
+
+    }
+
+    .scroll-img img {
+        width: 55px !important;
+    }
+
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 308px;
+    }
 
 }
 
@@ -4205,7 +4481,7 @@
 
     .about-content .text-left p {
         margin-right: 7px;
-        font-size: 17px;
+        font-size: 15px;
     }
 
 
@@ -4590,7 +4866,7 @@
         bottom: 50%;
         right: 50%;
         z-index: 100;
-        background: #FDD97A;
+        background:#FDD97A;
     }
 
     .paper p {
@@ -5136,7 +5412,7 @@
         width: 240px;
     }
 
-    app-papers .top-home {
+    app-papers .top-papers {
         height: 385px;
         color: #fff;
         justify-content: flex-end;
@@ -5288,7 +5564,7 @@
         width: 100%;
     }
 
-    .become-researcher {
+    .become-researcher{
         height: auto;
 
     }
@@ -5297,6 +5573,7 @@
     .card-item-objective img {
         width: 40%;
     }
+
 
 
     .card-item-objective .headline {
@@ -5421,6 +5698,98 @@
     }
 
 
+    .value-statistics div {
+        width: 28px;
+        height: 28px;
+    }
+
+    .value-statistics p {
+        font-size: 17px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -20px;
+        right: -10px;
+    }
+
+    .type-statistics {
+        margin: 12px 25px 0;
+        font-size: 15px;
+    }
+
+    .value-statistics {
+        margin-bottom: 27px;
+        position: relative;
+    }
+
+    .home-statistics {
+        width: 40%;
+        margin-top: 45px;
+    }
+
+
+    .top-home {
+        height: 390px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../../../assets/img/home.jpg);
+        background-blend-mode: darken;
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+    }
+
+    .top-description {
+        font-size: 22px;
+        margin: auto;
+        font-weight: bold;
+    }
+
+    .objective-f-text {
+        /* margin: 4px !important; */
+        margin-right: 4px;
+    }
+
+    .why-publish {
+        padding: 0;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .why-publish .icon {
+        text-align: center;
+        height: 245px;
+    }
+
+    .why-publish img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .scrolled {
+        height: 90px !important;
+        line-height: 20px !important;
+        font-size: 16px !important;
+        z-index: 1000;
+        box-shadow: 10px 5px 5px #cac6c6;
+
+    }
+
+    .scroll-img img {
+        width: 55px !important;
+    }
+
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 308px;
+    }
 }
 
 @media (max-width: 374px) {
@@ -6572,6 +6941,7 @@
     /*.upload-file {*/
     /*    height: auto;*/
     /*}*/
+
     .check-filename p {
         margin-top: 5px;
         font-size: 13px;
@@ -6591,6 +6961,7 @@
         padding: 10px 10px;
         justify-content: space-between;
     }
+
 
 
     /*about*/
@@ -6627,6 +6998,7 @@
         bottom: 50%;
         z-index: 100;
     }
+
 
 
     .researshers .text-left p {
@@ -6813,7 +7185,7 @@
         width: 240px;
     }
 
-    app-papers .top-home {
+    app-papers .top-papers {
         height: 385px;
         color: #fff;
         justify-content: flex-end;
@@ -6958,7 +7330,7 @@
         width: 100%;
     }
 
-    .become-researcher {
+    .become-researcher{
         height: auto;
 
     }
@@ -6969,6 +7341,7 @@
     }
 
 
+
     .card-item-objective .headline {
         border: none;
         background-color: white;
@@ -6976,7 +7349,7 @@
         width: 100%;
     }
 
-    .headline p {
+    .headline p{
         margin-right: 3px;
     }
 
@@ -7086,6 +7459,7 @@
     }
 
 
+
     app-about .text-left {
         display: block;
 
@@ -7099,6 +7473,86 @@
         height: 300px;
     }
 
+
+
+    .value-statistics div {
+        width: 28px;
+        height: 28px;
+    }
+
+    .value-statistics p {
+        font-size: 17px;
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        bottom: -20px;
+        right: -10px;
+    }
+
+    .type-statistics {
+        margin: 12px 25px 0;
+        font-size: 15px;
+    }
+
+    .value-statistics {
+        margin-bottom: 27px;
+        position: relative;
+    }
+
+    .home-statistics {
+        width: 40%;
+        margin-top: 45px;
+    }
+
+
+    .top-home {
+        height: 390px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../../../assets/img/home.jpg);
+        background-blend-mode: darken;
+        width: 100%;
+        background-color: #f1f2f2;
+        background-size: cover;
+    }
+
+    .top-description {
+        font-size: 26px;
+        margin: auto;
+        font-weight: bold;
+    }
+    .objective-f-text {
+        /* margin: 4px !important; */
+        margin-right: 4px;
+    }
+
+    .why-publish {
+        padding: 0;
+        border: 1px solid #d4d1d1;
+        flex: 0 1 19%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .why-publish .icon {
+        text-align: center;
+        height: 245px;
+    }
+
+    .why-publish img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 55px 0 0;
+        height: 308px;
+    }
 }
 
 

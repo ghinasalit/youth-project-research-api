@@ -36,7 +36,7 @@ export class PermissionPeparComponent implements OnInit {
             'conditions': [null, Validators.required]
         });
 
-        translate.get(['_ChangePasswordMSG', '_ChangePasswordFailedMSG']).subscribe(res => {
+        translate.get(['_FailedMSG', '_UploadPaperMSG']).subscribe(res => {
 
             this.trans.Failed = res._Failed;
             this.trans.FailedMSG = res._FailedMSG;
@@ -64,7 +64,7 @@ export class PermissionPeparComponent implements OnInit {
                 this.result = response;
 
                 if (this.result.code === 1) {
-                    this.toaster.success(this.trans.FailedMSG, '');
+                    this.toaster.success(this.trans.UploadPaperMSG, '');
 
                     setTimeout(() => {
                         this.router.navigate(['/home' ]);
@@ -72,7 +72,7 @@ export class PermissionPeparComponent implements OnInit {
 
 
                 } else {
-                    this.toaster.error(this.result.msg, '');
+                    this.toaster.error(this.trans.FailedMSG, '');
 
                 }
 

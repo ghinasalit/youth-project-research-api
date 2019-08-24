@@ -7,7 +7,7 @@
     transition: all 300ms ease-in-out;
     background-color: black;
     padding: 0 280px;
-    z-index: 1;
+    z-index: 20000;
     top: 0;
 }
 
@@ -21,7 +21,7 @@
     background-color: #75cddd;
     transition: -webkit-transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transform-origin: right;
     transform-origin: right;
     -webkit-transform: scaleX(0);

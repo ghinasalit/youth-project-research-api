@@ -2,20 +2,21 @@
     <div class="logo-left">
         <img src="assets/img/logo-left.png" alt="">
     </div>
-    <ul class="nav-links"  *ngIf="navActive"  >
-        <li (click)="_appService.active = 0" [ngClass]="_appService.active == 0 ? 'active' : ''" style=" animation: 0.5s ease 0.442857s 1 normal forwards running navLinkFade ;"><a  routerLink="/">{{'_HomePage' | translate}}</a></li>
-        <li (click)="_appService.active = 1" [ngClass]="_appService.active == 1 ? 'active' : ''" style="animation: 0.5s ease 0.728571s 1 normal forwards running navLinkFade;"> <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a></li>
-        <li (click)="_appService.active = 2" [ngClass]="_appService.active == 2 ? 'active' : ''" style="animation: 0.5s ease 0.871429s 1 normal forwards running navLinkFade;"><a routerLink="/about">{{'_AboutUs' | translate}}</a></li>
-        <li (click)="_appService.active = 3" [ngClass]="_appService.active == 3 ? 'active' : ''" style="animation: 0.5s ease 1.01429s 1 normal forwards running navLinkFade;">
-            <a routerLink="/members">{{'_Our_Members' | translate}}</a></li>
+    <ul class="nav-links" *ngIf="navActive">
+        <li (click)="_appService.active = 0" [ngClass]="_appService.active == 0 ? 'active' : ''"
+            style=" animation: 0.5s ease 0.442857s 1 normal forwards running navLinkFade ;"><a routerLink="/">
+            <p>{{'_HomePage' | translate}}</p></a></li>
+        <li (click)="_appService.active = 1" [ngClass]="_appService.active == 1 ? 'active' : ''"
+            style="animation: 0.5s ease 0.728571s 1 normal forwards running navLinkFade;"><a routerLink="/papers">
+            <p>{{'_ResearchPapers' | translate}}</p></a></li>
+        <li (click)="_appService.active = 2" [ngClass]="_appService.active == 2 ? 'active' : ''"
+            style="animation: 0.5s ease 0.871429s 1 normal forwards running navLinkFade;"><a routerLink="/about">
+            <p>{{'_AboutUs' | translate}}</p></a></li>
+        <li (click)="_appService.active = 3" [ngClass]="_appService.active == 3 ? 'active' : ''"
+            style="animation: 0.5s ease 1.01429s 1 normal forwards running navLinkFade;">
+            <a routerLink="/members"><p>{{'_Our_Members' | translate}}</p></a></li>
     </ul>
-<!--    <div class="navbar"-->
-<!--         [style.z-index]="collapsed ? '550' : ''"-->
-<!--         [style.background-color]="collapsed ? '#fff' : ''">-->
-<!--        <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">-->
-<!--            <span [style.color]="collapsed ? '#1b2850' : ''"></span>-->
-<!--        </a>-->
-<!--    </div>-->
+
     <div class="logo-right " routerLink="/" style="cursor: pointer">
         <img src="assets/img/logo-right.png" alt="">
     </div>
@@ -35,10 +36,10 @@
 </div>
 
 <div class="nav-collapsed" *ngIf="collapsed">
-    <a href="/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
-    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/members">{{'_Our_Members' | translate}}</a>
+    <a routerLink="/home" (click)="collapsed = !collapsed">{{'_HomePage' | translate}}</a>
+    <a routerLink="/papers" (click)="collapsed = !collapsed">{{'_ResearchPapers' | translate}}</a>
+    <a routerLink="/about" (click)="collapsed = !collapsed">{{'_AboutUs' | translate}}</a>
+    <a routerLink="/members" (click)="collapsed = !collapsed">{{'_Our_Members' | translate}}</a>
 </div>
 
 

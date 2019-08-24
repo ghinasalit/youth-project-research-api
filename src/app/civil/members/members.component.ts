@@ -19,6 +19,7 @@ export class MembersComponent implements OnInit {
     throttle = 300;
     scrollDistance = 1;
     scrollUpDistance = 2;
+    member_id: any;
 
     constructor(public _appService: AppService,
                 public fb: FormBuilder) {
@@ -115,6 +116,8 @@ export class MembersComponent implements OnInit {
         window.scrollTo(0, 0);
         this._appService.active = 3;
         this.getMembers();
+        this.member_id = localStorage.getItem('id');
+
     }
 
 }

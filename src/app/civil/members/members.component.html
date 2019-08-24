@@ -1,17 +1,6 @@
 <nav class='header'>
 
 </nav>
-<div class="nav-collapsed" *ngIf="collapsed">
-    <a routerLink="/home">{{'_HomePage' | translate}}</a>
-    <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
-    <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a (click)="_appService.section = 'becomeResearcher'" routerLink="/home"> {{'_Objectives' | translate}}</a>
-    <a href="/members">{{'_Our_Members' | translate}}</a>
-    <a (click)="_appService.section = 'heatmap'" routerLink="/home">{{'_HeatMap' | translate}}</a>
-    <a (click)="_appService.section = 'partners'" routerLink="/home">{{'_OurPartners' | translate}}</a>
-    <a (click)="_appService.section = 'faq'" routerLink="/home">{{'_FAQs' | translate}}</a>
-    <a (click)="_appService.section = 'contactus'" routerLink="/home">{{'_ContactUs' | translate}}</a>
-</div>
 
 <div class="full-section">
     <div class="side">
@@ -21,13 +10,7 @@
     </div>
     <div class="side">
         <div class="navbar-login logged">
-            <div class="navbar"
-                 [style.z-index]="collapsed ? '550' : ''"
-                 [style.background-color]="collapsed ? '#fff' : ''">
-                <a id="nav-toggle" [ngClass]="collapsed ? 'active' : ''" (click)="collapsed = !collapsed">
-                    <span [style.color]="collapsed ? '#1b2850' : ''"></span>
-                </a>
-            </div>
+
             <div class="login-register" *ngIf="!_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')"
                      *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
@@ -41,6 +24,7 @@
                      *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
                 <div class="lang" (click)="_appService.switchLanguage('ar')"
                      *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+                <div class="login"  [routerLink]="['/profile' , member_id]">{{'_MyProfile'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
         </div>
@@ -95,6 +79,7 @@
             <p (click)="member.letter = 'x' ; filter()">X</p>
             <p (click)="member.letter = 'y' ; filter()">Y</p>
             <p (click)="member.letter = 'z' ; filter()">Z</p>
+            <p (click)="member.letter = '' ; filter()">{{'_All' | translate}}</p>
         </div>
         <div class="characters" *ngIf="_appService.currentLanguage == 'ar'">
             <p (click)="member.letter = 'أ' ; filter()">أ</p>
@@ -125,6 +110,8 @@
             <p (click)="member.letter = 'ه' ; filter()">ه</p>
             <p (click)="member.letter = 'و' ; filter()">و</p>
             <p (click)="member.letter = 'ي' ; filter()">ي</p>
+            <p (click)="member.letter = '' ; filter()">{{'_All' | translate}}</p>
+
         </div>
         <!--        <div class="filters">-->
         <!--            <div class="sort-icon">-->
@@ -154,7 +141,7 @@
         <div class="card" *ngFor="let member of members; let i = index" data-aos="fade-up" data-aos-once="true"
              [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000">
             <img [src]="member.avatar?_appService.api.api.imgURL  + member.avatar : 'assets/img/avatar_default.PNG' "
-                 alt="" [routerLink]="['/profile' , member.username]">
+                 alt="" [routerLink]="['/profile' , member.member_id]">
             <div class="title" [routerLink]="['/profile' , member.member_id]" style="cursor: pointer">
                 <p>{{member.first_name}} {{member.last_name}}</p>
                 <div>

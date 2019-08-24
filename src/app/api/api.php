@@ -1,5 +1,5 @@
 <?php
-session_set_cookie_params(3600,"/");
+session_set_cookie_params(60*525600 ,"/");
 session_start();
 require_once('config.php');
 $postdata = file_get_contents("php://input");
@@ -10,7 +10,6 @@ header("Access-Control-Request-Method: POST");
 header("Content-type:application/json");
 header("Cache-Control: no-cache");
 header("Content-Type: application/json");
-
 $request_headers = Helper::check_header();
 date_default_timezone_set("Asia/Damascus");
 $result = array();

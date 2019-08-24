@@ -60,8 +60,7 @@ class Queries
         }
         $paper = $db->where('paper_id', $paper_id)->getOne('papers', 'paper_id', 'title, description , status, discipline_id, permission , language , file');
 
-
-        if ($db->count) {
+        if ($paper) {
             Queries::send_email_publish_paper($paper['paper_id'], $member_id);
             return $paper;
         } else {
@@ -154,8 +153,8 @@ class Queries
                 ->update('members', $data);
 
 
-//            $to = $email;
-            $to = 'ghinasallit@gmail.com';
+            $to = $email;
+//            $to = 'ghinasallit@gmail.com';
             $subject = "Reset password";
 
             $body = "
@@ -274,7 +273,8 @@ class Queries
             'last_name' => $l_name,
             'avatar' => $avatar_path,
             'university_id' => $university,
-            'domain' => $job,
+            'domain' => '',
+            'job_title' => $job,
             'location' => $location,
             'phone' => $phone,
             'Linkedin' => $Linkedin,
@@ -296,7 +296,7 @@ class Queries
             $d = $db->insert('members', $data);
             $user = $db->where('email', $email)->getOne('members', 'member_id ,email ,first_name  ,last_name');
             if ($db->count) {
-                Queries::send_email_active_member($email, $data['activation_code']);
+                Queries::send_email_active_member($data['first_name'], $email, $data['activation_code']);
 //                $_SESSION[___APP]['session_key'] = $data['session_id'];
                 return $user;
 
@@ -308,38 +308,59 @@ class Queries
         }
     }
 
-    static public function send_email_active_member($email , $activation_code)
+    static public function send_email_active_member($first_name, $email , $activation_code)
     {
+        global $db;
+        $to = $email;
+        //$to = 'm.ezzi@webntech.ae';
+        $subject = "Active account";
 
-            $to = $email;
-            $to = 'ghinasallit@gmail.com';
-            $subject = "Active account";
-
-            $body = "
+        $body = '<!DOCTYPE html>
 <html>
-<head>
-<title></title>
-</head>
-<body>
-<p>Dear,</p>
-<table>
-<tr>
-<a href=http://admin.arabyouthresearch.org/#/login/" . $activation_code . ">Click here to active your acoount </a>
-</tr>
-</table>
+<body style="width:600px; margin:0 auto; font-size: 14px">
+<p>Subject: Account Activation AYRP Member</p>
+<p>Dear '.$first_name.',</p>
+<p>Thank you for registering to <a href="http://arabyouthresearch.org" title="Arab Youth Research">arabyouthreseach.org</a><br>
+To confirm that this account has been created by you, please click the link below or copy<br>
+and paste it into your browser. You will then be able to log in.</p>
+<br>
+	<a href=http://arabyouthresearch.org/#/login/' . $activation_code . '>http://arabyouthresearch.org/#/login/'.$activation_code.'</a>
+<br><br>
+
+<p>If that was not you, please ignore and delete this email.</p>
+<p>This is an automated message form The Arab Youth Research Platform. Please do not
+reply to this message.</p>
+
+<p>Best Regards,<br>
+The AYRP Team.</p>
+
+
+<p>For answers to frequently asked questions, please visit <a href="http://arabyouthresearch.org" title="Arab Youth Research">Arab Youth Research Platform</a></p><br>
+<p style="text-align:center">
+<img src="http://arabyouthresearch.org/assets/img/logo-right.png" title="Arab Youth Research Logo" style="text-align:center">
+</p><br>
+
+<p style="text-align:center">Copy right © 2019 The Arab Youth Research Platform</p>
+<p style="text-align:center">All rights reserved</p>
+
 </body>
-<table>
-</html>
-";
+</html>';
 
 // Always set content-type when sending HTML email
-            $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-            $headers .= 'From:info@arabyouthresearch.org' . "\r\n";
+        $headers .= 'From:info@arabyouthresearch.org' . "\r\n";
 
-            mail($to, $subject, $body, $headers);
+        if(mail($to, $subject, $body, $headers)){
+            $data = Array(
+                'email_sent' => '1',
+            );
+
+            $db->where('email', $to);
+            $db->update('members', $data);
+        }
 
 
 
@@ -375,7 +396,7 @@ class Queries
             'first_name' => $f_name,
             'last_name' => $l_name,
             'university_id' => $university,
-            'domain' => $job,
+            'job_title' => $job,
             'location' => $location,
             'phone' => $phone,
             'Linkedin' => $Linkedin,
@@ -846,14 +867,15 @@ class Queries
         }
     }
 
-    static public function get_published_papers($username, $page, $size)
+    static public function get_published_papers($username, $page, $size )
     {
 
         // page start from 1
         global $db;
         $page *= $size;
 
-        $q = "SELECT papers.date , papers.description , papers.file , members.username , members.member_id , papers.paper_id ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
+
+        $q = "SELECT papers.date , papers.description , papers.file , members.username , members.member_id , papers.paper_id ,papers.language ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
                   FROM members JOIN papers JOIN  disciplines 
                   ON members.member_id = papers.member_id && 
                    papers.discipline_id = disciplines.discipline_id 
@@ -865,7 +887,9 @@ class Queries
             $q = "SELECT tags.tag_en , tags.tag_ar FROM papers JOIN paper_tags JOIN tags
                    ON papers.paper_id = paper_tags.paper_id && tags.tag_id = paper_tags.tag_id WHERE papers.paper_id ='" . $item['paper_id'] . "'";
             $tags = $db->withTotalCount()->rawQuery($q);
+
             $papers[$key]['tags'] = $tags;
+
         }
 
         foreach ($papers as $key => $item) {
@@ -1247,7 +1271,7 @@ class Queries
                   FROM members JOIN papers JOIN  disciplines
                   ON members.member_id = papers.member_id   &&
                    papers.discipline_id = disciplines.discipline_id
-                  WHERE  papers.status = 1 && members.username ='" . $username . "'";
+                  WHERE  papers.status = 1 && members.member_id ='" . $username . "'";
 
         $q_with_paging = $q . " LIMIT {$page} , {$size}";
         $papers = $db->withTotalCount()->rawQuery($q_with_paging);
@@ -1294,9 +1318,9 @@ class Queries
 
         $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
                   FROM members JOIN papers JOIN  disciplines JOIN bookmarks
-                  ON members.member_id = papers.member_id   &&
+                  ON 
                    papers.discipline_id = disciplines.discipline_id
-                  WHERE  papers.status = 1 && members.member_id = bookmarks.member_id && papers.paper_id = bookmarks.paper_id && members.username ='" . $username . "'";
+                  WHERE  papers.status = 1 && members.member_id = bookmarks.member_id && papers.paper_id = bookmarks.paper_id && bookmarks.member_id ='" . $username . "'";
 
         $q_with_paging = $q . " LIMIT {$page} , {$size}";
         $papers = $db->withTotalCount()->rawQuery($q_with_paging);
@@ -1311,7 +1335,7 @@ class Queries
         foreach ($papers as $key => $item) {
             if ($username) {
                 $q = "SELECT bookmark_id FROM members JOIN bookmarks ON members.member_id = bookmarks.member_id && bookmarks.paper_id = '" . $item['paper_id'] . "'
-                      WHERE members.username = '" . $username . "'";
+                      WHERE members.member_id = '" . $username . "'";
                 $is_saves = $db->withTotalCount()->rawQuery($q);
                 if ($is_saves) {
                     $papers[$key]['saved'] = 1;

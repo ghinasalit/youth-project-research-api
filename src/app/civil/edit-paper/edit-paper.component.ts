@@ -25,6 +25,7 @@ export class EditPaperComponent implements OnInit {
     toppings = new FormControl();
     disciplines: any = [];
     // myControl = new FormControl();
+    member_id: any
     options: string[] = ['One', 'Two', 'Three'];
     filteredOptions: Observable<string[]>;
     title = new FormControl('', [Validators.required]);
@@ -170,6 +171,7 @@ export class EditPaperComponent implements OnInit {
 
     ngOnInit() {
         window.scrollTo( 0, 0);
+        this.member_id = localStorage.getItem('id');
 
         this.getDisciplines();
 

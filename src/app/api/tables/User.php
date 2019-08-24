@@ -595,9 +595,10 @@ Class User
         if (is_null(Validation::validate_page_size($data))) {
             $page = $data['page'];
             $size = $data['size'];
-            $user = $user_id = Helper::make_safe($data['username']);
+            $user  = isset($data['username'])? Helper::make_safe($data['username']): '';
+//            $member_id  = isset($data['member_id'])? Helper::make_safe($data['member_id']): '';
 
-            $response = Queries::get_published_papers($user, $page, $size);
+            $response = Queries::get_published_papers($user, $page, $size );
             if (is_numeric($response)) {
                 $error_msg = array_search($response, \Model\Enums::$code);
                 $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
