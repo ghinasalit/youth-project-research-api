@@ -8,3 +8,8 @@
     background-color: #75cddd;
     width: 115px;
 }
+
+.drop-list .dropdown-menu {
+    right: 0;
+    left: auto;
+}

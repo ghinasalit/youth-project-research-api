@@ -362,13 +362,25 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     }
 
-    scroll(element: any) {
-        const el: HTMLElement | null = document.getElementById(element);
-        if (el) {
-            setTimeout(() =>
-                el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
-            this._appService.section = '';
-        }
+    // scroll(element: any) {
+    //     // this.collapsed = false;
+    //     const el: HTMLElement | null = document.getElementById(element);
+    //     if (el) {
+    //         setTimeout(() =>
+    //             el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+    //         this._appService.section = '';
+    //     }
+    // }
+
+    scroll(el: HTMLElement) {
+        const element = document.getElementById(el.id);
+        const elementRect = element.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.pageYOffset;
+        const middle = absoluteElementTop - (window.innerHeight / 2);
+        window.scrollTo(0, middle);
+
+        this._appService.section = '';
+        this.collapsed = false;
     }
 
     ngAfterViewInit(): void {

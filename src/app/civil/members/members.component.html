@@ -151,7 +151,7 @@
          [infiniteScrollThrottle]="throttle"
          (scrolled)="loadmore()">
 
-        <div class="card" *ngFor="let member of members; let i = index" data-aos="fade-up"
+        <div class="card" *ngFor="let member of members; let i = index" data-aos="fade-up" data-aos-once="true"
              [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000">
             <img [src]="member.avatar?_appService.api.api.imgURL  + member.avatar : 'assets/img/avatar_default.PNG' "
                  alt="" [routerLink]="['/profile' , member.username]">
@@ -161,7 +161,14 @@
                 </div>
             </div>
         </div>
-        <div class="card" *ngIf="members.length % 3 == 2" [style.opacity]="0" [style.border]="'none'"></div>
-
+        <ng-container *ngIf="members.length % 5 == 3">
+            <div class="card" [style.opacity]="0" [style.border]="'none'"></div>
+            <div class="card" [style.opacity]="0" [style.border]="'none'"></div>
+        </ng-container>
+        <ng-container *ngIf="members.length % 5 == 2">
+            <div class="card" [style.opacity]="0" [style.border]="'none'"></div>
+            <div class="card" [style.opacity]="0" [style.border]="'none'"></div>
+            <div class="card" [style.opacity]="0" [style.border]="'none'"></div>
+        </ng-container>
     </div>
 </div>

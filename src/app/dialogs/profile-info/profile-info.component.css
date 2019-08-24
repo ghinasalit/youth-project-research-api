@@ -27,7 +27,7 @@
 
 
 .example-form {
-    width: 90%;
+    width: 100%;
 }
 
 .example-full-width {
@@ -36,6 +36,9 @@
     border-top: none !important;
 }
 
+.personal-info {
+    margin: 0 20px;
+}
 
 .textbox-lines {
     width: 500px;
@@ -45,7 +48,7 @@
     background-attachment: local;
     background-image: linear-gradient(to right, #F1F2F2, #F1F2F2 5px, transparent 5px), linear-gradient(to left, #F1F2F2, #F1F2F2 5px, transparent 5px), repeating-linear-gradient(#F1F2F2, #F1F2F2 36px, #75CDDD 36px, #75CDDD 37px);
     line-height: 38px;
-    padding: 6.3333333333px 10px;
+    padding: 0;
     resize: none;
 }
 
@@ -148,7 +151,8 @@
 
 .close-desc {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .field-item {

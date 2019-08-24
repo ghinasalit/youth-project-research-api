@@ -6,12 +6,12 @@
     <a href="/#/home">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about">{{'_AboutUs' | translate}}</a>
-    <a (click)="scroll('becomeResearcher')"> {{'_Objectives' | translate}}</a>
+    <a (click)="scroll(becomeResearcher)"> {{'_Objectives' | translate}}</a>
     <a routerLink="/members">{{'_Our_Members' | translate}}</a>
-    <a (click)="scroll('heatmap')">{{'_HeatMap' | translate}}</a>
-    <a (click)="scroll('partners')">{{'_OurPartners' | translate}}</a>
-    <a (click)="scroll('faq')">{{'_FAQs' | translate}}</a>
-    <a (click)="scroll('contactus')">{{'_ContactUs' | translate}}</a>
+    <a (click)="scroll(heatmap)">{{'_HeatMap' | translate}}</a>
+    <a (click)="scroll(partners)">{{'_OurPartners' | translate}}</a>
+    <a (click)="scroll(faq)">{{'_FAQs' | translate}}</a>
+    <a (click)="scroll(contactus)">{{'_ContactUs' | translate}}</a>
 </div>
 
 <!--Social Fixed-->
@@ -243,13 +243,13 @@
     </div>
 </div>
 
-<div class="become-researcher" id="becomeResearcher" data-aos="fade-up">
+<div class="become-researcher" id="becomeResearcher" #becomeResearcher data-aos="fade-up">
     <div class="title" data-aos="fade-up" data-aos-duration="500">
         <p>{{'_Why_publish_research' | translate}}</p>
         <div></div>
     </div>
     <div class="cards">
-        <div data-aos="zoom-in" data-aos-delay="0" class="card-item-objective why-publish">
+        <div data-aos="fade-up" data-aos-delay="0" class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/login.jpg" alt="">
 
@@ -267,7 +267,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="zoom-in" data-aos-delay="200" class="card-item-objective why-publish">
+        <div data-aos="fade-up" data-aos-delay="200" class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/recognation.jpg" alt="">
 
@@ -285,7 +285,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="zoom-in" data-aos-delay="600" class="card-item-objective why-publish">
+        <div data-aos="fade-up" data-aos-delay="600" class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/Researcher_network.jpg" alt="">
 
@@ -303,7 +303,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="zoom-in" data-aos-delay="1000" class="card-item-objective why-publish">
+        <div data-aos="fade-up" data-aos-delay="1000" class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/career.jpg" alt="">
 
@@ -321,7 +321,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="zoom-in" data-aos-delay="1400" class="card-item-objective why-publish">
+        <div data-aos="fade-up" data-aos-delay="1400" class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/career.jpg" alt="">
 
@@ -344,7 +344,7 @@
         <button>{{'_RegisterMember' | translate}}</button>
     </div>
 </div>
-<!--<div class="heat-map" id="heatmap" data-aos="fade-up" data-aos-duration="1000">-->
+<!--<div class="heat-map" id="heatmap" #heatmap data-aos="fade-up" data-aos-duration="1000">-->
 <!--    <div class="title">-->
 <!--        <p>{{'_HeatMap' | translate}}</p>-->
 <!--        <div></div>-->
@@ -432,7 +432,7 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
-<div class="full-section partners" id="partners">
+<div class="full-section partners" id="partners" #partners>
     <div class="full-section with-slider">
         <div class="top-sticker" data-aos="fade-up" data-aos-duration="1000"></div>
         <div class="side laptop" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'"
@@ -475,7 +475,7 @@
 </div>
 
 
-<div class="full-section contact" data-aos="fade-up" data-aos-duration="1000" id="contactus">
+<div class="full-section contact" data-aos="fade-up" data-aos-duration="1000" id="contactus" #contactus>
     <div class="side">
         <div class="sec-content">
             <h1 class="text-left">{{'_ContactUs' | translate}}</h1>

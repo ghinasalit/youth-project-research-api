@@ -80,7 +80,7 @@
         margin-top: 150px;
     }
 
-    .go-login a{
+    .go-login a {
         margin: 3px 0px;
     }
 }
@@ -286,11 +286,11 @@
         padding: 0 140px;
     }
 
-    .go-login a{
+    .go-login a {
         margin: 3px 0px;
     }
 
-    .partners{
+    .partners {
         height: 420px;
     }
 
@@ -791,7 +791,7 @@
     .social {
         display: inline-block;
         margin-left: 10px;
-        margin-top: 0;
+        /*margin-top: 0;*/
     }
 
     .profile-container .left-sticker {
@@ -1015,7 +1015,7 @@
         color: #1b2850;
     }
 
-    .nav-links{
+    .nav-links {
         display: flex;
         justify-content: space-around;
         width: 65%;
@@ -1030,11 +1030,11 @@
     }
 
 
-    .go-login a{
-        margin: 3px 0px;
+    .go-login a {
+        margin: 3px 10px;
     }
 
-    .partners{
+    .partners {
         height: 335px;;
     }
 }
@@ -2078,7 +2078,7 @@
         padding: 0 0;
     }
 
-    .partners{
+    .partners {
         height: 235px;
     }
 }
@@ -2324,7 +2324,6 @@
     }
 
 
-
     .full-section .sec-content {
         text-align: right;
         width: auto;
@@ -2336,7 +2335,7 @@
         margin: 0 20px;
     }
 
-    app-about .about-content{
+    app-about .about-content {
         margin-bottom: 20px;
     }
 
@@ -2671,7 +2670,7 @@
         font-size: 14px
     }
 
-   app-about .content p {
+    app-about .content p {
 
         font-size: 14px;
     }
@@ -3721,11 +3720,11 @@
         padding: 0;
     }
 
-    app-home  .top-home-login .login-register {
+    app-home .top-home-login .login-register {
         color: #fff;
     }
 
-    app-about .full-section .side{
+    app-about .full-section .side {
         height: 300px;
     }
 
@@ -3974,7 +3973,7 @@
         /*display: flex;*/
     }
 
-   app-upload-paper .full-section .sec-content {
+    app-upload-paper .full-section .sec-content {
         text-align: right;
         width: auto;
         margin: 25px 0;
@@ -4915,7 +4914,7 @@
         width: 45px;
         position: absolute;
         background: #1b2850;
-        top:96%;
+        top: 96%;
         right: 45%;
         bottom: 50%;
         z-index: 100;
@@ -5384,7 +5383,7 @@
         padding: 0;
     }
 
-    app-login .full-section .sec-content ,  app-register .full-section .sec-content  , app-upload-paper .full-section .sec-content{
+    app-login .full-section .sec-content, app-register .full-section .sec-content, app-upload-paper .full-section .sec-content {
 
         display: inherit;
 
@@ -5393,7 +5392,8 @@
     app-home .top-home-login .login-register {
         color: #fff;
     }
-    app-about .full-section .side{
+
+    app-about .full-section .side {
         height: 300px;
     }
 
@@ -7038,13 +7038,12 @@
     }
 
 
-    app-login .full-section .sec-content , app-register .full-section .sec-content  , app-upload-paper  .full-section .sec-content ,  app-profile-info  .full-section .sec-content {
-
+    app-login .full-section .sec-content, app-register .full-section .sec-content, app-upload-paper .full-section .sec-content, app-profile-info .full-section .sec-content {
 
 
     }
 
-    .full-section register{
+    .full-section register {
         display: block !important;
     }
 
@@ -7060,7 +7059,7 @@
         color: #fff;
     }
 
-    app-about .full-section .side{
+    app-about .full-section .side {
         height: 300px;
     }
 }

@@ -377,3 +377,7 @@ input[type=checkbox]:checked ~ #menu {
 .social{
     position: fixed;
 }
+
+.cards-items {
+    z-index: -1;
+}
