@@ -770,7 +770,7 @@ app-home .card-item p {
 .profile-container .edit-profile {
     width: 110px;
     height: 75px;
-    position: absolute;
+    /*position: absolute;*/
     right: 150px;
     top: 66px;
     color: #1B2850;

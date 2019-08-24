@@ -1,43 +1,71 @@
 
-.info{
+.info {
     display: flex;
     flex-direction: column;
 }
 
 
-
-
-.user-name{
+.user-name {
     display: flex;
     justify-content: space-between;
 }
 
-
-.user-name{
+.full-name {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
 }
 
+.controls-profile {
+    display: flex;
+    flex-direction: column;
+}
 
+.controls-profile .p-clip {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
 
-.info-icon i{
+.controls-profile .box {
+    margin: auto;
+    width: 45px;
+    height: 45px;
+}
+
+.controls-profile img {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+}
+
+.controls-profile .paper {
+    position: initial;
+    margin-top: 10px;
+}
+
+.edit-profile {
+    cursor: pointer;
+    position: initial;
+}
+
+.edit-profile i {
+    font-size: 35px;
+    margin: auto;
+}
+
+.info-icon i {
     margin-right: 8px;
 }
 
 
-.research-search a{
+.research-search a {
     color: #1B2850;
 }
 
 
-
-
-
-
-
-
-
-.profile-photo img{
+.profile-photo img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -78,8 +106,7 @@ input {
 }
 
 
-
-.cards-items{
+.cards-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -87,12 +114,11 @@ input {
 }
 
 
-
 .cards-items h3 {
     margin-top: -35px;
 }
 
-.paper-card-info{
+.paper-card-info {
 
     display: flex;
 }
@@ -103,7 +129,7 @@ input {
 }
 
 
-.cards-items .title div{
+.cards-items .title div {
     border: 6px solid #1B2850;
 }
 
@@ -135,7 +161,6 @@ input {
 }
 
 
-
 .text {
     margin-top: 140px
 }
@@ -152,7 +177,7 @@ input {
     height: 35px;
 }
 
-.drop-list span{
+.drop-list span {
     color: #FDD97A;
 }
 
@@ -173,8 +198,6 @@ input {
 }
 
 
-
-
 /*Style 'show menu' label button and hide it by default*/
 .show-menu {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -186,8 +209,6 @@ input {
     display: none;
     border-radius: 6px;
 }
-
-
 
 
 /*Hide checkbox*/
@@ -219,8 +240,6 @@ input[type=checkbox]:checked ~ #menu {
     }
 
 }
-
-
 
 
 /* Styles for wrapping the search box */
@@ -261,13 +280,11 @@ input[type=checkbox]:checked ~ #menu {
 }
 
 
-
 /*.social {*/
 /*    display: inline-block;*/
 /*    margin-right: 25px;*/
 /*    margin-top: 150px*/
 /*}*/
-
 
 
 .title-search {
@@ -282,8 +299,6 @@ input[type=checkbox]:checked ~ #menu {
 /*}*/
 
 
-
-
 /*.title {*/
 /*    font-size: 45px;*/
 /*    font-weight: bold;*/
@@ -295,49 +310,46 @@ input[type=checkbox]:checked ~ #menu {
     padding: 0 80px;
 }
 
-.view-download{
+.view-download {
     display: flex;
     margin-top: 33px;
 }
 
 
-
-.view-download h6{
+.view-download h6 {
     cursor: pointer;
 }
 
 
-
-.edit-paper{
+.edit-paper {
     width: 100%;
     font-size: 25px;
 
 }
 
 
-.social-user i  {
+.social-user i {
     color: #75cddd;
 }
 
 
-
-.social-user p ,.social-user a{
+.social-user p, .social-user a {
     color: #75cddd;
     font-size: 12px;
 }
 
 
-.tap{
+.tap {
     margin-right: 20px;
 }
 
-.tap div{
-    display:flex;
+.tap div {
+    display: flex;
     justify-content: flex-start;
     margin-bottom: 10px;
 }
 
-.tap img{
+.tap img {
     width: 20px;
     height: 25px;
 }
@@ -347,26 +359,37 @@ input[type=checkbox]:checked ~ #menu {
     margin: auto;
 }
 
-.line
-{
+.line {
     /*border: 5px solid #FDD97A;*/
     background-color: #FDD97A;
     width: 120px;
 }
 
-.tap i{
+.tap i {
     font-size: 25px;
 }
 
-.line-saved{
+.line-saved {
     display: none;
 }
 
 
-.view-more p{
+.view-more p {
     text-align: center;
     color: #75cddd;
     cursor: pointer;
 }
 
+
+@media (min-width: 425px) {
+    .controls-profile {
+        margin: 0 40px;
+    }
+}
+
+@media (max-width: 424px) {
+    .edit-profile p {
+        font-size: 12px;
+    }
+}
 

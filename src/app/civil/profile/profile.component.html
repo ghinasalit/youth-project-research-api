@@ -61,7 +61,7 @@
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             <p>{{'_EditProfile' | translate}}</p>
                         </div>
-                        <div (click)="_appService.submitPaper()" style="cursor: pointer;"
+                        <div class="p-clip" (click)="_appService.submitPaper()" style="cursor: pointer;"
                              *ngIf="_appService.roll && username === member.username">
                             <div class="box">
                             </div>
@@ -141,7 +141,7 @@
 </div>
 
 
-<div class="research-section" data-aos="fade-down" data-aos-duration="100">
+<div class="research-section" data-aos="fade-up" data-aos-duration="100">
     <div class="title-search">
         <div class="research-title">
             <div class="title">
