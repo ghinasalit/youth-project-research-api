@@ -57,6 +57,7 @@ h3, h6, p {
 
 
 .title-search {
+    z-index: 10;
     display: flex;
     justify-content: space-between;
 }

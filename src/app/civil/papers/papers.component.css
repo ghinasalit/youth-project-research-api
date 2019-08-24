@@ -296,6 +296,7 @@ input[type=checkbox]:checked ~ #menu {
 
 
 .title-search {
+    z-index: 10;
     display: flex;
     justify-content: space-between;
 }
@@ -364,15 +365,13 @@ input[type=checkbox]:checked ~ #menu {
     word-break: break-all;
 }
 
-.social-statistics{
+.social-statistics {
     display: flex;
     justify-content: space-between;
 }
 
-.social{
+.social {
     position: fixed;
 }
 
-.cards-items {
-    z-index: -1;
-}
+
