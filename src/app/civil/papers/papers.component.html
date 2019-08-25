@@ -176,7 +176,7 @@
                              [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
                         >
                             <i class="fa fa-tag" aria-hidden="true"></i>
-                            <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
+                          <h6><span *ngFor="let tag of paper.tags; let i = index"><span *ngIf="i>0">, </span> {{tag.tag_en}}  </span></h6>
                         </div>
                         <div class="paper-card-info"
                              [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
@@ -203,7 +203,7 @@
                              [style.justify-content]="paper.language == 1 ?  'flex-start' :  'flex-start'"
                         >
                             <i class="fa fa-tag" aria-hidden="true"></i>
-                            <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
+                            <h6><span *ngFor="let tag of paper.tags; let i = index"><span *ngIf="i>0">, </span> {{tag.tag_en}} </span></h6>
                         </div>
                         <div class="paper-card-info"
                              [style.justify-content]="paper.language == 1 ?  'flex-start' :  'flex-start'"

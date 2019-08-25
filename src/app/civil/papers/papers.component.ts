@@ -143,7 +143,7 @@ export class PapersComponent implements OnInit {
                         }
                     });
 
-                    this.toaster.success(this.trans.SavePaperMSG, '');
+                    //this.toaster.success(this.trans.SavePaperMSG, '');
                 } else {
                     this._appService.registerPageTitle = 1;
                     this.router.navigate(['/register']);
@@ -164,7 +164,7 @@ export class PapersComponent implements OnInit {
                             item.saved = 0;
                         }
                     });
-                    this.toaster.success(this.trans.DeletePaperMSG, '');
+                    //this.toaster.success(this.trans.DeletePaperMSG, '');
 
                 } else {
                     this._appService.registerPageTitle = 1;

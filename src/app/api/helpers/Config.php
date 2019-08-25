@@ -2,7 +2,6 @@
 
 namespace Model;
 define("___APP", "Backend");
-ini_set('session.gc_maxlifetime', 28800);
 
 
 class Config
