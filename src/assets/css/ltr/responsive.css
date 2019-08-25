@@ -81,7 +81,7 @@
     }
 
     .go-login a{
-        margin: 3px 0px;
+        margin: 3px 5px;
     }
 
 }
@@ -290,11 +290,11 @@
         display: flex;
         justify-content: space-around;
         width: 65%;
-        padding: 0 140px;
+        padding: 0 136px
     }
 
     .go-login a {
-        margin: 3px 0px;
+        margin: 3px 5px;
     }
 
     .partners{
@@ -340,11 +340,11 @@
         font-size: 22px;
     }
 
-    h3{
+    h3 {
         font-size: 18px;
     }
 
-      .edit-profile {
+    .edit-profile {
         width: 110px;
         height: 75px;
         position: absolute;
@@ -482,7 +482,7 @@
     }
 
 
-    app-profile  .paper p {
+    app-profile .paper p {
         font-size: 12px;
         font-weight: bold;
     }
@@ -918,7 +918,7 @@
     }
 
 
-    .sort-icon .fa-sort-asc{
+    .sort-icon .fa-sort-asc {
         position: absolute;
         top: -10px;
         right: 3px;
@@ -1037,7 +1037,7 @@
         color: #1b2850;
     }
 
-    .nav-links{
+    .nav-links {
         display: flex;
         justify-content: space-around;
         width: 65%;
@@ -1137,17 +1137,34 @@
         height: 200px;
     }
 
-    .items-container{
+    .items-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         margin: 55px 0 0;
         height: 318px;
+
+    }
+
+    .profile-form {
+        width: 640px;
+        height: 518px;
+    }
+
+    .avatar-cropper {
+        width: 170px !important;
+        height: 170px;
+    }
+
+
+    .avatar-cropper img {
+        width: 100%;
+        height: auto
+
+
     }
 
 }
-
-
 @media (min-width: 768px) and (max-width: 1024px) {
     h2 {
         font-size: 20px;
@@ -2133,7 +2150,7 @@
 
     .card-item-objective .icon {
         text-align: center;
-        height: 135px;
+        height: 85px;
     }
 
     .card-item-objective .title {
@@ -2228,7 +2245,7 @@
     }
 
     .scrolled a {
-        font-size: 12px !important;
+        /*font-size: 12px !important;*/
     }
 
     .scroll-img img {
@@ -2267,6 +2284,24 @@
         font-size: 16px;
     }
 
+
+    .profile-form {
+        width: 640px;
+        height: 518px;
+    }
+
+    .avatar-cropper {
+        width: 170px !important;
+        height: 170px;
+    }
+
+
+    .avatar-cropper img {
+        width: 100%;
+        height: auto
+
+
+    }
 }
 
 @media (min-width: 425px) and (max-width: 767px) {
@@ -4015,6 +4050,18 @@
         height: 308px;
     }
 
+    .nav-collapsed{
+        position: fixed;
+    }
+
+    .request button {
+        width: 100%;
+        height: 73%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -5790,6 +5837,19 @@
         margin: 55px 0 0;
         height: 308px;
     }
+
+    .nav-collapsed{
+        position: fixed;
+    }
+
+    .request button {
+        width: 100%;
+        height: 73%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 374px) {
@@ -7553,6 +7613,20 @@
         margin: 55px 0 0;
         height: 308px;
     }
+
+    .nav-collapsed{
+        position: fixed;
+    }
+
+    .request button {
+        width: 100%;
+        height: 73%;
+        background-color: #75cddd;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+    }
+
 }
 
 

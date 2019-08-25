@@ -234,10 +234,11 @@ Class User
         return $result;
     }
 
-    static public function get_countries()
+    static public function get_countries($data)
     {
+        $lang = Helper::make_safe($data['language']);
 
-        $response = Queries::get_countries();
+        $response = Queries::get_countries($lang);
         if (is_numeric($response)) {
             $error_msg = array_search($response, \Model\Enums::$code);
             $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());

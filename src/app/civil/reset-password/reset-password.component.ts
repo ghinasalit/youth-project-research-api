@@ -41,7 +41,7 @@ export class ResetPasswordComponent implements OnInit {
 
     translate.onLangChange.subscribe(lang => {
 
-      this.trans.CheckYourEmail = lang.translate._CheckYourEmail;
+      this.trans.CheckYourEmail = lang.translations._CheckYourEmail;
 
 
     });
@@ -65,7 +65,7 @@ export class ResetPasswordComponent implements OnInit {
           this.result = response;
 
           if (this.result.code === 1) {
-            this.toaster.error(this.trans.CheckYourEmail , '');
+            this.toaster.success(this.trans.CheckYourEmail , '');
 
 
           } else {

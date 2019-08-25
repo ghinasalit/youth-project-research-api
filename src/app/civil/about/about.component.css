@@ -40,6 +40,10 @@
         padding-right: 50px;
         box-sizing: content-box;
     }
+
+    .logged{
+        top: -300px;
+    }
 }
 
 #faq {
@@ -57,4 +61,9 @@
 
 .become-researcher{
     height: auto;
+}
+
+
+.full-section .about-content{
+    width: 95%;
 }

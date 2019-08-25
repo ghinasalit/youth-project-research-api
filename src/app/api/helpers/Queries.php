@@ -469,7 +469,7 @@ The AYRP Team.</p>
     {
         global $db;
 
-        $query = " SELECT members.member_id ,members.first_name , members.last_name , country.name_en as country , members.email , members.username  , members.phone , members.location , university.name_en ,university.name_en , members.domain , members.description , members.avatar , university.name_en as university_name_en, university.name_ar as university_name_ar From members JOIN university
+        $query = " SELECT members.member_id ,members.first_name , members.last_name , country.name_en as country , members.email , members.username  , members.phone , members.location , university.name_en ,university.name_en , members.domain ,  members.linkedin , members.description , members.avatar , university.name_en as university_name_en, university.name_ar as university_name_ar From members JOIN university
                        ON members.university_id = university.university_id 
                         join country ON  university.country_id = country.country_id   WHERE members.member_id = '" . $member_id . "'";
 
@@ -1267,7 +1267,7 @@ The AYRP Team.</p>
         $page *= $size;
 
 
-        $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
+        $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id , papers.language , papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
                   FROM members JOIN papers JOIN  disciplines
                   ON members.member_id = papers.member_id   &&
                    papers.discipline_id = disciplines.discipline_id
@@ -1308,7 +1308,6 @@ The AYRP Team.</p>
 
     }
 
-
     static public function get_bookmarks($username, $page, $size)
     {
         // page start from 1
@@ -1316,11 +1315,12 @@ The AYRP Team.</p>
         $page *= $size;
 
 
-        $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
+        $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id ,  papers.language  ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
                   FROM members JOIN papers JOIN  disciplines JOIN bookmarks
-                  ON 
+                  ON members.member_id = papers.member_id &&
                    papers.discipline_id = disciplines.discipline_id
-                  WHERE  papers.status = 1 && members.member_id = bookmarks.member_id && papers.paper_id = bookmarks.paper_id && bookmarks.member_id ='" . $username . "'";
+                   &&  papers.paper_id = bookmarks.paper_id
+                  WHERE  papers.status = 1  && bookmarks.member_id ='" . $username . "'";
 
         $q_with_paging = $q . " LIMIT {$page} , {$size}";
         $papers = $db->withTotalCount()->rawQuery($q_with_paging);
@@ -1429,7 +1429,6 @@ The AYRP Team.</p>
             return [];
         }
     }
-
 
     public static function check_session_alive($session)
     {

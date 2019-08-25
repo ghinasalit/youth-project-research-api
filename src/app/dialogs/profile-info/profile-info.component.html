@@ -1,10 +1,10 @@
 <div class="profile-info">
-    <form class="full-section profile-form example-form" [formGroup]="profileForm">
+    <form class="full-section profile-form example-form" [formGroup]="profileForm" [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
         <div class="info-left-section example-form">
             <div class="avatar">
                 <div class="avatar-cropper" [style.width]="'265px'">
                     <img *ngIf="!imageChangedEvent"
-                         [src]="croppedImage.base64 ? croppedImage.base64 : 'assets/img/avatar_default.PNG'" alt=""
+                         [src]="croppedImage.base64 ? croppedImage.base64 : 'assets/img/avatar_default.jpeg'" alt=""
                          [style.width]="croppedImage.base64 ? '100%' : ''">
                     <div *ngIf="imageChangedEvent">
                         <image-cropper [imageChangedEvent]="imageChangedEvent"
@@ -16,9 +16,9 @@
                         ></image-cropper>
                     </div>
                     <div class="image-upload" [style.bottom]="croppedImage.base64 ? '0' : '8px'"
-                         [style.right]="croppedImage.base64 ? '0' : '8px'">
-                        <input type="file" (change)="fileChangeEvent($event)"/>
-                        <label>
+                         [style.right]="croppedImage.base64 ? '0' : '8px'" >
+                        <input type="file" (change)="fileChangeEvent($event)" style="cursor: pointer">
+                        <label style="cursor: pointer">
                             <img src="assets/img/camera.PNG"/>
                         </label>
                         <!--<input id="file-input" type="file"/>-->
@@ -75,7 +75,7 @@
                     <mat-form-field class="example-full-width">
                         <input matInput placeholder="{{'_LinkedIn' | translate}}" value="" formControlName="Linkedin">
                     </mat-form-field>
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </div>
             </div>
         </div>

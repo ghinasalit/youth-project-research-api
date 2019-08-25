@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ProfileInfoComponent} from '../../dialogs/profile-info/profile-info.component';
 import {MatDialog} from '@angular/material';
 import {PaperComponent} from '../../dialogs/paper/paper.component';
 import {AppService} from '../../app.service';
@@ -57,10 +56,8 @@ export class PapersComponent implements OnInit {
             'search': '',
         });
 
-        translate.get(['_SavePaperMSG',  '_SavePaperMSG' , '_Success', '_Failed', '_FailedMSG']).subscribe(res => {
+        translate.get(['_SavePaperMSG',  '_DeletePaperMSG' , '_Success', ]).subscribe(res => {
 
-            this.trans.Failed = res._Failed;
-            this.trans.FailedMSG = res._FailedMSG;
             this.trans.SavePaperMSG = res._SavePaperMSG;
             this.trans.DeletePaperMSG = res._DeletePaperMSG;
             this.trans.Success = res._Success;
@@ -68,11 +65,9 @@ export class PapersComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.Failed = lang.translate._Failed;
-            this.trans.FailedMSG = lang.translate._FailedMSG;
-            this.trans.SavePaperMSG = lang.translate._SavePaperMSG;
-            this.trans.DeletePaperMSG = lang.translate._DeletePaperMSG;
-            this.trans.Success = lang.translate._Success;
+            this.trans.SavePaperMSG = lang.translations._SavePaperMSG;
+            this.trans.DeletePaperMSG = lang.translations._DeletePaperMSG;
+            this.trans.Success = lang.translations._Success;
 
         });
 
@@ -134,6 +129,8 @@ export class PapersComponent implements OnInit {
     }
 
     savePaper(paper_id) {
+
+        console.log(paper_id);
         this.paper.paper_id = paper_id;
         this._appService.api.savePaperService(this.paper)
             .subscribe(response => {
@@ -320,6 +317,8 @@ export class PapersComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        window.scrollTo(0,0);
         this._appService.active = 1;
 
         this.member_id = localStorage.getItem('id');
@@ -327,6 +326,7 @@ export class PapersComponent implements OnInit {
         this._appService.countiesNotifier.subscribe(data => {
             this.Counties = data;
         });
+
         this._appService.disciplinesNotifier.subscribe(data => {
             this.Disciplines = data;
         });

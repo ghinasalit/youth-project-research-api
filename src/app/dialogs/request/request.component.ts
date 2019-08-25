@@ -46,10 +46,10 @@ export class RequestComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.Failed = lang.translate._Failed;
-            this.trans.FailedMSG = lang.translate._FailedMSG;
-            this.trans.SendRequestMSG = lang.translate._SendRequestMSG;
-            this.trans.Success = lang.translate._Success;
+            this.trans.Failed = lang.translations._Failed;
+            this.trans.FailedMSG = lang.translations._FailedMSG;
+            this.trans.SendRequestMSG = lang.translations._SendRequestMSG;
+            this.trans.Success = lang.translations._Success;
 
         });
 
@@ -70,7 +70,7 @@ export class RequestComponent implements OnInit {
                     this.toaster.success( this.trans.SendRequestMSG, '');
                     this.dialogRef.close();
                 } else {
-                    this.toaster.error(this.trans.FailedMSG, '');
+                    this.toaster.error(result.msg , '');
                     this.dialogRef.close();
 
 

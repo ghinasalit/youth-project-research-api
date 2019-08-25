@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.AccountNotActive = lang.translate._AccountNotActive;
+            this.trans.AccountNotActive = lang.translations._AccountNotActive;
 
         });
     }

@@ -52,9 +52,7 @@
           <div class="item">
             <mat-form-field>
               <input matInput placeholder="{{'_EnterPassword' | translate}}" [type]="hide ? 'password' : 'text'"  formControlName="password" required>
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
+
               <mat-error *ngIf="password.errors.required">{{'_Required' | translate}}</mat-error>
 
             </mat-form-field>
@@ -67,7 +65,6 @@
           <div class="go-login"><P>{{'_AlreadyHaveAccount' | translate}}</P><a routerLink="/login">{{'_Login' | translate}}</a></div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

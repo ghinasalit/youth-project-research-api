@@ -405,7 +405,7 @@ top-home-login .title {
 
 
 .about-content .text-left p {
-    font-size: 65px
+    font-size: 60px
 }
 
 
@@ -806,7 +806,9 @@ app-home .card-item p {
 
 
 .cards-items .c-item {
-    border: 1px solid #1b2850;
+
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    /*border: 1px solid #1b2850;*/
     width: 32.5%;
     margin: 10px 0;
     padding: 10px 35px;
@@ -1293,6 +1295,7 @@ app-upload-paper .submit {
 
 .paper-card-info i {
     margin-left: 5px;
+    margin-right: 5px;
     margin-top: 7px;
     color: #75cddd;
 }
@@ -1544,6 +1547,7 @@ app-about .research-all-around  .center-sticker {
 
 .by {
     margin-left: 3px;
+    margin-right: 3px;
     color: #75cddd;
 }
 
@@ -1714,7 +1718,7 @@ app-members .card img {
 
 
 .scrolled a{
-    font-size:15px !important;
+    /*font-size:15px !important;*/
 }
 
 .scrolled li::after{
@@ -1785,4 +1789,65 @@ app-members .card img {
     justify-content: space-between;
     margin: 55px 0 0;
     height: 330px;
+}
+
+
+.field-item i {
+    position: absolute;
+    right: -20px;
+    top: 10px;
+}
+
+.mat-form-field i {
+    position: absolute;
+    right: -22px;
+    top: 7px;
+}
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 75%;
+}
+
+
+.field-item i {
+    position: absolute;
+    left: -20px;
+    top: 10px;
+}
+
+
+.request button{
+    width: 27%;
+    height: 100%;
+    background-color: #75cddd;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+}
+
+
+
+.image-upload{
+    cursor: pointer;
+}
+
+
+
+.profile-form {
+    width: 100%;
+    height: auto;
+
+}
+
+.avatar-cropper {
+    width: 170px !important;
+    height: 170px;
+}
+
+
+.avatar-cropper img {
+    width: 100%;
 }

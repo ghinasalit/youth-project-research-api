@@ -48,6 +48,25 @@
                 <mat-error *ngIf="discipline.hasError('required')">Please choose your university</mat-error>
             </mat-form-field>
 
+<!--            <mat-form-field class="example-full-width">-->
+<!--                <input type="text" placeholder="{{'_Discipline' | translate}}" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">-->
+<!--                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">-->
+<!--                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">-->
+<!--                        {{option.discipline_en}}-->
+<!--                    </mat-option>-->
+<!--                </mat-autocomplete>-->
+<!--            </mat-form-field>-->
+
+<!--                <mat-form-field class="example-full-width" formControlName="discipline" required>-->
+<!--                    <input type="text" placeholder="{{'_Discipline' | translate}}" aria-label="Number" matInput [formControl]="discipline" [matAutocomplete]="auto">-->
+<!--                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">-->
+<!--                        <mat-option *ngFor="let option of disciplines | async" [value]="option.discipline_id">-->
+<!--                            <span *ngIf="_appService.currentLanguage === 'en'">{{option.discipline_en}}</span>-->
+<!--                            <span *ngIf="_appService.currentLanguage === 'ar'">{{option.discipline_ar}}</span>-->
+<!--                        </mat-option>-->
+<!--                    </mat-autocomplete>-->
+<!--                </mat-form-field>-->
+
             <div class="lang">
                 <p>{{'_ResearchLanguage' | translate}} *</p>
                 <mat-radio-group aria-label="Select an option" formControlName="lang" required>

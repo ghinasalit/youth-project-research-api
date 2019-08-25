@@ -23,7 +23,7 @@ export class ProfileInfoComponent implements OnInit {
     fileName: string;
     university = new FormControl('', [Validators.required]);
     imageChangedEvent: any = '';
-    croppedImage: any = 'assets/img/avatar_default.PNG';
+    croppedImage: any = 'assets/img/avatar_default.jpeg';
     private trans = {
         RegisterMSG: null,
 
@@ -54,7 +54,7 @@ export class ProfileInfoComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.RegisterMSG = lang.translate._RegisterMSG;
+            this.trans.RegisterMSG = lang.translations._RegisterMSG;
 
         });
     }

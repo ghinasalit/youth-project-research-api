@@ -21,7 +21,7 @@ export class MemberDetailsComponent implements OnInit {
     profileForm: FormGroup;
     user = new User();
     imageChangedEvent: any = '';
-    croppedImage: any = 'assets/img/avatar_default.PNG';
+    croppedImage: any = 'assets/img/avatar_default.jpeg';
     university = new FormControl('', [Validators.required]);
     f_name = new FormControl('', [Validators.required]);
     l_name = new FormControl('', [Validators.required]);
@@ -65,9 +65,9 @@ export class MemberDetailsComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.FailedMSG = lang.translate._FailedMSG;
-            this.trans.UpdateMSG = lang.translate._UpdateMSG;
-            this.trans.Success = lang.translate._Success;
+            this.trans.FailedMSG = lang.translations._FailedMSG;
+            this.trans.UpdateMSG = lang.translations._UpdateMSG;
+            this.trans.Success = lang.translations._Success;
 
         });
     }

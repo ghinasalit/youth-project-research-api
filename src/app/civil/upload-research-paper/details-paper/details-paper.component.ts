@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../../../app.service';
 import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
 
 @Component({
     selector: 'app-details-paper',
@@ -14,6 +17,9 @@ export class DetailsPaperComponent implements OnInit {
     tags: any;
     disciplines: any = [];
     toppings = new FormControl();
+    filteredOptions: Observable<string[]>;
+    myControl = new FormControl();
+    options: string[] = ['One', 'Two', 'Three'];
 
     constructor(private fb: FormBuilder,
                 private router: Router,
@@ -80,7 +86,21 @@ export class DetailsPaperComponent implements OnInit {
 
     }
 
+
+    private _filter(value: string): string[] {
+        const filterValue = value.toLowerCase();
+        console.log(this.disciplines.filter(option => option.discipline_en.toLowerCase().indexOf(filterValue) === 0));
+        return this.disciplines.filter(option => option.discipline_en.toLowerCase().indexOf(filterValue) === 0);
+    }
+
     ngOnInit() {
+
+
+
+        // this.filteredOptions = this.discipline.valueChanges.pipe(
+        //     startWith(''),
+        //     map(value => this._filter(value))
+        // );
         this.getDisciplines();
         if (this.appService.fileName == '') {
             this.router.navigate(['/upload-paper']);
@@ -88,6 +108,11 @@ export class DetailsPaperComponent implements OnInit {
         } else {
             this.getTags();
         }
+
+        this.filteredOptions = this.myControl.valueChanges.pipe(
+            startWith(''),
+            map(value => this._filter(value))
+        );
     }
 
 }

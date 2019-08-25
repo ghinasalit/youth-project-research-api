@@ -135,7 +135,7 @@
 
         </div>
     </div>
-    <div class="cards-items" *ngIf="papers" infinite-scroll
+    <div class="cards-items" *ngIf="papers" infinite-scroll dir="auto"
          [infiniteScrollDistance]="scrollDistance"
          [infiniteScrollUpDistance]="scrollUpDistance"
          [infiniteScrollThrottle]="throttle"
@@ -153,7 +153,10 @@
             <div class="items-container">
                 <div class="item-header">
                     <div class="title" style="cursor: pointer;" (click)="viewPaper(paper)">
-                        <h3>{{(paper?.title.length > 70) ? (paper?.title | slice:0:70) + '...' : (paper?.title) }}
+                        <h3
+                                [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
+                                [style.text-align]="paper.language == 1 ?  'left' :  'right'"
+                        >{{(paper?.title.length > 70) ? (paper?.title | slice:0:70) + '...' : (paper?.title) }}
 
                         </h3>
                         <div *ngIf="paper.language == 1" [style.margin-right]="'auto'"></div>
@@ -161,21 +164,49 @@
                     </div>
                 </div>
                 <div>
-                    <div class="item-body">
+                    <div class="item-body" *ngIf="_appService.currentLanguage == 'ar'">
                         <div class="paper-card-info" style="cursor: pointer"
-                             [style.justify-content]="paper.language == 1 ?  'flex-end' :  'flex-start'"
+                             [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
                              [routerLink]="['/profile' , paper.member_id]">
-                            <h6 class="by"> {{'_By' | translate}}  </h6>
+                            <h6 class="by" *ngIf="paper.language == 1"  > BY  </h6>
+                            <h6 class="by" *ngIf="paper.language == 2">  بواسطة </h6>
                             <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
                         </div>
                         <div class="paper-card-info"
-                             [style.justify-content]="paper.language == 1 ?  'flex-end' :  'flex-start'"
+                             [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
                         >
                             <i class="fa fa-tag" aria-hidden="true"></i>
                             <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
                         </div>
                         <div class="paper-card-info"
-                             [style.justify-content]="paper.language == 1 ?  'flex-end' :  'flex-start'"
+                             [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
+                        >
+                            <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
+                        </div>
+                        <div class="paper-description" >
+                            <p [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'">
+                                {{ (paper?.description.length > 200) ? (paper?.description | slice:0:200) + '...' : (paper?.description) }}
+                            </p>
+                        </div>
+                        <div class="view-more" (click)="viewPaper(paper)">
+                            <p>{{'_ViewMore' | translate}}</p>
+                        </div>
+                    </div>
+                    <div class="item-body" *ngIf="_appService.currentLanguage == 'en'">
+                        <div class="paper-card-info" style="cursor: pointer"
+                             [style.justify-content]="paper.language == 1 ?  'flex-start' :  'flex-start'"
+                             [routerLink]="['/profile' , paper.member_id]">
+                            <h6 class="by"> {{'_By' | translate}}  </h6>
+                            <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
+                        </div>
+                        <div class="paper-card-info"
+                             [style.justify-content]="paper.language == 1 ?  'flex-start' :  'flex-start'"
+                        >
+                            <i class="fa fa-tag" aria-hidden="true"></i>
+                            <h6><span *ngFor="let tag of paper.tags">{{tag.tag_en}} . </span></h6>
+                        </div>
+                        <div class="paper-card-info"
+                             [style.justify-content]="paper.language == 1 ?  'flex-start' :  'flex-start'"
                         >
                             <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
                         </div>
@@ -189,7 +220,7 @@
                         </div>
                     </div>
                     <div class="item-footer">
-                        <div class="view-download">
+                        <div class="view-download" [style.direction]="_appService.currentLanguage == 'en' ?  'ltr' :  'rtl'">
 
                             <div class="views-paper">
                                 <i class="fa fa-eye" aria-hidden="true"></i>

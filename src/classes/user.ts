@@ -23,4 +23,5 @@ export class User {
     letter = '';
     activation_code: string;
     sort = 'asc';
+    language: number;
 }

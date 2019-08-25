@@ -49,8 +49,8 @@ export class ChangePasswordComponent implements OnInit {
 
     translate.onLangChange.subscribe(lang => {
 
-      this.trans.ChangePasswordMSG = lang.translate._ChangePasswordMSG;
-      this.trans.ChangePasswordFailedMSG = lang.translate._ChangePasswordFailedMSG;
+      this.trans.ChangePasswordMSG = lang.translations._ChangePasswordMSG;
+      this.trans.ChangePasswordFailedMSG = lang.translations._ChangePasswordFailedMSG;
 
 
     });

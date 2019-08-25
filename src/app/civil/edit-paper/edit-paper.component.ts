@@ -65,10 +65,10 @@ export class EditPaperComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.Failed = lang.translate._Failed;
-            this.trans.FailedMSG = lang.translate._FailedMSG;
-            this.trans.UpdateMSG = lang.translate._UpdateMSG;
-            this.trans.Success = lang.translate._Success;
+            this.trans.Failed = lang.translations._Failed;
+            this.trans.FailedMSG = lang.translations._FailedMSG;
+            this.trans.UpdateMSG = lang.translations._UpdateMSG;
+            this.trans.Success = lang.translations._Success;
 
         });
     }

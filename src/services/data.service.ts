@@ -127,8 +127,8 @@ export class DataService {
         return this.api.submitPage('get_bookmarks', data);
     }
 
-    getCountriesService(): Observable<Object> {
-        return this.api.getDataPage('get_countries');
+    getCountriesService(data): Observable<Object> {
+        return this.api.submitPage('get_countries' , data);
     }
 
     getYearsService(): Observable<Object> {

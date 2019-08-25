@@ -110,16 +110,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.Failed = lang.translate._Failed;
-            this.trans.FailedMSG = lang.translate._FailedMSG;
-            this.trans.FeedbackMSG = lang.translate._FeedbackMSG;
-            this.trans.Success = lang.translate._Success;
-            this.trans.MemberMonth = lang.translate._MemberMonth;
-            this.trans.ResearchPaper = lang.translate._ResearchPaper;
-            this.trans.GoProfile = lang.translate._GoProfile;
-            this.trans.Views = lang.translate._Views;
-            this.trans.Email = lang.translate._Email;
-            this.trans.RecognizedResearch = lang.translate._RecognizedResearch;
+            this.trans.Failed = lang.translations._Failed;
+            this.trans.FailedMSG = lang.translations._FailedMSG;
+            this.trans.FeedbackMSG = lang.translations._FeedbackMSG;
+            this.trans.Success = lang.translations._Success;
+            this.trans.MemberMonth = lang.translations._MemberMonth;
+            this.trans.ResearchPaper = lang.translations._ResearchPaper;
+            this.trans.GoProfile = lang.translations._GoProfile;
+            this.trans.Views = lang.translations._Views;
+            this.trans.Email = lang.translations._Email;
+            this.trans.RecognizedResearch = lang.translations._RecognizedResearch;
 
         });
 
@@ -226,8 +226,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // Marker for the parking lot at the base of Mt. Ranier trails
 
     onMapReady(map) {
-
-        this._appService.api.getCountriesService()
+        this.user.language = localStorage.getItem('language') === 'en' ? 1 : 2
+        this._appService.api.getCountriesService(this.user)
             .subscribe(response => {
                 let result;
                 result = response;
@@ -246,7 +246,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
                                     if (details !== '' && details.views > 0) {
                                         var popup = L.popup();
-                                        let avatar = (details.avatar) ? (this._appService.api.api.imgURL + details.avatar) : 'assets/img/avatar_default.PNG';
+                                        let avatar = (details.avatar) ? (this._appService.api.api.imgURL + details.avatar) : 'assets/img/avatar_default.jpeg';
                                         let job = (details.job) ? ' <div class="info-icon">\n' +
                                             '                <i class="fa fa-suitcase"></i>\n' +
                                             '                <div class="info-data">' + details.job + '</div>\n' +

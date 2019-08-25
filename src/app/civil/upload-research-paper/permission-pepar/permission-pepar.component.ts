@@ -46,10 +46,10 @@ export class PermissionPeparComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.Failed = lang.translate._Failed;
-            this.trans.FailedMSG = lang.translate._FailedMSG;
-            this.trans.UploadPaperMSG = lang.translate._UploadPaperMSG;
-            this.trans.Success = lang.translate._Success;
+            this.trans.Failed = lang.translations._Failed;
+            this.trans.FailedMSG = lang.translations._FailedMSG;
+            this.trans.UploadPaperMSG = lang.translations._UploadPaperMSG;
+            this.trans.Success = lang.translations._Success;
 
         });
     }

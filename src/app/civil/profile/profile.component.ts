@@ -8,6 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {PaperComponent} from '../../dialogs/paper/paper.component';
 import {TranslateService} from '@ngx-translate/core';
+import {RequestComponent} from '../../dialogs/request/request.component';
 
 @Component({
     selector: 'app-profile',
@@ -29,6 +30,7 @@ export class ProfileComponent implements OnInit {
     searchForm: FormGroup;
     statistics: any;
     throttle = 300;
+    member_id: any;
     scrollDistance = 1;
     scrollUpDistance = 2;
     isOneRecognized = false;
@@ -59,9 +61,8 @@ export class ProfileComponent implements OnInit {
         });
 
 
-        translate.get(['_SavePaperMSG', '_SavePaperMSG', '_Success', '_Failed', '_FailedMSG']).subscribe(res => {
+        translate.get(['_SavePaperMSG', '_DeletePaperMSG', '_Success', '_FailedMSG']).subscribe(res => {
 
-            this.trans.Failed = res._Failed;
             this.trans.FailedMSG = res._FailedMSG;
             this.trans.SavePaperMSG = res._SavePaperMSG;
             this.trans.DeletePaperMSG = res._DeletePaperMSG;
@@ -70,11 +71,10 @@ export class ProfileComponent implements OnInit {
 
         translate.onLangChange.subscribe(lang => {
 
-            this.trans.Failed = lang.translate._Failed;
-            this.trans.FailedMSG = lang.translate._FailedMSG;
-            this.trans.SavePaperMSG = lang.translate._SavePaperMSG;
-            this.trans.DeletePaperMSG = lang.translate._DeletePaperMSG;
-            this.trans.Success = lang.translate._Success;
+            this.trans.FailedMSG = lang.translations._FailedMSG;
+            this.trans.SavePaperMSG = lang.translations._SavePaperMSG;
+            this.trans.DeletePaperMSG = lang.translations._DeletePaperMSG;
+            this.trans.Success = lang.translations._Success;
 
         });
 
@@ -174,6 +174,7 @@ export class ProfileComponent implements OnInit {
 
                     if (member_id === result.data.member_id && result.data.views !== 0) {
                         this.isOneRecognized = true;
+                        this.data.country = '';
                     }
                     this.data.country = '';
 
@@ -263,84 +264,150 @@ export class ProfileComponent implements OnInit {
             });
     }
 
+    addView(paper) {
+        this._appService.api.addViewService(paper)
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+
+                }
+            });
+    }
+
+    isHaveAccess(paper, action) {
+        this._appService.api.isHaveAccessService(paper)
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+
+                    if (action === 'view') {
+                        const dialogRef = this.dialog.open(PaperComponent, {});
+                        dialogRef.componentInstance.paper = paper;
+                        this.addView(paper);
+                    } else {
+                        this.downloadPaper(paper);
+                        this.addDownloadPaper(paper);
+                    }
+                } else {
+                    const dialogRef = this.dialog.open(RequestComponent, {});
+                    dialogRef.componentInstance.paper_id = paper.paper_id;
+                }
+            });
+    }
+
+    addDownloadPaper(paper) {
+        this._appService.api.addDownloadService(paper)
+            .subscribe(response => {
+                let result;
+                result = response;
+                if (result.code === 1) {
+
+                }
+            });
+    }
+
     viewPaper(paper) {
         if (this._appService.roll) {
-            if (paper.permission === 1) {
+            if (paper.permission === 1 || paper.username === this.username) {
                 const dialogRef = this.dialog.open(PaperComponent, {});
                 dialogRef.componentInstance.paper = paper;
                 if (this.username != paper.username) {
-                    this._appService.api.addViewService(paper)
-                        .subscribe(response => {
-                            let result;
-                            result = response;
-                            if (result.code === 1) {
-
-                            }
-                        });
+                    this.addView(paper);
                 }
 
-            } else {
+            } else if (paper.permission === 0) {
 
+                this.isHaveAccess(paper, 'view');
             }
         } else {
             this._appService.registerPageTitle = 3;
+            this._appService.goPapers = true;
             this.router.navigate(['/register']);
         }
     }
+
+    // downloadPaper(paper) {
+    //     this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
+    //         var newBlob = new Blob([res], {type: 'application/pdf'});
+    //
+    //         if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+    //             window.navigator.msSaveOrOpenBlob(newBlob);
+    //             return;
+    //         }
+    //         // For other browsers:
+    //         // Create a link pointing to the ObjectURL containing the blob.
+    //         const data = window.URL.createObjectURL(newBlob);
+    //
+    //         var link = document.createElement('a');
+    //         link.href = data;
+    //         link.download = paper.title + '.pdf';
+    //         // this is necessary as link.click() does not work on the latest firefox
+    //         link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
+    //
+    //         setTimeout(function () {
+    //             // For Firefox it is necessary to delay revoking the ObjectURL
+    //             window.URL.revokeObjectURL(data);
+    //         }, 100);
+    //
+    //     }, error => {
+    //         console.log(error);
+    //     });
+    // }
+
+
+    downloadPaper(paper) {
+        this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
+            var newBlob = new Blob([res], {type: 'application/pdf'});
+
+            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                window.navigator.msSaveOrOpenBlob(newBlob);
+                return;
+            }
+            // For other browsers:
+            // Create a link pointing to the ObjectURL containing the blob.
+            const data = window.URL.createObjectURL(newBlob);
+
+            var link = document.createElement('a');
+            link.href = data;
+            link.download = paper.title + '.pdf';
+            // this is necessary as link.click() does not work on the latest firefox
+            link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
+
+            setTimeout(function () {
+                // For Firefox it is necessary to delay revoking the ObjectURL
+                window.URL.revokeObjectURL(data);
+            }, 100);
+
+        }, error => {
+            console.log(error);
+        });
+    }
+
 
 
     download(paper) {
         if (this._appService.roll) {
 
-            if (paper.permission === 1) {
-                this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
-                    var newBlob = new Blob([res], {type: 'application/pdf'});
+            if (paper.permission === 1 || paper.username === this.username) {
 
-                    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-                        window.navigator.msSaveOrOpenBlob(newBlob);
-                        return;
-                    }
-                    // For other browsers:
-                    // Create a link pointing to the ObjectURL containing the blob.
-                    const data = window.URL.createObjectURL(newBlob);
-
-                    var link = document.createElement('a');
-                    link.href = data;
-                    link.download = paper.title + '.pdf';
-                    // this is necessary as link.click() does not work on the latest firefox
-                    link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
-
-                    setTimeout(function () {
-                        // For Firefox it is necessary to delay revoking the ObjectURL
-                        window.URL.revokeObjectURL(data);
-                    }, 100);
-
-                }, error => {
-                    console.log(error);
-                });
-
+                this.downloadPaper(paper);
                 if (this.username != paper.username) {
-                    this._appService.api.addDownloadService(paper)
-                        .subscribe(response => {
-                            let result;
-                            result = response;
-                            if (result.code === 1) {
-
-                            }
-                        });
+                    this.addDownloadPaper(paper);
                 }
-            } else {
-
+            } else if (paper.permission === 0) {
+                this.isHaveAccess(paper , 'download');
             }
         } else {
+            this._appService.goPapers = true;
             this._appService.registerPageTitle = 3;
             this.router.navigate(['/register']);
         }
     }
 
     loadmore() {
-
-        if (this.result.data.length == 6 && this.paper.keyword == '' && this.paper.year == '' && this.paper.discipline == '' && this.paper.country == '' && this.paper.lang == '') {
+        if (this.result.data.length === 6 && this.paper.keyword === '' && this.paper.year === '' && this.paper.discipline === '' && this.paper.country === '' && this.paper.lang === '') {
             this.getPapersByMember();
         } else if (this.result.data.length == 6 && (this.paper.keyword != '' || this.paper.year != '' || this.paper.discipline != '' || this.paper.country != '' || this.paper.lang != '')) {
 
@@ -351,8 +418,10 @@ export class ProfileComponent implements OnInit {
 
     ngOnInit() {
 
-        window.scrollTo(0, 0);
+        this._appService.active = 5;
 
+        window.scrollTo(0, 0);
+        this.member_id = localStorage.getItem('id');
         this.route.params.subscribe(params => {
             this.data.username = params['id'];
             this.get_member_by_username();
@@ -363,7 +432,6 @@ export class ProfileComponent implements OnInit {
         });
         this._appService.disciplinesNotifier.subscribe(data => {
             this.Disciplines = data;
-            console.log(data);
         });
         this._appService.yearsNotifier.subscribe(data => {
             this.years = data;

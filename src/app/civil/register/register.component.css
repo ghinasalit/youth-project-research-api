@@ -72,3 +72,8 @@
     line-height: 2.125 !important;
     font-family: Roboto,"Helvetica Neue",sans-serif;
 }
+
+
+.full-section .sec-content {
+    width: 90%;
+}

@@ -5,6 +5,7 @@ import * as AOS from 'aos';
 import {DataService} from '../services/data.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
+import {User} from '../classes/user';
 
 @Injectable({
     providedIn: 'root'
@@ -16,6 +17,7 @@ export class AppService {
     public section: any;
     public roll: any;
     public username = '';
+    public user = new User();
     public registerPageTitle = 0; // 0 for default ; 1 for save bookmark ; 2 for submit paper ; 3 for view paper
     public paper = new FormData();
     public language = new BehaviorSubject<string>(null);
@@ -67,7 +69,9 @@ export class AppService {
 
 
     getCounties() {
-        this.api.getCountriesService()
+
+        this.user.language = localStorage.getItem('language') === 'en' ? 1 : 2
+        this.api.getCountriesService(this.user)
             .subscribe(response => {
                 let result;
                 result = response;

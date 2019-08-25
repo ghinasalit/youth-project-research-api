@@ -140,7 +140,7 @@
 
         <div class="card" *ngFor="let member of members; let i = index" data-aos="fade-up" data-aos-once="true"
              [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000">
-            <img [src]="member.avatar?_appService.api.api.imgURL  + member.avatar : 'assets/img/avatar_default.PNG' "
+            <img [src]="member.avatar?_appService.api.api.imgURL  + member.avatar : 'assets/img/avatar_default.jpeg' "
                  alt="" [routerLink]="['/profile' , member.member_id]">
             <div class="title" [routerLink]="['/profile' , member.member_id]" style="cursor: pointer">
                 <p>{{member.first_name}} {{member.last_name}}</p>

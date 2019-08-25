@@ -27,9 +27,9 @@ class Config
 
     public static $live_db = array(
         'db_server' => 'localhost',
-        'db_user' => 'ghina',
+        'db_user' => 'ayrsvr_ghina',
         'db_pass' => 'Qwaszx1234',
-        'db_name' => 'arab_youth'
+        'db_name' => 'ayrsvr_arab_youth'
     );
 
     public static $image_config = array(

@@ -402,7 +402,7 @@ top-home-login .title {
 
 
 .about-content .text-left p {
-    font-size: 65px
+    font-size: 60px;
 }
 
 
@@ -1277,6 +1277,7 @@ app-upload-paper .submit {
 
 .paper-card-info i {
     margin-right: 5px;
+    margin-left: 5px;
     margin-top: 7px;
     color: #75cddd;
 }
@@ -1517,6 +1518,7 @@ app-about .research-all-around  .center-sticker {
 
 .by {
     margin-right: 3px;
+    margin-left: 3px;
     color: #75cddd;
 }
 
@@ -1690,9 +1692,7 @@ app-members .card img {
 }
 
 
-.scrolled a{
-    font-size:15px !important;
-}
+
 
 .scrolled li::after{
     margin-top: 5px !important;
@@ -1765,4 +1765,50 @@ app-members .card img {
     justify-content: space-between;
     margin: 55px 0 0;
     height: 330px;
+}
+
+.request button{
+    width: 27%;
+    height: 100%;
+    background-color: #75cddd;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+}
+
+
+.image-upload{
+cursor: pointer;
+}
+
+
+.profile-form {
+    width: 100%;
+    height: auto;
+
+}
+
+.avatar-cropper {
+    width: 170px !important;
+    height: 170px;
+}
+
+
+.avatar-cropper img {
+    width: 100%;
+}
+
+
+.mat-form-field i {
+    position: absolute;
+    left: -22px;
+    top: 7px;
+}
+
+
+
+.field-item i {
+    position: absolute;
+    left: -20px;
+    top: 10px;
 }

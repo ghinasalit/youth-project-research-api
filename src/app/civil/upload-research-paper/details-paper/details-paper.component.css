@@ -14,7 +14,6 @@
 }
 
 
-
 .form-input .item {
     width: 100%;
 }
@@ -75,7 +74,6 @@
 
 textarea.mat-input-element {
     resize: vertical;
-    overflow: scroll;
 }
 
 ::ng-deep .mat-form-field-underline {

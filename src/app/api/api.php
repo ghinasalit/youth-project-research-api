@@ -185,7 +185,7 @@ if ($request_headers['code'] == 1) {
 
                 case 'get_countries':
                     {
-                        $result = User::get_countries();
+                        $result = User::get_countries($data);
                         break;
                     }
                    case 'get_years':
