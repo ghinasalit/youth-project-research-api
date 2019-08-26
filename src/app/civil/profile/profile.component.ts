@@ -70,7 +70,7 @@ export class ProfileComponent implements OnInit {
         });
 
         translate.onLangChange.subscribe(lang => {
-
+          this._appService.getCounties();
             this.trans.FailedMSG = lang.translations._FailedMSG;
             this.trans.SavePaperMSG = lang.translations._SavePaperMSG;
             this.trans.DeletePaperMSG = lang.translations._DeletePaperMSG;
@@ -153,6 +153,7 @@ export class ProfileComponent implements OnInit {
                 this.result = response;
                 if (this.result.code === 1) {
                     this.member = this.result.data;
+                    console.log(this.member);
                     this.getOneRecognized(this.member.country, this.member.member_id);
 
                 } else {

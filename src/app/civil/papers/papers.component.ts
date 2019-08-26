@@ -22,7 +22,8 @@ export class PapersComponent implements OnInit {
     result: any;
     username: string;
     result1: any;
-    Counties: any;
+    Counties = [];
+    countriesList: any = [];
     years: any;
     Disciplines: any;
     papers: any = [];
@@ -64,7 +65,7 @@ export class PapersComponent implements OnInit {
         });
 
         translate.onLangChange.subscribe(lang => {
-
+            this._appService.getCounties();
             this.trans.SavePaperMSG = lang.translations._SavePaperMSG;
             this.trans.DeletePaperMSG = lang.translations._DeletePaperMSG;
             this.trans.Success = lang.translations._Success;
@@ -324,8 +325,17 @@ export class PapersComponent implements OnInit {
         this.member_id = localStorage.getItem('id');
         this.username =   this.data.username = localStorage.getItem('username');
         this._appService.countiesNotifier.subscribe(data => {
-            this.Counties = data;
+          this.Counties = data;
+            // if(data != null){
+            //   this.Counties = data;
+            //   this.Counties.forEach(Country => {
+            //     this.countriesList.push(Country);
+            //   });
+            //   console.log(this.countriesList);
+            // }
         });
+
+
 
         this._appService.disciplinesNotifier.subscribe(data => {
             this.Disciplines = data;

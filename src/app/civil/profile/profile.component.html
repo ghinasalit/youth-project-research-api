@@ -5,9 +5,8 @@
 <div class="profile-container">
     <div class="left-sticker"></div>
     <div class="center-sticker"></div>
-    <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000">
-        <img [src]="_appService.api.api.imgURL  + member.avatar" alt="">
-    </div>
+  <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000" *ngIf="member.avatar"><img [src]="_appService.api.api.imgURL  + member.avatar" alt=""></div>
+  <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000" *ngIf="!member.avatar"><img src="assets/img/avatar_default.jpeg" alt="" *ngIf="!member.avatar"></div>
     <div class="right-section">
         <div class="navbar-login logged">
 
