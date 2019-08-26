@@ -224,10 +224,10 @@
 
     /*members*/
     .profile-container .info-user img {
-        position: absolute;
-        width: 45px;
-        right: 120px;
-        top: 168px;
+        /*position: absolute;*/
+        /*width: 45px;*/
+        /*right: 120px;*/
+        /*top: 168px;*/
     }
 
 
@@ -762,10 +762,10 @@
     }
 
     .profile-container .info-user img {
-        position: absolute;
-        width: 45px;
-        right: 95px;
-        top: 144px;
+        /*position: absolute;*/
+        /*width: 45px;*/
+        /*right: 95px;*/
+        /*top: 144px;*/
     }
 
     .social {
@@ -1716,10 +1716,10 @@
     }
 
     .profile-container .info-user img {
-        position: absolute;
-        width: 30px;
-        right: 43px;
-        top: 138px;
+        /*position: absolute;*/
+        /*width: 30px;*/
+        /*right: 43px;*/
+        /*top: 138px;*/
     }
 
     .social {
@@ -3094,10 +3094,10 @@
 
 
     .profile-container .info-user img {
-        position: absolute;
-        width: 35px;
-        right: 85px;
-        top: 535px;
+        /*position: absolute;*/
+        /*width: 35px;*/
+        /*right: 85px;*/
+        /*top: 535px;*/
 
     }
 
@@ -3165,7 +3165,7 @@
         height: 45px;
         width: 45px;
         position: absolute;
-        top: 55%;
+        top: 48%;
         left: 47%;
         bottom: 50%;
         right: 50%;
@@ -4062,6 +4062,12 @@
         color: #fff;
         font-size: 18px;
     }
+
+    .info-user .papers {
+        margin-top: 20px;
+        margin-bottom: 115px
+    }
+
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -4842,10 +4848,10 @@
 
     .profile-container .info-user img {
 
-        position: absolute;
-        width: 35px;
-        right: 66px;
-        top: 527px;
+        /*position: absolute;*/
+        /*width: 35px;*/
+        /*right: 66px;*/
+        /*top: 527px;*/
 
     }
 
@@ -4908,7 +4914,7 @@
         height: 60px;
         width: 60px;
         position: absolute;
-        top: 45%;
+        top: 47%;
         left: 47%;
         bottom: 50%;
         right: 50%;
@@ -5850,6 +5856,12 @@
         color: #fff;
         font-size: 18px;
     }
+
+    .info-user .papers {
+        margin-top: 20px;
+        margin-bottom: 115px
+    }
+
 }
 
 @media (max-width: 374px) {
@@ -6630,10 +6642,10 @@
 
     .profile-container .info-user img {
 
-        position: absolute;
-        width: 35px;
-        right: 66px;
-        top: 527px;
+        /*position: absolute;*/
+        /*width: 35px;*/
+        /*right: 66px;*/
+        /*top: 527px;*/
 
     }
 
@@ -7625,6 +7637,11 @@
         border: none;
         color: #fff;
         font-size: 18px;
+    }
+
+    .info-user .papers {
+        margin-top: 20px;
+        margin-bottom: 115px
     }
 
 }

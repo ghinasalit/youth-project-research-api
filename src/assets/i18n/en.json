@@ -41,7 +41,7 @@
   "_Continue": "Continue",
   "_Copyright": "All rights reserved Arab Youth Research",
   "_AllRightsReversed": "All rights reserved",
-  "_ArabYouthResearch": "2019 Arab Youth Research",
+  "_ArabYouthResearch": "2019 Arab Youth Research Platform",
   "_SubmitAPaper": "Submit a Paper",
   "_ResearchAPaper": "Research a Paper",
   "_KnowledgePr": "Broad knowledge prospects",
@@ -111,13 +111,14 @@
   "_AYRP": "Arab Youth Research Platform",
   "_ContactUsInfo": {
     "_Email": "Email: info@arabyouthresearch.org",
-    "_Address": "Address: Dubai, X Building 9th floo",
-    "_Number": "Contact Number: 04 123 4567"
+    "_Address": "Address: Al Nahyan Street, IPIC tower - 8th - Abu Dhabi",
+    "_Number": "Contact Number: +971 4 215 7646"
   },
   "_HomeTo": "Home To",
   "_ResearchPapersFrom": "research papers from",
   "_ResearchersAcross": "researchers across",
-  "_Disciplines": "Abstract",
+  "_Disciplines": "Disciplines",
+  "_Abstract":"Abstract",
     "_ShareKnowledge": "Let's Share Knowledge!",
     "_RegisterToSaveBookmark": "Register to Save a Bookmark.",
     "_LoginRegisterToSubmitPaper": "Login or Register to submit a paper.",
@@ -189,7 +190,9 @@
   "_AccountNotActive": "Your account not active",
   "_RegisterMSG": "Registration has successful, please check your email to activate your account.",
   "_Members": "Members",
-  "_MyProfile": "Profile"
+  "_MyProfile": "Profile",
+  "_FAYRP": "The First Arab Youth Research Platform",
+  "_SavedBookmarks":"Saved Bookmarks"
 
 
 

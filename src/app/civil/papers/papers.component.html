@@ -26,14 +26,15 @@
 
     <div class="social-statistics">
         <div class="statistics">
+<!--            <div>-->
+<!--                <p>{{'_HomeTo' | translate}} </p><span>{{statistics?.research}} </span>-->
+<!--                <p>{{'_ResearchPapersFrom' | translate}} </p> <span>{{statistics?.researchers}} </span>-->
+<!--            </div>-->
             <div>
-                <p>{{'_HomeTo' | translate}} </p><span>{{statistics?.research}} </span>
-                <p>{{'_ResearchPapersFrom' | translate}} </p> <span>{{statistics?.researchers}} </span>
-            </div>
-            <div>
-                <p>{{'_ResearchersAcross' | translate}} </p>
-                <span>{{statistics?.discipline}}</span>
-                <p>{{'_Disciplines' | translate}}</p>
+                <p>{{'_FAYRP' | translate}}</p>
+<!--                <p>{{'_ResearchersAcross' | translate}} </p>-->
+<!--                <span>{{statistics?.discipline}}</span>-->
+<!--                <p>{{'_Disciplines' | translate}}</p>-->
             </div>
         </div>
         <div class="social">
@@ -146,9 +147,13 @@
              data-aos="fade-up" [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000">
             <div class="bookmark" style="cursor: pointer"
                  [style.float]="paper.language == 1 ?  'right' :  'left'">
-                <img src="assets/img/Save-Bookmark.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 "
+                <img src="assets/img/save-en.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'en'"
                      alt="Save paper">
-                <img src="assets/img/Saved-Bookmark.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1"
+                <img src="assets/img/saved-en.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'en'"
+                     alt="Unsave Paper">
+                <img src="assets/img/save-ar.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'ar'"
+                     alt="Save paper">
+                <img src="assets/img/saved-ar.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'ar'"
                      alt="Unsave Paper">
             </div>
             <div class="items-container">

@@ -754,3 +754,35 @@ input[type=checkbox]:checked ~ #menu {
 }
 
 
+img {
+    width: 60px;
+    height: 60px;
+}
+
+
+
+.papers .title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1b2850;
+}
+
+
+.papers .title div {
+    border: 8px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+}
+
+.papers .info-icon{
+    display: flex;
+    flex-direction: column;
+}
+
+.papers  img {
+    width: 60px;
+    height: 65px;
+    margin-bottom: 10px;
+}
+
+

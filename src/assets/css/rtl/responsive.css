@@ -223,10 +223,10 @@
 
     /*members*/
     .profile-container .info-user img {
-        position: absolute;
-        width: 45px;
-        left: 120px;
-        top: 168px;
+        /*position: absolute;*/
+        /*width: 45px;*/
+        /*left: 120px;*/
+        /*top: 168px;*/
     }
 
 
@@ -794,10 +794,10 @@
     }
 
     .profile-container .info-user img {
-        position: absolute;
-        width: 45px;
-        left: 135px;
-        top: 144px;
+        /*position: absolute;*/
+        /*width: 45px;*/
+        /*left: 135px;*/
+        /*top: 144px;*/
     }
 
     .social {
@@ -1708,10 +1708,10 @@
     }
 
     .profile-container .info-user img {
-        position: absolute;
-        width: 30px;
-        left: 43px;
-        top: 138px;
+        /*position: absolute;*/
+        /*width: 30px;*/
+        /*left: 43px;*/
+        /*top: 138px;*/
     }
 
     .social {
@@ -3068,10 +3068,10 @@
 
 
     .profile-container .info-user img {
-        position: absolute;
-        width: 35px;
-        left: 85px;
-        top: 535px;
+        /*position: absolute;*/
+        /*width: 35px;*/
+        /*left: 85px;*/
+        /*top: 535px;*/
 
     }
 
@@ -3139,7 +3139,7 @@
         height: 45px;
         width: 45px;
         position: absolute;
-        top: 55%;
+        top: 47%;
         right: 47%;
         bottom: 50%;
         left: 50%;
@@ -4013,6 +4013,11 @@
         color: #fff;
         font-size: 18px;
     }
+
+    .info-user .papers {
+        margin-top: 20px;
+        margin-bottom: 115px
+    }
 }
 
 
@@ -4802,10 +4807,10 @@
 
     .profile-container .info-user img {
 
-        position: absolute;
-        width: 35px;
-        left: 66px;
-        top: 527px;
+        /*position: absolute;*/
+        /*width: 35px;*/
+        /*left: 66px;*/
+        /*top: 527px;*/
 
     }
 
@@ -5772,6 +5777,11 @@
         color: #fff;
         font-size: 18px;
     }
+
+    .info-user .papers {
+        margin-top: 20px;
+        margin-bottom: 115px
+    }
 }
 
 @media (max-width: 374px) {
@@ -6554,10 +6564,10 @@
 
     .profile-container .info-user img {
 
-        position: absolute;
-        width: 35px;
-        left: 66px;
-        top: 527px;
+        /*position: absolute;*/
+        /*width: 35px;*/
+        /*left: 66px;*/
+        /*top: 527px;*/
 
     }
 
@@ -7471,6 +7481,11 @@
         border: none;
         color: #fff;
         font-size: 18px;
+    }
+
+    .info-user .papers {
+        margin-top: 20px;
+        margin-bottom: 115px
     }
 }
 

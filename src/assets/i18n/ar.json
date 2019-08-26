@@ -1,14 +1,14 @@
 {
   "_Home": "الرئيسية",
   "_HomePage": "الصفحة الرئيسية",
-  "_ResearchPaper": "ورقة أبحاث",
-  "_ResearchPapers": "أوراق الأبحاث",
+  "_ResearchPaper": "أوراق البحث",
+  "_ResearchPapers": "أوراق البحث",
   "_MyResearchPapers": "أوراق بحثي",
   "_AboutUs": "نبذة",
   "_How_Become_Researcher": "كيف تصبح باحثاً",
   "_HeatMap": "الخريطة ",
   "_ContactUs": "اتصل بنا",
-  "_Our_Members": "أعضاء الموقع",
+  "_Our_Members": "أعضاء المنصة",
   "_Lang": "English",
   "_Register": "التسجيل",
   "_RegisterMember": "سجل الآن واصبح عضواً معنا",
@@ -50,8 +50,8 @@
   "_Copyright": "جميع الحقوق محفوظة لأبحاث الشباب العربي",
   "_AllRightsReversed": "كل الحقوق محفوظة",
   "_ArabYouthResearch": "2019 لمنصة أبحاث الشباب العربي",
-  "_SubmitAPaper": "اضافة ورقة بحث",
-  "_ResearchAPaper": " أوراق الأبحاث",
+  "_SubmitAPaper": "إضافة ورقة بحث",
+  "_ResearchAPaper": " أوراق البحث",
   "_KnowledgePr": "توسيع آفاق المعرفة",
   "_JobOpp": "فرص العمل والدراسات",
   "_SharingKno": "مشاركة المعرفة",
@@ -107,11 +107,12 @@
   "_KnowledgePower": "المعرفة قوة",
   "_SharingKnowledgePower": "والمشاركة بناء.",
   "_RecognizedResearch": "بحوث معروفة",
+  "_Abstract":"التوصيف",
   "_IsEmpowering": "",
   "_ContactUsInfo": {
     "_Email": "البريد الالكتروني : info@arabyouthresearch.org",
-    "_Address": "العنوان : دبي، بناء الطابق التاسع",
-    "_Number": "رقم التواصل: 04 123 456"
+    "_Address": "العنوان : شارع ال نهيان برج IPIC - الثامن - أبو ظبي",
+    "_Number": "رقم التواصل: 7646 215 4 971+"
   },
   "_HomeTo": "منصة ل",
   "_ResearchPapersFrom": "أوراق بحثية من",
@@ -188,7 +189,11 @@
   "_AccountNotActive": "حسابك غير مفعل",
   "_RegisterMSG": "تم التسجيل بنجاح ، يرجى التحقق من بريدك الإلكتروني لتفعيل حسابك",
   "_Members": "عضو",
-  "_MyProfile": "الصفحة الشخصية "
+  "_MyProfile": "الصفحة الشخصية ",
+  "_FAYRP": "أول منصة لأبحاث الشباب العربي",
+  "_SavedBookmarks":"الأوراق المحفوظة"
+
+
 
 
 

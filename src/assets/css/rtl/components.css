@@ -703,10 +703,10 @@ app-home .card-item p {
 }
 
 .profile-container .info-user img {
-    position: absolute;
-    width: 45px;
-    left: 186px;
-    top: 168px;
+    /*position: absolute;*/
+    /*width: 45px;*/
+    /*left: 186px;*/
+    /*top: 168px;*/
 }
 
 
@@ -1850,4 +1850,8 @@ app-members .card img {
 
 .avatar-cropper img {
     width: 100%;
+}
+
+.info-user .papers{
+    margin-top: 18px;
 }

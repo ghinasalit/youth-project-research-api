@@ -39,20 +39,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="controls-profile">
-                        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer"
-                             *ngIf=" _appService.roll && username === member.username">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            <p>{{'_EditProfile' | translate}}</p>
-                        </div>
-                        <div class="p-clip" (click)="_appService.submitPaper()" style="cursor: pointer;"
-                             *ngIf="_appService.roll && username === member.username">
-                            <div class="box">
-                            </div>
-                            <img src="assets/img/paper.png" alt="">
-                            <div class="paper"><p>{{'_SubmitAPaper' | translate}}</p></div>
-                        </div>
-                    </div>
+<!--                    <div class="controls-profile">-->
+<!--                        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer"-->
+<!--                             *ngIf=" _appService.roll && username === member.username">-->
+<!--                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>-->
+<!--                            <p>{{'_EditProfile' | translate}}</p>-->
+<!--                        </div>-->
+<!--                        <div class="p-clip" (click)="_appService.submitPaper()" style="cursor: pointer;"-->
+<!--                             *ngIf="_appService.roll && username === member.username">-->
+<!--                            <div class="box">-->
+<!--                            </div>-->
+<!--                            <img src="assets/img/paper.png" alt="">-->
+<!--                            <div class="paper"><p>{{'_SubmitAPaper' | translate}}</p></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <div class="desc-user">
                     <p>
@@ -103,9 +103,29 @@
                         </div>
                         <div class="info-icon" style="cursor: pointer" *ngIf="member.linkedin">
                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                            <div class="info-data"><a [href]="member.linkedin" target="_blank"><p>{{'_LinkedInAccount' | translate}}</p></a></div>
+                            <div class="info-data"><a [href]="member.linkedin" target="_blank">
+                                <p>{{'_LinkedInAccount' | translate}}</p></a></div>
                         </div>
                     </div>
+                    <div class="info-item papers">
+                        <div class="info-icon" routerLink="/upload-paper">
+                            <img src="assets/img/Reseach_Submit.png" alt="">
+                            <div class="title">
+                                <p>{{'_ResearchPapers' | translate}}</p>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-icon" routerLink="/profile-info">
+                            <img src="assets/img/edit-profile.png" alt="">
+                            <div class="title">
+                                <p>{{'_EditProfile' | translate}}</p>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
 
@@ -224,7 +244,7 @@
         <div class="tap" (click)="showBookmarks()">
             <div>
                 <i class="fa fa-bookmark" aria-hidden="true"></i>
-                <p>Saved Bookmarks</p>
+                <p>{{'_SavedBookmarks' | translate}}</p>
             </div>
             <div class="line" [style.border]="!isMyPaper ? '5px solid #FDD97A' : '0px solid #FDD97A'">
             </div>
@@ -240,9 +260,14 @@
              data-aos="fade-up" [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000">
             <div class="bookmark" style="cursor: pointer"
                  [style.float]="paper.language == 1 ?  'right' :  'left'">
-                <img src="assets/img/Save-Bookmark.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 "
+
+                <img src="assets/img/save-en.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'en'"
                      alt="Save paper">
-                <img src="assets/img/Saved-Bookmark.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1"
+                <img src="assets/img/saved-en.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'en'"
+                     alt="Unsave Paper">
+                <img src="assets/img/save-ar.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'ar'"
+                     alt="Save paper">
+                <img src="assets/img/saved-ar.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'ar'"
                      alt="Unsave Paper">
             </div>
             <div class="items-container">
@@ -263,8 +288,8 @@
                         <div class="paper-card-info" style="cursor: pointer"
                              [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
                              [routerLink]="['/profile' , paper.member_id]">
-                            <h6 class="by" *ngIf="paper.language == 1"  > BY  </h6>
-                            <h6 class="by" *ngIf="paper.language == 2">  بواسطة </h6>
+                            <h6 class="by" *ngIf="paper.language == 1"> BY </h6>
+                            <h6 class="by" *ngIf="paper.language == 2"> بواسطة </h6>
                             <h6 style="font-weight: bold ; color: #75cddd;"> {{paper.first_name}} {{paper.last_name}} </h6>
                         </div>
                         <div class="paper-card-info"
@@ -278,7 +303,7 @@
                         >
                             <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
                         </div>
-                        <div class="paper-description" >
+                        <div class="paper-description">
                             <p [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'">
                                 {{ (paper?.description.length > 200) ? (paper?.description | slice:0:200) + '...' : (paper?.description) }}
                             </p>
@@ -315,7 +340,8 @@
                         </div>
                     </div>
                     <div class="item-footer">
-                        <div class="view-download" [style.direction]="_appService.currentLanguage == 'en' ?  'ltr' :  'rtl'">
+                        <div class="view-download"
+                             [style.direction]="_appService.currentLanguage == 'en' ?  'ltr' :  'rtl'">
 
                             <div class="views-paper">
                                 <i class="fa fa-eye" aria-hidden="true"></i>

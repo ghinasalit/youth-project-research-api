@@ -693,10 +693,10 @@ app-home .card-item p {
 }
 
 .profile-container .info-user img {
-    position: absolute;
-    width: 45px;
-    right: 186px;
-    top: 168px;
+    /*position: absolute;*/
+    /*width: 45px;*/
+    /*right: 186px;*/
+    /*top: 168px;*/
 }
 
 
@@ -1811,4 +1811,8 @@ cursor: pointer;
     position: absolute;
     left: -20px;
     top: 10px;
+}
+
+.info-user .papers{
+    margin-top: 18px;
 }
