@@ -1,7 +1,14 @@
 <div class="c-item">
 
-    <div class="close-desc">
-        <div class="title">
+    <div class="close-desc"
+
+         [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
+         [style.text-align]="paper.language == 1 ?  'left' :  'right'"
+    >
+        <div class="title"
+             [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
+             [style.text-align]="paper.language == 1 ?  'left' :  'right'"
+        >
             <h3>{{paper.title}}
             </h3>
             <div></div>
@@ -14,17 +21,30 @@
 
 
     <div class="paper-card-info"  style="cursor: pointer" [routerLink]="['/profile' , paper.member_id]"
-         (click)="dialogRef.close()">
+         (click)="dialogRef.close()"
+
+         [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
+         [style.text-align]="paper.language == 1 ?  'left' :  'right'"
+    >
         <h6 class="by">{{'_By' | translate}}</h6>
         <h6 style="font-weight: bold ; color: #75cddd;" routerLink="/home"> {{paper.first_name}} {{paper.last_name}}</h6>
     </div>
-    <div class="paper-card-info">
+    <div class="paper-card-info"
+         [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
+         [style.text-align]="paper.language == 1 ?  'left' :  'right'"
+    >
         <i class="fa fa-tag" aria-hidden="true"></i> <h6>{{'_EnvEarth' | translate}}</h6>
     </div>
-    <div class="paper-card-info">
+    <div class="paper-card-info"
+         [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
+         [style.text-align]="paper.language == 1 ?  'left' :  'right'"
+    >
         <i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <h6>{{paper.date}}</h6>
     </div>
-    <div class="paper-description">
+    <div class="paper-description"
+         [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
+         [style.text-align]="paper.language == 1 ?  'left' :  'right'"
+    >
         <p>
             {{paper.description }}
         </p>

@@ -4,17 +4,17 @@
     </div>
     <ul class="nav-links" *ngIf="navActive">
         <li (click)="_appService.active = 0" [ngClass]="_appService.active == 0 ? 'active' : ''"
-            style=" animation: 0.5s ease 0.442857s 1 normal forwards running navLinkFade ;"><a routerLink="/">
+            style=" animation: 0.5s ease 0.442857s 1 normal forwards running navLinkFade ;" routerLink="/"><a>
             <p>{{'_HomePage' | translate}}</p></a></li>
         <li (click)="_appService.active = 1" [ngClass]="_appService.active == 1 ? 'active' : ''"
-            style="animation: 0.5s ease 0.728571s 1 normal forwards running navLinkFade;"><a routerLink="/papers">
+            style="animation: 0.5s ease 0.728571s 1 normal forwards running navLinkFade;" routerLink="/papers"><a>
             <p>{{'_ResearchPapers' | translate}}</p></a></li>
         <li (click)="_appService.active = 2" [ngClass]="_appService.active == 2 ? 'active' : ''"
-            style="animation: 0.5s ease 0.871429s 1 normal forwards running navLinkFade;"><a routerLink="/about">
+            style="animation: 0.5s ease 0.871429s 1 normal forwards running navLinkFade;" routerLink="/about"><a >
             <p>{{'_AboutUs' | translate}}</p></a></li>
         <li (click)="_appService.active = 3" [ngClass]="_appService.active == 3 ? 'active' : ''"
-            style="animation: 0.5s ease 1.01429s 1 normal forwards running navLinkFade;">
-            <a routerLink="/members"><p>{{'_Our_Members' | translate}}</p></a></li>
+            style="animation: 0.5s ease 1.01429s 1 normal forwards running navLinkFade;" routerLink="/members">
+            <a><p>{{'_Our_Members' | translate}}</p></a></li>
     </ul>
 
     <div class="logo-right " routerLink="/" style="cursor: pointer">

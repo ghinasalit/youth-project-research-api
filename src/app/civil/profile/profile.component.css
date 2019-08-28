@@ -777,6 +777,7 @@ img {
 .papers .info-icon{
     display: flex;
     flex-direction: column;
+  cursor: pointer;
 }
 
 .papers  img {

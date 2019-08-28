@@ -106,11 +106,11 @@
                                 <p>{{'_LinkedInAccount' | translate}}</p></a></div>
                         </div>
                     </div>
-                    <div class="info-item papers">
+                    <div class="info-item papers" *ngIf="username == member.username">
                         <div class="info-icon" routerLink="/upload-paper">
                             <img src="assets/img/Reseach_Submit.png" alt="">
                             <div class="title">
-                                <p>{{'_ResearchPapers' | translate}}</p>
+                                <p>{{'_SubmitAPaper' | translate}}</p>
                                 <div>
                                 </div>
                             </div>

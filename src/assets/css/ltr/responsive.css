@@ -199,6 +199,7 @@
         font-size: 40px;
         font-weight: bold;
         color: #1b2850;
+        padding-right: 15px;
     }
 
     /*about*/
@@ -290,7 +291,7 @@
         display: flex;
         justify-content: space-around;
         width: 65%;
-        padding: 0 136px
+        padding: 0 120px
     }
 
     .go-login a {
@@ -361,7 +362,7 @@
     .contact h1 {
         font-size: 35px;
         font-weight: 600;
-        margin: 20px 0 40px;
+        margin: 20px 0 10px;
         text-align: left;
         color: #1b2850;
     }
@@ -383,7 +384,7 @@
 
     app-papers .statistics {
         padding: 147px 10px;
-        font-size: 38px;
+        font-size: 65px;
         font-weight: bold;
         color: #fff;
         display: flex;
@@ -413,6 +414,7 @@
         font-size: 30px;
         font-weight: bold;
         color: #1b2850;
+        padding-right: 15px;
     }
 
     .title div {
@@ -420,6 +422,12 @@
         background-color: #75cddd;
         width: 155px;
     }
+
+  .about-content div.line, .sec-content div.line {
+    border: 10px solid #75cddd;
+    background-color: #75cddd;
+    width: 155px;
+  }
 
     .desc-user {
         margin: 35px 45px 30px 0;
@@ -453,7 +461,7 @@
     }
 
     .top-description {
-        font-size: 40px;
+        font-size: 52px;
         font-weight: bold;
         margin: 70px 115px;
     }
@@ -519,7 +527,6 @@
     .about-content .text-left p {
         font-size: 35px;
     }
-
     .login-register {
         display: flex;
         justify-content: space-between;
@@ -685,7 +692,7 @@
     .header {
         overflow: hidden;
         height: 140px;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 2px 2px 5px #cac6c6;
     }
 
     .logo-left {
@@ -749,7 +756,7 @@
         font-weight: bold;
         color: #1b2850;
         margin-top: 70px;
-        margin-left: 18px;
+        margin-left: 0px;
     }
 
     .profile-container .box {
@@ -1015,7 +1022,7 @@
 
     .why-publish .headline {
         border: none;
-        background-color: white;
+        background-color: #f1f2f2;
         margin-top: 10px;
     }
 
@@ -1196,7 +1203,11 @@
         background-color: #75cddd;
         width: 120px;
     }
-
+  .about-content div.line, .sec-content div.line {
+    border: 8px solid #75cddd;
+    background-color: #75cddd;
+    width: 120px;
+  }
 
     .desc-user {
         margin: 35px 45px 30px 0;
@@ -1220,7 +1231,7 @@
     }
 
     .top-description {
-        font-size: 35px;
+        font-size: 48px;
         margin: auto;
         font-weight: bold;
     }
@@ -1283,7 +1294,7 @@
 
 
     .login-register div {
-        margin-right: 10px;
+        margin-right: 20px;
     }
 
     .h2 {
@@ -1484,6 +1495,7 @@
         font-size: 22px;
         font-weight: bold;
         color: #1b2850;
+        padding-right: 10px;
     }
 
     .card-item p {
@@ -1584,7 +1596,7 @@
     .contact h1 {
         font-size: 30px;
         font-weight: 600;
-        margin: 20px 0 0px;
+        margin: 20px 0 10px;
         text-align: left;
         color: #1b2850;
     }
@@ -1609,6 +1621,11 @@
         background-color: #75cddd;
         width: 115px;
     }
+  .about-content div.line, .sec-content div.line {
+    border: 8px solid #75cddd;
+    background-color: #75cddd;
+    width: 115px;
+  }
 
     .submit button {
         width: 115px;
@@ -2038,7 +2055,7 @@
 
     app-papers .statistics {
         padding: 107px 90px;
-        font-size: 25px;
+        font-size: 58px;
         font-weight: bold;
         color: #fff;
     }
@@ -2150,7 +2167,7 @@
 
     .card-item-objective .icon {
         text-align: center;
-        height: 85px;
+        height: 115px;
     }
 
     .card-item-objective .title {
@@ -2166,7 +2183,7 @@
 
     .card-item-objective .headline {
         border: none;
-        background-color: white;
+        background-color: #f1f2f2;
         margin-top: 10px;
     }
 
@@ -2178,7 +2195,7 @@
 
     .card-item-objective {
         padding: 35px 5px;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 20%;
     }
@@ -2266,7 +2283,6 @@
 
     .why-publish {
         padding: 0px;
-        border: 1px solid #d4d1d1;
         flex: 0 1 19%;
         width: 20%;
     }
@@ -2631,6 +2647,11 @@
         background-color: #75cddd;
         width: 95px;
     }
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
 
     .text-left {
         display: flex;
@@ -2671,6 +2692,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
     .text-left {
         display: flex;
         justify-content: flex-start;
@@ -2709,6 +2735,7 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
+        padding-right: 10px;
     }
 
     .card-item .title div {
@@ -2756,6 +2783,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
     .text-left {
         display: flex;
         justify-content: flex-start;
@@ -2809,6 +2841,7 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
+      padding-right: 10px;
     }
 
     .social-paper .title {
@@ -2959,7 +2992,7 @@
     .contact h1 {
         font-size: 2.5em;
         font-weight: 600;
-        margin: 20px 0 20px;
+        margin: 20px 0 10px;
         text-align: left;
         color: #1b2850;
     }
@@ -2996,6 +3029,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
 
     .submit button {
         width: 90px;
@@ -3356,7 +3394,7 @@
 
     .research-search .row {
         height: 9px;
-        width: 73%;
+        width: 328px;
     }
 
     .papers-tap {
@@ -3662,7 +3700,7 @@
 
     app-papers .statistics {
         padding: 147px 10px;
-        font-size: 22px;
+        font-size: 45px;
         font-weight: bold;
         color: #fff;
         display: flex;
@@ -3825,7 +3863,7 @@
     }
 
     .footer {
-        font-size: 14px;
+        font-size: 12px;
         margin-top: 10px;
         display: flex;
         justify-content: center;
@@ -3841,7 +3879,7 @@
 
     .card-item-objective {
         padding: 35px 15px;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
     }
@@ -3853,13 +3891,13 @@
 
 
     .card-item-objective img {
-        width: 40%;
+        width: 30%;
     }
 
 
     .card-item-objective .headline {
         border: none;
-        background-color: white;
+        background-color: #f1f2f2;
         display: flex;
         width: 100%;
     }
@@ -3880,7 +3918,7 @@
 
     .card-item-objective {
         padding: 35px 15px;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
         margin-bottom: 12px;
@@ -3999,7 +4037,7 @@
     }
 
     .top-description {
-        font-size: 26px;
+        font-size: 45px;
         margin: auto;
         font-weight: bold;
     }
@@ -4012,7 +4050,7 @@
 
     .why-publish {
         padding: 0;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
         margin-bottom: 12px;
@@ -4388,6 +4426,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
     .text-left {
         display: flex;
         justify-content: flex-start;
@@ -4437,6 +4480,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
     .text-left {
         display: flex;
         justify-content: flex-start;
@@ -4475,6 +4523,7 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
+      padding-right: 10px;
     }
 
     .card-item.title div {
@@ -4521,6 +4570,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
     .text-left {
         display: flex;
         justify-content: flex-start;
@@ -4565,6 +4619,7 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
+        padding-right: 10px;
     }
 
     .card-item .title div {
@@ -4709,7 +4764,7 @@
     .contact h1 {
         font-size: 2.5em;
         font-weight: 600;
-        margin: 20px 0 20px;
+        margin: 20px 0 10px;
         text-align: left;
         color: #1b2850;
     }
@@ -4747,6 +4802,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
 
     .submit button {
         width: 90px;
@@ -5478,7 +5538,7 @@
 
     app-papers .statistics {
         padding: 147px 10px;
-        font-size: 18px;
+        font-size: 36px;
         font-weight: bold;
         color: #fff;
         display: flex;
@@ -5596,7 +5656,7 @@
     }
 
     .footer {
-        font-size: 12px;
+        font-size: 9px;
         margin-top: 10px;
         display: flex;
         justify-content: center;
@@ -5612,7 +5672,7 @@
 
     .card-item-objective {
         padding: 35px 15px;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
     }
@@ -5631,7 +5691,7 @@
 
     .card-item-objective .headline {
         border: none;
-        background-color: white;
+        background-color: #f1f2f2;
         display: flex;
         width: 100%;
     }
@@ -5653,7 +5713,7 @@
 
     .card-item-objective {
         padding: 35px 15px;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
         margin-bottom: 12px;
@@ -5726,7 +5786,7 @@
     }
 
     .footer {
-        font-size: 10px;
+        font-size: 9px;
         margin-top: 10px;
         display: flex;
         justify-content: center;
@@ -5794,7 +5854,7 @@
     }
 
     .top-description {
-        font-size: 22px;
+        font-size: 38px;
         margin: auto;
         font-weight: bold;
     }
@@ -5806,7 +5866,7 @@
 
     .why-publish {
         padding: 0;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
         margin-bottom: 12px;
@@ -6182,6 +6242,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
     .text-left {
         display: flex;
         justify-content: flex-start;
@@ -6231,6 +6296,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
     .text-left {
         display: flex;
         justify-content: flex-start;
@@ -6269,6 +6339,7 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
+        padding-right: 10px;
     }
 
     .card-item.title div {
@@ -6315,6 +6386,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
     .text-left {
         display: flex;
         justify-content: flex-start;
@@ -6359,6 +6435,7 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
+        padding-right: 10px;
     }
 
     .card-item .title div {
@@ -6503,7 +6580,7 @@
     .contact h1 {
         font-size: 2.5em;
         font-weight: 600;
-        margin: 20px 0 20px;
+        margin: 20px 0 10px;
         text-align: left;
         color: #1b2850;
     }
@@ -6541,6 +6618,11 @@
         width: 95px;
     }
 
+  .about-content div.line, .sec-content div.line {
+    border: 7px solid #75cddd;
+    background-color: #75cddd;
+    width: 95px;
+  }
 
     .submit button {
         width: 90px;
@@ -7270,7 +7352,7 @@
 
     app-papers .statistics {
         padding: 147px 10px;
-        font-size: 18px;
+        font-size: 26px;
         font-weight: bold;
         color: #fff;
         display: flex;
@@ -7397,7 +7479,7 @@
 
     .card-item-objective {
         padding: 35px 15px;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
     }
@@ -7416,7 +7498,7 @@
 
     .card-item-objective .headline {
         border: none;
-        background-color: white;
+        background-color: #f1f2f2;
         display: flex;
         width: 100%;
     }
@@ -7437,7 +7519,7 @@
 
     .card-item-objective {
         padding: 35px 15px;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
         margin-bottom: 12px;
@@ -7524,7 +7606,7 @@
     }
 
     .footer {
-        font-size: 10px;
+        font-size: 9px;
         margin-top: 10px;
         display: flex;
         justify-content: center;
@@ -7590,7 +7672,7 @@
     }
 
     .top-description {
-        font-size: 26px;
+        font-size: 32px;
         margin: auto;
         font-weight: bold;
     }
@@ -7601,7 +7683,7 @@
 
     .why-publish {
         padding: 0;
-        border: 1px solid #d4d1d1;
+
         flex: 0 1 19%;
         width: 100%;
         margin-bottom: 12px;

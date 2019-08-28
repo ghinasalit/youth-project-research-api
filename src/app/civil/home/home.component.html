@@ -5,8 +5,7 @@
 
 
 <!--Social Fixed-->
-<div class="social" *ngIf="!_appService.roll && socialFixed" data-aos="fade-up" data-aos-duration="1000"
-     data-aos-easing="500">
+<div class="social" *ngIf="!_appService.roll && socialFixed" data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="500">
     <div><i class="fa fa-facebook"></i></div>
     <div><i class="fa fa-instagram"></i></div>
     <div><i class="fa fa-twitter"></i></div>
@@ -62,7 +61,7 @@
 </div>
 
 <div class="full-section top-home-login" *ngIf="_appService.roll">
-    <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000">
+    <div class="profile-photo" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">
         <img src="assets/img/library.jpg " alt=""></div>
     <div class="right-section">
         <div class="navbar-login logged">
@@ -87,7 +86,7 @@
                     <div>
                         <img [src]="  _appService.api.api.imgURL + memberDetails.avatar" alt=""
                              *ngIf="memberDetails.avatar != ''">
-                        <img [src]="'assets/img/member1.jpg' " alt="" *ngIf="memberDetails.avatar == ''">
+                        <img [src]="'assets/img/avatar_default.jpeg' " alt="" *ngIf="memberDetails.avatar == ''">
                     </div>
                     <div class="full-name">
                         <div class="title" [routerLink]="['/profile' , memberDetails.member_id]"
@@ -165,7 +164,7 @@
 
     <div class="social-paper">
         <div class="cards-icon">
-            <div class="card-icon-research d-line" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-duration="1000" style="cursor: pointer" routerLink="/papers">
+            <div class="card-icon-research d-line" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-once="true" data-aos-duration="1000" style="cursor: pointer" routerLink="/papers">
                 <div class="box">
                 </div>
                 <img src="assets/img/reseach_paper.png" alt="">
@@ -176,7 +175,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-icon-submit d-line" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'" data-aos-duration="1000" style="cursor: pointer" (click)="_appService.submitPaper()">
+            <div class="card-icon-submit d-line" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'" data-aos-once="true" data-aos-duration="500" style="cursor: pointer" (click)="_appService.submitPaper()">
                 <div class="box">
                 </div>
                 <img src="assets/img/submit_paper.png" alt="">
@@ -193,20 +192,20 @@
 
 <div class="full-section">
     <div class="left-sticker"></div>
-    <div class="center-sticker" data-aos="fade-up" data-aos-duration="1000"></div>
-    <div class="side" data-aos-duration="1000" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'">
+    <div class="center-sticker" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-duration="1000"></div>
+    <div class="side" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-once="true" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'">
         <div class="sec-img">
             <img src="assets/img/about.png">
         </div>
     </div>
-    <div class="side" data-aos-duration="1000" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'">
+    <div class="side" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-once="true" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'">
         <div class="sec-content">
             <div class="about-content">
                 <h1 class="text-left">
                     <p>{{'_About' | translate}}</p>
                     <p> {{'_ArabYouth' | translate}}</p>
                 </h1>
-
+              <div class="line"></div>
                 <div class="content">
                     <p>{{'_AboutDescription' | translate}}</p>
                 </div>
@@ -222,13 +221,13 @@
     </div>
 </div>
 
-<div class="become-researcher" id="becomeResearcher" #becomeResearcher data-aos="fade-up">
-    <div class="title" data-aos="fade-up" data-aos-duration="500">
+<div class="become-researcher" id="becomeResearcher" #becomeResearcher  >
+    <div class="title" data-aos-anchor-placement="top-bottom" data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
         <p>{{'_Why_publish_research' | translate}}</p>
         <div></div>
     </div>
-    <div class="cards">
-        <div data-aos="fade-up" data-aos-delay="0" class="card-item-objective why-publish">
+    <div class="cards" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-duration="500">
+        <div  class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/login.jpg" alt="">
 
@@ -246,7 +245,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="200" class="card-item-objective why-publish">
+        <div class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/recognation.jpg" alt="">
 
@@ -264,7 +263,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="600" class="card-item-objective why-publish">
+        <div class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/Researcher_network.jpg" alt="">
 
@@ -282,7 +281,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="1000" class="card-item-objective why-publish">
+        <div class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/reach-organization.jpg" alt="">
 
@@ -300,7 +299,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="1400" class="card-item-objective why-publish">
+        <div class="card-item-objective why-publish">
             <div class="icon">
                 <img src="assets/img/career.jpg" alt="">
 
@@ -413,8 +412,8 @@
 <!--</div>-->
 <div class="full-section partners" id="partners" #partners>
     <div class="full-section with-slider">
-        <div class="top-sticker" data-aos="fade-up" data-aos-duration="1000"></div>
-        <div class="side laptop" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'"
+        <div class="top-sticker" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos="fade-up" data-aos-duration="500"></div>
+        <div class="side laptop" data-aos-once="true" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'"
              data-aos-duration="1000">
             <div class="logo-partner">
                 <img src="assets/img/partners.PNG">
@@ -422,14 +421,13 @@
 
 
         </div>
-        <div class="side" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'"
-             data-aos-duration="1000">
+        <div class="side" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
             <div class="sec-content">
                 <div class="about-content">
                     <h1 class="text-left">
                         <p>{{'_OurPartners' | translate}}</p>
                     </h1>
-
+                    <div class="line"></div>
                     <div class="content">
                         <p>{{'_ResearchersDescription' | translate}}</p>
                     </div>
@@ -454,10 +452,11 @@
 </div>
 
 
-<div class="full-section contact" data-aos="fade-up" data-aos-duration="1000" id="contactus" #contactus>
+<div class="full-section contact" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos="fade-up" data-aos-duration="1000" id="contactus" #contactus>
     <div class="side">
         <div class="sec-content">
             <h1 class="text-left">{{'_ContactUs' | translate}}</h1>
+          <div class="line"></div> <br>
             <div class="contact-info">
                 <h3>{{'_ContactUsInfo._Email' | translate}}</h3>
                 <h3>{{'_ContactUsInfo._Address' | translate}}</h3>
@@ -475,7 +474,7 @@
         <div class="sec-content">
             <div class="title">
                 <p>{{'_Enquiry' | translate}}</p>
-                <div></div>
+                <div class="line"></div>
             </div>
             <div class=" form-input">
                 <form class="example-form" [formGroup]="feedbackForm" #formDirective="ngForm"
@@ -497,7 +496,7 @@
                     </div>
                     <div class="item">
                         <mat-form-field class="example-full-width">
-                            <input type="number" matInput [placeholder]="'_PhoneNumber' | translate"
+                            <input type="text" matInput [placeholder]="'_PhoneNumber' | translate"
                                    formControlName="phone" required>
                             <mat-error *ngIf="phone.errors.required">{{'_Required' | translate}}</mat-error>
                         </mat-form-field>

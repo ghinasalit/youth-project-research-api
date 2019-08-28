@@ -301,7 +301,7 @@ h1, h2, h3, h4, h5, h6, p {
 .contact h1 {
     font-size: 4em;
     font-weight: 600;
-    margin: 20px 0 77px;
+    margin: 20px 0 10px;
     text-align: right;
     color: #1b2850;
 }
@@ -368,7 +368,11 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #75cddd;
     width: 205px;
 }
-
+.about-content div.line, .sec-content div.line {
+  border: 13px solid #75cddd;
+  background-color: #75cddd;
+  width: 205px;
+}
 
 /*.top-home-login .social i {*/
 /*    font-size: 25px;*/
@@ -405,7 +409,7 @@ top-home-login .title {
 
 
 .about-content .text-left p {
-    font-size: 60px
+    font-size: 54px
 }
 
 
@@ -452,13 +456,14 @@ app-home .card-item p {
     height: 835px;
     display: flex;
     flex-direction: column;
-    padding: 22px 40px;
+    padding: 45px 40px;
 }
 
 .title {
     font-size: 45px;
     font-weight: bold;
     color: #1b2850;
+    padding-right: 17px;
 }
 
 
@@ -897,7 +902,8 @@ app-home .card-item p {
 }
 
 .login-register div {
-    margin-left: 15px;
+    margin-left: 20px;
+    font-size: 16px;
 }
 
 .clear i {
@@ -1081,7 +1087,7 @@ app-about .card-item.title p {
 
 
 app-papers .top-home {
-    height: 670px;;
+    height: 500px;;
     color: #fff;
     /*justify-content: flex-end;*/
     background-image: url("../../../assets/img/library.jpg");
@@ -1094,9 +1100,9 @@ app-papers .top-home {
 app-papers .statistics {
     display: flex;
     flex-direction: column;
-    font-size: 45px;
+    font-size: 75px;
     margin: auto;
-    padding: 260px 0;
+    padding: 100px 0;
     color: #fff;
 }
 
@@ -1346,7 +1352,7 @@ app-upload-paper .submit {
 }
 
 .footer {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
@@ -1391,9 +1397,10 @@ app-upload-paper .submit {
 
 .card-item-objective{
     padding: 12px 15px;
-    border: 1px solid #d4d1d1;
+
     flex: 0 1 19%;
     width: 20%;
+  background-color: #f1f2f2;
 }
 
 .card-item-objective .icon  {
@@ -1421,7 +1428,7 @@ app-upload-paper .submit {
 
 .card-item-objective .headline {
     border: none;
-    background-color: white;
+    background-color: #f1f2f2;
 }
 
 .card-item-objective .title .line {
@@ -1733,7 +1740,7 @@ app-members .card img {
 
 .why-publish {
     padding: 0px;
-    border: 1px solid #d4d1d1;
+
     flex: 0 1 19%;
     width: 20%;
 }

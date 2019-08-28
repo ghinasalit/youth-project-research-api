@@ -918,22 +918,20 @@ The AYRP Team.</p>
     }
   }
 
-  static public function search_paper($username, $page, $size, $country, $discipline, $year, $lang, $keyword)
+  static public function search_paper($page, $size, $country, $discipline, $year, $lang, $keyword)
   {
     // page start from 0
     global $db;
     $page *= $size;
     $data = Array(
-      'university.country_id' => $country,
       'papers.date' => $year,
-      'papers.language' => $lang,
     );
 
     $keywords = Array(
       'papers.description' => $keyword,
       'papers.title' => $keyword,
     );
-    $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id ,papers.permission ,
+    $q = "SELECT papers.date , papers.description , papers.file ,  papers.paper_id , papers.language ,papers.permission ,
                papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
               FROM  papers JOIN members ON papers.member_id = members.member_id 
               JOIN university ON university.university_id = members.university_id 
@@ -942,6 +940,13 @@ The AYRP Team.</p>
       if (!empty($item)) {
         $q .= " AND " . $key . " LIKE " . "'%" . $item . "%' ";
       }
+    }
+
+    if ($country) {
+      $q .= " AND university.country_id = " . "'" . $country . "' ";
+    }
+    if ($lang) {
+      $q .= " AND papers.language = " . "'" . $lang . "' ";
     }
 
     if ($discipline) {
@@ -959,6 +964,9 @@ The AYRP Team.</p>
 
     }
     $q_with_paging = $q . " LIMIT {$page} , {$size}";
+
+
+
     $papers = $db->withTotalCount()->rawQuery($q_with_paging);
     foreach ($papers as $key => $item) {
       $q = "SELECT tags.tag_en , tags.tag_ar FROM papers JOIN paper_tags JOIN tags
@@ -967,7 +975,7 @@ The AYRP Team.</p>
       $papers[$key]['tags'] = $tags;
     }
 
-    foreach ($papers as $key => $item) {
+    /*foreach ($papers as $key => $item) {
       if ($username) {
         $q = "SELECT bookmark_id FROM members JOIN bookmarks ON members.member_id = bookmarks.member_id && bookmarks.paper_id = '" . $item['paper_id'] . "'
                       WHERE members.username = '" . $username . "'";
@@ -980,8 +988,7 @@ The AYRP Team.</p>
       } else {
         $papers[$key]['saved'] = 0;
       }
-    }
-
+    }*/
 
     if (!empty($papers)) {
       return $papers;
@@ -1018,7 +1025,7 @@ The AYRP Team.</p>
     if (!empty($letter)) {
       $q .= " AND (first_name LIKE '" . $letter . "%' OR  last_name LIKE '" . $letter . "%')";
     };
-    $q_with_paging = $q . " LIMIT {$page} , {$size}";
+    $q_with_paging = $q ;//. " LIMIT {$page} , {$size}";
 
     $papers = $db->withTotalCount()->rawQuery($q_with_paging);
     if (!empty($papers)) {

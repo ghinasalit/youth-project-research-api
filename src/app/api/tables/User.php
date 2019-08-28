@@ -315,14 +315,14 @@ Class User
   static public function search_paper($data)
   {
     $keyword = Helper::make_safe($data['keyword']);
-    $username = Helper::make_safe($data['username']);
+    //$username = Helper::make_safe($data['username']);
     $country = Helper::make_safe($data['country']);
     $discipline = Helper::make_safe($data['discipline']);
     $year = Helper::make_safe($data['year']);
     $lang = Helper::make_safe($data['lang']);
     $page = Helper::make_safe($data['page']);
     $size = Helper::make_safe($data['size']);
-    $response = Queries::search_paper($username, $page, $size, $country, $discipline, $year, $lang, $keyword);
+    $response = Queries::search_paper($page, $size, $country, $discipline, $year, $lang, $keyword);
     if (is_numeric($response)) {
       $error_msg = array_search($response, \Model\Enums::$code);
       $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());

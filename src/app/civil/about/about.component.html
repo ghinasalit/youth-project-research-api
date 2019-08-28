@@ -4,14 +4,14 @@
 
 <div class="full-section">
     <div class="top-sticker"></div>
-    <div class="center-sticker" data-aos="fade-down" data-aos-duration="1000"></div>
-    <div class="side" data-aos-duration="1000"
+    <div class="center-sticker" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true"></div>
+    <div class="side" data-aos-duration="1000" data-aos-once="true"
          [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'">
         <div class="sec-img">
             <img src="assets/img/about.png">
         </div>
     </div>
-    <div class="side" data-aos-duration="1000"
+    <div class="side" data-aos-duration="1000" data-aos-once="true"
          [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'">
         <div class="navbar-login logged">
 
@@ -39,6 +39,7 @@
                     <p>{{'_Significance'| translate}}</p>
                     <p>{{'_AYRP'| translate}}</p>
                 </h1>
+              <div class="line"></div>
                 <div class="content">
                     <p>{{'_AboutDescription'| translate}}</p>
 
@@ -55,13 +56,13 @@
     </div>
 </div>
 
-<div class="become-researcher" id="becomeResearcher" data-aos="fade-down">
-    <div class="title" data-aos="fade-down" data-aos-duration="500">
+<div class="become-researcher" id="becomeResearcher" data-aos="fade-down" data-aos-once="true">
+    <div class="title" data-aos="fade-down" data-aos-duration="500" data-aos-once="true" ata-aos-once="true">
         <p>{{'_Objectives' | translate}}</p>
         <div></div>
     </div>
-    <div class="cards">
-        <div data-aos="fade-up" data-aos-delay="0" class="card-item-objective">
+    <div class="cards" data-aos="fade-up" data-aos-duration="500"  data-aos-once="true" >
+        <div class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/SupportArabYouthResearch.png" alt="">
 
@@ -79,7 +80,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="200" class="card-item-objective">
+        <div class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/Sharepublications.png" alt="">
 
@@ -97,7 +98,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="600" class="card-item-objective">
+        <div class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/Help.png" alt="">
 
@@ -115,7 +116,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="1000" class="card-item-objective">
+        <div class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/Create_research_culture.png" alt="">
 
@@ -133,7 +134,7 @@
                 </p>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="1400" class="card-item-objective">
+        <div class="card-item-objective">
             <div class="icon">
                 <img src="assets/img/Establish_digital_library.png" alt="">
 
@@ -185,7 +186,7 @@
 <!--</div>-->
 
 
-<div class="full-section" data-aos="fade-up" data-aos-duration="1000">
+<div class="full-section" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
     <div class="left-sticker"></div>
     <div class="center-sticker"></div>
     <div class="side">
@@ -199,7 +200,7 @@
                 <h1 class="text-left">
                     <p>{{'_Why_Join_AYRB' | translate}}</p>
                 </h1>
-
+                <div class="line"></div>
                 <div class="content">
                     <p>{{'_AbourJoinDesc' | translate}}</p>
                 </div>

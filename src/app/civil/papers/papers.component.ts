@@ -83,11 +83,11 @@ export class PapersComponent implements OnInit {
                 result = response;
                 if (result.code === 1) {
 
-                    if(action  === 'view'){
+                    if (action  === 'view') {
                         const dialogRef = this.dialog.open(PaperComponent, {});
                         dialogRef.componentInstance.paper = paper;
                         this.addView(paper);
-                    }else{
+                    } else {
                         this.downloadPaper(paper);
                         this.addDownloadPaper(paper);
                     }
@@ -199,7 +199,22 @@ export class PapersComponent implements OnInit {
             });
 
     }
-
+  filterByCountry(data) {
+    this.paper.country = data;
+    this.filter();
+  }
+  filterByDiscipline(data) {
+    this.paper.discipline = data;
+    this.filter();
+  }
+  filterByLanguage(data) { console.log(data);
+    this.paper.lang = data;
+    this.filter();
+  }
+  filterByYear(data) {
+    this.paper.year = data;
+    this.filter();
+  }
     filter() {
         this.paper.page = 0;
         this.searchPapers();
@@ -250,7 +265,7 @@ export class PapersComponent implements OnInit {
 
     downloadPaper(paper) {
         this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
-            var newBlob = new Blob([res], {type: 'application/pdf'});
+            let newBlob = new Blob([res], {type: 'application/pdf'});
 
             if (window.navigator && window.navigator.msSaveOrOpenBlob) {
                 window.navigator.msSaveOrOpenBlob(newBlob);
@@ -260,7 +275,7 @@ export class PapersComponent implements OnInit {
             // Create a link pointing to the ObjectURL containing the blob.
             const data = window.URL.createObjectURL(newBlob);
 
-            var link = document.createElement('a');
+            let link = document.createElement('a');
             link.href = data;
             link.download = paper.title + '.pdf';
             // this is necessary as link.click() does not work on the latest firefox
@@ -317,9 +332,55 @@ export class PapersComponent implements OnInit {
 
     }
 
+  ngAfterViewInit(){
+    $(document).ready(function() {
+      $('#resizing_select_Discipline').change(function(){
+        $("#width_tmp_option_Discipline").html($('#resizing_select_Discipline option:selected').text());
+        $(this).width($("#width_tmp_select_Discipline").width());
+      });
+
+      //    ###############################################################################
+
+      $('#resizing_select_Discipline1').change(function(){
+        $("#width_tmp_option_Discipline1").html($('#resizing_select_Discipline1 option:selected').text());
+        $(this).width($("#width_tmp_select_Discipline1").width());
+      });
+
+      //    ###############################################################################
+
+      $('#resizing_select_Country').change(function(){
+        $("#width_tmp_option_Country").html($('#resizing_select_Country option:selected').text());
+        $(this).width($("#width_tmp_select_Country").width());
+      });
+
+      //    ###############################################################################
+
+      $('#resizing_select_Country1').change(function(){
+        $("#width_tmp_option_Country1").html($('#resizing_select_Country1 option:selected').text());
+        $(this).width($("#width_tmp_select_Country1").width());
+      });
+
+      //    ###############################################################################
+
+      $('#resizing_select_Language').change(function(){
+        $("#width_tmp_option_Language").html($('#resizing_select_Language option:selected').text());
+        $(this).width($("#width_tmp_select_Language").width());
+      });
+
+      //    ###############################################################################
+
+      /*$('#resizing_select_Year').change(function(){
+        $("#width_tmp_option_Year").html($('#resizing_select_Year option:selected').text());
+        $(this).width($("#width_tmp_select_Year").width());
+      });*/
+
+    });
+
+    }
+
     ngOnInit() {
 
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
         this._appService.active = 1;
 
         this.member_id = localStorage.getItem('id');

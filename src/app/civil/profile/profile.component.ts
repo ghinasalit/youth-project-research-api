@@ -153,7 +153,7 @@ export class ProfileComponent implements OnInit {
                 this.result = response;
                 if (this.result.code === 1) {
                     this.member = this.result.data;
-                    console.log(this.member);
+                    //console.log(this.member);
                     this.getOneRecognized(this.member.country, this.member.member_id);
 
                 } else {

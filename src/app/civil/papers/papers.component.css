@@ -78,7 +78,7 @@ h3, h6 {
 /* end navbar*/
 
 .login-register div {
-    margin: 0 10px;
+  margin-right: 20px;
 }
 
 
@@ -370,5 +370,35 @@ input[type=checkbox]:checked ~ #menu {
 .social {
     position: fixed;
 }
+
+/*#######################################*/
+select.filterSelectDiscipline, select.filterSelectCountry, select.filterSelectLanguage, select.filterSelectYear {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1b2850;
+}
+span.filterByDisciplineDropdown, span.filterByCountryDropdown, span.filterByLanguageDropdown, span.filterByYearDropdown {
+  color: #fdd97a;
+  font-size: 16px;
+}
+select.filterSelectDiscipline {
+  width:82px;
+}
+select.filterSelectCountry{
+  width:70px;
+}
+select.filterSelectLanguage {
+  width:82px;
+}
+select.filterSelectYear {
+  width:48px;
+}
+#width_tmp_select_Discipline, #width_tmp_select_Discipline1, #width_tmp_select_Country, #width_tmp_select_Country1, #width_tmp_select_Language, #width_tmp_select_Year{
+  display : none;
+}
+.row {width:335px;}
 
 
