@@ -65,7 +65,7 @@
     height: 20px;
     left: 0;
     position: absolute;
-    top: -32px;
+    /*top: -32px;*/
     transition: border-color ease 280ms;
     width: 20px;
     border-width: 2px;
@@ -79,7 +79,7 @@
     height: 20px;
     left: 0;
     position: absolute;
-    top: -32px;
+    /*top: -32px;*/
     transition: transform ease 280ms,background-color ease 280ms;
     width: 20px;
     transform: scale(.001);
@@ -87,4 +87,5 @@
 
 ::ng-deep .mat-radio-label {
     white-space: inherit !important;
+    align-items: end;
 }

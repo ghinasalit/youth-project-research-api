@@ -69,8 +69,6 @@ export class ApiService {
 
         uploadImagePage(func, data: FormData): Observable<any> {
 
-            console.log(this.apiURL + func);
-
             let headers = new HttpHeaders();
         const lang = localStorage.getItem('language') ;
         headers = headers.set('Accept-Language', lang)

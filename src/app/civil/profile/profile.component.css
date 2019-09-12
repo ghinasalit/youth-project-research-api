@@ -722,7 +722,7 @@ input[type=checkbox]:checked ~ #menu {
 
     .nav-block #menu {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .research-input {
@@ -754,10 +754,12 @@ input[type=checkbox]:checked ~ #menu {
 }
 
 
+/*
 img {
     width: 60px;
     height: 60px;
 }
+*/
 
 
 
@@ -781,9 +783,56 @@ img {
 }
 
 .papers  img {
-    width: 60px;
-    height: 65px;
-    margin-bottom: 10px;
+  /*width: 60px;
+  height: 65px;*/
+  margin-bottom: 10px;
+}
+.row {width:335px;}
+
+::ng-deep .ngx-dropdown-container[_ngcontent-c6] {
+  width: auto !important;
+  display: inherit;
+}
+::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+  width: auto !important;
+  min-width: 0;
+  border: none !important;
+  color: #1B2850 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
 }
 
+::ng-deep .nsdicon-angle-down:before {
+  content: "\25BE" !important;
+  color: #FDD97A;
+  font-size: 20px;
+}
+@media (min-width: 0px) and (max-width: 424px) {
+  ::ng-deep .nsdicon-angle-down:before {
+    display: none;
+  }
+}
+
+::ng-deep .ngx-dropdown-container button {
+  display: inline-flex !important;
+  padding: 5px 0px 5px 20px !important;
+}
+
+::ng-deep .ngx-dropdown-container .ngx-dropdown-list-container {
+  width: 150px !important;
+  text-align: center !important;
+  left:10px;
+}
+.filterSelectYear ::ng-deep .ngx-dropdown-container .ngx-dropdown-list-container {
+  width: 60px !important;
+}
+.filterSelectLanguage ::ng-deep .ngx-dropdown-container .ngx-dropdown-list-container {
+  width: 80px !important;
+}
+::ng-deep .ngx-dropdown-container .ngx-dropdown-list-container ul li {
+  padding: 3px 0px!important;
+}
+::ng-deep .ngx-dropdown-container {
+  display:inline !important;
+}
 

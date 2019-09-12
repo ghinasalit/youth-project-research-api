@@ -3,7 +3,7 @@
 </nav>
 
 
-<div class="full-section upload-file" data-aos-duration="1000">
+<div class="full-section upload-file" data-aos-duration="1000" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="side">
         <div class="sec-img">
             <img src="assets/img/library.jpg" alt="">
@@ -43,7 +43,7 @@
                     </mat-form-field>
 
 
-                    <mat-form-field >
+                    <!--<mat-form-field >
                         <mat-select placeholder="{{'_Tags' | translate}}" formControlName="tags" multiple required>
                             <mat-select-trigger>
                                 {{toppings.value ? toppings.value[0] : ''}}
@@ -56,19 +56,45 @@
                                 <span *ngIf="_appService.currentLanguage == 'ar'">{{tag.tag_ar}}</span>
                             </mat-option>
                         </mat-select>
-                    </mat-form-field>
-                    <mat-form-field>
+                    </mat-form-field>-->
+
+                  <ng-select [items]="allTags" formControlName="tags"
+                             [multiple]="true"
+                             bindLabel="tag_en"
+                             [hideSelected]="true"
+                             bindValue="tag_id">
+
+                    <ng-option *ngFor="let tag of allTags" [value]="tag.tag_id" >
+                      <span *ngIf="_appService.currentLanguage === 'en'">{{tag.tag_en}}</span>
+                      <span *ngIf="_appService.currentLanguage === 'ar'">{{tag.tag_ar}}</span>
+                    </ng-option>
+                  </ng-select>
+
+
+                    <!--<mat-form-field>
                         <mat-label>Discipline</mat-label>
 
                         <mat-select formControlName="discipline"  required>
-                            <mat-option>--</mat-option>
+                            <mat-option>&#45;&#45;</mat-option>
                             <mat-option *ngFor="let discipline of disciplines"  [value]="discipline.discipline_id">
                                 <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>
                                 <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>
                             </mat-option>
                         </mat-select>
                         <mat-error *ngIf="discipline.hasError('required')">Please choose your Discipline</mat-error>
-                    </mat-form-field>
+                    </mat-form-field>-->
+
+                  <ng-select [items]="disciplines"  formControlName="discipline"
+                             bindLabel="discipline_en"
+                             [hideSelected]="true"
+                             bindValue="discipline_id">
+                    <ng-option *ngFor="let discipline of disciplines" [value]="discipline.discipline_id" >
+                      <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>
+                      <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>
+                    </ng-option>
+                  </ng-select>
+
+
                         <div class="lang">
 
                         <p>Research Paper Language *</p>

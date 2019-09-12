@@ -1,4 +1,4 @@
-<div class="sec-content">
+<div class="sec-content" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="title">
         <p> {{'_ResearchPaperDetails' | translate}}</p>
         <div></div>
@@ -13,13 +13,12 @@
                 </mat-form-field>
             </div>
 
-            <mat-form-field hintLabel="Please Enter from 200 to 500 characters">
-                <textarea matInput #input placeholder="{{'_Abstract' | translate}}" maxlength="500" minlength="200"
-                          formControlName="description" required></textarea>
-                <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
+            <mat-form-field ><!--hintLabel="Please Enter from 200 to 500 characters"-->
+                <textarea matInput #input placeholder="{{'_Abstract' | translate}}" formControlName="description" required></textarea> <!--maxlength="500" minlength="200"-->
+                <!--<mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>-->
                 <mat-error *ngIf="description.errors.required">{{'_Required' | translate}}</mat-error>
             </mat-form-field>
-            <mat-form-field>
+            <!--<mat-form-field>
                 <mat-select placeholder="{{'_Tags' | translate}}" formControlName="tags" multiple required>
                     <mat-select-trigger>
                         {{toppings.value ? toppings.value[0] : ''}}
@@ -32,20 +31,42 @@
                         <span *ngIf="_appService.currentLanguage == 'ar'">{{tag.tag_ar}}</span>
                     </mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field>-->
+          <ng-select [items]="tags" formControlName="tags"
+                     [multiple]="true"
+                     bindLabel="tag_en"
+                     [hideSelected]="true"
+                     bindValue="tag_id">
 
-            <mat-form-field>
+            <ng-option *ngFor="let tag of tags" [value]="tag.tag_id" >
+              <span *ngIf="_appService.currentLanguage === 'en'">{{tag.tag_en}}</span>
+              <span *ngIf="_appService.currentLanguage === 'ar'">{{tag.tag_ar}}</span>
+            </ng-option>
+          </ng-select>
+
+            <!--<mat-form-field>
                 <mat-label>{{'_Discipline' | translate}}</mat-label>
 
                 <mat-select formControlName="discipline" required>
-                    <mat-option>--</mat-option>
+                    <mat-option>&#45;&#45;</mat-option>
                     <mat-option *ngFor="let discipline of disciplines" [value]="discipline.discipline_id">
                         <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>
                         <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>
                     </mat-option>
                 </mat-select>
                 <mat-error *ngIf="discipline.hasError('required')">Please choose your university</mat-error>
-            </mat-form-field>
+            </mat-form-field>-->
+
+
+          <ng-select [items]="disciplines"  formControlName="discipline"
+                     bindLabel="discipline_en"
+                     [hideSelected]="true"
+                     bindValue="discipline_id">
+            <ng-option *ngFor="let discipline of disciplines" [value]="discipline.discipline_id" >
+              <span *ngIf="_appService.currentLanguage === 'en'">{{discipline.discipline_en}}</span>
+              <span *ngIf="_appService.currentLanguage === 'ar'">{{discipline.discipline_ar}}</span>
+            </ng-option>
+          </ng-select>
 
 <!--            <mat-form-field class="example-full-width">-->
 <!--                <input type="text" placeholder="{{'_Discipline' | translate}}" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">-->
@@ -75,7 +96,7 @@
             </div>
 
             <div class="submit">
-                <button (click)="savePaper()" [disabled]="!paperForm.valid">{{'_Continue' | translate}}</button>
+                <button [disabled]="!paperForm.valid" (click)="savePaper()" >{{'_Continue' | translate}}</button>
 
             </div>
         </form>

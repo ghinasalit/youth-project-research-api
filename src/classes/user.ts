@@ -9,7 +9,8 @@ export class User {
     university: string;
     job = '';
     location = '';
-    phone = '';
+  countryCode = '';
+  phone = '';
     Linkedin = '';
     description = '';
     views: number;

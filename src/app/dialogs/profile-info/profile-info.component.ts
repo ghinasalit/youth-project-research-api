@@ -19,6 +19,7 @@ export class ProfileInfoComponent implements OnInit {
     public user = new User();
     profileForm: FormGroup;
     result: any;
+    Countries = [];
     universities: any;
     fileName: string;
     university = new FormControl('', [Validators.required]);
@@ -41,6 +42,7 @@ export class ProfileInfoComponent implements OnInit {
             'university': [null, Validators.required],
             'job': '',
             'location': '',
+            'countryCode': '',
             'phone': '',
             'description': '',
             'Linkedin': '',
@@ -81,6 +83,7 @@ export class ProfileInfoComponent implements OnInit {
         this.user.job = this.profileForm.controls.job.value;
         this.user.location = this.profileForm.controls.location.value;
         this.user.phone = this.profileForm.controls.phone.value;
+        this.user.countryCode = this.profileForm.controls.countryCode.value;
         this.user.Linkedin = this.profileForm.controls.Linkedin.value;
         this.user.description = this.profileForm.controls.description.value;
         this.user.avatar = this.croppedImage.base64 ? this.croppedImage.base64 : '';
@@ -126,6 +129,13 @@ export class ProfileInfoComponent implements OnInit {
     ngOnInit() {
 
         this.getUniversities();
+
+      this._appService.countiesNotifier.subscribe(data => {
+        this.Countries = data;
+        if (data != null) {
+          this.Countries = data;
+        }
+      });
 
 
     }

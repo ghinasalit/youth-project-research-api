@@ -3,8 +3,8 @@
 </nav>
 
 
-<div class="top-home top-papers">
-    <div class="navbar-login logged">
+<div class="top-home top-papers" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
+    <!--<div class="navbar-login logged">
 
         <div class="login-register" *ngIf="!_appService.roll">
             <div class="lang" (click)="_appService.switchLanguage('en')"
@@ -22,7 +22,7 @@
             <div class="login"  [routerLink]="['/profile' , member_id]">{{'_MyProfile'| translate}}</div>
             <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
         </div>
-    </div>
+    </div>-->
 
     <div class="social-statistics">
         <div class="statistics">
@@ -45,7 +45,7 @@
         </div>
     </div>
 </div>
-<div class="research-section">
+<div class="research-section" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="title-search" data-aos="fade-down" data-aos-duration="100">
         <div class="research-title">
             <div class="title">
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="research-search">
+        <div class="research-search" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
             <!--<div class="rsearch">-->
             <div class="navigator">
                 <div class="nav-block">
@@ -78,7 +78,9 @@
 
                             </div>
                         </div>-->
-                      <select *ngIf="_appService.currentLanguage == 'en'" #d (change)="filterByDiscipline(d.value)" class="filterSelectDiscipline" id="resizing_select_Discipline">
+
+
+                      <!--<select *ngIf="_appService.currentLanguage == 'en'" #d (change)="filterByDiscipline(d.value)" class="filterSelectDiscipline" id="resizing_select_Discipline">
                         <option value=""> &nbsp; {{'_Discipline' | translate}} &nbsp; </option>
                         <option  *ngFor="let discipline of Disciplines" [value]="discipline.discipline_id" > &nbsp; {{discipline.discipline_en}} &nbsp; </option>
                       </select>
@@ -92,21 +94,26 @@
                       </select>
                       <select id="width_tmp_select_Discipline1">
                         <option id="width_tmp_option_Discipline1"></option>
-                      </select>
-                        <!--<div class="drop-list" dropdown>
-                            <a dropdownToggle>{{'_Country' | translate}}<span>&#x25BE;</span></a>
-                            <div *dropdownMenu role="menu" class="dropdown-menu text-center">
-                                <div class="pt-2 pb-2" (click)="paper.country  = '' ; filter()">
-                                    <a>{{'_All' | translate}}</a></div>
-                                <div class="pt-2 pb-2" *ngFor="let county of Counties">
-                                    <a *ngIf="_appService.currentLanguage == 'en'"
-                                       (click)="paper.country = county.name_en ;  filter()">{{county.name_en}}</a>
-                                    <a *ngIf="_appService.currentLanguage == 'ar'"
-                                       (click)=" paper.country = county.name_ar ; filter()">{{county.name_ar}}</a>
-                                </div>
-                            </div>
-                        </div>-->
-                      <select *ngIf="_appService.currentLanguage == 'en'" #c (change)="filterByCountry(c.value)" class="filterSelectCountry" id="resizing_select_Country">
+                      </select>-->
+
+
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'en'" (change)="filterByDiscipline($event)" class="filterSelectDiscipline"  [config]="configDiscipline" [options]="Disciplines"></ngx-select-dropdown>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'ar'" (change)="filterByDiscipline($event)" class="filterSelectDisciplineAr"  [config]="configDisciplineAr" [options]="Disciplines"></ngx-select-dropdown>
+
+                      <!--<div class="drop-list" dropdown>
+                          <a dropdownToggle>{{'_Country' | translate}}<span>&#x25BE;</span></a>
+                          <div *dropdownMenu role="menu" class="dropdown-menu text-center">
+                              <div class="pt-2 pb-2" (click)="paper.country  = '' ; filter()">
+                                  <a>{{'_All' | translate}}</a></div>
+                              <div class="pt-2 pb-2" *ngFor="let county of Counties">
+                                  <a *ngIf="_appService.currentLanguage == 'en'"
+                                     (click)="paper.country = county.name_en ;  filter()">{{county.name_en}}</a>
+                                  <a *ngIf="_appService.currentLanguage == 'ar'"
+                                     (click)=" paper.country = county.name_ar ; filter()">{{county.name_ar}}</a>
+                              </div>
+                          </div>
+                      </div>-->
+                      <!--<select *ngIf="_appService.currentLanguage == 'en'" #c (change)="filterByCountry(c.value)" class="filterSelectCountry" id="resizing_select_Country">
                         <option value=""> &nbsp; {{'_Country' | translate}} &nbsp; </option>
                         <option  *ngFor="let county of Counties" [value]="county.country_id" > &nbsp; {{county.name_en}} &nbsp; </option>
                       </select>
@@ -120,22 +127,35 @@
                       </select>
                       <select id="width_tmp_select_Country1">
                         <option id="width_tmp_option_Country1"></option>
-                      </select>
-                        <!--<div class="drop-list" dropdown>
-                            <a dropdownToggle>{{'_Language' | translate}} <span>&#x25BE;</span> </a>
+                      </select>-->
+                      <!--<ng-select class="countryDropdown" [items]="Counties"
+                                 bindLabel="name_en"
+                                 autofocus
+                                 placeholder="Country &#x25BE;"
+                                 bindValue="country_id">
+                      </ng-select>-->
 
-                            <div *dropdownMenu role="menu" class="dropdown-menu text-center">
-                                <div class="pt-2 pb-2" (click)="paper.lang = '' ; filter()">
-                                    <a>{{'_All' | translate}}</a></div>
-                                <div class="pt-2 pb-2" (click)="paper.lang = '1' ; filter()">
-                                    <a>{{'_English' | translate}}</a></div>
-                                <div class="pt-2 pb-2" (click)="paper.lang = '2' ;  filter()">
-                                    <a>{{'_Arabic' | translate}}</a></div>
-                            </div>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'en'" (change)="filterByCountry($event)" class="filterSelectCountry"  [config]="configCountries" [options]="Counties"></ngx-select-dropdown>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'ar'" (change)="filterByCountry($event)" class="filterSelectCountryAr"  [config]="configCountriesAr" [options]="Counties"></ngx-select-dropdown>
 
-                        </div>-->
+                      <!--<div class="drop-list" dropdown>
+                          <a dropdownToggle>{{'_Language' | translate}} <span>&#x25BE;</span> </a>
 
-                      <select #l (change)="filterByLanguage(l.value)" class="filterSelectLanguage" id="resizing_select_Language">
+                          <div *dropdownMenu role="menu" class="dropdown-menu text-center">
+                              <div class="pt-2 pb-2" (click)="paper.lang = '' ; filter()">
+                                  <a>{{'_All' | translate}}</a></div>
+                              <div class="pt-2 pb-2" (click)="paper.lang = '1' ; filter()">
+                                  <a>{{'_English' | translate}}</a></div>
+                              <div class="pt-2 pb-2" (click)="paper.lang = '2' ;  filter()">
+                                  <a>{{'_Arabic' | translate}}</a></div>
+                          </div>
+
+                      </div>-->
+
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'en'" (change)="filterByLanguage($event)" class="filterSelectLanguage"  [config]="configLanguage" [options]="Language"></ngx-select-dropdown>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'ar'" (change)="filterByLanguage($event)" class="filterSelectLanguageAr"  [config]="configLanguageAr" [options]="LanguageAr"></ngx-select-dropdown>
+
+                      <!--<select #l (change)="filterByLanguage(l.value)" class="filterSelectLanguage" id="resizing_select_Language">
                         <option value=""> &nbsp; {{'_Language' | translate}} &nbsp; </option>
                         <option  value="1" > &nbsp; {{'_English' | translate}} </option>
                         <option  value="2" > &nbsp; {{'_Arabic' | translate}} </option>
@@ -143,7 +163,7 @@
 
                       <select id="width_tmp_select_Language">
                         <option id="width_tmp_option_Language"></option>
-                      </select>
+                      </select>-->
                         <!--<div class="drop-list" dropdown>
                             <a dropdownToggle>{{'_Year' | translate}}<span>&#x25BE;</span></a>
                             <div *dropdownMenu role="menu" class="dropdown-menu text-center">
@@ -155,12 +175,15 @@
                             </div>
                         </div>-->
 
-                      <select #y (change)="filterByYear(y.value)" class="filterSelectYear" id="resizing_select_Year">
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'en'" (change)="filterByYear($event)" class="filterSelectYear"  [config]="configYear" [options]="years"></ngx-select-dropdown>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'ar'" (change)="filterByYear($event)" class="filterSelectYearAr"  [config]="configYearAr" [options]="years"></ngx-select-dropdown>
+
+                      <!--<select #y (change)="filterByYear(y.value)" class="filterSelectYear" id="resizing_select_Year">
                         <option value=""> &nbsp; {{'_Year' | translate}} &nbsp; </option>
                         <option  *ngFor="let year of years" [value]="year.year"  > &nbsp; {{year.year}} &nbsp; </option>
                       </select> <span class="filterByYearDropdown">&#x25BE;</span>
 
-                      <!--<select id="width_tmp_select_Year">
+                      <select id="width_tmp_select_Year">
                         <option id="width_tmp_option_year"></option>
                       </select>-->
 
@@ -170,11 +193,10 @@
             <div class="col-lg-12 research-input">
                 <div class="row" >
                     <div class="input-group" [formGroup]="searchForm">
-                        <input type="text" class="form-control" formControlName="search" (keyup.enter)="filter()"
+                        <input type="text" class="form-control" formControlName="search" (keyup)="filter()"
                                placeholder="{{'_Search' | translate}}...">
                         <span class="input-group-btn">
-                                <button class="btn btn-default" type="button" (click)="filter()"><i class="fa fa-search"
-                                                                                                    aria-hidden="true"></i></button>
+                                <button class="btn btn-default" type="button" (click)="filter()"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </span>
                     </div>
                 </div>
@@ -194,14 +216,18 @@
              data-aos="fade-up" [attr.data-aos-delay]="(i % 9) * 100" data-aos-duration="1000"data-aos-once="true">
             <div class="bookmark" style="cursor: pointer"
                  [style.float]="paper.language == 1 ?  'right' :  'left'">
-                <img src="assets/img/save-en.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'en'"
+                <img src="assets/img/save-en.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'en' && paper.username != username"
                      alt="Save paper">
-                <img src="assets/img/saved-en.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'en'"
+                <img src="assets/img/saved-en.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'en' && paper.username != username"
                      alt="Unsave Paper">
-                <img src="assets/img/save-ar.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'ar'"
-                     alt="Save paper">
-                <img src="assets/img/saved-ar.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'ar'"
-                     alt="Unsave Paper">
+              <img src="assets/img/save-ar.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'ar' && paper.username != username"
+                   alt="Save paper">
+              <img src="assets/img/saved-ar.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'ar' && paper.username != username"
+                   alt="Unsave Paper">
+              <img src="assets/img/Edit_En_Png.png" [routerLink]="['/edit-paper' , paper.paper_id]" *ngIf="_appService.currentLanguage == 'en' && paper.username == username"
+                   alt="Edit Paper">
+              <img src="assets/img/Edit_Ar_Png.png" [routerLink]="['/edit-paper' , paper.paper_id]" *ngIf="_appService.currentLanguage == 'ar' && paper.username == username"
+                   alt="Edit Paper">
             </div>
             <div class="items-container">
                 <div class="item-header">
@@ -209,7 +235,7 @@
                         <h3
                                 [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'"
                                 [style.text-align]="paper.language == 1 ?  'left' :  'right'"
-                        >{{(paper?.title.length > 60) ? (paper?.title | slice:0:60) + '...' : (paper?.title) }}
+                        >{{(paper?.title.length > 40) ? (paper?.title | slice:0:40) + '...' : (paper?.title) }}
 
                         </h3>
                         <div *ngIf="paper.language == 1" [style.margin-right]="'auto'"></div>
@@ -238,12 +264,15 @@
                         </div>
                         <div class="paper-description" >
                             <p [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'">
-                                {{ (paper?.description.length > 200) ? (paper?.description | slice:0:200) + '...' : (paper?.description) }}
+                                {{ (paper?.description.length > 175) ? (paper?.description | slice:0:175) + '...' : (paper?.description) }}
                             </p>
                         </div>
-                        <div class="view-more" (click)="viewPaper(paper)">
+                      <div class="view-more-button-action" (click)="viewPaper(paper)">
+                        <button>{{'_ViewMore' | translate}}</button>
+                      </div>
+                        <!--<div class="view-more" (click)="viewPaper(paper)">
                             <p>{{'_ViewMore' | translate}}</p>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="item-body" *ngIf="_appService.currentLanguage == 'en'">
                         <div class="paper-card-info" style="cursor: pointer"
@@ -265,12 +294,15 @@
                         </div>
                         <div class="paper-description">
                             <p [style.direction]="paper.language == 1 ?  'ltr' :  'rtl'">
-                                {{ (paper?.description.length > 200) ? (paper?.description | slice:0:200) + '...' : (paper?.description) }}
+                                {{ (paper?.description.length > 175) ? (paper?.description | slice:0:175) + '...' : (paper?.description) }}
                             </p>
                         </div>
-                        <div class="view-more" (click)="viewPaper(paper)">
+                      <div class="view-more-button-action" (click)="viewPaper(paper)">
+                        <button>{{'_ViewMore' | translate}}</button>
+                      </div>
+                        <!--<div class="view-more" (click)="viewPaper(paper)">
                             <p>{{'_ViewMore' | translate}}</p>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="item-footer">
                         <div class="view-download" [style.direction]="_appService.currentLanguage == 'en' ?  'ltr' :  'rtl'">
@@ -280,13 +312,13 @@
                                 <h6>{{paper.views}} {{'_Views' | translate}}</h6>
                             </div>
                             <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
-                                <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
+                                <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{paper.downloads}} {{'_Downloads' | translate}}</h6>
                             </div>
-                            <div class="edit-paper" style="cursor: pointer"
+                            <!--<div class="edit-paper" style="cursor: pointer"
                                  [routerLink]="['/edit-paper' , paper.paper_id]"
                                  *ngIf="paper.username == username">
                                 <i class="fa fa fa-pencil-square-o"></i>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>

@@ -5,15 +5,19 @@
 @import 'assets/css/datepicker.css';
 @import 'assets/css/animation.css';
 @import 'assets/css/aos.css';
-
-
+@import "../node_modules/ngx-select-dropdown/dist/assets/style.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #1b2850;
+  background: #1b2850;
+  direction:ltr;
+}
+::-webkit-scrollbar {
+  direction:ltr;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {

@@ -385,9 +385,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit(): void {
         AOS.refresh();
+      $(document).ready(function(){
+        $("#preloader").remove();
+        $(".social-paper .card-icon-research").mouseover(function () {
+          $('.social-paper .card-icon-research img').attr('src','assets/img/ResearchPaper.gif');
+        });
+        $(".social-paper .card-icon-research").mouseout(function () {
+          $('.social-paper .card-icon-research img').attr('src','assets/img/ResearchPaper.png');
+        });
+        $(".social-paper .card-icon-submit").mouseover(function () {
+          $(".social-paper .card-icon-submit img").attr('src','assets/img/UploadPaper.gif');
+        });
+        $('.social-paper .card-icon-submit').mouseout(function () {
+          $('.social-paper .card-icon-submit img').attr('src','assets/img/UploadPaper.png');
+        });
+      });
     }
 
-    ngOnInit() {
+ngOnInit() {
  this._appService.active = 0;
         this.getStatistics();
         window.scrollTo(0, 0);

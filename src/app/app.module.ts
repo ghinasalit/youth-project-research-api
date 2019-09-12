@@ -9,12 +9,12 @@ import {RouterModule} from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {
-    MatAutocompleteModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule
+  MatAutocompleteModule,
+  MatCardModule,
+  MatCheckboxModule, MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SafePipe} from '../pipes/safeURLs.pipe';
@@ -58,7 +58,9 @@ import { AcceptRequestComponent } from './civil/accept-request/accept-request.co
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { ResetPasswordComponent } from './civil/reset-password/reset-password.component';
 import { ChangePasswordComponent } from './civil/change-password/change-password.component';
-
+import { SelectDropDownModule } from 'ngx-select-dropdown';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -109,49 +111,53 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 
     ],
-    imports: [
-        DialogModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        InfiniteScrollModule,
-        FormsModule,
-        ReactiveFormsModule,
-        AppRoutingModule,
-        SlideshowModule,
-        SwiperModule,
-        MatCardModule,
-        HttpClientModule,
-        RouterModule,
-        MatFormFieldModule,
-        MatAutocompleteModule,
-        MatRadioModule,
-        MatIconModule,
-        MatCheckboxModule,
-        MatSelectModule,
-        MatInputModule,
-        ImageCropperModule,
-        BsDatepickerModule.forRoot(),
-        LeafletModule.forRoot(),
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        }),
-        BsDropdownModule.forRoot(),
-        DatepickerModule.forRoot(),
-        NgProgressModule.withConfig({
-            spinner: false,
-            color: '#000'
-        }),
-        ToastrModule.forRoot({
-            timeOut: 10000,
-            positionClass: 'toast-bottom-right',
-            preventDuplicates: true,
-        }),
-        NgProgressHttpModule
-    ],
+  imports: [
+    DialogModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    InfiniteScrollModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    SlideshowModule,
+    SwiperModule,
+    MatCardModule,
+    HttpClientModule,
+    RouterModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatRadioModule,
+    MatIconModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatInputModule,
+    ImageCropperModule,
+    SelectDropDownModule,
+    NgSelectModule,
+    NgxFileDropModule,
+    BsDatepickerModule.forRoot(),
+    LeafletModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    BsDropdownModule.forRoot(),
+    DatepickerModule.forRoot(),
+    NgProgressModule.withConfig({
+      spinner: false,
+      color: '#000'
+    }),
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
+    NgProgressHttpModule,
+    MatDialogModule
+  ],
     providers: [{
         provide: SWIPER_CONFIG,
         useValue: DEFAULT_SWIPER_CONFIG

@@ -15,6 +15,8 @@ export class DetailsPaperComponent implements OnInit {
     paperForm: FormGroup;
     collapsed = false;
     tags: any;
+    disciplineValue: any;
+    tagsValue: any = [];
     disciplines: any = [];
     toppings = new FormControl();
     filteredOptions: Observable<string[]>;
@@ -35,21 +37,21 @@ export class DetailsPaperComponent implements OnInit {
             'lang': [null, Validators.required],
 
         });
+
     }
 
     title = new FormControl('', [Validators.required]);
-    discipline = new FormControl('', [Validators.required]);
     description = new FormControl('', [Validators.required]);
-    tag = new FormControl('', [Validators.required]);
     lang = new FormControl('', [Validators.required]);
 
     savePaper() {
-        this.appService.paper.append('title', this.paperForm.controls.title.value);
-        this.appService.paper.append('discipline', this.paperForm.controls.discipline.value);
+
+      this.appService.paper.append('title', this.paperForm.controls.title.value);
+       this.appService.paper.append('discipline', this.paperForm.controls.discipline.value);
         this.appService.paper.append('description', this.paperForm.controls.description.value);
-        this.appService.paper.append('lang', this.paperForm.controls.lang.value);
         this.appService.paper.append('tags[]', this.paperForm.controls.tags.value);
-        console.log(this.paperForm.controls.tags.value);
+        this.appService.paper.append('lang', this.paperForm.controls.lang.value);
+
 
         this.router.navigate(['/upload-paper/upload-completed']);
 

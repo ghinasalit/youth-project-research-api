@@ -100,7 +100,7 @@ textarea.mat-input-element {
     height: 20px;
     left: 0;
     position: absolute;
-    top: -32px;
+    /*top: -32px;*/
     transition: border-color ease 280ms;
     width: 20px;
     border-width: 2px;
@@ -114,7 +114,7 @@ textarea.mat-input-element {
     height: 20px;
     left: 0;
     position: absolute;
-    top: -32px;
+    /*top: -32px;*/
     transition: transform ease 280ms,background-color ease 280ms;
     width: 20px;
     transform: scale(.001);
@@ -132,8 +132,6 @@ textarea.mat-input-element {
 ::ng-deep label{
     font-weight: normal !important;
 }
-
-
 
 /*.submit {*/
 /*    text-align: center;*/

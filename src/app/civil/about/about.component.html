@@ -2,18 +2,18 @@
 
 </nav>
 
-<div class="full-section">
+<div class="full-section" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'" >
     <div class="top-sticker"></div>
     <div class="center-sticker" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true"></div>
     <div class="side" data-aos-duration="1000" data-aos-once="true"
          [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'">
         <div class="sec-img">
-            <img src="assets/img/about.png">
+            <img src="assets/img/Significance.jpg">
         </div>
     </div>
     <div class="side" data-aos-duration="1000" data-aos-once="true"
          [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'">
-        <div class="navbar-login logged">
+        <!--<div class="navbar-login logged">
 
             <div class="login-register" *ngIf="!_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')"
@@ -31,13 +31,12 @@
                 <div class="login"  [routerLink]="['/profile' , member_id]">{{'_MyProfile'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
-        </div>
+        </div>-->
 
         <div class="sec-content">
             <div class="about-content">
                 <h1 class="text-left">
-                    <p>{{'_Significance'| translate}}</p>
-                    <p>{{'_AYRP'| translate}}</p>
+                    <p>{{'_Significance'| translate}} {{'_AYRP'| translate}}</p>
                 </h1>
               <div class="line"></div>
                 <div class="content">
@@ -45,18 +44,17 @@
 
                 </div>
             </div>
-            <div class="social">
-                <div><i class="fa fa-facebook"></i></div>
-                <div><i class="fa fa-instagram"></i></div>
-                <div><i class="fa fa-twitter"></i></div>
-                <div><i class="fa fa-youtube"></i></div>
-            </div>
-
         </div>
     </div>
 </div>
+<div class="social" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'" >
+  <div><i class="fa fa-facebook"></i></div>
+  <div><i class="fa fa-instagram"></i></div>
+  <div><i class="fa fa-twitter"></i></div>
+  <div><i class="fa fa-youtube"></i></div>
+</div>
 
-<div class="become-researcher" id="becomeResearcher" data-aos="fade-down" data-aos-once="true">
+<div class="become-researcher" id="becomeResearcher" data-aos="fade-down" data-aos-once="true" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'" >
     <div class="title" data-aos="fade-down" data-aos-duration="500" data-aos-once="true" ata-aos-once="true">
         <p>{{'_Objectives' | translate}}</p>
         <div></div>
@@ -186,7 +184,7 @@
 <!--</div>-->
 
 
-<div class="full-section" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+<div class="full-section" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'" >
     <div class="left-sticker"></div>
     <div class="center-sticker"></div>
     <div class="side">
@@ -205,10 +203,9 @@
                     <p>{{'_AbourJoinDesc' | translate}}</p>
                 </div>
                 <div *ngIf="!_appService.roll">
-                    <div class="title read-more d-line" style="cursor: pointer" routerLink="/register">
-                        <p>{{'_JoinAYRB' | translate}}</p>
-                        <div class="line"></div>
-                    </div>
+                  <div class="button-action join-ayrp-button" routerLink="/register">
+                    <button>{{'_JoinAYRB' | translate}}</button>
+                  </div>
                 </div>
             </div>
 

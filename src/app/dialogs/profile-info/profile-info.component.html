@@ -44,7 +44,7 @@
                         <mat-option>--</mat-option>
                         <mat-option *ngFor="let university of universities"  [value]="university.university_id">
                             <span *ngIf="_appService.currentLanguage === 'en'">{{university.name_en}}</span>
-                            <span *ngIf="_appService.currentLanguage === 'ar'">{{university.name_en}}</span>
+                            <span *ngIf="_appService.currentLanguage === 'ar'">{{university.name_ar}}</span>
                         </mat-option>
                     </mat-select>
                     <mat-error *ngIf="university.hasError('required')">{{'_Required' | translate}}</mat-error>
@@ -56,7 +56,232 @@
                     </mat-form-field>
                     <i class="fa fa-address-book-o" aria-hidden="true"></i>
                 </div>
+              <div class="field-item">
+              <mat-form-field>
+                <mat-label>{{'_CountryCode' | translate}}</mat-label>
 
+                <mat-select formControlName="countryCode" >
+                  <mat-option></mat-option>
+                  <mat-option data-countryCode="AF" value="+93">Afghanistan (+93)</mat-option>
+                  <mat-option data-countryCode="DZ" value="+213">Algeria (+213)</mat-option>
+                  <mat-option data-countryCode="AD" value="+376">Andorra (+376)</mat-option>
+                  <mat-option data-countryCode="AO" value="+244">Angola (+244)</mat-option>
+                  <mat-option data-countryCode="AI" value="+1264">Anguilla (+1264)</mat-option>
+                  <mat-option data-countryCode="AG" value="+1268">Antigua &amp; Barbuda (+1268)</mat-option>
+                  <mat-option data-countryCode="AR" value="+54">Argentina (+54)</mat-option>
+                  <mat-option data-countryCode="AM" value="+374">Armenia (+374)</mat-option>
+                  <mat-option data-countryCode="AW" value="+297">Aruba (+297)</mat-option>
+                  <mat-option data-countryCode="AU" value="+61">Australia (+61)</mat-option>
+                  <mat-option data-countryCode="AT" value="+43">Austria (+43)</mat-option>
+                  <mat-option data-countryCode="AZ" value="+994">Azerbaijan (+994)</mat-option>
+                  <mat-option data-countryCode="BS" value="+1242">Bahamas (+1242)</mat-option>
+                  <mat-option data-countryCode="BH" value="+973">Bahrain (+973)</mat-option>
+                  <mat-option data-countryCode="BD" value="+880">Bangladesh (+880)</mat-option>
+                  <mat-option data-countryCode="BB" value="+1246">Barbados (+1246)</mat-option>
+                  <mat-option data-countryCode="BY" value="+375">Belarus (+375)</mat-option>
+                  <mat-option data-countryCode="BE" value="+32">Belgium (+32)</mat-option>
+                  <mat-option data-countryCode="BZ" value="+501">Belize (+501)</mat-option>
+                  <mat-option data-countryCode="BJ" value="+229">Benin (+229)</mat-option>
+                  <mat-option data-countryCode="BM" value="+1441">Bermuda (+1441)</mat-option>
+                  <mat-option data-countryCode="BT" value="+975">Bhutan (+975)</mat-option>
+                  <mat-option data-countryCode="BO" value="+591">Bolivia (+591)</mat-option>
+                  <mat-option data-countryCode="BA" value="+387">Bosnia Herzegovina (+387)</mat-option>
+                  <mat-option data-countryCode="BW" value="+267">Botswana (+267)</mat-option>
+                  <mat-option data-countryCode="BR" value="+55">Brazil (+55)</mat-option>
+                  <mat-option data-countryCode="BN" value="+673">Brunei (+673)</mat-option>
+                  <mat-option data-countryCode="BG" value="+359">Bulgaria (+359)</mat-option>
+                  <mat-option data-countryCode="BF" value="+226">Burkina Faso (+226)</mat-option>
+                  <mat-option data-countryCode="BI" value="+257">Burundi (+257)</mat-option>
+                  <mat-option data-countryCode="KH" value="+855">Cambodia (+855)</mat-option>
+                  <mat-option data-countryCode="CM" value="+237">Cameroon (+237)</mat-option>
+                  <mat-option data-countryCode="CA" value="+1">Canada (+1)</mat-option>
+                  <mat-option data-countryCode="CV" value="+238">Cape Verde Islands (+238)</mat-option>
+                  <mat-option data-countryCode="KY" value="+1345">Cayman Islands (+1345)</mat-option>
+                  <mat-option data-countryCode="CF" value="+236">Central African Republic (+236)</mat-option>
+                  <mat-option data-countryCode="CL" value="+56">Chile (+56)</mat-option>
+                  <mat-option data-countryCode="CN" value="+86">China (+86)</mat-option>
+                  <mat-option data-countryCode="CO" value="+57">Colombia (+57)</mat-option>
+                  <mat-option data-countryCode="KM" value="+269">Comoros (+269)</mat-option>
+                  <mat-option data-countryCode="CG" value="+242">Congo (+242)</mat-option>
+                  <mat-option data-countryCode="CK" value="+682">Cook Islands (+682)</mat-option>
+                  <mat-option data-countryCode="CR" value="+506">Costa Rica (+506)</mat-option>
+                  <mat-option data-countryCode="HR" value="+385">Croatia (+385)</mat-option>
+                  <mat-option data-countryCode="CU" value="+53">Cuba (+53)</mat-option>
+                  <mat-option data-countryCode="CY" value="+90392">Cyprus North (+90392)</mat-option>
+                  <mat-option data-countryCode="CY" value="+357">Cyprus South (+357)</mat-option>
+                  <mat-option data-countryCode="CZ" value="+42">Czech Republic (+42)</mat-option>
+                  <mat-option data-countryCode="DK" value="+45">Denmark (+45)</mat-option>
+                  <mat-option data-countryCode="DJ" value="+253">Djibouti (+253)</mat-option>
+                  <mat-option data-countryCode="DM" value="+1809">Dominica (+1809)</mat-option>
+                  <mat-option data-countryCode="DO" value="+1809">Dominican Republic (+1809)</mat-option>
+                  <mat-option data-countryCode="EC" value="+593">Ecuador (+593)</mat-option>
+                  <mat-option data-countryCode="EG" value="+20">Egypt (+20)</mat-option>
+                  <mat-option data-countryCode="SV" value="+503">El Salvador (+503)</mat-option>
+                  <mat-option data-countryCode="GQ" value="+240">Equatorial Guinea (+240)</mat-option>
+                  <mat-option data-countryCode="ER" value="+291">Eritrea (+291)</mat-option>
+                  <mat-option data-countryCode="EE" value="+372">Estonia (+372)</mat-option>
+                  <mat-option data-countryCode="ET" value="+251">Ethiopia (+251)</mat-option>
+                  <mat-option data-countryCode="FK" value="+500">Falkland Islands (+500)</mat-option>
+                  <mat-option data-countryCode="FO" value="+298">Faroe Islands (+298)</mat-option>
+                  <mat-option data-countryCode="FJ" value="+679">Fiji (+679)</mat-option>
+                  <mat-option data-countryCode="FI" value="+358">Finland (+358)</mat-option>
+                  <mat-option data-countryCode="FR" value="+33">France (+33)</mat-option>
+                  <mat-option data-countryCode="GF" value="+594">French Guiana (+594)</mat-option>
+                  <mat-option data-countryCode="PF" value="+689">French Polynesia (+689)</mat-option>
+                  <mat-option data-countryCode="GA" value="+241">Gabon (+241)</mat-option>
+                  <mat-option data-countryCode="GM" value="+220">Gambia (+220)</mat-option>
+                  <mat-option data-countryCode="GE" value="+7880">Georgia (+7880)</mat-option>
+                  <mat-option data-countryCode="DE" value="+49">Germany (+49)</mat-option>
+                  <mat-option data-countryCode="GH" value="+233">Ghana (+233)</mat-option>
+                  <mat-option data-countryCode="GI" value="+350">Gibraltar (+350)</mat-option>
+                  <mat-option data-countryCode="GR" value="+30">Greece (+30)</mat-option>
+                  <mat-option data-countryCode="GL" value="+299">Greenland (+299)</mat-option>
+                  <mat-option data-countryCode="GD" value="+1473">Grenada (+1473)</mat-option>
+                  <mat-option data-countryCode="GP" value="+590">Guadeloupe (+590)</mat-option>
+                  <mat-option data-countryCode="GU" value="+671">Guam (+671)</mat-option>
+                  <mat-option data-countryCode="GT" value="+502">Guatemala (+502)</mat-option>
+                  <mat-option data-countryCode="GN" value="+224">Guinea (+224)</mat-option>
+                  <mat-option data-countryCode="GW" value="+245">Guinea - Bissau (+245)</mat-option>
+                  <mat-option data-countryCode="GY" value="+592">Guyana (+592)</mat-option>
+                  <mat-option data-countryCode="HT" value="+509">Haiti (+509)</mat-option>
+                  <mat-option data-countryCode="HN" value="+504">Honduras (+504)</mat-option>
+                  <mat-option data-countryCode="HK" value="+852">Hong Kong (+852)</mat-option>
+                  <mat-option data-countryCode="HU" value="+36">Hungary (+36)</mat-option>
+                  <mat-option data-countryCode="IS" value="+354">Iceland (+354)</mat-option>
+                  <mat-option data-countryCode="IN" value="+91">India (+91)</mat-option>
+                  <mat-option data-countryCode="ID" value="+62">Indonesia (+62)</mat-option>
+                  <mat-option data-countryCode="IR" value="+98">Iran (+98)</mat-option>
+                  <mat-option data-countryCode="IQ" value="+964">Iraq (+964)</mat-option>
+                  <mat-option data-countryCode="IE" value="+353">Ireland (+353)</mat-option>
+                  <mat-option data-countryCode="IL" value="+972">Israel (+972)</mat-option>
+                  <mat-option data-countryCode="IT" value="+39">Italy (+39)</mat-option>
+                  <mat-option data-countryCode="JM" value="+1876">Jamaica (+1876)</mat-option>
+                  <mat-option data-countryCode="JP" value="+81">Japan (+81)</mat-option>
+                  <mat-option data-countryCode="JO" value="+962">Jordan (+962)</mat-option>
+                  <mat-option data-countryCode="KZ" value="+7">Kazakhstan (+7)</mat-option>
+                  <mat-option data-countryCode="KE" value="+254">Kenya (+254)</mat-option>
+                  <mat-option data-countryCode="KI" value="+686">Kiribati (+686)</mat-option>
+                  <mat-option data-countryCode="KP" value="+850">Korea North (+850)</mat-option>
+                  <mat-option data-countryCode="KR" value="+82">Korea South (+82)</mat-option>
+                  <mat-option data-countryCode="KW" value="+965">Kuwait (+965)</mat-option>
+                  <mat-option data-countryCode="KG" value="+996">Kyrgyzstan (+996)</mat-option>
+                  <mat-option data-countryCode="LA" value="+856">Laos (+856)</mat-option>
+                  <mat-option data-countryCode="LV" value="+371">Latvia (+371)</mat-option>
+                  <mat-option data-countryCode="LB" value="+961">Lebanon (+961)</mat-option>
+                  <mat-option data-countryCode="LS" value="+266">Lesotho (+266)</mat-option>
+                  <mat-option data-countryCode="LR" value="+231">Liberia (+231)</mat-option>
+                  <mat-option data-countryCode="LY" value="+218">Libya (+218)</mat-option>
+                  <mat-option data-countryCode="LI" value="+417">Liechtenstein (+417)</mat-option>
+                  <mat-option data-countryCode="LT" value="+370">Lithuania (+370)</mat-option>
+                  <mat-option data-countryCode="LU" value="+352">Luxembourg (+352)</mat-option>
+                  <mat-option data-countryCode="MO" value="+853">Macao (+853)</mat-option>
+                  <mat-option data-countryCode="MK" value="+389">Macedonia (+389)</mat-option>
+                  <mat-option data-countryCode="MG" value="+261">Madagascar (+261)</mat-option>
+                  <mat-option data-countryCode="MW" value="+265">Malawi (+265)</mat-option>
+                  <mat-option data-countryCode="MY" value="+60">Malaysia (+60)</mat-option>
+                  <mat-option data-countryCode="MV" value="+960">Maldives (+960)</mat-option>
+                  <mat-option data-countryCode="ML" value="+223">Mali (+223)</mat-option>
+                  <mat-option data-countryCode="MT" value="+356">Malta (+356)</mat-option>
+                  <mat-option data-countryCode="MH" value="+692">Marshall Islands (+692)</mat-option>
+                  <mat-option data-countryCode="MQ" value="+596">Martinique (+596)</mat-option>
+                  <mat-option data-countryCode="MR" value="+222">Mauritania (+222)</mat-option>
+                  <mat-option data-countryCode="YT" value="+269">Mayotte (+269)</mat-option>
+                  <mat-option data-countryCode="MX" value="+52">Mexico (+52)</mat-option>
+                  <mat-option data-countryCode="FM" value="+691">Micronesia (+691)</mat-option>
+                  <mat-option data-countryCode="MD" value="+373">Moldova (+373)</mat-option>
+                  <mat-option data-countryCode="MC" value="+377">Monaco (+377)</mat-option>
+                  <mat-option data-countryCode="MN" value="+976">Mongolia (+976)</mat-option>
+                  <mat-option data-countryCode="MS" value="+1664">Montserrat (+1664)</mat-option>
+                  <mat-option data-countryCode="MA" value="+212">Morocco (+212)</mat-option>
+                  <mat-option data-countryCode="MZ" value="+258">Mozambique (+258)</mat-option>
+                  <mat-option data-countryCode="MN" value="+95">Myanmar (+95)</mat-option>
+                  <mat-option data-countryCode="NA" value="+264">Namibia (+264)</mat-option>
+                  <mat-option data-countryCode="NR" value="+674">Nauru (+674)</mat-option>
+                  <mat-option data-countryCode="NP" value="+977">Nepal (+977)</mat-option>
+                  <mat-option data-countryCode="NL" value="+31">Netherlands (+31)</mat-option>
+                  <mat-option data-countryCode="NC" value="+687">New Caledonia (+687)</mat-option>
+                  <mat-option data-countryCode="NZ" value="+64">New Zealand (+64)</mat-option>
+                  <mat-option data-countryCode="NI" value="+505">Nicaragua (+505)</mat-option>
+                  <mat-option data-countryCode="NE" value="+227">Niger (+227)</mat-option>
+                  <mat-option data-countryCode="NG" value="+234">Nigeria (+234)</mat-option>
+                  <mat-option data-countryCode="NU" value="+683">Niue (+683)</mat-option>
+                  <mat-option data-countryCode="NF" value="+672">Norfolk Islands (+672)</mat-option>
+                  <mat-option data-countryCode="NP" value="+670">Northern Marianas (+670)</mat-option>
+                  <mat-option data-countryCode="NO" value="+47">Norway (+47)</mat-option>
+                  <mat-option data-countryCode="OM" value="+968">Oman (+968)</mat-option>
+                  <mat-option data-countryCode="PK" value="+92">Pakistan (+92)</mat-option>
+                  <mat-option data-countryCode="PW" value="+680">Palau (+680)</mat-option>
+                  <mat-option data-countryCode="PA" value="+507">Panama (+507)</mat-option>
+                  <mat-option data-countryCode="PG" value="+675">Papua New Guinea (+675)</mat-option>
+                  <mat-option data-countryCode="PY" value="+595">Paraguay (+595)</mat-option>
+                  <mat-option data-countryCode="PE" value="+51">Peru (+51)</mat-option>
+                  <mat-option data-countryCode="PH" value="+63">Philippines (+63)</mat-option>
+                  <mat-option data-countryCode="PL" value="+48">Poland (+48)</mat-option>
+                  <mat-option data-countryCode="PT" value="+351">Portugal (+351)</mat-option>
+                  <mat-option data-countryCode="PR" value="+1787">Puerto Rico (+1787)</mat-option>
+                  <mat-option data-countryCode="QA" value="+974">Qatar (+974)</mat-option>
+                  <mat-option data-countryCode="RE" value="+262">Reunion (+262)</mat-option>
+                  <mat-option data-countryCode="RO" value="+40">Romania (+40)</mat-option>
+                  <mat-option data-countryCode="RU" value="+7">Russia (+7)</mat-option>
+                  <mat-option data-countryCode="RW" value="+250">Rwanda (+250)</mat-option>
+                  <mat-option data-countryCode="SM" value="+378">San Marino (+378)</mat-option>
+                  <mat-option data-countryCode="ST" value="+239">Sao Tome &amp; Principe (+239)</mat-option>
+                  <mat-option data-countryCode="SA" value="+966">Saudi Arabia (+966)</mat-option>
+                  <mat-option data-countryCode="SN" value="+221">Senegal (+221)</mat-option>
+                  <mat-option data-countryCode="CS" value="+381">Serbia (+381)</mat-option>
+                  <mat-option data-countryCode="SC" value="+248">Seychelles (+248)</mat-option>
+                  <mat-option data-countryCode="SL" value="+232">Sierra Leone (+232)</mat-option>
+                  <mat-option data-countryCode="SG" value="+65">Singapore (+65)</mat-option>
+                  <mat-option data-countryCode="SK" value="+421">Slovak Republic (+421)</mat-option>
+                  <mat-option data-countryCode="SI" value="+386">Slovenia (+386)</mat-option>
+                  <mat-option data-countryCode="SB" value="+677">Solomon Islands (+677)</mat-option>
+                  <mat-option data-countryCode="SO" value="+252">Somalia (+252)</mat-option>
+                  <mat-option data-countryCode="ZA" value="+27">South Africa (+27)</mat-option>
+                  <mat-option data-countryCode="ES" value="+34">Spain (+34)</mat-option>
+                  <mat-option data-countryCode="LK" value="+94">Sri Lanka (+94)</mat-option>
+                  <mat-option data-countryCode="SH" value="+290">St. Helena (+290)</mat-option>
+                  <mat-option data-countryCode="KN" value="+1869">St. Kitts (+1869)</mat-option>
+                  <mat-option data-countryCode="SC" value="+1758">St. Lucia (+1758)</mat-option>
+                  <mat-option data-countryCode="SD" value="+249">Sudan (+249)</mat-option>
+                  <mat-option data-countryCode="SR" value="+597">Suriname (+597)</mat-option>
+                  <mat-option data-countryCode="SZ" value="+268">Swaziland (+268)</mat-option>
+                  <mat-option data-countryCode="SE" value="+46">Sweden (+46)</mat-option>
+                  <mat-option data-countryCode="CH" value="+41">Switzerland (+41)</mat-option>
+                  <mat-option data-countryCode="SI" value="+963">Syria (+963)</mat-option>
+                  <mat-option data-countryCode="TW" value="+886">Taiwan (+886)</mat-option>
+                  <mat-option data-countryCode="TJ" value="+7">Tajikstan (+7)</mat-option>
+                  <mat-option data-countryCode="TH" value="+66">Thailand (+66)</mat-option>
+                  <mat-option data-countryCode="TG" value="+228">Togo (+228)</mat-option>
+                  <mat-option data-countryCode="TO" value="+676">Tonga (+676)</mat-option>
+                  <mat-option data-countryCode="TT" value="+1868">Trinidad &amp; Tobago (+1868)</mat-option>
+                  <mat-option data-countryCode="TN" value="+216">Tunisia (+216)</mat-option>
+                  <mat-option data-countryCode="TR" value="+90">Turkey (+90)</mat-option>
+                  <mat-option data-countryCode="TM" value="+7">Turkmenistan (+7)</mat-option>
+                  <mat-option data-countryCode="TM" value="+993">Turkmenistan (+993)</mat-option>
+                  <mat-option data-countryCode="TC" value="+1649">Turks &amp; Caicos Islands (+1649)</mat-option>
+                  <mat-option data-countryCode="TV" value="+688">Tuvalu (+688)</mat-option>
+                  <mat-option data-countryCode="UG" value="+256">Uganda (+256)</mat-option>
+                   <mat-option data-countryCode="GB" value="+44">UK (+44)</mat-option>
+                  <mat-option data-countryCode="UA" value="+380">Ukraine (+380)</mat-option>
+                  <mat-option data-countryCode="AE" value="+971">United Arab Emirates (+971)</mat-option>
+                  <mat-option data-countryCode="UY" value="+598">Uruguay (+598)</mat-option>
+                   <mat-option data-countryCode="US" value="+1">USA (+1)</mat-option>
+                  <mat-option data-countryCode="UZ" value="+7">Uzbekistan (+7)</mat-option>
+                  <mat-option data-countryCode="VU" value="+678">Vanuatu (+678)</mat-option>
+                  <mat-option data-countryCode="VA" value="+379">Vatican City (+379)</mat-option>
+                  <mat-option data-countryCode="VE" value="+58">Venezuela (+58)</mat-option>
+                  <mat-option data-countryCode="VN" value="+84">Vietnam (+84)</mat-option>
+                  <mat-option data-countryCode="VG" value="+84">Virgin Islands - British (+1284)</mat-option>
+                  <mat-option data-countryCode="VI" value="+84">Virgin Islands - US (+1340)</mat-option>
+                  <mat-option data-countryCode="WF" value="+681">Wallis &amp; Futuna (+681)</mat-option>
+                  <mat-option data-countryCode="YE" value="+969">Yemen (North)(+969)</mat-option>
+                  <mat-option data-countryCode="YE" value="+967">Yemen (South)(+967)</mat-option>
+                  <mat-option data-countryCode="ZM" value="+260">Zambia (+260)</mat-option>
+                  <mat-option data-countryCode="ZW" value="+263">Zimbabwe (+263)</mat-option>
+                </mat-select>
+              </mat-form-field>
+                <i class="fa fa-flag" aria-hidden="true"></i>
+            </div>
                 <div class="field-item">
                     <mat-form-field class="example-full-width">
                         <input matInput placeholder="{{'_Phone' | translate}}" value="" formControlName="phone">
@@ -64,13 +289,19 @@
                     <i class="fa fa-mobile" aria-hidden="true"></i>
                 </div>
 
-                <div class="field-item">
-                    <mat-form-field class="example-full-width">
-                        <input matInput placeholder="{{'_Location' | translate}}" value="" formControlName="location">
-                    </mat-form-field>
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                </div>
-
+              <div class="field-item">
+              <mat-form-field>
+                <mat-label>{{'_Country' | translate}}</mat-label>
+                <mat-select formControlName="location" >
+                  <mat-option>--</mat-option>
+                  <mat-option *ngFor="let country of Countries"  [value]="_appService.currentLanguage== 'en' ? country.name_en :  country.name_ar">
+                    <span *ngIf="_appService.currentLanguage === 'en'">{{country.name_en}}</span>
+                    <span *ngIf="_appService.currentLanguage === 'ar'">{{country.name_ar}}</span>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              </div>
                 <div class="field-item">
                     <mat-form-field class="example-full-width">
                         <input matInput placeholder="{{'_LinkedIn' | translate}}" value="" formControlName="Linkedin">

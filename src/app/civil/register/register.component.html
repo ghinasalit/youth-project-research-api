@@ -2,7 +2,7 @@
 
 </nav>
 
-<div class="full-section register" data-aos-duration="1000">
+<div class="full-section register" data-aos-duration="1000" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
   <div class="side">
     <div class="sec-img">
       <img src="assets/img/register.jpg" alt="">
@@ -56,6 +56,14 @@
               <mat-error *ngIf="password.errors.required">{{'_Required' | translate}}</mat-error>
 
             </mat-form-field>
+            <div class="conditions">
+              <mat-checkbox formControlName="conditions" value="1" required>
+                {{'_IAcceptThe' | translate}}
+                <a mat-button (click)="openDialogCondition()">
+                  {{'_TermsConditions' | translate}}
+                </a>
+              </mat-checkbox>
+            </div>
           </div>
           <div class="submit">
             <button  [disabled]="!registerForm.valid"  (click)="openDialog()">{{'_Register' | translate}}</button>

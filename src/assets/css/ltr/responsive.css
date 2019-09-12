@@ -1,4 +1,7 @@
 @media (min-width: 1661px) {
+  ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+    padding: 5px 0px 5px 20px !important;
+  }
     /*home*/
     .edit-profile {
         width: 110px;
@@ -85,9 +88,15 @@
     }
 
 }
-
+@media (min-width: 1601px) and (max-width: 1661px) {
+  .button-action.about-arab-button, .button-action.join-ayrp-button {
+    margin-top: 0px;
+  }
+}
 @media (min-width: 1401px) and (max-width: 1600px) {
-
+  ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+    padding: 5px 0px 5px 20px !important;
+  }
 
     /*home*/
     .edit-profile {
@@ -247,10 +256,10 @@
     }
 
     .card-icon-research img {
-        position: absolute;
-        right: 48px;
-        bottom: 145px;
-        width: 144px;
+        /*position: absolute;
+        right: 120px;
+        bottom: 120px;
+        width: 180px;*/
     }
 
     app-members .full-section .sec-content, app-about .full-section .sec-content {
@@ -277,7 +286,7 @@
     }
 
     .card-item-objective .desc p {
-        font-size: 15px;
+        font-size: 16px;
     }
 
 
@@ -313,7 +322,9 @@
 
 
 @media (min-width: 1025px) and (max-width: 1400px) {
-
+  ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+    padding: 5px 0px 5px 20px !important;
+  }
 
     /*home*/
     .full-section {
@@ -393,7 +404,7 @@
 
     .navbar-login {
         display: flex;
-        height: 65px;
+        height: 35px;
         direction: rtl;
     }
 
@@ -407,7 +418,7 @@
     }
 
     h2 {
-        font-size: 25px;
+        font-size: 23px;
     }
 
     .title {
@@ -454,16 +465,16 @@
     }
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         right: 89px;
-        bottom: 147px;
-        width: 98px;
+        bottom: 110px;
+        width: 135px;*/
     }
 
     .top-description {
         font-size: 52px;
         font-weight: bold;
-        margin: 70px 115px;
+        margin: 70px 95px;
     }
 
     .drop-list {
@@ -505,11 +516,14 @@
 
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         right: 90px;
-        bottom: 148px;
-        width: 80px;
+        bottom: 110px;
+        width: 180px;*/
     }
+  .social-paper img {
+    width: 140px;
+  }
 
     .social i {
         font-size: 20px;
@@ -532,7 +546,7 @@
         justify-content: space-between;
         font-size: 20px;
         font-weight: normal;
-        color: #1b2850;
+        color: #FFF;
         cursor: pointer;
     }
 
@@ -588,10 +602,16 @@
         text-align: left;
         margin-left: 45px;
         margin-top: 60px;
+        margin-right: 45px;
     }
+
+  .contact .sec-content.sec-enquiry {
+    margin-left: 45px;
+  }
 
     .about-content .content {
         margin-top: 20px;
+      line-height: 30px;
     }
 
     .content p {
@@ -682,7 +702,7 @@
     .contact .sec-content {
         text-align: left;
         width: 85%;
-        margin-left: 65px;
+        margin-left: 40px;
         margin-top: 100px;
         margin-bottom: 70px;
     }
@@ -737,14 +757,15 @@
     /*profile*/
     .nav-block {
         display: inline-grid;
-        text-align: center;
         vertical-align: middle;
         margin: 0 0 0 0%;
+      width: 100%;
+      text-align: right;
     }
 
 
     .research-title {
-        padding: 20px;
+      padding: 20px 20px 20px 0px;
         display: flex;
         height: 135px;
         width: 100%;
@@ -987,7 +1008,12 @@
         display: flex;
         margin-left: 48px;
         margin-top: 50px;
+        margin-right: 48px;
     }
+
+  .contact .sec-content.sec-enquiry {
+    margin-left: 48px;
+  }
 
     app-members .social {
         display: inline-block;
@@ -1008,11 +1034,11 @@
     .card-item-objective .title {
         margin-bottom: 20px;
         margin-top: 0px;
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .card-item-objective .desc p {
-        font-size: 13px;
+        font-size: 16px;
     }
 
 
@@ -1152,6 +1178,7 @@
         height: 318px;
 
     }
+  .items-container .title {padding-right:25px; }
 
     .profile-form {
         width: 640px;
@@ -1173,6 +1200,9 @@
 
 }
 @media (min-width: 768px) and (max-width: 1024px) {
+  ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+  padding: 5px 0px 5px 20px !important;
+}
     h2 {
         font-size: 20px;
     }
@@ -1232,8 +1262,8 @@
 
     .top-description {
         font-size: 48px;
-        margin: auto;
         font-weight: bold;
+        margin: 90px 0 0 60px;
     }
 
 
@@ -1287,9 +1317,9 @@
         justify-content: space-between;
         font-size: 15px;
         font-weight: normal;
-        color: #1b2850;
+        color: #FFF;
         cursor: pointer;
-        margin: 20px 5px;
+        margin: 6px 50px 0 0;
     }
 
 
@@ -1311,7 +1341,7 @@
 
     .navbar-login {
         display: flex;
-        height: 65px;
+        height: 35px;
         /*align-items: center;*/
         direction: rtl;
     }
@@ -1355,10 +1385,10 @@
     }
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         right: 91px;
         bottom: 143px;
-        width: 80px;
+        width: 80px;*/
     }
 
 
@@ -1369,11 +1399,14 @@
 
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         right: 92px;
         bottom: 144px;
-        width: 65px;
+        width: 80px;*/
     }
+  .social-paper img {
+       width: 140px;
+     }
 
     .social i {
         font-size: 15px;
@@ -1436,10 +1469,17 @@
         width: 85%;
         margin-left: 40px;
         margin-top: 60px;
+        margin-right: 40px;
     }
+
+
+  .contact .sec-content.sec-enquiry {
+    margin-left: 40px;
+  }
 
     .about-content .content {
         margin-top: 20px;
+      line-height: 25px;
     }
 
 
@@ -1653,7 +1693,7 @@
     .header {
         overflow: hidden;
         height: 140px;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
     }
 
 
@@ -1677,7 +1717,7 @@
 
     /*login*/
     .login {
-        height: 835px;
+        height: auto;
     }
 
     /*register*/
@@ -1695,9 +1735,10 @@
     /*profile*/
     .nav-block {
         display: inline-grid;
-        text-align: center;
         vertical-align: middle;
         margin: 0 0 0 0%;
+      width: 100%;
+      text-align: right;
     }
 
     .profile-container i {
@@ -1708,7 +1749,7 @@
 
 
     .research-title {
-        padding: 20px;
+        padding: 20px 20px 20px 0px;
         display: flex;
         height: 135px;
         width: 50%;
@@ -1742,14 +1783,14 @@
     .social {
         display: inline-block;
         margin-right: 0;
-        margin-top: 0;
+        margin-top: 150px;
     }
 
 
     app-profile .social {
         display: inline-block;
         margin-right: 0px;
-        margin-top: 0;
+        margin-top: 150px;
     }
 
     .profile-container .edit-profile {
@@ -1974,7 +2015,7 @@
     }
 
     .cards-items .c-item {
-        border: 1px solid #1b2850;
+        /*border: 1px solid #1b2850;*/
         width: 48.5%;
         margin: 10px 0;
         padding: 10px 15px;
@@ -2092,7 +2133,12 @@
         width: 85%;
         margin-left: 40px;
         margin-top: 70px;
+        margin-right: 40px;
     }
+
+  .contact .sec-content.sec-enquiry {
+    margin-left: 40px;
+  }
 
     app-members .social {
         display: inline-block;
@@ -2173,11 +2219,11 @@
     .card-item-objective .title {
         margin-bottom: 20px;
         margin-top: 0px;
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .card-item-objective .desc p {
-        font-size: 10px;
+        font-size: 14px;
     }
 
 
@@ -2274,7 +2320,7 @@
         line-height: 20px !important;
         font-size: 16px !important;
         z-index: 1000;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
     }
 
     .partners {
@@ -2322,6 +2368,13 @@
 
 @media (min-width: 425px) and (max-width: 767px) {
 
+  ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+    padding: 5px 0px 5px 20px !important;
+  }
+
+  ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+    font-size: 16px !important;
+  }
 
     h2 {
         font-size: 13px;
@@ -2335,7 +2388,7 @@
 
     .navbar-login {
         display: flex;
-        height: 55px;
+        height: 35px;
         direction: rtl;
     }
 
@@ -2363,11 +2416,11 @@
         font-weight: normal;
         color: #fff;
         cursor: pointer;
-        padding: 20px 10px;
+      margin: 6px 0px 0 0;
     }
 
     .navbar-login div {
-        margin: 0 5px;
+        /*margin: 0 5px;*/
     }
 
 
@@ -2379,7 +2432,7 @@
 
     .logged {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
         direction: rtl;
         position: absolute;
@@ -2421,7 +2474,7 @@
     }
 
     .top-home-login .social {
-        display: inline-block;
+        display: none;
         margin-right: 5px;
         margin-top: 70px;
     }
@@ -2492,7 +2545,7 @@
     .cards-icon {
         display: flex;
         justify-content: space-between;
-        padding: 0;
+        padding: 0 60px;
     }
 
 
@@ -2528,11 +2581,14 @@
     }
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         right: 77px;
         bottom: 83px;
-        width: 40px;
+        width: 80px;*/
     }
+  .social-paper img {
+       width: 100px;
+     }
 
 
     .paper-section {
@@ -2845,11 +2901,11 @@
     }
 
     .social-paper .title {
-        margin-top: 30px;
+        /*margin-top: 30px;*/
     }
 
     .paper-section .title {
-        padding: 0 32px
+        /*padding: 0 32px*/
 
     }
 
@@ -2869,7 +2925,7 @@
         border: none;
         margin-top: 0px;
         color: #fff;
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .become-researcher {
@@ -2915,15 +2971,17 @@
 
     .about-content .content {
         margin-top: 0px;
+        line-height: 25px;
         padding: 0 30px 0 0;
     }
 
     .content p {
         margin: 15px 0;
-        font-size: 14px
+        font-size: 16px
     }
 
     .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -2990,12 +3048,16 @@
     }
 
     .contact h1 {
-        font-size: 2.5em;
+        font-size: 20px;
         font-weight: 600;
         margin: 20px 0 10px;
         text-align: left;
         color: #1b2850;
     }
+
+  .contact .sec-content.sec-enquiry {
+    margin-left: 20px;
+  }
 
     .panel {
         padding: 0 20px;
@@ -3086,7 +3148,7 @@
     .header {
         overflow: hidden;
         height: 90px;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
     }
 
     .logo-right {
@@ -3123,9 +3185,10 @@
     /*profile*/
     .nav-block {
         display: inline-grid;
-        text-align: center;
         vertical-align: middle;
         margin: 0%;
+      width: 100%;
+      text-align: right;
     }
 
 
@@ -3140,7 +3203,7 @@
     }
 
     .research-title {
-        padding: 20px;
+      padding: 20px 20px 20px 0px;
         display: flex;
         height: 135px;
         width: 51%;
@@ -3165,7 +3228,7 @@
 
 
     .social {
-        display: inline-block;
+        display: none;
         margin-right: 10px;
         margin-top: 0;
     }
@@ -3345,7 +3408,7 @@
 
 
     .cards-items .c-item {
-        border: 1px solid #1b2850;
+        /*border: 1px solid #1b2850;*/
         width: 100%;
         margin: 10px 0;
         padding: 10px 35px;
@@ -3377,9 +3440,10 @@
 
     .nav-block {
         display: inline-grid;
-        text-align: center;
         vertical-align: middle;
         margin: 0;
+      width: 100%;
+      text-align: right;
     }
 
 
@@ -3394,7 +3458,7 @@
 
     .research-search .row {
         height: 9px;
-        width: 328px;
+        width: 375px;
     }
 
     .papers-tap {
@@ -3512,6 +3576,7 @@
 
     /*about*/
     app-about .full-section .center-sticker {
+      display:none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -3846,10 +3911,10 @@
     }
 
     .card-icon-research img {
-        position: absolute;
+        /*position: absolute;
         right: 70px;
         bottom: 84px;
-        width: 46px;
+        width: 80px;*/
     }
 
     .sort-icon {
@@ -3908,12 +3973,12 @@
 
     .card-item-objective .title {
         margin: 20px 0;
-        font-size: 15px;
+        font-size: 18px;
     }
 
 
     .card-item-objective .desc p {
-        font-size: 14px
+        font-size: 16px
     }
 
     .card-item-objective {
@@ -3990,7 +4055,7 @@
     }
 
     app-about .full-section .side {
-        height: 300px;
+        /*height: 345px;*/
     }
 
 
@@ -4040,6 +4105,7 @@
         font-size: 45px;
         margin: auto;
         font-weight: bold;
+        margin: 115px 0 0 50px;
     }
 
     .objective-f-text {
@@ -4071,7 +4137,7 @@
         line-height: 20px !important;
         font-size: 16px !important;
         z-index: 1000;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
 
     }
 
@@ -4110,6 +4176,13 @@
 
 @media (min-width: 375px) and (max-width: 424px) {
 
+  ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+    padding: 5px 0px 5px 0px !important;
+  }
+
+  ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+    font-size: 12px !important;
+  }
 
     h2 {
         font-size: 13px;
@@ -4117,7 +4190,7 @@
 
     .navbar-login {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
         direction: rtl;
     }
@@ -4146,10 +4219,11 @@
         font-weight: normal;
         color: #fff;
         cursor: pointer;
+        margin: 0px 0px 0 0;
     }
 
     .navbar-login div {
-        margin: 0 5px;
+        /*margin: 0 5px;*/
     }
 
 
@@ -4161,7 +4235,7 @@
 
     .logged {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
         direction: rtl;
         position: absolute;
@@ -4194,7 +4268,7 @@
     }
 
     .top-home-login .social {
-        display: inline-block;
+        display: none;
         margin-right: 5px;
         margin-top: 70px;
     }
@@ -4281,10 +4355,10 @@
     }
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         right: 64px;
         bottom: 84px;
-        width: 33px;
+        width: 33px;*/
     }
 
     app-home .card-item p {
@@ -4299,8 +4373,8 @@
 
 
     .social-paper .title {
-        margin-top: 29px;
-        padding: 0 18px;
+        /*margin-top: 29px;*/
+        /*padding: 0 18px;*/
     }
 
     .paper-section {
@@ -4310,7 +4384,7 @@
 
     .card-icon-research, .card-icon-submit {
         position: relative;
-        padding: 29px 18px;
+        padding: 29px 35px;
     }
 
 
@@ -4388,17 +4462,20 @@
     }
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         right: 63px;
         bottom: 82px;
-        width: 33px;
+        width: 80px;*/
     }
+  .social-paper img {
+       width: 100px;
+     }
 
     .card-icon-research img {
-        position: absolute;
+        /*position: absolute;
         right: 54px;
         bottom: 84px;
-        width: 39px;
+        width: 80px;*/
     }
 
     .blue-line {
@@ -4639,7 +4716,7 @@
         border: none;
         margin-top: 0px;
         color: #fff;
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .become-researcher {
@@ -4678,6 +4755,7 @@
 
     .about-content .content {
         margin-top: 0px;
+        line-height: 25px;
         padding: 0 30px 0 0;
     }
 
@@ -4687,6 +4765,7 @@
     }
 
     .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -4698,6 +4777,7 @@
     }
 
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -4762,12 +4842,16 @@
     }
 
     .contact h1 {
-        font-size: 2.5em;
+        font-size: 15px;
         font-weight: 600;
         margin: 20px 0 10px;
         text-align: left;
         color: #1b2850;
     }
+
+  .contact .sec-content.sec-enquiry {
+    margin-left: 0px;
+  }
 
     .panel {
         padding: 0 20px;
@@ -4859,7 +4943,7 @@
     .header {
         overflow: hidden;
         height: 90px;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
     }
 
     .logo-right {
@@ -4896,9 +4980,10 @@
     /*profile*/
     .nav-block {
         display: inline-grid;
-        text-align: center;
         vertical-align: middle;
         margin: 0%;
+      width: 100%;
+      text-align: right;
     }
 
 
@@ -4916,7 +5001,7 @@
     }
 
     .research-title {
-        padding: 20px;
+      padding: 20px 20px 20px 0px;
         display: flex;
         height: 135px;
         width: 51%;
@@ -4941,14 +5026,14 @@
 
 
     .social {
-        display: inline-block;
+        display: none;
         margin-right: 10px;
         margin-top: 0px;
     }
 
     .social-paper .title {
-        margin-top: 29px;
-        padding: 0px 25px;
+       /* margin-top: 29px;
+        padding: 0px 25px;*/
     }
 
     .profile-container .edit-profile {
@@ -5129,7 +5214,7 @@
 
 
     .cards-items .c-item {
-        border: 1px solid #1b2850;
+        /*border: 1px solid #1b2850;*/
         width: 100%;
         margin: 10px 0;
         padding: 10px 35px;
@@ -5161,9 +5246,10 @@
 
     .nav-block {
         display: inline-grid;
-        text-align: center;
         vertical-align: middle;
         margin: 0;
+      width: 100%;
+      text-align: right;
     }
 
 
@@ -5307,6 +5393,7 @@
 
     /*about*/
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -5807,7 +5894,7 @@
     }
 
     app-about .full-section .side {
-        height: 300px;
+        /*height: 355px;*/
     }
 
 
@@ -5857,6 +5944,7 @@
         font-size: 38px;
         margin: auto;
         font-weight: bold;
+        margin: 115px 0 0 30px;
     }
 
     .objective-f-text {
@@ -5887,7 +5975,7 @@
         line-height: 20px !important;
         font-size: 16px !important;
         z-index: 1000;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
 
     }
 
@@ -5926,6 +6014,9 @@
 
 @media (max-width: 374px) {
 
+  ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
+    padding: 5px 0px 5px 0px !important;
+  }
 
     h2 {
         font-size: 13px;
@@ -5933,7 +6024,7 @@
 
     .navbar-login {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
         direction: rtl;
     }
@@ -5962,10 +6053,11 @@
         font-weight: normal;
         color: #fff;
         cursor: pointer;
+        margin: 0px 0px 0 0;
     }
 
     .navbar-login div {
-        margin: 0 5px;
+        /*margin: 0 5px;*/
     }
 
 
@@ -5977,7 +6069,7 @@
 
     .logged {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
         direction: rtl;
         position: absolute;
@@ -6010,7 +6102,7 @@
     }
 
     .top-home-login .social {
-        display: inline-block;
+        display: none;
         margin-right: 5px;
         margin-top: 70px;
     }
@@ -6097,10 +6189,10 @@
     }
 
     .social-paper img {
-        position: absolute;
+       /* position: absolute;
         right: 64px;
         bottom: 84px;
-        width: 33px;
+        width: 33px;*/
     }
 
     app-home .card-item p {
@@ -6115,22 +6207,25 @@
 
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         right: 55px;
         bottom: 83px;
-        width: 33px;
+        width: 80px;*/
     }
+  .social-paper img {
+       width: 100px;
+     }
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         right: 55px;
         bottom: 84px;
-        width: 39px;
+        width: 39px;*/
     }
 
     .social-paper .title {
-        margin-top: 29px;
-        padding: 0 18px;
+        /*margin-top: 29px;
+        padding: 0 18px;*/
     }
 
     .paper-section {
@@ -6140,7 +6235,7 @@
 
     .card-icon-research, .card-icon-submit {
         position: relative;
-        padding: 29px 0px;
+        padding: 29px 23px;
     }
 
 
@@ -6265,6 +6360,7 @@
     }
 
     .full-section .left-sticker {
+      display: none;
         height: 25px;
         width: 90px;
         position: absolute;
@@ -6455,7 +6551,7 @@
         border: none;
         margin-top: 0px;
         color: #fff;
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .become-researcher {
@@ -6494,6 +6590,7 @@
 
     .about-content .content {
         margin-top: 0px;
+        line-height: 25px;
         padding: 0 30px 0 0;
     }
 
@@ -6503,6 +6600,7 @@
     }
 
     .full-section .center-sticker {
+        display: none;  /* This was not here...*/
         height: 45px;
         width: 45px;
         position: absolute;
@@ -6514,6 +6612,7 @@
     }
 
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -6535,6 +6634,7 @@
     }
 
     .partners .top-sticker {
+      display: none;
         height: 25px;
         width: 90px;
         position: absolute;
@@ -6675,7 +6775,7 @@
     .header {
         overflow: hidden;
         height: 90px;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
     }
 
     .logo-right {
@@ -6712,9 +6812,10 @@
     /*profile*/
     .nav-block {
         display: inline-grid;
-        text-align: center;
         vertical-align: middle;
         margin: 0%;
+      width: 100%;
+      text-align: right;
     }
 
 
@@ -6732,7 +6833,7 @@
     }
 
     .research-title {
-        padding: 20px;
+      padding: 20px 20px 20px 0px;
         display: flex;
         height: 135px;
         width: 51%;
@@ -6757,14 +6858,14 @@
 
 
     .social {
-        display: inline-block;
+        display: none; /*inline-block;*/
         margin-right: 10px;
         margin-top: 0px;
     }
 
     .social-paper .title {
-        margin-top: 29px;
-        padding: 0px 25px;
+        /*margin-top: 29px;
+        padding: 0px 25px;*/
     }
 
     .profile-container .edit-profile {
@@ -6945,7 +7046,7 @@
 
 
     .cards-items .c-item {
-        border: 1px solid #1b2850;
+        /*border: 1px solid #1b2850;*/
         width: 100%;
         margin: 10px 0;
         padding: 10px 35px;
@@ -6975,11 +7076,12 @@
         padding: 0;
     }
 
-    .nav-block {
+      .nav-block {
         display: inline-grid;
-        text-align: center;
         vertical-align: middle;
         margin: 0;
+        width: 100%;
+        text-align: right;
     }
 
 
@@ -7120,6 +7222,7 @@
 
     /*about*/
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -7467,6 +7570,7 @@
         font-size: 20px;
         margin: auto;
         font-weight: bold;
+      margin: 115px 0 0 30px;
     }
 
 
@@ -7586,17 +7690,20 @@
     }
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         right: 45px;
         bottom: 82px;
-        width: 33px;
+        width: 80px;*/
     }
+  .social-paper img {
+    width: 75px;
+  }
 
     .card-icon-research img {
-        position: absolute;
+        /*position: absolute;
         right: 37px;
         bottom: 84px;
-        width: 39px;
+        width: 80px;*/
     }
 
     app-login .full-section .sec-content, app-register .full-section .sec-content {
@@ -7624,7 +7731,7 @@
     }
 
     app-about .full-section .side {
-        height: 300px;
+        /*height: 400px;*/
     }
 
 
@@ -7672,9 +7779,10 @@
     }
 
     .top-description {
-        font-size: 32px;
+        font-size: 28px;
         margin: auto;
         font-weight: bold;
+      margin: 165px 0 0 30px;
     }
     .objective-f-text {
         /* margin: 4px !important; */

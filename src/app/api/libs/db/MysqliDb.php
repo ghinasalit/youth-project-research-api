@@ -734,7 +734,6 @@ class MysqliDb
         if ($this->_lockInShareMode) {
             $this->_query .= ' LOCK IN SHARE MODE';
         }
-
         $this->_lastQuery = $this->replacePlaceHolders($this->_query, $this->_bindParams);
 
         if ($this->isSubQuery) {

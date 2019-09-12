@@ -51,6 +51,8 @@ Class User
       $job = Helper::make_safe($data['job']);
       $location = Helper::make_safe($data['location']);
       $phone = Helper::make_safe($data['phone']);
+      $countryCode = Helper::make_safe($data['countryCode']);
+      $phone = $countryCode.$phone;
       $Linkedin = Helper::make_safe($data['Linkedin']);
       $description = Helper::make_safe($data['description']);
       $response = Queries::register($password, $f_name, $l_name, $email, $avatar, $university, $job, $location, $phone, $Linkedin, $description);
@@ -148,12 +150,13 @@ Class User
 
 
   static public function add_paper($data)
-  {
+  { //var_dump($_FILES);
     $paper = '';
     $title = Helper::make_safe($_POST['title']);
     $member_id = Helper::make_safe($data['member_id']);
     $status = Helper::make_safe($_POST['status']);
     $tags = Helper::make_safe($_POST['tags']);
+    $tags = $tags[0];
     $discipline = Helper::make_safe($_POST['discipline']);
     $description = Helper::make_safe($_POST['description']);
     $permission = Helper::make_safe($_POST['permission']);
@@ -161,7 +164,7 @@ Class User
     if ($_FILES['file']) {
       $paper = FileUpload::upload_file($data);
     }
-    if (!is_numeric($paper)) {
+    if ($_POST['title']) {
       $response = Queries::add_paper($member_id, $title, $description, $status, $tags, $discipline, $permission, $language, $paper);
       if (is_numeric($response)) {
         $error_msg = array_search($response, \Model\Enums::$code);

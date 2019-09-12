@@ -20,10 +20,11 @@ import {until} from 'selenium-webdriver';
 import {ConditionsComponent} from '../app/dialogs/conditions/conditions.component';
 import {RequestComponent} from '../app/dialogs/request/request.component';
 import {RouterModule} from '@angular/router';
+import {FootNoteComponent} from '../app/dialogs/foot-note/foot-note.component';
 
 
 @NgModule({
-    declarations: [ProfileInfoComponent, PaperComponent ,  ConditionsComponent , RequestComponent],
+    declarations: [ProfileInfoComponent, PaperComponent ,  ConditionsComponent , FootNoteComponent , RequestComponent],
     imports: [
         MatFormFieldModule,
         RouterModule,
@@ -47,6 +48,7 @@ import {RouterModule} from '@angular/router';
         PaperComponent,
         ProfileInfoComponent,
         ConditionsComponent,
+        FootNoteComponent,
         RequestComponent
     ],
     exports: [

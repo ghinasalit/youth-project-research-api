@@ -2,8 +2,6 @@
 
 </nav>
 
-
-
 <!--Social Fixed-->
 <div class="social" *ngIf="!_appService.roll && socialFixed" data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="500">
     <div><i class="fa fa-facebook"></i></div>
@@ -13,18 +11,8 @@
 </div>
 
 <!--Login Controls-->
-<div class="top-home" *ngIf="!_appService.roll">
-    <div class="navbar-login">
-        <div class="login-register">
-            <div class="lang" (click)="_appService.switchLanguage('en')"
-                 *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-            <div class="lang" (click)="_appService.switchLanguage('ar')"
-                 *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
-            <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
-            <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
-        </div>
-    </div>
-    <div class="top-home-content">
+<div class="top-home"  [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'"> <!--*ngIf="!_appService.roll"-->
+    <div class="top-home-content" >
         <div class="top-description">
             <p>{{'_KnowledgePower' | translate}}</p>
             <p>{{'_SharingKnowledgePower' | translate}}</p>
@@ -60,97 +48,86 @@
     </div>
 </div>
 
-<div class="full-section top-home-login" *ngIf="_appService.roll">
-    <div class="profile-photo" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">
-        <img src="assets/img/library.jpg " alt=""></div>
-    <div class="right-section">
-        <div class="navbar-login logged">
+<!--<div class="full-section top-home-login" *ngIf="_appService.roll" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">-->
+<!--    <div class="profile-photo" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">-->
+<!--        <img src="assets/img/library.jpg " alt=""></div>-->
+<!--    <div class="right-section">-->
+<!--&lt;!&ndash;        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer">&ndash;&gt;-->
+<!--&lt;!&ndash;            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>{{'_EditProfile' | translate}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <div class="social-info">-->
+<!--            <div class="info-user">-->
 
-            <div class="login-register" *ngIf="_appService.roll">
-                <div class="lang" (click)="_appService.switchLanguage('en')"
-                     *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
-                <div class="lang" (click)="_appService.switchLanguage('ar')"
-                     *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
-                <div class="login"  [routerLink]="['/profile' , memberDetails.member_id]">{{'_MyProfile'| translate}}</div>
-                <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
-            </div>
-        </div>
-<!--        <div class="edit-profile" routerLink="/profile-info" style="cursor: pointer">-->
-<!--            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>-->
-<!--            <p>{{'_EditProfile' | translate}}</p>-->
+<!--                <div class="user-name">-->
+<!--                    <div>-->
+<!--                        <img [src]="  _appService.api.api.imgURL + memberDetails.avatar" alt=""-->
+<!--                             *ngIf="memberDetails.avatar != ''">-->
+<!--                        <img [src]="'assets/img/avatar_default.jpeg' " alt="" *ngIf="memberDetails.avatar == ''">-->
+<!--                    </div>-->
+<!--                    <div class="full-name">-->
+<!--                        <div class="title" [routerLink]="['/profile' , memberDetails.member_id]"-->
+<!--                             style="cursor: pointer">-->
+<!--                            <h2>{{memberDetails.first_name}} {{memberDetails.last_name}}</h2>-->
+<!--                            <div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="desc-user">-->
+<!--                    <p>-->
+<!--                        {{memberDetails.description}}-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="info">-->
+<!--                    <div class="info-item">-->
+<!--                        <div class="info-icon" *ngIf="memberDetails?.university_name_ar">-->
+<!--                            <i class="fa fa-university"></i>-->
+<!--                            <div class="info-data"-->
+<!--                                 *ngIf=" this._appService.currentLanguage == 'ar'"> {{memberDetails.university_name_ar}}</div>-->
+<!--                            <div class="info-data"-->
+<!--                                 *ngIf=" this._appService.currentLanguage == 'en'"> {{memberDetails.university_name_en}}</div>-->
+<!--                        </div>-->
+<!--                        <div class="info-icon" *ngIf="memberDetails.location">-->
+<!--                            <i class="fa fa-map-marker"></i>-->
+<!--                            <div class="info-data">{{memberDetails.location}}</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="info-item">-->
+<!--                        <div class="info-icon" *ngIf="memberDetails.domain">-->
+<!--                            <i class="fa fa-suitcase"></i>-->
+<!--                            <div class="info-data">{{memberDetails.domain}}</div>-->
+<!--                        </div>-->
+<!--                        <div class="info-icon">-->
+<!--                            <i class="fa fa-eye"></i>-->
+<!--                            <div class="info-data">{{memberDetails.views}} {{'_Views' | translate}}</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="info-item">-->
+<!--                        <div class="info-icon">-->
+<!--                            <i class="fa fa-file-text-o"></i>-->
+<!--                            <div class="info-data">{{memberDetails.count_papers}} {{'_ResearchPaper' | translate}}</div>-->
+<!--                        </div>-->
+<!--                        <div class="info-icon" *ngIf="isOneRecognized">-->
+<!--                            <i class="fa fa-trophy"></i>-->
+<!--                            <div class="info-data">1 {{'_RecognizedResearch' | translate}}</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="social">-->
+<!--                <div><i class="fa fa-facebook"></i></div>-->
+<!--                <div><i class="fa fa-instagram"></i></div>-->
+<!--                <div><i class="fa fa-twitter"></i></div>-->
+<!--                <div><i class="fa fa-youtube"></i></div>-->
+<!--            </div>-->
+
 <!--        </div>-->
-        <div class="social-info">
-            <div class="info-user">
-
-                <div class="user-name">
-                    <div>
-                        <img [src]="  _appService.api.api.imgURL + memberDetails.avatar" alt=""
-                             *ngIf="memberDetails.avatar != ''">
-                        <img [src]="'assets/img/avatar_default.jpeg' " alt="" *ngIf="memberDetails.avatar == ''">
-                    </div>
-                    <div class="full-name">
-                        <div class="title" [routerLink]="['/profile' , memberDetails.member_id]"
-                             style="cursor: pointer">
-                            <h2>{{memberDetails.first_name}} {{memberDetails.last_name}}</h2>
-                            <div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="desc-user">
-                    <p>
-                        {{memberDetails.description}}
-                    </p>
-                </div>
-                <div class="info">
-                    <div class="info-item">
-                        <div class="info-icon" *ngIf="memberDetails?.university_name_ar">
-                            <i class="fa fa-university"></i>
-                            <div class="info-data"
-                                 *ngIf=" this._appService.currentLanguage == 'ar'"> {{memberDetails.university_name_ar}}</div>
-                            <div class="info-data"
-                                 *ngIf=" this._appService.currentLanguage == 'en'"> {{memberDetails.university_name_en}}</div>
-                        </div>
-                        <div class="info-icon" *ngIf="memberDetails.location">
-                            <i class="fa fa-map-marker"></i>
-                            <div class="info-data">{{memberDetails.location}}</div>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon" *ngIf="memberDetails.domain">
-                            <i class="fa fa-suitcase"></i>
-                            <div class="info-data">{{memberDetails.domain}}</div>
-                        </div>
-                        <div class="info-icon">
-                            <i class="fa fa-eye"></i>
-                            <div class="info-data">{{memberDetails.views}} {{'_Views' | translate}}</div>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fa fa-file-text-o"></i>
-                            <div class="info-data">{{memberDetails.count_papers}} {{'_ResearchPaper' | translate}}</div>
-                        </div>
-                        <div class="info-icon" *ngIf="isOneRecognized">
-                            <i class="fa fa-trophy"></i>
-                            <div class="info-data">1 {{'_RecognizedResearch' | translate}}</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="social">
-                <div><i class="fa fa-facebook"></i></div>
-                <div><i class="fa fa-instagram"></i></div>
-                <div><i class="fa fa-twitter"></i></div>
-                <div><i class="fa fa-youtube"></i></div>
-            </div>
-
-        </div>
 
 
-    </div>
-</div>
+<!--    </div>-->
+<!--</div>-->
 
 <div class="paper-section d-flex">
     <div class="social-section">
@@ -164,10 +141,9 @@
 
     <div class="social-paper">
         <div class="cards-icon">
-            <div class="card-icon-research d-line" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-once="true" data-aos-duration="1000" style="cursor: pointer" routerLink="/papers">
-                <div class="box">
-                </div>
-                <img src="assets/img/reseach_paper.png" alt="">
+            <div class="card-icon-research d-line" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000" style="cursor: pointer" routerLink="/papers">
+<!--                <div class="box"></div>-->
+                <img src="assets/img/ResearchPaper.png" alt="">
 
                 <div class="title" routerLink="/papers" style="cursor: pointer">
                     <h2>{{'_ResearchAPaper' | translate}}</h2>
@@ -175,22 +151,20 @@
                     </div>
                 </div>
             </div>
-            <div class="card-icon-submit d-line" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'" data-aos-once="true" data-aos-duration="500" style="cursor: pointer" (click)="_appService.submitPaper()">
-                <div class="box">
-                </div>
-                <img src="assets/img/submit_paper.png" alt="">
+            <div class="card-icon-submit d-line"  data-aos="fade-right" data-aos-once="true" data-aos-duration="500" style="cursor: pointer" (click)="_appService.submitPaper()">
+<!--                <div class="box"></div>-->
+                <img src="assets/img/UploadPaper.png" alt="">
 
                 <div class="title" style="cursor: pointer">
                     <h2>{{'_SubmitAPaper' | translate}}</h2>
-                    <div class="line">
-                    </div>
+                    <div class="line"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="full-section">
+<div class="full-section" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="left-sticker"></div>
     <div class="center-sticker" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-duration="1000"></div>
     <div class="side" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-once="true" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'">
@@ -202,18 +176,16 @@
         <div class="sec-content">
             <div class="about-content">
                 <h1 class="text-left">
-                    <p>{{'_About' | translate}}</p>
-                    <p> {{'_ArabYouth' | translate}}</p>
+                    <p>{{'_AboutHome' | translate}} {{'_ArabYouthHome' | translate}}</p>
                 </h1>
               <div class="line"></div>
                 <div class="content">
-                    <p>{{'_AboutDescription' | translate}}</p>
+                    <p>{{'_AboutDescriptionHome' | translate}}</p>
                 </div>
                 <div>
-                    <div class="title read-more d-line" style="cursor: pointer" routerLink="/about">
-                        <p>{{'_ReadMore' | translate}}</p>
-                        <div class="line"></div>
-                    </div>
+                  <div class="button-action about-arab-button" routerLink="/about">
+                    <button>{{'_ReadMore' | translate}}</button>
+                  </div>
                 </div>
             </div>
 
@@ -221,10 +193,9 @@
     </div>
 </div>
 
-<div class="become-researcher" id="becomeResearcher" #becomeResearcher  >
+<div class="become-researcher" id="becomeResearcher" #becomeResearcher  [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="title" data-aos-anchor-placement="top-bottom" data-aos="fade-up" data-aos-once="true" data-aos-duration="500">
         <p>{{'_Why_publish_research' | translate}}</p>
-        <div></div>
     </div>
     <div class="cards" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos-duration="500">
         <div  class="card-item-objective why-publish">
@@ -410,7 +381,7 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
-<div class="full-section partners" id="partners" #partners>
+<div class="full-section partners" id="partners" #partners [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="full-section with-slider">
         <div class="top-sticker" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-aos="fade-up" data-aos-duration="500"></div>
         <div class="side laptop" data-aos-once="true" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'"
@@ -452,15 +423,15 @@
 </div>
 
 
-<div class="full-section contact" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos="fade-up" data-aos-duration="1000" id="contactus" #contactus>
+<div [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'" class="full-section contact" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos="fade-up" data-aos-duration="1000" id="contactus" #contactus>
     <div class="side">
         <div class="sec-content">
-            <h1 class="text-left">{{'_ContactUs' | translate}}</h1>
+          <h1 class="text-left"><p>{{'_ContactUs' | translate}}</p></h1>
           <div class="line"></div> <br>
-            <div class="contact-info">
-                <h3>{{'_ContactUsInfo._Email' | translate}}</h3>
-                <h3>{{'_ContactUsInfo._Address' | translate}}</h3>
-                <h3>{{'_ContactUsInfo._Number' | translate}}</h3>
+            <div class="content">
+                <p>{{'_ContactUsInfo._Email' | translate}}</p>
+                <p>{{'_ContactUsInfo._Address' | translate}}</p>
+                <p>{{'_ContactUsInfo._Number' | translate}}</p>
             </div>
             <div class="social-contact">
                 <div><i class="fa fa-facebook"></i></div>
@@ -471,14 +442,13 @@
         </div>
     </div>
     <div class="side">
-        <div class="sec-content">
-            <div class="title">
+        <div class="sec-content sec-enquiry">
+            <h1 class="text-left">
                 <p>{{'_Enquiry' | translate}}</p>
-                <div class="line"></div>
-            </div>
+            </h1>
+          <div class="line"></div>
             <div class=" form-input">
-                <form class="example-form" [formGroup]="feedbackForm" #formDirective="ngForm"
-                      [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
+                <form class="example-form" [formGroup]="feedbackForm" #formDirective="ngForm" [dir]="_appService.currentLanguage== 'en' ? 'ltr' :  'rtl'">
                     <div class="item">
                         <mat-form-field class="example-full-width">
                             <input matInput [placeholder]="'_Name' | translate" formControlName="name" required>

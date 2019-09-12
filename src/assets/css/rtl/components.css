@@ -23,7 +23,8 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 500;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 100px;
 }
 
 .navbar i {
@@ -86,7 +87,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .header {
     overflow: hidden;
-    height: 205px;
+    height: 130px;
     /*box-shadow: -10px 5px 5px #cac6c6;*/
 }
 
@@ -131,10 +132,10 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: space-between;
     font-size: 25px;
     font-weight: normal;
-    color: #1b2850;
+    color: #FFF;
     cursor: pointer;
     margin: auto;
-    margin: 20px;
+    margin: 6px 100px 0 0px;
 }
 
 .left-section button {
@@ -179,8 +180,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 .navbar-login {
     display: flex;
-    height: 90px;
-    direction: ltr
+    direction: rtl;
+    height: 35px;
 }
 
 .logo-left {
@@ -194,12 +195,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .logo-right img {
-    width: 122px;
+    width: 90px;
 }
 
 
 .logo-left img {
-    width: 122px;
+    width: 90px;
 }
 
 .right-section {
@@ -234,38 +235,43 @@ h1, h2, h3, h4, h5, h6, p {
     position: relative;
     padding: 50px 65px;
     direction: initial;
+  text-align: right;
 }
 
 
 .card-icon-research img {
-    position: absolute;
-    left: 34px;
-    bottom: 145px;
-    width: 145px;
+    /*position: absolute;
+    left: 100px;
+    bottom: 120px;
+    width: 180px;*/
 }
 
 
 
 .card-icon-submit img {
-    position: absolute;
-    left: 35px;
-    bottom: 146px;
-    width: 120px;
+    /*position: absolute;
+    left: 100px;
+    bottom: 120px;
+    width: 180px;*/
 }
 
 
 .social-paper .title {
-    margin-top: 69px;
+    /*margin-top: 69px;*/
 }
+.social-paper img {
+   width: 180px;
+ }
 
 .box {
     width: 180px;
     height: 180px;
     background-color: #75cddd;
 }
+.items-container .title { padding-right:25px;}
 
 .research-title {
-    padding: 20px;
+    padding: 20 0 20px 20px;
     display: flex;
     height: 225px;
     width: 100%;
@@ -299,8 +305,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .contact h1 {
-    font-size: 4em;
-    font-weight: 600;
+    font-size: 48px;
+    font-weight: bold;
     margin: 20px 0 10px;
     text-align: right;
     color: #1b2850;
@@ -409,7 +415,7 @@ top-home-login .title {
 
 
 .about-content .text-left p {
-    font-size: 54px
+    font-size: 48px
 }
 
 
@@ -463,7 +469,6 @@ app-home .card-item p {
     font-size: 45px;
     font-weight: bold;
     color: #1b2850;
-    padding-right: 17px;
 }
 
 
@@ -471,6 +476,7 @@ app-home .card-item p {
     text-align: right;
     margin-right: 80px;
     margin-top: 70px;
+    margin-right: 80px;
 }
 
 
@@ -481,7 +487,7 @@ app-home .card-item p {
 
 .content p {
     margin: 0 0 0 100px;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 
@@ -531,7 +537,7 @@ app-home .card-item p {
 .contact .sec-content {
     text-align: right;
     width: 85%;
-    margin-right: 100px;
+    margin-right: 40px;
     margin-top: 100px;
     margin-bottom: 70px;
 }
@@ -575,6 +581,8 @@ app-home .card-item p {
     margin-left: 15px;
     color: #1B2850;
     font-size: 20px;
+    width: 20px;
+    text-align: center;
 }
 
 
@@ -632,7 +640,7 @@ app-home .card-item p {
 
 
 .contact .title {
-    font-size: 30px;
+    font-size: 48px;
     font-weight: bold;
     color: #1b2850;
 }
@@ -805,7 +813,6 @@ app-home .card-item p {
     display: flex;
     flex-direction: column;
     padding: 45px 40px;
-    border-bottom: 1px solid #ececec;
 
 }
 
@@ -867,6 +874,8 @@ app-home .card-item p {
     margin-left: 15px;
     color: #1B2850;
     font-size: 20px;
+    text-align: center;
+    width: 20px;
 }
 
 
@@ -902,8 +911,8 @@ app-home .card-item p {
 }
 
 .login-register div {
-    margin-left: 20px;
-    font-size: 16px;
+    margin-right: 20px;
+    font-size: 14px;
 }
 
 .clear i {
@@ -1003,6 +1012,7 @@ app-about .card-item.title p {
 
 .about-content .content {
     margin-top: 55px;
+    line-height: 35px;
 }
 
 
@@ -1074,7 +1084,6 @@ app-about .card-item.title p {
     display: flex;
     flex-direction: column;
     padding: 45px 40px;
-    border-bottom: 1px solid #ececec;
 
 }
 
@@ -1126,7 +1135,6 @@ app-papers .statistics {
     display: flex;
     flex-direction: column;
     padding: 45px 40px;
-    border-bottom: 1px solid #ececec;
 }
 
 
@@ -1302,7 +1310,7 @@ app-upload-paper .submit {
 .paper-card-info i {
     margin-left: 5px;
     margin-right: 5px;
-    margin-top: 7px;
+    margin-top: 8px;
     color: #75cddd;
 }
 
@@ -1347,15 +1355,15 @@ app-upload-paper .submit {
 .top-description {
     font-size: 75px;
     font-weight: bold;
-    margin-right: 280px;
-    margin-top: 45px;
+    margin: 170px 115px 0 0;
 }
 
 .footer {
-    font-size: 16px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+  font-size: 16px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ececec;
 }
 
 .fa-sort-asc {
@@ -1405,7 +1413,8 @@ app-upload-paper .submit {
 
 .card-item-objective .icon  {
     text-align: center;
-    height: 185px
+    height: 185px;
+  margin-top: 15px;
 }
 
 
@@ -1423,7 +1432,7 @@ app-upload-paper .submit {
     text-align: right
 }
 .card-item-objective .desc p{
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .card-item-objective .headline {
@@ -1581,7 +1590,7 @@ app-member-details .first-name {
 
 
 .top-home-login .login-register {
-    color: #1b2850;
+    color: #FFF;
 }
 
 
@@ -1596,7 +1605,6 @@ app-members .card .title {
     color: #1B2850;
     margin-bottom: 25px;
     width: 90%;
-    margin-top: 15px;
 }
 
 app-members .card .title div {
@@ -1610,6 +1618,15 @@ app-members .card img {
     width: 100%;
     object-fit: cover;
     height: 65%;
+    cursor: pointer;
+   transition: filter .5s ease-in-out;
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%); /* FF 35+ */
+}
+app-members .card img:hover {
+  transition: filter .5s ease-in-out;
+  -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(0%); /* FF 35+ */
 }
 
 
@@ -1617,7 +1634,7 @@ app-members .card img {
 .top-home-content{
     display: flex;
     justify-content: space-between;
-    margin-top: 22;
+    margin-top: 30px;
 }
 
 
@@ -1663,7 +1680,6 @@ app-members .card img {
 .top-description {
     font-size: 75px;
     font-weight: bold;
-    margin-right: 280px;
 }
 
 .top-description p {
@@ -1719,7 +1735,7 @@ app-members .card img {
     line-height: 20px !important;
     font-size: 16px !important;
     z-index: 1000;
-    box-shadow: 10px 5px 5px #cac6c6;
+    box-shadow: 0px 2px 5px #cac6c6;
 
 }
 
@@ -1739,15 +1755,15 @@ app-members .card img {
 
 
 .why-publish {
-    padding: 0px;
-
+    padding: 0px !important;
     flex: 0 1 19%;
     width: 20%;
 }
 
 .why-publish .icon {
     text-align: center;
-    height: 280px
+    height: 280px;
+  margin-top:0px;
 }
 
 
@@ -1761,7 +1777,7 @@ app-members .card img {
 .why-publish .title {
 
     padding: 0 15px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .why-publish .desc {
@@ -1776,7 +1792,7 @@ app-members .card img {
 .top-home {
     height: 500px;
     color: #fff;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     background-blend-mode: darken;
     width: 100%;
@@ -1861,4 +1877,9 @@ app-members .card img {
 
 .info-user .papers{
     margin-top: 18px;
+}
+
+.button-action.about-arab-button, .button-action.join-ayrp-button {
+  text-align: right;
+  margin-top: 50px;
 }

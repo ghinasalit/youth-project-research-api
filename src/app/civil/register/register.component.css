@@ -77,3 +77,9 @@
 .full-section .sec-content {
     width: 90%;
 }
+
+.conditions a{
+  padding: 0 5px;
+  color: #75cddd;
+}
+

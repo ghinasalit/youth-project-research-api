@@ -23,7 +23,8 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 500;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 100px;
 }
 
 .navbar i {
@@ -86,7 +87,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .header {
     overflow: hidden;
-    height: 205px;
+    height: 130px;
     /*box-shadow: 10px 5px 5px #cac6c6;*/
 }
 
@@ -131,10 +132,10 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: space-between;
     font-size: 25px;
     font-weight: normal;
-    color: #1b2850;
+    color: #FFF;
     cursor: pointer;
     margin: auto;
-    margin: 20px;
+    margin: 6px 100px 0 0;
 }
 
 .left-section button {
@@ -179,7 +180,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .navbar-login {
     display: flex;
-    height: 90px;
     direction: rtl
 }
 
@@ -194,12 +194,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .logo-right img {
-    width: 122px;
+    width: 90px;
 }
 
 
 .logo-left img {
-    width: 122px;
+    width: 90px;
 }
 
 .right-section {
@@ -222,6 +222,9 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: space-around;
     margin-bottom: 35px 0;
 }
+.social-paper img {
+  width: 180px;
+}
 
 .cards-icon {
     display: flex;
@@ -234,26 +237,27 @@ h1, h2, h3, h4, h5, h6, p {
     position: relative;
     padding: 50px 65px;
     direction: initial;
+  text-align: left;
 }
 
 .card-icon-research img {
-    position: absolute;
+    /*position: absolute;
     right: 48px;
     bottom: 145px;
-    width: 145px;
+    width: 180px;*/
 }
 
 
 .card-icon-submit img {
-    position: absolute;
+    /*position: absolute;
     right: 60px;
     bottom: 146px;
-    width: 120px;
+    width: 180px;*/
 }
 
 
 .social-paper .title {
-    margin-top: 69px;
+    /*margin-top: 69px;*/
 }
 
 .box {
@@ -262,8 +266,8 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #75cddd;
 }
 
-.research-title {
-    padding: 20px;
+   {
+    padding: 20px 20px 20px 0px;
     display: flex;
     height: 225px;
     width: 100%;
@@ -296,8 +300,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 .contact h1 {
-    font-size: 4em;
-    font-weight: 600;
+    font-size: 48px;
+    font-weight: bold;
     margin: 20px 0 10px;
     text-align: left;
     color: #1b2850;
@@ -402,7 +406,7 @@ top-home-login .title {
 
 
 .about-content .text-left p {
-    font-size: 60px;
+    font-size: 48px;
 }
 
 .about-content div.line, .sec-content div.line {
@@ -459,7 +463,7 @@ app-home .card-item p {
 
 
 .title {
-    font-size: 45px;
+    font-size: 48px;
     font-weight: bold;
     color: #1b2850;
     padding-right: 15px;
@@ -470,6 +474,7 @@ app-home .card-item p {
     text-align: left;
     margin-left: 80px;
     margin-top: 70px;
+    margin-right: 80px;
 }
 
 
@@ -480,7 +485,7 @@ app-home .card-item p {
 
 .content p {
     margin: 0 100px 0 0;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 
@@ -530,9 +535,12 @@ app-home .card-item p {
 .contact .sec-content {
     text-align: left;
     width: 85%;
-    margin-left: 100px;
+    margin-left: 40px;
     margin-top: 100px;
     margin-bottom: 70px;
+}
+.contact .sec-content.sec-enquiry {
+  margin-left: 65px;
 }
 
 .full-name .title {
@@ -574,6 +582,8 @@ app-home .card-item p {
     margin-right: 15px;
     color: #1B2850;
     font-size: 20px;
+    width: 20px;
+    text-align: center;
 }
 
 
@@ -623,7 +633,7 @@ app-home .card-item p {
 
 
 .contact .title {
-    font-size: 30px;
+    font-size: 48px;
     font-weight: bold;
     color: #1b2850;
 }
@@ -668,7 +678,7 @@ app-home .card-item p {
 /*header*/
 /*.header {*/
 /*    overflow: hidden;*/
-/*    height: 140px;*/
+/*    height: 140px;*/.card-item-objective .desc p
 /*    box-shadow: 10px 5px 5px #cac6c6;*/
 /*}*/
 
@@ -683,10 +693,11 @@ app-home .card-item p {
 /*}*/
 
 .login {
-    height: 835px;
+    /*height: 835px;*/
 }
 
 
+/*register*/
 /*register*/
 .item-full-name {
     display: flex;
@@ -707,8 +718,8 @@ app-home .card-item p {
 
 
 .nav-block {
-    display: inline-grid;
-    text-align: center;
+    /*display: inline-grid;*/
+    text-align: right;
     vertical-align: middle;
     margin: 0 0 0 15%;
 }
@@ -797,7 +808,6 @@ app-home .card-item p {
     display: flex;
     flex-direction: column;
     padding: 45px 40px;
-    border-bottom: 1px solid #ececec;
 
 }
 
@@ -858,6 +868,8 @@ app-home .card-item p {
     margin-right: 15px;
     color: #1B2850;
     font-size: 20px;
+    text-align: center;
+    width: 20px;
 }
 
 
@@ -894,7 +906,7 @@ app-home .card-item p {
 
 .login-register div {
     margin-right: 20px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .clear i {
@@ -957,7 +969,7 @@ app-about .cards {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 835px;
+    height: 782px;
 
 }
 
@@ -991,6 +1003,7 @@ app-about .card-item.title p {
 
 .about-content .content {
     margin-top: 55px;
+    line-height: 35px;
 }
 
 
@@ -1062,7 +1075,6 @@ app-about .card-item.title p {
     display: flex;
     flex-direction: column;
     padding: 45px 40px;
-    border-bottom: 1px solid #ececec;
 
 }
 
@@ -1114,7 +1126,6 @@ app-papers .statistics {
     display: flex;
     flex-direction: column;
     padding: 45px 40px;
-    border-bottom: 1px solid #ececec;
 }
 
 
@@ -1285,7 +1296,7 @@ app-upload-paper .submit {
 .paper-card-info i {
     margin-right: 5px;
     margin-left: 5px;
-    margin-top: 7px;
+    margin-top: 8px;
     color: #75cddd;
 }
 
@@ -1327,10 +1338,11 @@ app-upload-paper .submit {
 
 
 .footer {
-    font-size: 16px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+  font-size: 16px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ececec;
 }
 
 .fa-sort-asc {
@@ -1380,7 +1392,8 @@ app-upload-paper .submit {
 
 .card-item-objective .icon {
     text-align: center;
-    height: 185px
+    height: 185px;
+  margin-top:15px;
 }
 
 
@@ -1399,7 +1412,7 @@ app-upload-paper .submit {
 }
 
 .card-item-objective .desc p {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .card-item-objective .headline {
@@ -1548,11 +1561,11 @@ app-member-details .first-name {
 
 .research-search .row {
     height: 9px;
-    width: 328px;
+    width: 375px;
 }
 
 .top-home-login .login-register {
-    color: #1b2850;
+    color: #FFF;
 }
 
 .search-results {
@@ -1571,7 +1584,6 @@ app-members .card .title {
     color: #1B2850;
     margin-bottom: 25px;
     width: 90%;
-    margin-top: 15px;
 }
 
 app-members .card .title div {
@@ -1585,13 +1597,23 @@ app-members .card img {
     width: 100%;
     object-fit: cover;
     height: 65%;
+    cursor: pointer;
+    transition: filter .5s ease-in-out;
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%); /* FF 35+ */
+}
+
+app-members .card img:hover {
+  transition: filter .5s ease-in-out;
+  -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(0%); /* FF 35+ */
 }
 
 
 .top-home-content {
     display: flex;
     justify-content: space-between;
-    margin-top: 22px;
+    margin-top: 50px;
 }
 
 
@@ -1637,7 +1659,7 @@ app-members .card img {
 .top-description {
     font-size: 75px;
     font-weight: bold;
-    margin-left: 100px;
+    margin: 150px 0 0 115px;
 }
 
 .top-description p {
@@ -1695,7 +1717,7 @@ app-members .card img {
     line-height: 20px !important;
     font-size: 16px !important;
     z-index: 1000;
-    box-shadow: 10px 5px 5px #cac6c6;
+    box-shadow: 0px 2px 5px #cac6c6;
 
 }
 
@@ -1728,7 +1750,8 @@ app-members .card img {
 
 .why-publish .icon {
     text-align: center;
-    height: 280px
+    height: 280px;
+  margin-top:0px;
 }
 
 
@@ -1741,7 +1764,7 @@ app-members .card img {
 .why-publish .title {
 
     padding: 0px 15px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .why-publish .desc {
@@ -1752,7 +1775,7 @@ app-members .card img {
 .top-home {
     height: 500px;
     color: #fff;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     background-image: url("../../../assets/img/home.jpg");
     background-blend-mode: darken;
@@ -1822,4 +1845,8 @@ cursor: pointer;
 
 .info-user .papers{
     margin-top: 18px;
+}
+.button-action.about-arab-button, .button-action.join-ayrp-button {
+  text-align: left;
+  margin-top: 30px;
 }

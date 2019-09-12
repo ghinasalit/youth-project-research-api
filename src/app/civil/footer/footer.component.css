@@ -1,5 +1,29 @@
 
 
 i{
-    margin: 5px 5px;
+    margin: 1px 5px;
 }
+.footerConditions { margin-left:10px; padding: 0 5px; color: #75cddd; }
+.footerConditions:hover{ cursor: pointer; text-decoration: underline;}
+
+/*
+.footNote {
+  background-color: #f1f2f2;
+}
+.footNote-content {
+  margin: 100px 100px 70px 100px;
+  padding: 1px;
+}
+
+.button-action button {
+  background: #1b2850;
+}
+.button-action button:hover {
+  background: #75cddd;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  transition: all 0.7s;
+}
+*/

@@ -1,6 +1,29 @@
-<nav class='nav header' id='nav-id'>
-    <div class="logo-left">
-        <img src="assets/img/logo-left.png" alt="">
+<header>
+  <div class="top-nav">
+    <div class="navbar-login" *ngIf="!_appService.roll">
+      <div class="login-register">
+        <div class="lang" (click)="_appService.switchLanguage('en')"
+             *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+        <div class="lang" (click)="_appService.switchLanguage('ar')"
+             *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+        <div class="rigister" routerLink="/register">{{'_Register'| translate}}</div>
+        <div class="login" routerLink="/login">{{'_Login'| translate}}</div>
+      </div>
+    </div>
+    <div class="navbar-login logged">
+      <div class="login-register" *ngIf="_appService.roll">
+        <div class="lang" (click)="_appService.switchLanguage('en')"
+             *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
+        <div class="lang" (click)="_appService.switchLanguage('ar')"
+             *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
+        <div class="login"  [routerLink]="['/profile' , memberDetails.member_id]">{{'_MyProfile'| translate}}</div>
+        <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
+      </div>
+    </div>
+  </div>
+<nav class='nav header' id='nav-id' [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
+   <div class="logo-left" >
+        <a href="http://www.arabyouthcenter.org/" target="_blank" title="Arab Youth Center  "><img src="assets/img/logo-left.png" alt=""></a>
     </div>
     <ul class="nav-links" *ngIf="navActive">
         <li (click)="_appService.active = 0" [ngClass]="_appService.active == 0 ? 'active' : ''"
@@ -23,8 +46,8 @@
 </nav>
 
 <div class='header' id='nav-m-id'>
-    <div class="logo-left">
-        <img src="assets/img/logo-right.png" alt="">
+    <div class="logo-left mobileLogo">
+<!--        <img src="assets/img/logo-right.png" alt="">-->
     </div>
     <div class="navbar nav-mobile"
          [style.z-index]="collapsed ? '550' : ''"
@@ -39,7 +62,7 @@
     <a routerLink="/home" (click)="collapsed = !collapsed">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers" (click)="collapsed = !collapsed">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about" (click)="collapsed = !collapsed">{{'_AboutUs' | translate}}</a>
-    <a routerLink="/members" (click)="collapsed = !collapsed">{{'_Our_Members' | translate}}</a>
 </div>
 
 
+</header>

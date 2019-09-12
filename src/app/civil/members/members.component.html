@@ -2,14 +2,14 @@
 
 </nav>
 
-<div class="full-section">
+<div class="full-section" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="side">
         <div class="sec-img">
             <img src="assets/img/member1.jpg">
         </div>
     </div>
     <div class="side">
-        <div class="navbar-login logged">
+        <!--<div class="navbar-login logged">
 
             <div class="login-register" *ngIf="!_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')"
@@ -27,7 +27,7 @@
                 <div class="login"  [routerLink]="['/profile' , member_id]">{{'_MyProfile'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
-        </div>
+        </div>-->
 
         <div class="sec-content">
             <div class="about-content">
@@ -50,7 +50,7 @@
     </div>
 </div>
 
-<div class="members-section">
+<div class="members-section" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="characters-filters">
         <div class="characters" *ngIf="_appService.currentLanguage == 'en'">
             <p (click)="member.letter = 'a' ; filter()">A</p>
@@ -124,7 +124,7 @@
         <div class="row">
             <form class="input-group" [formGroup]="searchForm">
                 <input type="text" class="form-control" placeholder="{{'_Search' | translate}}..."
-                       formControlName="search" (keyup.enter)="filter()">
+                       formControlName="search" (keyup)="filter()">
                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" (click)="filter()"><i class="fa fa-search"
                                                                                                     aria-hidden="true"></i></button>

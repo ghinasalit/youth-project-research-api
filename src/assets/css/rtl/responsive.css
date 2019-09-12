@@ -72,6 +72,7 @@
         /*width: 85%;*/
         margin-right: 80px;
         margin-top: 70px;
+        margin-left: 80px;
     }
 
     app-members .social {
@@ -84,7 +85,11 @@
         margin: 3px 5px;
     }
 }
-
+@media (min-width: 1601px) and (max-width: 1661px) {
+  .button-action.about-arab-button, .button-action.join-ayrp-button {
+    margin-top: 0px;
+  }
+}
 @media (min-width: 1401px) and (max-width: 1600px) {
 
 
@@ -250,6 +255,7 @@
         display: flex;
         margin-right: 80px;
         margin-top: 70px;
+        margin-left: 80px;
     }
 
     app-members .social {
@@ -269,7 +275,7 @@
     }
 
     .card-item-objective .desc p {
-        font-size: 15px;
+        font-size: 16px;
     }
 
 
@@ -385,8 +391,8 @@
 
     .navbar-login {
         display: flex;
-        height: 65px;
-        direction: ltr;
+        height: 35px;
+        direction: rtl;
     }
 
 
@@ -399,7 +405,8 @@
     }
 
     h2 {
-        font-size: 25px;
+        font-size: 23px;
+      font-weight: bold;
     }
 
     .title {
@@ -435,7 +442,7 @@
     .cards-icon {
         display: flex;
         justify-content: space-between;
-        padding: 0 95px;
+        padding: 0 250px;
     }
 
     .box {
@@ -445,10 +452,10 @@
     }
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         left: 130px;
         bottom: 147px;
-        width: 98px;
+        width: 98px;*/
     }
 
     .social-paper {
@@ -462,7 +469,7 @@
     .top-description {
         font-size: 52px;
         font-weight: bold;
-        margin: 70px 115px;
+        margin: 130px 115px 0 0;
     }
 
     .drop-list {
@@ -504,11 +511,14 @@
 
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         left: 125px;
         bottom: 148px;
-        width: 80px;
+        width: 80px;*/
     }
+  .social-paper img {
+    width: 140px;
+  }
 
 
     .social i {
@@ -542,8 +552,9 @@
         justify-content: space-between;
         font-size: 20px;
         font-weight: normal;
-        color: #1b2850;
+        color: #FFF;
         cursor: pointer;
+      margin: 6px 80px 0 0;
     }
 
     .full-section .center-sticker {
@@ -618,10 +629,12 @@
         text-align: right;
         margin-right: 45px;
         margin-top: 60px;
+        margin-left: 45px;
     }
 
     .about-content .content {
         margin-top: 20px;
+      line-height: 35px;
     }
 
     .content p {
@@ -712,7 +725,7 @@
     .contact .sec-content {
         text-align: right;
         width: 85%;
-        margin-right: 65px;
+        margin-right: 40px;
         margin-top: 100px;
         margin-bottom: 70px;
     }
@@ -774,7 +787,7 @@
 
 
     .research-title {
-        padding: 20px;
+      padding: 20 0 20px 20px;
         display: flex;
         height: 135px;
         width: 100%;
@@ -1017,6 +1030,7 @@
         display: flex;
         margin-right: 48px;
         margin-top: 50px;
+        margin-left: 48px;
     }
 
     app-members .social {
@@ -1038,11 +1052,11 @@
     .card-item-objective .title {
         margin-bottom: 20px;
         margin-top: 0px;
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .card-item-objective .desc p {
-        font-size: 13px;
+        font-size: 16px;
     }
 
 
@@ -1223,6 +1237,7 @@
         font-size: 48px;
         margin: auto;
         font-weight: bold;
+      margin: 130px 115px 0 0;
     }
 
 
@@ -1276,14 +1291,14 @@
         justify-content: space-between;
         font-size: 15px;
         font-weight: normal;
-        color: #1b2850;
+        color: #FFF;
         cursor: pointer;
-        margin: 20px 5px;
+        margin: 6px 45px 0 0px;
     }
 
 
     .login-register div {
-        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .h2 {
@@ -1300,9 +1315,9 @@
 
     .navbar-login {
         display: flex;
-        height: 65px;
+        height: 35px;
         /*align-items: center;*/
-        direction: ltr;
+        direction: rtl;
     }
 
 
@@ -1344,10 +1359,10 @@
     }
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         left: 110px;
         bottom: 143px;
-        width: 80px;
+        width: 80px;*/
     }
 
 
@@ -1358,11 +1373,14 @@
 
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         left: 106px;
         bottom: 144px;
-        width: 65px;
+        width: 65px;*/
     }
+  .social-paper img {
+    width: 140px;
+  }
 
     .social i {
         font-size: 15px;
@@ -1425,10 +1443,12 @@
         width: 85%;
         margin-right: 40px;
         margin-top: 60px;
+        margin-left: 40px;
     }
 
     .about-content .content {
         margin-top: 20px;
+        line-height: 25px;
     }
 
 
@@ -1644,7 +1664,7 @@
     .header {
         overflow: hidden;
         height: 140px;
-        box-shadow: -10px 5px 5px #cac6c6;
+        box-shadow: -0px 2px 5px #cac6c6;
     }
 
 
@@ -1668,7 +1688,7 @@
 
     /*login*/
     .login {
-        height: 835px;
+        height: auto;
     }
 
     /*register*/
@@ -1699,7 +1719,7 @@
 
 
     .research-title {
-        padding: 20px;
+      padding: 20 0 20px 20px;
         display: flex;
         height: 135px;
         width: 50%;
@@ -1969,7 +1989,7 @@
     }
 
     .cards-items .c-item {
-        border: 1px solid #1b2850;
+        /*border: 1px solid #1b2850;*/
         width: 48.5%;
         margin: 10px 0;
         padding: 10px 15px;
@@ -2054,6 +2074,7 @@
         width: 85%;
         margin-right: 40px;
         margin-top: 70px;
+        margin-left: 40px;
     }
 
     app-members .social {
@@ -2128,11 +2149,11 @@
     .card-item-objective .title {
         margin-bottom: 20px;
         margin-top: 0px;
-        font-size: 11px;
+        font-size: 16px;
     }
 
     .card-item-objective .desc p {
-        font-size: 10px;
+        font-size: 14px;
     }
 
 
@@ -2271,7 +2292,7 @@
         line-height: 20px !important;
         font-size: 16px !important;
         z-index: 1000;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
     }
 
     .items-container {
@@ -2304,8 +2325,8 @@
 
     .navbar-login {
         display: flex;
-        height: 55px;
-        direction: ltr;
+        height: 35px;
+        direction: rtl;
     }
 
     #nav-toggle {
@@ -2332,11 +2353,11 @@
         font-weight: normal;
         color: #fff;
         cursor: pointer;
-        padding: 20px 10px;
+        margin: 6px 0 0 0px;
     }
 
     .navbar-login div {
-        margin: 0 5px;
+        /*margin: 0 5px;*/
     }
 
 
@@ -2348,11 +2369,11 @@
 
     .logged {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
-        direction: ltr;
+        direction: rtl;
         position: absolute;
-        left: 0px;
+        right: 0px;
         top: 0;
     }
 
@@ -2390,7 +2411,7 @@
     }
 
     .top-home-login .social {
-        display: inline-block;
+        display: none;
         margin-left: 5px;
         margin-top: 70px;
     }
@@ -2461,7 +2482,7 @@
     .cards-icon {
         display: flex;
         justify-content: space-between;
-        padding: 0;
+        padding: 0 60px;
     }
 
 
@@ -2497,11 +2518,14 @@
     }
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         left: 42px;
         bottom: 83px;
-        width: 40px;
+        width: 40px;*/
     }
+  .social-paper img {
+    width: 100px;
+  }
 
 
     .paper-section {
@@ -2549,6 +2573,7 @@
         font-size: 45px;
         margin: auto;
         font-weight: bold;
+      margin: 210px 40px 0 0;
     }
 
     .fa-sort-asc {
@@ -2707,7 +2732,6 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
-      padding-right: 15px;
     }
 
     .card-item .title div {
@@ -2773,7 +2797,7 @@
 
     .about-content .text-left p {
         margin-left: 7px;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .full-section .left-sticker {
@@ -2814,11 +2838,10 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
-      padding-right: 15px;
     }
 
     .social-paper .title {
-        margin-top: 30px;
+        /*margin-top: 30px;*/
     }
 
     .paper-section .title {
@@ -2888,12 +2911,14 @@
 
     .about-content .content {
         margin-top: 0px;
+      line-height: 25px;
+        line-height: 30px;
         padding: 0 0 0 30px;
     }
 
     .content p {
         margin: 15px 0;
-        font-size: 14px
+        font-size: 16px
     }
 
     app-about .content p {
@@ -2902,6 +2927,7 @@
     }
 
     .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -2968,7 +2994,7 @@
     }
 
     .contact h1 {
-        font-size: 2.5em;
+        font-size: 18px;
         font-weight: 600;
         margin: 20px 0 10px;
         text-align: right;
@@ -3065,7 +3091,7 @@
     .header {
         overflow: hidden;
         height: 90px;
-        box-shadow: -10px 5px 5px #cac6c6;
+        box-shadow: -0px 2px 5px #cac6c6;
     }
 
     .logo-right {
@@ -3117,7 +3143,7 @@
     }
 
     .research-title {
-        padding: 20px;
+      padding: 20 0 20px 20px;;
         display: flex;
         height: 135px;
         width: 51%;
@@ -3142,7 +3168,7 @@
 
 
     .social {
-        display: inline-block;
+        display: none;
         margin-left: 10px;
         margin-top: 0;
     }
@@ -3322,7 +3348,7 @@
 
 
     .cards-items .c-item {
-        border: 1px solid #1b2850;
+        /*border: 1px solid #1b2850;*/
         width: 100%;
         margin: 10px 0;
         padding: 10px 35px;
@@ -3484,6 +3510,7 @@
 
     /*about*/
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -3818,10 +3845,10 @@
     }
 
     .card-icon-research img {
-        position: absolute;
+        /*position: absolute;
         left: 42px;
         bottom: 84px;
-        width: 46px;
+        width: 46px;*/
     }
 
     .sort-icon {
@@ -3881,12 +3908,12 @@
 
     .card-item-objective .title {
         margin: 20px 0;
-        font-size: 15px;
+        font-size: 18px;
     }
 
 
     .card-item-objective .desc p {
-        font-size: 14px
+        font-size: 16px
     }
 
     .card-item-objective {
@@ -3962,7 +3989,7 @@
     }
 
     app-about .full-section .side {
-        height: 300px;
+        /*height: 300px;*/
     }
 
     .objective-f-text {
@@ -4025,7 +4052,7 @@
         line-height: 20px !important;
         font-size: 16px !important;
         z-index: 1000;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
 
     }
 
@@ -4071,9 +4098,9 @@
 
     .navbar-login {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
-        direction: ltr;
+        direction: rtl;
     }
 
     #nav-toggle {
@@ -4100,10 +4127,11 @@
         font-weight: normal;
         color: #fff;
         cursor: pointer;
+        margin: 0px 0 0 0px;
     }
 
     .navbar-login div {
-        margin: 0 5px;
+        /*margin: 0 5px;*/
     }
 
 
@@ -4115,11 +4143,11 @@
 
     .logged {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
-        direction: ltr;
+        direction: rtl;
         position: absolute;
-        left: 0;
+        right: 0;
         top: 0;
     }
 
@@ -4148,7 +4176,7 @@
     }
 
     .top-home-login .social {
-        display: inline-block;
+        display: none;
         margin-left: 5px;
         margin-top: 70px;
     }
@@ -4235,10 +4263,10 @@
     }
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         left: 64px;
         bottom: 84px;
-        width: 33px;
+        width: 33px;*/
     }
 
     app-home .card-item p {
@@ -4253,22 +4281,25 @@
 
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         left: 62px;
         bottom: 83px;
-        width: 35px;
+        width: 35px;*/
     }
+  .social-paper img {
+    width: 100px;
+  }
 
     .card-icon-research img {
-        position: absolute;
+        /*position: absolute;
         left: 63px;
         bottom: 84px;
-        width: 40px;
+        width: 40px;*/
     }
 
     .social-paper .title {
-        margin-top: 29px;
-        padding: 0 18px;
+        /*margin-top: 29px;
+        padding: 0 18px;*/
     }
 
     .paper-section {
@@ -4642,6 +4673,7 @@
 
     .about-content .content {
         margin-top: 0px;
+      line-height: 25px;
         padding: 0 0 0 30px;
     }
 
@@ -4651,6 +4683,7 @@
     }
 
     .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -4662,6 +4695,7 @@
     }
 
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -4726,7 +4760,7 @@
     }
 
     .contact h1 {
-        font-size: 2.5em;
+        font-size: 18px;
         font-weight: 600;
         margin: 20px 0 10px;
         text-align: right;
@@ -4823,7 +4857,7 @@
     .header {
         overflow: hidden;
         height: 90px;
-        box-shadow: -10px 5px 5px #cac6c6;
+        box-shadow: -0px 2px 5px #cac6c6;
     }
 
     .logo-right {
@@ -4880,7 +4914,7 @@
     }
 
     .research-title {
-        padding: 20px;
+      padding: 20 0 20px 20px;
         display: flex;
         height: 135px;
         width: 51%;
@@ -4905,14 +4939,14 @@
 
 
     .social {
-        display: inline-block;
+        display: none;
         margin-left: 10px;
         margin-top: 0px;
     }
 
     .social-paper .title {
-        margin-top: 29px;
-        padding: 0px 25px;
+        /*margin-top: 29px;
+        padding: 0px 25px;*/
     }
 
     .profile-container .edit-profile {
@@ -5093,7 +5127,7 @@
 
 
     .cards-items .c-item {
-        border: 1px solid #1b2850;
+        /*border: 1px solid #1b2850;*/
         width: 100%;
         margin: 10px 0;
         padding: 10px 35px;
@@ -5125,7 +5159,7 @@
 
     .nav-block {
         display: inline-grid;
-        text-align: center;
+        text-align: right;
         vertical-align: middle;
         margin: 0;
     }
@@ -5266,6 +5300,7 @@
 
     /*about*/
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -5614,6 +5649,7 @@
         font-size: 38px;
         margin: auto;
         font-weight: bold;
+      margin: 210px 40px 0 0;
     }
 
     .footer {
@@ -5750,7 +5786,7 @@
     }
 
     app-about .full-section .side {
-        height: 300px;
+        /*height: 300px;*/
     }
 
     .why-publish img {
@@ -5814,7 +5850,7 @@
         line-height: 20px !important;
         font-size: 16px !important;
         z-index: 1000;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
 
     }
 
@@ -5852,15 +5888,16 @@
 @media (max-width: 374px) {
 
 
+
     h2 {
         font-size: 13px;
     }
 
     .navbar-login {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
-        direction: ltr;
+        direction: rtl;
     }
 
     #nav-toggle {
@@ -5887,10 +5924,12 @@
         font-weight: normal;
         color: #fff;
         cursor: pointer;
+        margin: 6px 20px 0 0px
     }
 
     .navbar-login div {
-        margin: 0 5px;
+        /*margin: 0 5px;*/
+      font-size: 12px;
     }
 
 
@@ -5902,11 +5941,11 @@
 
     .logged {
         display: flex;
-        height: 55px;
+        height: 35px;
         align-items: center;
-        direction: ltr;
+        direction: rtl;
         position: absolute;
-        left: 0;
+        right: 0;
         top: 0;
     }
 
@@ -5935,7 +5974,7 @@
     }
 
     .top-home-login .social {
-        display: inline-block;
+        display: none;
         margin-left: 5px;
         margin-top: 70px;
     }
@@ -6022,10 +6061,10 @@
     }
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         left: 64px;
         bottom: 84px;
-        width: 33px;
+        width: 33px;*/
     }
 
     app-home .card-item p {
@@ -6034,10 +6073,10 @@
 
 
     .social-paper img {
-        position: absolute;
+        /*position: absolute;
         left: 55px;
         bottom: 84px;
-        width: 39px;
+        width: 39px;*/
     }
 
 
@@ -6048,15 +6087,18 @@
 
 
     .card-icon-submit img {
-        position: absolute;
+        /*position: absolute;
         left: 55px;
         bottom: 83px;
-        width: 33px;
+        width: 33px;*/
     }
+  .social-paper img {
+    width: 75px;
+  }
 
 
     .card-icon-research .title {
-        margin-top: 29px;
+        margin-top: 20px;
         padding: 0 18px;
     }
 
@@ -6067,7 +6109,7 @@
 
     .card-icon-research, .card-icon-submit {
         position: relative;
-        padding: 29px 10px;
+        padding: 29px 23px;
     }
 
 
@@ -6192,6 +6234,7 @@
     }
 
     .full-section .left-sticker {
+      display: none;
         height: 25px;
         width: 90px;
         position: absolute;
@@ -6267,10 +6310,11 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
-      padding-right: 15px;
+      /*padding-right: 15px;*/
     }
 
     .card-item.title div {
+
         background-color: #1B2850;
         border: 7px solid #1B2850;
     }
@@ -6333,7 +6377,7 @@
 
     .about-content .text-left p {
         margin-left: 7px;
-        font-size: 20px;
+        font-size: 16px;
     }
 
 
@@ -6364,7 +6408,7 @@
         font-size: 18px;
         font-weight: bold;
         color: #1b2850;
-      padding-right: 15px;
+      /*padding-right: 30px;*/
     }
 
     .card-item .title div {
@@ -6423,6 +6467,7 @@
 
     .about-content .content {
         margin-top: 0px;
+      line-height: 25px;
         padding: 0 0 0 30px;
     }
 
@@ -6432,6 +6477,7 @@
     }
 
     .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -6443,6 +6489,7 @@
     }
 
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -6464,6 +6511,7 @@
     }
 
     .partners .top-sticker {
+      display: none;
         height: 25px;
         width: 90px;
         position: absolute;
@@ -6507,7 +6555,7 @@
     }
 
     .contact h1 {
-        font-size: 2.5em;
+        font-size: 18px;
         font-weight: 600;
         margin: 20px 0 10px;
         text-align: right;
@@ -6605,7 +6653,7 @@
     .header {
         overflow: hidden;
         height: 90px;
-        box-shadow: -10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
     }
 
     .logo-right {
@@ -6662,7 +6710,7 @@
     }
 
     .research-title {
-        padding: 20px;
+      padding: 20 0 20px 20px;
         display: flex;
         height: 135px;
         width: 51%;
@@ -6687,14 +6735,14 @@
 
 
     .social {
-        display: inline-block;
+        display: none;
         margin-left: 10px;
         margin-top: 0px;
     }
 
     .social-paper .title {
-        margin-top: 29px;
-        padding: 0px 25px;
+        /*margin-top: 29px;
+        padding: 0px 25px;*/
     }
 
     .profile-container .edit-profile {
@@ -6875,10 +6923,10 @@
 
 
     .cards-items .c-item {
-        border: 1px solid #1b2850;
+        /*border: 1px solid #1b2850;*/
         width: 100%;
         margin: 10px 0;
-        padding: 10px 35px;
+        padding: 10px 25px;
         flex-wrap: wrap;
     }
 
@@ -6907,10 +6955,13 @@
 
     .nav-block {
         display: inline-grid;
-        text-align: center;
+        text-align: right;
         vertical-align: middle;
         margin: 0;
     }
+  ::ng-deep .ngx-dropdown-container .ngx-dropdown-list-container {
+    left: -70px !important;
+  }
 
 
     .drop-list {
@@ -7048,6 +7099,7 @@
 
     /*about*/
     app-about .full-section .center-sticker {
+      display: none;
         height: 45px;
         width: 45px;
         position: absolute;
@@ -7394,6 +7446,7 @@
         font-size: 32px;
         margin: auto;
         font-weight: bold;
+      margin: 350px 40px 0 0;
     }
 
 
@@ -7420,6 +7473,10 @@
     .card-item-objective img {
         width: 40%;
     }
+  .why-publish img {
+    width: 100%;
+    height: 100%;
+  }
 
 
     .card-item-objective .headline {
@@ -7437,6 +7494,7 @@
     .card-item-objective .title {
         margin: 20px 0;
         font-size: 15px;
+      padding-rght: 15px;
     }
 
 
@@ -7452,10 +7510,15 @@
         margin-bottom: 12px;
     }
 
-    .card-item-objective .icon {
-        text-align: center;
-        height: 110px;
-    }
+  .card-item-objective .icon {
+    text-align: center;
+    height: 110px;
+
+  }
+  .why-publish .icon {
+     text-align: center;
+     height: 245px;
+   }
 
     .join-content {
         display: flex;
@@ -7525,18 +7588,26 @@
 
 
     .footer {
+      width: 100%;
         font-size: 8px;
         margin-top: 10px;
-        display: flex;
-        justify-content: center;
+        display: block;
+      text-align: center;
     }
+  .footer p {
+    display: inline-block;
+  }
+  .footer .footerConditions {
+    margin-bottom:10px;
+  }
 
     app-home .top-home-login .login-register {
         color: #fff;
     }
 
+
     app-about .full-section .side{
-        height: 300px;
+        /*height: 300px;*/
     }
 
     .scrolled {
@@ -7544,7 +7615,7 @@
         line-height: 20px !important;
         font-size: 16px !important;
         z-index: 1000;
-        box-shadow: 10px 5px 5px #cac6c6;
+        box-shadow: 0px 2px 5px #cac6c6;
 
     }
 

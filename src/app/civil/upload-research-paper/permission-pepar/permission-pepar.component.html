@@ -1,4 +1,4 @@
-<div class="sec-content">
+<div class="sec-content" [style.direction]="appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="title">
         <span>
         <p> {{'_UploadCompleted' | translate}}</p> <i class="fa fa-check" aria-hidden="true"></i>

@@ -2,13 +2,13 @@
 
 </nav>
 
-<div class="profile-container">
+<div class="profile-container" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="left-sticker"></div>
     <div class="center-sticker"></div>
   <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000" *ngIf="member.avatar"><img [src]="_appService.api.api.imgURL  + member.avatar" alt=""></div>
   <div class="profile-photo" data-aos="fade-right" data-aos-duration="1000" *ngIf="!member.avatar"><img src="assets/img/avatar_default.jpeg" alt="" *ngIf="!member.avatar"></div>
     <div class="right-section">
-        <div class="navbar-login logged">
+        <!--<div class="navbar-login logged">
 
             <div class="login-register" *ngIf="!_appService.roll">
                 <div class="lang" (click)="_appService.switchLanguage('en')"
@@ -26,7 +26,7 @@
                 <div class="login" [routerLink]="['/profile' , member_id]">{{'_MyProfile'| translate}}</div>
                 <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
             </div>
-        </div>
+        </div>-->
 
         <div class="social-info">
             <div class="info-user">
@@ -108,7 +108,7 @@
                     </div>
                     <div class="info-item papers" *ngIf="username == member.username">
                         <div class="info-icon" routerLink="/upload-paper">
-                            <img src="assets/img/Reseach_Submit.png" alt="">
+                            <img src="assets/img/Reseach_Submit.png" width="60px">
                             <div class="title">
                                 <p>{{'_SubmitAPaper' | translate}}</p>
                                 <div>
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         <div class="info-icon" routerLink="/profile-info">
-                            <img src="assets/img/edit-profile.png" alt="">
+                            <img src="assets/img/edit-profile.png" width="60px">
                             <div class="title">
                                 <p>{{'_EditProfile' | translate}}</p>
                                 <div>
@@ -144,7 +144,7 @@
 </div>
 
 
-<div class="research-section" data-aos="fade-up" data-aos-duration="100">
+<div class="research-section" data-aos="fade-up" data-aos-duration="100" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
     <div class="title-search">
         <div class="research-title" *ngIf="papers">
             <div class="title">
@@ -163,7 +163,7 @@
 
                     <input type="checkbox" id="show-menu" role="button">
                     <div id="menu">
-                        <div class="drop-list" dropdown>
+                        <!--<div class="drop-list" dropdown>
                             <a dropdownToggle>{{'_Discipline' | translate}} <span>&#x25BE;</span></a>
                             <div *dropdownMenu role="menu" class="dropdown-menu text-center discipline">
                                 <div class="pt-2 pb-2"
@@ -174,8 +174,11 @@
                                     <a>{{discipline.discipline_en}}</a></div>
 
                             </div>
-                        </div>
-                        <div class="drop-list" dropdown>
+                        </div>-->
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'en'" (change)="filterByDiscipline($event)" class="filterSelectDiscipline"  [config]="configDiscipline" [options]="Disciplines"></ngx-select-dropdown>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'ar'" (change)="filterByDiscipline($event)" class="filterSelectDisciplineAr"  [config]="configDisciplineAr" [options]="Disciplines"></ngx-select-dropdown>
+
+                      <!--<div class="drop-list" dropdown>
                             <a dropdownToggle>{{'_Country' | translate}}<span>&#x25BE;</span></a>
                             <div *dropdownMenu role="menu" class="dropdown-menu text-center">
                                 <div class="pt-2 pb-2" (click)="paper.country  = '' ; filter()">
@@ -188,8 +191,11 @@
                                 </div>
                             </div>
 
-                        </div>
-                        <div class="drop-list" dropdown>
+                        </div>-->
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'en'" (change)="filterByCountry($event)" class="filterSelectCountry"  [config]="configCountries" [options]="Counties"></ngx-select-dropdown>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'ar'" (change)="filterByCountry($event)" class="filterSelectCountryAr"  [config]="configCountriesAr" [options]="Counties"></ngx-select-dropdown>
+
+                      <!--<div class="drop-list" dropdown>
                             <a dropdownToggle>{{'_Language' | translate}} <span>&#x25BE;</span> </a>
 
                             <div *dropdownMenu role="menu" class="dropdown-menu text-center">
@@ -200,8 +206,11 @@
                                 <div class="pt-2 pb-2" (click)="paper.lang = '2' ;  filter()">
                                     <a>{{'_Arabic' | translate}}</a></div>
                             </div>
-                        </div>
-                        <div class="drop-list" dropdown>
+                        </div>-->
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'en'" (change)="filterByLanguage($event)" class="filterSelectLanguage"  [config]="configLanguage" [options]="Language"></ngx-select-dropdown>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'ar'" (change)="filterByLanguage($event)" class="filterSelectLanguageAr"  [config]="configLanguageAr" [options]="LanguageAr"></ngx-select-dropdown>
+
+                     <!-- <div class="drop-list" dropdown>
                             <a dropdownToggle>{{'_Year' | translate}}<span>&#x25BE;</span></a>
                             <div *dropdownMenu role="menu" class="dropdown-menu text-center">
                                 <div class="pt-2 pb-2" (click)="paper.year = '' ; filter()">
@@ -210,9 +219,12 @@
                                 <div class="pt-2 pb-2" *ngFor="let year of years"
                                      (click)="paper.year = year.year ; filter()"><a>{{year.year}}</a></div>
                             </div>
-                        </div>
-                    </div>
-                </div><!--nav-block-->
+                        </div>-->
+
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'en'" (change)="filterByYear($event)" class="filterSelectYear"  [config]="configYear" [options]="years"></ngx-select-dropdown>
+                      <ngx-select-dropdown *ngIf="_appService.currentLanguage == 'ar'" (change)="filterByYear($event)" class="filterSelectYearAr"  [config]="configYearAr" [options]="years"></ngx-select-dropdown>
+                </div>
+               </div><!--nav-block-->
             </div>
             <div class="col-lg-12 research-input">
                 <div class="row">
@@ -260,14 +272,18 @@
             <div class="bookmark" style="cursor: pointer"
                  [style.float]="paper.language == 1 ?  'right' :  'left'">
 
-                <img src="assets/img/save-en.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'en'"
+                <img src="assets/img/save-en.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'en' && paper.username != username"
                      alt="Save paper">
-                <img src="assets/img/saved-en.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'en'"
+                <img src="assets/img/saved-en.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'en' && paper.username != username"
                      alt="Unsave Paper">
-                <img src="assets/img/save-ar.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'ar'"
+                <img src="assets/img/save-ar.png" (click)="savePaper(paper.paper_id)" *ngIf="paper.saved == 0 && _appService.currentLanguage == 'ar' && paper.username != username"
                      alt="Save paper">
-                <img src="assets/img/saved-ar.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'ar'"
+                <img src="assets/img/saved-ar.png" (click)="unsavePaper(paper.paper_id)" *ngIf="paper.saved == 1  && _appService.currentLanguage == 'ar' && paper.username != username"
                      alt="Unsave Paper">
+                <img src="assets/img/Edit_En_Png.png" [routerLink]="['/edit-paper' , paper.paper_id]" *ngIf="_appService.currentLanguage == 'en' && paper.username == username"
+                     alt="Edit Paper">
+                <img src="assets/img/Edit_Ar_Png.png" [routerLink]="['/edit-paper' , paper.paper_id]" *ngIf="_appService.currentLanguage == 'ar' && paper.username == username"
+                   alt="Edit Paper">
             </div>
             <div class="items-container">
                 <div class="item-header">
@@ -349,11 +365,11 @@
                             <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
                                 <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{'_Download' | translate}}</h6>
                             </div>
-                            <div class="edit-paper" style="cursor: pointer"
+                            <!--<div class="edit-paper" style="cursor: pointer"
                                  [routerLink]="['/edit-paper' , paper.paper_id]"
                                  *ngIf="paper.username == username">
                                 <i class="fa fa fa-pencil-square-o"></i>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>

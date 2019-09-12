@@ -12,11 +12,13 @@
 }
 
 
+
+
 .nav-links li:after {
     content: "";
     display: block;
     height: 10px;
-    margin-top: -13px;
+    margin-top: -21px;
     width: 50%;
     background-color: #75cddd;
     transition: -webkit-transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -38,7 +40,13 @@
     transform: scaleX(1);
 }
 
+header {position: fixed; width: 100%; z-index: 9999;}
 
+header .top-nav {
+  background-color: #092651;
+  color: #FFF;
+  height: 35px;
+}
 #nav-id, #nav-m-id {
     width: 100%;
     padding: 20px;
@@ -51,7 +59,6 @@
     transition: height .5s, line-height .5s, font-size .5s, background-color .5s;
     background: #fff;;
     color: #1b2850;
-    position: fixed;
 }
 
 @media (max-width: 768px) {
@@ -71,7 +78,7 @@
     }
 
     .nav-mobile #nav-toggle {
-        padding: 30px;
+        padding: 29px;
     }
 
     ::ng-deep .navbar-login .navbar {
@@ -83,8 +90,7 @@
     #nav-id {
         display: flex;
     }
-
-    #nav-m-id {
+  #nav-m-id {
         display: none;
     }
 }

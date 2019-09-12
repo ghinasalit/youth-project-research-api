@@ -62,7 +62,7 @@ export class PermissionPeparComponent implements OnInit {
             .subscribe(response => {
 
                 this.result = response;
-
+                console.log(this.result);
                 if (this.result.code === 1) {
                     this.toaster.success(this.trans.UploadPaperMSG, '');
 

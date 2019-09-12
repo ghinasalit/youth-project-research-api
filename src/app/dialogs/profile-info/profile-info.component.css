@@ -8,6 +8,7 @@
 
 ::ng-deep .mat-dialog-container {
     background: #F1F2F2 !important;
+    margin-top: 30px;
 
 
 }
@@ -323,3 +324,7 @@
         font-size: 12px !important;
     }
 }
+.field-item i {
+  vertical-align: -webkit-baseline-middle;
+}
+

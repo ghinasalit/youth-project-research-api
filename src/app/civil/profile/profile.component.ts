@@ -9,6 +9,7 @@ import {ToastrService} from 'ngx-toastr';
 import {PaperComponent} from '../../dialogs/paper/paper.component';
 import {TranslateService} from '@ngx-translate/core';
 import {RequestComponent} from '../../dialogs/request/request.component';
+import { SelectDropDownModule } from 'ngx-select-dropdown';
 
 @Component({
     selector: 'app-profile',
@@ -24,9 +25,18 @@ export class ProfileComponent implements OnInit {
     Counties: any;
     years: any;
     Disciplines: any;
+  Language: any;
+  LanguageAr: any;
     member: any = [];
     papers: any = [];
     paper = new Paper();
+  configDiscipline: any = [];
+  configLanguage: any = [];
+  configYear: any = [];
+  configDisciplineAr: any = [];
+  configLanguageAr: any = [];
+  configYearAr: any = [];
+  configCountriesAr: any = [];
     searchForm: FormGroup;
     statistics: any;
     throttle = 300;
@@ -45,6 +55,7 @@ export class ProfileComponent implements OnInit {
     constructor(public dialog: MatDialog,
                 public fb: FormBuilder,
                 private route: ActivatedRoute,
+                private configCountries: SelectDropDownModule,
                 private toaster: ToastrService,
                 private translate: TranslateService,
                 private router: Router,
@@ -77,6 +88,112 @@ export class ProfileComponent implements OnInit {
             this.trans.Success = lang.translations._Success;
 
         });
+
+      this.Language = [{language_id: '', language_name: 'All'  }, {language_id: 1, language_name: 'English'  }, {language_id: 2, language_name: 'العربية'}];
+
+
+      ////////////////////////////////////////
+
+      this.configCountries = {
+        displayKey: 'name_en',
+        search: true,
+        height: '300px',
+        placeholder: 'Country',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'Country',
+        searchOnKey: 'name_en'
+      };
+      ////////////////////////////////////////
+
+      this.configDiscipline = {
+        displayKey: 'discipline_en',
+        search: true,
+        height: '300px',
+        placeholder: 'Discipline',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'Discipline',
+        searchOnKey: 'discipline_en'
+      };
+      ////////////////////////////////////////
+
+      this.configLanguage = {
+        displayKey: 'language_name',
+        search: false,
+        height: '300px',
+        placeholder: 'Language',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'Language',
+        searchOnKey: 'language_name'
+      };
+      ////////////////////////////////////////
+
+      this.configYear = {
+        displayKey: 'year',
+        search: false,
+        height: '300px',
+        placeholder: 'Years',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder:  'Year',
+        searchOnKey: 'year'
+      };
+
+      ////////////////////////////////////////
+
+      this.LanguageAr = [{language_id: '', language_name: 'الكل'  }, {language_id: 1, language_name: 'English'  }, {language_id: 2, language_name: 'العربية'}];
+
+
+      ////////////////////////////////////////
+
+      this.configCountriesAr = {
+        displayKey: 'name_ar',
+        search: true,
+        height: '300px',
+        placeholder: 'الدولة',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'الدولة',
+        searchOnKey: 'name_ar'
+      };
+      ////////////////////////////////////////
+
+      this.configDisciplineAr = {
+        displayKey: 'discipline_ar',
+        search: true,
+        height: '300px',
+        placeholder: 'تخصص',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'تخصص',
+        searchOnKey: 'discipline_ar'
+      };
+      ////////////////////////////////////////
+
+      this.configLanguageAr = {
+        displayKey: 'language_name',
+        search: false,
+        height: '300px',
+        placeholder: 'اللغة',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'اللغة',
+        searchOnKey: 'language_name'
+      };
+      ////////////////////////////////////////
+
+      this.configYearAr = {
+        displayKey: 'year',
+        search: false,
+        height: '300px',
+        placeholder: 'السنة',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder:  'السنة',
+        searchOnKey: 'year'
+      };
 
     }
 
@@ -188,6 +305,23 @@ export class ProfileComponent implements OnInit {
 
     }
 
+  filterByCountry(data) {
+    this.paper.country = data.value.country_id;
+    this.filter();
+  }
+  filterByDiscipline(data) {
+    this.paper.discipline = data.value.discipline_id;
+    this.filter();
+  }
+  filterByLanguage(data) { //console.log(data);
+    // tslint:disable-next-line:triple-equals
+      this.paper.lang = data.value.language_id;
+    this.filter();
+  }
+  filterByYear(data) {
+    this.paper.year = data.value.year;
+    this.filter();
+  }
 
     filter() {
         this.paper.page = 0;

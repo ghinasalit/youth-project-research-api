@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {RequestComponent} from '../../dialogs/request/request.component';
 import {TranslateService} from '@ngx-translate/core';
+import { SelectDropDownModule } from 'ngx-select-dropdown';
 
 @Component({
     selector: 'app-papers',
@@ -23,15 +24,23 @@ export class PapersComponent implements OnInit {
     username: string;
     result1: any;
     Counties = [];
-    countriesList: any = [];
     years: any;
     Disciplines: any;
+  Language: any;
+  LanguageAr: any;
     papers: any = [];
     paper = new Paper();
     searchForm: FormGroup;
     scrollDistance = 1;
     scrollUpDistance = 2;
     throttle = 300;
+  configDiscipline: any = [];
+  configLanguage: any = [];
+  configYear: any = [];
+  configDisciplineAr: any = [];
+  configLanguageAr: any = [];
+  configYearAr: any = [];
+  configCountriesAr: any = [];
     isOneRecognized = false;
     statistics: any;
     private trans = {
@@ -40,11 +49,19 @@ export class PapersComponent implements OnInit {
         Success: null,
         Failed: null,
         FailedMSG: null,
+        English: null,
+        Arabic: null,
+        All: null,
+      /*Discipline: null,
+        Country: null,
+        Language: null,
+        Year: null,*/
     };
 
     constructor(public dialog: MatDialog,
                 public fb: FormBuilder,
                 private router: Router,
+                private configCountries: SelectDropDownModule,
                 private translate: TranslateService,
                 private toaster: ToastrService,
                 public _appService: AppService) {
@@ -57,11 +74,19 @@ export class PapersComponent implements OnInit {
             'search': '',
         });
 
-        translate.get(['_SavePaperMSG',  '_DeletePaperMSG' , '_Success', ]).subscribe(res => {
+        translate.get(['_SavePaperMSG',  '_DeletePaperMSG' , '_Success', '_English', '_Arabic', '_All', ]).subscribe(res => {
 
             this.trans.SavePaperMSG = res._SavePaperMSG;
             this.trans.DeletePaperMSG = res._DeletePaperMSG;
             this.trans.Success = res._Success;
+            this.trans.English = res._English;
+            this.trans.Arabic = res._Arabic;
+            this.trans.All = res._All;
+            /*this.trans.Discipline = res._Discipline;
+            this.trans.Country = res._Country;
+            this.trans.Language = res._Language;
+            this.trans.Year = res._Year;*/
+
         });
 
         translate.onLangChange.subscribe(lang => {
@@ -69,9 +94,123 @@ export class PapersComponent implements OnInit {
             this.trans.SavePaperMSG = lang.translations._SavePaperMSG;
             this.trans.DeletePaperMSG = lang.translations._DeletePaperMSG;
             this.trans.Success = lang.translations._Success;
+            this.trans.English = lang.translations._English;
+            this.trans.Arabic = lang.translations._Arabic;
+            this.trans.All = lang.translations._All;
+            /*this.trans.Discipline = lang._Discipline;
+            this.trans.Country = lang._Country;
+            this.trans.Language = lang._Language;
+            this.trans.Year = lang._Year;*/
+
+
 
         });
 
+      this.Language = [{language_id: '', language_name: 'All'  }, {language_id: 1, language_name: 'English'  }, {language_id: 2, language_name: 'العربية'}];
+
+
+      ////////////////////////////////////////
+
+      this.configCountries = {
+        displayKey: 'name_en',
+        search: true,
+        height: '300px',
+        placeholder: 'Country',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'Country',
+        searchOnKey: 'name_en'
+      };
+      ////////////////////////////////////////
+
+      this.configDiscipline = {
+        displayKey: 'discipline_en',
+        search: true,
+        height: '300px',
+        placeholder: 'Discipline',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'Discipline',
+        searchOnKey: 'discipline_en'
+      };
+      ////////////////////////////////////////
+
+      this.configLanguage = {
+        displayKey: 'language_name',
+        search: false,
+        height: '300px',
+        placeholder: 'Language',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'Language',
+        searchOnKey: 'language_name'
+      };
+      ////////////////////////////////////////
+
+      this.configYear = {
+        displayKey: 'year',
+        search: false,
+        height: '300px',
+        placeholder: 'Years',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder:  'Year',
+        searchOnKey: 'year'
+      };
+
+      ////////////////////////////////////////
+
+      this.LanguageAr = [{language_id: '', language_name: 'الكل'  }, {language_id: 1, language_name: 'English'  }, {language_id: 2, language_name: 'العربية'}];
+
+
+      ////////////////////////////////////////
+
+      this.configCountriesAr = {
+        displayKey: 'name_ar',
+        search: true,
+        height: '300px',
+        placeholder: 'الدولة',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'الدولة',
+        searchOnKey: 'name_ar'
+      };
+      ////////////////////////////////////////
+
+      this.configDisciplineAr = {
+        displayKey: 'discipline_ar',
+        search: true,
+        height: '300px',
+        placeholder: 'تخصص',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'تخصص',
+        searchOnKey: 'discipline_ar'
+      };
+      ////////////////////////////////////////
+
+      this.configLanguageAr = {
+        displayKey: 'language_name',
+        search: false,
+        height: '300px',
+        placeholder: 'اللغة',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder: 'اللغة',
+        searchOnKey: 'language_name'
+      };
+      ////////////////////////////////////////
+
+      this.configYearAr = {
+        displayKey: 'year',
+        search: false,
+        height: '300px',
+        placeholder: 'السنة',
+        moreText: 'more',
+        noResultsFound: 'No results found!',
+        searchPlaceholder:  'السنة',
+        searchOnKey: 'year'
+      };
 
     }
 
@@ -131,7 +270,7 @@ export class PapersComponent implements OnInit {
 
     savePaper(paper_id) {
 
-        console.log(paper_id);
+        //console.log(paper_id);
         this.paper.paper_id = paper_id;
         this._appService.api.savePaperService(this.paper)
             .subscribe(response => {
@@ -185,6 +324,7 @@ export class PapersComponent implements OnInit {
             .subscribe(response => {
 
                 this.result = response;
+                console.log(this.result);
                 if (this.result.code === 1) {
                     this.result.data.forEach(item => {
                         this.papers.push(item);
@@ -200,19 +340,19 @@ export class PapersComponent implements OnInit {
 
     }
   filterByCountry(data) {
-    this.paper.country = data;
+    this.paper.country = data.value.country_id;
     this.filter();
   }
   filterByDiscipline(data) {
-    this.paper.discipline = data;
+    this.paper.discipline = data.value.discipline_id;
     this.filter();
   }
   filterByLanguage(data) { console.log(data);
-    this.paper.lang = data;
+    this.paper.lang = data.value.language_id;
     this.filter();
   }
   filterByYear(data) {
-    this.paper.year = data;
+    this.paper.year = data.value.year;
     this.filter();
   }
     filter() {
@@ -232,6 +372,7 @@ export class PapersComponent implements OnInit {
         this._appService.api.searchPapersService(this.paper)
             .subscribe(response => {
                 this.result = response;
+                this.papers = [];
                 if (this.result.code === 1) {
                     this.result.data.forEach(item => {
                         this.papers.push(item);
@@ -265,7 +406,7 @@ export class PapersComponent implements OnInit {
 
     downloadPaper(paper) {
         this._appService.api.downloadNoteReceipt(paper.file).subscribe(res => {
-            let newBlob = new Blob([res], {type: 'application/pdf'});
+            const newBlob = new Blob([res], {type: 'application/pdf'});
 
             if (window.navigator && window.navigator.msSaveOrOpenBlob) {
                 window.navigator.msSaveOrOpenBlob(newBlob);
@@ -275,7 +416,7 @@ export class PapersComponent implements OnInit {
             // Create a link pointing to the ObjectURL containing the blob.
             const data = window.URL.createObjectURL(newBlob);
 
-            let link = document.createElement('a');
+            const link = document.createElement('a');
             link.href = data;
             link.download = paper.title + '.pdf';
             // this is necessary as link.click() does not work on the latest firefox
@@ -332,51 +473,6 @@ export class PapersComponent implements OnInit {
 
     }
 
-  ngAfterViewInit(){
-    $(document).ready(function() {
-      $('#resizing_select_Discipline').change(function(){
-        $("#width_tmp_option_Discipline").html($('#resizing_select_Discipline option:selected').text());
-        $(this).width($("#width_tmp_select_Discipline").width());
-      });
-
-      //    ###############################################################################
-
-      $('#resizing_select_Discipline1').change(function(){
-        $("#width_tmp_option_Discipline1").html($('#resizing_select_Discipline1 option:selected').text());
-        $(this).width($("#width_tmp_select_Discipline1").width());
-      });
-
-      //    ###############################################################################
-
-      $('#resizing_select_Country').change(function(){
-        $("#width_tmp_option_Country").html($('#resizing_select_Country option:selected').text());
-        $(this).width($("#width_tmp_select_Country").width());
-      });
-
-      //    ###############################################################################
-
-      $('#resizing_select_Country1').change(function(){
-        $("#width_tmp_option_Country1").html($('#resizing_select_Country1 option:selected').text());
-        $(this).width($("#width_tmp_select_Country1").width());
-      });
-
-      //    ###############################################################################
-
-      $('#resizing_select_Language').change(function(){
-        $("#width_tmp_option_Language").html($('#resizing_select_Language option:selected').text());
-        $(this).width($("#width_tmp_select_Language").width());
-      });
-
-      //    ###############################################################################
-
-      /*$('#resizing_select_Year').change(function(){
-        $("#width_tmp_option_Year").html($('#resizing_select_Year option:selected').text());
-        $(this).width($("#width_tmp_select_Year").width());
-      });*/
-
-    });
-
-    }
 
     ngOnInit() {
 
@@ -387,20 +483,14 @@ export class PapersComponent implements OnInit {
         this.username =   this.data.username = localStorage.getItem('username');
         this._appService.countiesNotifier.subscribe(data => {
           this.Counties = data;
-            // if(data != null){
-            //   this.Counties = data;
-            //   this.Counties.forEach(Country => {
-            //     this.countriesList.push(Country);
-            //   });
-            //   console.log(this.countriesList);
-            // }
+            if (data != null) {
+              this.Counties = data;
+            }
         });
 
-
-
-        this._appService.disciplinesNotifier.subscribe(data => {
-            this.Disciplines = data;
-        });
+      this._appService.disciplinesNotifier.subscribe(data => {
+        this.Disciplines = data;
+      });
         this._appService.yearsNotifier.subscribe(data => {
             this.years = data;
         });

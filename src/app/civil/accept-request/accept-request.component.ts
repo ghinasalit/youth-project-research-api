@@ -12,7 +12,7 @@ export class AcceptRequestComponent implements OnInit {
     paper = new Paper();
     counter = 5;
 
-    constructor(private route: ActivatedRoute, private _appService: AppService, private router: Router) {
+    constructor(private route: ActivatedRoute, public _appService: AppService, private router: Router) {
     }
 
 

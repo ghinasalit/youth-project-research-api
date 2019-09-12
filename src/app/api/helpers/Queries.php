@@ -47,10 +47,8 @@ class Queries
       'date' => date("Y-m-d"),
       'file' => $paper,
     );
-
-
     $paper_id = $db->insert('papers', $data);
-    $tags = explode(',', $tags[0]);
+    $tags = explode(',', $tags);
     foreach ($tags as $value) {
       $data = Array(
         'tag_id' => $value,
@@ -61,7 +59,7 @@ class Queries
     $paper = $db->where('paper_id', $paper_id)->getOne('papers', 'paper_id', 'title, description , status, discipline_id, permission , language , file');
 
     if ($paper) {
-//            Queries::send_email_publish_paper($paper['paper_id'], $member_id);
+     Queries::send_email_publish_paper($paper['paper_id'], $member_id);
       return $paper;
     } else {
       return -25;
@@ -82,23 +80,15 @@ class Queries
 
       $to = $member_to['email'];
 //            $to = 'ghinasallit@gmail.com';
-      $subject = "Arab Youth Research/publish paper";
+      $subject = "Arab Youth Research/Publish Paper";
 
       $body = "
 <html>
-<head>
-<title></title>
-</head>
-<body>
+<body style=\"width:600px; margin:0 auto; font-size: 14px\">
 <p>Dear,</p>
 <p> We need your kind support to confirm publish my paper</p>
-<table>
-<tr>
-<a href=http://admin.arabyouthresearch.org/#/paper/" . $paper_id . ">Click here to preview paper </a>
-</tr>
-</table>
+<a href=http://arabyouthresearch.org/#/paper/" . $paper_id . ">Click here to preview paper </a>
 </body>
-<table>
 </html>
 ";
 
@@ -158,18 +148,10 @@ class Queries
 
       $body = "
 <html>
-<head>
-<title></title>
-</head>
-<body>
+<body style=\"width:600px; margin:0 auto; font-size: 14px\">
 <p>Dear,</p>
-<table>
-<tr>
-<a href=http://admin.arabyouthresearch.org/#/reset-password/" . $data['activation_code'] . ">Click here to reset password </a>
-</tr>
-</table>
+<a href=http://arabyouthresearch.org/#/reset-password/" . $data['activation_code'] . ">Click here to reset password </a>
 </body>
-<table>
 </html>
 ";
 
@@ -294,7 +276,7 @@ class Queries
       }
       $d = $db->insert('members', $data);
       $user = $db->where('email', $email)->getOne('members', 'member_id ,email ,first_name  ,last_name');
-      if ($db->count) {
+      if ($user) {
         Queries::send_email_active_member($data['first_name'], $email, $data['activation_code']);
 //                $_SESSION[___APP]['session_key'] = $data['session_id'];
         return $user;
@@ -312,12 +294,11 @@ class Queries
     global $db;
     $to = $email;
     //$to = 'm.ezzi@webntech.ae';
-    $subject = "Active account";
+    $subject = "Account Activation AYRP Member";
 
     $body = '<!DOCTYPE html>
 <html>
 <body style="width:600px; margin:0 auto; font-size: 14px">
-<p>Subject: Account Activation AYRP Member</p>
 <p>Dear '.$first_name.',</p>
 <p>Thank you for registering to <a href="http://arabyouthresearch.org" title="Arab Youth Research">arabyouthreseach.org</a><br>
 To confirm that this account has been created by you, please click the link below or copy<br>
@@ -354,7 +335,7 @@ The AYRP Team.</p>
 
     if(mail($to, $subject, $body, $headers)){
       $data = Array(
-        'email_sent' => '1',
+        'activation_email_sent' => '1',
       );
 
       $db->where('email', $to);
@@ -567,7 +548,8 @@ The AYRP Team.</p>
     // page start from 1
     global $db;
     $page *= $size;
-    $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id , papers.language ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , discipline.discipline_en , discipline.discipline_ar , members.username
+    $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id , papers.language ,papers.permission , papers.title , papers.views , papers.downloads
+ , members.first_name , members.last_name , discipline.discipline_en , discipline.discipline_ar , members.username
                   FROM members JOIN papers ON members.member_id ON paper.paper_id JOIN  discipline ON papers.discipline_id = discipline.discipline_id
                   WHERE  papers.status = 1 ";
 
@@ -593,7 +575,7 @@ The AYRP Team.</p>
   static public function get_paper($paper_id)
   {
     global $db;
-    $query = "SELECT papers.paper_id , papers.description , papers.title , papers.language , disciplines.discipline_ar , disciplines.discipline_id , disciplines.discipline_en   FROM papers JOIN disciplines  ON papers.discipline_id = disciplines.discipline_id  WHERE papers.paper_id = '" . $paper_id . "'";
+    $query = "SELECT papers.paper_id , papers.description , papers.title , papers.downloads , papers.language , disciplines.discipline_ar , disciplines.discipline_id , disciplines.discipline_en   FROM papers JOIN disciplines  ON papers.discipline_id = disciplines.discipline_id  WHERE papers.paper_id = '" . $paper_id . "'";
     $paper = $db->withTotalCount()->rawQuery($query);
     $query = "SELECT tags.tag_id , tags.tag_en , tags.tag_ar FROM paper_tags JOIN tags  ON paper_tags.tag_id = tags.tag_id  WHERE paper_tags.paper_id = '" . $paper_id . "'";
     $tags = $db->withTotalCount()->rawQuery($query);
@@ -878,11 +860,11 @@ The AYRP Team.</p>
     global $db;
     $page *= $size;
 
-    $q = "SELECT papers.date , papers.description , papers.file , members.username , members.member_id ,  papers.language , papers.language , papers.paper_id ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
+    $q = "SELECT papers.date , papers.description , papers.file , papers.downloads , members.username , members.member_id ,  papers.language , papers.language , papers.paper_id ,papers.permission , papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
                   FROM members JOIN papers JOIN  disciplines 
                   ON members.member_id = papers.member_id && 
                    papers.discipline_id = disciplines.discipline_id 
-                  WHERE  papers.status = 1 ";
+                  WHERE  papers.status = 1 ORDER BY papers.paper_id DESC";
     $q_with_paging = $q . " LIMIT {$page} , {$size}";
     $papers = $db->withTotalCount()->rawQuery($q_with_paging);
 
@@ -963,9 +945,7 @@ The AYRP Team.</p>
       $q .= ")";
 
     }
-    $q_with_paging = $q . " LIMIT {$page} , {$size}";
-
-
+    $q_with_paging = $q . "ORDER BY papers.paper_id DESC LIMIT {$page} , {$size}";
 
     $papers = $db->withTotalCount()->rawQuery($q_with_paging);
     foreach ($papers as $key => $item) {
@@ -1025,7 +1005,7 @@ The AYRP Team.</p>
     if (!empty($letter)) {
       $q .= " AND (first_name LIKE '" . $letter . "%' OR  last_name LIKE '" . $letter . "%')";
     };
-    $q_with_paging = $q ;//. " LIMIT {$page} , {$size}";
+    $q_with_paging = $q;//. " LIMIT {$page} , {$size}";
 
     $papers = $db->withTotalCount()->rawQuery($q_with_paging);
     if (!empty($papers)) {
@@ -1115,20 +1095,11 @@ The AYRP Team.</p>
 
       $body = "
 <html>
-<head>
-<title></title>
-</head>
-<body>
+<body style=\"width:600px; margin:0 auto; font-size: 14px\">
 <p>Dear,</p>
 <p> Please can you give me access on your <a href=http://arabyouthresearch.org/api/uploaded/" . $file . ">paper</a> </p>
-<table>
-<tr>
 <p>$message</p>
-</tr>
-<tr>
 <a href=http://arabyouthresearch.org/#/accept-request/" . $code . ">Click here to confirm </a>
-</tr>
-</table>
 </body>
 </html>
 ";
@@ -1148,7 +1119,7 @@ The AYRP Team.</p>
   static public function send_email_accept_access($activation_id, $member_owner)
   {
     global $db;
-    $query = "SELECT papers.file , members.email  from papers JOIN requests JOIN members ON papers.paper_id = requests.paper_id && requests.member_to = members.member_id WHERE requests.activation_code = '" . $activation_id . "'";
+    $query = "SELECT papers.file , members.email  from papers JOIN requests JOIN members ON papers.paper_id = requests.paper_id && requests.member_from = members.member_id WHERE requests.activation_code = '" . $activation_id . "'";
     $data = $db->withTotalCount()->rawQuery($query);
     $member_from = $db->where('member_id', $member_owner)
       ->getOne('members', 'email');
@@ -1162,14 +1133,11 @@ The AYRP Team.</p>
 
       $to = $member_to;
 //            $to = 'ghinasallit@gmail.com';
-      $subject = "Arab Youth Research/accept Request";
+      $subject = "Arab Youth Research/Accept Request";
 
       $body = "
 <html>
-<head>
-<title></title>
-</head>
-<body>
+<body style=\"width:600px; margin:0 auto; font-size: 14px\">
 <p>Dear,</p>
 <p> You have access on <a href=http://arabyouthresearch.org/api/uploaded/" . $file . ">paper</a> now.</p>
 </body>
@@ -1372,9 +1340,7 @@ The AYRP Team.</p>
     global $db;
     $page *= $size;
     $data = Array(
-      'university.country_id' => $country,
       'papers.date' => $year,
-      'papers.language' => $lang,
     );
 
     $keywords = Array(
@@ -1385,13 +1351,19 @@ The AYRP Team.</p>
                papers.title , papers.views , members.first_name , members.last_name , disciplines.discipline_en , disciplines.discipline_ar
               FROM  papers JOIN members ON papers.member_id = members.member_id 
               JOIN university ON university.university_id = members.university_id 
-              JOIN  disciplines ON papers.discipline_id = disciplines.discipline_id WHERE  papers.status = 1  AND members.username = '" . $username . "' AND (1=1 ";
+              JOIN  disciplines ON papers.discipline_id = disciplines.discipline_id WHERE  papers.status = 1  AND members.member_id = '" . $username . "' AND (1=1 ";
     foreach ($data as $key => $item) {
       if (!empty($item)) {
         $q .= " AND " . $key . " LIKE " . "'%" . $item . "%' ";
       }
     }
 
+    if ($country) {
+      $q .= " AND university.country_id = " . "'" . $country . "' ";
+    }
+    if ($lang) {
+      $q .= " AND papers.language = " . "'" . $lang . "' ";
+    }
     if ($discipline) {
       $q .= " AND papers.discipline_id = " . "'" . $discipline . "' ";
     }
@@ -1407,6 +1379,9 @@ The AYRP Team.</p>
 
     }
     $q_with_paging = $q . " LIMIT {$page} , {$size}";
+
+    //var_dump($q);
+
     $papers = $db->withTotalCount()->rawQuery($q_with_paging);
     foreach ($papers as $key => $item) {
       $q = "SELECT tags.tag_en , tags.tag_ar FROM papers JOIN paper_tags JOIN tags

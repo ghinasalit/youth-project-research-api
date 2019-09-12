@@ -5,6 +5,7 @@ import {AppService} from '../../app.service';
 import {MatDialog} from '@angular/material';
 import {ProfileInfoComponent} from '../../dialogs/profile-info/profile-info.component';
 import {ToastrService} from 'ngx-toastr';
+import {ConditionsComponent} from '../../dialogs/conditions/conditions.component';
 
 @Component({
     selector: 'app-register',
@@ -31,6 +32,7 @@ export class RegisterComponent implements OnInit {
             'f_name': [null, Validators.required],
             'email': [null, [Validators.required, Validators.pattern(this._appService.isEmail)]],
             'password': [null, Validators.required],
+          'conditions': [null, Validators.required]
         });
     }
 
@@ -64,6 +66,10 @@ export class RegisterComponent implements OnInit {
                 });
     }
 
+  openDialogCondition() {
+    const dialogRef = this.dialog.open(ConditionsComponent);
+
+  }
 
 
     ngOnInit() {
