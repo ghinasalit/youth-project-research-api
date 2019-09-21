@@ -31,10 +31,10 @@
 
         <div class="sec-content">
             <div class="about-content">
-                <div class="title">
+              <h1 class="text-left">
                     <p>{{'_MeetOurMembers'|translate}}</p>
-                    <div></div>
-                </div>
+              </h1>
+              <div class="line"></div>
                 <div class="content">
                     <p>{{'_ResearchersDescription' | translate}}</p>
                 </div>
@@ -119,19 +119,29 @@
         <!--                <i class="fa fa-sort-asc" aria-hidden="true" *ngIf="data.sort == 'desc'" (click)="sortMembers('asc')"></i>-->
         <!--            </div>-->
         <!--        </div>-->
+      <div class="row">
+        <form class="input-group" [formGroup]="searchForm">
+          <input type="text" class="form-control" size="20" placeholder="{{'_Search' | translate}}..."
+                 formControlName="search" (keyup)="filter()">
+          <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" (click)="filter()"><i class="fa fa-search"
+                                                                                                    aria-hidden="true"></i></button>
+                        </span>
+        </form>
+      </div>
     </div>
-    <div class="col-lg-12 research-input">
+    <!--<div class="col-lg-12 research-input">
         <div class="row">
-            <form class="input-group" [formGroup]="searchForm">
-                <input type="text" class="form-control" placeholder="{{'_Search' | translate}}..."
-                       formControlName="search" (keyup)="filter()">
-                <span class="input-group-btn">
+          <form class="input-group" [formGroup]="searchForm">
+            <input type="text" class="form-control" placeholder="{{'_Search' | translate}}..."
+                   formControlName="search" (keyup)="filter()">
+            <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" (click)="filter()"><i class="fa fa-search"
                                                                                                     aria-hidden="true"></i></button>
                         </span>
-            </form>
+          </form>
         </div>
-    </div>
+    </div>-->
     <div class="members-cards" infinite-scroll
          [infiniteScrollDistance]="scrollDistance"
          [infiniteScrollUpDistance]="scrollUpDistance"

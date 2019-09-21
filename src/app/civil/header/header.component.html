@@ -16,16 +16,16 @@
              *ngIf="_appService.currentLanguage == 'ar'">{{'_Lang'| translate}}</div>
         <div class="lang" (click)="_appService.switchLanguage('ar')"
              *ngIf="_appService.currentLanguage == 'en'">{{'_Lang'| translate}}</div>
-        <div class="login"  [routerLink]="['/profile' , memberDetails.member_id]">{{'_MyProfile'| translate}}</div>
         <div class="login" (click)="_appService.logout()">{{'_Logout'| translate}}</div>
+        <div class="login"  [routerLink]="['/profile' , memberDetails.member_id]">{{ memberDetails.first_name}}</div> <!--{{'_MyProfile'| translate}}-->
       </div>
     </div>
   </div>
-<nav class='nav header' id='nav-id' [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
+<nav class='nav header' id='nav-id' *ngIf="navActive" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'ltr'">
    <div class="logo-left" >
         <a href="http://www.arabyouthcenter.org/" target="_blank" title="Arab Youth Center  "><img src="assets/img/logo-left.png" alt=""></a>
     </div>
-    <ul class="nav-links" *ngIf="navActive">
+    <ul class="nav-links" *ngIf="navActive" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'">
         <li (click)="_appService.active = 0" [ngClass]="_appService.active == 0 ? 'active' : ''"
             style=" animation: 0.5s ease 0.442857s 1 normal forwards running navLinkFade ;" routerLink="/"><a>
             <p>{{'_HomePage' | translate}}</p></a></li>
@@ -35,12 +35,12 @@
         <li (click)="_appService.active = 2" [ngClass]="_appService.active == 2 ? 'active' : ''"
             style="animation: 0.5s ease 0.871429s 1 normal forwards running navLinkFade;" routerLink="/about"><a >
             <p>{{'_AboutUs' | translate}}</p></a></li>
-        <li (click)="_appService.active = 3" [ngClass]="_appService.active == 3 ? 'active' : ''"
+        <!--<li (click)="_appService.active = 3" [ngClass]="_appService.active == 3 ? 'active' : ''"
             style="animation: 0.5s ease 1.01429s 1 normal forwards running navLinkFade;" routerLink="/members">
-            <a><p>{{'_Our_Members' | translate}}</p></a></li>
+            <a><p>{{'_Our_Members' | translate}}</p></a></li>-->
     </ul>
 
-    <div class="logo-right " routerLink="/" style="cursor: pointer">
+    <div class="logo-right " routerLink="/" style="cursor: pointer" style='direction:rtl'>
         <img src="assets/img/logo-right.png" alt="">
     </div>
 </nav>
@@ -62,6 +62,7 @@
     <a routerLink="/home" (click)="collapsed = !collapsed">{{'_HomePage' | translate}}</a>
     <a routerLink="/papers" (click)="collapsed = !collapsed">{{'_ResearchPapers' | translate}}</a>
     <a routerLink="/about" (click)="collapsed = !collapsed">{{'_AboutUs' | translate}}</a>
+<!--    <a routerLink="/members" (click)="collapsed = !collapsed">{{'_Our_Members' | translate}}</a>-->
 </div>
 
 

@@ -61,6 +61,8 @@ import { ChangePasswordComponent } from './civil/change-password/change-password
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgxFileDropModule } from 'ngx-file-drop';
+import { ThankYouComponent } from './civil/upload-research-paper/thank-you/thank-you.component';
+import { UniversityVerificationComponent } from './civil/university-verification/university-verification.component';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -107,6 +109,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         AcceptRequestComponent,
         ResetPasswordComponent,
         ChangePasswordComponent,
+        ThankYouComponent,
+        UniversityVerificationComponent,
 
 
 

@@ -324,7 +324,7 @@ export class PapersComponent implements OnInit {
             .subscribe(response => {
 
                 this.result = response;
-                console.log(this.result);
+                //console.log(this.result);
                 if (this.result.code === 1) {
                     this.result.data.forEach(item => {
                         this.papers.push(item);
@@ -347,7 +347,7 @@ export class PapersComponent implements OnInit {
     this.paper.discipline = data.value.discipline_id;
     this.filter();
   }
-  filterByLanguage(data) { console.log(data);
+  filterByLanguage(data) { //console.log(data);
     this.paper.lang = data.value.language_id;
     this.filter();
   }

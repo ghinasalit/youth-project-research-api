@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: #FFF;
     cursor: pointer;
     margin: auto;
-    margin: 6px 100px 0 0px;
+    margin: 6px 85px 0 0px;
 }
 
 .left-section button {
@@ -186,12 +186,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 .logo-left {
     float: left;
-    padding: 31px 95px;
+    padding: 31px 80px;
 }
 
 .logo-right {
     float: right;
-    padding: 31px 95px;
+    padding: 31px 80px;
 }
 
 .logo-right img {
@@ -231,11 +231,16 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0 160px;
 }
 
+.cards-icon img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 .card-icon-research, .card-icon-submit {
     position: relative;
     padding: 50px 65px;
     direction: initial;
-  text-align: right;
+    text-align: right;
 }
 
 
@@ -372,9 +377,9 @@ h1, h2, h3, h4, h5, h6, p {
 .title div {
     border: 13px solid #75cddd;
     background-color: #75cddd;
-    width: 205px;
+    width: 105px;
 }
-.about-content div.line, .sec-content div.line {
+.about-content div.line, .sec-content div.line, .top-description .line, .statistics .line   {
   border: 13px solid #75cddd;
   background-color: #75cddd;
   width: 205px;
@@ -476,7 +481,7 @@ app-home .card-item p {
     text-align: right;
     margin-right: 80px;
     margin-top: 70px;
-    margin-right: 80px;
+    margin-left: 80px;
 }
 
 
@@ -540,6 +545,10 @@ app-home .card-item p {
     margin-right: 40px;
     margin-top: 100px;
     margin-bottom: 70px;
+  line-height: 35px;
+}
+.sec-content.sec-enquiry {
+  margin-right: 80px;
 }
 
 .full-name .title {
@@ -559,10 +568,10 @@ app-home .card-item p {
     margin-right: 0px;
 }
 
-.views-paper {
-    margin-left: 10px;
-    width: 155px;
-}
+/*.views-paper {*/
+/*    margin-left: 10px;*/
+/*    width: 155px;*/
+/*}*/
 
 
 .edit-profile i {
@@ -879,9 +888,16 @@ app-home .card-item p {
 }
 
 
+/*.views-paper, .download-paper {*/
+/*    display: flex;*/
+/*}*/
 .views-paper, .download-paper {
-    display: flex;
+  /*display: flex;*/
+  width: 50%;
+  font-size: 12px;
 }
+.views-paper {float:right; text-align: right}
+.download-paper {float:left; text-align: left}
 
 
 .check-filename i {
@@ -1110,16 +1126,17 @@ app-papers .statistics {
     display: flex;
     flex-direction: column;
     font-size: 75px;
-    margin: auto;
+    margin: 170px 115px 0 0;
+    text-align: right;
     padding: 100px 0;
     color: #fff;
 }
 
 
-.views-paper {
-    margin-left: 10px;
-    width: 115px;
-}
+/*.views-paper {*/
+/*    margin-left: 10px;*/
+/*    width: 115px;*/
+/*}*/
 
 
 .research-search {
@@ -1419,7 +1436,7 @@ app-upload-paper .submit {
 
 
 .card-item-objective img{
-    width: 60%;
+    width: 70%;
 }
 
 
@@ -1556,7 +1573,7 @@ app-about .research-all-around  .center-sticker {
 
 
 .statistics div {
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     direction: rtl;
 }
@@ -1707,7 +1724,7 @@ app-members .card img:hover {
 .nav-links{
     display: flex;
     justify-content: space-around;
-    width: 65%;
+    width: 87%;
     padding: 0 235px;
 
 }
@@ -1794,6 +1811,7 @@ app-members .card img:hover {
     color: #fff;
     /*display: flex;*/
     flex-direction: column;
+    background-image: url("../../../assets/img/home2.jpg");
     background-blend-mode: darken;
     width: 100%;
     background-color: #f1f2f2;
@@ -1882,4 +1900,8 @@ app-members .card img:hover {
 .button-action.about-arab-button, .button-action.join-ayrp-button {
   text-align: right;
   margin-top: 50px;
+}
+.researchuploadedText {
+  margin-top:80px;
+  font-size: 24px;
 }

@@ -244,10 +244,10 @@
 
 
     /*papers*/
-    .views-paper {
-        margin-left: 10px;
-        width: 145px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 145px;*/
+    /*}*/
 
 
     app-members .full-section .sec-content, app-about .full-section .sec-content {
@@ -288,7 +288,7 @@
     .nav-links {
         display: flex;
         justify-content: space-around;
-        width: 65%;
+        width: 85%;
         padding: 0 120px;
     }
 
@@ -312,6 +312,9 @@
 
 @media (min-width: 1025px) and (max-width: 1400px) {
 
+  .researchuploadedText {
+    font-size: 22px;
+  }
 
     /*home*/
     .full-section {
@@ -381,7 +384,7 @@
     }
 
     app-papers .statistics {
-        padding: 147px 10px;
+        margin: 130px 115px 0 0;
         font-size: 65px;
         font-weight: bold;
         color: #fff;
@@ -406,7 +409,7 @@
 
     h2 {
         font-size: 23px;
-      font-weight: bold;
+      /*font-weight: bold;*/
     }
 
     .title {
@@ -418,9 +421,9 @@
     .title div {
         border: 10px solid #75cddd;
         background-color: #75cddd;
-        width: 155px;
+        width: 78px;
     }
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 10px solid #75cddd;
     background-color: #75cddd;
     width: 155px;
@@ -729,6 +732,9 @@
         margin-top: 100px;
         margin-bottom: 70px;
     }
+  .sec-content.sec-enquiry {
+    margin-right: 45px;
+  }
 
 
     /*header*/
@@ -1019,10 +1025,10 @@
 
 
     /*papers*/
-    .views-paper {
-        margin-left: 10px;
-        width: 240px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 240px;*/
+    /*}*/
 
 
     app-members .full-section .sec-content, app-about .full-section .sec-content {
@@ -1092,7 +1098,7 @@
     .nav-links {
         display: flex;
         justify-content: space-around;
-        width: 65%;
+        width: 83%;
         padding: 0 0px;
     }
 
@@ -1176,6 +1182,10 @@
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
+  .researchuploadedText {
+    font-size: 18px;
+  }
     h2 {
         font-size: 20px;
     }
@@ -1204,9 +1214,9 @@
     .title div {
         border: 8px solid #75cddd;
         background-color: #75cddd;
-        width: 120px;
+        width: 60px;
     }
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 8px solid #75cddd;
     background-color: #75cddd;
     width: 120px;
@@ -1293,7 +1303,7 @@
         font-weight: normal;
         color: #FFF;
         cursor: pointer;
-        margin: 6px 45px 0 0px;
+        margin: 6px 53px 0 0px;
     }
 
 
@@ -1632,7 +1642,7 @@
         width: 115px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 8px solid #75cddd;
     background-color: #75cddd;
     width: 115px;
@@ -1946,7 +1956,7 @@
         width: 115px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 8px solid #75cddd;
     background-color: #75cddd;
     width: 115px;
@@ -2016,10 +2026,10 @@
 
 
     /*papers*/
-    .views-paper {
-        margin-left: 10px;
-        width: 240px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 240px;*/
+    /*}*/
 
     .top-home {
         height: 390px;
@@ -2036,7 +2046,7 @@
     }
 
     app-papers .statistics {
-        padding: 107px 90px;
+        margin: 60px 115px 0 0;
         font-size: 58px;
         font-weight: bold;
         color: #fff;
@@ -2207,12 +2217,12 @@
 
     .logo-left {
         float: left;
-        padding: 25px 40px;
+        padding: 25px 50px;
     }
 
     .logo-right {
         float: right;
-        padding: 25px 40px;
+        padding: 25px 50px;
     }
 
     .nav-links a {
@@ -2232,13 +2242,13 @@
     .nav-links {
         display: flex;
         justify-content: space-around;
-        width: 65%;
+        width: 83%;
         padding: 0 18px;
 
     }
 
     .partners {
-        height: 235px;
+        height: 245px;
     }
 
     .why-publish {
@@ -2309,9 +2319,16 @@
 
 }
 
+.cards-icon .animated-images {display: none;}
 
 @media (min-width: 425px) and (max-width: 767px) {
 
+  .researchuploadedText {
+    font-size: 22px;
+  }
+
+  .cards-icon .animated-images {display: block;}
+  .cards-icon .still-images {display: none;}
 
     h2 {
         font-size: 13px;
@@ -2573,7 +2590,7 @@
         font-size: 45px;
         margin: auto;
         font-weight: bold;
-      margin: 210px 40px 0 0;
+      margin: 130px 40px 0 0;
     }
 
     .fa-sort-asc {
@@ -2640,10 +2657,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -2685,10 +2702,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -2779,7 +2796,7 @@
         width: 95px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -2845,7 +2862,7 @@
     }
 
     .paper-section .title {
-        padding: 0 32px
+        padding: 0px
 
     }
 
@@ -3033,7 +3050,7 @@
         width: 95px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -3096,12 +3113,12 @@
 
     .logo-right {
         float: right;
-        padding: 15px 30px;
+        padding: 15px 0px;
     }
 
     .logo-left {
         float: left;
-        padding: 15px 30px;
+        padding: 15px 0px;
     }
 
     .sharing .title {
@@ -3442,10 +3459,10 @@
         justify-content: space-between !important;
     }
 
-    .views-paper {
-        margin-left: 10px;
-        width: 172px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 172px;*/
+    /*}*/
 
     /*upload paper*/
     .upload-file {
@@ -3676,10 +3693,10 @@
 
 
     /*papers*/
-    .views-paper {
-        margin-left: 10px;
-        width: 240px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 240px;*/
+    /*}*/
 
     .top-home {
         height: 390px;
@@ -3698,7 +3715,7 @@
     }
 
     app-papers .statistics {
-        padding: 147px 10px;
+        margin: 60px 40px 0 0;
         font-size: 45px;
         font-weight: bold;
         color: #fff;
@@ -4091,6 +4108,12 @@
 
 @media (min-width: 375px) and (max-width: 424px) {
 
+  .researchuploadedText {
+    font-size: 18px;
+  }
+
+  .cards-icon .animated-images {display: block;}
+  .cards-icon .still-images {display: none;}
 
     h2 {
         font-size: 13px;
@@ -4416,10 +4439,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -4471,10 +4494,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -4562,10 +4585,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -4800,7 +4823,7 @@
         width: 95px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -4850,6 +4873,7 @@
         width: 55px;
     }
 
+
     .logo-right img {
         width: 55px
     }
@@ -4862,12 +4886,12 @@
 
     .logo-right {
         float: right;
-        padding: 11px 15px;
+        padding: 11px 0px;
     }
 
     .logo-left {
         float: left;
-        padding: 11px 15px;
+        padding: 11px 0px;
     }
 
     .sharing .title {
@@ -5215,10 +5239,10 @@
         justify-content: space-between !important;
     }
 
-    .views-paper {
-        margin-left: 10px;
-        width: 205px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 205px;*/
+    /*}*/
 
     /*upload paper*/
     .paper-file img {
@@ -5514,10 +5538,10 @@
 
 
     /*papers*/
-    .views-paper {
-        margin-left: 10px;
-        width: 240px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 240px;*/
+    /*}*/
 
     app-papers .top-home {
         height: 385px;
@@ -5531,7 +5555,7 @@
     }
 
     app-papers .statistics {
-        padding: 147px 10px;
+        margin: 80px 40px 0 0;
         font-size: 36px;
         font-weight: bold;
         color: #fff;
@@ -5649,7 +5673,7 @@
         font-size: 38px;
         margin: auto;
         font-weight: bold;
-      margin: 210px 40px 0 0;
+      margin: 160px 40px 0 0;
     }
 
     .footer {
@@ -5681,7 +5705,7 @@
 
 
     .card-item-objective img {
-        width: 40%;
+        width: 50%;
     }
 
 
@@ -5886,6 +5910,13 @@
 }
 
 @media (max-width: 374px) {
+
+  .researchuploadedText {
+    font-size: 16px;
+  }
+
+  .cards-icon .animated-images {display: block;}
+  .cards-icon .still-images {display: none;}
 
 
 
@@ -6130,8 +6161,8 @@
     .full-section .sec-content {
         text-align: right;
         width: auto;
-        margin: 25px 0;
-        display: flex;
+        margin: 25px 18px;
+        /*display: flex;*/
     }
 
 
@@ -6208,10 +6239,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48x;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -6263,10 +6294,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -6355,10 +6386,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -6595,7 +6626,7 @@
         width: 95px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -7014,10 +7045,10 @@
         justify-content: space-between !important;
     }
 
-    .views-paper {
-        margin-left: 10px;
-        width: 205px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 205px;*/
+    /*}*/
 
     /*upload paper*/
     .paper-file img {
@@ -7313,10 +7344,10 @@
 
 
     /*papers*/
-    .views-paper {
-        margin-left: 10px;
-        width: 240px;
-    }
+    /*.views-paper {*/
+    /*    margin-left: 10px;*/
+    /*    width: 240px;*/
+    /*}*/
 
     app-papers .top-home {
         height: 385px;
@@ -7330,7 +7361,7 @@
     }
 
     app-papers .statistics {
-        padding: 147px 10px;
+        margin: 60px 40px 0 0;
         font-size: 26px;
         font-weight: bold;
         color: #fff;
@@ -7446,7 +7477,7 @@
         font-size: 32px;
         margin: auto;
         font-weight: bold;
-      margin: 350px 40px 0 0;
+      margin: 300px 40px 0 0;
     }
 
 
@@ -7471,7 +7502,7 @@
 
 
     .card-item-objective img {
-        width: 40%;
+        width: 50%;
     }
   .why-publish img {
     width: 100%;

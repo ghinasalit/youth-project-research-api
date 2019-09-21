@@ -79,3 +79,6 @@
   transition: all 0.7s;
 }
 .become-researcher .title { padding:0px;}
+.card-item-objective .headline {
+  width:100%;
+}

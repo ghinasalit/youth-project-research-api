@@ -37,7 +37,7 @@ if ($request_headers['code'] == 1) {
     if (!in_array($function, array('login', 'register', 'check_version' , 'add_feedback' , 'get_roll' , 'get_one_recognizes_researched' ,
       'search_paper' ,'is_user_exist', 'get_universities' , 'get_members' , 'get_published_papers' ,'send_email_reset_password', 'active_member' ,
       'get_countries' , 'get_disciplines' , 'statistics' , 'get_years' , 'get_member' , 'get_papers_by_member' , 'reset_password' ,
-      'search_paper_by_member' , 'search_member'))) {
+      'search_paper_by_member' , 'search_member' , 'universityVerification'))) {
       if ($session_key) {
         $valid = Queries::check_session_alive($session_key);
         if (!$valid) {
@@ -246,6 +246,11 @@ if ($request_headers['code'] == 1) {
         case 'get_bookmarks':
         {
           $result = User::get_bookmarks($data);
+          break;
+        }
+        case 'universityVerification':
+        {
+          $result = User::universityVerification($data);
           break;
         }
         case 'get_roll':

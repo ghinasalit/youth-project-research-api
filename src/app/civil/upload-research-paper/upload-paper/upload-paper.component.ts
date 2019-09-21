@@ -38,7 +38,7 @@ export class UploadPaperComponent implements OnInit {
           // console.log(file);
           if (file) {
             this.UploadFiles = file;
-            if (this.UploadFiles['type'] === 'application/pdf') { // console.log(file.name);
+            if (this.UploadFiles['type'] === 'application/pdf') { // console.log(file);
               this.appService.fileName = this.UploadFiles['name'];
               this.appService.paper.append('file' , this.UploadFiles );
 

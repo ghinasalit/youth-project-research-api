@@ -57,12 +57,12 @@
 <div class="become-researcher" id="becomeResearcher" data-aos="fade-down" data-aos-once="true" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'" >
     <div class="title" data-aos="fade-down" data-aos-duration="500" data-aos-once="true" ata-aos-once="true">
         <p>{{'_Objectives' | translate}}</p>
-        <div></div>
+      <div class="line"></div>
     </div>
     <div class="cards" data-aos="fade-up" data-aos-duration="500"  data-aos-once="true" >
         <div class="card-item-objective">
             <div class="icon">
-                <img src="assets/img/SupportArabYouthResearch.png" alt="">
+                <img src="assets/img/SupportArabYouthResearch.gif" alt="">
 
             </div>
             <div class="title">
@@ -80,7 +80,7 @@
         </div>
         <div class="card-item-objective">
             <div class="icon">
-                <img src="assets/img/Sharepublications.png" alt="">
+                <img src="assets/img/Sharepublications.gif" alt="">
 
             </div>
             <div class="title">
@@ -98,7 +98,7 @@
         </div>
         <div class="card-item-objective">
             <div class="icon">
-                <img src="assets/img/Help.png" alt="">
+                <img src="assets/img/Help.gif" alt="">
 
             </div>
             <div class="title">
@@ -116,7 +116,7 @@
         </div>
         <div class="card-item-objective">
             <div class="icon">
-                <img src="assets/img/Create_research_culture.png" alt="">
+                <img src="assets/img/Create_research_culture.gif" alt="">
 
             </div>
             <div class="title">
@@ -134,7 +134,7 @@
         </div>
         <div class="card-item-objective">
             <div class="icon">
-                <img src="assets/img/Establish_digital_library.png" alt="">
+                <img src="assets/img/Establish_digital_library.gif" alt="">
 
             </div>
             <div class="title">
@@ -184,15 +184,15 @@
 <!--</div>-->
 
 
-<div class="full-section" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'" >
+<div class="full-section join-ayrp" [style.direction]="_appService.currentLanguage === 'en' ?  'ltr' :  'rtl'" >
     <div class="left-sticker"></div>
-    <div class="center-sticker"></div>
-    <div class="side">
+    <div class="center-sticker" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
+    <div class="side" data-aos-duration="1000" data-aos-once="true" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-right' : 'fade-left'">
         <div class="sec-img">
             <img src="assets/img/join-ayr.jpg">
         </div>
     </div>
-    <div class="side">
+    <div class="side" data-aos-duration="1000" data-aos-once="true" [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'">
         <div class="sec-content">
             <div class="about-content">
                 <h1 class="text-left">

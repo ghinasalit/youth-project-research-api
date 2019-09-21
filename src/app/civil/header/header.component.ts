@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AppService} from '../../app.service';
 import {Shared} from '../../../classes/shared';
+import * as $ from 'jquery';
 
 @Component({
     selector: 'app-header',
@@ -57,6 +58,7 @@ export class HeaderComponent implements OnInit {
 
 
         $(document).ready(function(){
+          $('#preloader').delay(1000).fadeOut('slow');
             var foo = 0;
             $(window).scroll(function(){
                 foo = $(window).scrollTop();

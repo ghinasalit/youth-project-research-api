@@ -12,6 +12,7 @@ import {MembersComponent} from './civil/members/members.component';
 import {UploadResearchPaperComponent} from './civil/upload-research-paper/upload-research-paper.component';
 import {DetailsPaperComponent} from './civil/upload-research-paper/details-paper/details-paper.component';
 import {PermissionPeparComponent} from './civil/upload-research-paper/permission-pepar/permission-pepar.component';
+import {ThankYouComponent} from './civil/upload-research-paper/thank-you/thank-you.component';
 import {PapersComponent} from './civil/papers/papers.component';
 import {EditPaperComponent} from './civil/edit-paper/edit-paper.component';
 import {MemberDetailsComponent} from './civil/member-details/member-details.component';
@@ -20,6 +21,7 @@ import {LoginGuard} from './guards/login.guard';
 import {AcceptRequestComponent} from './civil/accept-request/accept-request.component';
 import {ResetPasswordComponent} from './civil/reset-password/reset-password.component';
 import {ChangePasswordComponent} from './civil/change-password/change-password.component';
+import {UniversityVerificationComponent} from './civil/university-verification/university-verification.component';
 
 const routes: Routes = [
     {
@@ -59,10 +61,14 @@ const routes: Routes = [
                         path: 'details',
                         component: DetailsPaperComponent
                     },
-                    {
-                        path: 'upload-completed',
-                        component: PermissionPeparComponent
-                    },
+                  {
+                    path: 'upload-completed',
+                    component: PermissionPeparComponent
+                  },
+                  {
+                    path: 'thank-you',
+                    component: ThankYouComponent
+                  },
                 ]
             },
             {
@@ -87,11 +93,15 @@ const routes: Routes = [
                 path: 'papers',
                 component: PapersComponent
             },
-            {
-                path: 'accept-request/:id',
-                component: AcceptRequestComponent,
-                canActivate:  [AuthGuard]
-            },
+          {
+            path: 'accept-request/:id',
+            component: AcceptRequestComponent,
+            canActivate:  [AuthGuard]
+          },
+          {
+            path: 'university-verification/:accept/:id/:code',
+            component: UniversityVerificationComponent,
+          },
             {
                 path: 'reset-password',
                 component: ResetPasswordComponent,

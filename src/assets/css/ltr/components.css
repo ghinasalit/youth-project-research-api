@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: #FFF;
     cursor: pointer;
     margin: auto;
-    margin: 6px 100px 0 0;
+    margin: 6px 85px 0 0;
 }
 
 .left-section button {
@@ -185,16 +185,17 @@ h1, h2, h3, h4, h5, h6, p {
 
 .logo-left {
     float: left;
-    padding: 31px 95px;
+    padding: 31px 80px;
 }
 
 .logo-right {
     float: right;
-    padding: 31px 95px;
+    padding: 31px 80px;
 }
 
 .logo-right img {
     width: 90px;
+    cursor: pointer;
 }
 
 
@@ -367,7 +368,7 @@ h1, h2, h3, h4, h5, h6, p {
 .title div {
     border: 13px solid #75cddd;
     background-color: #75cddd;
-    width: 205px;
+    width: 105px;
 }
 
 
@@ -409,23 +410,26 @@ top-home-login .title {
     font-size: 48px;
 }
 
-.about-content div.line, .sec-content div.line {
+.about-content div.line, .sec-content div.line, .top-description .line, .statistics .line {
   border: 13px solid #75cddd;
   background-color: #75cddd;
   width: 205px;
 }
 
 .full-section .center-sticker {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    background: #1b2850;
-    top: 45%;
-    left: 47%;
-    bottom: 50%;
-    right: 50%;
-    z-index: 100;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background: #1b2850;
+  top: 45%;
+  left: 47%;
+  bottom: 50%;
+  right: 50%;
+  z-index: 100;
 }
+.join-ayrp .center-sticker {
+   background: #FDD97A;
+ }
 
 
 .card-item .title {
@@ -538,6 +542,7 @@ app-home .card-item p {
     margin-left: 40px;
     margin-top: 100px;
     margin-bottom: 70px;
+    line-height: 35px;
 }
 .contact .sec-content.sec-enquiry {
   margin-left: 65px;
@@ -560,10 +565,10 @@ app-home .card-item p {
     margin-left: 0px;
 }
 
-.views-paper {
+/*.views-paper {
     margin-right: 10px;
     width: 155px;
-}
+}*/
 
 
 .edit-profile i {
@@ -874,8 +879,12 @@ app-home .card-item p {
 
 
 .views-paper, .download-paper {
-    display: flex;
+    /*display: flex;*/
+  width: 50%;
+  font-size: 12px;
 }
+.views-paper {float:left; text-align: left}
+.download-paper {float:right; text-align: right}
 
 
 .check-filename i {
@@ -1101,16 +1110,17 @@ app-papers .statistics {
     display: flex;
     flex-direction: column;
     font-size: 75px;
-    margin: auto;
+    margin: 150px 0 0 115px;
+    text-align: left;
     padding: 100px 0;
     color: #fff;
 }
 
 
-.views-paper {
+/*.views-paper {
     margin-right: 10px;
     width: 115px;
-}
+}*/
 
 
 .research-search {
@@ -1398,7 +1408,7 @@ app-upload-paper .submit {
 
 
 .card-item-objective img {
-    width: 60%;
+    width: 70%;
 }
 
 
@@ -1420,7 +1430,7 @@ app-upload-paper .submit {
     background-color: #f1f2f2;
 }
 
-.card-item-objective .title .line {
+.card-item-objective .title .line{
     border: 8px solid #75cddd;
     background-color: #75cddd;
     width: 135px;
@@ -1532,7 +1542,7 @@ app-about .research-all-around  .center-sticker {
 
 
 .statistics div {
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     direction: ltr;
 }
@@ -1690,7 +1700,7 @@ app-members .card img:hover {
 .nav-links{
     display: flex;
     justify-content: space-around;
-    width: 65%;
+    width: 87%;
     padding: 0 190px;
 
 }
@@ -1752,6 +1762,7 @@ app-members .card img:hover {
     text-align: center;
     height: 280px;
   margin-top:0px;
+  overflow: hidden;
 }
 
 
@@ -1759,6 +1770,10 @@ app-members .card img:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform .5s ease;
+}
+.why-publish .icon:hover img {
+  transform: scale(1.5);
 }
 
 .why-publish .title {
@@ -1849,4 +1864,8 @@ cursor: pointer;
 .button-action.about-arab-button, .button-action.join-ayrp-button {
   text-align: left;
   margin-top: 30px;
+}
+.researchuploadedText {
+  margin-top:80px;
+  font-size: 24px;
 }

@@ -17,6 +17,7 @@
             <p>{{'_KnowledgePower' | translate}}</p>
             <p>{{'_SharingKnowledgePower' | translate}}</p>
             <p>{{'_IsEmpowering' | translate}}</p>
+          <div class="line"></div>
         </div>
 <!--        <div class="home-statistics">-->
 <!--            <div [attr.data-aos]="_appService.currentLanguage == 'en' ? 'fade-left' : 'fade-right'" data-aos-duration="500" data-aos-delay="0" class="row-statistics">-->
@@ -143,17 +144,18 @@
         <div class="cards-icon">
             <div class="card-icon-research d-line" data-aos="fade-left" data-aos-once="true" data-aos-duration="1000" style="cursor: pointer" routerLink="/papers">
 <!--                <div class="box"></div>-->
-                <img src="assets/img/ResearchPaper.png" alt="">
+                  <img src="assets/img/ResearchPaper.png" alt="" class="still-images">
+                  <img src="assets/img/ResearchPaper.gif" alt="" class="animated-images">
 
                 <div class="title" routerLink="/papers" style="cursor: pointer">
                     <h2>{{'_ResearchAPaper' | translate}}</h2>
-                    <div class="line">
-                    </div>
+                    <div class="line"></div>
                 </div>
             </div>
             <div class="card-icon-submit d-line"  data-aos="fade-right" data-aos-once="true" data-aos-duration="500" style="cursor: pointer" (click)="_appService.submitPaper()">
 <!--                <div class="box"></div>-->
-                <img src="assets/img/UploadPaper.png" alt="">
+                <img src="assets/img/UploadPaper.png" alt="" class="still-images">
+                <img src="assets/img/UploadPaper.gif" alt="" class="animated-images">
 
                 <div class="title" style="cursor: pointer">
                     <h2>{{'_SubmitAPaper' | translate}}</h2>

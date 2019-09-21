@@ -10,19 +10,18 @@ class Queries
       'session_id' => md5(microtime()));
 
 
-
     $user = $db->where('email', $email)
       ->where('password', $password)
       ->getOne("members", ' member_id , username , active ');
     if ($db->count) {
-      if($user['active'] == 1){
+      if ($user['active'] == 1) {
         $db->where('email', $email);
         $db->where('password', $password);
         $db->update('members', $data);
         $_SESSION[___APP]['session_key'] = $data['session_id'];
         return $user;
 
-      }else{
+      } else {
 
         return -99; // not active yet
       }
@@ -46,7 +45,9 @@ class Queries
       'member_id' => $member_id,
       'date' => date("Y-m-d"),
       'file' => $paper,
+      'university_verification_code' => rand(0, 99999999).time(),
     );
+
     $paper_id = $db->insert('papers', $data);
     $tags = explode(',', $tags);
     foreach ($tags as $value) {
@@ -59,48 +60,254 @@ class Queries
     $paper = $db->where('paper_id', $paper_id)->getOne('papers', 'paper_id', 'title, description , status, discipline_id, permission , language , file');
 
     if ($paper) {
-     Queries::send_email_publish_paper($paper['paper_id'], $member_id);
+      Queries::send_email_publish_paper($paper['paper_id'], $member_id);
       return $paper;
     } else {
       return -25;
     }
   }
 
-  static public function send_email_publish_paper($paper_id, $member_id)
-  {
+  static public function send_email_publish_paper($paper_id, $member_id){
     global $db;
 
+    /////////////////////////////////////////////////////////////////  Get Member Email and send thank you email to member
+
     $member_from = $db->where('member_id', $member_id)
-      ->getOne('members', 'email');
-    $member_to = $db->where('user_id', 1)
-      ->getOne('users', 'email');
+      ->getOne('members', 'email, first_name, university_id');
 
+    if ($member_from['email']) {
 
-    if ($member_to['email'] && $member_from['email']) {
+     $to = $member_from['email'];
+      $subject = "Research Paper Submitted Successfully";
 
-      $to = $member_to['email'];
-//            $to = 'ghinasallit@gmail.com';
-      $subject = "Arab Youth Research/Publish Paper";
+      $body = '
+        <html>
+            <body style="width:600px; margin:0 auto; font-size: 14px">
+              <p>Dear '.$member_from['first_name'].',</p>
+              <p>Thank you for submitting your research paper on <a href="https://arabyouthresearch.org" title="Arab Youth Research">arabyouthreseach.org</a>
+              Your research paper is now in the hands of your university administrator, your research will not show on AYRP website until it gets verified by your university administrator and then approved by AYRP team.</p>
+              
+              <p>Please visit or contact your university administration desk for further details.</p>
+              
+              <p style="font-size:12;color: #999999">This is an automated message form The Arab Youth Research Platform. Please do not reply to this message. </p>
+              
+              <p>Best Regards,<br>
+              The AYRP Team.</p>
+              
+              <p style="text-align:center">
+                <img src="https://arabyouthresearch.org/assets/img/logo-right.png" title="Arab Youth Research Logo" style="text-align:center">
+              </p><br>
+              
+              <p style="text-align:center">Copy right © 2019 The Arab Youth Research Platform</p>
+          
+          </body>
+        </html>
+        ';
 
-      $body = "
-<html>
-<body style=\"width:600px; margin:0 auto; font-size: 14px\">
-<p>Dear,</p>
-<p> We need your kind support to confirm publish my paper</p>
-<a href=http://arabyouthresearch.org/#/paper/" . $paper_id . ">Click here to preview paper </a>
-</body>
-</html>
-";
+      // Always set content-type when sending HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-// Always set content-type when sending HTML email
-      $headers = "MIME-Version: 1.0" . "\r\n";
-      $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-// More headers
-      $headers .= 'From:' . $member_from['email'] . "\r\n";
+      //More headers
+     $headers .= 'From:info@arabyouthresearch.org' . "\r\n";
 
       mail($to, $subject, $body, $headers);
     }
+
+    ////////////////////////////////////////////////////////////////////////////// Get university administration email and send email
+
+    $administratorDetail = $db->where('university_id', $member_from['university_id'])
+    ->getOne('university', 'administrator_email, administrator_name, name_en');
+
+    if ($administratorDetail['administrator_email']) {
+
+     $paperDetail = $db->where('paper_id', $paper_id)->getOne('papers', 'title, university_verification_code');
+
+      $to = $administratorDetail['administrator_email'];
+      $subject = "Research paper authentication";
+
+      $body = '
+        <html>
+            <body style="width:600px; margin:0 auto; font-size: 14px">
+              <p>Dear '.$administratorDetail['administrator_name'].',</p>
+              <p>The student "'.$member_from['first_name'].'" has submitted the research paper "'.$paperDetail['title'].'" under the "'.$administratorDetail['name_en']. '" Please confirm and verify that the above student is a member in your university by clicking on the link below:
+              </p>
+
+              <p><a href="http://arabyouthresearch.org/#/university_verification/accept/'.$paper_id.'/'.$paperDetail['university_verification_code'].'">Click here to accept research paper</a></p>
+
+              <p>If this student does not belong to your university, please decline this research paper by clicking on the link below:</p>
+
+              <p><a href="http://arabyouthresearch.org/#/university_verification/decline/'.$paper_id.'/'.$paperDetail['university_verification_code'].'">Click here to decline research paper</a></p>
+
+              <p style="font-size:12;color: #999999">This is an automated message form The Arab Youth Research Platform. Please do not reply to this message.</p>
+
+              <p>Best Regards,<br>
+              The AYRP Team.</p>
+
+              <p style="text-align:center">
+                <img src="http://arabyouthresearch.org/assets/img/logo-right.png" title="Arab Youth Research Logo" style="text-align:center">
+              </p><br>
+
+              <p style="text-align:center">Copy right © 2019 The Arab Youth Research Platform</p>
+
+          </body>
+        </html>
+        ';
+      // Always set content-type when sending HTML email
+      $headers = "MIME-Version: 1.0" . "\r\n";
+      $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+      //More headers
+        $headers .= 'From:info@arabyouthresearch.org' . "\r\n";
+        mail($to, $subject, $body, $headers);
+    }
+
+  }
+
+  static public function universityVerification($status, $paper_id, $vCode)
+  {
+    global $db;
+
+
+    if($status == 'accept') {
+      $updateWith = 1;
+    } else {
+      $updateWith = 0;
+    }
+
+    $data = Array(
+      'university_verification' => $updateWith,
+      'university_verification_code' => rand(0, 99999999).time(),
+    );
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  update paper record
+    $verify = $db->where('university_verification_code', $vCode)
+      ->getOne('papers', 'university_verification_code, member_id, university_verification');
+    if ($verify) {
+      $verify = $db->where('university_verification_code', $vCode)
+        ->update('papers', $data);
+
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// send email on accepted or decline
+
+      $administratorDetail = $db->where('university_id', $verify['member_id'])
+        ->getOne('university', 'administrator_email, administrator_name, name_en');
+
+      $memberDetail = $db->where('member_id', $verify['member_id'])
+        ->getOne('members', 'email, first_name, university_id');
+
+      $paperDetail = $db->where('paper_id', $paper_id)->getOne('papers', 'title');
+
+      if($updateWith == 0) {
+
+        $adminSubject = "Research paper authentication declined";
+
+        $adminBody = '
+        <html>
+            <body style="width:600px; margin:0 auto; font-size: 14px">
+              <p>Dear '.$administratorDetail['administrator_name'].',</p>
+              <p>Thank you for your input on the student "'. $memberDetail['first_name'] .'". The research paper "'. $paperDetail['title'] .'" has been declined.</p><br>
+              <p style="font-size:12;color: #999999">This is an automated message form The Arab Youth Research Platform. Please do not reply to this message.</p>
+
+
+              <p>Best Regards,<br>
+              The AYRP Team.</p>
+
+              <p style="text-align:center">
+                <img src="http://arabyouthresearch.org/assets/img/logo-right.png" title="Arab Youth Research Logo" style="text-align:center">
+              </p><br>
+
+              <p style="text-align:center">Copy right © 2019 The Arab Youth Research Platform</p>
+
+          </body>
+        </html>
+        ';
+
+
+        $memberSubject = 'Research paper declined by university administrator ';
+        $memberBody = '<html>
+            <body style="width:600px; margin:0 auto; font-size: 14px">
+              <p>Dear '.$memberDetail['first_name'].',</p>
+              <p>Your research paper "'. $paperDetail['title'] .'" has been declined by your university administrator. Please visit or contact your university administration desk for support and further details. </p><br>
+              
+              <p style="font-size:12;color: #999999">This is an automated message form The Arab Youth Research Platform. Please do not reply to this message.</p>
+
+
+              <p>Best Regards,<br>
+              The AYRP Team.</p>
+
+              <p style="text-align:center">
+                <img src="http://arabyouthresearch.org/assets/img/logo-right.png" title="Arab Youth Research Logo" style="text-align:center">
+              </p><br>
+
+              <p style="text-align:center">Copy right © 2019 The Arab Youth Research Platform</p>
+
+          </body>
+        </html>';
+
+      } else if($updateWith == 1) {
+        $adminSubject = "Research paper authentication accepted";
+
+        $adminBody = '
+        <html>
+            <body style="width:600px; margin:0 auto; font-size: 14px">
+              <p>Dear '.$administratorDetail['administrator_name'].',</p>
+              <p>Thank you for verifying that the student  "'. $memberDetail['first_name'] .'" is a member in the "'.$administratorDetail['administrator_name'].'" and has submitted the research paper "'. $paperDetail['title'] .'" to <a href="http://arabyouthresearch.org" title="Arab Youth Research">arabyouthreseach.org</a>.</p><br>
+              
+              <p style="font-size:12;color: #999999">This is an automated message form The Arab Youth Research Platform. Please do not reply to this message.</p>
+
+
+              <p>Best Regards,<br>
+              The AYRP Team.</p>
+
+              <p style="text-align:center">
+                <img src="http://arabyouthresearch.org/assets/img/logo-right.png" title="Arab Youth Research Logo" style="text-align:center">
+              </p><br>
+
+              <p style="text-align:center">Copy right © 2019 The Arab Youth Research Platform</p>
+
+          </body>
+        </html>
+        ';
+
+        $memberSubject = 'Research paper accepted by university administrator';
+        $memberBody = '<html>
+            <body style="width:600px; margin:0 auto; font-size: 14px">
+              <p>Dear '.$memberDetail['first_name'].',</p>
+              <p>Your research paper "'. $paperDetail['title'] .'" is accepted and verified by your university administrator. The research paper now will be reviewed by AYRP team for approval on publishing it on the AYRP website.</p><br>
+              
+              <p style="font-size:12;color: #999999">This is an automated message form The Arab Youth Research Platform. Please do not reply to this message.</p>
+
+
+              <p>Best Regards,<br>
+              The AYRP Team.</p>
+
+              <p style="text-align:center">
+                <img src="http://arabyouthresearch.org/assets/img/logo-right.png" title="Arab Youth Research Logo" style="text-align:center">
+              </p><br>
+
+              <p style="text-align:center">Copy right © 2019 The Arab Youth Research Platform</p>
+
+          </body>
+        </html>';
+      }
+
+      $adminTo = $administratorDetail['administrator_email'];
+      $memberTo = $memberDetail['email'];
+      // Always set content-type when sending HTML email
+      $headers = "MIME-Version: 1.0" . "\r\n";
+      $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+      //More headers
+      $headers .= 'From:info@arabyouthresearch.org' . "\r\n";
+      if($administratorDetail['administrator_email']){
+        mail($adminTo, $adminSubject, $adminBody, $headers);
+      }
+
+      if($memberDetail['email']){
+        mail($memberTo, $memberSubject, $memberBody, $headers);
+      }
+
+    }
+    return true;
   }
 
 
@@ -551,7 +758,7 @@ The AYRP Team.</p>
     $q = "SELECT papers.date , papers.description , papers.file , members.username ,  papers.paper_id , papers.language ,papers.permission , papers.title , papers.views , papers.downloads
  , members.first_name , members.last_name , discipline.discipline_en , discipline.discipline_ar , members.username
                   FROM members JOIN papers ON members.member_id ON paper.paper_id JOIN  discipline ON papers.discipline_id = discipline.discipline_id
-                  WHERE  papers.status = 1 ";
+                  WHERE  papers.status = 1 AND papers.university_verification = 1 ";
 
     $q_with_paging = $q . " LIMIT {$page} , {$size}";
     $papers = $db->withTotalCount()->rawQuery($q_with_paging);
@@ -864,7 +1071,7 @@ The AYRP Team.</p>
                   FROM members JOIN papers JOIN  disciplines 
                   ON members.member_id = papers.member_id && 
                    papers.discipline_id = disciplines.discipline_id 
-                  WHERE  papers.status = 1 ORDER BY papers.paper_id DESC";
+                  WHERE  papers.status = 1 AND papers.university_verification = 1 ORDER BY papers.paper_id DESC";
     $q_with_paging = $q . " LIMIT {$page} , {$size}";
     $papers = $db->withTotalCount()->rawQuery($q_with_paging);
 

@@ -35,6 +35,7 @@
 <!--                <p>{{'_ResearchersAcross' | translate}} </p>-->
 <!--                <span>{{statistics?.discipline}}</span>-->
 <!--                <p>{{'_Disciplines' | translate}}</p>-->
+              <div class="line"></div>
             </div>
         </div>
         <div class="social">
@@ -308,11 +309,10 @@
                         <div class="view-download" [style.direction]="_appService.currentLanguage == 'en' ?  'ltr' :  'rtl'">
 
                             <div class="views-paper">
-                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                <h6>{{paper.views}} {{'_Views' | translate}}</h6>
+                                <i class="fa fa-eye" aria-hidden="true"></i> <span>{{paper.views}} {{'_Views' | translate}}</span>
                             </div>
-                            <div class="download-paper" style="cursor: pointer" (click)="download(paper)">
-                                <i class="fa fa-download" aria-hidden="true"></i>  <h6>{{paper.downloads}} {{'_Downloads' | translate}}</h6>
+                            <div class="download-paper" >
+                                <i class="fa fa-download" aria-hidden="true"></i>  <span>{{paper.downloads}} {{'_Downloads' | translate}}</span>
                             </div>
                             <!--<div class="edit-paper" style="cursor: pointer"
                                  [routerLink]="['/edit-paper' , paper.paper_id]"

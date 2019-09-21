@@ -13,4 +13,6 @@ export class Paper {
     username: string;
     message = '';
     activation_id = '';
+    v_status = '';
+    v_code = '';
 }

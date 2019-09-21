@@ -728,6 +728,23 @@ Class User
     return $result;
   }
 
+  static public function universityVerification($data)
+  {
+
+    $status = Helper::make_safe($data['v_status']);
+    $paper_id = Helper::make_safe($data['paper_id']);
+    $vCode = Helper::make_safe($data['v_code']);
+    $response = Queries::universityVerification($status, $paper_id, $vCode);
+    if (is_numeric($response)) {
+      $error_msg = array_search($response, \Model\Enums::$code);
+      $result = Helper::response(\Model\Enums::$code[$error_msg], Exceptions::$error_msg());
+    } else {
+      $result = Helper::response(\Model\Enums::$code['success'], Exceptions::success(), $response);
+    }
+
+    return $result;
+  }
+
 }
 
 

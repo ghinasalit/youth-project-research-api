@@ -161,9 +161,13 @@ export class DataService {
         return this.api.getDataPage('get_roll');
     }
 
-    getPapersByMemberService(data): Observable<Object> {
-        return this.api.submitPage('get_papers_by_member', data);
-    }
+  getPapersByMemberService(data): Observable<Object> {
+    return this.api.submitPage('get_papers_by_member', data);
+  }
+
+  universityVerificationService(data): Observable<Object> {
+    return this.api.submitPage('universityVerification', data);
+  }
 
 
     downloadNoteReceipt(filename: string): Observable<Blob> {

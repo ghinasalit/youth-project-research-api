@@ -99,8 +99,8 @@
   "_RequestActivated": "Your request has been successfully activated.",
   "_RedirectAfter": "Redirect to home after",
   "_Seconds": "Seconds",
-  "_KnowledgePower": "Knowledge is power",
-  "_SharingKnowledgePower": "Share it to Empower.",
+  "_KnowledgePower": "Knowledge is power,",
+  "_SharingKnowledgePower": "share it to empower.",
   "_IsEmpowering": "",
   "_RecognizedResearch": "Recognized Research",
   "_JoinAYRB": "Join AYRP",
@@ -197,6 +197,8 @@
   "_FAYRP": "The First Arab Youth Research Platform",
   "_SavedBookmarks":"Saved Bookmarks",
   "_TermsAndConditions":"AYRP Terms & Conditions",
-  "_CountryCode": "Country Code"
+  "_CountryCode": "Country Code",
+  "_ResearchUploaded": "Research Uploaded",
+  "_ResearchUploadedText": "Thank you for sharing your research with Arab Youth Research Platform. Your paper is successfully uploaded, and you will receive and email with the approval on publishing your paper."
 
 }

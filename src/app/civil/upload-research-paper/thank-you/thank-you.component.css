@@ -1,0 +1,16 @@
+
+
+
+.button-action button {
+  background: #1b2850;
+  width: 100%;
+}
+
+.button-action button:hover {
+  background: #75cddd;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  transition: all 0.7s;
+}

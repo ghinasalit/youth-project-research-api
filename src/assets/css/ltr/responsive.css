@@ -250,10 +250,10 @@
 
 
     /*papers*/
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
         width: 145px;
-    }
+    }*/
 
     .card-icon-research img {
         /*position: absolute;
@@ -299,7 +299,7 @@
     .nav-links {
         display: flex;
         justify-content: space-around;
-        width: 65%;
+        width: 85%;
         padding: 0 120px
     }
 
@@ -322,6 +322,9 @@
 
 
 @media (min-width: 1025px) and (max-width: 1400px) {
+  .researchuploadedText {
+    font-size: 22px;
+  }
   ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
     padding: 5px 0px 5px 20px !important;
   }
@@ -394,7 +397,7 @@
     }
 
     app-papers .statistics {
-        padding: 147px 10px;
+        margin: 70px 95px;
         font-size: 65px;
         font-weight: bold;
         color: #fff;
@@ -431,10 +434,10 @@
     .title div {
         border: 10px solid #75cddd;
         background-color: #75cddd;
-        width: 155px;
+        width: 76px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line, .statistics .line   {
     border: 10px solid #75cddd;
     background-color: #75cddd;
     width: 155px;
@@ -717,12 +720,12 @@
 
     .logo-left {
         float: left;
-        padding: 25px 75px;
+        padding: 25px 80px;
     }
 
     .logo-right {
         float: right;
-        padding: 25px 75px;
+        padding: 25px 80px;
     }
 
     .logo-left img {
@@ -730,13 +733,7 @@
     }
 
     .logo-right img {
-        width: 80px;
-    }
-
-
-    .logo-right {
-        float: right;
-        padding: 20px 95px;
+      width: 80px;
     }
 
     .full-name .title {
@@ -997,10 +994,10 @@
 
 
     /*papers*/
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
-        width: 240px;
-    }
+        width: 130px;
+    }*/
 
 
     app-members .full-section .sec-content, app-about .full-section .sec-content {
@@ -1073,7 +1070,7 @@
     .nav-links {
         display: flex;
         justify-content: space-around;
-        width: 65%;
+        width: 83%;
         padding: 0 0px;
     }
 
@@ -1131,7 +1128,7 @@
         color: #fff;
         display: flex;
         flex-direction: column;
-        background-image: url(home.jpg);
+        background-image: url("../../../assets/img/home.jpg");
         background-blend-mode: darken;
         width: 100%;
         background-color: #f1f2f2;
@@ -1200,6 +1197,12 @@
 
 }
 @media (min-width: 768px) and (max-width: 1024px) {
+
+  .researchuploadedText {
+    font-size: 18px;
+  }
+
+
   ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
   padding: 5px 0px 5px 20px !important;
 }
@@ -1231,9 +1234,9 @@
     .title div {
         border: 8px solid #75cddd;
         background-color: #75cddd;
-        width: 120px;
+        width: 60px;
     }
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line, .statistics .line   {
     border: 8px solid #75cddd;
     background-color: #75cddd;
     width: 120px;
@@ -1319,7 +1322,7 @@
         font-weight: normal;
         color: #FFF;
         cursor: pointer;
-        margin: 6px 50px 0 0;
+        margin: 6px 55px 0 0;
     }
 
 
@@ -1661,7 +1664,7 @@
         background-color: #75cddd;
         width: 115px;
     }
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 8px solid #75cddd;
     background-color: #75cddd;
     width: 115px;
@@ -1707,12 +1710,12 @@
 
     .logo-left {
         float: left;
-        padding: 25px 70px;
+        padding: 25px 0px;
     }
 
     .logo-right {
         float: right;
-        padding: 25px 70px;
+        padding: 25px 0px;
     }
 
     /*login*/
@@ -2041,10 +2044,10 @@
 
 
     /*papers*/
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
         width: 240px;
-    }
+    }*/
 
     .type-statistics {
         margin: 23px 25px 0;
@@ -2095,7 +2098,7 @@
     }
 
     app-papers .statistics {
-        padding: 107px 90px;
+        margin: 90px 0 0 60px;
         font-size: 58px;
         font-weight: bold;
         color: #fff;
@@ -2277,12 +2280,12 @@
 
     .logo-left {
         float: left;
-        padding: 25px 40px;
+        padding: 25px 50px;
     }
 
     .logo-right {
         float: right;
-        padding: 25px 40px;
+        padding: 25px 50px;
     }
 
     .nav-links a {
@@ -2302,7 +2305,7 @@
     .nav-links {
         display: flex;
         justify-content: space-around;
-        width: 65%;
+        width: 83%;
         padding: 0 18px;
 
     }
@@ -2324,7 +2327,7 @@
     }
 
     .partners {
-        height: 235px;
+        height: 245px;
     }
 
     .why-publish {
@@ -2365,8 +2368,15 @@
 
     }
 }
+.cards-icon .animated-images {display: none;}
 
 @media (min-width: 425px) and (max-width: 767px) {
+
+  .researchuploadedText {
+    font-size: 22px;
+  }
+  .cards-icon .animated-images {display: block;}
+  .cards-icon .still-images {display: none;}
 
   ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
     padding: 5px 0px 5px 20px !important;
@@ -2701,9 +2711,9 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -2745,10 +2755,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -2839,7 +2849,7 @@
         width: 95px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -3002,6 +3012,7 @@
     }
 
     .partners .top-sticker {
+        display: none;
         height: 25px;
         width: 90px;
         position: absolute;
@@ -3088,10 +3099,10 @@
     .contact .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line  , .statistics .line {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -3153,12 +3164,12 @@
 
     .logo-right {
         float: right;
-        padding: 15px 30px;
+        padding: 15px 0px;
     }
 
     .logo-left {
         float: left;
-        padding: 15px 30px;
+        padding: 15px 0px;
     }
 
     .sharing .title {
@@ -3508,10 +3519,10 @@
         justify-content: space-between !important;
     }
 
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
         width: 172px;
-    }
+    }*/
 
     /*upload paper*/
     .upload-file {
@@ -3747,10 +3758,10 @@
 
 
     /*papers*/
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
         width: 240px;
-    }
+    }*/
 
     app-papers .top-papers {
         height: 385px;
@@ -3764,7 +3775,7 @@
     }
 
     app-papers .statistics {
-        padding: 147px 10px;
+        margin: 115px 0 0 25px;
         font-size: 45px;
         font-weight: bold;
         color: #fff;
@@ -4105,7 +4116,7 @@
         font-size: 45px;
         margin: auto;
         font-weight: bold;
-        margin: 115px 0 0 50px;
+        margin: 115px 0 0 25px;
     }
 
     .objective-f-text {
@@ -4175,6 +4186,11 @@
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
+  .researchuploadedText {
+    font-size: 18px;
+  }
+  .cards-icon .animated-images {display: block;}
+  .cards-icon .still-images {display: none;}
 
   ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
     padding: 5px 0px 5px 0px !important;
@@ -4500,10 +4516,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line  , .statistics .line {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -4554,10 +4570,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -4644,10 +4660,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -4799,6 +4815,7 @@
     }
 
     .partners .top-sticker {
+        display: none;
         height: 25px;
         width: 90px;
         position: absolute;
@@ -4883,10 +4900,10 @@
     .contact .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -4948,12 +4965,12 @@
 
     .logo-right {
         float: right;
-        padding: 11px 15px;
+        padding: 11px 0px;
     }
 
     .logo-left {
         float: left;
-        padding: 11px 15px;
+        padding: 11px 0px;
     }
 
     .sharing .title {
@@ -5308,10 +5325,10 @@
         justify-content: space-between !important;
     }
 
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
         width: 205px;
-    }
+    }*/
 
     /*upload paper*/
     .paper-file img {
@@ -5607,10 +5624,10 @@
 
 
     /*papers*/
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
         width: 240px;
-    }
+    }*/
 
     app-papers .top-papers {
         height: 385px;
@@ -5624,7 +5641,7 @@
     }
 
     app-papers .statistics {
-        padding: 147px 10px;
+        margin: 115px 0 0 30px;
         font-size: 36px;
         font-weight: bold;
         color: #fff;
@@ -5771,7 +5788,8 @@
 
 
     .card-item-objective img {
-        width: 40%;
+        width: 60%;
+        margin-top:-35px;
     }
 
 
@@ -6013,6 +6031,11 @@
 }
 
 @media (max-width: 374px) {
+  .researchuploadedText {
+    font-size: 16px;
+  }
+  .cards-icon .animated-images {display: block;}
+  .cards-icon .still-images {display: none;}
 
   ::ng-deep .ngx-dropdown-container button, ::ng-deep .ngx-dropdown-container .ngx-dropdown-button {
     padding: 5px 0px 5px 0px !important;
@@ -6256,8 +6279,8 @@
     .full-section .sec-content {
         text-align: left;
         width: auto;
-        margin: 25px 0;
-        display: flex;
+        margin: 25px 18px;
+        /*display: flex;*/
     }
 
 
@@ -6334,10 +6357,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -6389,10 +6412,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -6479,10 +6502,10 @@
     .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line  , .statistics .line {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -6715,10 +6738,10 @@
     .contact .title div {
         border: 7px solid #75cddd;
         background-color: #75cddd;
-        width: 95px;
+        width: 48px;
     }
 
-  .about-content div.line, .sec-content div.line {
+  .about-content div.line, .sec-content div.line, .top-description .line , .statistics .line  {
     border: 7px solid #75cddd;
     background-color: #75cddd;
     width: 95px;
@@ -6780,12 +6803,12 @@
 
     .logo-right {
         float: right;
-        padding: 11px 15px;
+        padding: 11px 0px;
     }
 
     .logo-left {
         float: left;
-        padding: 11px 15px;
+        padding: 11px 0px;
     }
 
     .sharing .title {
@@ -7135,10 +7158,10 @@
         justify-content: space-between !important;
     }
 
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
         width: 205px;
-    }
+    }*/
 
     /*upload paper*/
     .paper-file img {
@@ -7437,10 +7460,10 @@
 
 
     /*papers*/
-    .views-paper {
+    /*.views-paper {
         margin-right: 10px;
         width: 240px;
-    }
+    }*/
 
     app-papers .top-papers {
         height: 385px;
@@ -7454,7 +7477,7 @@
     }
 
     app-papers .statistics {
-        padding: 147px 10px;
+        margin: 165px 0 0 30px;
         font-size: 26px;
         font-weight: bold;
         color: #fff;
@@ -7595,7 +7618,8 @@
 
 
     .card-item-objective img {
-        width: 40%;
+        width: 60%;
+      margin-top:-35px;
     }
 
 
