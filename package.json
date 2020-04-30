@@ -37,7 +37,7 @@
     "core-js": "^2.5.4",
     "firebase": "^5.8.6",
     "grpc": "^1.21.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "leaflet": "^1.5.1",
     "leaflet.heat": "^0.2.0",
     "mdn-browser-compat-data": "0.0.92",
